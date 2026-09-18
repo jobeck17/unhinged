@@ -6,6 +6,7 @@ Digital playtest harness for **Unhinged**, currently tracking **Alpha 0.03 “Mo
 
 - 40-card decks
 - 7-card opening hand
+- Opening-hand mulligan: choose any number of cards, up to all 7; draw that many replacements, then shuffle the replaced cards back into the deck
 - 26 Units / 8 Actions / 6 Items
 - Single unrestricted battlefield
 - Multiple Units may block one attack
