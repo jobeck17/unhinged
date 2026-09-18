@@ -6,6 +6,7 @@
 
 - 40-card decks
 - 7-card starting hand
+- Opening-hand mulligan: after drawing the opening hand, choose any number of cards to replace, up to all 7. Draw that many replacement cards, then shuffle the replaced cards into the deck.
 - One Leader starts in play
 - Current win condition: reduce the opposing Leader to 0 Health
 - Alternating primary actions
