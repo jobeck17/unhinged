@@ -93,7 +93,7 @@ Leaders use a shared chassis:
 **Traits:** Human • Daredevil  
 **Role:** Death / Sacrifice
 
-**Passive — Keep Rolling:** The first time each round one of your Units dies, another Unit you control gets +1 Power this round.
+**Passive — Keep Rolling:** Whenever one of your Units dies, ready one exhausted Resource.
 
 **Exhaust — Send It Anyway:** Choose a Unit you control. It gets +2 Power this round. If it dies this round, draw a card.
 
