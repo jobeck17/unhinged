@@ -11,8 +11,10 @@
 <div class="p status"><div class="leader enemy" id="enemyLeader"><b id="en"></b><div class="hp"><span id="ehp"></span> ♥</div><div class="m" id="er"></div></div></div>
 <div class="hint" id="hint">Select a card in your hand to play it, or select a ready Unit to attack.</div>
 <div class="p"><div class="zoneTitle"><b>Opponent Battlefield</b><span class="m" id="oc"></span></div><div class="cards" id="ob"></div></div>
+<div class="p"><div class="zoneTitle"><b>Opponent Items</b><span class="m" id="oic"></span></div><div class="cards" id="oi"></div></div>
 <div class="p"><div class="zoneTitle"><b>Your Battlefield</b><span class="m" id="yc"></span></div><div class="cards" id="yb"></div></div>
-<div class="playerHud" id="playerHud"><div><b id="hudName"></b><div class="hp">♥ <span id="hudHp"></span></div></div><div class="resources"><span class="res cmd">CMD <span id="hudCmd"></span></span><span class="res sta">STA <span id="hudSta"></span></span><span class="res">HAND <span id="hudHand"></span></span></div></div>
+<div class="p"><div class="zoneTitle"><b>Your Items</b><span class="m" id="yic"></span></div><div class="cards" id="yi"></div></div>
+<div class="playerHud" id="playerHud"><div><b id="hudName"></b><div class="hp">♥ <span id="hudHp"></span></div></div><div class="resources"><span class="res">RES <span id="hudRes"></span></span><span class="res">HAND <span id="hudHand"></span></span></div></div>
 <div class="p mull hidden" id="mull"><div><b>Mulligan</b><div class="m">Select any number of opening cards, up to all 7. You'll draw that many replacements, then the selected cards are shuffled back into your deck.</div></div><div class="mullBtns"><button id="keep">Keep Hand</button><button id="mullBtn" class="primary">Replace Selected (0)</button></div></div><div class="p"><div class="zoneTitle"><b>Your Hand</b><span class="m" id="hc"></span></div><div class="cards" id="h"></div></div>
 <div class="actions"><button id="play" class="primary">Play Selected</button><button id="attack">Attack</button><button id="cancel">Cancel</button><button id="end">End Round</button></div>
 <div class="p"><b>Match Log</b><div id="log" class="m log"></div></div>
@@ -36,7 +38,7 @@ function side(deckId){
   const cfg=DECKS.find(d=>d.id===deckId);
   const leader=LEADERMAP.get(cfg.leaderId);
   if(!leader)throw new Error('Missing leader '+cfg.leaderId+' in '+cfg.name);
-  const x={deckId,deckName:cfg.name,colors:[cfg.leaderColor,cfg.secondaryColor],leader,hp:leader.health,cmd:1,max:1,sta:3,staMax:3,deck:deck(deckId),hand:[],board:[],discard:[]};
+  const x={deckId,deckName:cfg.name,colors:[cfg.leaderColor,cfg.secondaryColor],leader,hp:leader.health,res:1,max:1,deck:deck(deckId),hand:[],board:[],items:[],discard:[]};
   for(let i=0;i<7&&x.deck.length;i++)x.hand.push(x.deck.pop());
   return x;
 }
@@ -48,7 +50,7 @@ function hint(x){$('hint').textContent=x}
 function start(){
   S={r:1,p:side($('d').value),e:side($('e').value),log:[],over:false,mulligan:true};
   sel=null;mode='mulligan';mulls.clear();
-  note('Curated 40-card dual-color decks loaded: 26 Units / 8 Actions / 6 Items.');
+  note('Curated 40-card dual-color decks loaded: 26 Units / 8 Actions / 6 Items. Shared Resource track is 1→7. Standalone Items are enabled.');
   render();
   hint('Mulligan: tap any opening cards you want to replace, then confirm. These are curated 40-card dual-color LAB decks.');
 }
@@ -59,7 +61,7 @@ function chtml(c,i,zone,obj){
   if((sel&&sel.zone===zone&&sel.i===i)||(mode==='mulligan'&&zone==='h'&&mulls.has(i)))cl+=' selected';
   if(mode==='target'&&zone==='ob')cl+=' target';
   const f=fx.find(x=>x.zone===zone&&x.i===i);
-  const res=c.type==='Action'?'STA':'CMD',resClass=c.type==='Action'?'sta':'cmd';
+  const res='RES',resClass='';
   const marks=obj&&obj.items&&obj.items.length?'<span class=itemMark>ITEM <b>×'+obj.items.length+'</b></span>':'';
   const traits=c.traits&&c.traits.length?'<div class=m>'+c.traits.join(' • ')+'</div>':'';
   const rules=c.text?'<div class=m style="margin-top:6px">'+c.text+'</div>':'';
@@ -71,25 +73,47 @@ function chtml(c,i,zone,obj){
     rules+
     (obj&&obj.dmg?'<div class=damage>'+obj.dmg+' damage</div>':'')+marks+'</div>';
 }
-function resourceFor(c){return c.type==='Action'?'Stamina':'Command'}
-function canAfford(side,c){return c.type==='Action'?c.cost<=side.sta:c.cost<=side.cmd}
-function spend(side,c){if(c.type==='Action')side.sta-=c.cost;else side.cmd-=c.cost}
-function refund(side,c){if(c.type==='Action')side.sta+=c.cost;else side.cmd+=c.cost}
+function resourceFor(c){return 'Resource'}
+function canAfford(side,c){return c.cost<=side.res}
+function spend(side,c){side.res-=c.cost}
+function refund(side,c){side.res+=c.cost}
+
+function itemHost(side,c){
+  if(c.type!=='Item'||!/^Attach to/i.test(c.text||''))return null;
+  const wantsDaredevil=/Daredevil/i.test(c.text||'');
+  const allowsLeader=/Leader/i.test(c.text||'');
+  if(allowsLeader&&(!wantsDaredevil||(side.leader.traits||[]).includes('Daredevil')))return {kind:'leader'};
+  const unit=side.board.find(u=>!wantsDaredevil||(u.c.traits||[]).includes('Daredevil'));
+  return unit?{kind:'unit',unit}:null;
+}
+function canPlayItem(side,c){return c.type!=='Item'||!/^Attach to/i.test(c.text||'')||!!itemHost(side,c)}
+function placeItem(side,c){
+  const host=itemHost(side,c);
+  if(/^Attach to/i.test(c.text||'')){
+    if(!host)return false;
+    if(host.kind==='leader')side.items.push({c,ready:true,host:'Leader'});
+    else{host.unit.items=host.unit.items||[];host.unit.items.push(c)}
+  }else side.items.push({c,ready:true,host:null});
+  return true;
+}
 
 function render(){
   $('hudName').textContent=S.p.leader.name+' • '+S.p.deckName;
-  $('hudHp').textContent=S.p.hp;$('hudCmd').textContent=S.p.cmd+'/'+S.p.max;$('hudSta').textContent=S.p.sta+'/'+S.p.staMax;$('hudHand').textContent=S.p.hand.length;
+  $('hudHp').textContent=S.p.hp;$('hudRes').textContent=S.p.res+'/'+S.p.max;$('hudHand').textContent=S.p.hand.length;
   $('en').textContent=S.e.leader.name+' • '+S.e.deckName;$('ehp').textContent=S.e.hp;$('er').textContent='Round '+S.r+' • Deck '+S.e.deck.length;
   $('phase').textContent=mode==='mulligan'?'MULLIGAN':mode==='target'?'CHOOSE TARGET':'YOUR ACTION';
   $('mull').classList.toggle('hidden',mode!=='mulligan');$('mullBtn').textContent='Replace Selected ('+mulls.size+')';
   $('h').innerHTML=S.p.hand.map((c,i)=>chtml(c,i,'h')).join('');
   $('yb').innerHTML=S.p.board.map((x,i)=>chtml(x.c,i,'yb',x)).join('');
   $('ob').innerHTML=S.e.board.map((x,i)=>chtml(x.c,i,'ob',x)).join('');
+  $('yi').innerHTML=S.p.items.map((x,i)=>chtml(x.c,i,'yi',x)).join('');
+  $('oi').innerHTML=S.e.items.map((x,i)=>chtml(x.c,i,'oi',x)).join('');
   $('hc').textContent=S.p.hand.length+' cards • Deck '+S.p.deck.length;
   $('yc').textContent=S.p.board.length+' Units';$('oc').textContent=S.e.board.length+' Units';
+  $('yic').textContent=S.p.items.length+' Items';$('oic').textContent=S.e.items.length+' Items';
   $('log').innerHTML=S.log.slice(-14).join('<br>');
   $('enemyLeader').classList.toggle('target',mode==='target');
-  $('play').disabled=mode==='mulligan'||!(sel&&sel.zone==='h'&&S.p.hand[sel.i]&&canAfford(S.p,S.p.hand[sel.i]));
+  $('play').disabled=mode==='mulligan'||!(sel&&sel.zone==='h'&&S.p.hand[sel.i]&&canAfford(S.p,S.p.hand[sel.i])&&canPlayItem(S.p,S.p.hand[sel.i]));
   $('attack').disabled=mode==='mulligan'||!(sel&&sel.zone==='yb'&&S.p.board[sel.i]&&S.p.board[sel.i].ready);
   $('end').disabled=mode==='mulligan';$('cancel').disabled=!sel&&mode==='idle';
   document.querySelectorAll('.c').forEach(el=>el.onclick=()=>pick(el.dataset.zone,+el.dataset.i));
@@ -103,14 +127,15 @@ function pick(z,i){
   }
   if(mode==='target'){if(z==='ob')resolveAttack(i);return}
   if(z==='h'){
-    sel={zone:z,i};const c=S.p.hand[i],res=resourceFor(c),have=c.type==='Action'?S.p.sta:S.p.cmd;
-    hint(canAfford(S.p,c)?'Selected '+c.name+'. Costs '+c.cost+' '+res+'.':'That costs '+c.cost+' '+res+'. You only have '+have+'.');
+    sel={zone:z,i};const c=S.p.hand[i],res=resourceFor(c),have=S.p.res;
+    hint(canAfford(S.p,c)&&canPlayItem(S.p,c)?'Selected '+c.name+'. Costs '+c.cost+' '+res+'.':(!canPlayItem(S.p,c)?'That Item has no eligible attachment target.':'That costs '+c.cost+' '+res+'. You only have '+have+'.'));
     render();return;
   }
   if(z==='yb'){
     const u=S.p.board[i];sel={zone:z,i};hint(u.ready?'Selected '+u.c.name+'. Tap Attack to choose a target.':u.c.name+' is exhausted.');
     render();return;
   }
+  if(z==='yi'){const it=S.p.items[i];sel={zone:z,i};hint((it.host?it.c.name+' is attached to '+it.host+'. ':it.c.name+'. ')+'Item ability resolution is still prototype/generic.');render();return}
 }
 function finishMulligan(replace){
   if(mode!=='mulligan')return;
@@ -125,13 +150,14 @@ function finishMulligan(replace){
 }
 function playSelected(){
   if(!sel||sel.zone!=='h')return;
-  const c=S.p.hand[sel.i];if(!c||!canAfford(S.p,c))return;
+  const c=S.p.hand[sel.i];if(!c||!canAfford(S.p,c)||!canPlayItem(S.p,c))return;
   spend(S.p,c);S.p.hand.splice(sel.i,1);
   if(c.type==='Unit'){
     S.p.board.push({c,ready:false,dmg:0,items:[]});note('You deploy '+c.name+' for '+c.cost+' Command.');
   }else if(c.type==='Item'){
-    if(!S.p.board.length){S.p.hand.splice(sel.i,0,c);refund(S.p,c);hint('Items need a Unit to attach to in this simulator.');sel=null;render();return}
-    const host=S.p.board[0];host.items=host.items||[];host.items.push(c);note('You attach '+c.name+' to '+host.c.name+'.');
+    if(!placeItem(S.p,c)){S.p.hand.splice(sel.i,0,c);refund(S.p,c);hint('That Item has no eligible attachment target.');sel=null;render();return}
+    const placed=S.p.items.find(x=>x.c===c);
+    note(placed?(placed.host?'You attach '+c.name+' to your '+placed.host+'.':'You play '+c.name+' as a standalone Item.'):'You attach '+c.name+' to a Unit.');
   }else{
     S.p.discard.push(c);note('You play '+c.name+' for '+c.cost+' Stamina. Card-specific Action resolution is still prototype/generic.');
   }
@@ -164,11 +190,11 @@ function combat(a,me,foe,blocks,toLeader){
 }
 function ai(){
   if(S.over)return;
-  const i=S.e.hand.findIndex(c=>canAfford(S.e,c)&&(c.type!=='Item'||S.e.board.length));
+  const i=S.e.hand.findIndex(c=>canAfford(S.e,c)&&canPlayItem(S.e,c));
   if(i>=0){
     const c=S.e.hand.splice(i,1)[0];spend(S.e,c);
     if(c.type==='Unit'){S.e.board.push({c,ready:false,dmg:0,items:[]});note('Opponent deploys '+c.name+'.')}
-    else if(c.type==='Item'){const host=S.e.board[0];host.items=host.items||[];host.items.push(c);note('Opponent attaches '+c.name+' to '+host.c.name+'.')}
+    else if(c.type==='Item'){placeItem(S.e,c);const placed=S.e.items.find(x=>x.c===c);note(placed?(placed.host?'Opponent attaches '+c.name+' to their '+placed.host+'.':'Opponent plays '+c.name+' as a standalone Item.'):'Opponent attaches '+c.name+' to a Unit.')}
     else{S.e.discard.push(c);note('Opponent plays '+c.name+'.')}
   }else{
     const a=S.e.board.find(x=>x.ready);
@@ -184,7 +210,7 @@ function endRound(){
   endingRound=true;const btn=$('end');btn.disabled=true;btn.classList.add('roundAck');btn.textContent='Round Ended ✓';
   setTimeout(()=>{
     S.r++;
-    for(const x of [S.p,S.e]){x.max=Math.min(6,x.max+1);x.cmd=x.max;x.sta=x.staMax;x.board.forEach(u=>u.ready=true);if(x.deck.length)x.hand.push(x.deck.pop())}
+    for(const x of [S.p,S.e]){x.max=Math.min(7,x.max+1);x.res=x.max;x.board.forEach(u=>u.ready=true);x.items.forEach(it=>it.ready=true);if(x.deck.length)x.hand.push(x.deck.pop())}
     sel=null;mode='idle';note('Round '+S.r+' begins.');hint('Round '+S.r+' begins. Units ready and each player draws.');
     btn.classList.remove('roundAck');btn.textContent='End Round';endingRound=false;render();
   },500);
