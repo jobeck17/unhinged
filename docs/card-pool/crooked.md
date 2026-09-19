@@ -18,7 +18,7 @@
 | U068 | **Conspiracy Blogger** | 4 | 4/4 | Human • Saboteur | — | Whenever you play an Action targeting an enemy card, this gets +1 Power this round. |
 | U069 | **Crypto Bro** | 2 | 2/2 | Human • Hustler | — | When deployed, discard a card. If you do, draw a card. |
 | U070 | **Tow-Truck Driver** | 2 | 2/3 | Human • Authority • Sketchy | — | When deployed, exhaust an Item. |
-| U071 | **Fake Psychic** | 3 | 2/4 | Human • Hustler | — | When deployed, look at the top three cards of an opponent's deck. Put one on the bottom and the rest back on top in any order. |
+| U071 | **Fake Psychic** | 3 | 3/3 | Human • Hustler | — | When deployed, look at the top three cards of an opponent's deck. Put one on the bottom and the rest back on top in any order. |
 | U072 | **Coupon Scammer** | 3 | 3/3 | Human • Hustler • Outlaw | — | The first Item you play each round costs 1 less. |
 | U073 | **Neighborhood Facebook Admin** | 3 | 2/5 | Human • Authority | — | The first enemy Unit deployed each round gets -1 Power this round. |
 | U074 | **Pirate Radio Operator** | 4 | 3/4 | Human • Outlaw • Saboteur | — | When deployed, an enemy Unit cannot block this round. |
