@@ -73,7 +73,7 @@ Each two-color pair has a shared Trait/theme so tribal decks are not locked to o
 | Crooked | ROOT | Tempo | 21 | Actions and disruption |
 | Makeshift | Trash Baron | Scrap / recycling | 21 | Scavenging, Vermin, recursion, Repurpose/Scrap synergy |
 | Stubborn | HOA President | Control | 24 | Guard, blocking, denial; first blocker gets +1 Guard |
-| Kamikaze | Stunt Coordinator | Death / sacrifice | 20 | Turns expendable bodies and deaths into momentum |
+| Kamikaze | Backyard Wrestler | Death / sacrifice | 20 | Turns expendable bodies and deaths into momentum |
 
 ## Leader Vulnerability
 
