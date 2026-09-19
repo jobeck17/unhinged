@@ -2278,7 +2278,7 @@
       "type": "Unit",
       "name": "Crash-Test Dummy",
       "cost": 4,
-      "power": 5,
+      "power": 4,
       "guard": 2,
       "traits": [
         "Daredevil"
@@ -2295,7 +2295,7 @@
       "name": "Doom Rooster",
       "cost": 6,
       "power": 6,
-      "guard": 6,
+      "guard": 5,
       "traits": [
         "Animal",
         "Fanatic",
@@ -2482,7 +2482,7 @@
       "traits": [
         "Fanatic"
       ],
-      "text": "Sacrifice a Unit. Draw 2.",
+      "text": "Sacrifice a Unit. Draw 2, then discard a card.",
       "keywords": []
     },
     {
@@ -2566,7 +2566,7 @@
       "color": "Kamikaze",
       "type": "Item",
       "name": "Definitely Safe Helmet",
-      "cost": 1,
+      "cost": 2,
       "traits": [
         "Daredevil"
       ],
