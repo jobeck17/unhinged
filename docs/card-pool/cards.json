@@ -332,7 +332,7 @@
       "name": "Fireworks Incident",
       "cost": 2,
       "traits": [],
-      "text": "Deal 2 damage to one of your Units and 2 damage to an enemy Unit."
+      "text": "Deal 2 damage to one of your Units and 2 damage to an enemy Unit. If your Unit survives, draw a card, then discard a card."
     },
     {
       "id": "U023",
@@ -683,7 +683,7 @@
       "name": "Everybody Bats",
       "cost": 2,
       "traits": [],
-      "text": "Up to three Units you control get +1 Power this round."
+      "text": "Up to three Units you control get +1 Power this round. If you chose three Units, draw a card."
     },
     {
       "id": "U051",
@@ -1050,7 +1050,7 @@
       "name": "Wrong Address",
       "cost": 1,
       "traits": [],
-      "text": "Return a Unit costing 2 or less to its owner's hand."
+      "text": "Return a Unit costing 2 or less to its owner's hand. If it was exhausted, draw a card, then discard a card."
     },
     {
       "id": "U081",
@@ -1441,7 +1441,7 @@
       "name": "That's Probably Still Good",
       "cost": 2,
       "traits": [],
-      "text": "Return an Item from your discard to play attached to an eligible Unit. Dismiss it at end of round."
+      "text": "Return an Item from your discard to play attached to an eligible Unit. Dismiss it at end of round. When it is dismissed this round, draw a card."
     },
     {
       "id": "U114",
@@ -1824,7 +1824,7 @@
       "name": "Dig In",
       "cost": 2,
       "traits": [],
-      "text": "Costs 1 less if you control fewer Units than the opponent. Your Units get +1 Guard this round."
+      "text": "Costs 1 less if you control fewer Units than the opponent. Your Units get +1 Guard this round. If you control fewer Units than the opponent, draw a card."
     },
     {
       "id": "U146",
@@ -2167,7 +2167,7 @@
       "name": "Worth It",
       "cost": 2,
       "traits": [],
-      "text": "Sacrifice a Unit. Deal damage equal to its Power to another Unit."
+      "text": "Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card."
     },
     {
       "id": "U174",
