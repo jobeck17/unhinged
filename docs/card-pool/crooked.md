@@ -8,7 +8,7 @@
 
 | ID | Card | Cost | Stats | Traits | Keywords | Text |
 |---|---|---:|---:|---|---|---|
-| U061 | **Script Kiddie** | 1 | 1/2 | Human • Sketchy | — | Vanilla. |
+| U061 | **Script Kiddie** | 1 | 1/3 | Human • Sketchy | — | When deployed, look at the top two cards of your deck. Put one on top and the other on the bottom. |
 | U062 | **Social Media Grifter** | 2 | 2/2 | Human • Hustler | — | When deployed, an enemy Unit gets -1 Power this round. |
 | U063 | **Mall Cop** | 2 | 2/4 | Human • Authority | — | Exhaust: a Unit with Power 2 or less cannot attack this round. |
 | U064 | **Creepy Van Guy** | 3 | 2/4 | Human • Sketchy | — | When deployed, return a 1-cost Unit to its owner's hand. |
@@ -18,13 +18,13 @@
 | U068 | **Conspiracy Blogger** | 4 | 4/4 | Human • Saboteur | — | Whenever you play an Action targeting an enemy card, this gets +1 Power this round. |
 | U069 | **Crypto Bro** | 2 | 2/2 | Human • Hustler | — | When deployed, discard a card. If you do, draw a card. |
 | U070 | **Tow-Truck Driver** | 2 | 2/3 | Human • Authority • Sketchy | — | When deployed, exhaust an Item. |
-| U071 | **Fake Psychic** | 3 | 2/4 | Human • Hustler | — | Look at the top card of an opponent's deck. You may put it on the bottom. |
+| U071 | **Fake Psychic** | 3 | 2/4 | Human • Hustler | — | When deployed, look at the top three cards of an opponent's deck. Put one on the bottom and the rest back on top in any order. |
 | U072 | **Coupon Scammer** | 3 | 3/3 | Human • Hustler • Outlaw | — | The first Item you play each round costs 1 less. |
 | U073 | **Neighborhood Facebook Admin** | 3 | 2/5 | Human • Authority | — | The first enemy Unit deployed each round gets -1 Power this round. |
 | U074 | **Pirate Radio Operator** | 4 | 3/4 | Human • Outlaw • Saboteur | — | When deployed, an enemy Unit cannot block this round. |
 | U075 | **IT Guy Who Quit Six Months Ago** | 4 | 3/5 | Human • Sketchy | — | When deployed, you may put an Action from your discard on top of your deck. |
 | U076 | **Professional Gaslighter** | 5 | 4/5 | Human • Hustler • Saboteur | — | The first time each round an enemy Unit receives a buff, give it -1 Power this round. |
-| U077 | **Identity Thief** | 3 | 2/4 | Human • Hustler • Saboteur | — | When deployed, choose a Trait on another Unit. This gains that Trait while in play. |
+| U077 | **Identity Thief** | 3 | 2/4 | Human • Hustler • Saboteur | — | When deployed, choose a Trait on another Unit. This gains that Trait while in play. If it shares a Trait with your Leader, draw a card, then discard a card. |
 | U078 | **HOA Lawyer** | 4 | 3/5 | Human • Authority | — | The first enemy Action targeting one of your Units each round costs 1 additional resource. |
 
 ## Actions (8)

@@ -48,12 +48,12 @@
       "name": "Feral Chihuahua",
       "cost": 1,
       "power": 2,
-      "guard": 1,
+      "guard": 2,
       "traits": [
         "Animal",
         "Menace"
       ],
-      "text": "Vanilla.",
+      "text": "This Unit cannot block. When this attacks a Unit with Guard 3 or more, it gets +2 Power this attack.",
       "keywords": []
     },
     {
@@ -63,12 +63,12 @@
       "name": "Bachelorette Party",
       "cost": 2,
       "power": 3,
-      "guard": 1,
+      "guard": 2,
       "traits": [
         "Human",
         "Party"
       ],
-      "text": "When this attacks, another Party Unit gets +1 Power this round.",
+      "text": "This Unit cannot block unless you control another Party Unit. When this attacks, another Party Unit gets +1 Power and +1 Guard this round.",
       "keywords": []
     },
     {
@@ -186,12 +186,12 @@
       "name": "Karaoke Champion",
       "cost": 2,
       "power": 2,
-      "guard": 2,
+      "guard": 3,
       "traits": [
         "Human",
         "Party"
       ],
-      "text": "Gets +1 Power while another Party Unit is attacking.",
+      "text": "Whenever another Party Unit attacks, this gets +1 Power this round.",
       "keywords": []
     },
     {
@@ -510,7 +510,7 @@
         "Human",
         "Hustler"
       ],
-      "text": "Whenever you deploy another Hustler, this gets +1 Power this round.",
+      "text": "When deployed, if you control another Hustler, draw a card, then discard a card. Another Hustler gets +1 Power this round.",
       "keywords": []
     },
     {
@@ -900,12 +900,12 @@
       "name": "Script Kiddie",
       "cost": 1,
       "power": 1,
-      "guard": 2,
+      "guard": 3,
       "traits": [
         "Human",
         "Sketchy"
       ],
-      "text": "",
+      "text": "When deployed, look at the top two cards of your deck. Put one on top and the other on the bottom.",
       "keywords": []
     },
     {
@@ -1058,7 +1058,7 @@
         "Human",
         "Hustler"
       ],
-      "text": "Look at the top card of an opponent's deck. You may put it on the bottom.",
+      "text": "When deployed, look at the top three cards of an opponent's deck. Put one on the bottom and the rest back on top in any order.",
       "keywords": []
     },
     {
@@ -1152,7 +1152,7 @@
         "Hustler",
         "Saboteur"
       ],
-      "text": "When deployed, choose a Trait on another Unit. This gains that Trait while in play.",
+      "text": "When deployed, choose a Trait on another Unit. This gains that Trait while in play. If it shares a Trait with your Leader, draw a card, then discard a card.",
       "keywords": []
     },
     {
@@ -1360,7 +1360,7 @@
       "type": "Unit",
       "name": "Cockroach",
       "cost": 1,
-      "power": 1,
+      "power": 2,
       "guard": 1,
       "traits": [
         "Animal",
@@ -1368,7 +1368,7 @@
         "Scavenger",
         "Undead"
       ],
-      "text": "When this dies, put it on the bottom of your deck.",
+      "text": "When this dies, mill 1 card. You may put an Item from your discard into your Junk Pile. Then put this on the bottom of your deck.",
       "keywords": []
     },
     {
@@ -1521,7 +1521,7 @@
         "Human",
         "Scavenger"
       ],
-      "text": "Whenever a Cat enters your field, heal 1 damage from a Unit.",
+      "text": "Whenever an Animal enters your field, heal 1 damage from a Unit.",
       "keywords": []
     },
     {
@@ -2187,7 +2187,7 @@
       "type": "Unit",
       "name": "Bomb Rat",
       "cost": 1,
-      "power": 1,
+      "power": 2,
       "guard": 1,
       "traits": [
         "Animal",
@@ -2204,12 +2204,12 @@
       "name": "Overenthusiastic Volunteer",
       "cost": 1,
       "power": 1,
-      "guard": 1,
+      "guard": 2,
       "traits": [
         "Human",
         "Fanatic"
       ],
-      "text": "When this dies, draw a card.",
+      "text": "When this dies during your turn, draw a card.",
       "keywords": []
     },
     {
@@ -2364,7 +2364,7 @@
         "Animal",
         "Vermin"
       ],
-      "text": "When this dies, another Vermin gets +2 Power this round.",
+      "text": "If you control another Vermin or Undead Unit, this may attack the round it is deployed. When this dies, another Vermin or Undead Unit gets +2 Power this round.",
       "keywords": []
     },
     {

@@ -82,7 +82,7 @@ Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **
 **Traits:** Human • Daredevil • Performer • Fanatic  
 **Role:** Death / Sacrifice
 
-**Passive:** Whenever one of your Units dies, ready one exhausted Resource.
+**Passive:** The first time each round one of your Units dies, ready one exhausted Resource.
 
 **Exhaust:** Choose a Unit you control. It gets +2 Power this round. If it dies this round, draw a card.
 

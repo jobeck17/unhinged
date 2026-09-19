@@ -8,8 +8,8 @@
 
 | ID | Card | Cost | Stats | Traits | Keywords | Text |
 |---|---|---:|---:|---|---|---|
-| U151 | **Bomb Rat** | 1 | 1/1 | Animal • Vermin • Daredevil | — | When this dies, deal 1 damage to the enemy Leader. |
-| U152 | **Overenthusiastic Volunteer** | 1 | 1/1 | Human • Fanatic | — | When this dies, draw a card. |
+| U151 | **Bomb Rat** | 1 | 2/1 | Animal • Vermin • Daredevil | — | When this dies, deal 1 damage to the enemy Leader. |
+| U152 | **Overenthusiastic Volunteer** | 1 | 1/2 | Human • Fanatic | — | When this dies during your turn, draw a card. |
 | U153 | **Powder Keg Kid** | 2 | 2/2 | Human • Saboteur | — | When this dies, deal 1 damage to each enemy Unit. |
 | U154 | **Florida Man's Stunt Double** | 2 | 3/1 | Human • Daredevil • Florida Man | — | This Unit may attack the round it is deployed. When this dies during your attack, deal 1 damage to the enemy Leader. |
 | U155 | **Zombie Kid** | 3 | 2/3 | Undead | — | When this dies, create a 1/1 Turtle. |
@@ -19,7 +19,7 @@
 | U159 | **Fireworks Technician** | 2 | 2/2 | Human • Daredevil • Saboteur | — | When this dies, deal 1 damage to each enemy Unit. |
 | U160 | **Cult Recruiter** | 2 | 1/3 | Human • Fanatic | — | Whenever another Fanatic dies, this gets +1 Power. |
 | U161 | **Crash-Test Intern** | 2 | 3/1 | Human • Daredevil | — | This Unit may attack the round it is deployed. When this dies during your turn, draw a card. |
-| U162 | **Rabid Rat** | 2 | 2/1 | Animal • Vermin | — | When this dies, another Vermin gets +2 Power this round. |
+| U162 | **Rabid Rat** | 2 | 2/1 | Animal • Vermin | — | If you control another Vermin or Undead Unit, this may attack the round it is deployed. When this dies, another Vermin or Undead Unit gets +2 Power this round. |
 | U163 | **Volunteer Human Shield** | 3 | 1/5 | Human • Fanatic | — | When this dies while blocking, draw 2 cards, then discard a card. |
 | U164 | **Zombie Mall Walker** | 3 | 2/4 | Undead | — | When this dies, return it to your hand at end of round. If another Undead Unit you control died this round, draw a card. |
 | U165 | **Saboteur With Poor Planning** | 4 | 4/3 | Human • Saboteur | — | When this dies, dismiss an enemy Item. |

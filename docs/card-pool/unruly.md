@@ -10,7 +10,7 @@
 |---|---|---:|---:|---|---|---|
 | U031 | **Little Leaguer** | 2 | 2/3 | Human • Team | — | Vanilla. |
 | U032 | **Girl Scout** | 2 | 2/2 | Human • Team • Hustler | — | When deployed, draw a card, then discard a card. |
-| U033 | **MLM Rep** | 2 | 2/2 | Human • Hustler | — | Whenever you deploy another Hustler, this gets +1 Power this round. |
+| U033 | **MLM Rep** | 2 | 2/2 | Human • Hustler | — | When deployed, if you control another Hustler, draw a card, then discard a card. Another Hustler gets +1 Power this round. |
 | U034 | **Birthday Party Magician** | 3 | 2/4 | Human • Performer | — | When deployed, create a 1/1 Rabbit. |
 | U035 | **Wedding Cover Band** | 3 | 3/3 | Human • Party • Performer | — | Other Party Units get +1 Guard while this is ready. |
 | U036 | **Little League Assistant Coach** | 4 | 4/5 | Human • Team | — | Vanilla. |

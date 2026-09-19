@@ -10,7 +10,7 @@
 |---|---|---:|---:|---|---|---|
 | U091 | **Clown** | 2 | 2/2 | Human • Performer | — | When this dies, create a 1/1 Clown. |
 | U092 | **Free Puppies Guy** | 2 | 2/3 | Human • Sketchy | — | Whenever you dismiss an Item, give this +1 Power or +1 Guard this round. |
-| U093 | **Cockroach** | 1 | 1/1 | Animal • Vermin • Scavenger • Undead | — | When this dies, put it on the bottom of your deck. |
+| U093 | **Cockroach** | 1 | 2/1 | Animal • Vermin • Scavenger • Undead | — | When this dies, mill 1 card. You may put an Item from your discard into your Junk Pile. Then put this on the bottom of your deck. |
 | U094 | **Florida Man's Cousin** | 3 | 3/3 | Human • Florida Man | — | When this dies, you may put an Item from your discard into your Junk Pile. |
 | U095 | **Cat Lady** | 3 | 2/4 | Human • Scavenger | — | When deployed, create a 1/1 Cat. |
 | U096 | **Raccoon of Unusual Size** | 4 | 5/6 | Animal • Scavenger | — | Whenever you dismiss an Item, heal 1 damage from this. |
@@ -20,7 +20,7 @@
 | U100 | **Shopping Cart Knight** | 2 | 2/3 | Human • Scavenger | — | Gets +1 Power while you control an Item. |
 | U101 | **Possum in the Trash Can** | 2 | 1/3 | Animal • Scavenger • Vermin • Undead | — | When this dies, you may return an Item from your Junk Pile to your hand. |
 | U102 | **Dollar-Store MacGyver** | 3 | 3/3 | Human • Sketchy • Hacker | — | When deployed, you may dismiss an Item. If you do, draw a card. |
-| U103 | **Cat Hoarder** | 3 | 2/4 | Human • Scavenger | — | Whenever a Cat enters your field, heal 1 damage from a Unit. |
+| U103 | **Cat Hoarder** | 3 | 2/4 | Human • Scavenger | — | Whenever an Animal enters your field, heal 1 damage from a Unit. |
 | U104 | **Garage Inventor** | 4 | 3/5 | Human • Sketchy • Hacker | — | The first Item you play each round costs 1 less. |
 | U105 | **Dumpster Diver** | 4 | 4/5 | Human • Scavenger | — | When this attacks, you may put an Item from your Junk Pile on top of your deck. |
 | U106 | **Rat King** | 5 | 4/6 | Animal • Vermin | — | Other Vermin you control get +1 Power. |

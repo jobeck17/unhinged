@@ -8,8 +8,8 @@
 
 | ID | Card | Cost | Stats | Traits | Keywords | Text |
 |---|---|---:|---:|---|---|---|
-| U001 | **Feral Chihuahua** | 1 | 2/1 | Animal • Menace | — | Vanilla. |
-| U002 | **Bachelorette Party** | 2 | 3/1 | Human • Party | — | When this attacks, another Party Unit gets +1 Power this round. |
+| U001 | **Feral Chihuahua** | 1 | 2/2 | Animal • Menace | — | This Unit cannot block. When this attacks a Unit with Guard 3 or more, it gets +2 Power this attack. |
+| U002 | **Bachelorette Party** | 2 | 3/2 | Human • Party | — | This Unit cannot block unless you control another Party Unit. When this attacks, another Party Unit gets +1 Power and +1 Guard this round. |
 | U003 | **Gas Station Daredevil** | 2 | 2/2 | Human • Florida Man • Daredevil | — | Whenever you dismiss an Item, this gets +1 Power this round. |
 | U004 | **Pirate With No Exit Strategy** | 3 | 4/2 | Human • Outlaw | — | When this attacks, you may discard a card. If you do, it gets +2 Power this attack. |
 | U005 | **Put It in Reverse, Terry!** | 3 | 4/3 | Human • Menace | — | The first time this would take combat damage while attacking each round, you may return it to your hand instead. |
@@ -17,7 +17,7 @@
 | U007 | **Unsupervised Toddler** | 2 | 1/3 | Human • Menace | — | When this attacks, reveal the top card of your deck. If it is a Unit, this gets +2 Power this round. |
 | U008 | **Gas Station Gladiator** | 5 | 6/4 | Human • Daredevil | — | Whenever this survives combat while attacking, draw a card. |
 | U009 | **Firework Dad** | 2 | 3/2 | Human • Daredevil • Menace | — | When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack. |
-| U010 | **Karaoke Champion** | 2 | 2/2 | Human • Party | — | Gets +1 Power while another Party Unit is attacking. |
+| U010 | **Karaoke Champion** | 2 | 2/3 | Human • Party | — | Whenever another Party Unit attacks, this gets +1 Power this round. |
 | U011 | **Petty Thief** | 2 | 3/1 | Human • Outlaw | — | When this damages the enemy Leader, draw a card, then discard a card. |
 | U012 | **Backyard Brawler** | 3 | 4/3 | Human • Daredevil | — | Whenever this survives combat while attacking, ready it. It cannot attack again this round. |
 | U013 | **Road Rage Ron** | 4 | 5/3 | Human • Menace | — | When deployed, an enemy Unit loses 1 Guard this round. |
