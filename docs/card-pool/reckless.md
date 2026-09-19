@@ -16,7 +16,7 @@
 9. **Firework Dad** — 2 cost, 3/2 — *Human • Daredevil • Menace* — When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack.
 10. **Karaoke Champion** — 2 cost, 2/2 — *Human • Party* — Gets +1 Power while another Party Unit is attacking.
 11. **Petty Thief** — 2 cost, 3/1 — *Human • Outlaw* — When this damages the enemy Leader, draw a card, then discard a card.
-12. **Backyard Wrestler** — 3 cost, 4/3 — *Human • Daredevil* — Whenever this survives combat while attacking, ready it. It cannot attack again this round.
+12. **Backyard Brawler** — 3 cost, 4/3 — *Human • Daredevil* — Whenever this survives combat while attacking, ready it. It cannot attack again this round.
 13. **Road Rage Ron** — 4 cost, 5/3 — *Human • Menace* — When deployed, an enemy Unit loses 1 Guard this round.
 14. **Pool Pirate** — 4 cost, 4/4 — *Human • Outlaw • Party* — Whenever another Outlaw or Party Unit attacks, this gets +1 Power this round.
 15. **Bottle-Rocket Enthusiast** — 4 cost, 5/4 — *Human • Daredevil* — When this dies during your turn, deal 1 damage to a Unit.
