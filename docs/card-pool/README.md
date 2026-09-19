@@ -74,6 +74,8 @@ Notable change: **Undead now belongs to Makeshift + Kamikaze**, not Stubborn + K
 - [leaders.json](./leaders.json) — canonical Leaders
 - [test-decks.json](./test-decks.json) — six curated baseline decks
 - [rules-lab.md](./rules-lab.md) — current LAB rules snapshot
+- [meta-audit-2026-09-19.md](./meta-audit-2026-09-19.md) — current cross-color balance / usage audit
+- [meta-decks.json](./meta-decks.json) — 30 optimized heuristic stress-test lists
 - [traits.md](./traits.md) — Trait model and distribution
 - [leaders.md](./leaders.md) — readable Leader roster
 - [Reckless](./reckless.md)
