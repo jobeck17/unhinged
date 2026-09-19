@@ -31,11 +31,11 @@
 
 | ID | Card | Cost | Traits | Keywords | Text |
 |---|---|---:|---|---|---|
-| U169 | **Detonate** | 1 | Saboteur • Fanatic | — | Sacrifice a Unit. Deal 2 damage to the enemy Leader. If the sacrificed Unit was Undead, draw a card. |
-| U170 | **Blood Price** | 1 | Fanatic | — | Sacrifice a Unit. Draw 2, then discard a card. |
+| U169 | **Detonate** | 1 | Saboteur • Fanatic | — | Sacrifice a Unit. Deal 1 damage to the enemy Leader. If the sacrificed Unit was Undead, deal 1 additional damage to the enemy Leader and draw a card. |
+| U170 | **Blood Price** | 1 | Fanatic | — | Sacrifice a Unit. Draw a card. If the sacrificed Unit was Fanatic or Undead, draw a second card, then discard a card. |
 | U171 | **Take One for the Team** | 1 | Fanatic | — | Sacrifice a Unit. Prevent all damage from an attack. |
-| U172 | **This Seemed Like a Good Idea** | 1 | Daredevil | — | Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round. |
-| U173 | **Worth It** | 2 | Fanatic • Daredevil | — | Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card. |
+| U172 | **This Seemed Like a Good Idea** | 1 | Daredevil | — | Sacrifice a Unit. Another Unit gets +2 Power and +2 Guard this round. If the sacrificed Unit was a Daredevil, it gets +3 Power and +3 Guard instead. |
+| U173 | **Worth It** | 2 | Fanatic • Daredevil | — | Sacrifice a Unit. Deal damage equal to its Power to another Unit. If the sacrificed Unit was Fanatic or Daredevil and that Unit dies this round, draw a card. |
 | U174 | **Last Laugh** | 1 | Performer • Saboteur • Fanatic | — | After one of your Units dies, deal 1 damage to up to two enemy Units. |
 | U175 | **Feed the Machine** | 1 | Fanatic | — | Sacrifice a Unit. Your next Kamikaze card this round costs 1 less. |
 | U176 | **Again!** | 2 | Undead • Fanatic | — | If an Undead or Fanatic Unit you control died this round, return a Unit costing 2 or less from your discard to your hand. |
@@ -45,8 +45,8 @@
 | ID | Card | Cost | Traits | Keywords | Text |
 |---|---|---:|---|---|---|
 | U177 | **Definitely Safe Helmet** | 2 | Daredevil | — | Attach to a Daredevil or Fanatic Unit. When attached Unit dies, draw a card, then dismiss this. |
-| U178 | **Bong Water** | 1 | Florida Man • Fanatic | — | Dismiss and sacrifice a Unit: another Unit gets +2 Power and +2 Guard this round. |
-| U179 | **Dead Man's Switch** | 1 | Saboteur • Fanatic | — | Attach to a Unit. When attached Unit dies, deal 2 damage to a Unit, then dismiss this. |
+| U178 | **Bong Water** | 1 | Florida Man • Fanatic | — | Dismiss and sacrifice a Unit: another Unit gets +1 Power and +1 Guard this round. If the sacrificed Unit was Florida Man or Fanatic, it gets +2 Power and +2 Guard instead. |
+| U179 | **Dead Man's Switch** | 1 | Saboteur • Fanatic | — | Attach to a Unit. When attached Unit dies, deal 1 damage to a Unit. If attached Unit was a Saboteur or Fanatic, deal 2 damage instead. Then dismiss this. |
 | U180 | **Folding Chair** | 1 | Daredevil • Performer • Fanatic | — | Attach to a Daredevil Unit or Leader you control. Exhaust: the next Kamikaze Unit costing 3 or less you deploy this round may attack the round it is deployed. |
 
 ## Design Note
