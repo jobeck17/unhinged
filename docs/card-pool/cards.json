@@ -1,0 +1,2254 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-09-18",
+  "poolTarget": {
+    "colors": 6,
+    "cardsPerColor": 30,
+    "totalCards": 180,
+    "defaultComposition": {
+      "Unit": 18,
+      "Action": 8,
+      "Item": 4
+    }
+  },
+  "simulatorDeck": {
+    "size": 20,
+    "composition": {
+      "Unit": 12,
+      "Action": 5,
+      "Item": 3
+    },
+    "uniqueCards": true
+  },
+  "colors": {
+    "Reckless": {
+      "leader": {
+        "name": "Florida Man",
+        "health": 18
+      }
+    },
+    "Unruly": {
+      "leader": {
+        "name": "Little League Coach",
+        "health": 22
+      }
+    },
+    "Crooked": {
+      "leader": {
+        "name": "ROOT",
+        "health": 21
+      }
+    },
+    "Makeshift": {
+      "leader": {
+        "name": "Makeshift Leader",
+        "health": 21
+      }
+    },
+    "Stubborn": {
+      "leader": {
+        "name": "HOA President",
+        "health": 24
+      }
+    },
+    "Kamikaze": {
+      "leader": {
+        "name": "Trash Baron",
+        "health": 20
+      }
+    }
+  },
+  "cards": [
+    {
+      "id": "U001",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Feral Chihuahua",
+      "cost": 1,
+      "power": 2,
+      "guard": 1,
+      "traits": [
+        "Animal",
+        "Menace"
+      ],
+      "text": "Vanilla."
+    },
+    {
+      "id": "U002",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Bachelorette Party",
+      "cost": 2,
+      "power": 3,
+      "guard": 1,
+      "traits": [
+        "Human",
+        "Party"
+      ],
+      "text": "When this attacks, another Party Unit gets +1 Power this round."
+    },
+    {
+      "id": "U003",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Gas Station Daredevil",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Florida Man",
+        "Daredevil"
+      ],
+      "text": "Whenever you dismiss an Item, this gets +1 Power this round."
+    },
+    {
+      "id": "U004",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Pirate With No Exit Strategy",
+      "cost": 3,
+      "power": 4,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Outlaw"
+      ],
+      "text": "When this attacks, you may discard a card. If you do, it gets +2 Power this attack."
+    },
+    {
+      "id": "U005",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Put It in Reverse, Terry!",
+      "cost": 3,
+      "power": 4,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Menace"
+      ],
+      "text": "The first time this would take combat damage while attacking each round, you may return it to your hand instead."
+    },
+    {
+      "id": "U006",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Washed-Up Rock Star",
+      "cost": 3,
+      "power": 4,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Party",
+        "Performer"
+      ],
+      "text": "Gets +1 Power while you control another Party Unit."
+    },
+    {
+      "id": "U007",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Unsupervised Toddler",
+      "cost": 2,
+      "power": 1,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Menace"
+      ],
+      "text": "When this attacks, reveal the top card of your deck. If it is a Unit, this gets +2 Power this round."
+    },
+    {
+      "id": "U008",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Gas Station Gladiator",
+      "cost": 5,
+      "power": 6,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Daredevil"
+      ],
+      "text": "Whenever this survives combat while attacking, draw a card."
+    },
+    {
+      "id": "U009",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Firework Dad",
+      "cost": 2,
+      "power": 3,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Daredevil",
+        "Menace"
+      ],
+      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack."
+    },
+    {
+      "id": "U010",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Karaoke Champion",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Party"
+      ],
+      "text": "Gets +1 Power while another Party Unit is attacking."
+    },
+    {
+      "id": "U011",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Petty Thief",
+      "cost": 2,
+      "power": 3,
+      "guard": 1,
+      "traits": [
+        "Human",
+        "Outlaw"
+      ],
+      "text": "When this damages the enemy Leader, draw a card, then discard a card."
+    },
+    {
+      "id": "U012",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Backyard Wrestler",
+      "cost": 3,
+      "power": 4,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Daredevil"
+      ],
+      "text": "Whenever this survives combat while attacking, ready it. It cannot attack again this round."
+    },
+    {
+      "id": "U013",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Road Rage Ron",
+      "cost": 4,
+      "power": 5,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Menace"
+      ],
+      "text": "When deployed, an enemy Unit loses 1 Guard this round."
+    },
+    {
+      "id": "U014",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Pool Pirate",
+      "cost": 4,
+      "power": 4,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Outlaw",
+        "Party"
+      ],
+      "text": "Whenever another Outlaw or Party Unit attacks, this gets +1 Power this round."
+    },
+    {
+      "id": "U015",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Bottle-Rocket Enthusiast",
+      "cost": 4,
+      "power": 5,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Daredevil"
+      ],
+      "text": "When this dies during your turn, deal 1 damage to a Unit."
+    },
+    {
+      "id": "U016",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Guy Who Definitely Read the Instructions",
+      "cost": 5,
+      "power": 7,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Florida Man"
+      ],
+      "text": "When this attacks, dismiss one of your Items or deal 2 damage to this."
+    },
+    {
+      "id": "U017",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Fourth of July Showrunner",
+      "cost": 4,
+      "power": 5,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Party",
+        "Daredevil"
+      ],
+      "text": "When another Daredevil attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack."
+    },
+    {
+      "id": "U018",
+      "color": "Reckless",
+      "type": "Unit",
+      "name": "Parking Lot Boxer",
+      "cost": 3,
+      "power": 4,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Menace"
+      ],
+      "text": "When this attacks a damaged Unit, it gets +1 Power this attack."
+    },
+    {
+      "id": "U019",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "Make a Scene",
+      "cost": 1,
+      "traits": [],
+      "text": "A Unit gets +2 Power this round."
+    },
+    {
+      "id": "U020",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "Hold My Beer",
+      "cost": 1,
+      "traits": [],
+      "text": "A Unit gets +3 Power this attack. Deal 1 damage to that Unit after combat."
+    },
+    {
+      "id": "U021",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "Send It!",
+      "cost": 1,
+      "traits": [],
+      "text": "A Unit gets +3 Power this attack and -1 Guard this round."
+    },
+    {
+      "id": "U022",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "Fireworks Incident",
+      "cost": 2,
+      "traits": [],
+      "text": "Deal 2 damage to one of your Units and 2 damage to an enemy Unit."
+    },
+    {
+      "id": "U023",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "No, No, Watch This",
+      "cost": 1,
+      "traits": [],
+      "text": "Ready a Unit that attacked this round. It cannot attack again this round. It gets +2 Power until end of round."
+    },
+    {
+      "id": "U024",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "No, I'm Fine",
+      "cost": 2,
+      "traits": [],
+      "text": "Draw 2 cards. Deal 1 damage to your Leader."
+    },
+    {
+      "id": "U025",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "Overcommit",
+      "cost": 1,
+      "traits": [],
+      "text": "An attacking Unit gets +4 Power this attack. It does not ready next round."
+    },
+    {
+      "id": "U026",
+      "color": "Reckless",
+      "type": "Action",
+      "name": "Crash Through",
+      "cost": 2,
+      "traits": [],
+      "text": "An attacker gets +2 Power this attack. Excess combat damage may reach the enemy Leader."
+    },
+    {
+      "id": "U027",
+      "color": "Reckless",
+      "type": "Item",
+      "name": "Bath Salts",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. Attached Unit gains Undead. Dismiss: it gets +2 Power this round."
+    },
+    {
+      "id": "U028",
+      "color": "Reckless",
+      "type": "Item",
+      "name": "Gas Station Pills",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. +1 Power. When dismissed, ready attached Unit, then deal 1 damage to it."
+    },
+    {
+      "id": "U029",
+      "color": "Reckless",
+      "type": "Item",
+      "name": "Roman Candle",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. The first time attached Unit attacks each round, deal 1 damage to an enemy Unit, then dismiss this."
+    },
+    {
+      "id": "U030",
+      "color": "Reckless",
+      "type": "Item",
+      "name": "Cooler Full of Bad Ideas",
+      "cost": 1,
+      "traits": [],
+      "text": "Dismiss: discard a card, then draw 2."
+    },
+    {
+      "id": "U031",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Little Leaguer",
+      "cost": 2,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": ""
+    },
+    {
+      "id": "U032",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Girl Scout",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Team",
+        "Hustler"
+      ],
+      "text": "When deployed, draw a card, then discard a card."
+    },
+    {
+      "id": "U033",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "MLM Rep",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Hustler"
+      ],
+      "text": "Whenever you deploy another Hustler, this gets +1 Power this round."
+    },
+    {
+      "id": "U034",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Birthday Party Magician",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Performer"
+      ],
+      "text": "When deployed, create a 1/1 Rabbit."
+    },
+    {
+      "id": "U035",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Wedding Cover Band",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Party",
+        "Performer"
+      ],
+      "text": "Other Party Units get +1 Guard while this is ready."
+    },
+    {
+      "id": "U036",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Little League Assistant Coach",
+      "cost": 4,
+      "power": 4,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "Vanilla."
+    },
+    {
+      "id": "U037",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Social Media Influencer",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Hustler"
+      ],
+      "text": "Whenever another Unit enters your field, you may give it +1 Power this round."
+    },
+    {
+      "id": "U038",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Jam Band Hippie",
+      "cost": 4,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Performer",
+        "Fanatic"
+      ],
+      "text": "When another Performer or Fanatic is deployed, heal 1 damage from a Unit."
+    },
+    {
+      "id": "U039",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Soccer Mom",
+      "cost": 2,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "When another Team Unit enters your field, it gets +1 Guard this round."
+    },
+    {
+      "id": "U040",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Dance Mom",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Team",
+        "Hustler"
+      ],
+      "text": "Whenever you buff another Unit, this gets +1 Power this round."
+    },
+    {
+      "id": "U041",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Girl Scout Troop Leader",
+      "cost": 3,
+      "power": 3,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Team",
+        "Hustler"
+      ],
+      "text": "When deployed, look at the top two cards of your deck. You may reveal a Team Unit and put it into your hand."
+    },
+    {
+      "id": "U042",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Wedding DJ",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Party",
+        "Performer"
+      ],
+      "text": "When deployed, another Unit gets +1 Power and +1 Guard this round."
+    },
+    {
+      "id": "U043",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Youth Pastor With a Guitar",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Performer",
+        "Fanatic"
+      ],
+      "text": "Whenever another Fanatic or Performer enters, heal 1 damage from this."
+    },
+    {
+      "id": "U044",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Stage Mom",
+      "cost": 4,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Hustler",
+        "Performer"
+      ],
+      "text": "Your 1-cost and 2-cost Units get +1 Power during your turn."
+    },
+    {
+      "id": "U045",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Single Dad",
+      "cost": 4,
+      "power": 4,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "When deployed, another Unit you control gets +2 Guard this round."
+    },
+    {
+      "id": "U046",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Neighborhood Block Party",
+      "cost": 5,
+      "power": 5,
+      "guard": 6,
+      "traits": [
+        "Party",
+        "Team"
+      ],
+      "text": "Other Party Units get +1 Power."
+    },
+    {
+      "id": "U047",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Little League Umpire's Kid",
+      "cost": 2,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "Gets +1 Power while you control a Coach."
+    },
+    {
+      "id": "U048",
+      "color": "Unruly",
+      "type": "Unit",
+      "name": "Dance Recital Dad",
+      "cost": 3,
+      "power": 3,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Team",
+        "Performer"
+      ],
+      "text": "Whenever another Performer gets a buff, this gets +1 Guard this round."
+    },
+    {
+      "id": "U049",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Group Text",
+      "cost": 1,
+      "traits": [],
+      "text": "Draw 2, then discard 1."
+    },
+    {
+      "id": "U050",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Everybody Bats",
+      "cost": 2,
+      "traits": [],
+      "text": "Up to three Units you control get +1 Power this round."
+    },
+    {
+      "id": "U051",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Carpool",
+      "cost": 1,
+      "traits": [],
+      "text": "Return one of your Units to hand. Deploy a Unit costing the same or less for 1 less."
+    },
+    {
+      "id": "U052",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Everybody Gets a Turn",
+      "cost": 2,
+      "traits": [],
+      "text": "Up to three Units get +1 Guard this round."
+    },
+    {
+      "id": "U053",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Rally the Group Chat",
+      "cost": 2,
+      "traits": [],
+      "text": "Choose a Trait. Up to three Units you control with that Trait get +1 Power this round."
+    },
+    {
+      "id": "U054",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Roll Call",
+      "cost": 1,
+      "traits": [],
+      "text": "If you control three or more Units, draw a card."
+    },
+    {
+      "id": "U055",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Pep Talk",
+      "cost": 1,
+      "traits": [],
+      "text": "A Unit gets +1 Power and +2 Guard this round."
+    },
+    {
+      "id": "U056",
+      "color": "Unruly",
+      "type": "Action",
+      "name": "Bring a Friend",
+      "cost": 2,
+      "traits": [],
+      "text": "The next Unit you deploy this round costs 1 less if you already deployed a Unit this round."
+    },
+    {
+      "id": "U057",
+      "color": "Unruly",
+      "type": "Item",
+      "name": "Participation Trophy",
+      "cost": 1,
+      "traits": [],
+      "text": "Attached Unit gets +1 Guard. When it survives combat, you may move this Item to another Unit."
+    },
+    {
+      "id": "U058",
+      "color": "Unruly",
+      "type": "Item",
+      "name": "Hacky Sack",
+      "cost": 1,
+      "traits": [],
+      "text": "Exhaust: another Performer gets +1 Power and +1 Guard this round."
+    },
+    {
+      "id": "U059",
+      "color": "Unruly",
+      "type": "Item",
+      "name": "Orange Slices",
+      "cost": 1,
+      "traits": [],
+      "text": "Dismiss: heal 2 damage from a Team Unit."
+    },
+    {
+      "id": "U060",
+      "color": "Unruly",
+      "type": "Item",
+      "name": "Portable Bluetooth Speaker",
+      "cost": 1,
+      "traits": [],
+      "text": "Exhaust: a Party or Performer gets +1 Power this round."
+    },
+    {
+      "id": "U061",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Script Kiddie",
+      "cost": 1,
+      "power": 1,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Sketchy"
+      ],
+      "text": ""
+    },
+    {
+      "id": "U062",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Social Media Grifter",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Hustler"
+      ],
+      "text": "When deployed, an enemy Unit gets -1 Power this round."
+    },
+    {
+      "id": "U063",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Mall Cop",
+      "cost": 2,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "Exhaust: a Unit with Power 2 or less cannot attack this round."
+    },
+    {
+      "id": "U064",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Creepy Van Guy",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Sketchy"
+      ],
+      "text": "When deployed, return a 1-cost Unit to its owner's hand."
+    },
+    {
+      "id": "U065",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Questionably Licensed Pirate",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Outlaw"
+      ],
+      "text": "When this damages a Unit, exhaust that Unit."
+    },
+    {
+      "id": "U066",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "HOA Treasurer",
+      "cost": 3,
+      "power": 2,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Authority",
+        "Hustler"
+      ],
+      "text": "Whenever the opponent plays their second card in a round, they discard a card, then draw a card."
+    },
+    {
+      "id": "U067",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Neighborhood Hacker",
+      "cost": 4,
+      "power": 3,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Sketchy",
+        "Saboteur"
+      ],
+      "text": "When deployed, exhaust an Item or Unit."
+    },
+    {
+      "id": "U068",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Conspiracy Blogger",
+      "cost": 4,
+      "power": 4,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Saboteur"
+      ],
+      "text": "Whenever you play an Action targeting an enemy card, this gets +1 Power this round."
+    },
+    {
+      "id": "U069",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Crypto Bro",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Hustler"
+      ],
+      "text": "When deployed, discard a card. If you do, draw a card."
+    },
+    {
+      "id": "U070",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Tow-Truck Driver",
+      "cost": 2,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Authority",
+        "Sketchy"
+      ],
+      "text": "When deployed, exhaust an Item."
+    },
+    {
+      "id": "U071",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Fake Psychic",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Hustler"
+      ],
+      "text": "Look at the top card of an opponent's deck. You may put it on the bottom."
+    },
+    {
+      "id": "U072",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Coupon Scammer",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Hustler",
+        "Outlaw"
+      ],
+      "text": "The first Item you play each round costs 1 less."
+    },
+    {
+      "id": "U073",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Neighborhood Facebook Admin",
+      "cost": 3,
+      "power": 2,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "The first enemy Unit deployed each round gets -1 Power this round."
+    },
+    {
+      "id": "U074",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Pirate Radio Operator",
+      "cost": 4,
+      "power": 3,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Outlaw",
+        "Saboteur"
+      ],
+      "text": "When deployed, an enemy Unit cannot block this round."
+    },
+    {
+      "id": "U075",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "IT Guy Who Quit Six Months Ago",
+      "cost": 4,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Sketchy"
+      ],
+      "text": "When deployed, return an Action from your discard to your hand."
+    },
+    {
+      "id": "U076",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Professional Gaslighter",
+      "cost": 5,
+      "power": 4,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Hustler",
+        "Saboteur"
+      ],
+      "text": "The first time each round an enemy Unit receives a buff, give it -1 Power this round."
+    },
+    {
+      "id": "U077",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "Identity Thief",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Hustler",
+        "Saboteur"
+      ],
+      "text": "When deployed, choose a Trait on another Unit. This gains that Trait while in play."
+    },
+    {
+      "id": "U078",
+      "color": "Crooked",
+      "type": "Unit",
+      "name": "HOA Lawyer",
+      "cost": 4,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "The first enemy Action targeting one of your Units each round costs 1 additional resource."
+    },
+    {
+      "id": "U079",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Call Security",
+      "cost": 1,
+      "traits": [],
+      "text": "Exhaust a Unit."
+    },
+    {
+      "id": "U080",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Wrong Address",
+      "cost": 1,
+      "traits": [],
+      "text": "Return a Unit costing 2 or less to its owner's hand."
+    },
+    {
+      "id": "U081",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Have You Tried Turning It Off?",
+      "cost": 2,
+      "traits": [],
+      "text": "Exhaust a Unit. It does not ready during its controller's next ready step."
+    },
+    {
+      "id": "U082",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Terms and Conditions",
+      "cost": 1,
+      "traits": [],
+      "text": "A Unit loses its abilities this round."
+    },
+    {
+      "id": "U083",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Redirect",
+      "cost": 2,
+      "traits": [],
+      "text": "Change the target of an Action with a single legal target."
+    },
+    {
+      "id": "U084",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Shakedown",
+      "cost": 1,
+      "traits": [],
+      "text": "Opponent chooses: discard a card or pay 1 resource."
+    },
+    {
+      "id": "U085",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Administrative Fee",
+      "cost": 1,
+      "traits": [],
+      "text": "Choose a Unit. Its controller may pay 1 resource. If they do not, it gets -2 Power this round."
+    },
+    {
+      "id": "U086",
+      "color": "Crooked",
+      "type": "Action",
+      "name": "Backdoor",
+      "cost": 2,
+      "traits": [],
+      "text": "Play after an opponent spends their last resource. Ready one of your Units or draw a card."
+    },
+    {
+      "id": "U087",
+      "color": "Crooked",
+      "type": "Item",
+      "name": "Burner Phone",
+      "cost": 1,
+      "traits": [],
+      "text": "Dismiss: return one of your Units to your hand."
+    },
+    {
+      "id": "U088",
+      "color": "Crooked",
+      "type": "Item",
+      "name": "USB Drive You Found in the Parking Lot",
+      "cost": 1,
+      "traits": [],
+      "text": "Exhaust, dismiss: look at the top three cards of your deck. Put an Action into your hand; put the rest on the bottom."
+    },
+    {
+      "id": "U089",
+      "color": "Crooked",
+      "type": "Item",
+      "name": "Flipper Zero-ish Thing That Is Legally Distinct",
+      "cost": 1,
+      "traits": [],
+      "text": "Exhaust, dismiss: exhaust an Item or Unit."
+    },
+    {
+      "id": "U090",
+      "color": "Crooked",
+      "type": "Item",
+      "name": "Spoofed Keycard",
+      "cost": 1,
+      "traits": [],
+      "text": "Dismiss: one Unit cannot block this round."
+    },
+    {
+      "id": "U091",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Clown",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Performer"
+      ],
+      "text": "When this dies, create a 1/1 Clown."
+    },
+    {
+      "id": "U092",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Free Puppies Guy",
+      "cost": 2,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Sketchy"
+      ],
+      "text": "Whenever you dismiss an Item, give this +1 Power or +1 Guard this round."
+    },
+    {
+      "id": "U093",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Cockroach",
+      "cost": 1,
+      "power": 1,
+      "guard": 1,
+      "traits": [
+        "Animal",
+        "Vermin",
+        "Scavenger"
+      ],
+      "text": "When this dies, put it on the bottom of your deck."
+    },
+    {
+      "id": "U094",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Florida Man's Cousin",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Florida Man"
+      ],
+      "text": "When this dies, return an Item from your discard to your hand."
+    },
+    {
+      "id": "U095",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Cat Lady",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Scavenger"
+      ],
+      "text": "When deployed, create a 1/1 Cat."
+    },
+    {
+      "id": "U096",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Raccoon of Unusual Size",
+      "cost": 4,
+      "power": 5,
+      "guard": 6,
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "Whenever you dismiss an Item, heal 1 damage from this."
+    },
+    {
+      "id": "U097",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Clown Car",
+      "cost": 4,
+      "power": 2,
+      "guard": 5,
+      "traits": [
+        "Vehicle",
+        "Performer"
+      ],
+      "text": "When deployed, create two 1/1 Clowns."
+    },
+    {
+      "id": "U098",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Dumpster Engineer",
+      "cost": 5,
+      "power": 4,
+      "guard": 6,
+      "traits": [
+        "Human",
+        "Scavenger",
+        "Sketchy"
+      ],
+      "text": "The first Item you dismiss each round may return to your hand at end of round."
+    },
+    {
+      "id": "U099",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Junkyard Dog",
+      "cost": 2,
+      "power": 3,
+      "guard": 2,
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "Gets +1 Guard while you control an Item."
+    },
+    {
+      "id": "U100",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Shopping Cart Knight",
+      "cost": 2,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Scavenger"
+      ],
+      "text": "When equipped with an Item, +1 Power."
+    },
+    {
+      "id": "U101",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Possum in the Trash Can",
+      "cost": 2,
+      "power": 1,
+      "guard": 3,
+      "traits": [
+        "Animal",
+        "Scavenger",
+        "Vermin"
+      ],
+      "text": "When this dies, return an Item from your discard to your hand."
+    },
+    {
+      "id": "U102",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Dollar-Store MacGyver",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Sketchy"
+      ],
+      "text": "When deployed, you may dismiss an Item. If you do, draw a card."
+    },
+    {
+      "id": "U103",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Cat Hoarder",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Scavenger"
+      ],
+      "text": "Whenever a Cat enters your field, heal 1 damage from a Unit."
+    },
+    {
+      "id": "U104",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Garage Inventor",
+      "cost": 4,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Sketchy"
+      ],
+      "text": "The first Item you play each round costs 1 less."
+    },
+    {
+      "id": "U105",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Dumpster Diver",
+      "cost": 4,
+      "power": 4,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Scavenger"
+      ],
+      "text": "When this attacks, you may put an Item from your discard on top of your deck."
+    },
+    {
+      "id": "U106",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Rat King",
+      "cost": 5,
+      "power": 4,
+      "guard": 6,
+      "traits": [
+        "Animal",
+        "Vermin"
+      ],
+      "text": "Other Vermin you control get +1 Power."
+    },
+    {
+      "id": "U107",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "General Contractor",
+      "cost": 4,
+      "power": 4,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Scavenger"
+      ],
+      "text": "When deployed, you may attach an Item from your hand to a Unit for 1 less."
+    },
+    {
+      "id": "U108",
+      "color": "Makeshift",
+      "type": "Unit",
+      "name": "Garage Sale Queen",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Scavenger",
+        "Hustler"
+      ],
+      "text": "Whenever you play an Item from hand, you may discard a card. If you do, draw a card."
+    },
+    {
+      "id": "U109",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "Scrounge",
+      "cost": 1,
+      "traits": [],
+      "text": "Draw a card. If an Item entered your discard this round, draw 2 instead."
+    },
+    {
+      "id": "U110",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "I Can Fix That",
+      "cost": 1,
+      "traits": [],
+      "text": "Return an Item from your discard to your hand."
+    },
+    {
+      "id": "U111",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "Found This in the Garage",
+      "cost": 1,
+      "traits": [],
+      "text": "Reveal the top three cards of your deck. Put an Item among them into your hand."
+    },
+    {
+      "id": "U112",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "Good as New",
+      "cost": 2,
+      "traits": [],
+      "text": "Return a Unit costing 2 or less from your discard to your hand."
+    },
+    {
+      "id": "U113",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "That's Probably Still Good",
+      "cost": 2,
+      "traits": [],
+      "text": "Return an Item from your discard to play attached to an eligible Unit. Dismiss it at end of round."
+    },
+    {
+      "id": "U114",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "Repurpose",
+      "cost": 1,
+      "traits": [],
+      "text": "Place a card from your discard face down in your Scrap row."
+    },
+    {
+      "id": "U115",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "Salvage",
+      "cost": 1,
+      "traits": [],
+      "text": "Reveal one of your face-down Scrap cards and return it to your hand."
+    },
+    {
+      "id": "U116",
+      "color": "Makeshift",
+      "type": "Action",
+      "name": "Waste Not",
+      "cost": 1,
+      "traits": [],
+      "text": "If the opponent ended their last round with unused resources, Repurpose an additional card."
+    },
+    {
+      "id": "U117",
+      "color": "Makeshift",
+      "type": "Item",
+      "name": "Duct Tape",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a damaged Unit. It gets +2 Guard."
+    },
+    {
+      "id": "U118",
+      "color": "Makeshift",
+      "type": "Item",
+      "name": "Sharks with Freaking Laser Beams",
+      "cost": 2,
+      "traits": [],
+      "text": "Attach to a Shark. +1 Power. Exhaust: deal 1 damage to a Unit; if already damaged, deal 2 instead."
+    },
+    {
+      "id": "U119",
+      "color": "Makeshift",
+      "type": "Item",
+      "name": "Zip Ties",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. +1 Guard. When dismissed, attached Unit gets +1 Power this round."
+    },
+    {
+      "id": "U120",
+      "color": "Makeshift",
+      "type": "Item",
+      "name": "Mystery Drawer of Cables",
+      "cost": 1,
+      "traits": [],
+      "text": "Exhaust: look at the top card of your deck. If it is an Item, reveal it and put it into your hand."
+    },
+    {
+      "id": "U121",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Grumpy Old Guy",
+      "cost": 3,
+      "power": 2,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Menace"
+      ],
+      "text": "Enemy Units with Power 2 or less cannot attack your Leader while this is ready."
+    },
+    {
+      "id": "U122",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Scout Master",
+      "cost": 3,
+      "power": 3,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "The first other Team Unit that blocks each round gets +1 Guard this round."
+    },
+    {
+      "id": "U123",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "HOA Enforcement Committee",
+      "cost": 3,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "When deployed, an enemy Unit gets -1 Power this round."
+    },
+    {
+      "id": "U124",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Coupon Lady",
+      "cost": 2,
+      "power": 1,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "The first Item you play each round costs 1 less."
+    },
+    {
+      "id": "U125",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Mall Walker",
+      "cost": 2,
+      "power": 1,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "Vanilla."
+    },
+    {
+      "id": "U126",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Single Dad",
+      "cost": 4,
+      "power": 4,
+      "guard": 6,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "Other 1-cost Units you control get +1 Guard."
+    },
+    {
+      "id": "U127",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Rabid Possum",
+      "cost": 3,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Animal",
+        "Menace",
+        "Scavenger"
+      ],
+      "text": "When this blocks, deal 1 damage to the attacker after combat."
+    },
+    {
+      "id": "U128",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Neighborhood Watch Captain",
+      "cost": 5,
+      "power": 4,
+      "guard": 7,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "The first enemy Unit to attack each round gets -1 Power for that attack."
+    },
+    {
+      "id": "U129",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Crossing Guard",
+      "cost": 2,
+      "power": 1,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "The first Unit attacking your Leader each round gets -1 Power."
+    },
+    {
+      "id": "U130",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "PTA President",
+      "cost": 2,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Authority",
+        "Team"
+      ],
+      "text": "Other Team Units get +1 Guard during the opponent's turn."
+    },
+    {
+      "id": "U131",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Retired Marine Next Door",
+      "cost": 3,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Menace"
+      ],
+      "text": "Cannot be moved or returned to hand by enemy effects."
+    },
+    {
+      "id": "U132",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "HOA Vice President",
+      "cost": 3,
+      "power": 2,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "text": "When an enemy Unit becomes ready outside its normal ready step, exhaust this to exhaust that Unit."
+    },
+    {
+      "id": "U133",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Neighborhood Watch Karen",
+      "cost": 4,
+      "power": 3,
+      "guard": 6,
+      "traits": [
+        "Human",
+        "Authority",
+        "Menace"
+      ],
+      "text": "Whenever an enemy Unit attacks your Leader, this gets +1 Power this round."
+    },
+    {
+      "id": "U134",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Old Dog",
+      "cost": 3,
+      "power": 2,
+      "guard": 5,
+      "traits": [
+        "Animal",
+        "Team"
+      ],
+      "text": "When this blocks, another blocking Unit gets +1 Guard this round."
+    },
+    {
+      "id": "U135",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Church Potluck Grandma",
+      "cost": 4,
+      "power": 3,
+      "guard": 6,
+      "traits": [
+        "Human",
+        "Team"
+      ],
+      "text": "When deployed, heal 2 damage from another Unit."
+    },
+    {
+      "id": "U136",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Concrete Goose",
+      "cost": 5,
+      "power": 4,
+      "guard": 8,
+      "traits": [
+        "Object",
+        "Menace"
+      ],
+      "text": "Vanilla."
+    },
+    {
+      "id": "U137",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Church Usher",
+      "cost": 2,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Authority",
+        "Team"
+      ],
+      "text": "The first Unit you deploy each round with Guard greater than Power gets +1 Guard this round."
+    },
+    {
+      "id": "U138",
+      "color": "Stubborn",
+      "type": "Unit",
+      "name": "Dad in New Balance Shoes",
+      "cost": 3,
+      "power": 3,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Team",
+        "Menace"
+      ],
+      "text": "Cannot be exhausted by enemy Actions."
+    },
+    {
+      "id": "U139",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "File a Complaint",
+      "cost": 1,
+      "traits": [],
+      "text": "An attacking Unit gets -2 Power this attack."
+    },
+    {
+      "id": "U140",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "Not in My Neighborhood",
+      "cost": 2,
+      "traits": [],
+      "text": "Move an attacking Unit out of combat unless its controller pays an additional resource."
+    },
+    {
+      "id": "U141",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "Absolutely Not",
+      "cost": 1,
+      "traits": [],
+      "text": "An attacking Unit loses all Power bonuses this attack."
+    },
+    {
+      "id": "U142",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "I Want to Speak to Your Manager",
+      "cost": 2,
+      "traits": [],
+      "text": "Return an Action targeting one of your Units to its owner's hand instead of resolving it."
+    },
+    {
+      "id": "U143",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "Read the Fine Print",
+      "cost": 1,
+      "traits": [],
+      "text": "Cancel a Power or Guard bonus granted by an enemy card this round."
+    },
+    {
+      "id": "U144",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "Not Dead Yet",
+      "cost": 2,
+      "traits": [],
+      "text": "Costs 1 less if your Leader has less health than the enemy Leader. Heal 3 damage from your Leader."
+    },
+    {
+      "id": "U145",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "Dig In",
+      "cost": 2,
+      "traits": [],
+      "text": "Costs 1 less if you control fewer Units than the opponent. Your Units get +1 Guard this round."
+    },
+    {
+      "id": "U146",
+      "color": "Stubborn",
+      "type": "Action",
+      "name": "Wait Them Out",
+      "cost": 2,
+      "traits": [],
+      "text": "Costs 1 less if you have not attacked this round. Draw a card and give a Unit +1 Guard this round."
+    },
+    {
+      "id": "U147",
+      "color": "Stubborn",
+      "type": "Item",
+      "name": "Security Camera",
+      "cost": 1,
+      "traits": [],
+      "text": "The first enemy Unit to attack your Leader each round gets -1 Power."
+    },
+    {
+      "id": "U148",
+      "color": "Stubborn",
+      "type": "Item",
+      "name": "Rabies Shot",
+      "cost": 1,
+      "traits": [],
+      "text": "Dismiss: remove all damage from an Animal, then it loses its abilities this round."
+    },
+    {
+      "id": "U149",
+      "color": "Stubborn",
+      "type": "Item",
+      "name": "Ring Doorbell",
+      "cost": 1,
+      "traits": [],
+      "text": "Whenever an enemy Unit attacks your Leader for the first time each round, draw a card, then discard a card."
+    },
+    {
+      "id": "U150",
+      "color": "Stubborn",
+      "type": "Item",
+      "name": "Decorative Boulder",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. +2 Guard. Attached Unit cannot be moved by enemy effects."
+    },
+    {
+      "id": "U151",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Bomb Rat",
+      "cost": 1,
+      "power": 1,
+      "guard": 1,
+      "traits": [
+        "Animal",
+        "Vermin",
+        "Daredevil"
+      ],
+      "text": "When this dies, deal 1 damage to the enemy Leader."
+    },
+    {
+      "id": "U152",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Overenthusiastic Volunteer",
+      "cost": 1,
+      "power": 1,
+      "guard": 1,
+      "traits": [
+        "Human",
+        "Fanatic"
+      ],
+      "text": "When this dies, draw a card."
+    },
+    {
+      "id": "U153",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Powder Keg Kid",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Saboteur"
+      ],
+      "text": "When this dies, deal 2 damage to a Unit."
+    },
+    {
+      "id": "U154",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Florida Man's Stunt Double",
+      "cost": 2,
+      "power": 3,
+      "guard": 1,
+      "traits": [
+        "Human",
+        "Daredevil",
+        "Florida Man"
+      ],
+      "text": "When this dies during your attack, deal 1 damage to the enemy Leader."
+    },
+    {
+      "id": "U155",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Zombie Kid",
+      "cost": 3,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Undead"
+      ],
+      "text": "When this dies, create a 1/1 Turtle."
+    },
+    {
+      "id": "U156",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Dumpster Revenant",
+      "cost": 3,
+      "power": 2,
+      "guard": 3,
+      "traits": [
+        "Undead",
+        "Scavenger"
+      ],
+      "text": "When this dies, create a 1/1 Vermin."
+    },
+    {
+      "id": "U157",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Crash-Test Dummy",
+      "cost": 4,
+      "power": 5,
+      "guard": 2,
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "When this dies, another Unit you control gets +2 Power this round."
+    },
+    {
+      "id": "U158",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Doom Rooster",
+      "cost": 6,
+      "power": 6,
+      "guard": 6,
+      "traits": [
+        "Animal",
+        "Fanatic"
+      ],
+      "text": "When this dies, deal 2 damage to the enemy Leader."
+    },
+    {
+      "id": "U159",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Fireworks Technician",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Daredevil",
+        "Saboteur"
+      ],
+      "text": "When this dies, deal 1 damage to any Unit."
+    },
+    {
+      "id": "U160",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Cult Recruiter",
+      "cost": 2,
+      "power": 1,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Fanatic"
+      ],
+      "text": "Whenever another Fanatic dies, this gets +1 Power."
+    },
+    {
+      "id": "U161",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Crash-Test Intern",
+      "cost": 2,
+      "power": 3,
+      "guard": 1,
+      "traits": [
+        "Human",
+        "Daredevil"
+      ],
+      "text": "When this dies during your turn, draw a card."
+    },
+    {
+      "id": "U162",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Rabid Rat",
+      "cost": 2,
+      "power": 2,
+      "guard": 1,
+      "traits": [
+        "Animal",
+        "Vermin"
+      ],
+      "text": "When this dies, another Vermin gets +2 Power this round."
+    },
+    {
+      "id": "U163",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Volunteer Human Shield",
+      "cost": 3,
+      "power": 1,
+      "guard": 5,
+      "traits": [
+        "Human",
+        "Fanatic"
+      ],
+      "text": "When this dies while blocking, draw 2 cards, then discard a card."
+    },
+    {
+      "id": "U164",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Zombie Mall Walker",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Undead"
+      ],
+      "text": "When this dies, return it to your hand at end of round."
+    },
+    {
+      "id": "U165",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Saboteur With Poor Planning",
+      "cost": 4,
+      "power": 4,
+      "guard": 3,
+      "traits": [
+        "Human",
+        "Saboteur"
+      ],
+      "text": "When this dies, dismiss an enemy Item."
+    },
+    {
+      "id": "U166",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Dumpster Phoenix",
+      "cost": 5,
+      "power": 4,
+      "guard": 5,
+      "traits": [
+        "Undead",
+        "Scavenger"
+      ],
+      "text": "When this dies, you may sacrifice another Unit. If you do, return this to your hand."
+    },
+    {
+      "id": "U167",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Exploding Clown",
+      "cost": 3,
+      "power": 3,
+      "guard": 2,
+      "traits": [
+        "Human",
+        "Performer",
+        "Daredevil"
+      ],
+      "text": "When this dies, deal 1 splash damage to fragile Units. Exact wording TBD."
+    },
+    {
+      "id": "U168",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "name": "Fanatic With a Megaphone",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "traits": [
+        "Human",
+        "Fanatic"
+      ],
+      "text": "Whenever another Fanatic dies, another Unit you control gets +1 Power this round."
+    },
+    {
+      "id": "U169",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "Detonate",
+      "cost": 1,
+      "traits": [],
+      "text": "Sacrifice a Unit. Deal 2 damage to the enemy Leader."
+    },
+    {
+      "id": "U170",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "Blood Price",
+      "cost": 1,
+      "traits": [],
+      "text": "Sacrifice a Unit. Draw 2."
+    },
+    {
+      "id": "U171",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "Take One for the Team",
+      "cost": 1,
+      "traits": [],
+      "text": "Sacrifice a Unit. Prevent all damage from an attack."
+    },
+    {
+      "id": "U172",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "This Seemed Like a Good Idea",
+      "cost": 1,
+      "traits": [],
+      "text": "Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round."
+    },
+    {
+      "id": "U173",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "Worth It",
+      "cost": 2,
+      "traits": [],
+      "text": "Sacrifice a Unit. Deal damage equal to its Power to another Unit."
+    },
+    {
+      "id": "U174",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "Last Laugh",
+      "cost": 1,
+      "traits": [],
+      "text": "After one of your Units dies, deal 1 damage to an enemy Unit."
+    },
+    {
+      "id": "U175",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "Feed the Machine",
+      "cost": 1,
+      "traits": [],
+      "text": "Sacrifice a Unit. Your next Kamikaze card this round costs 1 less."
+    },
+    {
+      "id": "U176",
+      "color": "Kamikaze",
+      "type": "Action",
+      "name": "Again!",
+      "cost": 2,
+      "traits": [],
+      "text": "If one of your Units died this round, return a Unit costing 2 or less from your discard to your hand."
+    },
+    {
+      "id": "U177",
+      "color": "Kamikaze",
+      "type": "Item",
+      "name": "Definitely Safe Helmet",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. When attached Unit dies, draw a card, then dismiss this."
+    },
+    {
+      "id": "U178",
+      "color": "Kamikaze",
+      "type": "Item",
+      "name": "Bong Water",
+      "cost": 1,
+      "traits": [],
+      "text": "Dismiss and sacrifice a Unit: another Unit gets +2 Power and +2 Guard this round."
+    },
+    {
+      "id": "U179",
+      "color": "Kamikaze",
+      "type": "Item",
+      "name": "Dead Man's Switch",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. When attached Unit dies, deal 2 damage to a Unit, then dismiss this."
+    },
+    {
+      "id": "U180",
+      "color": "Kamikaze",
+      "type": "Item",
+      "name": "Cheap Parachute",
+      "cost": 1,
+      "traits": [],
+      "text": "Attach to a Unit. When attached Unit would die, you may dismiss this to return that Unit to your hand instead."
+    }
+  ]
+}
