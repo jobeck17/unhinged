@@ -22,40 +22,22 @@
   },
   "colors": {
     "Reckless": {
-      "leader": {
-        "name": "Florida Man",
-        "health": 18
-      }
+      "leaderId": "L001"
     },
     "Unruly": {
-      "leader": {
-        "name": "Little League Coach",
-        "health": 22
-      }
+      "leaderId": "L002"
     },
     "Crooked": {
-      "leader": {
-        "name": "ROOT",
-        "health": 21
-      }
+      "leaderId": "L003"
     },
     "Makeshift": {
-      "leader": {
-        "name": "Trash Baron",
-        "health": 21
-      }
+      "leaderId": "L004"
     },
     "Stubborn": {
-      "leader": {
-        "name": "HOA President",
-        "health": 24
-      }
+      "leaderId": "L005"
     },
     "Kamikaze": {
-      "leader": {
-        "name": "Backyard Wrestler",
-        "health": 20
-      }
+      "leaderId": "L006"
     }
   },
   "cards": [
