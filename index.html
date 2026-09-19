@@ -20,7 +20,7 @@
 <script>
 (async()=>{
 const $=x=>document.getElementById(x);
-let DATA,CARDS,DECKDATA,DECKS,CARDMAP,S,sel=null,mode='idle',fx=[],mulls=new Set(),endingRound=false;
+let DATA,CARDS,LEADERDATA,LEADERS,LEADERMAP,DECKDATA,DECKS,CARDMAP,S,sel=null,mode='idle',fx=[],mulls=new Set(),endingRound=false;
 
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function deck(deckId){
@@ -34,7 +34,8 @@ function deck(deckId){
 }
 function side(deckId){
   const cfg=DECKS.find(d=>d.id===deckId);
-  const leader=cfg.leader;
+  const leader=LEADERMAP.get(cfg.leaderId);
+  if(!leader)throw new Error('Missing leader '+cfg.leaderId+' in '+cfg.name);
   const x={deckId,deckName:cfg.name,colors:[cfg.leaderColor,cfg.secondaryColor],leader,hp:leader.health,cmd:1,max:1,sta:3,staMax:3,deck:deck(deckId),hand:[],board:[],discard:[]};
   for(let i=0;i<7&&x.deck.length;i++)x.hand.push(x.deck.pop());
   return x;
@@ -194,16 +195,22 @@ function checkWin(){
 function cancel(){sel=null;mode='idle';hint('Selection cleared.');render()}
 
 try{
-  const [cardRes,deckRes]=await Promise.all([
+  const [cardRes,leaderRes,deckRes]=await Promise.all([
     fetch('./docs/card-pool/cards.json',{cache:'no-store'}),
+    fetch('./docs/card-pool/leaders.json',{cache:'no-store'}),
     fetch('./docs/card-pool/test-decks.json',{cache:'no-store'})
   ]);
   if(!cardRes.ok)throw new Error('cards.json returned '+cardRes.status);
+  if(!leaderRes.ok)throw new Error('leaders.json returned '+leaderRes.status);
   if(!deckRes.ok)throw new Error('test-decks.json returned '+deckRes.status);
-  DATA=await cardRes.json();DECKDATA=await deckRes.json();CARDS=DATA.cards;DECKS=DECKDATA.decks;CARDMAP=new Map(CARDS.map(c=>[c.id,c]));
+  DATA=await cardRes.json();LEADERDATA=await leaderRes.json();DECKDATA=await deckRes.json();
+  CARDS=DATA.cards;LEADERS=LEADERDATA.leaders;DECKS=DECKDATA.decks;
+  CARDMAP=new Map(CARDS.map(c=>[c.id,c]));LEADERMAP=new Map(LEADERS.map(l=>[l.id,l]));
   if(CARDS.length!==180)throw new Error('Expected 180 cards, found '+CARDS.length);
+  if(LEADERS.length!==6)throw new Error('Expected 6 leaders, found '+LEADERS.length);
   if(!DECKS.length)throw new Error('No curated test decks found');
   for(const cfg of DECKS){
+    if(!LEADERMAP.has(cfg.leaderId))throw new Error(cfg.name+' references missing leader '+cfg.leaderId);
     if(cfg.cards.length!==40)throw new Error(cfg.name+' is not 40 cards');
     const list=cfg.cards.map(id=>CARDMAP.get(id));
     if(list.some(c=>!c))throw new Error(cfg.name+' references a missing card');
