@@ -51,4 +51,8 @@ Kamikaze should remain distinct from Reckless:
 - **Reckless** hurts itself for immediate tempo.
 - **Kamikaze** wants Units to actually die because death itself creates value.
 
-The current Trash Baron Leader passive remains a strong prototype anchor: the first time one of your Units dies each round, deal 1 damage to the enemy Leader.
+## Leader
+
+**Backyard Wrestler** — 20 Health
+
+Current direction: combat survival, expendable Units, and turning deaths into momentum. Exact passive and active wording remain provisional.
