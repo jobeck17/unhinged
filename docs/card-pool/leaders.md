@@ -45,13 +45,13 @@ Leaders use a shared chassis:
 
 **ID:** L003  
 **Color:** Crooked  
-**Health:** 21  
+**Health:** 20  
 **Traits:** Hacker  
 **Role:** Tempo / Actions
 
 **Passive — Exploit:** The first time each round you play an Action that targets an enemy Unit, that Unit gets -1 Power this round.
 
-**Exhaust — Backdoor:** Ready one of your exhausted Units.
+**Exhaust — Backdoor:** Ready one of your exhausted Units. It cannot attack this round.
 
 ---
 
@@ -75,7 +75,7 @@ Leaders use a shared chassis:
 
 **ID:** L005  
 **Color:** Stubborn  
-**Health:** 24  
+**Health:** 21  
 **Traits:** Human • Authority  
 **Role:** Control / Defense
 
