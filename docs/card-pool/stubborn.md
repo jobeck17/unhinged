@@ -34,6 +34,10 @@
 4. **I Want to Speak to Your Manager** — Return an Action targeting one of your Units to its owner's hand instead of resolving it. Timing wording TBD.
 5. **Read the Fine Print** — Cancel a Power or Guard bonus granted by an enemy card this round.
 
+### Additional current-pool Action
+
+- **Dig In** — Costs 1 less if you control fewer Units than the opponent. Your Units get +1 Guard this round. If you control fewer Units than the opponent, draw a card.
+
 ## Items (5)
 
 1. **Security Camera** — The first enemy Unit to attack your Leader each round gets -1 Power.
