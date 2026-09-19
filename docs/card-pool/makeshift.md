@@ -3,6 +3,12 @@
 **Identity:** scrappy value, Items, scavenging, recycling, tokens.  
 **Economy:** waste is fuel.
 
+## Leader
+
+**Trash Baron** — 21 Health
+
+Current direction: scavenging, Vermin, recursion, and Repurpose/Scrap synergy. Exact passive and active wording remain provisional.
+
 ## Units (20)
 
 1. **Clown** — 2 cost, 2/2 — *Human • Performer* — When this dies, create a 1/1 Clown.
