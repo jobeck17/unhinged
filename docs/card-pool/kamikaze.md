@@ -53,6 +53,6 @@ Kamikaze should remain distinct from Reckless:
 
 ## Leader
 
-**Stunt Coordinator** — 20 Health
+**Backyard Wrestler** — 20 Health
 
 Current direction: expendable Units, sacrifice sequencing, and turning deaths into momentum. Passive: the first time each round one of your Units dies, another Unit gets +1 Power this round. Exhaust: choose a Unit you control; it gets +2 Power this round, and if it dies this round, draw a card.
