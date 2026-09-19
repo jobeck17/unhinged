@@ -97,7 +97,7 @@ That avoids penalizing expensive cards simply because they cannot be played earl
 | Stubborn | 13 | 16 |
 | Kamikaze | 13 | 17 |
 
-The trait-aware pass is especially important here: **Stubborn falls to 12 universal splash picks**, four fewer than the earlier trait-blind pass. That is the target reduction requested for the color. Makeshift gained desirable options, while Kamikaze remains the densest premium package and deserves continued monitoring.
+The trait-aware pass is especially important here: **Stubborn falls to 13 universal splash picks**, three fewer than the earlier trait-blind pass and very close to the requested four-card reduction. Kamikaze also falls to 13 universal splash picks in the trait-aware optimizer. Makeshift gained desirable options, while Kamikaze remains the densest premium package and deserves continued monitoring.
 
 ## Current balance read
 
