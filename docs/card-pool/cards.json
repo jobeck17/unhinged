@@ -41,7 +41,7 @@
     },
     "Makeshift": {
       "leader": {
-        "name": "Makeshift Leader",
+        "name": "Trash Baron",
         "health": 21
       }
     },
@@ -53,7 +53,7 @@
     },
     "Kamikaze": {
       "leader": {
-        "name": "Trash Baron",
+        "name": "Backyard Wrestler",
         "health": 20
       }
     }
@@ -220,7 +220,7 @@
       "id": "U012",
       "color": "Reckless",
       "type": "Unit",
-      "name": "Backyard Wrestler",
+      "name": "Backyard Brawler",
       "cost": 3,
       "power": 4,
       "guard": 3,
