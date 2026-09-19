@@ -988,7 +988,7 @@
         "Human",
         "Sketchy"
       ],
-      "text": "When deployed, return an Action from your discard to your hand."
+      "text": "When deployed, you may put an Action from your discard on top of your deck."
     },
     {
       "id": "U076",
@@ -1050,7 +1050,7 @@
       "name": "Wrong Address",
       "cost": 1,
       "traits": [],
-      "text": "Return a Unit costing 2 or less to its owner's hand. If it was exhausted, draw a card, then discard a card."
+      "text": "Return a Unit costing 2 or less to its owner's hand."
     },
     {
       "id": "U081",
@@ -1104,7 +1104,7 @@
       "name": "Backdoor",
       "cost": 2,
       "traits": [],
-      "text": "Play after an opponent spends their last resource. Ready one of your Units or draw a card."
+      "text": "Play after an opponent spends their last resource. Ready one of your Units."
     },
     {
       "id": "U087",
@@ -1122,7 +1122,7 @@
       "name": "USB Drive You Found in the Parking Lot",
       "cost": 1,
       "traits": [],
-      "text": "Exhaust, dismiss: look at the top three cards of your deck. Put an Action into your hand; put the rest on the bottom."
+      "text": "Exhaust, dismiss: look at the top three cards of your deck. You may put an Action among them on top of your deck; put the rest on the bottom."
     },
     {
       "id": "U089",
@@ -1912,7 +1912,7 @@
         "Human",
         "Saboteur"
       ],
-      "text": "When this dies, deal 2 damage to a Unit."
+      "text": "When this dies, deal 1 damage to up to two enemy Units."
     },
     {
       "id": "U154",
@@ -1927,7 +1927,7 @@
         "Daredevil",
         "Florida Man"
       ],
-      "text": "When this dies during your attack, deal 1 damage to the enemy Leader."
+      "text": "This Unit may attack the round it is deployed. When this dies during your attack, deal 1 damage to the enemy Leader."
     },
     {
       "id": "U155",
@@ -1967,7 +1967,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "When this dies, another Unit you control gets +2 Power this round."
+      "text": "This Unit may attack the round it is deployed. When this dies, another Unit you control gets +2 Power this round."
     },
     {
       "id": "U158",
@@ -1996,7 +1996,7 @@
         "Daredevil",
         "Saboteur"
       ],
-      "text": "When this dies, deal 1 damage to any Unit."
+      "text": "When this dies, deal 1 damage to up to two enemy Units."
     },
     {
       "id": "U160",
@@ -2024,7 +2024,7 @@
         "Human",
         "Daredevil"
       ],
-      "text": "When this dies during your turn, draw a card."
+      "text": "This Unit may attack the round it is deployed. When this dies during your turn, draw a card."
     },
     {
       "id": "U162",
@@ -2065,7 +2065,7 @@
       "traits": [
         "Undead"
       ],
-      "text": "When this dies, return it to your hand at end of round."
+      "text": "When this dies, return it to your hand at end of round. If another Undead Unit you control died this round, draw a card."
     },
     {
       "id": "U165",
@@ -2108,7 +2108,7 @@
         "Performer",
         "Daredevil"
       ],
-      "text": "When this dies, deal 1 splash damage to fragile Units. Exact wording TBD."
+      "text": "When this dies, deal 1 damage to each enemy Unit with Guard 2 or less."
     },
     {
       "id": "U168",
@@ -2131,7 +2131,7 @@
       "name": "Detonate",
       "cost": 1,
       "traits": [],
-      "text": "Sacrifice a Unit. Deal 2 damage to the enemy Leader."
+      "text": "Sacrifice a Unit. Deal 2 damage to the enemy Leader. If the sacrificed Unit was Undead, draw a card."
     },
     {
       "id": "U170",
@@ -2176,7 +2176,7 @@
       "name": "Last Laugh",
       "cost": 1,
       "traits": [],
-      "text": "After one of your Units dies, deal 1 damage to an enemy Unit."
+      "text": "After one of your Units dies, deal 1 damage to up to two enemy Units."
     },
     {
       "id": "U175",
