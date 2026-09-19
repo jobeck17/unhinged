@@ -21,7 +21,7 @@ Leaders use a shared chassis:
 **Traits:** Human • Florida Man  
 **Role:** Aggro / Items
 
-**Passive — Hold My Beer:** Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.
+**Passive — Hold My Beer:** You may play Items from your discard by paying their normal cost. Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.
 
 **Exhaust — Improvised Solution:** Dismiss an Item you control. A Unit you control gets +2 Power this round.
 
