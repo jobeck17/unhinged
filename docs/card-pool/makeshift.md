@@ -38,7 +38,7 @@ Current direction: scavenging, Vermin, recursion, and Repurpose/Scrap synergy. E
 2. **I Can Fix That** — Return an Item from your discard to your hand.
 3. **Found This in the Garage** — Reveal the top three cards of your deck. Put an Item among them into your hand.
 4. **Good as New** — Return a Unit costing 2 or less from your discard to your hand.
-5. **That's Probably Still Good** — Return an Item from your discard to play attached to an eligible Unit. Dismiss it at end of round.
+5. **That's Probably Still Good** — Return an Item from your discard to play attached to an eligible Unit. Dismiss it at end of round. When it is dismissed this round, draw a card.
 
 ## Items (5)
 
