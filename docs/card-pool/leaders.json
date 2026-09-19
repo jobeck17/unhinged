@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-09-18",
+  "leaders": [
+    {
+      "id": "L001",
+      "name": "Florida Man",
+      "color": "Reckless",
+      "health": 18,
+      "traits": [
+        "Human",
+        "Florida Man"
+      ],
+      "role": "Aggro / Items",
+      "passive": "Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.",
+      "active": {
+        "cost": "Exhaust",
+        "text": "Dismiss an Item you control. A Unit you control gets +2 Power this round."
+      },
+      "status": "provisional"
+    },
+    {
+      "id": "L002",
+      "name": "Little League Coach",
+      "color": "Unruly",
+      "health": 22,
+      "traits": [
+        "Human",
+        "Coach",
+        "Team"
+      ],
+      "role": "Midrange / Team",
+      "passive": "The first time each round you deploy a Unit costing 3 or more, it gets +1 Guard this round.",
+      "active": {
+        "cost": "Exhaust",
+        "text": "Choose a Unit you control. It gets +1 Power and +1 Guard this round."
+      },
+      "status": "provisional"
+    },
+    {
+      "id": "L003",
+      "name": "ROOT",
+      "color": "Crooked",
+      "health": 21,
+      "traits": [
+        "Hacker"
+      ],
+      "role": "Tempo / Actions",
+      "passive": "The first time each round you play an Action that targets an enemy Unit, that Unit gets -1 Power this round.",
+      "active": {
+        "cost": "Exhaust",
+        "text": "Ready one of your exhausted Units."
+      },
+      "status": "provisional"
+    },
+    {
+      "id": "L004",
+      "name": "Trash Baron",
+      "color": "Makeshift",
+      "health": 21,
+      "traits": [
+        "Human",
+        "Scavenger"
+      ],
+      "role": "Scrap / Recycling",
+      "passive": "The first time each round you Repurpose a card, gain 1 temporary resource that may only be spent on a Makeshift card or Item this round.",
+      "active": {
+        "cost": "Exhaust",
+        "text": "Repurpose a card from your discard. This does not count against your normal once-per-round Repurpose."
+      },
+      "status": "provisional-resource-engine"
+    },
+    {
+      "id": "L005",
+      "name": "HOA President",
+      "color": "Stubborn",
+      "health": 24,
+      "traits": [
+        "Human",
+        "Authority"
+      ],
+      "role": "Control / Defense",
+      "passive": "The first Unit you control that blocks each round gets +3 Guard this round.",
+      "active": {
+        "cost": "Exhaust",
+        "text": "Choose an enemy Unit. It gets -1 Power this round."
+      },
+      "status": "provisional"
+    },
+    {
+      "id": "L006",
+      "name": "Backyard Wrestler",
+      "color": "Kamikaze",
+      "health": 20,
+      "traits": [
+        "Human",
+        "Daredevil"
+      ],
+      "role": "Death / Combat",
+      "passive": "The first time each round one of your Units dies during combat, another Unit you control gets +1 Power this round.",
+      "active": {
+        "cost": "Exhaust",
+        "text": "Choose a damaged Unit you control. It gets +2 Power this round. If it dies this round, draw a card."
+      },
+      "status": "provisional"
+    }
+  ]
+}
