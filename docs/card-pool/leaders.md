@@ -10,6 +10,7 @@ Leaders use a shared chassis:
 - **Traits**
 - **Passive ability**
 - **Exhaust ability**
+- Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **Vulnerable** until it readies, and a Vulnerable Leader may be attacked directly, bypassing normal Unit protection.
 - Resource-specific text only when it is central to that Leader's identity
 
 ## Florida Man
