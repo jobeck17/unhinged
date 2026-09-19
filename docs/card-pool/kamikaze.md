@@ -34,7 +34,7 @@
 2. **Blood Price** — Sacrifice a Unit. Draw 2.
 3. **Take One for the Team** — Sacrifice a Unit. Prevent all damage from an attack.
 4. **This Seemed Like a Good Idea** — Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round.
-5. **Worth It** — Sacrifice a Unit. Deal damage equal to its Power to another Unit.
+5. **Worth It** — Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card.
 
 ## Items (5)
 
@@ -53,6 +53,6 @@ Kamikaze should remain distinct from Reckless:
 
 ## Leader
 
-**Backyard Wrestler** — 20 Health
+**Stunt Coordinator** — 20 Health
 
-Current direction: combat survival, expendable Units, and turning deaths into momentum. Exact passive and active wording remain provisional.
+Current direction: expendable Units, sacrifice sequencing, and turning deaths into momentum. Passive: the first time each round one of your Units dies, another Unit gets +1 Power this round. Exhaust: choose a Unit you control; it gets +2 Power this round, and if it dies this round, draw a card.
