@@ -29,7 +29,7 @@
 ## Actions (5)
 
 1. **Group Text** — Draw 2, then discard 1.
-2. **Everybody Bats** — Up to three Units you control get +1 Power this round. If you chose three Units, draw a card.
+2. **Everybody Bats** — Up to three Units you control get +1 Power this round. If you chose three Units, draw a card. If you chose three Units, draw a card.
 3. **Carpool** — Return one of your Units to hand. Deploy a Unit costing the same or less for 1 less.
 4. **Everybody Gets a Turn** — Up to three Units get +1 Guard this round.
 5. **Rally the Group Chat** — Choose a Trait. Up to three Units you control with that Trait get +1 Power this round.
