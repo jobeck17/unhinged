@@ -9,7 +9,7 @@
 - **180 cards total**
 - **Canonical distribution: 18 Units / 8 Actions / 4 Items per color**
 - The machine-readable source of truth is [cards.json](./cards.json).
-- The web playtest generates a fresh **20-card deck** from a chosen color using **12 Units / 5 Actions / 3 Items**, with no duplicate cards in that generated deck.
+- The current web playtest loads curated **40-card two-color LAB decks** from `test-decks.json`, using the 26 Units / 8 Actions / 6 Items test skeleton.
 - Leaders are tracked separately in [leaders.json](./leaders.json), with a human-readable roster in [leaders.md](./leaders.md).
 
 A two-color deck currently has access to **60 unique cards** before copy limits, giving a 40-card deck meaningful cuts and alternate packages.
@@ -74,6 +74,10 @@ Each two-color pair has a shared Trait/theme so tribal decks are not locked to o
 | Makeshift | Trash Baron | Scrap / recycling | 21 | Scavenging, Vermin, recursion, Repurpose/Scrap synergy |
 | Stubborn | HOA President | Control | 24 | Guard, blocking, denial |
 | Kamikaze | Backyard Wrestler | Death / sacrifice | 20 | Combat survival, expendable bodies, and death-value identity |
+
+## Leader Vulnerability
+
+Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **Vulnerable** until it readies. A Vulnerable Leader may be attacked directly, bypassing normal Unit protection.
 
 ## Design Rules
 
