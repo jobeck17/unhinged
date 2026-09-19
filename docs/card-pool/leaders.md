@@ -61,13 +61,13 @@ Leaders use a shared chassis:
 **Color:** Makeshift  
 **Health:** 21  
 **Traits:** Human • Scavenger  
-**Role:** Scrap / Recycling
+**Role:** Junk / Recycling
 
-**Passive — Waste Not:** The first time each round you Repurpose a card, gain 1 temporary resource that may only be spent on a Makeshift card or Item this round.
+**Passive — Waste Not:** The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
 
-**Exhaust — I Can Use That:** Repurpose a card from your discard. This does not count against your normal once-per-round Repurpose.
+**Exhaust — I Can Use That:** Play an Item from your Junk Pile, paying its normal cost.
 
-> **Resource-engine note:** Trash Baron's exact wording is the most provisional because Repurpose / Scrap is still being finalized.
+ > **Junk-engine note:** Junk is a capped face-up synergy zone, not a Resource source.
 
 ---
 
