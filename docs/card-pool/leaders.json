@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "leaders": [
     {
       "id": "L001",
@@ -9,7 +9,9 @@
       "health": 18,
       "traits": [
         "Human",
-        "Florida Man"
+        "Florida Man",
+        "Daredevil",
+        "Menace"
       ],
       "role": "Aggro / Items",
       "passive": "You may play Items from your discard by paying their normal cost. Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.",
@@ -26,8 +28,9 @@
       "health": 22,
       "traits": [
         "Human",
-        "Coach",
-        "Team"
+        "Team",
+        "Authority",
+        "Hustler"
       ],
       "role": "Midrange / Team",
       "passive": "The first time each round you deploy a Unit costing 3 or more, it gets +1 Guard this round.",
@@ -43,13 +46,16 @@
       "color": "Crooked",
       "health": 20,
       "traits": [
-        "Hacker"
+        "Hacker",
+        "Sketchy",
+        "Saboteur",
+        "Hustler"
       ],
       "role": "Tempo / Actions",
       "passive": "The first time each round you play an Action that targets an enemy Unit, that Unit gets -1 Power this round.",
       "active": {
         "cost": "Exhaust",
-        "text": "Ready one of your exhausted Units. It cannot attack this round."
+        "text": "Ready one of your exhausted Units."
       },
       "status": "provisional"
     },
@@ -60,7 +66,9 @@
       "health": 21,
       "traits": [
         "Human",
-        "Scavenger"
+        "Scavenger",
+        "Vermin",
+        "Sketchy"
       ],
       "role": "Junk / Recycling",
       "passive": "The first time each round an Item enters your Junk Pile, draw a card, then discard a card.",
@@ -74,10 +82,12 @@
       "id": "L005",
       "name": "HOA President",
       "color": "Stubborn",
-      "health": 21,
+      "health": 20,
       "traits": [
         "Human",
-        "Authority"
+        "Authority",
+        "Team",
+        "Menace"
       ],
       "role": "Control / Defense",
       "passive": "The first Unit you control that blocks each round gets +1 Guard this round.",
@@ -94,7 +104,9 @@
       "health": 20,
       "traits": [
         "Human",
-        "Daredevil"
+        "Daredevil",
+        "Performer",
+        "Fanatic"
       ],
       "role": "Death / Sacrifice",
       "passive": "Whenever one of your Units dies, ready one exhausted Resource.",
@@ -107,6 +119,8 @@
   ],
   "sharedRules": {
     "activeAbility": "A Leader's Exhaust ability may be used once while that Leader is ready. Using it exhausts the Leader.",
-    "vulnerable": "An exhausted Leader is Vulnerable until it readies. A Vulnerable Leader may be attacked directly, bypassing normal Unit protection."
+    "vulnerable": "An exhausted Leader is Vulnerable until it readies. A Vulnerable Leader may be attacked directly, bypassing normal Unit protection.",
+    "explosive": "An Explosive blocker retaliates even if it is defeated by the incoming attack.",
+    "slowpoke": "A Slowpoke Unit does not deal retaliation damage when it blocks."
   }
 }

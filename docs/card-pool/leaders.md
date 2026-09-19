@@ -1,29 +1,20 @@
 # Unhinged Leaders
 
-> Working Leader roster. Health, passive abilities, active abilities, Traits, and wording remain subject to playtest tuning.
+> Working Alpha 0.03 “Mongo” Leader roster. All six Leaders use exactly four Traits in the current LAB build.
 
-Leaders use a shared chassis:
-
-- **Name**
-- **Color**
-- **Health**
-- **Traits**
-- **Passive ability**
-- **Exhaust ability**
-- Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **Vulnerable** until it readies, and a Vulnerable Leader may be attacked directly, bypassing normal Unit protection.
-- Resource-specific text only when it is central to that Leader's identity
+Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **Vulnerable** until it readies; a Vulnerable Leader may be attacked directly, bypassing normal Unit protection.
 
 ## Florida Man
 
 **ID:** L001  
 **Color:** Reckless  
 **Health:** 18  
-**Traits:** Human • Florida Man  
+**Traits:** Human • Florida Man • Daredevil • Menace  
 **Role:** Aggro / Items
 
-**Passive — Hold My Beer:** You may play Items from your discard by paying their normal cost. Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.
+**Passive:** You may play Items from your discard by paying their normal cost. Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.
 
-**Exhaust — Improvised Solution:** Dismiss an Item you control. A Unit you control gets +2 Power this round.
+**Exhaust:** Dismiss an Item you control. A Unit you control gets +2 Power this round.
 
 ---
 
@@ -32,12 +23,12 @@ Leaders use a shared chassis:
 **ID:** L002  
 **Color:** Unruly  
 **Health:** 22  
-**Traits:** Human • Coach • Team  
+**Traits:** Human • Team • Authority • Hustler  
 **Role:** Midrange / Team
 
-**Passive — Good Hustle:** The first time each round you deploy a Unit costing 3 or more, it gets +1 Guard this round.
+**Passive:** The first time each round you deploy a Unit costing 3 or more, it gets +1 Guard this round.
 
-**Exhaust — Shake It Off:** Choose a Unit you control. It gets +1 Power and +1 Guard this round.
+**Exhaust:** Choose a Unit you control. It gets +1 Power and +1 Guard this round.
 
 ---
 
@@ -46,12 +37,12 @@ Leaders use a shared chassis:
 **ID:** L003  
 **Color:** Crooked  
 **Health:** 20  
-**Traits:** Hacker  
+**Traits:** Hacker • Sketchy • Saboteur • Hustler  
 **Role:** Tempo / Actions
 
-**Passive — Exploit:** The first time each round you play an Action that targets an enemy Unit, that Unit gets -1 Power this round.
+**Passive:** The first time each round you play an Action that targets an enemy Unit, that Unit gets -1 Power this round.
 
-**Exhaust — Backdoor:** Ready one of your exhausted Units. It cannot attack this round.
+**Exhaust:** Ready one of your exhausted Units.
 
 ---
 
@@ -60,14 +51,12 @@ Leaders use a shared chassis:
 **ID:** L004  
 **Color:** Makeshift  
 **Health:** 21  
-**Traits:** Human • Scavenger  
+**Traits:** Human • Scavenger • Vermin • Sketchy  
 **Role:** Junk / Recycling
 
-**Passive — Waste Not:** The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
+**Passive:** The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
 
-**Exhaust — I Can Use That:** Play an Item from your Junk Pile, paying its normal cost.
-
- > **Junk-engine note:** Junk is a capped face-up synergy zone, not a Resource source.
+**Exhaust:** Play an Item from your Junk Pile, paying its normal cost.
 
 ---
 
@@ -75,43 +64,31 @@ Leaders use a shared chassis:
 
 **ID:** L005  
 **Color:** Stubborn  
-**Health:** 21  
-**Traits:** Human • Authority  
+**Health:** 20  
+**Traits:** Human • Authority • Team • Menace  
 **Role:** Control / Defense
 
-**Passive — Not Approved:** The first Unit you control that blocks each round gets +1 Guard this round.
+**Passive:** The first Unit you control that blocks each round gets +1 Guard this round.
 
-**Exhaust — Violation Notice:** Choose an enemy Unit. It gets -1 Power this round.
+**Exhaust:** Choose an enemy Unit. It gets -1 Power this round.
 
 ---
 
 ## Backyard Wrestler
 
 **ID:** L006  
-**Color:** Kamikaze *(working color name)*  
+**Color:** Kamikaze  
 **Health:** 20  
-**Traits:** Human • Daredevil  
+**Traits:** Human • Daredevil • Performer • Fanatic  
 **Role:** Death / Sacrifice
 
-**Passive — Keep Rolling:** Whenever one of your Units dies, ready one exhausted Resource.
+**Passive:** Whenever one of your Units dies, ready one exhausted Resource.
 
-**Exhaust — Send It Anyway:** Choose a Unit you control. It gets +2 Power this round. If it dies this round, draw a card.
+**Exhaust:** Choose a Unit you control. It gets +2 Power this round. If it dies this round, draw a card.
 
 ---
 
-## Current Color-to-Leader Mapping
+## Shared Keywords
 
-| Color | Leader |
-|---|---|
-| Reckless | Florida Man |
-| Unruly | Little League Coach |
-| Crooked | ROOT |
-| Makeshift | Trash Baron |
-| Stubborn | HOA President |
-| Kamikaze | Backyard Wrestler |
-
-## Source of Truth
-
-- Machine-readable Leader data: [leaders.json](./leaders.json)
-- Machine-readable card pool: [cards.json](./cards.json)
-- Curated simulator decks: [test-decks.json](./test-decks.json)
+- **Explosive:** An Explosive blocker retaliates even if it is defeated by the incoming attack.
+- **Slowpoke:** A Slowpoke Unit does not deal retaliation damage when it blocks.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "poolTarget": {
     "colors": 6,
     "cardsPerColor": 30,
@@ -53,7 +53,8 @@
         "Animal",
         "Menace"
       ],
-      "text": "Vanilla."
+      "text": "Vanilla.",
+      "keywords": []
     },
     {
       "id": "U002",
@@ -67,7 +68,8 @@
         "Human",
         "Party"
       ],
-      "text": "When this attacks, another Party Unit gets +1 Power this round."
+      "text": "When this attacks, another Party Unit gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U003",
@@ -82,7 +84,8 @@
         "Florida Man",
         "Daredevil"
       ],
-      "text": "Whenever you dismiss an Item, this gets +1 Power this round."
+      "text": "Whenever you dismiss an Item, this gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U004",
@@ -96,7 +99,8 @@
         "Human",
         "Outlaw"
       ],
-      "text": "When this attacks, you may discard a card. If you do, it gets +2 Power this attack."
+      "text": "When this attacks, you may discard a card. If you do, it gets +2 Power this attack.",
+      "keywords": []
     },
     {
       "id": "U005",
@@ -110,7 +114,8 @@
         "Human",
         "Menace"
       ],
-      "text": "The first time this would take combat damage while attacking each round, you may return it to your hand instead."
+      "text": "The first time this would take combat damage while attacking each round, you may return it to your hand instead.",
+      "keywords": []
     },
     {
       "id": "U006",
@@ -125,7 +130,8 @@
         "Party",
         "Performer"
       ],
-      "text": "Gets +1 Power while you control another Party Unit."
+      "text": "Gets +1 Power while you control another Party Unit.",
+      "keywords": []
     },
     {
       "id": "U007",
@@ -139,7 +145,8 @@
         "Human",
         "Menace"
       ],
-      "text": "When this attacks, reveal the top card of your deck. If it is a Unit, this gets +2 Power this round."
+      "text": "When this attacks, reveal the top card of your deck. If it is a Unit, this gets +2 Power this round.",
+      "keywords": []
     },
     {
       "id": "U008",
@@ -153,7 +160,8 @@
         "Human",
         "Daredevil"
       ],
-      "text": "Whenever this survives combat while attacking, draw a card."
+      "text": "Whenever this survives combat while attacking, draw a card.",
+      "keywords": []
     },
     {
       "id": "U009",
@@ -168,7 +176,8 @@
         "Daredevil",
         "Menace"
       ],
-      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack."
+      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack.",
+      "keywords": []
     },
     {
       "id": "U010",
@@ -182,7 +191,8 @@
         "Human",
         "Party"
       ],
-      "text": "Gets +1 Power while another Party Unit is attacking."
+      "text": "Gets +1 Power while another Party Unit is attacking.",
+      "keywords": []
     },
     {
       "id": "U011",
@@ -196,7 +206,8 @@
         "Human",
         "Outlaw"
       ],
-      "text": "When this damages the enemy Leader, draw a card, then discard a card."
+      "text": "When this damages the enemy Leader, draw a card, then discard a card.",
+      "keywords": []
     },
     {
       "id": "U012",
@@ -210,7 +221,8 @@
         "Human",
         "Daredevil"
       ],
-      "text": "Whenever this survives combat while attacking, ready it. It cannot attack again this round."
+      "text": "Whenever this survives combat while attacking, ready it. It cannot attack again this round.",
+      "keywords": []
     },
     {
       "id": "U013",
@@ -224,7 +236,8 @@
         "Human",
         "Menace"
       ],
-      "text": "When deployed, an enemy Unit loses 1 Guard this round."
+      "text": "When deployed, an enemy Unit loses 1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U014",
@@ -239,7 +252,8 @@
         "Outlaw",
         "Party"
       ],
-      "text": "Whenever another Outlaw or Party Unit attacks, this gets +1 Power this round."
+      "text": "Whenever another Outlaw or Party Unit attacks, this gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U015",
@@ -253,7 +267,8 @@
         "Human",
         "Daredevil"
       ],
-      "text": "When this dies during your turn, deal 1 damage to a Unit."
+      "text": "When this dies during your turn, deal 1 damage to a Unit.",
+      "keywords": []
     },
     {
       "id": "U016",
@@ -267,7 +282,8 @@
         "Human",
         "Florida Man"
       ],
-      "text": "When this attacks, dismiss one of your Items or deal 2 damage to this."
+      "text": "When this attacks, dismiss one of your Items or deal 2 damage to this.",
+      "keywords": []
     },
     {
       "id": "U017",
@@ -282,7 +298,8 @@
         "Party",
         "Daredevil"
       ],
-      "text": "When another Daredevil attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack."
+      "text": "When another Daredevil attacks, you may deal 1 damage to it. If you do, it gets +2 Power this attack.",
+      "keywords": []
     },
     {
       "id": "U018",
@@ -296,7 +313,8 @@
         "Human",
         "Menace"
       ],
-      "text": "When this attacks a damaged Unit, it gets +1 Power this attack."
+      "text": "When this attacks a damaged Unit, it gets +1 Power this attack.",
+      "keywords": []
     },
     {
       "id": "U019",
@@ -304,8 +322,12 @@
       "type": "Action",
       "name": "Make a Scene",
       "cost": 1,
-      "traits": [],
-      "text": "A Unit gets +2 Power this round."
+      "traits": [
+        "Menace",
+        "Party"
+      ],
+      "text": "A Unit gets +2 Power this round.",
+      "keywords": []
     },
     {
       "id": "U020",
@@ -313,8 +335,11 @@
       "type": "Action",
       "name": "Hold My Beer",
       "cost": 1,
-      "traits": [],
-      "text": "A Unit gets +3 Power this attack. Deal 1 damage to that Unit after combat."
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "A Unit gets +3 Power this attack. Deal 1 damage to that Unit after combat.",
+      "keywords": []
     },
     {
       "id": "U021",
@@ -322,8 +347,11 @@
       "type": "Action",
       "name": "Send It!",
       "cost": 1,
-      "traits": [],
-      "text": "A Unit gets +3 Power this attack and -1 Guard this round."
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "A Unit gets +3 Power this attack and -1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U022",
@@ -331,8 +359,12 @@
       "type": "Action",
       "name": "Fireworks Incident",
       "cost": 2,
-      "traits": [],
-      "text": "Deal 2 damage to one of your Units and 2 damage to an enemy Unit. If your Unit survives, draw a card, then discard a card."
+      "traits": [
+        "Daredevil",
+        "Saboteur"
+      ],
+      "text": "Deal 2 damage to one of your Units and 2 damage to an enemy Unit. If your Unit survives, draw a card, then discard a card.",
+      "keywords": []
     },
     {
       "id": "U023",
@@ -340,8 +372,11 @@
       "type": "Action",
       "name": "No, No, Watch This",
       "cost": 1,
-      "traits": [],
-      "text": "Ready a Unit that attacked this round. It cannot attack again this round. It gets +2 Power until end of round."
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "Ready a Unit that attacked this round. It cannot attack again this round. It gets +2 Power until end of round.",
+      "keywords": []
     },
     {
       "id": "U024",
@@ -349,8 +384,11 @@
       "type": "Action",
       "name": "No, I'm Fine",
       "cost": 2,
-      "traits": [],
-      "text": "Draw 2 cards. Deal 1 damage to your Leader."
+      "traits": [
+        "Menace"
+      ],
+      "text": "Draw 2 cards. Deal 1 damage to your Leader.",
+      "keywords": []
     },
     {
       "id": "U025",
@@ -358,8 +396,11 @@
       "type": "Action",
       "name": "Overcommit",
       "cost": 1,
-      "traits": [],
-      "text": "An attacking Unit gets +4 Power this attack. It does not ready next round."
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "An attacking Unit gets +4 Power this attack. It does not ready next round.",
+      "keywords": []
     },
     {
       "id": "U026",
@@ -367,8 +408,12 @@
       "type": "Action",
       "name": "Crash Through",
       "cost": 2,
-      "traits": [],
-      "text": "An attacker gets +2 Power this attack. Excess combat damage may reach the enemy Leader."
+      "traits": [
+        "Menace",
+        "Daredevil"
+      ],
+      "text": "An attacker gets +2 Power this attack. Excess combat damage may reach the enemy Leader.",
+      "keywords": []
     },
     {
       "id": "U027",
@@ -376,8 +421,12 @@
       "type": "Item",
       "name": "Bath Salts",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. Attached Unit gains Undead. Dismiss: it gets +2 Power this round."
+      "traits": [
+        "Florida Man",
+        "Sketchy"
+      ],
+      "text": "Attach to a Unit. Attached Unit gains Undead. Dismiss: it gets +2 Power this round.",
+      "keywords": []
     },
     {
       "id": "U028",
@@ -385,8 +434,12 @@
       "type": "Item",
       "name": "Gas Station Pills",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. +1 Power. When dismissed, ready attached Unit, then deal 1 damage to it."
+      "traits": [
+        "Florida Man",
+        "Daredevil"
+      ],
+      "text": "Attach to a Unit. +1 Power. When dismissed, ready attached Unit, then deal 1 damage to it.",
+      "keywords": []
     },
     {
       "id": "U029",
@@ -394,8 +447,12 @@
       "type": "Item",
       "name": "Roman Candle",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. The first time attached Unit attacks each round, deal 1 damage to an enemy Unit, then dismiss this."
+      "traits": [
+        "Daredevil",
+        "Party"
+      ],
+      "text": "Attach to a Unit. The first time attached Unit attacks each round, deal 1 damage to an enemy Unit, then dismiss this.",
+      "keywords": []
     },
     {
       "id": "U030",
@@ -403,8 +460,12 @@
       "type": "Item",
       "name": "Cooler Full of Bad Ideas",
       "cost": 1,
-      "traits": [],
-      "text": "Dismiss: discard a card, then draw 2."
+      "traits": [
+        "Party",
+        "Florida Man"
+      ],
+      "text": "Dismiss: discard a card, then draw 2.",
+      "keywords": []
     },
     {
       "id": "U031",
@@ -418,7 +479,8 @@
         "Human",
         "Team"
       ],
-      "text": ""
+      "text": "",
+      "keywords": []
     },
     {
       "id": "U032",
@@ -433,7 +495,8 @@
         "Team",
         "Hustler"
       ],
-      "text": "When deployed, draw a card, then discard a card."
+      "text": "When deployed, draw a card, then discard a card.",
+      "keywords": []
     },
     {
       "id": "U033",
@@ -447,7 +510,8 @@
         "Human",
         "Hustler"
       ],
-      "text": "Whenever you deploy another Hustler, this gets +1 Power this round."
+      "text": "Whenever you deploy another Hustler, this gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U034",
@@ -461,7 +525,8 @@
         "Human",
         "Performer"
       ],
-      "text": "When deployed, create a 1/1 Rabbit."
+      "text": "When deployed, create a 1/1 Rabbit.",
+      "keywords": []
     },
     {
       "id": "U035",
@@ -476,7 +541,8 @@
         "Party",
         "Performer"
       ],
-      "text": "Other Party Units get +1 Guard while this is ready."
+      "text": "Other Party Units get +1 Guard while this is ready.",
+      "keywords": []
     },
     {
       "id": "U036",
@@ -490,7 +556,8 @@
         "Human",
         "Team"
       ],
-      "text": "Vanilla."
+      "text": "Vanilla.",
+      "keywords": []
     },
     {
       "id": "U037",
@@ -504,7 +571,8 @@
         "Human",
         "Hustler"
       ],
-      "text": "Whenever another Unit enters your field, you may give it +1 Power this round."
+      "text": "Whenever another Unit enters your field, you may give it +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U038",
@@ -519,7 +587,8 @@
         "Performer",
         "Fanatic"
       ],
-      "text": "When another Performer or Fanatic is deployed, heal 1 damage from a Unit."
+      "text": "When another Performer or Fanatic is deployed, heal 1 damage from a Unit.",
+      "keywords": []
     },
     {
       "id": "U039",
@@ -533,7 +602,8 @@
         "Human",
         "Team"
       ],
-      "text": "When another Team Unit enters your field, it gets +1 Guard this round."
+      "text": "When another Team Unit enters your field, it gets +1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U040",
@@ -548,7 +618,8 @@
         "Team",
         "Hustler"
       ],
-      "text": "Whenever you buff another Unit, this gets +1 Power this round."
+      "text": "Whenever you buff another Unit, this gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U041",
@@ -563,7 +634,8 @@
         "Team",
         "Hustler"
       ],
-      "text": "When deployed, look at the top two cards of your deck. You may reveal a Team Unit and put it into your hand."
+      "text": "When deployed, look at the top two cards of your deck. You may reveal a Team Unit and put it into your hand.",
+      "keywords": []
     },
     {
       "id": "U042",
@@ -578,7 +650,8 @@
         "Party",
         "Performer"
       ],
-      "text": "When deployed, another Unit gets +1 Power and +1 Guard this round."
+      "text": "When deployed, another Unit gets +1 Power and +1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U043",
@@ -593,7 +666,8 @@
         "Performer",
         "Fanatic"
       ],
-      "text": "Whenever another Fanatic or Performer enters, heal 1 damage from this."
+      "text": "Whenever another Fanatic or Performer enters, heal 1 damage from this.",
+      "keywords": []
     },
     {
       "id": "U044",
@@ -608,7 +682,8 @@
         "Hustler",
         "Performer"
       ],
-      "text": "Your 1-cost and 2-cost Units get +1 Power during your turn."
+      "text": "Your 1-cost and 2-cost Units get +1 Power during your turn.",
+      "keywords": []
     },
     {
       "id": "U045",
@@ -622,7 +697,8 @@
         "Human",
         "Team"
       ],
-      "text": "When deployed, another Unit you control gets +2 Guard this round."
+      "text": "When deployed, another Unit you control gets +2 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U046",
@@ -636,7 +712,8 @@
         "Party",
         "Team"
       ],
-      "text": "Other Party Units get +1 Power."
+      "text": "Other Party Units get +1 Power.",
+      "keywords": []
     },
     {
       "id": "U047",
@@ -650,7 +727,8 @@
         "Human",
         "Team"
       ],
-      "text": "Gets +1 Power while you control a Coach."
+      "text": "Gets +1 Power while you control a Coach.",
+      "keywords": []
     },
     {
       "id": "U048",
@@ -665,7 +743,8 @@
         "Team",
         "Performer"
       ],
-      "text": "Whenever another Performer gets a buff, this gets +1 Guard this round."
+      "text": "Whenever another Performer gets a buff, this gets +1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U049",
@@ -673,8 +752,12 @@
       "type": "Action",
       "name": "Group Text",
       "cost": 1,
-      "traits": [],
-      "text": "Draw 2, then discard 1."
+      "traits": [
+        "Team",
+        "Hustler"
+      ],
+      "text": "Draw 2, then discard 1.",
+      "keywords": []
     },
     {
       "id": "U050",
@@ -682,8 +765,11 @@
       "type": "Action",
       "name": "Everybody Bats",
       "cost": 2,
-      "traits": [],
-      "text": "Up to three Units you control get +1 Power this round. If you chose three Units, draw a card."
+      "traits": [
+        "Party"
+      ],
+      "text": "Up to three Units you control get +1 Power this round. If you chose three Units, draw a card.",
+      "keywords": []
     },
     {
       "id": "U051",
@@ -691,8 +777,11 @@
       "type": "Action",
       "name": "Carpool",
       "cost": 1,
-      "traits": [],
-      "text": "Return one of your Units to hand. Deploy a Unit costing the same or less for 1 less."
+      "traits": [
+        "Hustler"
+      ],
+      "text": "Return one of your Units to hand. Deploy a Unit costing the same or less for 1 less.",
+      "keywords": []
     },
     {
       "id": "U052",
@@ -700,8 +789,11 @@
       "type": "Action",
       "name": "Everybody Gets a Turn",
       "cost": 2,
-      "traits": [],
-      "text": "Up to three Units get +1 Guard this round."
+      "traits": [
+        "Party"
+      ],
+      "text": "Up to three Units get +1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U053",
@@ -709,8 +801,12 @@
       "type": "Action",
       "name": "Rally the Group Chat",
       "cost": 2,
-      "traits": [],
-      "text": "Choose a Trait. Up to three Units you control with that Trait get +1 Power this round."
+      "traits": [
+        "Team",
+        "Hustler"
+      ],
+      "text": "Choose a Trait. Up to three Units you control with that Trait get +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U054",
@@ -718,8 +814,11 @@
       "type": "Action",
       "name": "Roll Call",
       "cost": 1,
-      "traits": [],
-      "text": "If you control three or more Units, draw a card."
+      "traits": [
+        "Hustler"
+      ],
+      "text": "If you control three or more Units, draw a card.",
+      "keywords": []
     },
     {
       "id": "U055",
@@ -727,8 +826,11 @@
       "type": "Action",
       "name": "Pep Talk",
       "cost": 1,
-      "traits": [],
-      "text": "A Unit gets +1 Power and +2 Guard this round."
+      "traits": [
+        "Performer"
+      ],
+      "text": "A Unit gets +1 Power and +2 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U056",
@@ -736,8 +838,11 @@
       "type": "Action",
       "name": "Bring a Friend",
       "cost": 2,
-      "traits": [],
-      "text": "The next Unit you deploy this round costs 1 less if you already deployed a Unit this round."
+      "traits": [
+        "Party"
+      ],
+      "text": "The next Unit you deploy this round costs 1 less if you already deployed a Unit this round.",
+      "keywords": []
     },
     {
       "id": "U057",
@@ -745,8 +850,11 @@
       "type": "Item",
       "name": "Participation Trophy",
       "cost": 1,
-      "traits": [],
-      "text": "Attached Unit gets +1 Guard. When it survives combat, you may move this Item to another Unit."
+      "traits": [
+        "Team"
+      ],
+      "text": "Attached Unit gets +1 Guard. When it survives combat, you may move this Item to another Unit.",
+      "keywords": []
     },
     {
       "id": "U058",
@@ -754,8 +862,11 @@
       "type": "Item",
       "name": "Hacky Sack",
       "cost": 1,
-      "traits": [],
-      "text": "Exhaust: another Performer gets +1 Power and +1 Guard this round."
+      "traits": [
+        "Performer"
+      ],
+      "text": "Exhaust: another Performer gets +1 Power and +1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U059",
@@ -763,8 +874,11 @@
       "type": "Item",
       "name": "Orange Slices",
       "cost": 1,
-      "traits": [],
-      "text": "Dismiss: heal 2 damage from a Team Unit."
+      "traits": [
+        "Team"
+      ],
+      "text": "Dismiss: heal 2 damage from a Team Unit.",
+      "keywords": []
     },
     {
       "id": "U060",
@@ -772,8 +886,12 @@
       "type": "Item",
       "name": "Portable Bluetooth Speaker",
       "cost": 1,
-      "traits": [],
-      "text": "Exhaust: a Party or Performer gets +1 Power this round."
+      "traits": [
+        "Party",
+        "Performer"
+      ],
+      "text": "Exhaust: a Party or Performer gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U061",
@@ -787,7 +905,8 @@
         "Human",
         "Sketchy"
       ],
-      "text": ""
+      "text": "",
+      "keywords": []
     },
     {
       "id": "U062",
@@ -801,7 +920,8 @@
         "Human",
         "Hustler"
       ],
-      "text": "When deployed, an enemy Unit gets -1 Power this round."
+      "text": "When deployed, an enemy Unit gets -1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U063",
@@ -815,7 +935,8 @@
         "Human",
         "Authority"
       ],
-      "text": "Exhaust: a Unit with Power 2 or less cannot attack this round."
+      "text": "Exhaust: a Unit with Power 2 or less cannot attack this round.",
+      "keywords": []
     },
     {
       "id": "U064",
@@ -829,7 +950,8 @@
         "Human",
         "Sketchy"
       ],
-      "text": "When deployed, return a 1-cost Unit to its owner's hand."
+      "text": "When deployed, return a 1-cost Unit to its owner's hand.",
+      "keywords": []
     },
     {
       "id": "U065",
@@ -843,7 +965,8 @@
         "Human",
         "Outlaw"
       ],
-      "text": "When this damages a Unit, exhaust that Unit."
+      "text": "When this damages a Unit, exhaust that Unit.",
+      "keywords": []
     },
     {
       "id": "U066",
@@ -858,7 +981,8 @@
         "Authority",
         "Hustler"
       ],
-      "text": "Whenever the opponent plays their second card in a round, they discard a card, then draw a card."
+      "text": "Whenever the opponent plays their second card in a round, they discard a card, then draw a card.",
+      "keywords": []
     },
     {
       "id": "U067",
@@ -873,7 +997,8 @@
         "Sketchy",
         "Saboteur"
       ],
-      "text": "When deployed, exhaust an Item or Unit."
+      "text": "When deployed, exhaust an Item or Unit.",
+      "keywords": []
     },
     {
       "id": "U068",
@@ -887,7 +1012,8 @@
         "Human",
         "Saboteur"
       ],
-      "text": "Whenever you play an Action targeting an enemy card, this gets +1 Power this round."
+      "text": "Whenever you play an Action targeting an enemy card, this gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U069",
@@ -901,7 +1027,8 @@
         "Human",
         "Hustler"
       ],
-      "text": "When deployed, discard a card. If you do, draw a card."
+      "text": "When deployed, discard a card. If you do, draw a card.",
+      "keywords": []
     },
     {
       "id": "U070",
@@ -916,7 +1043,8 @@
         "Authority",
         "Sketchy"
       ],
-      "text": "When deployed, exhaust an Item."
+      "text": "When deployed, exhaust an Item.",
+      "keywords": []
     },
     {
       "id": "U071",
@@ -930,7 +1058,8 @@
         "Human",
         "Hustler"
       ],
-      "text": "Look at the top card of an opponent's deck. You may put it on the bottom."
+      "text": "Look at the top card of an opponent's deck. You may put it on the bottom.",
+      "keywords": []
     },
     {
       "id": "U072",
@@ -945,7 +1074,8 @@
         "Hustler",
         "Outlaw"
       ],
-      "text": "The first Item you play each round costs 1 less."
+      "text": "The first Item you play each round costs 1 less.",
+      "keywords": []
     },
     {
       "id": "U073",
@@ -959,7 +1089,8 @@
         "Human",
         "Authority"
       ],
-      "text": "The first enemy Unit deployed each round gets -1 Power this round."
+      "text": "The first enemy Unit deployed each round gets -1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U074",
@@ -974,7 +1105,8 @@
         "Outlaw",
         "Saboteur"
       ],
-      "text": "When deployed, an enemy Unit cannot block this round."
+      "text": "When deployed, an enemy Unit cannot block this round.",
+      "keywords": []
     },
     {
       "id": "U075",
@@ -988,7 +1120,8 @@
         "Human",
         "Sketchy"
       ],
-      "text": "When deployed, you may put an Action from your discard on top of your deck."
+      "text": "When deployed, you may put an Action from your discard on top of your deck.",
+      "keywords": []
     },
     {
       "id": "U076",
@@ -1003,7 +1136,8 @@
         "Hustler",
         "Saboteur"
       ],
-      "text": "The first time each round an enemy Unit receives a buff, give it -1 Power this round."
+      "text": "The first time each round an enemy Unit receives a buff, give it -1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U077",
@@ -1018,7 +1152,8 @@
         "Hustler",
         "Saboteur"
       ],
-      "text": "When deployed, choose a Trait on another Unit. This gains that Trait while in play."
+      "text": "When deployed, choose a Trait on another Unit. This gains that Trait while in play.",
+      "keywords": []
     },
     {
       "id": "U078",
@@ -1032,7 +1167,8 @@
         "Human",
         "Authority"
       ],
-      "text": "The first enemy Action targeting one of your Units each round costs 1 additional resource."
+      "text": "The first enemy Action targeting one of your Units each round costs 1 additional resource.",
+      "keywords": []
     },
     {
       "id": "U079",
@@ -1040,8 +1176,11 @@
       "type": "Action",
       "name": "Call Security",
       "cost": 1,
-      "traits": [],
-      "text": "Exhaust a Unit."
+      "traits": [
+        "Authority"
+      ],
+      "text": "Exhaust a Unit.",
+      "keywords": []
     },
     {
       "id": "U080",
@@ -1049,8 +1188,11 @@
       "type": "Action",
       "name": "Wrong Address",
       "cost": 1,
-      "traits": [],
-      "text": "Return a Unit costing 2 or less to its owner's hand."
+      "traits": [
+        "Sketchy"
+      ],
+      "text": "Return a Unit costing 2 or less to its owner's hand.",
+      "keywords": []
     },
     {
       "id": "U081",
@@ -1058,8 +1200,12 @@
       "type": "Action",
       "name": "Have You Tried Turning It Off?",
       "cost": 2,
-      "traits": [],
-      "text": "Exhaust a Unit. It does not ready during its controller's next ready step."
+      "traits": [
+        "Hacker",
+        "Saboteur"
+      ],
+      "text": "Exhaust a Unit. It does not ready during its controller's next ready step.",
+      "keywords": []
     },
     {
       "id": "U082",
@@ -1067,8 +1213,12 @@
       "type": "Action",
       "name": "Terms and Conditions",
       "cost": 1,
-      "traits": [],
-      "text": "A Unit loses its abilities this round."
+      "traits": [
+        "Authority",
+        "Hustler"
+      ],
+      "text": "A Unit loses its abilities this round.",
+      "keywords": []
     },
     {
       "id": "U083",
@@ -1076,8 +1226,12 @@
       "type": "Action",
       "name": "Redirect",
       "cost": 2,
-      "traits": [],
-      "text": "Change the target of an Action with a single legal target."
+      "traits": [
+        "Hacker",
+        "Sketchy"
+      ],
+      "text": "Change the target of an Action with a single legal target.",
+      "keywords": []
     },
     {
       "id": "U084",
@@ -1085,8 +1239,12 @@
       "type": "Action",
       "name": "Shakedown",
       "cost": 1,
-      "traits": [],
-      "text": "Opponent chooses: discard a card or pay 1 resource."
+      "traits": [
+        "Outlaw",
+        "Hustler"
+      ],
+      "text": "Opponent chooses: discard a card or pay 1 resource.",
+      "keywords": []
     },
     {
       "id": "U085",
@@ -1094,8 +1252,12 @@
       "type": "Action",
       "name": "Administrative Fee",
       "cost": 1,
-      "traits": [],
-      "text": "Choose a Unit. Its controller may pay 1 resource. If they do not, it gets -2 Power this round."
+      "traits": [
+        "Authority",
+        "Hustler"
+      ],
+      "text": "Choose a Unit. Its controller may pay 1 resource. If they do not, it gets -2 Power this round.",
+      "keywords": []
     },
     {
       "id": "U086",
@@ -1103,8 +1265,12 @@
       "type": "Action",
       "name": "Backdoor",
       "cost": 2,
-      "traits": [],
-      "text": "Play after an opponent spends their last resource. Ready one of your Units."
+      "traits": [
+        "Hacker",
+        "Saboteur"
+      ],
+      "text": "Play after an opponent spends their last resource. Ready one of your Units.",
+      "keywords": []
     },
     {
       "id": "U087",
@@ -1112,8 +1278,12 @@
       "type": "Item",
       "name": "Burner Phone",
       "cost": 1,
-      "traits": [],
-      "text": "Dismiss: return one of your Units to your hand."
+      "traits": [
+        "Sketchy",
+        "Outlaw"
+      ],
+      "text": "Dismiss: return one of your Units to your hand.",
+      "keywords": []
     },
     {
       "id": "U088",
@@ -1121,8 +1291,12 @@
       "type": "Item",
       "name": "USB Drive You Found in the Parking Lot",
       "cost": 1,
-      "traits": [],
-      "text": "Exhaust, dismiss: look at the top three cards of your deck. You may put an Action among them on top of your deck; put the rest on the bottom."
+      "traits": [
+        "Hacker",
+        "Sketchy"
+      ],
+      "text": "Exhaust, dismiss: look at the top three cards of your deck. You may put an Action among them on top of your deck; put the rest on the bottom.",
+      "keywords": []
     },
     {
       "id": "U089",
@@ -1130,8 +1304,12 @@
       "type": "Item",
       "name": "Flipper Zero-ish Thing That Is Legally Distinct",
       "cost": 1,
-      "traits": [],
-      "text": "Exhaust, dismiss: exhaust an Item or Unit."
+      "traits": [
+        "Hacker",
+        "Saboteur"
+      ],
+      "text": "Exhaust, dismiss: exhaust an Item or Unit.",
+      "keywords": []
     },
     {
       "id": "U090",
@@ -1139,8 +1317,12 @@
       "type": "Item",
       "name": "Spoofed Keycard",
       "cost": 1,
-      "traits": [],
-      "text": "Dismiss: one Unit cannot block this round."
+      "traits": [
+        "Hacker",
+        "Sketchy"
+      ],
+      "text": "Dismiss: one Unit cannot block this round.",
+      "keywords": []
     },
     {
       "id": "U091",
@@ -1154,7 +1336,8 @@
         "Human",
         "Performer"
       ],
-      "text": "When this dies, create a 1/1 Clown."
+      "text": "When this dies, create a 1/1 Clown.",
+      "keywords": []
     },
     {
       "id": "U092",
@@ -1168,7 +1351,8 @@
         "Human",
         "Sketchy"
       ],
-      "text": "Whenever you dismiss an Item, give this +1 Power or +1 Guard this round."
+      "text": "Whenever you dismiss an Item, give this +1 Power or +1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U093",
@@ -1181,9 +1365,11 @@
       "traits": [
         "Animal",
         "Vermin",
-        "Scavenger"
+        "Scavenger",
+        "Undead"
       ],
-      "text": "When this dies, put it on the bottom of your deck."
+      "text": "When this dies, put it on the bottom of your deck.",
+      "keywords": []
     },
     {
       "id": "U094",
@@ -1197,7 +1383,8 @@
         "Human",
         "Florida Man"
       ],
-      "text": "When this dies, you may put an Item from your discard into your Junk Pile."
+      "text": "When this dies, you may put an Item from your discard into your Junk Pile.",
+      "keywords": []
     },
     {
       "id": "U095",
@@ -1211,7 +1398,8 @@
         "Human",
         "Scavenger"
       ],
-      "text": "When deployed, create a 1/1 Cat."
+      "text": "When deployed, create a 1/1 Cat.",
+      "keywords": []
     },
     {
       "id": "U096",
@@ -1225,7 +1413,8 @@
         "Animal",
         "Scavenger"
       ],
-      "text": "Whenever you dismiss an Item, heal 1 damage from this."
+      "text": "Whenever you dismiss an Item, heal 1 damage from this.",
+      "keywords": []
     },
     {
       "id": "U097",
@@ -1236,10 +1425,10 @@
       "power": 2,
       "guard": 5,
       "traits": [
-        "Vehicle",
         "Performer"
       ],
-      "text": "When deployed, create two 1/1 Clowns."
+      "text": "When deployed, create two 1/1 Clowns.",
+      "keywords": []
     },
     {
       "id": "U098",
@@ -1254,7 +1443,8 @@
         "Scavenger",
         "Sketchy"
       ],
-      "text": "The first time each round you dismiss an Item, you may put it into your Junk Pile instead of your discard."
+      "text": "The first time each round you dismiss an Item, you may put it into your Junk Pile instead of your discard.",
+      "keywords": []
     },
     {
       "id": "U099",
@@ -1268,7 +1458,8 @@
         "Animal",
         "Scavenger"
       ],
-      "text": "Gets +1 Guard while you control an Item."
+      "text": "Gets +1 Guard while you control an Item.",
+      "keywords": []
     },
     {
       "id": "U100",
@@ -1282,7 +1473,8 @@
         "Human",
         "Scavenger"
       ],
-      "text": "When equipped with an Item, +1 Power."
+      "text": "Gets +1 Power while you control an Item.",
+      "keywords": []
     },
     {
       "id": "U101",
@@ -1295,9 +1487,11 @@
       "traits": [
         "Animal",
         "Scavenger",
-        "Vermin"
+        "Vermin",
+        "Undead"
       ],
-      "text": "When this dies, you may return an Item from your Junk Pile to your hand."
+      "text": "When this dies, you may return an Item from your Junk Pile to your hand.",
+      "keywords": []
     },
     {
       "id": "U102",
@@ -1309,9 +1503,11 @@
       "guard": 3,
       "traits": [
         "Human",
-        "Sketchy"
+        "Sketchy",
+        "Hacker"
       ],
-      "text": "When deployed, you may dismiss an Item. If you do, draw a card."
+      "text": "When deployed, you may dismiss an Item. If you do, draw a card.",
+      "keywords": []
     },
     {
       "id": "U103",
@@ -1325,7 +1521,8 @@
         "Human",
         "Scavenger"
       ],
-      "text": "Whenever a Cat enters your field, heal 1 damage from a Unit."
+      "text": "Whenever a Cat enters your field, heal 1 damage from a Unit.",
+      "keywords": []
     },
     {
       "id": "U104",
@@ -1337,9 +1534,11 @@
       "guard": 5,
       "traits": [
         "Human",
-        "Sketchy"
+        "Sketchy",
+        "Hacker"
       ],
-      "text": "The first Item you play each round costs 1 less."
+      "text": "The first Item you play each round costs 1 less.",
+      "keywords": []
     },
     {
       "id": "U105",
@@ -1353,7 +1552,8 @@
         "Human",
         "Scavenger"
       ],
-      "text": "When this attacks, you may put an Item from your Junk Pile on top of your deck."
+      "text": "When this attacks, you may put an Item from your Junk Pile on top of your deck.",
+      "keywords": []
     },
     {
       "id": "U106",
@@ -1367,7 +1567,8 @@
         "Animal",
         "Vermin"
       ],
-      "text": "Other Vermin you control get +1 Power."
+      "text": "Other Vermin you control get +1 Power.",
+      "keywords": []
     },
     {
       "id": "U107",
@@ -1381,7 +1582,8 @@
         "Human",
         "Scavenger"
       ],
-      "text": "When deployed, you may attach an Item from your hand to a Unit for 1 less."
+      "text": "When deployed, you may play an Item from your hand for 1 less. If it attaches, attach it to an eligible card.",
+      "keywords": []
     },
     {
       "id": "U108",
@@ -1396,7 +1598,8 @@
         "Scavenger",
         "Hustler"
       ],
-      "text": "Whenever you play an Item from hand, you may discard a card. If you do, draw a card."
+      "text": "Whenever you play an Item from hand, you may discard a card. If you do, draw a card.",
+      "keywords": []
     },
     {
       "id": "U109",
@@ -1404,8 +1607,11 @@
       "type": "Action",
       "name": "Scrounge",
       "cost": 1,
-      "traits": [],
-      "text": "Draw a card. If an Item entered your discard this round, draw 2 instead."
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "Draw a card. If an Item entered your discard this round, draw 2 instead.",
+      "keywords": []
     },
     {
       "id": "U110",
@@ -1413,8 +1619,11 @@
       "type": "Action",
       "name": "I Can Fix That",
       "cost": 1,
-      "traits": [],
-      "text": "Return an Item from your Junk Pile to your hand."
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "Return an Item from your Junk Pile to your hand.",
+      "keywords": []
     },
     {
       "id": "U111",
@@ -1422,8 +1631,11 @@
       "type": "Action",
       "name": "Found This in the Garage",
       "cost": 1,
-      "traits": [],
-      "text": "Reveal the top three cards of your deck. Put an Item among them into your hand."
+      "traits": [
+        "Sketchy"
+      ],
+      "text": "Reveal the top three cards of your deck. Put an Item among them into your hand.",
+      "keywords": []
     },
     {
       "id": "U112",
@@ -1431,8 +1643,11 @@
       "type": "Action",
       "name": "Good as New",
       "cost": 2,
-      "traits": [],
-      "text": "Return a Unit costing 2 or less from your discard to your hand."
+      "traits": [
+        "Undead"
+      ],
+      "text": "Return a Unit costing 2 or less from your discard to your hand.",
+      "keywords": []
     },
     {
       "id": "U113",
@@ -1440,8 +1655,12 @@
       "type": "Action",
       "name": "That's Probably Still Good",
       "cost": 2,
-      "traits": [],
-      "text": "Play an Item from your Junk Pile attached to an eligible Unit, paying 1 less. Dismiss it at end of round."
+      "traits": [
+        "Scavenger",
+        "Sketchy"
+      ],
+      "text": "Play an Item from your Junk Pile, paying 1 less. If it attaches, attach it to an eligible card. Dismiss it at end of round.",
+      "keywords": []
     },
     {
       "id": "U114",
@@ -1449,8 +1668,11 @@
       "type": "Action",
       "name": "Repurpose",
       "cost": 1,
-      "traits": [],
-      "text": "Mill 2 cards. You may put an Item from your discard into your Junk Pile."
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "Mill 2 cards. You may put an Item from your discard into your Junk Pile.",
+      "keywords": []
     },
     {
       "id": "U115",
@@ -1458,8 +1680,11 @@
       "type": "Action",
       "name": "Salvage",
       "cost": 1,
-      "traits": [],
-      "text": "Return a card from your Junk Pile to your hand."
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "Return a card from your Junk Pile to your hand.",
+      "keywords": []
     },
     {
       "id": "U116",
@@ -1467,8 +1692,12 @@
       "type": "Action",
       "name": "Waste Not",
       "cost": 1,
-      "traits": [],
-      "text": "If the opponent ended their last round with unused resources, put the top card of your deck into your Junk Pile."
+      "traits": [
+        "Vermin",
+        "Scavenger"
+      ],
+      "text": "If the opponent ended their last round with unused resources, put the top card of your deck into your Junk Pile.",
+      "keywords": []
     },
     {
       "id": "U117",
@@ -1476,8 +1705,11 @@
       "type": "Item",
       "name": "Duct Tape",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a damaged Unit. It gets +2 Guard."
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "Attach to a damaged Unit. It gets +2 Guard.",
+      "keywords": []
     },
     {
       "id": "U118",
@@ -1485,8 +1717,12 @@
       "type": "Item",
       "name": "Sharks with Freaking Laser Beams",
       "cost": 2,
-      "traits": [],
-      "text": "Attach to a Shark. +1 Power. Exhaust: deal 1 damage to a Unit; if already damaged, deal 2 instead."
+      "traits": [
+        "Hacker",
+        "Sketchy"
+      ],
+      "text": "Attach to a Shark. +1 Power. Exhaust: deal 1 damage to a Unit; if already damaged, deal 2 instead.",
+      "keywords": []
     },
     {
       "id": "U119",
@@ -1494,8 +1730,12 @@
       "type": "Item",
       "name": "Zip Ties",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. +1 Guard. When dismissed, attached Unit gets +1 Power this round."
+      "traits": [
+        "Sketchy",
+        "Scavenger"
+      ],
+      "text": "Attach to a Unit. +1 Guard. When dismissed, attached Unit gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U120",
@@ -1503,8 +1743,12 @@
       "type": "Item",
       "name": "Mystery Drawer of Cables",
       "cost": 1,
-      "traits": [],
-      "text": "Exhaust: look at the top card of your deck. If it is an Item, reveal it and put it into your hand."
+      "traits": [
+        "Hacker",
+        "Scavenger"
+      ],
+      "text": "Exhaust: look at the top two cards of your deck. You may reveal an Item among them and put it into your hand. Put the other card on the bottom of your deck.",
+      "keywords": []
     },
     {
       "id": "U121",
@@ -1518,7 +1762,8 @@
         "Human",
         "Menace"
       ],
-      "text": "Enemy Units with Power 2 or less cannot attack your Leader while this is ready."
+      "text": "Enemy Units with Power 2 or less cannot attack your Leader while this is ready.",
+      "keywords": []
     },
     {
       "id": "U122",
@@ -1532,7 +1777,10 @@
         "Human",
         "Team"
       ],
-      "text": "The first other Team Unit that blocks each round gets +1 Guard this round."
+      "text": "The first other Team Unit that blocks each round gets +1 Guard this round.",
+      "keywords": [
+        "Slowpoke"
+      ]
     },
     {
       "id": "U123",
@@ -1546,7 +1794,8 @@
         "Human",
         "Authority"
       ],
-      "text": "When deployed, an enemy Unit gets -1 Power this round."
+      "text": "When deployed, an enemy Unit gets -1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U124",
@@ -1560,7 +1809,8 @@
         "Human",
         "Authority"
       ],
-      "text": "The first Item you play each round costs 1 less."
+      "text": "The first Item you play each round costs 1 less.",
+      "keywords": []
     },
     {
       "id": "U125",
@@ -1574,7 +1824,8 @@
         "Human",
         "Team"
       ],
-      "text": "Vanilla."
+      "text": "Vanilla.",
+      "keywords": []
     },
     {
       "id": "U126",
@@ -1583,12 +1834,13 @@
       "name": "Single Dad",
       "cost": 4,
       "power": 4,
-      "guard": 6,
+      "guard": 5,
       "traits": [
         "Human",
         "Team"
       ],
-      "text": "Other 1-cost Units you control get +1 Guard."
+      "text": "Other 1-cost Units you control get +1 Guard.",
+      "keywords": []
     },
     {
       "id": "U127",
@@ -1603,7 +1855,8 @@
         "Menace",
         "Scavenger"
       ],
-      "text": "When this blocks, deal 1 damage to the attacker after combat."
+      "text": "When this blocks, deal 1 damage to the attacker after combat.",
+      "keywords": []
     },
     {
       "id": "U128",
@@ -1612,12 +1865,13 @@
       "name": "Neighborhood Watch Captain",
       "cost": 5,
       "power": 4,
-      "guard": 7,
+      "guard": 6,
       "traits": [
         "Human",
         "Authority"
       ],
-      "text": "The first enemy Unit to attack each round gets -1 Power for that attack."
+      "text": "The first enemy Unit to attack each round gets -1 Power for that attack.",
+      "keywords": []
     },
     {
       "id": "U129",
@@ -1631,7 +1885,8 @@
         "Human",
         "Authority"
       ],
-      "text": "The first Unit attacking your Leader each round gets -1 Power."
+      "text": "The first Unit attacking your Leader each round gets -1 Power.",
+      "keywords": []
     },
     {
       "id": "U130",
@@ -1646,7 +1901,10 @@
         "Authority",
         "Team"
       ],
-      "text": "Other Team Units get +1 Guard during the opponent's turn."
+      "text": "Other Team Units get +1 Guard during the opponent's turn.",
+      "keywords": [
+        "Slowpoke"
+      ]
     },
     {
       "id": "U131",
@@ -1660,7 +1918,8 @@
         "Human",
         "Menace"
       ],
-      "text": "Cannot be moved or returned to hand by enemy effects."
+      "text": "Cannot be moved or returned to hand by enemy effects.",
+      "keywords": []
     },
     {
       "id": "U132",
@@ -1674,7 +1933,8 @@
         "Human",
         "Authority"
       ],
-      "text": "When an enemy Unit becomes ready outside its normal ready step, exhaust this to exhaust that Unit."
+      "text": "When an enemy Unit becomes ready outside its normal ready step, you may exhaust this. If you do, that Unit gets -1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U133",
@@ -1689,7 +1949,8 @@
         "Authority",
         "Menace"
       ],
-      "text": "Whenever an enemy Unit attacks your Leader, this gets +1 Power this round."
+      "text": "Whenever an enemy Unit attacks your Leader, this gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U134",
@@ -1703,7 +1964,10 @@
         "Animal",
         "Team"
       ],
-      "text": "When this blocks, another blocking Unit gets +1 Guard this round."
+      "text": "When this blocks, another blocking Unit gets +1 Guard this round.",
+      "keywords": [
+        "Slowpoke"
+      ]
     },
     {
       "id": "U135",
@@ -1717,7 +1981,8 @@
         "Human",
         "Team"
       ],
-      "text": "When deployed, heal 2 damage from another Unit."
+      "text": "When deployed, heal 2 damage from another Unit.",
+      "keywords": []
     },
     {
       "id": "U136",
@@ -1726,12 +1991,12 @@
       "name": "Concrete Goose",
       "cost": 5,
       "power": 4,
-      "guard": 8,
+      "guard": 7,
       "traits": [
-        "Object",
         "Menace"
       ],
-      "text": "Vanilla."
+      "text": "Vanilla.",
+      "keywords": []
     },
     {
       "id": "U137",
@@ -1746,7 +2011,10 @@
         "Authority",
         "Team"
       ],
-      "text": "The first Unit you deploy each round with Guard greater than Power gets +1 Guard this round."
+      "text": "The first Unit you deploy each round with Guard greater than Power gets +1 Guard this round.",
+      "keywords": [
+        "Slowpoke"
+      ]
     },
     {
       "id": "U138",
@@ -1755,13 +2023,14 @@
       "name": "Dad in New Balance Shoes",
       "cost": 3,
       "power": 3,
-      "guard": 5,
+      "guard": 4,
       "traits": [
         "Human",
         "Team",
         "Menace"
       ],
-      "text": "Cannot be exhausted by enemy Actions."
+      "text": "Cannot be exhausted by enemy Actions.",
+      "keywords": []
     },
     {
       "id": "U139",
@@ -1769,8 +2038,11 @@
       "type": "Action",
       "name": "File a Complaint",
       "cost": 1,
-      "traits": [],
-      "text": "An attacking Unit gets -2 Power this attack."
+      "traits": [
+        "Authority"
+      ],
+      "text": "An attacking Unit gets -2 Power this attack.",
+      "keywords": []
     },
     {
       "id": "U140",
@@ -1778,8 +2050,12 @@
       "type": "Action",
       "name": "Not in My Neighborhood",
       "cost": 2,
-      "traits": [],
-      "text": "Move an attacking Unit out of combat unless its controller pays an additional resource."
+      "traits": [
+        "Authority",
+        "Menace"
+      ],
+      "text": "Move an attacking Unit out of combat unless its controller pays an additional resource.",
+      "keywords": []
     },
     {
       "id": "U141",
@@ -1787,8 +2063,12 @@
       "type": "Action",
       "name": "Absolutely Not",
       "cost": 1,
-      "traits": [],
-      "text": "An attacking Unit loses all Power bonuses this attack."
+      "traits": [
+        "Authority",
+        "Menace"
+      ],
+      "text": "An attacking Unit loses all Power bonuses this attack.",
+      "keywords": []
     },
     {
       "id": "U142",
@@ -1796,8 +2076,11 @@
       "type": "Action",
       "name": "I Want to Speak to Your Manager",
       "cost": 2,
-      "traits": [],
-      "text": "Return an Action targeting one of your Units to its owner's hand instead of resolving it."
+      "traits": [
+        "Authority"
+      ],
+      "text": "Return an Action targeting one of your Units to its owner's hand instead of resolving it.",
+      "keywords": []
     },
     {
       "id": "U143",
@@ -1805,8 +2088,11 @@
       "type": "Action",
       "name": "Read the Fine Print",
       "cost": 1,
-      "traits": [],
-      "text": "Cancel a Power or Guard bonus granted by an enemy card this round."
+      "traits": [
+        "Authority"
+      ],
+      "text": "Cancel a Power or Guard bonus granted by an enemy card this round.",
+      "keywords": []
     },
     {
       "id": "U144",
@@ -1814,8 +2100,11 @@
       "type": "Action",
       "name": "Not Dead Yet",
       "cost": 2,
-      "traits": [],
-      "text": "Costs 1 less if your Leader has less health than the enemy Leader. Heal 3 damage from your Leader."
+      "traits": [
+        "Menace"
+      ],
+      "text": "Costs 1 less if your Leader has less health than the enemy Leader. Heal 3 damage from your Leader.",
+      "keywords": []
     },
     {
       "id": "U145",
@@ -1823,8 +2112,11 @@
       "type": "Action",
       "name": "Dig In",
       "cost": 2,
-      "traits": [],
-      "text": "Costs 1 less if you control fewer Units than the opponent. Your Units get +1 Guard this round. If you control fewer Units than the opponent, draw a card."
+      "traits": [
+        "Authority"
+      ],
+      "text": "Costs 1 less if you control fewer Units than the opponent. Your Units get +1 Guard this round. If you control fewer Units than the opponent, draw a card.",
+      "keywords": []
     },
     {
       "id": "U146",
@@ -1832,8 +2124,12 @@
       "type": "Action",
       "name": "Wait Them Out",
       "cost": 2,
-      "traits": [],
-      "text": "Costs 1 less if you have not attacked this round. Draw a card and give a Unit +1 Guard this round."
+      "traits": [
+        "Authority",
+        "Team"
+      ],
+      "text": "Costs 1 less if you have not attacked this round. Draw a card and give a Unit +1 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U147",
@@ -1841,8 +2137,12 @@
       "type": "Item",
       "name": "Security Camera",
       "cost": 1,
-      "traits": [],
-      "text": "The first enemy Unit to attack your Leader each round gets -1 Power."
+      "traits": [
+        "Authority",
+        "Hacker"
+      ],
+      "text": "The first enemy Unit to attack your Leader each round gets -1 Power.",
+      "keywords": []
     },
     {
       "id": "U148",
@@ -1850,26 +2150,36 @@
       "type": "Item",
       "name": "Rabies Shot",
       "cost": 1,
-      "traits": [],
-      "text": "Dismiss: remove all damage from an Animal, then it loses its abilities this round."
+      "traits": [
+        "Menace"
+      ],
+      "text": "Dismiss: remove all damage from an Animal, then it loses its abilities this round.",
+      "keywords": []
     },
     {
       "id": "U149",
       "color": "Stubborn",
       "type": "Item",
       "name": "Ring Doorbell",
-      "cost": 1,
-      "traits": [],
-      "text": "Whenever an enemy Unit attacks your Leader for the first time each round, draw a card, then discard a card."
+      "cost": 2,
+      "traits": [
+        "Authority",
+        "Hacker"
+      ],
+      "text": "Whenever an enemy Unit attacks your Leader for the first time each round, draw a card, then discard a card.",
+      "keywords": []
     },
     {
       "id": "U150",
       "color": "Stubborn",
       "type": "Item",
       "name": "Decorative Boulder",
-      "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. +2 Guard. Attached Unit cannot be moved by enemy effects."
+      "cost": 2,
+      "traits": [
+        "Menace"
+      ],
+      "text": "Attach to a Unit. +2 Guard. Attached Unit cannot be moved by enemy effects.",
+      "keywords": []
     },
     {
       "id": "U151",
@@ -1884,7 +2194,8 @@
         "Vermin",
         "Daredevil"
       ],
-      "text": "When this dies, deal 1 damage to the enemy Leader."
+      "text": "When this dies, deal 1 damage to the enemy Leader.",
+      "keywords": []
     },
     {
       "id": "U152",
@@ -1898,7 +2209,8 @@
         "Human",
         "Fanatic"
       ],
-      "text": "When this dies, draw a card."
+      "text": "When this dies, draw a card.",
+      "keywords": []
     },
     {
       "id": "U153",
@@ -1912,7 +2224,8 @@
         "Human",
         "Saboteur"
       ],
-      "text": "When this dies, deal 1 damage to up to two enemy Units."
+      "text": "When this dies, deal 1 damage to each enemy Unit.",
+      "keywords": []
     },
     {
       "id": "U154",
@@ -1927,7 +2240,8 @@
         "Daredevil",
         "Florida Man"
       ],
-      "text": "This Unit may attack the round it is deployed. When this dies during your attack, deal 1 damage to the enemy Leader."
+      "text": "This Unit may attack the round it is deployed. When this dies during your attack, deal 1 damage to the enemy Leader.",
+      "keywords": []
     },
     {
       "id": "U155",
@@ -1940,7 +2254,8 @@
       "traits": [
         "Undead"
       ],
-      "text": "When this dies, create a 1/1 Turtle."
+      "text": "When this dies, create a 1/1 Turtle.",
+      "keywords": []
     },
     {
       "id": "U156",
@@ -1954,7 +2269,8 @@
         "Undead",
         "Scavenger"
       ],
-      "text": "When this dies, create a 1/1 Vermin."
+      "text": "When this dies, create a 1/1 Vermin.",
+      "keywords": []
     },
     {
       "id": "U157",
@@ -1967,7 +2283,10 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "This Unit may attack the round it is deployed. When this dies, another Unit you control gets +2 Power this round."
+      "text": "This Unit may attack the round it is deployed. When this dies, another Unit you control gets +2 Power this round.",
+      "keywords": [
+        "Explosive"
+      ]
     },
     {
       "id": "U158",
@@ -1979,9 +2298,13 @@
       "guard": 6,
       "traits": [
         "Animal",
-        "Fanatic"
+        "Fanatic",
+        "Menace"
       ],
-      "text": "When this dies, deal 2 damage to the enemy Leader."
+      "text": "When this dies, deal 2 damage to the enemy Leader.",
+      "keywords": [
+        "Explosive"
+      ]
     },
     {
       "id": "U159",
@@ -1996,7 +2319,8 @@
         "Daredevil",
         "Saboteur"
       ],
-      "text": "When this dies, deal 1 damage to up to two enemy Units."
+      "text": "When this dies, deal 1 damage to each enemy Unit.",
+      "keywords": []
     },
     {
       "id": "U160",
@@ -2010,7 +2334,8 @@
         "Human",
         "Fanatic"
       ],
-      "text": "Whenever another Fanatic dies, this gets +1 Power."
+      "text": "Whenever another Fanatic dies, this gets +1 Power.",
+      "keywords": []
     },
     {
       "id": "U161",
@@ -2024,7 +2349,8 @@
         "Human",
         "Daredevil"
       ],
-      "text": "This Unit may attack the round it is deployed. When this dies during your turn, draw a card."
+      "text": "This Unit may attack the round it is deployed. When this dies during your turn, draw a card.",
+      "keywords": []
     },
     {
       "id": "U162",
@@ -2038,7 +2364,8 @@
         "Animal",
         "Vermin"
       ],
-      "text": "When this dies, another Vermin gets +2 Power this round."
+      "text": "When this dies, another Vermin gets +2 Power this round.",
+      "keywords": []
     },
     {
       "id": "U163",
@@ -2052,7 +2379,8 @@
         "Human",
         "Fanatic"
       ],
-      "text": "When this dies while blocking, draw 2 cards, then discard a card."
+      "text": "When this dies while blocking, draw 2 cards, then discard a card.",
+      "keywords": []
     },
     {
       "id": "U164",
@@ -2065,7 +2393,8 @@
       "traits": [
         "Undead"
       ],
-      "text": "When this dies, return it to your hand at end of round. If another Undead Unit you control died this round, draw a card."
+      "text": "When this dies, return it to your hand at end of round. If another Undead Unit you control died this round, draw a card.",
+      "keywords": []
     },
     {
       "id": "U165",
@@ -2079,7 +2408,8 @@
         "Human",
         "Saboteur"
       ],
-      "text": "When this dies, dismiss an enemy Item."
+      "text": "When this dies, dismiss an enemy Item.",
+      "keywords": []
     },
     {
       "id": "U166",
@@ -2093,7 +2423,8 @@
         "Undead",
         "Scavenger"
       ],
-      "text": "When this dies, you may sacrifice another Unit. If you do, return this to your hand."
+      "text": "When this dies, you may sacrifice another Unit. If you do, return this to your hand.",
+      "keywords": []
     },
     {
       "id": "U167",
@@ -2106,9 +2437,13 @@
       "traits": [
         "Human",
         "Performer",
-        "Daredevil"
+        "Daredevil",
+        "Fanatic"
       ],
-      "text": "When this dies, deal 1 damage to each enemy Unit with Guard 2 or less."
+      "text": "When this dies, deal 1 damage to each enemy Unit.",
+      "keywords": [
+        "Explosive"
+      ]
     },
     {
       "id": "U168",
@@ -2122,7 +2457,8 @@
         "Human",
         "Fanatic"
       ],
-      "text": "Whenever another Fanatic dies, another Unit you control gets +1 Power this round."
+      "text": "Whenever another Fanatic dies, another Unit you control gets +1 Power this round.",
+      "keywords": []
     },
     {
       "id": "U169",
@@ -2130,8 +2466,12 @@
       "type": "Action",
       "name": "Detonate",
       "cost": 1,
-      "traits": [],
-      "text": "Sacrifice a Unit. Deal 2 damage to the enemy Leader. If the sacrificed Unit was Undead, draw a card."
+      "traits": [
+        "Saboteur",
+        "Fanatic"
+      ],
+      "text": "Sacrifice a Unit. Deal 2 damage to the enemy Leader. If the sacrificed Unit was Undead, draw a card.",
+      "keywords": []
     },
     {
       "id": "U170",
@@ -2139,8 +2479,11 @@
       "type": "Action",
       "name": "Blood Price",
       "cost": 1,
-      "traits": [],
-      "text": "Sacrifice a Unit. Draw 2."
+      "traits": [
+        "Fanatic"
+      ],
+      "text": "Sacrifice a Unit. Draw 2.",
+      "keywords": []
     },
     {
       "id": "U171",
@@ -2148,8 +2491,11 @@
       "type": "Action",
       "name": "Take One for the Team",
       "cost": 1,
-      "traits": [],
-      "text": "Sacrifice a Unit. Prevent all damage from an attack."
+      "traits": [
+        "Fanatic"
+      ],
+      "text": "Sacrifice a Unit. Prevent all damage from an attack.",
+      "keywords": []
     },
     {
       "id": "U172",
@@ -2157,8 +2503,11 @@
       "type": "Action",
       "name": "This Seemed Like a Good Idea",
       "cost": 1,
-      "traits": [],
-      "text": "Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round."
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U173",
@@ -2166,8 +2515,12 @@
       "type": "Action",
       "name": "Worth It",
       "cost": 2,
-      "traits": [],
-      "text": "Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card."
+      "traits": [
+        "Fanatic",
+        "Daredevil"
+      ],
+      "text": "Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card.",
+      "keywords": []
     },
     {
       "id": "U174",
@@ -2175,8 +2528,13 @@
       "type": "Action",
       "name": "Last Laugh",
       "cost": 1,
-      "traits": [],
-      "text": "After one of your Units dies, deal 1 damage to up to two enemy Units."
+      "traits": [
+        "Performer",
+        "Saboteur",
+        "Fanatic"
+      ],
+      "text": "After one of your Units dies, deal 1 damage to up to two enemy Units.",
+      "keywords": []
     },
     {
       "id": "U175",
@@ -2184,8 +2542,11 @@
       "type": "Action",
       "name": "Feed the Machine",
       "cost": 1,
-      "traits": [],
-      "text": "Sacrifice a Unit. Your next Kamikaze card this round costs 1 less."
+      "traits": [
+        "Fanatic"
+      ],
+      "text": "Sacrifice a Unit. Your next Kamikaze card this round costs 1 less.",
+      "keywords": []
     },
     {
       "id": "U176",
@@ -2193,8 +2554,12 @@
       "type": "Action",
       "name": "Again!",
       "cost": 2,
-      "traits": [],
-      "text": "If one of your Units died this round, return a Unit costing 2 or less from your discard to your hand."
+      "traits": [
+        "Undead",
+        "Fanatic"
+      ],
+      "text": "If an Undead or Fanatic Unit you control died this round, return a Unit costing 2 or less from your discard to your hand.",
+      "keywords": []
     },
     {
       "id": "U177",
@@ -2202,8 +2567,11 @@
       "type": "Item",
       "name": "Definitely Safe Helmet",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. When attached Unit dies, draw a card, then dismiss this."
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "Attach to a Daredevil or Fanatic Unit. When attached Unit dies, draw a card, then dismiss this.",
+      "keywords": []
     },
     {
       "id": "U178",
@@ -2211,8 +2579,12 @@
       "type": "Item",
       "name": "Bong Water",
       "cost": 1,
-      "traits": [],
-      "text": "Dismiss and sacrifice a Unit: another Unit gets +2 Power and +2 Guard this round."
+      "traits": [
+        "Florida Man",
+        "Fanatic"
+      ],
+      "text": "Dismiss and sacrifice a Unit: another Unit gets +2 Power and +2 Guard this round.",
+      "keywords": []
     },
     {
       "id": "U179",
@@ -2220,17 +2592,30 @@
       "type": "Item",
       "name": "Dead Man's Switch",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. When attached Unit dies, deal 2 damage to a Unit, then dismiss this."
+      "traits": [
+        "Saboteur",
+        "Fanatic"
+      ],
+      "text": "Attach to a Unit. When attached Unit dies, deal 2 damage to a Unit, then dismiss this.",
+      "keywords": []
     },
     {
       "id": "U180",
       "color": "Kamikaze",
       "type": "Item",
-      "name": "Cheap Parachute",
+      "name": "Folding Chair",
       "cost": 1,
-      "traits": [],
-      "text": "Attach to a Unit. When attached Unit would die, you may dismiss this to return that Unit to your hand instead."
+      "traits": [
+        "Daredevil",
+        "Performer",
+        "Fanatic"
+      ],
+      "text": "Attach to a Daredevil Unit or Leader you control. Exhaust: the next Kamikaze Unit costing 3 or less you deploy this round may attack the round it is deployed.",
+      "keywords": []
     }
-  ]
+  ],
+  "keywordDefinitions": {
+    "Explosive": "An Explosive blocker retaliates even if it is defeated by the incoming attack.",
+    "Slowpoke": "A Slowpoke Unit does not deal retaliation damage when it blocks."
+  }
 }

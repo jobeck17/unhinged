@@ -2,10 +2,11 @@
   "schemaVersion": 1,
   "kind": "LAB curated dual-color test decks",
   "notes": [
-    "These are strategic test-harness decks, not locked deckbuilding rules.",
+    "These are strategic baseline test-harness decks, not locked deckbuilding rules or optimizer-maximized lists.",
     "Each deck is 40 cards: 26 Units / 8 Actions / 6 Items.",
     "Each deck references its primary-color Leader by leaderId from leaders.json.",
-    "Lists are singleton-heavy by design to expose more of the current card pool during playtests."
+    "Lists are singleton-heavy by design to expose more of the current card pool during playtests.",
+    "All six lists were structure-audited on 2026-09-19: 40 unique cards, correct composition, exactly two declared colors, no missing card IDs."
   ],
   "decks": [
     {
@@ -338,5 +339,6 @@
       ],
       "leaderId": "L006"
     }
-  ]
+  ],
+  "updated": "2026-09-19"
 }

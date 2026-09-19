@@ -1,58 +1,54 @@
 # Kamikaze Card Pool
 
-> **Kamikaze is currently a working mechanical name for the sixth color.** Final adjective/classification is TBD.
+**Identity:** Death triggers, sacrifice, recursion.  
+**Primary Trait:** Fanatic  
+**Secondary Traits:** Daredevil • Undead • Saboteur
 
-**Identity:** death triggers, sacrifice, disposable Units, recursion.  
-**Economy:** death is fuel.
+## Units (18)
 
-## Units (20)
+| ID | Card | Cost | Stats | Traits | Keywords | Text |
+|---|---|---:|---:|---|---|---|
+| U151 | **Bomb Rat** | 1 | 1/1 | Animal • Vermin • Daredevil | — | When this dies, deal 1 damage to the enemy Leader. |
+| U152 | **Overenthusiastic Volunteer** | 1 | 1/1 | Human • Fanatic | — | When this dies, draw a card. |
+| U153 | **Powder Keg Kid** | 2 | 2/2 | Human • Saboteur | — | When this dies, deal 1 damage to each enemy Unit. |
+| U154 | **Florida Man's Stunt Double** | 2 | 3/1 | Human • Daredevil • Florida Man | — | This Unit may attack the round it is deployed. When this dies during your attack, deal 1 damage to the enemy Leader. |
+| U155 | **Zombie Kid** | 3 | 2/3 | Undead | — | When this dies, create a 1/1 Turtle. |
+| U156 | **Dumpster Revenant** | 3 | 2/3 | Undead • Scavenger | — | When this dies, create a 1/1 Vermin. |
+| U157 | **Crash-Test Dummy** | 4 | 5/2 | Daredevil | Explosive | This Unit may attack the round it is deployed. When this dies, another Unit you control gets +2 Power this round. |
+| U158 | **Doom Rooster** | 6 | 6/6 | Animal • Fanatic • Menace | Explosive | When this dies, deal 2 damage to the enemy Leader. |
+| U159 | **Fireworks Technician** | 2 | 2/2 | Human • Daredevil • Saboteur | — | When this dies, deal 1 damage to each enemy Unit. |
+| U160 | **Cult Recruiter** | 2 | 1/3 | Human • Fanatic | — | Whenever another Fanatic dies, this gets +1 Power. |
+| U161 | **Crash-Test Intern** | 2 | 3/1 | Human • Daredevil | — | This Unit may attack the round it is deployed. When this dies during your turn, draw a card. |
+| U162 | **Rabid Rat** | 2 | 2/1 | Animal • Vermin | — | When this dies, another Vermin gets +2 Power this round. |
+| U163 | **Volunteer Human Shield** | 3 | 1/5 | Human • Fanatic | — | When this dies while blocking, draw 2 cards, then discard a card. |
+| U164 | **Zombie Mall Walker** | 3 | 2/4 | Undead | — | When this dies, return it to your hand at end of round. If another Undead Unit you control died this round, draw a card. |
+| U165 | **Saboteur With Poor Planning** | 4 | 4/3 | Human • Saboteur | — | When this dies, dismiss an enemy Item. |
+| U166 | **Dumpster Phoenix** | 5 | 4/5 | Undead • Scavenger | — | When this dies, you may sacrifice another Unit. If you do, return this to your hand. |
+| U167 | **Exploding Clown** | 3 | 3/2 | Human • Performer • Daredevil • Fanatic | Explosive | When this dies, deal 1 damage to each enemy Unit. |
+| U168 | **Fanatic With a Megaphone** | 3 | 2/4 | Human • Fanatic | — | Whenever another Fanatic dies, another Unit you control gets +1 Power this round. |
 
-1. **Bomb Rat** — 1 cost, 1/1 — *Animal • Vermin • Daredevil* — When this dies, deal 1 damage to the enemy Leader.
-2. **Overenthusiastic Volunteer** — 1 cost, 1/1 — *Human • Fanatic* — When this dies, draw a card.
-3. **Powder Keg Kid** — 2 cost, 2/2 — *Human • Saboteur* — When this dies, deal 1 damage to up to two enemy Units.
-4. **Florida Man's Stunt Double** — 2 cost, 3/1 — *Human • Daredevil • Florida Man* — This Unit may attack the round it is deployed. When this dies during your attack, deal 1 damage to the enemy Leader.
-5. **Zombie Kid** — 3 cost, 2/3 — *Undead* — When this dies, create a 1/1 Turtle.
-6. **Dumpster Revenant** — 3 cost, 2/3 — *Undead • Scavenger* — When this dies, create a 1/1 Vermin.
-7. **Crash-Test Dummy** — 4 cost, 5/2 — *Daredevil* — This Unit may attack the round it is deployed. When this dies, another Unit you control gets +2 Power this round.
-8. **Doom Rooster** — 6 cost, 6/6 — *Animal • Fanatic* — When this dies, deal 2 damage to the enemy Leader.
-9. **Fireworks Technician** — 2 cost, 2/2 — *Human • Daredevil • Saboteur* — When this dies, deal 1 damage to up to two enemy Units.
-10. **Cult Recruiter** — 2 cost, 1/3 — *Human • Fanatic* — Whenever another Fanatic dies, this gets +1 Power.
-11. **Crash-Test Intern** — 2 cost, 3/1 — *Human • Daredevil* — This Unit may attack the round it is deployed. When this dies during your turn, draw a card.
-12. **Rabid Rat** — 2 cost, 2/1 — *Animal • Vermin* — When this dies, another Vermin gets +2 Power this round.
-13. **Volunteer Human Shield** — 3 cost, 1/5 — *Human • Fanatic* — When this dies while blocking, draw 2 cards, then discard a card.
-14. **Zombie Mall Walker** — 3 cost, 2/4 — *Undead* — When this dies, return it to your hand at end of round. If another Undead Unit you control died this round, draw a card.
-15. **Saboteur With Poor Planning** — 4 cost, 4/3 — *Human • Saboteur* — When this dies, dismiss an enemy Item.
-16. **Dumpster Phoenix** — 5 cost, 4/5 — *Undead • Scavenger* — When this dies, you may sacrifice another Unit. If you do, return Dumpster Phoenix to your hand.
-17. **Exploding Clown** — 3 cost, 3/2 — *Human • Performer • Daredevil* — When this dies, deal 1 damage to each enemy Unit with Guard 2 or less.
-18. **Fanatic With a Megaphone** — 3 cost, 2/4 — *Human • Fanatic* — Whenever another Fanatic dies, another Unit you control gets +1 Power this round.
-19. **Undead Florida Man** — 4 cost, 4/3 — *Undead • Florida Man* — When this dies, return an Item from your discard to your hand.
-20. **Suicidal Rooster** — 2 cost, 3/1 — *Animal • Daredevil* — When this dies while attacking, deal 1 damage to the enemy Leader. *(Name provisional.)*
+## Actions (8)
 
-## Actions (5)
+| ID | Card | Cost | Traits | Keywords | Text |
+|---|---|---:|---|---|---|
+| U169 | **Detonate** | 1 | Saboteur • Fanatic | — | Sacrifice a Unit. Deal 2 damage to the enemy Leader. If the sacrificed Unit was Undead, draw a card. |
+| U170 | **Blood Price** | 1 | Fanatic | — | Sacrifice a Unit. Draw 2. |
+| U171 | **Take One for the Team** | 1 | Fanatic | — | Sacrifice a Unit. Prevent all damage from an attack. |
+| U172 | **This Seemed Like a Good Idea** | 1 | Daredevil | — | Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round. |
+| U173 | **Worth It** | 2 | Fanatic • Daredevil | — | Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card. |
+| U174 | **Last Laugh** | 1 | Performer • Saboteur • Fanatic | — | After one of your Units dies, deal 1 damage to up to two enemy Units. |
+| U175 | **Feed the Machine** | 1 | Fanatic | — | Sacrifice a Unit. Your next Kamikaze card this round costs 1 less. |
+| U176 | **Again!** | 2 | Undead • Fanatic | — | If an Undead or Fanatic Unit you control died this round, return a Unit costing 2 or less from your discard to your hand. |
 
-1. **Detonate** — Sacrifice a Unit. Deal 2 damage to the enemy Leader. If the sacrificed Unit was Undead, draw a card.
-2. **Blood Price** — Sacrifice a Unit. Draw 2.
-3. **Take One for the Team** — Sacrifice a Unit. Prevent all damage from an attack.
-4. **This Seemed Like a Good Idea** — Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round.
-5. **Worth It** — Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card.
+## Items (4)
 
-## Items (5)
+| ID | Card | Cost | Traits | Keywords | Text |
+|---|---|---:|---|---|---|
+| U177 | **Definitely Safe Helmet** | 1 | Daredevil | — | Attach to a Daredevil or Fanatic Unit. When attached Unit dies, draw a card, then dismiss this. |
+| U178 | **Bong Water** | 1 | Florida Man • Fanatic | — | Dismiss and sacrifice a Unit: another Unit gets +2 Power and +2 Guard this round. |
+| U179 | **Dead Man's Switch** | 1 | Saboteur • Fanatic | — | Attach to a Unit. When attached Unit dies, deal 2 damage to a Unit, then dismiss this. |
+| U180 | **Folding Chair** | 1 | Daredevil • Performer • Fanatic | — | Attach to a Daredevil Unit or Leader you control. Exhaust: the next Kamikaze Unit costing 3 or less you deploy this round may attack the round it is deployed. |
 
-1. **Definitely Safe Helmet** — Attach to a Unit. When attached Unit dies, draw a card, then dismiss this.
-2. **Bong Water** — Dismiss and sacrifice a Unit: another Unit gets +2 Power and +2 Guard this round.
-3. **Dead Man's Switch** — Attach to a Unit. When attached Unit dies, deal 2 damage to a Unit, then dismiss this.
-4. **Cheap Parachute** — Attach to a Unit. When attached Unit would die, you may dismiss this to return that Unit to your hand instead.
-5. **Homemade Body Armor** — Attach to a Unit. +2 Guard. When attached Unit dies, draw a card.
+## Design Note
 
-## Notes
-
-Kamikaze should remain distinct from Reckless:
-
-- **Reckless** hurts itself for immediate tempo.
-- **Kamikaze** wants Units to actually die because death itself creates value.
-
-## Leader
-
-**Backyard Wrestler** — 20 Health
-
-Current direction: expendable Units, sacrifice sequencing, and turning deaths into momentum. Passive: the first time each round one of your Units dies, another Unit gets +1 Power this round. Exhaust: choose a Unit you control; it gets +2 Power this round, and if it dies this round, draw a card.
+Color identity comes first. Traits create cross-color hooks without turning the color into a single tribal deck.

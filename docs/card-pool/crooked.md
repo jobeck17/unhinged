@@ -1,47 +1,54 @@
 # Crooked Card Pool
 
-**Identity:** manipulation, exhaustion, bounce, disabling, disruption.  
-**Economy:** make the opponent pay.
+**Identity:** Manipulation, exhaust, bounce, disruption.  
+**Primary Trait:** Sketchy  
+**Secondary Traits:** Hustler • Authority • Hacker • Saboteur
 
-## Units (20)
+## Units (18)
 
-1. **Script Kiddie** — 1 cost, 1/2 — *Human • Sketchy*.
-2. **Social Media Grifter** — 2 cost, 2/2 — *Human • Hustler* — When deployed, an enemy Unit gets -1 Power this round.
-3. **Mall Cop** — 2 cost, 2/4 — *Human • Authority* — Exhaust: a Unit with Power 2 or less cannot attack this round.
-4. **Creepy Van Guy** — 3 cost, 2/4 — *Human • Sketchy* — When deployed, return a 1-cost Unit to its owner's hand.
-5. **Questionably Licensed Pirate** — 3 cost, 3/3 — *Human • Outlaw* — When this damages a Unit, exhaust that Unit.
-6. **HOA Treasurer** — 3 cost, 2/5 — *Human • Authority • Hustler* — Whenever the opponent plays their second card in a round, they discard a card, then draw a card.
-7. **Neighborhood Hacker** — 4 cost, 3/4 — *Human • Sketchy • Saboteur* — When deployed, exhaust an Item or Unit.
-8. **Conspiracy Blogger** — 4 cost, 4/4 — *Human • Saboteur* — Whenever you play an Action targeting an enemy card, this gets +1 Power this round.
-9. **Crypto Bro** — 2 cost, 2/2 — *Human • Hustler* — When deployed, discard a card. If you do, draw a card.
-10. **Tow-Truck Driver** — 2 cost, 2/3 — *Human • Authority • Sketchy* — When deployed, exhaust an Item.
-11. **Fake Psychic** — 3 cost, 2/4 — *Human • Hustler* — Look at the top card of an opponent's deck. You may put it on the bottom.
-12. **Coupon Scammer** — 3 cost, 3/3 — *Human • Hustler • Outlaw* — The first Item you play each round costs 1 less.
-13. **Neighborhood Facebook Admin** — 3 cost, 2/5 — *Human • Authority* — The first enemy Unit deployed each round gets -1 Power this round.
-14. **Pirate Radio Operator** — 4 cost, 3/4 — *Human • Outlaw • Saboteur* — When deployed, an enemy Unit cannot block this round.
-15. **IT Guy Who Quit Six Months Ago** — 4 cost, 3/5 — *Human • Sketchy* — When deployed, you may put an Action from your discard on top of your deck.
-16. **Professional Gaslighter** — 5 cost, 4/5 — *Human • Hustler • Saboteur* — The first time each round an enemy Unit receives a buff, give it -1 Power this round.
-17. **Identity Thief** — 3 cost, 2/4 — *Human • Hustler • Saboteur* — When deployed, choose a Trait on another Unit. Identity Thief gains it while in play.
-18. **HOA Lawyer** — 4 cost, 3/5 — *Human • Authority* — The first enemy Action targeting one of your Units each round costs 1 additional resource.
-19. **Black Hat Hacker** — 5 cost, 4/5 — *Human • Sketchy • Saboteur* — When deployed, a Unit loses its abilities until end of round.
-20. **Pickpocket** — 2 cost, 2/2 — *Human • Outlaw* — When this damages the enemy Leader, look at a random card from their hand.
+| ID | Card | Cost | Stats | Traits | Keywords | Text |
+|---|---|---:|---:|---|---|---|
+| U061 | **Script Kiddie** | 1 | 1/2 | Human • Sketchy | — | Vanilla. |
+| U062 | **Social Media Grifter** | 2 | 2/2 | Human • Hustler | — | When deployed, an enemy Unit gets -1 Power this round. |
+| U063 | **Mall Cop** | 2 | 2/4 | Human • Authority | — | Exhaust: a Unit with Power 2 or less cannot attack this round. |
+| U064 | **Creepy Van Guy** | 3 | 2/4 | Human • Sketchy | — | When deployed, return a 1-cost Unit to its owner's hand. |
+| U065 | **Questionably Licensed Pirate** | 3 | 3/3 | Human • Outlaw | — | When this damages a Unit, exhaust that Unit. |
+| U066 | **HOA Treasurer** | 3 | 2/5 | Human • Authority • Hustler | — | Whenever the opponent plays their second card in a round, they discard a card, then draw a card. |
+| U067 | **Neighborhood Hacker** | 4 | 3/4 | Human • Sketchy • Saboteur | — | When deployed, exhaust an Item or Unit. |
+| U068 | **Conspiracy Blogger** | 4 | 4/4 | Human • Saboteur | — | Whenever you play an Action targeting an enemy card, this gets +1 Power this round. |
+| U069 | **Crypto Bro** | 2 | 2/2 | Human • Hustler | — | When deployed, discard a card. If you do, draw a card. |
+| U070 | **Tow-Truck Driver** | 2 | 2/3 | Human • Authority • Sketchy | — | When deployed, exhaust an Item. |
+| U071 | **Fake Psychic** | 3 | 2/4 | Human • Hustler | — | Look at the top card of an opponent's deck. You may put it on the bottom. |
+| U072 | **Coupon Scammer** | 3 | 3/3 | Human • Hustler • Outlaw | — | The first Item you play each round costs 1 less. |
+| U073 | **Neighborhood Facebook Admin** | 3 | 2/5 | Human • Authority | — | The first enemy Unit deployed each round gets -1 Power this round. |
+| U074 | **Pirate Radio Operator** | 4 | 3/4 | Human • Outlaw • Saboteur | — | When deployed, an enemy Unit cannot block this round. |
+| U075 | **IT Guy Who Quit Six Months Ago** | 4 | 3/5 | Human • Sketchy | — | When deployed, you may put an Action from your discard on top of your deck. |
+| U076 | **Professional Gaslighter** | 5 | 4/5 | Human • Hustler • Saboteur | — | The first time each round an enemy Unit receives a buff, give it -1 Power this round. |
+| U077 | **Identity Thief** | 3 | 2/4 | Human • Hustler • Saboteur | — | When deployed, choose a Trait on another Unit. This gains that Trait while in play. |
+| U078 | **HOA Lawyer** | 4 | 3/5 | Human • Authority | — | The first enemy Action targeting one of your Units each round costs 1 additional resource. |
 
-## Actions (5)
+## Actions (8)
 
-1. **Call Security** — Exhaust a Unit.
-2. **Wrong Address** — Return a Unit costing 2 or less to its owner's hand.
-3. **Have You Tried Turning It Off?** — Exhaust a Unit. It does not ready during its controller's next ready step.
-4. **Terms and Conditions** — A Unit loses its abilities this round.
-5. **Redirect** — Change the target of an Action with a single legal target.
+| ID | Card | Cost | Traits | Keywords | Text |
+|---|---|---:|---|---|---|
+| U079 | **Call Security** | 1 | Authority | — | Exhaust a Unit. |
+| U080 | **Wrong Address** | 1 | Sketchy | — | Return a Unit costing 2 or less to its owner's hand. |
+| U081 | **Have You Tried Turning It Off?** | 2 | Hacker • Saboteur | — | Exhaust a Unit. It does not ready during its controller's next ready step. |
+| U082 | **Terms and Conditions** | 1 | Authority • Hustler | — | A Unit loses its abilities this round. |
+| U083 | **Redirect** | 2 | Hacker • Sketchy | — | Change the target of an Action with a single legal target. |
+| U084 | **Shakedown** | 1 | Outlaw • Hustler | — | Opponent chooses: discard a card or pay 1 resource. |
+| U085 | **Administrative Fee** | 1 | Authority • Hustler | — | Choose a Unit. Its controller may pay 1 resource. If they do not, it gets -2 Power this round. |
+| U086 | **Backdoor** | 2 | Hacker • Saboteur | — | Play after an opponent spends their last resource. Ready one of your Units. |
 
-## Items (5)
+## Items (4)
 
-1. **Burner Phone** — Dismiss: return one of your Units to your hand.
-2. **USB Drive You Found in the Parking Lot** — Exhaust, dismiss: look at the top three cards of your deck. You may put an Action among them on top of your deck; put the rest on the bottom.
-3. **Flipper Zero-ish Thing That Is Legally Distinct** — Exhaust, dismiss: exhaust an Item or Unit.
-4. **Password on a Sticky Note** — Dismiss: copy the triggered ability of a Unit you control. Exact restrictions TBD.
-5. **Spoofed Keycard** — Dismiss: one Unit cannot block this round.
+| ID | Card | Cost | Traits | Keywords | Text |
+|---|---|---:|---|---|---|
+| U087 | **Burner Phone** | 1 | Sketchy • Outlaw | — | Dismiss: return one of your Units to your hand. |
+| U088 | **USB Drive You Found in the Parking Lot** | 1 | Hacker • Sketchy | — | Exhaust, dismiss: look at the top three cards of your deck. You may put an Action among them on top of your deck; put the rest on the bottom. |
+| U089 | **Flipper Zero-ish Thing That Is Legally Distinct** | 1 | Hacker • Saboteur | — | Exhaust, dismiss: exhaust an Item or Unit. |
+| U090 | **Spoofed Keycard** | 1 | Hacker • Sketchy | — | Dismiss: one Unit cannot block this round. |
 
-## Notes
+## Design Note
 
-Crooked's resource identity should increasingly use **opponent choice / tax effects**: pay part of the cost, spend a resource to prevent an effect, or accept the worse outcome. Avoid making Crooked simply steal the opponent's resource pool.
+Color identity comes first. Traits create cross-color hooks without turning the color into a single tribal deck.
