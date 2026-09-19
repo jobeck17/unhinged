@@ -71,9 +71,9 @@ Each two-color pair has a shared Trait/theme so tribal decks are not locked to o
 | Reckless | Florida Man | Aggro | 18 | Item-dismissing synergy; offensive Leader |
 | Unruly | Little League Coach | Midrange | 22 | Classification provisional |
 | Crooked | ROOT | Tempo | 21 | Actions and disruption |
-| Makeshift | TBD | TBD | TBD | Color identity is becoming clearer through Repurpose/Scrap |
+| Makeshift | Trash Baron | Scrap / recycling | 21 | Scavenging, Vermin, recursion, Repurpose/Scrap synergy |
 | Stubborn | HOA President | Control | 24 | Guard, blocking, denial |
-| Kamikaze | Trash Baron | Death / sacrifice | 20 | Color adjective/classification still TBD |
+| Kamikaze | Backyard Wrestler | Death / sacrifice | 20 | Combat survival, expendable bodies, and death-value identity |
 
 ## Design Rules
 
