@@ -1197,7 +1197,7 @@
         "Human",
         "Florida Man"
       ],
-      "text": "When this dies, return an Item from your discard to your hand."
+      "text": "When this dies, you may put an Item from your discard into your Junk Pile."
     },
     {
       "id": "U095",
@@ -1254,7 +1254,7 @@
         "Scavenger",
         "Sketchy"
       ],
-      "text": "The first Item you dismiss each round may return to your hand at end of round."
+      "text": "The first time each round you dismiss an Item, you may put it into your Junk Pile instead of your discard."
     },
     {
       "id": "U099",
@@ -1297,7 +1297,7 @@
         "Scavenger",
         "Vermin"
       ],
-      "text": "When this dies, return an Item from your discard to your hand."
+      "text": "When this dies, you may return an Item from your Junk Pile to your hand."
     },
     {
       "id": "U102",
@@ -1353,7 +1353,7 @@
         "Human",
         "Scavenger"
       ],
-      "text": "When this attacks, you may put an Item from your discard on top of your deck."
+      "text": "When this attacks, you may put an Item from your Junk Pile on top of your deck."
     },
     {
       "id": "U106",
@@ -1414,7 +1414,7 @@
       "name": "I Can Fix That",
       "cost": 1,
       "traits": [],
-      "text": "Return an Item from your discard to your hand."
+      "text": "Return an Item from your Junk Pile to your hand."
     },
     {
       "id": "U111",
@@ -1441,7 +1441,7 @@
       "name": "That's Probably Still Good",
       "cost": 2,
       "traits": [],
-      "text": "Return an Item from your discard to play attached to an eligible Unit. Dismiss it at end of round. When it is dismissed this round, draw a card."
+      "text": "Play an Item from your Junk Pile attached to an eligible Unit, paying 1 less. Dismiss it at end of round."
     },
     {
       "id": "U114",
@@ -1450,7 +1450,7 @@
       "name": "Repurpose",
       "cost": 1,
       "traits": [],
-      "text": "Place a card from your discard face down in your Scrap row."
+      "text": "Mill 2 cards. You may put an Item from your discard into your Junk Pile."
     },
     {
       "id": "U115",
@@ -1459,7 +1459,7 @@
       "name": "Salvage",
       "cost": 1,
       "traits": [],
-      "text": "Reveal one of your face-down Scrap cards and return it to your hand."
+      "text": "Return a card from your Junk Pile to your hand."
     },
     {
       "id": "U116",
@@ -1468,7 +1468,7 @@
       "name": "Waste Not",
       "cost": 1,
       "traits": [],
-      "text": "If the opponent ended their last round with unused resources, Repurpose an additional card."
+      "text": "If the opponent ended their last round with unused resources, put the top card of your deck into your Junk Pile."
     },
     {
       "id": "U117",
