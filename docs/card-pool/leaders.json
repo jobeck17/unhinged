@@ -41,7 +41,7 @@
       "id": "L003",
       "name": "ROOT",
       "color": "Crooked",
-      "health": 21,
+      "health": 20,
       "traits": [
         "Hacker"
       ],
@@ -49,7 +49,7 @@
       "passive": "The first time each round you play an Action that targets an enemy Unit, that Unit gets -1 Power this round.",
       "active": {
         "cost": "Exhaust",
-        "text": "Ready one of your exhausted Units."
+        "text": "Ready one of your exhausted Units. It cannot attack this round."
       },
       "status": "provisional"
     },
@@ -74,7 +74,7 @@
       "id": "L005",
       "name": "HOA President",
       "color": "Stubborn",
-      "health": 24,
+      "health": 21,
       "traits": [
         "Human",
         "Authority"
