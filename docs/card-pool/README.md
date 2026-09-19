@@ -10,7 +10,7 @@
 - **Canonical distribution: 18 Units / 8 Actions / 4 Items per color**
 - The machine-readable source of truth is [cards.json](./cards.json).
 - The web playtest generates a fresh **20-card deck** from a chosen color using **12 Units / 5 Actions / 3 Items**, with no duplicate cards in that generated deck.
-- Leaders are tracked separately.
+- Leaders are tracked separately in [leaders.json](./leaders.json), with a human-readable roster in [leaders.md](./leaders.md).
 
 A two-color deck currently has access to **60 unique cards** before copy limits, giving a 40-card deck meaningful cuts and alternate packages.
 
@@ -87,11 +87,14 @@ Each two-color pair has a shared Trait/theme so tribal decks are not locked to o
 
 ## Machine-Readable Pool
 
-The simulator loads `docs/card-pool/cards.json` at runtime. Each card has a stable prototype ID, color, type, name, cost, optional Unit stats, Traits, and rules text. The JSON also declares the canonical pool composition and randomized simulator-deck composition.
+The simulator loads `docs/card-pool/cards.json` for cards, `docs/card-pool/leaders.json` for Leaders, and `docs/card-pool/test-decks.json` for curated test decks. Leader definitions have stable IDs and include color, health, Traits, passive ability, Exhaust ability, role, and design status.
 
 ## Files
 
-- [cards.json](./cards.json) — canonical simulator/card-pool data
+- [cards.json](./cards.json) — canonical card-pool data
+- [leaders.json](./leaders.json) — canonical Leader data
+- [leaders.md](./leaders.md) — human-readable Leader roster and abilities
+- [test-decks.json](./test-decks.json) — curated simulator decklists
 - [Reckless](./reckless.md)
 - [Unruly](./unruly.md)
 - [Crooked](./crooked.md)
