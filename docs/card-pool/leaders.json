@@ -12,7 +12,7 @@
         "Florida Man"
       ],
       "role": "Aggro / Items",
-      "passive": "Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.",
+      "passive": "You may play Items from your discard by paying their normal cost. Once each round after one of your Units attacks, another ready Unit you control gets +1 Power this round.",
       "active": {
         "cost": "Exhaust",
         "text": "Dismiss an Item you control. A Unit you control gets +2 Power this round."
