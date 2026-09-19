@@ -284,11 +284,11 @@
       "leaderId": "L005"
     },
     {
-      "id": "trash-crash",
-      "name": "Trash Crash",
+      "id": "safety-third",
+      "name": "Safety Third",
       "leaderColor": "Kamikaze",
       "secondaryColor": "Reckless",
-      "strategy": "Kamikaze core with Reckless support; built around Daredevil, Fanatic, Vermin bridges.",
+      "strategy": "Kamikaze core with Reckless support; built around Daredevil, Fanatic, death-trigger, and sacrifice bridges.",
       "composition": {
         "Unit": 26,
         "Action": 8,
