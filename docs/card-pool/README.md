@@ -7,8 +7,9 @@
 - **6 colors**
 - **30 cards per color**
 - **180 cards total**
-- Current working distribution: **20 Units / 5 Actions / 5 Items per color**
-- We are actively considering shifting toward roughly **18 Units / 8 Actions / 4 Items** per color because Actions are likely to carry more tactical interaction and color identity.
+- **Canonical distribution: 18 Units / 8 Actions / 4 Items per color**
+- The machine-readable source of truth is [cards.json](./cards.json).
+- The web playtest generates a fresh **20-card deck** from a chosen color using **12 Units / 5 Actions / 3 Items**, with no duplicate cards in that generated deck.
 - Leaders are tracked separately.
 
 A two-color deck currently has access to **60 unique cards** before copy limits, giving a 40-card deck meaningful cuts and alternate packages.
@@ -84,8 +85,13 @@ Each two-color pair has a shared Trait/theme so tribal decks are not locked to o
 6. Items should remain meaningful without becoming mandatory in every deck.
 7. Kamikaze is currently treated as a **sixth color**, not Neutral.
 
+## Machine-Readable Pool
+
+The simulator loads `docs/card-pool/cards.json` at runtime. Each card has a stable prototype ID, color, type, name, cost, optional Unit stats, Traits, and rules text. The JSON also declares the canonical pool composition and randomized simulator-deck composition.
+
 ## Files
 
+- [cards.json](./cards.json) — canonical simulator/card-pool data
 - [Reckless](./reckless.md)
 - [Unruly](./unruly.md)
 - [Crooked](./crooked.md)
