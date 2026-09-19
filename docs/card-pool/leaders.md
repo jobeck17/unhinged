@@ -85,7 +85,7 @@ Leaders use a shared chassis:
 
 ---
 
-## Stunt Coordinator
+## Backyard Wrestler
 
 **ID:** L006  
 **Color:** Kamikaze *(working color name)*  
@@ -108,7 +108,7 @@ Leaders use a shared chassis:
 | Crooked | ROOT |
 | Makeshift | Trash Baron |
 | Stubborn | HOA President |
-| Kamikaze | Stunt Coordinator |
+| Kamikaze | Backyard Wrestler |
 
 ## Source of Truth
 
