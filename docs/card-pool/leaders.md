@@ -79,23 +79,23 @@ Leaders use a shared chassis:
 **Traits:** Human • Authority  
 **Role:** Control / Defense
 
-**Passive — Not Approved:** The first Unit you control that blocks each round gets +3 Guard this round.
+**Passive — Not Approved:** The first Unit you control that blocks each round gets +1 Guard this round.
 
 **Exhaust — Violation Notice:** Choose an enemy Unit. It gets -1 Power this round.
 
 ---
 
-## Backyard Wrestler
+## Stunt Coordinator
 
 **ID:** L006  
 **Color:** Kamikaze *(working color name)*  
 **Health:** 20  
 **Traits:** Human • Daredevil  
-**Role:** Death / Combat
+**Role:** Death / Sacrifice
 
-**Passive — Still Standing:** The first time each round one of your Units dies during combat, another Unit you control gets +1 Power this round.
+**Passive — Keep Rolling:** The first time each round one of your Units dies, another Unit you control gets +1 Power this round.
 
-**Exhaust — One More Bump:** Choose a damaged Unit you control. It gets +2 Power this round. If it dies this round, draw a card.
+**Exhaust — Send It Anyway:** Choose a Unit you control. It gets +2 Power this round. If it dies this round, draw a card.
 
 ---
 
@@ -108,7 +108,7 @@ Leaders use a shared chassis:
 | Crooked | ROOT |
 | Makeshift | Trash Baron |
 | Stubborn | HOA President |
-| Kamikaze | Backyard Wrestler |
+| Kamikaze | Stunt Coordinator |
 
 ## Source of Truth
 
