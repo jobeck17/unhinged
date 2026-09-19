@@ -62,13 +62,13 @@
         "Human",
         "Scavenger"
       ],
-      "role": "Scrap / Recycling",
-      "passive": "The first time each round you Repurpose a card, gain 1 temporary resource that may only be spent on a Makeshift card or Item this round.",
+      "role": "Junk / Recycling",
+      "passive": "The first time each round an Item enters your Junk Pile, draw a card, then discard a card.",
       "active": {
         "cost": "Exhaust",
-        "text": "Repurpose a card from your discard. This does not count against your normal once-per-round Repurpose."
+        "text": "Play an Item from your Junk Pile, paying its normal cost."
       },
-      "status": "provisional-resource-engine"
+      "status": "provisional-junk-engine"
     },
     {
       "id": "L005",
