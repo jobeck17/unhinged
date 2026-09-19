@@ -19,7 +19,7 @@
 | U159 | **Fireworks Technician** | 2 | 2/2 | Human • Daredevil • Saboteur | — | When this dies, deal 1 damage to each enemy Unit. |
 | U160 | **Cult Recruiter** | 2 | 1/3 | Human • Fanatic | — | Whenever another Fanatic dies, this gets +1 Power. |
 | U161 | **Crash-Test Intern** | 2 | 3/1 | Human • Daredevil | — | This Unit may attack the round it is deployed. When this dies during your turn, draw a card. |
-| U162 | **Rabid Rat** | 2 | 2/1 | Animal • Vermin | — | If you control another Vermin or Undead Unit, this may attack the round it is deployed. When this dies, another Vermin or Undead Unit gets +2 Power this round. |
+| U162 | **Rabid Rat** | 2 | 2/2 | Animal • Vermin | — | If you control another Vermin or Undead Unit, this may attack the round it is deployed. When this dies, another Vermin or Undead Unit gets +2 Power this round. |
 | U163 | **Volunteer Human Shield** | 3 | 1/5 | Human • Fanatic | — | When this dies while blocking, draw 2 cards, then discard a card. |
 | U164 | **Zombie Mall Walker** | 3 | 2/4 | Undead | — | When this dies, return it to your hand at end of round. If another Undead Unit you control died this round, draw a card. |
 | U165 | **Saboteur With Poor Planning** | 4 | 4/3 | Human • Saboteur | — | When this dies, dismiss an enemy Item. |
