@@ -29,7 +29,7 @@
 ## Actions (5)
 
 1. **Call Security** — Exhaust a Unit.
-2. **Wrong Address** — Return a Unit costing 2 or less to its owner's hand. If it was exhausted, draw a card, then discard a card.
+2. **Wrong Address** — Return a Unit costing 2 or less to its owner's hand. If it was exhausted, draw a card, then discard a card. If it was exhausted, draw a card, then discard a card.
 3. **Have You Tried Turning It Off?** — Exhaust a Unit. It does not ready during its controller's next ready step.
 4. **Terms and Conditions** — A Unit loses its abilities this round.
 5. **Redirect** — Change the target of an Action with a single legal target.
