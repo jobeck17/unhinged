@@ -14,8 +14,8 @@
 | U154 | **Florida Man's Stunt Double** | 2 | 3/1 | Human • Daredevil • Florida Man | — | This Unit may attack the round it is deployed. When this dies during your attack, deal 1 damage to the enemy Leader. |
 | U155 | **Zombie Kid** | 3 | 2/3 | Undead | — | When this dies, create a 1/1 Turtle. |
 | U156 | **Dumpster Revenant** | 3 | 2/3 | Undead • Scavenger | — | When this dies, create a 1/1 Vermin. |
-| U157 | **Crash-Test Dummy** | 4 | 5/2 | Daredevil | Explosive | This Unit may attack the round it is deployed. When this dies, another Unit you control gets +2 Power this round. |
-| U158 | **Doom Rooster** | 6 | 6/6 | Animal • Fanatic • Menace | Explosive | When this dies, deal 2 damage to the enemy Leader. |
+| U157 | **Crash-Test Dummy** | 4 | 4/2 | Daredevil | Explosive | This Unit may attack the round it is deployed. When this dies, another Unit you control gets +2 Power this round. |
+| U158 | **Doom Rooster** | 6 | 6/5 | Animal • Fanatic • Menace | Explosive | When this dies, deal 2 damage to the enemy Leader. |
 | U159 | **Fireworks Technician** | 2 | 2/2 | Human • Daredevil • Saboteur | — | When this dies, deal 1 damage to each enemy Unit. |
 | U160 | **Cult Recruiter** | 2 | 1/3 | Human • Fanatic | — | Whenever another Fanatic dies, this gets +1 Power. |
 | U161 | **Crash-Test Intern** | 2 | 3/1 | Human • Daredevil | — | This Unit may attack the round it is deployed. When this dies during your turn, draw a card. |
@@ -32,7 +32,7 @@
 | ID | Card | Cost | Traits | Keywords | Text |
 |---|---|---:|---|---|---|
 | U169 | **Detonate** | 1 | Saboteur • Fanatic | — | Sacrifice a Unit. Deal 2 damage to the enemy Leader. If the sacrificed Unit was Undead, draw a card. |
-| U170 | **Blood Price** | 1 | Fanatic | — | Sacrifice a Unit. Draw 2. |
+| U170 | **Blood Price** | 1 | Fanatic | — | Sacrifice a Unit. Draw 2, then discard a card. |
 | U171 | **Take One for the Team** | 1 | Fanatic | — | Sacrifice a Unit. Prevent all damage from an attack. |
 | U172 | **This Seemed Like a Good Idea** | 1 | Daredevil | — | Sacrifice a Unit. Another Unit gets +3 Power and +3 Guard this round. |
 | U173 | **Worth It** | 2 | Fanatic • Daredevil | — | Sacrifice a Unit. Deal damage equal to its Power to another Unit. If that Unit dies this round, draw a card. |
@@ -44,7 +44,7 @@
 
 | ID | Card | Cost | Traits | Keywords | Text |
 |---|---|---:|---|---|---|
-| U177 | **Definitely Safe Helmet** | 1 | Daredevil | — | Attach to a Daredevil or Fanatic Unit. When attached Unit dies, draw a card, then dismiss this. |
+| U177 | **Definitely Safe Helmet** | 2 | Daredevil | — | Attach to a Daredevil or Fanatic Unit. When attached Unit dies, draw a card, then dismiss this. |
 | U178 | **Bong Water** | 1 | Florida Man • Fanatic | — | Dismiss and sacrifice a Unit: another Unit gets +2 Power and +2 Guard this round. |
 | U179 | **Dead Man's Switch** | 1 | Saboteur • Fanatic | — | Attach to a Unit. When attached Unit dies, deal 2 damage to a Unit, then dismiss this. |
 | U180 | **Folding Chair** | 1 | Daredevil • Performer • Fanatic | — | Attach to a Daredevil Unit or Leader you control. Exhaust: the next Kamikaze Unit costing 3 or less you deploy this round may attack the round it is deployed. |
