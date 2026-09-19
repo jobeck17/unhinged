@@ -4,7 +4,7 @@
   "notes": [
     "These are strategic test-harness decks, not locked deckbuilding rules.",
     "Each deck is 40 cards: 26 Units / 8 Actions / 6 Items.",
-    "Each deck uses one Leader from its primary color and cards from exactly two colors.",
+    "Each deck references its primary-color Leader by leaderId from leaders.json.",
     "Lists are singleton-heavy by design to expose more of the current card pool during playtests."
   ],
   "decks": [
@@ -13,10 +13,6 @@
       "name": "Florida Junkyard",
       "leaderColor": "Reckless",
       "secondaryColor": "Makeshift",
-      "leader": {
-        "name": "Florida Man",
-        "health": 18
-      },
       "strategy": "Reckless core with Makeshift support; built around Florida Man, Scavenger, Daredevil bridges.",
       "composition": {
         "Unit": 26,
@@ -64,17 +60,14 @@
         "U030",
         "U119",
         "U118"
-      ]
+      ],
+      "leaderId": "L001"
     },
     {
       "id": "coach-neighborhood",
       "name": "Neighborhood Team",
       "leaderColor": "Unruly",
       "secondaryColor": "Stubborn",
-      "leader": {
-        "name": "Little League Coach",
-        "health": 22
-      },
       "strategy": "Unruly core with Stubborn support; built around Team, Hustler bridges.",
       "composition": {
         "Unit": 26,
@@ -122,17 +115,14 @@
         "U060",
         "U150",
         "U147"
-      ]
+      ],
+      "leaderId": "L002"
     },
     {
       "id": "root-backdoor",
       "name": "ROOT Backdoor",
       "leaderColor": "Crooked",
       "secondaryColor": "Makeshift",
-      "leader": {
-        "name": "ROOT",
-        "health": 21
-      },
       "strategy": "Crooked core with Makeshift support; built around Sketchy, Saboteur, Hustler bridges.",
       "composition": {
         "Unit": 26,
@@ -180,17 +170,14 @@
         "U090",
         "U120",
         "U118"
-      ]
+      ],
+      "leaderId": "L003"
     },
     {
       "id": "scrap-undead",
       "name": "Scrap Never Dies",
       "leaderColor": "Makeshift",
       "secondaryColor": "Kamikaze",
-      "leader": {
-        "name": "Makeshift Leader",
-        "health": 21
-      },
       "strategy": "Makeshift core with Kamikaze support; built around Scavenger, Vermin, Undead bridges.",
       "composition": {
         "Unit": 26,
@@ -238,17 +225,14 @@
         "U118",
         "U177",
         "U179"
-      ]
+      ],
+      "leaderId": "L004"
     },
     {
       "id": "hoa-red-tape",
       "name": "Red Tape",
       "leaderColor": "Stubborn",
       "secondaryColor": "Crooked",
-      "leader": {
-        "name": "HOA President",
-        "health": 24
-      },
       "strategy": "Stubborn core with Crooked support; built around Authority, Team bridges.",
       "composition": {
         "Unit": 26,
@@ -296,17 +280,14 @@
         "U148",
         "U088",
         "U089"
-      ]
+      ],
+      "leaderId": "L005"
     },
     {
       "id": "trash-crash",
       "name": "Trash Crash",
       "leaderColor": "Kamikaze",
       "secondaryColor": "Reckless",
-      "leader": {
-        "name": "Trash Baron",
-        "health": 20
-      },
       "strategy": "Kamikaze core with Reckless support; built around Daredevil, Fanatic, Vermin bridges.",
       "composition": {
         "Unit": 26,
@@ -354,7 +335,8 @@
         "U180",
         "U029",
         "U028"
-      ]
+      ],
+      "leaderId": "L006"
     }
   ]
 }
