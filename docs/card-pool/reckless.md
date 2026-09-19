@@ -31,7 +31,7 @@
 1. **Make a Scene** — A Unit gets +2 Power this round.
 2. **Hold My Beer** — A Unit gets +3 Power this attack. Deal 1 damage to that Unit after combat.
 3. **Send It!** — A Unit gets +3 Power this attack and -1 Guard this round.
-4. **Fireworks Incident** — Deal 2 damage to one of your Units and 2 damage to an enemy Unit. If your Unit survives, draw a card, then discard a card.
+4. **Fireworks Incident** — Deal 2 damage to one of your Units and 2 damage to an enemy Unit. If your Unit survives, draw a card, then discard a card. If your Unit survives, draw a card, then discard a card.
 5. **No, No, Watch This** — Ready a Unit that attacked this round. It cannot attack again this round. It gets +2 Power until end of round.
 
 ## Items (5)
