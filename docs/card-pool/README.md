@@ -70,9 +70,9 @@ Each two-color pair has a shared Trait/theme so tribal decks are not locked to o
 |---|---|---|---:|---|
 | Reckless | Florida Man | Aggro | 18 | Item-dismissing synergy; offensive Leader |
 | Unruly | Little League Coach | Midrange | 22 | Classification provisional |
-| Crooked | ROOT | Tempo | 21 | Actions and disruption |
+| Crooked | ROOT | Tempo | 20 | Actions and disruption; Backdoor readies a Unit that cannot attack this round |
 | Makeshift | Trash Baron | Scrap / recycling | 21 | Scavenging, Vermin, recursion, Repurpose/Scrap synergy |
-| Stubborn | HOA President | Control | 24 | Guard, blocking, denial; first blocker gets +1 Guard |
+| Stubborn | HOA President | Control | 21 | Guard, blocking, denial; first blocker gets +1 Guard |
 | Kamikaze | Backyard Wrestler | Death / sacrifice | 20 | Turns expendable bodies and deaths into momentum |
 
 ## Leader Vulnerability
