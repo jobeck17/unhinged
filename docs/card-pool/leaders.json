@@ -80,7 +80,7 @@
         "Authority"
       ],
       "role": "Control / Defense",
-      "passive": "The first Unit you control that blocks each round gets +3 Guard this round.",
+      "passive": "The first Unit you control that blocks each round gets +1 Guard this round.",
       "active": {
         "cost": "Exhaust",
         "text": "Choose an enemy Unit. It gets -1 Power this round."
@@ -89,18 +89,18 @@
     },
     {
       "id": "L006",
-      "name": "Backyard Wrestler",
+      "name": "Stunt Coordinator",
       "color": "Kamikaze",
       "health": 20,
       "traits": [
         "Human",
         "Daredevil"
       ],
-      "role": "Death / Combat",
-      "passive": "The first time each round one of your Units dies during combat, another Unit you control gets +1 Power this round.",
+      "role": "Death / Sacrifice",
+      "passive": "The first time each round one of your Units dies, another Unit you control gets +1 Power this round.",
       "active": {
         "cost": "Exhaust",
-        "text": "Choose a damaged Unit you control. It gets +2 Power this round. If it dies this round, draw a card."
+        "text": "Choose a Unit you control. It gets +2 Power this round. If it dies this round, draw a card."
       },
       "status": "provisional"
     }
