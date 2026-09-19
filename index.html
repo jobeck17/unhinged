@@ -7,7 +7,7 @@
 @keyframes pulse{to{box-shadow:0 0 0 4px #ffd16633}}@media(min-width:720px){.w{padding:20px}.actions{grid-template-columns:repeat(4,1fr);position:static;background:none;padding:0}.c{min-width:145px;width:145px}.setup{grid-template-columns:1fr 1fr auto}.status{grid-template-columns:1fr 1fr}}@media(max-width:430px){.w{padding:8px}.p{padding:9px;margin:7px 0}.setup{grid-template-columns:1fr 1fr}.setup button{grid-column:1/-1}.c{min-width:118px;width:118px;min-height:116px}.top h1{font-size:21px}}
 </style></head><body><div class="w">
 <div class="top"><div><h1>UNHINGED</h1><div class="tag">MONGO • GUIDED PLAYTEST</div></div><span class="badge" id="phase">YOUR ACTION</span></div>
-<div class="p setup"><select id="d" aria-label="Your color"></select><select id="e" aria-label="Opponent color"></select><button id="n">New Random Game</button></div>
+<div class="p setup"><select id="d" aria-label="Your deck"></select><select id="e" aria-label="Opponent deck"></select><button id="n">New Game</button></div>
 <div class="p status"><div class="leader enemy" id="enemyLeader"><b id="en"></b><div class="hp"><span id="ehp"></span> ♥</div><div class="m" id="er"></div></div></div>
 <div class="hint" id="hint">Select a card in your hand to play it, or select a ready Unit to attack.</div>
 <div class="p"><div class="zoneTitle"><b>Opponent Battlefield</b><span class="m" id="oc"></span></div><div class="cards" id="ob"></div></div>
@@ -20,20 +20,22 @@
 <script>
 (async()=>{
 const $=x=>document.getElementById(x);
-let DATA,CARDS,COLORS,S,sel=null,mode='idle',fx=[],mulls=new Set(),endingRound=false;
+let DATA,CARDS,DECKDATA,DECKS,CARDMAP,S,sel=null,mode='idle',fx=[],mulls=new Set(),endingRound=false;
 
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function sample(a,n){return shuffle(a).slice(0,n)}
-function deck(color){
-  const pool=CARDS.filter(c=>c.color===color);
-  const units=sample(pool.filter(c=>c.type==='Unit'),12);
-  const actions=sample(pool.filter(c=>c.type==='Action'),5);
-  const items=sample(pool.filter(c=>c.type==='Item'),3);
-  return shuffle([...units,...actions,...items]);
+function deck(deckId){
+  const cfg=DECKS.find(d=>d.id===deckId);
+  if(!cfg)throw new Error('Unknown deck '+deckId);
+  return shuffle(cfg.cards.map(id=>{
+    const c=CARDMAP.get(id);
+    if(!c)throw new Error('Missing card '+id+' in '+cfg.name);
+    return c;
+  }));
 }
-function side(color){
-  const leader=DATA.colors[color].leader;
-  const x={color,leader,hp:leader.health,cmd:1,max:1,sta:3,staMax:3,deck:deck(color),hand:[],board:[],discard:[]};
+function side(deckId){
+  const cfg=DECKS.find(d=>d.id===deckId);
+  const leader=cfg.leader;
+  const x={deckId,deckName:cfg.name,colors:[cfg.leaderColor,cfg.secondaryColor],leader,hp:leader.health,cmd:1,max:1,sta:3,staMax:3,deck:deck(deckId),hand:[],board:[],discard:[]};
   for(let i=0;i<7&&x.deck.length;i++)x.hand.push(x.deck.pop());
   return x;
 }
@@ -45,9 +47,9 @@ function hint(x){$('hint').textContent=x}
 function start(){
   S={r:1,p:side($('d').value),e:side($('e').value),log:[],over:false,mulligan:true};
   sel=null;mode='mulligan';mulls.clear();
-  note('Random 20-card decks generated: 12 Units / 5 Actions / 3 Items.');
+  note('Curated 40-card dual-color decks loaded: 26 Units / 8 Actions / 6 Items.');
   render();
-  hint('Mulligan: tap any opening cards you want to replace, then confirm. New Game generates fresh random decks from cards.json.');
+  hint('Mulligan: tap any opening cards you want to replace, then confirm. These are curated 40-card dual-color LAB decks.');
 }
 function chtml(c,i,zone,obj){
   const unit=c.type==='Unit',type=c.type.toLowerCase(),ready=obj?obj.ready:false;
@@ -74,9 +76,9 @@ function spend(side,c){if(c.type==='Action')side.sta-=c.cost;else side.cmd-=c.co
 function refund(side,c){if(c.type==='Action')side.sta+=c.cost;else side.cmd+=c.cost}
 
 function render(){
-  $('hudName').textContent=S.p.leader.name+' • '+S.p.color;
+  $('hudName').textContent=S.p.leader.name+' • '+S.p.deckName;
   $('hudHp').textContent=S.p.hp;$('hudCmd').textContent=S.p.cmd+'/'+S.p.max;$('hudSta').textContent=S.p.sta+'/'+S.p.staMax;$('hudHand').textContent=S.p.hand.length;
-  $('en').textContent=S.e.leader.name+' • '+S.e.color;$('ehp').textContent=S.e.hp;$('er').textContent='Round '+S.r+' • Deck '+S.e.deck.length;
+  $('en').textContent=S.e.leader.name+' • '+S.e.deckName;$('ehp').textContent=S.e.hp;$('er').textContent='Round '+S.r+' • Deck '+S.e.deck.length;
   $('phase').textContent=mode==='mulligan'?'MULLIGAN':mode==='target'?'CHOOSE TARGET':'YOUR ACTION';
   $('mull').classList.toggle('hidden',mode!=='mulligan');$('mullBtn').textContent='Replace Selected ('+mulls.size+')';
   $('h').innerHTML=S.p.hand.map((c,i)=>chtml(c,i,'h')).join('');
@@ -187,27 +189,37 @@ function endRound(){
   },500);
 }
 function checkWin(){
-  if(S.p.hp<=0||S.e.hp<=0){S.over=true;hint(S.p.hp<=0?'Opponent wins. Start a New Random Game to play again.':'You win! Start a New Random Game to play again.');$('phase').textContent='GAME OVER'}
+  if(S.p.hp<=0||S.e.hp<=0){S.over=true;hint(S.p.hp<=0?'Opponent wins. Start a New Game to play again.':'You win! Start a New Game to play again.');$('phase').textContent='GAME OVER'}
 }
 function cancel(){sel=null;mode='idle';hint('Selection cleared.');render()}
 
 try{
-  const res=await fetch('./docs/card-pool/cards.json',{cache:'no-store'});
-  if(!res.ok)throw new Error('cards.json returned '+res.status);
-  DATA=await res.json();CARDS=DATA.cards;COLORS=Object.keys(DATA.colors);
+  const [cardRes,deckRes]=await Promise.all([
+    fetch('./docs/card-pool/cards.json',{cache:'no-store'}),
+    fetch('./docs/card-pool/test-decks.json',{cache:'no-store'})
+  ]);
+  if(!cardRes.ok)throw new Error('cards.json returned '+cardRes.status);
+  if(!deckRes.ok)throw new Error('test-decks.json returned '+deckRes.status);
+  DATA=await cardRes.json();DECKDATA=await deckRes.json();CARDS=DATA.cards;DECKS=DECKDATA.decks;CARDMAP=new Map(CARDS.map(c=>[c.id,c]));
   if(CARDS.length!==180)throw new Error('Expected 180 cards, found '+CARDS.length);
-  for(const color of COLORS){
-    const counts=CARDS.filter(c=>c.color===color).reduce((m,c)=>(m[c.type]=(m[c.type]||0)+1,m),{});
-    if(counts.Unit!==18||counts.Action!==8||counts.Item!==4)throw new Error(color+' pool is not 18/8/4');
-    $('d').insertAdjacentHTML('beforeend','<option value="'+color+'">You: '+color+'</option>');
-    $('e').insertAdjacentHTML('beforeend','<option value="'+color+'">Opponent: '+color+'</option>');
+  if(!DECKS.length)throw new Error('No curated test decks found');
+  for(const cfg of DECKS){
+    if(cfg.cards.length!==40)throw new Error(cfg.name+' is not 40 cards');
+    const list=cfg.cards.map(id=>CARDMAP.get(id));
+    if(list.some(c=>!c))throw new Error(cfg.name+' references a missing card');
+    const colors=new Set(list.map(c=>c.color));
+    if(colors.size!==2||!colors.has(cfg.leaderColor)||!colors.has(cfg.secondaryColor))throw new Error(cfg.name+' is not exactly two colors');
+    const counts=list.reduce((m,c)=>(m[c.type]=(m[c.type]||0)+1,m),{});
+    if(counts.Unit!==26||counts.Action!==8||counts.Item!==6)throw new Error(cfg.name+' is not 26/8/6');
+    $('d').insertAdjacentHTML('beforeend','<option value="'+cfg.id+'">You: '+cfg.name+'</option>');
+    $('e').insertAdjacentHTML('beforeend','<option value="'+cfg.id+'">Opponent: '+cfg.name+'</option>');
   }
-  $('d').value='Reckless';$('e').value='Stubborn';
+  $('d').value=DECKS[0].id;$('e').value=DECKS[Math.min(4,DECKS.length-1)].id;
   $('n').onclick=start;$('keep').onclick=()=>finishMulligan(false);$('mullBtn').onclick=()=>finishMulligan(true);
   $('play').onclick=playSelected;$('attack').onclick=beginAttack;$('cancel').onclick=cancel;$('end').onclick=endRound;
   start();
 }catch(err){
-  console.error(err);$('hint').textContent='Playtest failed to load card pool: '+err.message;$('hint').style.borderLeftColor='#ff3b30';
+  console.error(err);$('hint').textContent='Playtest failed to load test bed: '+err.message;$('hint').style.borderLeftColor='#ff3b30';
 }
 })();
 </script></body></html>
