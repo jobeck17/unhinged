@@ -25,22 +25,13 @@ A two-color deck currently has access to **60 unique cards** before copy limits,
 | **Stubborn** | Resilience, Guard, blocking, prevention | **Patience pays.** Discounts for waiting, defending, or being behind. |
 | **Kamikaze** *(working name)* | Death triggers, sacrifice, recursion | **Death is fuel.** Units dying converts into cards, damage, discounts, or resources. |
 
-## Makeshift: Repurpose / Scrap Direction
+## Makeshift: Junk Pile Direction
 
-This is a major mechanic under active development.
+Makeshift uses a face-up **Junk Pile** with a maximum of **3 cards**.
 
-### Repurpose
-Once per round, place a card from your discard face down in your **Scrap row**.
+Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. If the Junk Pile is full, dismiss one card from it before adding another.
 
-### Scrap
-A face-down Scrap card has no printed name, color, type, Traits, or abilities. A Scrap card may be dismissed to generate temporary resource, likely restricted to **Makeshift cards and/or Items**.
-
-### Salvage
-Effects may reveal a face-down Scrap card and return it to hand.
-
-This makes the **card back functionally part of gameplay**, lets Makeshift turn discarded cards into value, and creates a light bluff/memory layer.
-
-Possible additional hook: if an opponent ends a round with unused resources, Makeshift may gain an extra Repurpose opportunity rather than literally stealing those resources.
+Junk has **no inherent effect and generates no Resource**. Individual Makeshift cards and Leaders can use, move, play, or care about Junk. The purpose is to preserve the scavenging/recycling fantasy while preventing the zone from becoming an automatic resource engine.
 
 ## Tribal Bridges
 
