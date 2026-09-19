@@ -79,6 +79,14 @@ Each two-color pair has a shared Trait/theme so tribal decks are not locked to o
 
 Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **Vulnerable** until it readies. A Vulnerable Leader may be attacked directly, bypassing normal Unit protection.
 
+## Trait Reference
+
+The current pool contains **21 distinct Traits**. See [traits.md](./traits.md) for the full human-readable index, current color coverage, tribal bridges, and every card/Leader using each Trait.
+
+Current tribal bridges:
+
+**Party, Outlaw, Florida Man, Menace, Daredevil, Hustler, Performer, Team, Fanatic, Sketchy, Authority, Saboteur, Scavenger, Vermin, Undead.**
+
 ## Design Rules
 
 1. **Color identity comes first, tribe second, Leader synergy third.**
@@ -98,6 +106,7 @@ The simulator loads `docs/card-pool/cards.json` for cards, `docs/card-pool/leade
 - [cards.json](./cards.json) — canonical card-pool data
 - [leaders.json](./leaders.json) — canonical Leader data
 - [leaders.md](./leaders.md) — human-readable Leader roster and abilities
+- [traits.md](./traits.md) — human-readable Trait index and tribal map
 - [test-decks.json](./test-decks.json) — curated simulator decklists
 - [Reckless](./reckless.md)
 - [Unruly](./unruly.md)
