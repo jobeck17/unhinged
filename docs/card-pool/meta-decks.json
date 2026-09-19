@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "generated": "2026-09-19",
   "warning": "Trait-aware heuristic optimization artifact. Exact win rates are directional, not a rules-complete simulation.",
   "methodology": {
@@ -9,8 +9,9 @@
       "Action": 8,
       "Item": 6
     },
-    "backyardWrestler": "First-death-only Resource ready is modeled with a ~0.16 logit reduction from the prior unlimited-ramp calibration, matching the rough magnitude seen in the earlier one-death vs two-death A/B test.",
-    "usage": "Card popularity uses slot-adjusted inclusion so expensive cards are not penalized simply for being late-game plays."
+    "backyardWrestler": "First-death-only Resource ready remains modeled with the calibrated ~0.16 logit reduction from the former unlimited-ramp build.",
+    "usage": "Card popularity uses slot-adjusted inclusion so expensive cards are not penalized simply for being late-game plays.",
+    "note": "This refresh follows four small Kamikaze trims: Crash-Test Dummy -1 Power, Doom Rooster -1 Guard, Blood Price gains a discard after Draw 2, and Definitely Safe Helmet costs 2."
   },
   "combinations": [
     {
@@ -22,7 +23,6 @@
         "U015",
         "U166",
         "U012",
-        "U157",
         "U013",
         "U017",
         "U018",
@@ -31,6 +31,7 @@
         "U006",
         "U005",
         "U163",
+        "U157",
         "U164",
         "U001",
         "U009",
@@ -52,13 +53,13 @@
         "U171",
         "U030",
         "U178",
-        "U177",
         "U028",
+        "U177",
         "U027",
         "U179"
       ],
-      "score": 115.10095720399192,
-      "fieldWinRate": 58.34,
+      "score": 114.21454151771741,
+      "fieldWinRate": 57.75,
       "rank": 1
     },
     {
@@ -68,11 +69,11 @@
         "U015",
         "U008",
         "U016",
-        "U157",
         "U166",
         "U012",
         "U017",
         "U163",
+        "U157",
         "U165",
         "U167",
         "U013",
@@ -98,33 +99,33 @@
         "U176",
         "U174",
         "U023",
-        "U177",
         "U178",
         "U180",
+        "U177",
         "U179",
         "U030",
         "U029"
       ],
-      "score": 119.30915420289945,
-      "fieldWinRate": 58.19,
+      "score": 118.42273851662495,
+      "fieldWinRate": 57.6,
       "rank": 2
     },
     {
       "sec": "Kamikaze",
       "ids": [
-        "U158",
         "U046",
+        "U158",
         "U045",
         "U036",
         "U166",
         "U041",
         "U048",
-        "U157",
         "U044",
         "U165",
         "U163",
         "U038",
         "U164",
+        "U157",
         "U042",
         "U037",
         "U168",
@@ -147,14 +148,14 @@
         "U176",
         "U054",
         "U178",
-        "U177",
         "U057",
         "U059",
         "U179",
+        "U177",
         "U058"
       ],
-      "score": 110.68246059930604,
-      "fieldWinRate": 56.1,
+      "score": 109.79604491303152,
+      "fieldWinRate": 55.51,
       "rank": 3
     },
     {
@@ -165,7 +166,6 @@
         "U076",
         "U063",
         "U066",
-        "U157",
         "U068",
         "U067",
         "U165",
@@ -177,6 +177,7 @@
         "U073",
         "U064",
         "U077",
+        "U157",
         "U074",
         "U168",
         "U167",
@@ -196,13 +197,13 @@
         "U172",
         "U089",
         "U178",
-        "U177",
         "U088",
         "U179",
-        "U180"
+        "U180",
+        "U177"
       ],
-      "score": 110.45801230039784,
-      "fieldWinRate": 56.02,
+      "score": 109.57159661412332,
+      "fieldWinRate": 55.4,
       "rank": 4
     },
     {
@@ -216,7 +217,6 @@
         "U166",
         "U106",
         "U165",
-        "U157",
         "U104",
         "U108",
         "U102",
@@ -227,6 +227,7 @@
         "U100",
         "U164",
         "U093",
+        "U157",
         "U095",
         "U097",
         "U103",
@@ -245,12 +246,12 @@
         "U120",
         "U119",
         "U178",
-        "U177",
         "U117",
-        "U179"
+        "U179",
+        "U177"
       ],
-      "score": 115.47416330944122,
-      "fieldWinRate": 55.64,
+      "score": 114.58774762316673,
+      "fieldWinRate": 55.05,
       "rank": 5
     },
     {
@@ -268,7 +269,6 @@
         "U131",
         "U121",
         "U137",
-        "U157",
         "U132",
         "U138",
         "U163",
@@ -277,6 +277,7 @@
         "U134",
         "U164",
         "U125",
+        "U154",
         "U168",
         "U130",
         "U129",
@@ -291,14 +292,14 @@
         "U140",
         "U145",
         "U178",
-        "U177",
         "U149",
         "U179",
+        "U177",
         "U147",
         "U180"
       ],
-      "score": 114.03028962811146,
-      "fieldWinRate": 54.76,
+      "score": 113.17791972938274,
+      "fieldWinRate": 54.44,
       "rank": 6
     },
     {
@@ -306,13 +307,13 @@
       "ids": [
         "U158",
         "U096",
-        "U157",
         "U166",
         "U098",
         "U106",
         "U105",
         "U107",
         "U163",
+        "U157",
         "U165",
         "U167",
         "U161",
@@ -338,22 +339,21 @@
         "U176",
         "U174",
         "U109",
-        "U177",
         "U178",
         "U180",
+        "U177",
         "U179",
         "U119",
         "U120"
       ],
-      "score": 116.56083925571717,
-      "fieldWinRate": 54.03,
+      "score": 115.67442356944268,
+      "fieldWinRate": 53.42,
       "rank": 7
     },
     {
       "sec": "Stubborn",
       "ids": [
         "U158",
-        "U157",
         "U136",
         "U166",
         "U126",
@@ -362,6 +362,7 @@
         "U133",
         "U135",
         "U163",
+        "U157",
         "U165",
         "U127",
         "U131",
@@ -386,24 +387,24 @@
         "U176",
         "U174",
         "U175",
-        "U177",
         "U178",
         "U180",
+        "U177",
         "U179",
         "U149",
         "U147"
       ],
-      "score": 117.2610482811543,
-      "fieldWinRate": 53.53,
+      "score": 116.37463259487981,
+      "fieldWinRate": 52.92,
       "rank": 8
     },
     {
       "sec": "Crooked",
       "ids": [
         "U158",
-        "U157",
         "U166",
         "U163",
+        "U157",
         "U165",
         "U167",
         "U066",
@@ -434,64 +435,16 @@
         "U176",
         "U174",
         "U175",
-        "U177",
         "U178",
         "U180",
+        "U177",
         "U179",
         "U089",
         "U088"
       ],
-      "score": 113.65651548785365,
-      "fieldWinRate": 52.87,
-      "rank": 9
-    },
-    {
-      "sec": "Unruly",
-      "ids": [
-        "U158",
-        "U046",
-        "U157",
-        "U166",
-        "U045",
-        "U163",
-        "U036",
-        "U165",
-        "U167",
-        "U161",
-        "U038",
-        "U044",
-        "U048",
-        "U164",
-        "U154",
-        "U168",
-        "U041",
-        "U042",
-        "U159",
-        "U035",
-        "U151",
-        "U162",
-        "U034",
-        "U043",
-        "U152",
-        "U153",
-        "U169",
-        "U173",
-        "U170",
-        "U172",
-        "U171",
-        "U176",
-        "U174",
-        "U049",
-        "U177",
-        "U178",
-        "U180",
-        "U179",
-        "U058",
-        "U060"
-      ],
-      "score": 115.07187931918266,
+      "score": 112.77009980157915,
       "fieldWinRate": 52.25,
-      "rank": 10
+      "rank": 9
     },
     {
       "sec": "Reckless",
@@ -538,7 +491,55 @@
         "U027"
       ],
       "score": 117.23104219656128,
-      "fieldWinRate": 51.83,
+      "fieldWinRate": 52.12,
+      "rank": 10
+    },
+    {
+      "sec": "Unruly",
+      "ids": [
+        "U158",
+        "U046",
+        "U166",
+        "U045",
+        "U163",
+        "U036",
+        "U157",
+        "U165",
+        "U167",
+        "U161",
+        "U038",
+        "U044",
+        "U048",
+        "U164",
+        "U154",
+        "U168",
+        "U041",
+        "U042",
+        "U159",
+        "U035",
+        "U151",
+        "U162",
+        "U034",
+        "U043",
+        "U152",
+        "U153",
+        "U169",
+        "U173",
+        "U170",
+        "U172",
+        "U171",
+        "U176",
+        "U174",
+        "U049",
+        "U178",
+        "U180",
+        "U177",
+        "U179",
+        "U058",
+        "U060"
+      ],
+      "score": 114.18546363290817,
+      "fieldWinRate": 51.65,
       "rank": 11
     },
     {
@@ -586,7 +587,7 @@
         "U028"
       ],
       "score": 114.53001170011677,
-      "fieldWinRate": 51.09,
+      "fieldWinRate": 51.38,
       "rank": 12
     },
     {
@@ -634,7 +635,7 @@
         "U027"
       ],
       "score": 112.53623125430731,
-      "fieldWinRate": 50.77,
+      "fieldWinRate": 51.06,
       "rank": 13
     },
     {
@@ -682,7 +683,7 @@
         "U027"
       ],
       "score": 112.16180597448529,
-      "fieldWinRate": 49.42,
+      "fieldWinRate": 49.7,
       "rank": 14
     },
     {
@@ -730,7 +731,7 @@
         "U147"
       ],
       "score": 114.51074713707342,
-      "fieldWinRate": 48.69,
+      "fieldWinRate": 48.99,
       "rank": 15
     },
     {
@@ -778,7 +779,7 @@
         "U148"
       ],
       "score": 115.1223959106431,
-      "fieldWinRate": 48.38,
+      "fieldWinRate": 48.66,
       "rank": 16
     },
     {
@@ -826,7 +827,7 @@
         "U029"
       ],
       "score": 114.31789152501057,
-      "fieldWinRate": 47.98,
+      "fieldWinRate": 48.27,
       "rank": 17
     },
     {
@@ -874,7 +875,7 @@
         "U117"
       ],
       "score": 113.84430636671256,
-      "fieldWinRate": 47.47,
+      "fieldWinRate": 47.76,
       "rank": 18
     },
     {
@@ -922,7 +923,7 @@
         "U088"
       ],
       "score": 112.50745360970953,
-      "fieldWinRate": 47.37,
+      "fieldWinRate": 47.65,
       "rank": 19
     },
     {
@@ -970,7 +971,7 @@
         "U147"
       ],
       "score": 116.22189312848876,
-      "fieldWinRate": 47.31,
+      "fieldWinRate": 47.61,
       "rank": 20
     },
     {
@@ -1018,7 +1019,7 @@
         "U088"
       ],
       "score": 113.77129102730302,
-      "fieldWinRate": 46.95,
+      "fieldWinRate": 47.23,
       "rank": 21
     },
     {
@@ -1066,7 +1067,7 @@
         "U118"
       ],
       "score": 110.63438142504802,
-      "fieldWinRate": 46.68,
+      "fieldWinRate": 46.98,
       "rank": 22
     },
     {
@@ -1114,7 +1115,7 @@
         "U088"
       ],
       "score": 111.4215743955379,
-      "fieldWinRate": 46.66,
+      "fieldWinRate": 46.93,
       "rank": 23
     },
     {
@@ -1162,7 +1163,7 @@
         "U090"
       ],
       "score": 110.94132436063636,
-      "fieldWinRate": 46.58,
+      "fieldWinRate": 46.85,
       "rank": 24
     },
     {
@@ -1210,7 +1211,7 @@
         "U088"
       ],
       "score": 108.71817779085201,
-      "fieldWinRate": 46.28,
+      "fieldWinRate": 46.56,
       "rank": 25
     },
     {
@@ -1258,7 +1259,7 @@
         "U060"
       ],
       "score": 113.10864713707348,
-      "fieldWinRate": 46.17,
+      "fieldWinRate": 46.46,
       "rank": 26
     },
     {
@@ -1306,7 +1307,7 @@
         "U118"
       ],
       "score": 113.8171478860724,
-      "fieldWinRate": 45.67,
+      "fieldWinRate": 45.96,
       "rank": 27
     },
     {
@@ -1354,7 +1355,7 @@
         "U057"
       ],
       "score": 112.17693125430729,
-      "fieldWinRate": 45.57,
+      "fieldWinRate": 45.86,
       "rank": 28
     },
     {
@@ -1402,7 +1403,7 @@
         "U147"
       ],
       "score": 110.69370034192467,
-      "fieldWinRate": 44.88,
+      "fieldWinRate": 45.15,
       "rank": 29
     },
     {
@@ -1450,7 +1451,7 @@
         "U087"
       ],
       "score": 108.19462920785608,
-      "fieldWinRate": 42.53,
+      "fieldWinRate": 42.8,
       "rank": 30
     }
   ],
@@ -1656,16 +1657,6 @@
       "slotAdjustedPct": 27.8
     },
     {
-      "id": "U157",
-      "name": "Crash-Test Dummy",
-      "color": "Kamikaze",
-      "type": "Unit",
-      "cost": 4,
-      "optimizedInclusionPct": 100,
-      "structuralSlotBaselinePct": 72.2,
-      "slotAdjustedPct": 27.8
-    },
-    {
       "id": "U161",
       "name": "Crash-Test Intern",
       "color": "Kamikaze",
@@ -1749,6 +1740,16 @@
       "id": "U009",
       "name": "Firework Dad",
       "color": "Reckless",
+      "type": "Unit",
+      "cost": 2,
+      "optimizedInclusionPct": 100,
+      "structuralSlotBaselinePct": 72.2,
+      "slotAdjustedPct": 27.8
+    },
+    {
+      "id": "U154",
+      "name": "Florida Man's Stunt Double",
+      "color": "Kamikaze",
       "type": "Unit",
       "cost": 2,
       "optimizedInclusionPct": 100,
@@ -2170,7 +2171,7 @@
       "name": "Definitely Safe Helmet",
       "color": "Kamikaze",
       "type": "Item",
-      "cost": 1,
+      "cost": 2,
       "optimizedInclusionPct": 100,
       "structuralSlotBaselinePct": 75,
       "slotAdjustedPct": 25
@@ -2296,6 +2297,16 @@
       "slotAdjustedPct": 17.8
     },
     {
+      "id": "U157",
+      "name": "Crash-Test Dummy",
+      "color": "Kamikaze",
+      "type": "Unit",
+      "cost": 4,
+      "optimizedInclusionPct": 90,
+      "structuralSlotBaselinePct": 72.2,
+      "slotAdjustedPct": 17.8
+    },
+    {
       "id": "U102",
       "name": "Dollar-Store MacGyver",
       "color": "Makeshift",
@@ -2311,16 +2322,6 @@
       "color": "Makeshift",
       "type": "Unit",
       "cost": 3,
-      "optimizedInclusionPct": 90,
-      "structuralSlotBaselinePct": 72.2,
-      "slotAdjustedPct": 17.8
-    },
-    {
-      "id": "U154",
-      "name": "Florida Man's Stunt Double",
-      "color": "Kamikaze",
-      "type": "Unit",
-      "cost": 2,
       "optimizedInclusionPct": 90,
       "structuralSlotBaselinePct": 72.2,
       "slotAdjustedPct": 17.8
@@ -3281,79 +3282,5 @@
       "selectedByAllFiveSplashLeaders": 14,
       "selectedByAtLeastFour": 16
     }
-  },
-  "rescuedOriginalZeroCards": [
-    {
-      "name": "Feral Chihuahua",
-      "color": "Reckless",
-      "inclusionPct": 100,
-      "slotAdjustedPct": 27.8
-    },
-    {
-      "name": "Bachelorette Party",
-      "color": "Reckless",
-      "inclusionPct": 90,
-      "slotAdjustedPct": 17.8
-    },
-    {
-      "name": "Karaoke Champion",
-      "color": "Reckless",
-      "inclusionPct": 50,
-      "slotAdjustedPct": -22.2
-    },
-    {
-      "name": "MLM Rep",
-      "color": "Unruly",
-      "inclusionPct": 20,
-      "slotAdjustedPct": -52.2
-    },
-    {
-      "name": "Script Kiddie",
-      "color": "Crooked",
-      "inclusionPct": 90,
-      "slotAdjustedPct": 17.8
-    },
-    {
-      "name": "Fake Psychic",
-      "color": "Crooked",
-      "inclusionPct": 20,
-      "slotAdjustedPct": -52.2
-    },
-    {
-      "name": "Identity Thief",
-      "color": "Crooked",
-      "inclusionPct": 80,
-      "slotAdjustedPct": 7.8
-    },
-    {
-      "name": "Cockroach",
-      "color": "Makeshift",
-      "inclusionPct": 70,
-      "slotAdjustedPct": -2.2
-    },
-    {
-      "name": "Cat Hoarder",
-      "color": "Makeshift",
-      "inclusionPct": 10,
-      "slotAdjustedPct": -62.2
-    },
-    {
-      "name": "Bomb Rat",
-      "color": "Kamikaze",
-      "inclusionPct": 50,
-      "slotAdjustedPct": -22.2
-    },
-    {
-      "name": "Overenthusiastic Volunteer",
-      "color": "Kamikaze",
-      "inclusionPct": 20,
-      "slotAdjustedPct": -52.2
-    },
-    {
-      "name": "Rabid Rat",
-      "color": "Kamikaze",
-      "inclusionPct": 50,
-      "slotAdjustedPct": -22.2
-    }
-  ]
+  }
 }
