@@ -104,5 +104,9 @@
       },
       "status": "provisional"
     }
-  ]
+  ],
+  "sharedRules": {
+    "activeAbility": "A Leader's Exhaust ability may be used once while that Leader is ready. Using it exhausts the Leader.",
+    "vulnerable": "An exhausted Leader is Vulnerable until it readies. A Vulnerable Leader may be attacked directly, bypassing normal Unit protection."
+  }
 }
