@@ -69,15 +69,19 @@ Items are possessions and create board state.
 - Avoid designs that automatically resolve and disappear the round they are played with no meaningful board presence; those effects generally belong on Actions.
 - Persistent rule-changing Items are encouraged.
 
-## Makeshift Junk Pile
+## Trash Baron — Junk Pile
 
-Your Junk Pile is face-up and holds at most 3 cards.
+The Junk Pile is **not a universal Makeshift rule**. It exists only when **Trash Baron is your Leader**.
+
+If Trash Baron is your Leader, you have a face-up Junk Pile that holds at most 3 cards.
 
 Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard.
 
 If Junk is full, dismiss one card from it before adding another.
 
 Junk has no inherent effect and generates no Resource.
+
+Cards that reference the Junk Pile are Trash Baron support cards. If Trash Baron is not your Leader, you do not have a Junk Pile.
 
 ## Current deckbuilding test rule
 
