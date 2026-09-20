@@ -272,7 +272,7 @@ Traits: Human, Scavenger, Vermin, Sketchy
 
 Role: Junk / Recycling
 
-Passive: You have a face-up Junk Pile that holds up to 3 cards. If a card would enter it while full, dismiss one card from it first. Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
+Passive: Once per round, at any point during the round, you may put one card from your discard into your Junk Pile. Your Junk Pile may not exceed 3 cards.
 
 Exhaust: Play an Item from your Junk Pile, paying its normal cost.
 
