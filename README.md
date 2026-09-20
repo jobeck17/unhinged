@@ -53,7 +53,7 @@ The five adjective identity names are locked. Kamikaze is the current sixth mech
 
 ## Soft-locked testing defaults
 
-- Shared Resource track grows from 1 to 7
+- Fuel grows from 1 to 7
 - Both players draw on Round 1
 - Leader/primary color plus one secondary color
 - Maximum 2 copies of a card
