@@ -1,7 +1,9 @@
 # Makeshift Card Pool
 
-**Identity:** Scrappy value, Items, recycling, scavenging.  
-**Primary Trait:** Scavenger  
+**Identity:** Scrappy value, Items, recycling, scavenging, repurposing.  
+**Primary Trait:** Scavenger
+
+> **Junk Pile note:** The Junk Pile is a **Trash Baron-specific Leader mechanic**, not a universal Makeshift rule. Cards below that reference the Junk Pile belong to Trash Baron's support package.  
 **Secondary Traits:** Sketchy • Hacker • Vermin • Undead
 
 ## Units (18)
