@@ -54,9 +54,7 @@ Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **
 **Traits:** Human • Scavenger • Vermin • Sketchy  
 **Role:** Junk / Recycling
 
-**Junk Pile:** If Trash Baron is your Leader, you have a face-up Junk Pile with a maximum of 3 cards. Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. If Junk is full, dismiss one card from it before adding another.
-
-**Passive:** The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
+**Passive:** You have a face-up Junk Pile that holds up to 3 cards. If a card would enter it while full, dismiss one card from it first. Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
 
 **Exhaust:** Play an Item from your Junk Pile, paying its normal cost.
 

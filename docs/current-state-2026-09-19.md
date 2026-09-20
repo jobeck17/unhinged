@@ -272,9 +272,7 @@ Traits: Human, Scavenger, Vermin, Sketchy
 
 Role: Junk / Recycling
 
-Junk Pile: If Trash Baron is your Leader, you have a face-up Junk Pile with a maximum of 3 cards. Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. If Junk is full, dismiss one card from it before adding another.
-
-Passive: The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
+Passive: You have a face-up Junk Pile that holds up to 3 cards. If a card would enter it while full, dismiss one card from it first. Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
 
 Exhaust: Play an Item from your Junk Pile, paying its normal cost.
 
@@ -312,23 +310,23 @@ Exhaust: Choose a Unit you control. It gets +2 Power this round. If it dies this
 
 ---
 
-# 6. Trash Baron Junk Pile
+# 6. Rules architecture
 
-◆ The **Junk Pile is a Trash Baron Leader mechanic, not a universal Makeshift mechanic**.
+◆ **Base game rules are global.** They apply equally to every deck, Leader, color/pool, and Trait.
 
-● If Trash Baron is your Leader, you have a face-up Junk Pile.
+◆ A color/pool never grants a special gameplay rule merely because a deck uses that color.
 
-● Maximum size: **3 cards**.
+◆ A Trait is only a label unless a card or global rule explicitly references it.
 
-● Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard.
+◆ Keywords are globally defined rules vocabulary. A keyword applies only to a card that carries it.
 
-● If Junk is full, dismiss one card from it before adding another.
+◆ **Card text is the exception layer.** A Leader, Unit, Action, or Item may add to, alter, or supersede a base rule through its printed text. When explicit card text directly conflicts with a base rule, the card text wins for that card/effect.
 
-◆ Junk has **no inherent effect** and generates **no Resource**.
+◆ A card may create a named zone, state, permission, or restriction. That mechanic exists because the card text created it, not because of the card's color.
 
-Current Makeshift cards that reference the Junk Pile are a **Trash Baron support package**. If Trash Baron is not your Leader, you do not have a Junk Pile.
+● Trash Baron is the current example: **his printed passive creates and governs the Junk Pile. Makeshift itself has no Junk Pile rule.** Makeshift cards that reference a Junk Pile are support for a card-created mechanic.
 
-This means Junk/recycling is part of **Trash Baron's personal Leader identity**, while Makeshift as a whole remains broader: Items, scavenging, repurposing, improvised value, and getting extra usefulness out of cards.
+◆ No faction-specific gameplay rule should live in the rulebook without being invoked by printed card text.
 
 ---
 
@@ -387,7 +385,7 @@ The strongest proof so far was the death-trigger archetype: Kamikaze changes whe
 
 ● Crooked should create temporary asymmetry through manipulation, exhaustion, bounce, disruption, and Actions.
 
-● Makeshift should get value from Items, scavenging, repurposing, reuse, and turning otherwise awkward material into useful value. **Junk specifically belongs to Trash Baron, not Makeshift universally.**
+● Makeshift should get value from Items, scavenging, repurposing, reuse, and turning otherwise awkward material into useful value. Junk is one Trash Baron card package, not a Makeshift rule.
 
 ● Stubborn should win through Guard, blocking, prevention, denial, and refusing to move.
 

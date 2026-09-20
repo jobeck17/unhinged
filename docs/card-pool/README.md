@@ -36,15 +36,13 @@ Persistent rule-changing Items are explicitly encouraged.
 
 When a card carrying attached Items leaves play, dismiss its attached Items unless a card says otherwise.
 
-## Trash Baron — Junk Pile
+## Rules architecture
 
-The **Junk Pile is a Trash Baron Leader mechanic, not a universal Makeshift rule**.
+Color identity is a **design/deckbuilding identity, not a source of special rules**.
 
-If Trash Baron is your Leader, you have a face-up Junk Pile with a maximum of **3 cards**.
+All gameplay starts from the same global rules. A Leader, Unit, Action, or Item may create an exception through its printed text. Keywords are globally defined and apply only to cards carrying them.
 
-Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. If Junk is full, dismiss a card from it before adding another.
-
-Junk has no inherent effect and generates no Resource. Current Makeshift cards that reference the Junk Pile are part of Trash Baron's support package; without Trash Baron as your Leader, you do not have a Junk Pile.
+Trash Baron's Junk package is an example: **Trash Baron's own card text creates the Junk Pile. Makeshift itself does not grant a Junk Pile or any other special rule.**
 
 ## Keywords
 
