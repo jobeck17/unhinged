@@ -76,7 +76,8 @@
         "cost": "Exhaust",
         "text": "Play an Item from your Junk Pile, paying its normal cost."
       },
-      "status": "provisional-junk-engine"
+      "status": "provisional-junk-engine",
+      "setup": "If Trash Baron is your Leader, you have a face-up Junk Pile with a maximum of 3 cards. Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. If Junk is full, dismiss one card from it before adding another."
     },
     {
       "id": "L005",
