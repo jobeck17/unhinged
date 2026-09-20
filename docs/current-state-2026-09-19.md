@@ -183,7 +183,7 @@ The 30-card color pools are design/card-pool inventory. The 40-card deck skeleto
 | **Reckless** | Risk, aggression, burst Power | Daredevil |
 | **Unruly** | Teamwork, momentum, bodies, buffs | Team |
 | **Crooked** | Manipulation, exhaust, bounce, disruption | Sketchy |
-| **Makeshift** | Items, Junk, recycling, scavenging | Scavenger |
+| **Makeshift** | Items, recycling, scavenging, repurposing | Scavenger |
 | **Stubborn** | Guard, blocking, prevention, denial | Authority |
 | **Kamikaze** | Death triggers, sacrifice, recursion | Fanatic |
 
@@ -272,6 +272,8 @@ Traits: Human, Scavenger, Vermin, Sketchy
 
 Role: Junk / Recycling
 
+Junk Pile: If Trash Baron is your Leader, you have a face-up Junk Pile with a maximum of 3 cards. Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. If Junk is full, dismiss one card from it before adding another.
+
 Passive: The first time each round an Item enters your Junk Pile, draw a card, then discard a card.
 
 Exhaust: Play an Item from your Junk Pile, paying its normal cost.
@@ -310,9 +312,11 @@ Exhaust: Choose a Unit you control. It gets +2 Power this round. If it dies this
 
 ---
 
-# 6. Makeshift Junk Pile
+# 6. Trash Baron Junk Pile
 
-● Makeshift has a face-up **Junk Pile**.
+◆ The **Junk Pile is a Trash Baron Leader mechanic, not a universal Makeshift mechanic**.
+
+● If Trash Baron is your Leader, you have a face-up Junk Pile.
 
 ● Maximum size: **3 cards**.
 
@@ -322,9 +326,9 @@ Exhaust: Choose a Unit you control. It gets +2 Power this round. If it dies this
 
 ◆ Junk has **no inherent effect** and generates **no Resource**.
 
-Cards and Leaders must explicitly reference Junk in order to use it.
+Current Makeshift cards that reference the Junk Pile are a **Trash Baron support package**. If Trash Baron is not your Leader, you do not have a Junk Pile.
 
-The Junk Pile is the current mechanical backbone of Makeshift. It supports recycling, salvage, and "nothing is really trash" play without requiring every Makeshift card to be an attachment.
+This means Junk/recycling is part of **Trash Baron's personal Leader identity**, while Makeshift as a whole remains broader: Items, scavenging, repurposing, improvised value, and getting extra usefulness out of cards.
 
 ---
 
@@ -383,7 +387,7 @@ The strongest proof so far was the death-trigger archetype: Kamikaze changes whe
 
 ● Crooked should create temporary asymmetry through manipulation, exhaustion, bounce, disruption, and Actions.
 
-● Makeshift should get value from Items, Junk, reuse, salvage, and turning otherwise awkward material into useful value.
+● Makeshift should get value from Items, scavenging, repurposing, reuse, and turning otherwise awkward material into useful value. **Junk specifically belongs to Trash Baron, not Makeshift universally.**
 
 ● Stubborn should win through Guard, blocking, prevention, denial, and refusing to move.
 
@@ -531,7 +535,7 @@ These ideas are preserved so they do not accidentally crawl back in as "current 
 
 ● Alternating actions, multi-blocking, hand-to-Guard defense, Overflow, and survivors-only retaliation give both players meaningful combat decisions without a tactical-board-game rules burden.
 
-● Makeshift's best identity is broader than "the Item color." Its current Junk system already says **reuse what everyone else would throw away**. The next signature mechanic should reinforce that idea without becoming bookkeeping.
+● Makeshift's best identity is broader than "the Item color." **Trash Baron** owns the Junk/recycling engine. Makeshift generally should express improvised value, scavenging, repurposing, and using cards in ways other groups cannot, without requiring a universal Junk subsystem.
 
 ● The current Item redesign is healthier because Items can be genuine board objects rather than every Item being equipment.
 
