@@ -18,7 +18,7 @@
 | **Reckless** | Risk, aggression, burst Power | Daredevil |
 | **Unruly** | Teamwork, momentum, bodies, buffs | Team |
 | **Crooked** | Manipulation, exhaust, bounce, disruption | Sketchy |
-| **Makeshift** | Items, Junk, recycling, scavenging | Scavenger |
+| **Makeshift** | Items, recycling, scavenging, repurposing | Scavenger |
 | **Stubborn** | Guard, blocking, prevention, denial | Authority |
 | **Kamikaze** | Death triggers, sacrifice, recursion | Fanatic |
 
@@ -36,13 +36,15 @@ Persistent rule-changing Items are explicitly encouraged.
 
 When a card carrying attached Items leaves play, dismiss its attached Items unless a card says otherwise.
 
-## Junk Pile
+## Trash Baron — Junk Pile
 
-Makeshift uses a face-up **Junk Pile**, maximum **3 cards**.
+The **Junk Pile is a Trash Baron Leader mechanic, not a universal Makeshift rule**.
+
+If Trash Baron is your Leader, you have a face-up Junk Pile with a maximum of **3 cards**.
 
 Once each round, when one of your cards is dismissed or one of your Units dies, you may put that card into your Junk Pile instead of your discard. If Junk is full, dismiss a card from it before adding another.
 
-Junk has no inherent effect and generates no Resource. Cards and Leaders must specifically reference Junk to use it.
+Junk has no inherent effect and generates no Resource. Current Makeshift cards that reference the Junk Pile are part of Trash Baron's support package; without Trash Baron as your Leader, you do not have a Junk Pile.
 
 ## Keywords
 
