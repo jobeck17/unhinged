@@ -6,7 +6,7 @@ Digital playtest harness and design repository for **Unhinged**, currently track
 
 The current design state is documented in:
 
-- [Current State - 2026-09-19](./docs/current-state-2026-09-19.md)
+- [Current State - 2026-09-20](./docs/current-state-2026-09-20.md)
 - [LAB Rules](./docs/card-pool/rules-lab.md)
 - [Canonical Card Pool](./docs/card-pool/cards.json)
 - [Canonical Leaders](./docs/card-pool/leaders.json)
@@ -18,14 +18,16 @@ When older prototype notes conflict with the dated current-state checkpoint, use
 - 40-card decks
 - 7-card opening hand with 0-7 mulligan
 - One Leader starts in play
-- Reduce the opposing Leader to 0 Health
-- Alternating primary actions
+- War determines Round 1 initiative and breaks tied game-end states
+- Ready, Set, Draw round structure
+- Alternating one-Move turns
+- Two consecutive Passes end the Round
 - Single unrestricted battlefield
 - Multiple blockers
-- Universal Overflow
+- Blocking exhausts
+- Exhausted Units may be attacked directly and retaliate if they survive
 - Persistent damage
-- Discard cards from hand for +1 Guard each during defense
-- Survivors-only retaliation
+- Discard cards from hand for +1 temporary Guard each during defense
 - Actions resolve once, then go to discard
 - Items persist on the board and attach only when their text says to
 - Exhausted Leaders are Vulnerable
@@ -49,9 +51,13 @@ Current pools:
 
 The five adjective identity names are locked. Kamikaze is the current sixth mechanical pool name but has not received the same final naming lock.
 
-## LAB, not frozen
+## Soft-locked testing defaults
 
-The current harness uses a shared dedicated Resource track that grows from 1 to 7, and current deckbuilding tests one Leader/primary pool plus one secondary pool. Both remain LAB assumptions until explicitly frozen.
+- Shared Resource track grows from 1 to 7
+- Both players draw on Round 1
+- Leader/primary color plus one secondary color
+- Maximum 2 copies of a card
+- Newly deployed Units may block, but normally cannot attack or use their own Exhaust ability that round
 
 ## Historical rollback anchor
 
