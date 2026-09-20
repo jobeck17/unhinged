@@ -166,7 +166,7 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 # Soft locks after stress testing
 
-● **Resource progression:** 1 Resource on Round 1, +1 per Round to a maximum of 7, with Resources readying each Round.
+● **Fuel progression:** 1 Fuel on Round 1, +1 per Round to a maximum of 7, with Fuel readying each Round.
 
 ● **Round 1 draw:** both players use the normal Draw step during Round 1.
 
@@ -218,7 +218,7 @@ Treat this as a deliberate property to monitor, not an accidental coin flip.
 
 ◇ Alternate battlefield structures remain tabled.
 
-🧪 The physical Resource implementation remains open.
+🧪 The physical Fuel implementation remains open.
 
 🧪 More Units need Exhaust abilities before the deployment-Exhaust rule can receive the same confidence as the blocking rules.
 
@@ -234,3 +234,20 @@ Treat this as a deliberate property to monitor, not an accidental coin flip.
 4. Rebuild stale curated/meta decks affected by the Junk Pile correction.
 5. Re-run card-level balance after those repairs using the newly locked combat cadence.
 
+
+
+---
+
+# Locked terminology — Fuel
+
+◆ **Fuel** is the official current name for the game's spendable resource.
+
+◆ A card's printed payment number is simply its **Cost**.
+
+◆ Players **Rotate Fuel** to pay costs.
+
+◆ Fuel uses the same **Ready / Rotated** state language as other cards or resource objects.
+
+◇ **Parking lot:** Juice, Command, and Charge are preserved as considered alternatives, but are not current terminology.
+
+Design intent: Fuel is broad enough to support serious rules language while still allowing individual resource cards to carry Unhinged flavor.
