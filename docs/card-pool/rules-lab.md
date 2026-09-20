@@ -46,7 +46,7 @@
 - A Move can normally be: deploy a Unit, play an Action, play an Item, activate an ability, or attack.
 - Deploying a Unit is the entire Move.
 - Playing an Item is the entire Move.
-- Activating an activated ability is a Move regardless of whether its cost is Exhaust, Resource, sacrifice, dismissal, or something else, unless card text says otherwise.
+- Activating an activated ability is a Move regardless of whether its cost is Exhaust, Fuel, sacrifice, dismissal, or something else, unless card text says otherwise.
 - Triggered and passive abilities do not consume Moves.
 - Defense is not a Move.
 - Pass immediately gives play to the opponent.
@@ -59,8 +59,8 @@
 ### Start of Round
 
 **LOCKED mnemonic: Ready, Set, Draw**
-1. **Ready** all cards and Resources that are allowed to ready.
-2. **Set** Resource progression for the new Round.
+1. **Ready** all cards and Fuel that are allowed to ready.
+2. **Set** Fuel progression for the new Round.
 3. **Draw** one card.
 4. The initiative player takes the first Move.
 
@@ -72,16 +72,23 @@
 
 ---
 
-## Resource system
+## Fuel system
+
+**LOCKED TERM: Fuel**
+- **Fuel** is the game's spendable resource.
+- Card numbers are simply **Cost**.
+- Rotate Fuel to pay costs.
+- Fuel follows the same Ready / Rotated state language as other cards or resource objects.
+
 
 **SOFT LOCK**
-- Round 1: 1 Resource.
-- Round 2: 2 Resources.
+- Round 1: 1 Fuel.
+- Round 2: 2 Fuel.
 - Continue +1 per Round to a maximum of 7.
-- Resource total remains 7 from Round 7 onward.
-- Resources ready at the start of each Round.
-- Exhaust Resources to pay costs.
-- Physical Resource presentation is still open.
+- Fuel total remains 7 from Round 7 onward.
+- Fuel readies at the start of each Round.
+- Exhaust Fuel to pay costs.
+- Physical Fuel presentation is still open.
 
 ---
 
