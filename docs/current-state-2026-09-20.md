@@ -251,3 +251,30 @@ Treat this as a deliberate property to monitor, not an accidental coin flip.
 ◇ **Parking lot:** Juice, Command, and Charge are preserved as considered alternatives, but are not current terminology.
 
 Design intent: Fuel is broad enough to support serious rules language while still allowing individual resource cards to carry Unhinged flavor.
+
+
+---
+
+# Additional terminology locks
+
+## Locked wording — “If you do”
+
+◆ **“If you do”** requires the immediately preceding optional instruction to be successfully completed.
+
+◆ Choosing not to perform the optional instruction does not satisfy the condition.
+
+◆ If the optional instruction cannot actually be completed, the follow-up effect does not occur.
+
+## Locked Dismiss cleanup
+
+◆ **Dismiss** is a distinct removal event from play to discard and does not count as Defeat unless an effect explicitly says otherwise.
+
+◆ A card is Dismissed only when a rule or effect says **Dismiss**.
+
+◆ When a card with attached Items leaves play, put those attached Items into their owners’ discards.
+
+◆ Those attached Items are not Dismissed by that cleanup.
+
+◆ Attached Items do not transfer automatically when their host leaves play.
+
+◆ Players cannot voluntarily Dismiss cards unless a rule or effect allows it.
