@@ -87,11 +87,11 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ◆ No overhealing by default. Healing restores only up to the card's current normal maximum Guard/Health unless card text explicitly increases that maximum.
 
-## Triggers and the bag
+## Trigger timing
 
 ◆ Triggered/passive abilities do not consume Moves.
 
-◆ Simultaneous triggers go **in the bag**.
+◆ Simultaneous triggers become **pending triggers**.
 
 ◆ If one player owns multiple simultaneous triggers, that player chooses their order.
 
@@ -103,15 +103,15 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ◆ If a Defeat trigger needs target(s) that were not already established, the owner of the Defeated card chooses them.
 
-◆ Trigger targets are chosen **when the trigger enters the bag**.
+◆ Trigger targets are chosen **when the trigger becomes pending**.
 
 ## Game-end timing
 
 ◆ Leader reaching 0 does not interrupt resolution.
 
-◆ Finish the current Move and everything already in the bag.
+◆ Finish the current Move and all pending triggers.
 
-◆ When the bag is empty, check Leader Health.
+◆ When no triggers remain pending, check Leader Health.
 
 ◆ If one Leader is at 0 or less, that player loses.
 
@@ -289,3 +289,14 @@ Design intent: Fuel is broad enough to support serious rules language while stil
 ◆ **Target** is the formal rules relationship used by effects that care about targeting.
 
 ◆ Choosing a mode, number, or other non-object option does not by itself create a target.
+
+
+## Locked wording — Pending triggers
+
+◆ **Pending trigger** is the formal description for a triggered ability waiting to resolve.
+
+◆ “The Bag” is retired from formal Unhinged rules language.
+
+◆ If multiple abilities trigger at once, they become pending and resolve using the established trigger-order rules.
+
+◆ If resolving a trigger creates another trigger, the new trigger becomes pending and resolves before returning to older unresolved triggers.
