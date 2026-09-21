@@ -310,3 +310,16 @@ Example: “You may Dismiss an Item. If you do, draw 2 cards.” The cards are d
 - Attached Items moved to discard because their host left play are **not Dismissed**.
 - Attached Items do not automatically transfer to another card unless an effect explicitly says they do.
 - A player may not voluntarily Dismiss a card unless a rule or effect gives permission to do so.
+
+
+---
+
+## Choose and target
+
+**LOCKED**
+- **Choose** is the normal instruction used when a player selects among legal options.
+- When an effect chooses a card, player, or other game object for that effect to affect, that chosen object is the effect's **target**.
+- Card text may refer to targets for rules interactions, such as changing a target, preventing targeting, or triggering when a card is targeted.
+- Not every use of **choose** creates a target. Choosing between modes, values, or instructions does not target a game object unless the effect selects one to affect.
+
+Example: “Choose a Unit. It gets -2 Power this round.” The chosen Unit is the target of that effect.
