@@ -18,19 +18,30 @@ When older prototype notes conflict with the dated current-state checkpoint, use
 - 40-card decks
 - 7-card opening hand with 0-7 mulligan
 - One Leader starts in play
-- War determines Round 1 initiative and breaks tied game-end states
+- War compares Cost to determine Round 1 initiative and break tied game-end states
 - Ready, Set, Draw round structure
-- Alternating one-Move turns
+- Players alternate one-action **Turns**
+- On a Turn: Play a card, Activate an ability, Attack, or Pass
 - Two consecutive Passes end the Round
-- Single unrestricted battlefield
-- Multiple blockers
-- Blocking exhausts
-- Exhausted Units may be attacked directly and retaliate if they survive
+- Single Play Area
+- Multiple Blockers
+- Blocking Rotates the Blocker
+- Rotated Units may be attacked directly and retaliate if they survive
 - Persistent damage
 - Discard cards from hand for +1 temporary Guard each during defense
 - Actions resolve once, then go to discard
-- Items persist on the board and attach only when their text says to
-- Exhausted Leaders are Vulnerable
+- Items persist in play and Attach only when their text says to
+- Rotated Leaders are Vulnerable
+- Fuel is the spendable resource; Rotate Fuel to pay Costs
+
+## Current zones
+
+- Deck
+- Hand
+- Discard
+- Play Area
+- Fuel Tank
+- Junk Pile exists as a Trash Baron/card-created special zone
 
 ## Current card pool
 
@@ -49,15 +60,15 @@ Current pools:
 - Stubborn
 - Kamikaze
 
-The five adjective identity names are locked. Kamikaze is the current sixth mechanical pool name but has not received the same final naming lock.
+Faction names and ordering are the next major design audit.
 
 ## Soft-locked testing defaults
 
 - Fuel grows from 1 to 7
-- Both players draw on Round 1
+- Both players Draw on Round 1
 - Leader/primary color plus one secondary color
 - Maximum 2 copies of a card
-- Newly deployed Units may block, but normally cannot attack or use their own Exhaust ability that round
+- Units that entered play this Round may Block, but normally cannot Attack or Activate their own Rotate ability that Round
 
 ## Historical rollback anchor
 
