@@ -17,25 +17,25 @@
 
 ## Combat cadence
 
-◆ **Blocking exhausts the blocking Unit.**
+◆ **Blocking Rotates the blocking Unit.**
 
-◆ A newly deployed ready Unit **may block immediately**.
+◆ A newly entered play ready Unit **may block immediately**.
 
-◆ A newly deployed Unit cannot attack or use one of its own Exhaust abilities during the round it was deployed unless card text says otherwise.
+◆ A newly entered play Unit cannot attack or use one of its own Rotate abilities during the round it was entered play unless card text says otherwise.
 
-◆ Therefore, blocking is the normal way a newly deployed Unit may exhaust itself during its deployment round.
+◆ Therefore, blocking is the normal way a newly entered play Unit may Rotate itself during its deployment round.
 
-◆ Other cards or effects may still exhaust a newly deployed Unit.
+◆ Other cards or effects may still Rotate a newly entered play Unit.
 
-◆ An exhausted Unit may be attacked directly.
+◆ An Rotated Unit may be attacked directly.
 
-◆ Only attacks against the Leader may be blocked. Direct attacks against exhausted Units cannot be intercepted by another Unit.
+◆ Only attacks against the Leader may be blocked. Direct attacks against Rotated Units cannot be intercepted by another Unit.
 
-◆ A directly attacked exhausted Unit **retaliates if it survives**.
+◆ A directly attacked Rotated Unit **retaliates if it survives**.
 
 This produces the intended board rhythm:
 
-> Ready → can defend → blocks → exhausts → becomes exposed → may be attacked directly → still retaliates if it survives.
+> Ready → can defend → blocks → Rotates → becomes exposed → may be attacked directly → still retaliates if it survives.
 
 ## Blocking and temporary Guard
 
@@ -67,7 +67,7 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ◆ Slowpoke remains the exception that does not retaliate when blocking.
 
-◆ Exhausted Units attacked directly retaliate if they survive.
+◆ Rotated Units attacked directly retaliate if they survive.
 
 ## Damage and Defeat terminology
 
@@ -89,15 +89,15 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ## Trigger timing
 
-◆ Triggered/passive abilities do not consume Moves.
+◆ Triggered/passive abilities do not consume Turns.
 
 ◆ Simultaneous triggers become **pending triggers**.
 
 ◆ If one player owns multiple simultaneous triggers, that player chooses their order.
 
-◆ If both players have simultaneous triggers, the player whose Move caused them resolves all of theirs first, in chosen order, then the opponent resolves theirs.
+◆ If both players have simultaneous triggers, the player whose Turn caused them resolves all of theirs first, in chosen order, then the opponent resolves theirs.
 
-◆ A new trigger created while another trigger is resolving goes into the bag and resolves before returning to older unresolved triggers.
+◆ A new trigger created while another trigger is resolving becomes pending and resolves before returning to older unresolved triggers.
 
 ◆ A Unit's “when Defeated” trigger still occurs after the Unit has moved to discard.
 
@@ -109,7 +109,7 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ◆ Leader reaching 0 does not interrupt resolution.
 
-◆ Finish the current Move and all pending triggers.
+◆ Finish the current Turn and all pending triggers.
 
 ◆ When no triggers remain pending, check Leader Health.
 
@@ -117,25 +117,25 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ◆ If both are at 0 or less, use War.
 
-## Moves, passing, and rounds
+## Turns, passing, and rounds
 
-◆ Players alternate one Move at a time.
+◆ Players alternate one Turn at a time.
 
-◆ A Move may normally deploy a Unit, play an Action, play an Item, activate an ability, or attack.
+◆ A Turn may normally play a Unit, play an Action, play an Item, activate an ability, or attack.
 
-◆ Deploying a Unit, playing an Item, or activating an ability is the entire Move unless card text says otherwise.
+◆ Playing a Unit, playing an Item, or activating an ability is the entire Turn unless card text says otherwise.
 
-◆ Defense is not a Move.
+◆ Defense is not a Turn.
 
 ◆ Pass hands play to the opponent but does not remove the passer from the Round.
 
-◆ A Move after a Pass resets the pass streak.
+◆ A Turn after a Pass resets the pass streak.
 
 ◆ Two consecutive Passes end the Round.
 
-◆ The player who made the first of the two Passes gets the first Move next Round.
+◆ The player who made the first of the two Passes gets the first Turn next Round.
 
-◆ If a player has no legal Move, that player must Pass.
+◆ If a player has no legal Turn, that player must Pass.
 
 ## Ready, Set, Draw
 
@@ -144,7 +144,7 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 1. **Ready**
 2. **Set**
 3. **Draw**
-4. Initiative player takes the first Move
+4. Initiative player takes the first Turn
 
 ◆ “This round” effects expire when the Round ends before the next Ready, Set, Draw.
 
@@ -152,7 +152,7 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ◆ Round 1 initiative is determined by **War**, not dice.
 
-◆ Each player reveals the top card of the shuffled 40-card deck. Higher Command Cost wins. Ties reveal again until broken.
+◆ Each player reveals the top card of the shuffled 40-card deck. Higher Cost wins. Ties reveal again until broken.
 
 ◆ Revealed War cards are shuffled back before opening hands are drawn.
 
@@ -176,7 +176,7 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 ● **No base Unit board cap** for now.
 
-● **Deployment Exhaust restriction:** the current default is that a newly deployed Unit cannot use its own Exhaust ability that Round unless its card says otherwise. This remains softer than the combat cadence until more Units actually have Exhaust abilities.
+● **Deployment Rotate restriction:** the current default is that a newly entered play Unit cannot use its own Rotate ability that Round unless its card says otherwise. This remains softer than the combat cadence until more Units actually have Rotate abilities.
 
 ---
 
@@ -184,13 +184,13 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 
 The September 20 abstract rules harness strongly favored the following paired combat rules:
 
-> **Blocking exhausts. Exhausted Units retaliate if directly attacked and survive.**
+> **Blocking Rotates. Rotated Units retaliate if directly attacked and survive.**
 
-This pairing increased meaningful direct attacks on Units without turning exhausted Units into free cleanup targets.
+This pairing increased meaningful direct attacks on Units without turning Rotated Units into free cleanup targets.
 
-Allowing direct-attacked exhausted Units to retaliate kept “exposed” distinct from “helpless.”
+Allowing direct-attacked Rotated Units to retaliate kept “exposed” distinct from “helpless.”
 
-The current pool contains almost no Unit Exhaust abilities, so the newly-deployed Exhaust restriction cannot be considered fully validated until the card pool gains more of them.
+The current pool contains almost no Unit Rotate abilities, so the newly-entered play Rotate restriction cannot be considered fully validated until the card pool gains more of them.
 
 The 2-copy rule remains the best current compromise between deck identity and repetitive consistency.
 
@@ -200,7 +200,7 @@ Round 1 draw did not create a meaningful structural imbalance in the stress harn
 
 # Watch item: War curve bias
 
-🧪 War is not a neutral randomizer because deck Command Cost distributions affect the chance to win initiative.
+🧪 War is not a neutral randomizer because deck Cost distributions affect the chance to win initiative.
 
 The current curated decks are close enough that this is not presently a structural problem, but low-curve decks can lose War more often than higher-curve decks.
 
@@ -220,7 +220,7 @@ Treat this as a deliberate property to monitor, not an accidental coin flip.
 
 🧪 The physical Fuel implementation remains open.
 
-🧪 More Units need Exhaust abilities before the deployment-Exhaust rule can receive the same confidence as the blocking rules.
+🧪 More Units need Rotate abilities before the deployment-Rotate rule can receive the same confidence as the blocking rules.
 
 🧪 Current card text still needs a terminology cleanup from “dies/dismiss” to **Defeat** where appropriate.
 
@@ -228,7 +228,7 @@ Treat this as a deliberate property to monitor, not an accidental coin flip.
 
 # Immediate next design work
 
-1. Add meaningful Exhaust abilities to more Units without turning them into deploy-trigger Actions on legs.
+1. Add meaningful Rotate abilities to more Units without turning them into play-trigger Actions on legs.
 2. Clean canonical card wording to use **Defeat** consistently.
 3. Fix known card-pool wording/trait issues.
 4. Rebuild stale curated/meta decks affected by the Junk Pile correction.
@@ -300,3 +300,36 @@ Design intent: Fuel is broad enough to support serious rules language while stil
 ◆ If multiple abilities trigger at once, they become pending and resolve using the established trigger-order rules.
 
 ◆ If resolving a trigger creates another trigger, the new trigger becomes pending and resolves before returning to older unresolved triggers.
+
+
+---
+
+# September 20 terminology freeze — Turn / Play / ownership
+
+◆ **Turn** replaces **Move** as the formal name for one player’s opportunity to act during a Round.
+
+◆ On a Turn, a player normally **Plays a card, Activates an ability, Attacks, or Passes**.
+
+◆ Blocking occurs during the opponent’s Turn and does not consume the defender’s next Turn.
+
+◆ **Play** is the general verb for playing a card from a legal zone.
+
+◆ Units and Items **enter play** whenever they arrive in the Play Area, regardless of origin. **Deploy** is retired as a formal term.
+
+◆ **Activate** is reserved for activated abilities. Attacking and Blocking are not Activations.
+
+◆ **Ready / Rotate / Rotated** are the official orientation terms. Exhaust / Exhausted are retired from formal Unhinged language.
+
+◆ **Owner** means the player the physical card belongs to. Ownership does not change during a game.
+
+◆ **Controller** means the player currently controlling the card and is the default relationship used for gameplay decisions and effects.
+
+◆ When a card is sent to a hand, deck, or discard, it goes to its **Owner’s** corresponding zone unless an effect explicitly says otherwise.
+
+◆ A token’s Owner is the player who created it unless an effect says otherwise; Controller is whoever currently controls it.
+
+◆ A card’s payment number is **Cost**. War compares Cost.
+
+## Core icon vocabulary
+
+◆ Conceptually lock icon support for **Rotate, Cost/Fuel, Power, Guard, and Health**. Exact artwork is still TBD.
