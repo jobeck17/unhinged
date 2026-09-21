@@ -1,6 +1,6 @@
 # Unhinged Alpha 0.03 “Mongo” — LAB Rules Snapshot
 
-> Synchronized working rules state as of 2026-09-20.
+> Synchronized working rules state as of 2026-09-21.
 > **Golden Rule:** base rules apply globally. Printed card text is the exception layer.
 
 ## Status legend
@@ -58,13 +58,14 @@ Examples:
 
 ### Owner and Controller
 
-**LOCKED**
+**REOPENED — current implementation retained pending terminology cleanup**
 - A card’s **Owner** is the player whose deck/card it belongs to. Ownership does not change during the game.
-- A card’s **Controller** is the player currently controlling it.
-- Use **Controller** for gameplay decisions, attacks, blocks, activated abilities, and effects that care about cards a player controls.
-- Use **Owner** when determining which hand, deck, or discard a card belongs in.
-- If control of a card changes, it still returns to its Owner’s zones when an effect sends it to a hand, deck, or discard.
-- A token’s Owner is the player who created it unless an effect says otherwise; its Controller is whoever currently controls it.
+- The current rules also define **Controller** as the player currently controlling a card.
+- **Design direction (2026-09-21):** prefer **Owner** plus plain-language references such as “your Character,” “an opposing Character,” and “the player who played this Action” wherever possible.
+- Do not add control-changing mechanics merely to justify keeping **Controller** as core vocabulary.
+- If a future card truly transfers ongoing use of a card between players, revisit whether **Controller** has earned a permanent place in the rules.
+- Until that cleanup is deliberately committed, existing card text/rules that use Controller continue to function under the prior definition.
+- When a card is sent to a hand, deck, or discard, it goes to its **Owner’s** corresponding zone unless an effect explicitly says otherwise.
 
 ---
 
@@ -162,8 +163,11 @@ Examples:
 
 Cards in the Play Area are **in play**.
 
-**CARD-CREATED ZONE**
-- **Junk Pile** is currently a special zone created by Trash Baron/card text. Broader special-zone table geography is intentionally pinned for later.
+**LEGACY / REWRITE PENDING**
+- The canonical 180-card pool still contains **Junk Pile** references from the Trash Baron/Makeshift package.
+- Current design direction is to **retire Junk Pile as a separate zone** and let Makeshift interact with the normal **Discard** instead.
+- This is not yet mechanically applied to the canonical card and Leader data; those cards require a deliberate rewrite and rebalance before Junk can be removed from legacy test data.
+- **One Man’s Trash** is the working Trash Baron ability concept for limited Item access from Discard, with guardrails such as once-per-Round and paying normal Cost.
 
 ---
 
@@ -298,8 +302,15 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 - Resolve its text, then put it into its Owner’s discard unless an effect says otherwise.
 - Actions normally may be Played only on your own Turn unless card text says otherwise.
 
-**TABLED**
-- Response cards / interrupt timing are a future design layer and are not part of the current base rules.
+**SOFT LOCK — Response framework**
+- **Response** is currently favored as a special timing designation/subtype on an **Action**, not as a fifth base card type.
+- A Response may be Played during an opponent’s Turn only when its own text says its timing condition has occurred.
+- The Response card repeats its exact legal timing in plain English; players should not need a separate glossary entry to know when that specific card can be Played.
+- A Response resolves before the interrupted Play / Activation / Attack continues.
+- There is no generic Response window after every game event. A card creates only the window printed on that card.
+- Working visual labels such as **Attack Response** or **Action Response** may be used for fast scanning, but the printed sentence is authoritative.
+- **OPEN:** exact rules for Response-on-Response chaining and whether any universal chain limit is needed.
+- **OPEN:** final costing philosophy for Responses; current preference is to balance with Fuel/card opportunity cost rather than “lose your next Turn” bookkeeping.
 
 ---
 
@@ -322,14 +333,32 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temp
 - “The Bag” is retired from formal rules language.
 - Triggered and passive abilities do not use a Turn.
 - All effects and pending triggers created during a Turn fully resolve before the opponent begins the next Turn.
-- If one player controls multiple simultaneous triggers, that player chooses their order.
-- If both players have simultaneous triggers, the player whose Turn caused them resolves all of theirs first, in chosen order, then the opponent resolves theirs in chosen order.
-- If resolving a trigger creates a new trigger, the new trigger becomes pending and resolves before returning to older unresolved triggers.
+- Pending triggers resolve in the **order they were triggered**.
+- If one player has multiple triggers occur simultaneously, that player chooses the order in which those simultaneous triggers are added to the pending queue.
+- If both players have triggers occur simultaneously, the player whose Turn caused them orders and adds all of theirs first, then the opponent orders and adds theirs.
+- If resolving a trigger creates another trigger, the new trigger is added to the **end** of the pending queue. It does not jump ahead of older unresolved triggers.
+- A Response is a deliberate timing exception: it resolves in its printed Response window before the interrupted event continues.
 - If a Defeat trigger needs targets that were not established before the Defeat, the Owner of the Defeated card chooses those targets.
 - Targets are chosen when the trigger becomes pending, not when it begins resolving.
 - A Unit’s “when Defeated” trigger still occurs after the Unit has moved to discard. The Defeat creates the trigger; the card goes to discard; the trigger resolves normally.
 
 ---
+
+## Playing cards that may have no effect
+
+**SOFT LOCK**
+- A card may be Played if its Cost can be paid and every **required** choice or target can legally be made.
+- The game does not require the player to prove that the card will ultimately change the game state.
+- If a card requires “Choose a damaged Wrestler” and no legal damaged Wrestler exists, it cannot be Played.
+- If a choice is optional (“you may choose…”), declining that optional choice does not by itself make the Play illegal.
+- This avoids a broad “must change the game state” rule and keeps legality tied to concrete Costs and required choices.
+
+## Trait-gating design principle
+
+**DESIGN PRINCIPLE**
+- Traits should usually **improve** a card rather than determine whether the card functions at all.
+- Prefer “do X; if it was a Wrestler, also do Y” over cards that are dead solely because a matching Trait was not drawn.
+- Trait-specific hard gates remain available when the restriction itself is the point of the design, but should be used deliberately.
 
 ## Optional instructions and “If you do”
 
