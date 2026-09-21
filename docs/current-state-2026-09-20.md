@@ -278,3 +278,14 @@ Design intent: Fuel is broad enough to support serious rules language while stil
 ◆ Attached Items do not transfer automatically when their host leaves play.
 
 ◆ Players cannot voluntarily Dismiss cards unless a rule or effect allows it.
+
+
+## Locked wording — Choose and target
+
+◆ **Choose** is the natural instruction for making a selection.
+
+◆ A card, player, or other game object selected for an effect to affect becomes that effect's **target**.
+
+◆ **Target** is the formal rules relationship used by effects that care about targeting.
+
+◆ Choosing a mode, number, or other non-object option does not by itself create a target.
