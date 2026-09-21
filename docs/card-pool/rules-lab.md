@@ -1,6 +1,6 @@
 # Unhinged Alpha 0.03 “Mongo” — LAB Rules Snapshot
 
-> Synchronized working rules state as of 2026-09-20.  
+> Synchronized working rules state as of 2026-09-20.
 > **Golden Rule:** base rules apply globally. Printed card text is the exception layer.
 
 ## Status legend
@@ -8,6 +8,63 @@
 - **LOCKED** — foundation for current testing unless deliberately reopened.
 - **SOFT LOCK** — current default supported by testing, but still subject to playtest revision.
 - **TABLED** — intentionally unresolved/future layer.
+
+---
+
+## Core vocabulary
+
+### Ready and Rotate
+
+**LOCKED**
+- **Ready** means upright and available.
+- **Rotate** means turn a Ready card 90° sideways.
+- A sideways card is **Rotated**.
+- To **Ready** a Rotated card, return it upright.
+- Attacking Rotates the attacker.
+- Blocking Rotates the blocker.
+- Fuel is Rotated to pay costs.
+- A Rotated Unit may be attacked directly.
+- A Rotated Leader is **Vulnerable**.
+
+Formal Unhinged rules language does not use **tap / tapped** or **exhaust / exhausted**.
+
+### Play, enters play, and Activate
+
+**LOCKED**
+- **Play** is the general verb for playing a card from a zone where a rule or effect allows it to be played.
+- A Unit or Item **enters play** whenever it arrives in the Play Area, regardless of the zone it came from or the effect that put it there.
+- Unless an effect explicitly says otherwise, all normal “enters play” abilities trigger whenever that card enters play.
+- **Deploy** is retired as a formal rules term.
+- **Activate** means voluntarily use an activated ability and pay its listed cost.
+- Attack and Block are their own game actions, not activated abilities.
+- Triggered abilities happen automatically when their stated event occurs.
+- Static/passive abilities apply continuously while their conditions are true.
+
+### Card movement
+
+**LOCKED**
+- **Draw** — take the top card of your deck into your hand. This creates a Draw event.
+- **Discard** — put a card from your hand into your discard. This creates a Discard event.
+- **Return** — put a card from another zone into its owner’s hand. This creates a Return event.
+- **Defeat** — put a Unit from play into its owner’s discard as a Defeat event.
+- **Sacrifice** — Defeat one of your own Units as instructed by a cost or effect. A Sacrifice is also a Defeat.
+- **Dismiss** — put a card from play into its owner’s discard without Defeating it. This creates a Dismiss event.
+- **Put** is neutral movement to the stated destination. Putting a card somewhere does not by itself count as Draw, Discard, Return, Defeat, Sacrifice, or Dismiss.
+
+Examples:
+- “Put the top 2 cards of your deck into your discard” is not a Discard.
+- “Put that Unit into its owner’s discard” is not a Defeat or Dismiss unless the effect says so.
+- “Return an Item from your discard to your hand” is a Return even if that Item was never previously in your hand.
+
+### Owner and Controller
+
+**LOCKED**
+- A card’s **Owner** is the player whose deck/card it belongs to. Ownership does not change during the game.
+- A card’s **Controller** is the player currently controlling it.
+- Use **Controller** for gameplay decisions, attacks, blocks, activated abilities, and effects that care about cards a player controls.
+- Use **Owner** when determining which hand, deck, or discard a card belongs in.
+- If control of a card changes, it still returns to its Owner’s zones when an effect sends it to a hand, deck, or discard.
+- A token’s Owner is the player who created it unless an effect says otherwise; its Controller is whoever currently controls it.
 
 ---
 
@@ -25,70 +82,88 @@
 
 **LOCKED**
 - Before opening hands, both players reveal the top card of their shuffled 40-card deck.
-- Compare Command Cost. Higher cost wins War and takes the first Move of Round 1.
+- Compare **Cost**. Higher Cost wins War and takes the first Turn of Round 1.
 - On a tie, each player reveals another card and repeats until the tie is broken.
-- All War cards are then shuffled back into their owners' decks.
+- All War cards are then shuffled back into their owners’ decks.
 - Leaders do not participate in War.
-- War cards are compared only by Command Cost. Their text and effects do not trigger.
+- War cards are compared only by Cost. Their text and effects do not trigger.
 - If both Leaders are at 0 or less when a game-ending check occurs, War determines the winner.
-- If both players would simultaneously lose to an empty-deck draw, shuffle each discard pile into a temporary deck and use War to determine the winner.
+- If both players would simultaneously lose to an empty-deck Draw, shuffle each discard into a temporary deck and use War to determine the winner.
 
 > Design note: War is intentionally not perfectly random. Deck cost curves can influence first-player probability.
 
 ---
 
-## Rounds, turns, and Moves
+## Rounds and Turns
 
 **LOCKED**
 - A **Round** is the shared larger cycle.
-- Players alternate turn opportunities.
-- On your turn opportunity, normally take **one Move** or Pass.
-- A Move can normally be: deploy a Unit, play an Action, play an Item, activate an ability, or attack.
-- Deploying a Unit is the entire Move.
-- Playing an Item is the entire Move.
-- Activating an activated ability is a Move regardless of whether its cost is Exhaust, Fuel, sacrifice, dismissal, or something else, unless card text says otherwise.
-- Triggered and passive abilities do not consume Moves.
-- Defense is not a Move.
-- Pass immediately gives play to the opponent.
-- Passing does not remove a player from the round.
-- If the opponent makes a Move after a Pass, the pass streak resets.
+- Players alternate **Turns** during a Round.
+- On your Turn, normally do one of the following: **Play a card, Activate an ability, Attack, or Pass.**
+- Playing a card uses the Turn.
+- Activating an activated ability uses the Turn, regardless of whether its cost is Rotate, Fuel, Sacrifice, Dismiss, or something else, unless card text says otherwise.
+- Attacking uses the Turn.
+- Triggered and passive abilities do not use a Turn.
+- Blocking occurs during an opponent’s Turn and does not use your next Turn.
+- Pass immediately gives the opponent the next Turn.
+- Passing does not remove a player from the Round.
+- If the opponent Plays a card, Activates an ability, or Attacks after a Pass, the consecutive-Pass count resets.
 - A Round ends after **two consecutive Passes**.
-- The player who made the **first** of those two Passes takes the first Move of the next Round.
-- If a player has no legal Move, that player must Pass.
+- The player who made the **first** of those two Passes takes the first Turn of the next Round.
+- If a player has no legal Play, Activation, or Attack, that player must Pass.
 
-### Start of Round
+### Start of Round — Ready, Set, Draw
 
-**LOCKED mnemonic: Ready, Set, Draw**
-1. **Ready** all cards and Fuel that are allowed to ready.
+**LOCKED**
+1. **Ready** all eligible cards and Fuel.
 2. **Set** Fuel progression for the new Round.
 3. **Draw** one card.
-4. The initiative player takes the first Move.
+4. The initiative player takes the first Turn.
 
 **SOFT LOCK**
 - Round 1 includes the normal Draw step.
 
 **LOCKED**
-- Effects that last “this round” expire when the round ends, before the next Ready, Set, Draw.
+- Effects that last “this Round” expire when the Round ends, before the next Ready, Set, Draw.
 
 ---
 
 ## Fuel system
 
 **LOCKED TERM: Fuel**
-- **Fuel** is the game's spendable resource.
-- Card numbers are simply **Cost**.
+- **Fuel** is the game’s spendable resource.
+- A card’s payment number is simply its **Cost**.
 - Rotate Fuel to pay costs.
-- Fuel follows the same Ready / Rotated state language as other cards or resource objects.
-
+- Fuel uses the same Ready / Rotated state language as other cards or resource objects.
 
 **SOFT LOCK**
 - Round 1: 1 Fuel.
 - Round 2: 2 Fuel.
-- Continue +1 per Round to a maximum of 7.
-- Fuel total remains 7 from Round 7 onward.
-- Fuel readies at the start of each Round.
-- Exhaust Fuel to pay costs.
-- Physical Fuel presentation is still open.
+- Continue +1 Fuel each Round to a maximum of 7.
+- Fuel remains at 7 from Round 7 onward.
+- Fuel Readies at the start of each Round.
+- Physical Fuel implementation is still open.
+
+**PARKING LOT**
+- Juice
+- Command
+- Charge
+
+---
+
+## Zones
+
+**LOCKED CURRENT BASE ZONES**
+- **Deck**
+- **Hand**
+- **Discard**
+- **Play Area**
+- **Fuel Tank**
+
+Cards in the Play Area are **in play**.
+
+**CARD-CREATED ZONE**
+- **Junk Pile** is currently a special zone created by Trash Baron/card text. Broader special-zone table geography is intentionally pinned for later.
 
 ---
 
@@ -97,52 +172,49 @@
 **SOFT LOCK**
 - 40 cards.
 - Choose one Leader.
-- Deck may contain cards from the Leader’s color plus one secondary color.
+- A deck may contain cards from the Leader’s color plus one secondary color.
 - No required ratio between those colors.
 - Maximum **2 copies** of the same card.
-- The Leader is outside the deck and is not subject to that copy limit.
+- The Leader starts outside the deck and is not subject to the copy limit.
 - No required Unit / Action / Item ratio.
 - No base limit on the number of Units in play.
 
-**TABLED FOR TESTING**
-- Copy limit may still be compared at 1 / 2 / 4 copies, but 2 copies is the current default.
-
 ---
 
-## Units and deployment
+## Units entering play
 
 **LOCKED**
-- Units enter play ready.
-- A Unit deployed this round may block immediately.
-- A Unit deployed this round cannot attack unless card text says otherwise.
-- A Unit deployed this round cannot use one of its own Exhaust abilities unless card text says otherwise.
-- Blocking is the normal way a newly deployed Unit may exhaust itself during its deployment round.
-- Other cards or effects may still exhaust a newly deployed Unit.
+- Units enter play Ready unless an effect says otherwise.
+- A Unit that entered play this Round may Block immediately.
+- A Unit that entered play this Round cannot Attack unless card text says otherwise.
+- A Unit that entered play this Round cannot Activate one of its own abilities with a Rotate cost unless card text says otherwise.
+- Blocking is the normal way a newly entered Unit may Rotate itself during that Round.
+- Other cards and effects may still Rotate a Unit that entered play this Round.
 
 ---
 
 ## Attacking
 
 **LOCKED**
-- One Unit attacks per attack Move unless card text says otherwise.
-- Declaring an attack exhausts the attacking Unit.
+- One Unit attacks per Attack unless card text says otherwise.
+- Declaring an Attack Rotates the attacker.
 - A Leader may always be attacked.
-- Ready defending Units may block an attack against their Leader.
-- The defender may choose not to block.
-- Exhausted enemy Units may be attacked directly.
-- You may still attack the enemy Leader even if the opponent controls exhausted Units.
-- Only attacks against the Leader may be blocked.
-- A direct attack against an exhausted Unit cannot be blocked by another Unit.
-- Items cannot be attacked.
+- Ready defending Units may Block an Attack against their Leader.
+- The defender may choose not to Block.
+- Rotated enemy Units may be attacked directly.
+- You may still Attack the Leader even if the opponent controls Rotated Units.
+- Only Attacks against the Leader may be Blocked.
+- A direct Attack against a Rotated Unit cannot be Blocked by another Unit.
+- Items cannot normally be attacked.
 - Ready Units cannot normally be attacked directly.
 
 ### Vulnerable Leaders
 
 **LOCKED**
-- Using a Leader’s Exhaust ability exhausts that Leader.
-- An exhausted Leader is **Vulnerable** until it readies.
-- An attack against a Vulnerable Leader cannot be blocked.
-- Vulnerable does not create permission to attack the Leader; Leaders are always legal attack targets. Vulnerable removes the block option.
+- Using a Leader ability with a Rotate cost Rotates that Leader.
+- A Rotated Leader is **Vulnerable** until it Readies.
+- An Attack against a Vulnerable Leader cannot be Blocked.
+- Vulnerable does not create permission to Attack the Leader; Leaders are always legal Attack targets. Vulnerable removes the Block option.
 - Leaders do not retaliate when attacked unless card text says otherwise.
 
 ---
@@ -150,53 +222,52 @@
 ## Blocking and defense
 
 **LOCKED**
-- Only ready Units may block.
-- Multiple Units may block one attack.
-- The defender declares all blockers at once.
-- The defender chooses blocker order.
-- **Blocking exhausts the blocking Unit.**
-- A newly deployed ready Unit may block and will exhaust when it does.
-- Defense does not consume the defender’s next Move.
+- Only Ready Units may Block.
+- Multiple Units may Block one Attack.
+- The defender declares all Blockers at once.
+- The defender chooses Blocker order.
+- **Blocking Rotates the Blocking Unit.**
+- A Unit that entered play this Round may Block and will Rotate when it does.
+- Blocking does not use the defender’s next Turn.
 
 ### Defensive Guard
 
 **LOCKED**
-- During defense, the defender may discard any number of cards from hand for **+1 temporary Guard each**.
-- Guard cards are assigned to specific blocker(s) before combat damage.
-- Those discarded cards go to discard.
+- During defense, the defender may Discard any number of cards from hand for **+1 temporary Guard each**.
+- Temporary Guard is assigned to specific Blockers before combat damage.
 - Temporary Guard does not increase retaliation Power.
 - Temporary Guard absorbs damage before the Unit’s normal Guard.
-- Any unused temporary Guard disappears when that combat ends.
+- Any unused temporary Guard disappears when that Attack resolves.
 - Damage absorbed by temporary Guard does not remain on the Unit.
 
-Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The 2 temporary Guard is consumed first, then 3 damage is marked on the Unit. After combat it returns to 4 Guard with 3 damage and survives with 1 Guard remaining.
+Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The temporary 2 absorbs the first 2 damage. The Unit takes 3 persistent damage and survives at 4 Guard with 3 damage.
 
 ---
 
 ## Multi-block damage and Overflow
 
 **LOCKED**
-- Damage through blockers is sequential in the defender’s chosen order.
-- The attacker must assign enough damage to defeat the current blocker before remaining damage continues.
-- Once a blocker has taken lethal damage, remaining attack damage automatically carries to the next blocker.
-- The attacker cannot intentionally waste damage by overkilling an already-defeated blocker.
-- After the final blocker, remaining damage reaches the Leader.
-- **Overflow applies only when attacking the Leader through blockers.**
-- If an exhausted Unit is attacked directly, excess damage is lost and does not continue to the Leader.
+- Damage through Blockers is sequential in the defender’s chosen order.
+- The attacker must deal enough damage to Defeat the current Blocker before remaining damage continues.
+- Once a Blocker has taken lethal damage, remaining Attack damage automatically continues to the next Blocker.
+- The attacker cannot intentionally waste damage by overkilling an already-Defeated Blocker.
+- After the final Blocker, remaining damage reaches the Leader.
+- **Overflow applies only when attacking the Leader through Blockers.**
+- If a Rotated Unit is attacked directly, excess damage is lost and does not continue to the Leader.
 
 ---
 
 ## Retaliation
 
 **LOCKED**
-- A blocking Unit that survives the incoming attack retaliates with its Power.
-- A blocker defeated by the incoming attack normally does not retaliate.
-- A directly attacked exhausted Unit **retaliates if it survives**.
-- Exhaustion means exposed, not helpless.
+- A Blocking Unit that survives the incoming Attack retaliates with its Power.
+- A Blocker Defeated by the Attack normally does not retaliate.
+- A directly attacked Rotated Unit retaliates if it survives.
+- Rotated means exposed, not helpless.
 
 ### Keywords
-- **Explosive:** an Explosive blocker retaliates even if it is defeated by the incoming attack.
-- **Slowpoke:** a Slowpoke Unit does not retaliate when it blocks.
+- **Explosive:** an Explosive Blocker retaliates even if it is Defeated by the incoming Attack.
+- **Slowpoke:** a Slowpoke Unit does not retaliate when it Blocks.
 
 ---
 
@@ -206,59 +277,26 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The 2 te
 - Damage persists between Rounds until healed or the card leaves play.
 - A Unit is **Defeated** immediately when its damage equals or exceeds its current Guard.
 - If a Unit’s Guard is reduced and its existing damage is now equal to or greater than Guard, it is Defeated immediately.
-- A Defeated Unit goes to its owner’s discard unless card text says otherwise.
+- A Defeated Unit goes to its Owner’s discard unless card text says otherwise.
 - Healing cannot exceed a card’s current normal maximum Guard or Health unless card text explicitly increases that maximum.
+- A player may not voluntarily Sacrifice or Dismiss a card unless a rule or effect gives permission.
 
-### Movement vocabulary
-
-**LOCKED**
-- **Defeat** — universal casualty/removal term for Units. A Defeated Unit goes to discard and “when Defeated” abilities trigger.
-- **Sacrifice** — Defeat one of your own Units as a cost/effect. Sacrifice counts as Defeat.
-- **Discard** — move a card to discard without Defeating it. This does not count as Defeat.
-- **Return** — move a card back to hand. This is not Defeat.
-- **Move** — send a card to a specifically named zone. This is not Defeat unless the effect says to Defeat it.
-- Do not use **Dismiss** for Units.
-- A player cannot voluntarily remove, sacrifice, or discard a permanent they control unless a rule or card effect allows it.
-
----
-
-## Trigger timing
-
-**LOCKED TERM**
-- A **pending trigger** is a triggered ability waiting to resolve.
-- “The Bag” is retired from formal rules language.
-
+### Attached Items when a host leaves play
 
 **LOCKED**
-- Triggered and passive abilities happen automatically and do not consume a Move.
-- All effects and triggers created during a Move fully resolve before the opponent receives the next turn opportunity.
-- Simultaneous triggered abilities become **pending triggers**.
-- If one player controls multiple simultaneous triggers, that player chooses their order.
-- If both players have simultaneous triggers, the player whose Move caused them resolves all of theirs first, in chosen order, then the opponent resolves theirs in chosen order.
-- If resolving a trigger creates a new trigger, the new trigger becomes pending and fully resolves before returning to older unresolved triggers.
-- If a triggered effect requires one or more targets that were not established before the Defeat/event, the owner of that triggered card chooses those targets.
-- Targets are chosen **when the trigger becomes pending**, not when it begins resolving.
-- A Unit’s “when Defeated” trigger still occurs even though the Unit has already moved to discard. The Defeat creates the trigger, the card moves to discard, and the trigger resolves from the bag.
-
----
-
-## Game-end timing
-
-**LOCKED**
-- Do not immediately end the game when a Leader reaches 0 during resolution.
-- Finish the current Move and all pending triggers.
-- Once no triggers remain pending, check Leader Health.
-- If exactly one Leader is at 0 or less, that player loses.
-- If both Leaders are at 0 or less, settle the game with War.
-- If neither Leader is at 0 or less, play continues.
+- If a card with attached Items leaves play for any reason, put those attached Items into their Owners’ discards unless card text says otherwise.
+- Those Items are **not Dismissed** by this cleanup.
+- Attached Items do not automatically transfer to another card unless an effect explicitly says they do.
 
 ---
 
 ## Actions
 
 **LOCKED**
-- Actions normally may be played only on your own turn as your Move unless card text says otherwise.
-- Actions resolve once and then go to discard.
+- Actions are Played from a legal zone.
+- An Action does not enter play.
+- Resolve its text, then put it into its Owner’s discard unless an effect says otherwise.
+- Actions normally may be Played only on your own Turn unless card text says otherwise.
 
 **TABLED**
 - Response cards / interrupt timing are a future design layer and are not part of the current base rules.
@@ -268,32 +306,28 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The 2 te
 ## Items
 
 **LOCKED**
-- Items are possessions that create board state.
 - Items enter play and remain in play.
-- An Item attaches only if its text says to attach it.
-- Otherwise it remains as a standalone Item.
-- A standalone Item may have static text, triggers, or Exhaust abilities.
+- An Item attaches only if its text says to Attach it.
+- Otherwise it remains as a standalone Item in the Play Area.
+- A standalone Item may have static text, triggered abilities, or activated abilities.
 - A Unit may have any number of attached Items unless card text says otherwise.
-- When an attached Item’s host leaves play, the attached Item goes to its owner’s discard unless card text says otherwise.
-- An Item may remove itself as a cost or trigger if its text says so.
-- Items cannot be attacked.
+- Items cannot normally be attacked.
 
 ---
 
-## Rules architecture — Golden Rule
+## Trigger timing
 
 **LOCKED**
-- Base game rules apply globally.
-- A color/pool does not grant special rules by itself.
-- A Trait is only a label unless a card or global rule references it.
-- Keywords are global rules vocabulary and matter only on cards that have them.
-- Card text may add to, modify, or supersede a base rule.
-- A card may create a named zone, state, permission, or restriction.
-- If no global rule or card text creates an exception, use the base rule.
-- No gameplay rule exists only because a player is using a particular color/pool.
-
-**RTFC:** Read The Freaking Card.
-
+- A **pending trigger** is a triggered ability waiting to resolve.
+- “The Bag” is retired from formal rules language.
+- Triggered and passive abilities do not use a Turn.
+- All effects and pending triggers created during a Turn fully resolve before the opponent begins the next Turn.
+- If one player controls multiple simultaneous triggers, that player chooses their order.
+- If both players have simultaneous triggers, the player whose Turn caused them resolves all of theirs first, in chosen order, then the opponent resolves theirs in chosen order.
+- If resolving a trigger creates a new trigger, the new trigger becomes pending and resolves before returning to older unresolved triggers.
+- If a Defeat trigger needs targets that were not established before the Defeat, the Owner of the Defeated card chooses those targets.
+- Targets are chosen when the trigger becomes pending, not when it begins resolving.
+- A Unit’s “when Defeated” trigger still occurs after the Unit has moved to discard. The Defeat creates the trigger; the card goes to discard; the trigger resolves normally.
 
 ---
 
@@ -304,27 +338,56 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The 2 te
 - Choosing not to perform the optional instruction does not satisfy “if you do.”
 - If the optional instruction cannot be completed, “if you do” is not satisfied.
 
-Example: “You may Dismiss an Item. If you do, draw 2 cards.” The cards are drawn only if the Item is actually Dismissed.
-
-## Dismiss and attached Items
-
-**LOCKED**
-- **Dismiss** is a removal event that puts a card from play into its owner’s discard without Defeating it.
-- A card is Dismissed only when a rule or effect specifically says **Dismiss**.
-- If a card with attached Items leaves play, put those attached Items into their owners’ discards.
-- Attached Items moved to discard because their host left play are **not Dismissed**.
-- Attached Items do not automatically transfer to another card unless an effect explicitly says they do.
-- A player may not voluntarily Dismiss a card unless a rule or effect gives permission to do so.
-
+Example: “You may Dismiss an Item. If you do, Draw 2 cards.” The cards are Drawn only if the Item is actually Dismissed.
 
 ---
 
-## Choose and target
+## Choose and Target
 
 **LOCKED**
 - **Choose** is the normal instruction used when a player selects among legal options.
-- When an effect chooses a card, player, or other game object for that effect to affect, that chosen object is the effect's **target**.
+- When an effect chooses a card, player, or other game object for that effect to affect, that chosen object is the effect’s **target**.
 - Card text may refer to targets for rules interactions, such as changing a target, preventing targeting, or triggering when a card is targeted.
-- Not every use of **choose** creates a target. Choosing between modes, values, or instructions does not target a game object unless the effect selects one to affect.
+- Not every use of Choose creates a target. Choosing between modes, values, or instructions does not target a game object unless the effect selects one to affect.
 
-Example: “Choose a Unit. It gets -2 Power this round.” The chosen Unit is the target of that effect.
+---
+
+## Game-end timing
+
+**LOCKED**
+- Do not immediately end the game when a Leader reaches 0 during resolution.
+- Finish the current Turn action and all pending triggers it created.
+- Once no triggers remain pending, check Leader Health.
+- If exactly one Leader is at 0 or less, that player loses.
+- If both Leaders are at 0 or less, settle the game with War.
+- If neither Leader is at 0 or less, play continues.
+
+---
+
+## Core icon vocabulary
+
+**LOCKED CONCEPT; ART TBD**
+The card frame should support compact symbols for:
+- **Rotate**
+- **Cost / Fuel**
+- **Power**
+- **Guard**
+- **Health**
+
+The symbols shorten repeated card text; the rules terms above remain the spoken/written vocabulary.
+
+---
+
+## Rules architecture — Golden Rule
+
+**LOCKED**
+- Base game rules apply globally.
+- A color/pool does not grant special rules by itself.
+- A Trait is only a label unless a card or global rule references it.
+- Keywords are globally defined rules vocabulary and matter only on cards that have them.
+- Card text may add to, modify, or supersede a base rule.
+- A card may create a named zone, state, permission, or restriction.
+- If no global rule or card text creates an exception, use the base rule.
+- No gameplay rule exists only because a player is using a particular color/pool.
+
+**RTFC:** Read The Freaking Card.
