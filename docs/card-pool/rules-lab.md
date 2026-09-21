@@ -288,3 +288,25 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The 2 te
 - No gameplay rule exists only because a player is using a particular color/pool.
 
 **RTFC:** Read The Freaking Card.
+
+
+---
+
+## Optional instructions and “If you do”
+
+**LOCKED**
+- **“If you do”** means the immediately preceding optional instruction must actually be completed for the following effect to occur.
+- Choosing not to perform the optional instruction does not satisfy “if you do.”
+- If the optional instruction cannot be completed, “if you do” is not satisfied.
+
+Example: “You may Dismiss an Item. If you do, draw 2 cards.” The cards are drawn only if the Item is actually Dismissed.
+
+## Dismiss and attached Items
+
+**LOCKED**
+- **Dismiss** is a removal event that puts a card from play into its owner’s discard without Defeating it.
+- A card is Dismissed only when a rule or effect specifically says **Dismiss**.
+- If a card with attached Items leaves play, put those attached Items into their owners’ discards.
+- Attached Items moved to discard because their host left play are **not Dismissed**.
+- Attached Items do not automatically transfer to another card unless an effect explicitly says they do.
+- A player may not voluntarily Dismiss a card unless a rule or effect gives permission to do so.
