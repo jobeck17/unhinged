@@ -34,7 +34,7 @@ Design rule: avoid Items whose normal play pattern is “play it, automatically 
 
 Persistent rule-changing Items are explicitly encouraged.
 
-When a card carrying attached Items leaves play, dismiss its attached Items unless a card says otherwise.
+When a card carrying attached Items leaves play, put those attached Items into their Owners’ discards unless a card says otherwise. This cleanup does **not** count as Dismiss.
 
 ## Rules architecture
 
@@ -42,7 +42,15 @@ Color identity is a **design/deckbuilding identity, not a source of special rule
 
 All gameplay starts from the same global rules. A Leader, Unit, Action, or Item may create an exception through its printed text. Keywords are globally defined and apply only to cards carrying them.
 
-Trash Baron's Junk package is an example: **Trash Baron's own card text creates the Junk Pile. Makeshift itself does not grant a Junk Pile or any other special rule.**
+**September 21 rewrite direction:** retire Junk Pile as a separate zone and let Makeshift interact with the normal Discard instead. The canonical card/Leader data still contains legacy Junk text until the coordinated rewrite is completed. **One Man's Trash** is the working Trash Baron signature concept for limited Item access from Discard.
+
+
+
+## Responses
+
+**SOFT LOCK:** Response is currently a special timing designation/subtype on an **Action**, not a fifth base card type.
+
+A Response states its exact legal timing in plain English and may be Played during an opponent's Turn only at that printed window. Attack Responses, Action Responses, and other narrow event Responses are valid design space. Exact chaining limits remain open.
 
 ## Keywords
 
@@ -74,6 +82,8 @@ Notable change: **Undead now belongs to Makeshift + Kamikaze**, not Stubborn + K
 - [leaders.json](./leaders.json) — canonical Leaders
 - [test-decks.json](./test-decks.json) — six curated baseline decks
 - [rules-lab.md](./rules-lab.md) — current LAB rules snapshot
+- [design-audit-2026-09-21.md](./design-audit-2026-09-21.md) — 180-card decision-tree / mature-game audit
+- [../current-state-2026-09-21.md](../current-state-2026-09-21.md) — latest project checkpoint
 - [meta-audit-2026-09-19.md](./meta-audit-2026-09-19.md) — current cross-color balance / usage audit
 - [meta-decks.json](./meta-decks.json) — 30 optimized heuristic stress-test lists
 - [traits.md](./traits.md) — Trait model and distribution
