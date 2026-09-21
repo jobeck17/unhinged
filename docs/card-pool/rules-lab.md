@@ -222,17 +222,22 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The 2 te
 
 ---
 
-## Triggers and “the bag”
+## Trigger timing
+
+**LOCKED TERM**
+- A **pending trigger** is a triggered ability waiting to resolve.
+- “The Bag” is retired from formal rules language.
+
 
 **LOCKED**
 - Triggered and passive abilities happen automatically and do not consume a Move.
 - All effects and triggers created during a Move fully resolve before the opponent receives the next turn opportunity.
-- Simultaneous triggered abilities go **in the bag**.
+- Simultaneous triggered abilities become **pending triggers**.
 - If one player controls multiple simultaneous triggers, that player chooses their order.
 - If both players have simultaneous triggers, the player whose Move caused them resolves all of theirs first, in chosen order, then the opponent resolves theirs in chosen order.
-- If resolving a trigger creates a new trigger, the new trigger enters the bag and fully resolves before returning to older unresolved triggers.
+- If resolving a trigger creates a new trigger, the new trigger becomes pending and fully resolves before returning to older unresolved triggers.
 - If a triggered effect requires one or more targets that were not established before the Defeat/event, the owner of that triggered card chooses those targets.
-- Targets are chosen **when the trigger enters the bag**, not when it begins resolving.
+- Targets are chosen **when the trigger becomes pending**, not when it begins resolving.
 - A Unit’s “when Defeated” trigger still occurs even though the Unit has already moved to discard. The Defeat creates the trigger, the card moves to discard, and the trigger resolves from the bag.
 
 ---
@@ -241,8 +246,8 @@ Example: a 4-Guard Unit receives +2 temporary Guard and takes 5 damage. The 2 te
 
 **LOCKED**
 - Do not immediately end the game when a Leader reaches 0 during resolution.
-- Finish the current Move and everything already in the bag.
-- Once the bag is empty, check Leader Health.
+- Finish the current Move and all pending triggers.
+- Once no triggers remain pending, check Leader Health.
 - If exactly one Leader is at 0 or less, that player loses.
 - If both Leaders are at 0 or less, settle the game with War.
 - If neither Leader is at 0 or less, play continues.
