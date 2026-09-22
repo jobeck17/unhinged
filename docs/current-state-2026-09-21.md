@@ -279,6 +279,51 @@ Simple stat cards still have a place, especially as beginner breathing room, but
 
 These should be converted only as part of the deliberate card rewrite, not by blind global replacement.
 
+
+---
+
+# Faction naming exploration
+
+● The old working names **Reckless / Unruly / Crooked / Makeshift / Stubborn / Kamikaze** have been reopened as part of the faction-identity pass.
+
+## Leading single-word six
+
+The current preferred single-word naming set is:
+
+- **Wild** — push too far; risk, self-damage, overcommitment, dangerous payoff.
+- **Amped** — build momentum; Characters feed, tag, replace, or set up the next play.
+- **Tricky** — manipulate plans; redirection, timing, information, unexpected interaction.
+- **Sketchy** — repurpose questionable materials; Items, discard, improvisation, unconventional uses.
+- **Spiteful** — interaction has consequences; survive, retaliate, and make the opponent regret messing with the board.
+- **Doomed** — Defeat is expected and useful; Characters dying advances the plan.
+
+These are the **leading single-word candidates**, not yet a final terminology lock.
+
+Important identity distinctions:
+- **Wild** wants to flirt with Defeat by pushing too far.
+- **Spiteful** wants to survive interaction and punish it.
+- **Doomed** expects Defeat and turns it into value.
+- **Amped** should be sequencing/momentum, not generic Trait math.
+- **Tricky** should bend or redirect the opponent's plan rather than become generic denial/control.
+- **Sketchy** should repurpose and improvise rather than merely recur cards from discard.
+
+## Longer-name comparison set
+
+A separate phrase-name set is being preserved for later comparison:
+
+- **No Chill** ↔ Wild
+- **High Turnover** ↔ Amped
+- **Funny Business** ↔ Tricky
+- **Good Enough** ↔ Sketchy
+- **Find Out** ↔ Spiteful
+- **Red Shirts** ↔ Doomed
+
+The phrase set is intentionally **not** being mixed into the single-word set yet. The goal is to compare two coherent naming voices before choosing the final format.
+
+Design note: **High Turnover**, **Funny Business**, and **Red Shirts** are especially strong phrase candidates. Any commercial use of **Red Shirts** should receive an IP/trademark review because of its strong cultural association with Star Trek.
+
+The umbrella term for these six identities (e.g. faction/color/attitude/etc.) remains intentionally undecided until the identity names are settled.
+
 ---
 
 # Immediate next work
