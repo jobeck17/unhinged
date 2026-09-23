@@ -1,6 +1,6 @@
 # Spiteful / Find Out — Production Pool v0.1
 
-> Donut revision 2 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -9,7 +9,7 @@
 | P122 | Character | 3 | **HOA Enforcement Committee** | 2/5 | HOA | The first opposing Character to Attack your Leader each Round gets -1 Power for that Attack. |
 | P123 | Character | 3 | **Coupon Lady** | 3/5 | — | — |
 | P124 | Character | 2 | **Mall Walker** | 1/4 | — | Rotate: Heal 2 damage from this or another of your Characters. |
-| P125 | Character | 4 | **Neighborhood Watch Captain** | 4/6 | — | When another of your Characters Blocks, this gets +1 Power this Round. |
+| P125 | Character | 4 | **Keyboard Warrior** | 4/6 | — | When another of your Characters Blocks, this gets +1 Power this Round. |
 | P126 | Character | 2 | **Crossing Guard** | 2/3 | — | Rotate: Another of your Characters gets +2 Guard this Round, or +3 Guard if it is a Kid. |
 | P127 | Character | 4 | **PTA President** | 4/5 | Parent | When this enters play, another of your Characters gets +2 Guard this Round. If it is a Parent or Kid, Draw a card, then Discard a card. |
 | P128 | Character | 3 | **Retired Marine Next Door** | 4/4 | — | — |
@@ -22,7 +22,7 @@
 | P135 | Character | 4 | **Dad Who Already Said No** | 4/6 | Parent | — |
 | P136 | Character | 5 | **Tow-Truck Driver** | 5/6 | — | When this enters play, choose a Rotated opposing Character. Its owner may Discard a card. If they do not, that Character skips its next Ready step. |
 | P137 | Character | 5 | **HOA Lawyer** | 4/7 | HOA | The first time each Round an opposing Action that targeted one of your cards finishes resolving, its player may pay 1 Fuel. If they do not, they Discard a card. Rotate: Draw a card, then Discard a card. |
-| P138 | Character | 2 | **HOA Pool Monitor** | 2/3 | HOA | Rotate: An opposing Character gets -2 Power this Round, or -3 Power if you have another HOA Character in play. |
+| P138 | Character | 2 | **Neighborhood Lifeguard** | 2/3 | — | Rotate: Choose an opposing Character. It gets -2 Power this Round, or -3 Power if its Power is greater than this Character’s Power. |
 | P139 | Action | 1 | **File a Complaint** | — | — | An opposing Character gets -2 Power this Round. |
 | P140 | Action | 2 | **Not in My Neighborhood** | — | — | Choose a Rotated opposing Character. Its owner may Discard a card. If they do not, it skips its next Ready step. |
 | P141 | Action | 1 | **Absolutely Not** | — | — | An opposing Character gets -3 Power this Round. |
@@ -45,7 +45,9 @@ These optional lines are not rules text and do not change a card’s complexity 
 | Card | Flavor |
 | --- | --- |
 | P123 Coupon Lady | *She has a binder. You have a problem.* |
+| P125 Keyboard Warrior | *Brave enough to hit send.* |
 | P128 Retired Marine Next Door | *Quiet neighborhood. Strict perimeter.* |
 | P129 HOA Vice President | *Vice is not silent.* |
 | P133 Concrete Goose | *The association has approved its use of force.* |
 | P135 Dad Who Already Said No | *Asked. Answered. Grounded.* |
+| P138 Neighborhood Lifeguard | *NO RUNNING includes whatever this is.* |

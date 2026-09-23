@@ -1,6 +1,6 @@
 # Wasted / Red Shirts — Production Pool v0.1
 
-> Donut revision 2 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -14,7 +14,7 @@
 | P157 | Character | 3 | **Fireworks Technician** | 3/3 | Daredevil | Rotate, Sacrifice another of your Characters: Deal 2 damage to an opposing Character. |
 | P158 | Character | 2 | **Patio-Table Prodigy** | 3/1 | Wrestler, Daredevil | **Hothead**. |
 | P159 | Character | 2 | **Rabid Rat** | 2/2 | Animal, Rat | When this is Defeated, another of your Characters gets +2 Power this Round. If it is a Rat or Undead, it also gets +1 Guard this Round. |
-| P160 | Character | 4 | **Safety-Vest Volunteer** | 3/7 | — | — |
+| P160 | Character | 4 | **Gym Selfie Guy** | 3/7 | — | — |
 | P161 | Character | 4 | **Zombie Mall Walker** | 3/5 | Undead | When this is Defeated, you may Return it from your discard to your hand at the end of this Round. |
 | P162 | Character | 5 | **Guy Who Cut the Wrong Wire** | 6/5 | Daredevil | — |
 | P163 | Character | 6 | **Dumpster Phoenix** | 5/6 | Animal, Undead, Scavenger | Rotate, Sacrifice another of your Characters: Return a Character from your discard to your hand. If it is Undead, heal 2 damage from this. |
@@ -26,7 +26,7 @@
 | P169 | Action | 1 | **Take One for the Team** | — | — | Sacrifice one of your Characters. If you do, prevent the next 3 damage that would be dealt to your Leader this Round. |
 | P170 | Action | 1 | **This Seemed Like a Good Idea** | — | — | Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Power and +2 Guard this Round. |
 | P171 | Action | 2 | **Worth It** | — | — | Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character. |
-| P172 | Action | 1 | **Last Laugh** | — | — | If one of your Characters was Defeated this Round, deal 1 damage to up to two opposing Characters. |
+| P172 | Action | 2 | **Tag Me In!** | — | — | Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this Round. |
 | P173 | Action | 2 | **Again!** | — | — | Return a Character costing 2 or less from your discard to your hand. If it is Undead and one of your Characters was Defeated this Round, it costs 1 less the next time you Play it this Round. |
 | P174 | Action | 1 | **Sign the Waiver** | — | — | Sacrifice one of your Characters. If you do, Draw 2 cards, then Discard a card. |
 | P175 | Action | 1 | **Light the Fuse** | — | — | Sacrifice one of your Characters. If you do, deal 1 damage to the opposing Leader, or 2 damage if the sacrificed Character was Undead or a Daredevil. |
@@ -48,5 +48,14 @@ These optional lines are not rules text and do not change a card’s complexity 
 | P154 Dumpster Zombie | *Taking “eat out of the trash” in a concerning direction.* |
 | P156 Rooster Nobody Can Catch | *Seven counties. Six warrants. Zero witnesses.* |
 | P158 Patio-Table Prodigy | *The patio set was still under warranty.* |
-| P160 Safety-Vest Volunteer | *The vest is not legally recognized as armor.* |
+| P160 Gym Selfie Guy | *Three sets. Forty-seven takes.* |
 | P162 Guy Who Cut the Wrong Wire | *He remembers it as more of a group decision.* |
+| P172 Tag Me In! | *I’ve got this. Please do not ask what “this” is.* |
+
+## Alternate concept names
+
+These are alternate names for the same card, not additional cards or copy-limit exceptions.
+
+| Card | Alternate name |
+| --- | --- |
+| P160 Gym Selfie Guy | Gym Bro |

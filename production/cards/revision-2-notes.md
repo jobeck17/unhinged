@@ -1,5 +1,7 @@
 # Donut Revision 2 — What Changed and Why
 
+> Historical revision notes. The [revision 3 roster follow-up](revision-3-notes.md) records later requested names and effects; current generated sheets use revision 3.
+
 23 September 2026 · Based on repository commit `5dcab3b` · Core remains **0.1 Donut**; this is a card revision, not Core 0.2.
 
 ## The design problem

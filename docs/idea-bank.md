@@ -32,7 +32,7 @@ The six current core Leaders have been promoted out of the idea bank and are tra
 
 ## Character concepts retained after the Donut revision
 
-The card pass replaced some roster slots to give small Trait groups sufficient bodies. These concepts remain available for later designs: **Bottle-Rocket Enthusiast, Dance Mom, Little League Assistant Coach, Dumpster Engineer, Free Puppies Guy, Alley Bruiser, Overenthusiastic Volunteer, Crash-Test Intern, and Backyard Wrestling Hype Man**. Pool Rules Guy was narrowed to **HOA Pool Monitor** rather than discarded. The [revision notes](../production/cards/revision-2-notes.md) record the stable-ID mapping.
+The card pass replaced some roster slots to give small Trait groups sufficient bodies. These concepts remain available for later designs: **Bottle-Rocket Enthusiast, Dance Mom, Little League Assistant Coach, Dumpster Engineer, Free Puppies Guy, Alley Bruiser, Overenthusiastic Volunteer, Crash-Test Intern, and Backyard Wrestling Hype Man**. Pool Rules Guy became HOA Pool Monitor in revision 2, then **Neighborhood Lifeguard** in revision 3 at the user’s direction. The [revision notes](../production/cards/revision-2-notes.md) record the stable-ID mapping.
 
 ## Systems parked outside the current base
 
@@ -41,3 +41,7 @@ Locations, PvE encounters, spellcasting or Channel, dice as a core combat step, 
 ## Design test for every new idea
 
 What decision does it give either player? What must stay visible on the table? Can it use current Fuel, Attack, Block, and trigger rules? If it needs an exception, can the card print that exception plainly? An idea that passes these questions can move from this bank into a small, named playtest.
+
+## Concepts displaced by the requested roster follow-up
+
+Keep these for later sets or variants: **Parking Lot Boxer, Lawn Chair Daredevil, No, No, Watch This, Little League Coach, Soccer Mom, Group Text, Fake Psychic, Mall Cop, Crypto Bro, Garage Sale Queen, Neighborhood Watch Captain, Safety-Vest Volunteer, and Last Laugh**. Cat Lady is now **Crazy Cat Lady**, and HOA Pool Monitor is now **Neighborhood Lifeguard**. These are recorded roster revisions, not deletions of the underlying idea bank. See [revision 3](../production/cards/revision-3-notes.md).

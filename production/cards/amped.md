@@ -1,6 +1,6 @@
 # Amped / High Turnover — Production Pool v0.1
 
-> Donut revision 2 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -16,14 +16,14 @@
 | P039 | Character | 4 | **Social Media Influencer** | 3/5 | — | Rotate: Draw a card, then Discard a card. If you Played at least two cards this Round, you may give another of your Characters +2 Power this Round. |
 | P040 | Character | 5 | **Boss Babe** | 4/6 | — | When this enters play, look at the top 3 cards of your deck. You may reveal a Character costing 2 or less and put it into your hand. Put the rest on the bottom in any order. |
 | P041 | Character | 5 | **Overenthusiastic Softball Mom** | 4/6 | Parent | Rotate: Ready another of your Rotated Characters that attacked this Round. It cannot Attack again this Round. If it is a Kid, it gets +2 Guard this Round. Activate only once each Round. |
-| P042 | Character | 5 | **Little League Coach** | 5/6 | — | The first time each Round you Play a Character after Playing another card, that Character gets +1 Power and +1 Guard this Round. |
+| P042 | Character | 5 | **Peaked in High School** | 5/6 | — | The first time each Round you Play a Character after Playing another card, that Character gets +1 Power and +1 Guard this Round. |
 | P043 | Character | 2 | **Little Leaguer** | 2/1 | Kid | **Hothead**. |
 | P044 | Character | 3 | **Clown Who Booked the Wrong Gig** | 4/4 | Clown | — |
-| P045 | Character | 2 | **Soccer Mom** | 2/4 | Parent | — |
+| P045 | Character | 2 | **Basic White Girl** | 2/4 | — | — |
 | P046 | Character | 3 | **Single Dad** | 3/4 | Parent | When this enters play, another of your Characters gets +2 Guard this Round. If that Character is a Kid, heal 1 damage from it. |
 | P047 | Character | 2 | **Cookie Scout** | 2/2 | Kid, Scout | When this enters play, Draw a card, then Discard a card. If you Played another card this Round, this gets +1 Guard this Round. |
 | P048 | Character | 6 | **Roadie Who Never Left** | 5/7 | — | When you Play your third card in a Round, Ready one Fuel. Rotate: Draw a card, then Discard a card. |
-| P049 | Action | 1 | **Group Text** | — | — | Draw 2 cards, then Discard a card. |
+| P049 | Action | 1 | **Reply All** | — | — | Each player Draws a card. Then Draw a card. |
 | P050 | Action | 1 | **Roll Call** | — | — | Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. |
 | P051 | Action | 2 | **Carpool** | — | — | Return one of your Characters to your hand. The next Character you Play this Round costs 1 less. |
 | P052 | Action | 2 | **Encore!** | — | — | Choose an Action in your discard costing 1 or less. You may Play it without paying its Cost. If you do, put it on the bottom of your deck instead of into your discard. |
@@ -47,6 +47,8 @@ These optional lines are not rules text and do not change a card’s complexity 
 | P031 Wedding Cover Band | *We take requests. Mostly to turn it down.* |
 | P035 Youth Pastor With a Guitar | *Three chords. Forty-seven announcements.* |
 | P037 Reunion Tour Drummer | *The band said they were getting everybody back together.* |
+| P042 Peaked in High School | *He still calls the principal “Coach.”* |
 | P043 Little Leaguer | *The scouting report just says “sugar.”* |
 | P044 Clown Who Booked the Wrong Gig | *The invitation said “bring something for the grill.”* |
-| P045 Soccer Mom | *The referee has been added to the group chat.* |
+| P045 Basic White Girl | *The itinerary is mostly iced coffee.* |
+| P049 Reply All | *You do not need to be on this thread.* |

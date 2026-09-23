@@ -1,4 +1,4 @@
-# Donut Revision 2 — Content Audit
+# Donut Revision 3 — Content Audit
 
 > Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.
 
@@ -46,4 +46,4 @@ P028 Roman Candle, P029 Cooler Full of Bad Ideas, P059 Portable Bluetooth Speake
 
 Stable IDs P001–P180, unique names, per-Style type mix, valid stats/Costs, registered Traits/keywords, support-card references, Character complexity metadata, retired wording in rules text, and generated-sheet freshness. Run `python3 production/cards/build.py --check`.
 
-The validator does not prove card balance, complete natural-language rules correctness, or playable Leader packages. See [Revision notes](revision-2-notes.md) for manual timing review and playtest priorities.
+The validator does not prove card balance, complete natural-language rules correctness, or playable Leader packages. See [Current revision notes](revision-3-notes.md) for the roster follow-up and [the previous rules audit](revision-2-notes.md) for timing review and playtest priorities.

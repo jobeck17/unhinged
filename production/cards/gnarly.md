@@ -1,6 +1,6 @@
 # Gnarly / No Chill — Production Pool v0.1
 
-> Donut revision 2 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -16,16 +16,16 @@
 | P009 | Character | 3 | **Pirate With No Exit Strategy** | 4/3 | Pirate, Criminal | — |
 | P010 | Character | 5 | **Guy Who Definitely Read the Instructions** | 7/5 | Daredevil | When this enters play, deal 2 damage to another of your Characters or to your Leader. |
 | P011 | Character | 5 | **Fourth of July Showrunner** | 4/6 | Daredevil | Rotate, pay 1 Fuel: Deal 1 damage to every other Character. |
-| P012 | Character | 3 | **Parking Lot Boxer** | 4/4 | — | — |
+| P012 | Character | 3 | **Giga Chad** | 4/4 | — | — |
 | P013 | Character | 2 | **Florida Man's Cousin** | 2/3 | Daredevil | — |
 | P014 | Character | 5 | **Guy Who Brought His Own Ramp** | 6/5 | Daredevil | When this attacks, you may Rotate another of your Ready Characters. If you do, this gets +3 Power for this Attack. |
 | P015 | Character | 4 | **Jet Ski Mechanic** | 4/5 | Builder | Rotate, Dismiss one of your Items: One of your Characters gets +3 Power this Round. |
 | P016 | Character | 2 | **Porch Pirate** | 2/1 | Criminal | **Hothead**. |
-| P017 | Character | 1 | **Lawn Chair Daredevil** | 1/2 | Daredevil | When this enters play, you may deal 1 damage to your Leader. If you do, Draw a card, then Discard a card. |
+| P017 | Character | 1 | **Vape Kid** | 1/2 | Kid | When this enters play, you may deal 1 damage to your Leader. If you do, Draw a card, then Discard a card. |
 | P018 | Character | 6 | **Minibike Menace** | 6/5 | Daredevil | **Hothead**. When this attacks, you may deal 1 damage to each of your other Characters. This gets +1 Power for this Attack for each Character damaged this way. |
 | P019 | Action | 1 | **Hold My Beer** | — | — | Choose one of your Characters. Deal 1 damage to it. It gets +2 Power this Round, or +3 Power if it is a Daredevil. |
 | P020 | Action | 1 | **Send It!** | — | — | One of your Characters gets +3 Power and -1 Guard this Round. |
-| P021 | Action | 1 | **No, No, Watch This** | — | — | Ready one of your Rotated Characters that attacked this Round. It gets +2 Power this Round and cannot Attack again this Round. |
+| P021 | Action | 1 | **Glory Days** | — | — | Ready one of your Rotated Characters that attacked this Round. It gets +2 Power this Round and cannot Attack again this Round. |
 | P022 | Action | 2 | **No, I'm Fine** | — | — | Draw 2 cards. Deal 1 damage to your Leader. |
 | P023 | Action | 2 | **Fireworks Incident** | — | — | Choose one of your Characters and an opposing Character. Deal 2 damage to each. If your Character survives, Draw a card, then Discard a card. |
 | P024 | Action | 1 | **Commit to the Bit** | — | — | One of your Ready Characters gets +4 Power this Round and skips its next Ready step. |
@@ -46,6 +46,8 @@ These optional lines are not rules text and do not change a card’s complexity 
 | --- | --- |
 | P004 Bachelorette Party | *Matching shirts. Conflicting alibis.* |
 | P009 Pirate With No Exit Strategy | *The treasure map ends at the tow yard.* |
-| P012 Parking Lot Boxer | *Undefeated in arguments about fights he almost had.* |
+| P012 Giga Chad | *Even his warm-up has a warm-up.* |
 | P013 Florida Man's Cousin | *The family keeps him off the news with a spelling change.* |
 | P016 Porch Pirate | *Free shipping. For him.* |
+| P017 Vape Kid | *The cloud has entered the group chat.* |
+| P021 Glory Days | *The story gets faster every year.* |

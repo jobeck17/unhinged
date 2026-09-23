@@ -1,6 +1,6 @@
 # Donut Card List
 
-> Donut revision 2 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
@@ -18,16 +18,16 @@
 | P009 | Pirate With No Exit Strategy | Gnarly | Character | 3 | 4/3 | Pirate, Criminal | Textless |
 | P010 | Guy Who Definitely Read the Instructions | Gnarly | Character | 5 | 7/5 | Daredevil | On play |
 | P011 | Fourth of July Showrunner | Gnarly | Character | 5 | 4/6 | Daredevil | Rotate ability |
-| P012 | Parking Lot Boxer | Gnarly | Character | 3 | 4/4 | — | Textless |
+| P012 | Giga Chad | Gnarly | Character | 3 | 4/4 | — | Textless |
 | P013 | Florida Man's Cousin | Gnarly | Character | 2 | 2/3 | Daredevil | Textless |
 | P014 | Guy Who Brought His Own Ramp | Gnarly | Character | 5 | 6/5 | Daredevil | Single ongoing ability |
 | P015 | Jet Ski Mechanic | Gnarly | Character | 4 | 4/5 | Builder | Rotate ability |
 | P016 | Porch Pirate | Gnarly | Character | 2 | 2/1 | Criminal | Keyword only |
-| P017 | Lawn Chair Daredevil | Gnarly | Character | 1 | 1/2 | Daredevil | On play |
+| P017 | Vape Kid | Gnarly | Character | 1 | 1/2 | Kid | On play |
 | P018 | Minibike Menace | Gnarly | Character | 6 | 6/5 | Daredevil | Multiple abilities |
 | P019 | Hold My Beer | Gnarly | Action | 1 | — | — | — |
 | P020 | Send It! | Gnarly | Action | 1 | — | — | — |
-| P021 | No, No, Watch This | Gnarly | Action | 1 | — | — | — |
+| P021 | Glory Days | Gnarly | Action | 1 | — | — | — |
 | P022 | No, I'm Fine | Gnarly | Action | 2 | — | — | — |
 | P023 | Fireworks Incident | Gnarly | Action | 2 | — | — | — |
 | P024 | Commit to the Bit | Gnarly | Action | 1 | — | — | — |
@@ -48,14 +48,14 @@
 | P039 | Social Media Influencer | Amped | Character | 4 | 3/5 | — | Rotate ability |
 | P040 | Boss Babe | Amped | Character | 5 | 4/6 | — | On play |
 | P041 | Overenthusiastic Softball Mom | Amped | Character | 5 | 4/6 | Parent | Rotate ability |
-| P042 | Little League Coach | Amped | Character | 5 | 5/6 | — | Single ongoing ability |
+| P042 | Peaked in High School | Amped | Character | 5 | 5/6 | — | Single ongoing ability |
 | P043 | Little Leaguer | Amped | Character | 2 | 2/1 | Kid | Keyword only |
 | P044 | Clown Who Booked the Wrong Gig | Amped | Character | 3 | 4/4 | Clown | Textless |
-| P045 | Soccer Mom | Amped | Character | 2 | 2/4 | Parent | Textless |
+| P045 | Basic White Girl | Amped | Character | 2 | 2/4 | — | Textless |
 | P046 | Single Dad | Amped | Character | 3 | 3/4 | Parent | On play |
 | P047 | Cookie Scout | Amped | Character | 2 | 2/2 | Kid, Scout | On play |
 | P048 | Roadie Who Never Left | Amped | Character | 6 | 5/7 | — | Multiple abilities |
-| P049 | Group Text | Amped | Action | 1 | — | — | — |
+| P049 | Reply All | Amped | Action | 1 | — | — | — |
 | P050 | Roll Call | Amped | Action | 1 | — | — | — |
 | P051 | Carpool | Amped | Action | 2 | — | — | — |
 | P052 | Encore! | Amped | Action | 2 | — | — | — |
@@ -69,14 +69,14 @@
 | P060 | Starter Kit | Amped | Item | 2 | — | — | — |
 | P061 | Assistant Magician | Tricky | Character | 3 | 3/4 | Magician | On play |
 | P062 | Birthday Kid Who Knows the Trick | Tricky | Character | 1 | 1/2 | Kid | Multiple abilities |
-| P063 | Fake Psychic | Tricky | Character | 2 | 3/3 | — | Textless |
+| P063 | Alien Abduction Victim | Tricky | Character | 2 | 3/3 | — | Textless |
 | P064 | Street Magician | Tricky | Character | 4 | 3/5 | Magician | On play |
 | P065 | Escape Artist | Tricky | Character | 3 | 3/4 | Magician | Rotate ability |
 | P066 | Off-Duty Clown | Tricky | Character | 2 | 2/3 | Clown | Single ongoing ability |
-| P067 | Mall Cop | Tricky | Character | 3 | 3/5 | — | On play |
+| P067 | Kid With an iPad | Tricky | Character | 3 | 3/5 | Kid | On play |
 | P068 | Social Media Grifter | Tricky | Character | 4 | 4/4 | Criminal | Rotate ability |
 | P069 | Conspiracy Blogger | Tricky | Character | 4 | 3/5 | — | Single ongoing ability |
-| P070 | Crypto Bro | Tricky | Character | 3 | 4/4 | — | Textless |
+| P070 | Tech Bro | Tricky | Character | 3 | 4/4 | — | Textless |
 | P071 | Coupon Scammer | Tricky | Character | 2 | 3/3 | Criminal | Textless |
 | P072 | Neighborhood Group Admin | Tricky | Character | 4 | 3/7 | HOA | Textless |
 | P073 | IT Guy Who Quit Six Months Ago | Tricky | Character | 5 | 4/6 | Hacker | Rotate ability |
@@ -101,11 +101,11 @@
 | P092 | General Contractor | Sketchy | Character | 5 | 4/6 | Builder | Rotate ability |
 | P093 | Garage Inventor | Sketchy | Character | 4 | 3/5 | Builder | Rotate ability |
 | P094 | Dumpster Diver | Sketchy | Character | 2 | 2/3 | Scavenger | On play |
-| P095 | Garage Sale Queen | Sketchy | Character | 4 | 4/6 | Scavenger | Textless |
+| P095 | Doomsday Prepper | Sketchy | Character | 4 | 4/6 | Scavenger | Textless |
 | P096 | Shopping Cart Knight | Sketchy | Character | 4 | 5/6 | Scavenger | Keyword only |
 | P097 | Junkyard Dog | Sketchy | Character | 2 | 3/3 | Animal, Scavenger | Textless |
 | P098 | Raccoon of Unusual Size | Sketchy | Character | 5 | 6/5 | Animal, Scavenger | Multiple abilities |
-| P099 | Cat Lady | Sketchy | Character | 3 | 2/5 | — | Rotate ability |
+| P099 | Crazy Cat Lady | Sketchy | Character | 3 | 2/5 | — | Rotate ability |
 | P100 | Last-Shift Zombie | Sketchy | Character | 3 | 4/4 | Undead, Scavenger | Textless |
 | P101 | Extension Cord Electrician | Sketchy | Character | 3 | 3/4 | Builder | On play |
 | P102 | Rat King | Sketchy | Character | 5 | 4/6 | Animal, Rat | Rotate ability |
@@ -131,7 +131,7 @@
 | P122 | HOA Enforcement Committee | Spiteful | Character | 3 | 2/5 | HOA | Single ongoing ability |
 | P123 | Coupon Lady | Spiteful | Character | 3 | 3/5 | — | Textless |
 | P124 | Mall Walker | Spiteful | Character | 2 | 1/4 | — | Rotate ability |
-| P125 | Neighborhood Watch Captain | Spiteful | Character | 4 | 4/6 | — | Single ongoing ability |
+| P125 | Keyboard Warrior | Spiteful | Character | 4 | 4/6 | — | Single ongoing ability |
 | P126 | Crossing Guard | Spiteful | Character | 2 | 2/3 | — | Rotate ability |
 | P127 | PTA President | Spiteful | Character | 4 | 4/5 | Parent | On play |
 | P128 | Retired Marine Next Door | Spiteful | Character | 3 | 4/4 | — | Textless |
@@ -144,7 +144,7 @@
 | P135 | Dad Who Already Said No | Spiteful | Character | 4 | 4/6 | Parent | Textless |
 | P136 | Tow-Truck Driver | Spiteful | Character | 5 | 5/6 | — | On play |
 | P137 | HOA Lawyer | Spiteful | Character | 5 | 4/7 | HOA | Multiple abilities |
-| P138 | HOA Pool Monitor | Spiteful | Character | 2 | 2/3 | HOA | Rotate ability |
+| P138 | Neighborhood Lifeguard | Spiteful | Character | 2 | 2/3 | — | Rotate ability |
 | P139 | File a Complaint | Spiteful | Action | 1 | — | — | — |
 | P140 | Not in My Neighborhood | Spiteful | Action | 2 | — | — | — |
 | P141 | Absolutely Not | Spiteful | Action | 1 | — | — | — |
@@ -166,7 +166,7 @@
 | P157 | Fireworks Technician | Wasted | Character | 3 | 3/3 | Daredevil | Rotate ability |
 | P158 | Patio-Table Prodigy | Wasted | Character | 2 | 3/1 | Wrestler, Daredevil | Keyword only |
 | P159 | Rabid Rat | Wasted | Character | 2 | 2/2 | Animal, Rat | Single ongoing ability |
-| P160 | Safety-Vest Volunteer | Wasted | Character | 4 | 3/7 | — | Textless |
+| P160 | Gym Selfie Guy (also: Gym Bro) | Wasted | Character | 4 | 3/7 | — | Textless |
 | P161 | Zombie Mall Walker | Wasted | Character | 4 | 3/5 | Undead | Single ongoing ability |
 | P162 | Guy Who Cut the Wrong Wire | Wasted | Character | 5 | 6/5 | Daredevil | Textless |
 | P163 | Dumpster Phoenix | Wasted | Character | 6 | 5/6 | Animal, Undead, Scavenger | Rotate ability |
@@ -178,7 +178,7 @@
 | P169 | Take One for the Team | Wasted | Action | 1 | — | — | — |
 | P170 | This Seemed Like a Good Idea | Wasted | Action | 1 | — | — | — |
 | P171 | Worth It | Wasted | Action | 2 | — | — | — |
-| P172 | Last Laugh | Wasted | Action | 1 | — | — | — |
+| P172 | Tag Me In! | Wasted | Action | 2 | — | — | — |
 | P173 | Again! | Wasted | Action | 2 | — | — | — |
 | P174 | Sign the Waiver | Wasted | Action | 1 | — | — | — |
 | P175 | Light the Fuse | Wasted | Action | 1 | — | — | — |

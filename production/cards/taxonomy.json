@@ -1,5 +1,5 @@
 {
-  "version": "0.1-donut.2",
+  "version": "0.1-donut.3",
   "trait_policy": {
     "maximum_printed_traits": 4,
     "soft_floor_percent": 3,
@@ -18,9 +18,9 @@
     {"name":"Musician","meaning":"A musical performer. Road crew and general entertainers are not automatically Musicians.","support":["P032","P056","P059"]},
     {"name":"Pirate","meaning":"A deliberately pirate-themed Character. A pun in a title does not grant this Trait.","support":["P090"]},
     {"name":"Scout","meaning":"A member of the fictional Scout troop, including its quartermaster.","support":["P028"]},
-    {"name":"HOA","meaning":"A member of the fictional homeowners association or its administration. General authority figures do not qualify automatically.","support":["P138","P146"]},
+    {"name":"HOA","meaning":"A member of the fictional homeowners association or its administration. General authority figures do not qualify automatically.","support":["P146"]},
     {"name":"Daredevil","meaning":"A Character who deliberately performs dangerous stunts.","support":["P007","P019","P165","P175"]},
-    {"name":"Wrestler","meaning":"A participating backyard wrestler. Fans, referees, and support staff do not qualify merely by proximity.","support":["P165","P166","P178"]},
+    {"name":"Wrestler","meaning":"A participating backyard wrestler. Fans, referees, and support staff do not qualify merely by proximity.","support":["P165","P166","P172","P178"]},
     {"name":"Scavenger","meaning":"A Character who obtains supplies or food from discarded material.","support":["P112","P120"]},
     {"name":"Builder","meaning":"A Character who builds or repairs things, however questionable the workmanship.","support":["P101","P118"]},
     {"name":"Hacker","meaning":"A Character whose depicted activity involves exploiting or manipulating computer systems.","support":["P084"]},

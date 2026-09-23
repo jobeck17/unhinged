@@ -1,5 +1,5 @@
 {
-  "version": "0.1-donut.2",
+  "version": "0.1-donut.3",
   "date": "2026-09-23",
   "status": "Balance unverified; playtest revision, not final print text.",
   "cards": [
@@ -228,7 +228,7 @@
       "id": "P012",
       "type": "Character",
       "cost": 3,
-      "name": "Parking Lot Boxer",
+      "name": "Giga Chad",
       "traits": [],
       "text": "",
       "style": "Gnarly",
@@ -240,7 +240,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Undefeated in arguments about fights he almost had."
+      "flavor": "Even his warm-up has a warm-up."
     },
     {
       "id": "P013",
@@ -328,9 +328,9 @@
       "id": "P017",
       "type": "Character",
       "cost": 1,
-      "name": "Lawn Chair Daredevil",
+      "name": "Vape Kid",
       "traits": [
-        "Daredevil"
+        "Kid"
       ],
       "text": "When this enters play, you may deal 1 damage to your Leader. If you do, Draw a card, then Discard a card.",
       "style": "Gnarly",
@@ -342,7 +342,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "The cloud has entered the group chat."
     },
     {
       "id": "P018",
@@ -404,7 +404,7 @@
       "id": "P021",
       "type": "Action",
       "cost": 1,
-      "name": "No, No, Watch This",
+      "name": "Glory Days",
       "stats": "",
       "traits": [],
       "text": "Ready one of your Rotated Characters that attacked this Round. It gets +2 Power this Round and cannot Attack again this Round.",
@@ -415,7 +415,7 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "The story gets faster every year."
     },
     {
       "id": "P022",
@@ -791,7 +791,7 @@
       "id": "P042",
       "type": "Character",
       "cost": 5,
-      "name": "Little League Coach",
+      "name": "Peaked in High School",
       "traits": [],
       "text": "The first time each Round you Play a Character after Playing another card, that Character gets +1 Power and +1 Guard this Round.",
       "style": "Amped",
@@ -803,7 +803,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "He still calls the principal “Coach.”"
     },
     {
       "id": "P043",
@@ -851,10 +851,8 @@
       "id": "P045",
       "type": "Character",
       "cost": 2,
-      "name": "Soccer Mom",
-      "traits": [
-        "Parent"
-      ],
+      "name": "Basic White Girl",
+      "traits": [],
       "text": "",
       "style": "Amped",
       "complexity": "textless",
@@ -865,7 +863,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The referee has been added to the group chat."
+      "flavor": "The itinerary is mostly iced coffee."
     },
     {
       "id": "P046",
@@ -930,10 +928,10 @@
       "id": "P049",
       "type": "Action",
       "cost": 1,
-      "name": "Group Text",
+      "name": "Reply All",
       "stats": "",
       "traits": [],
-      "text": "Draw 2 cards, then Discard a card.",
+      "text": "Each player Draws a card. Then Draw a card.",
       "style": "Amped",
       "keywords": [],
       "power": null,
@@ -941,7 +939,7 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "You do not need to be on this thread."
     },
     {
       "id": "P050",
@@ -1174,7 +1172,7 @@
       "id": "P063",
       "type": "Character",
       "cost": 2,
-      "name": "Fake Psychic",
+      "name": "Alien Abduction Victim",
       "traits": [],
       "text": "",
       "style": "Tricky",
@@ -1186,7 +1184,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "I see a major charge in your future."
+      "flavor": "Missed three hours. Still got charged for parking."
     },
     {
       "id": "P064",
@@ -1252,8 +1250,10 @@
       "id": "P067",
       "type": "Character",
       "cost": 3,
-      "name": "Mall Cop",
-      "traits": [],
+      "name": "Kid With an iPad",
+      "traits": [
+        "Kid"
+      ],
       "text": "When this enters play, an opposing Character gets -1 Power this Round.",
       "style": "Tricky",
       "complexity": "on_play",
@@ -1264,7 +1264,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "The battery is at one percent. So is everyone’s patience."
     },
     {
       "id": "P068",
@@ -1308,7 +1308,7 @@
       "id": "P070",
       "type": "Character",
       "cost": 3,
-      "name": "Crypto Bro",
+      "name": "Tech Bro",
       "traits": [],
       "text": "",
       "style": "Tricky",
@@ -1320,7 +1320,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "This time it’s backed by lawn equipment."
+      "flavor": "It’s a normal doorbell, but the subscription is mandatory."
     },
     {
       "id": "P071",
@@ -1776,7 +1776,7 @@
       "id": "P095",
       "type": "Character",
       "cost": 4,
-      "name": "Garage Sale Queen",
+      "name": "Doomsday Prepper",
       "traits": [
         "Scavenger"
       ],
@@ -1790,7 +1790,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "That belonged to somebody important. Probably."
+      "flavor": "End times. Curbside pickup.",
+      "art_note": "A backyard bunker stocked from curbside giveaways and salvaged supplies."
     },
     {
       "id": "P096",
@@ -1856,7 +1857,7 @@
       "id": "P099",
       "type": "Character",
       "cost": 3,
-      "name": "Cat Lady",
+      "name": "Crazy Cat Lady",
       "traits": [],
       "text": "Rotate: Look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If you revealed an Animal, heal 1 damage from one of your Characters.",
       "style": "Sketchy",
@@ -1868,7 +1869,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "Every cat has a name. The neighbors have numbers."
     },
     {
       "id": "P100",
@@ -2330,7 +2331,7 @@
       "id": "P125",
       "type": "Character",
       "cost": 4,
-      "name": "Neighborhood Watch Captain",
+      "name": "Keyboard Warrior",
       "traits": [],
       "text": "When another of your Characters Blocks, this gets +1 Power this Round.",
       "style": "Spiteful",
@@ -2342,7 +2343,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "Brave enough to hit send."
     },
     {
       "id": "P126",
@@ -2576,11 +2577,9 @@
       "id": "P138",
       "type": "Character",
       "cost": 2,
-      "name": "HOA Pool Monitor",
-      "traits": [
-        "HOA"
-      ],
-      "text": "Rotate: An opposing Character gets -2 Power this Round, or -3 Power if you have another HOA Character in play.",
+      "name": "Neighborhood Lifeguard",
+      "traits": [],
+      "text": "Rotate: Choose an opposing Character. It gets -2 Power this Round, or -3 Power if its Power is greater than this Character’s Power.",
       "style": "Spiteful",
       "complexity": "activated",
       "keywords": [],
@@ -2590,7 +2589,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "NO RUNNING includes whatever this is."
     },
     {
       "id": "P139",
@@ -2983,7 +2982,7 @@
       "id": "P160",
       "type": "Character",
       "cost": 4,
-      "name": "Safety-Vest Volunteer",
+      "name": "Gym Selfie Guy",
       "traits": [],
       "text": "",
       "style": "Wasted",
@@ -2995,7 +2994,10 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The vest is not legally recognized as armor."
+      "flavor": "Three sets. Forty-seven takes.",
+      "aliases": [
+        "Gym Bro"
+      ]
     },
     {
       "id": "P161",
@@ -3211,11 +3213,11 @@
     {
       "id": "P172",
       "type": "Action",
-      "cost": 1,
-      "name": "Last Laugh",
+      "cost": 2,
+      "name": "Tag Me In!",
       "stats": "",
       "traits": [],
-      "text": "If one of your Characters was Defeated this Round, deal 1 damage to up to two opposing Characters.",
+      "text": "Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this Round.",
       "style": "Wasted",
       "keywords": [],
       "power": null,
@@ -3223,7 +3225,7 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "I’ve got this. Please do not ask what “this” is."
     },
     {
       "id": "P173",
@@ -3361,5 +3363,6 @@
       "status": "playtest",
       "flavor": ""
     }
-  ]
+  ],
+  "revision": 3
 }

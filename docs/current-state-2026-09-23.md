@@ -1,6 +1,6 @@
 # Unhinged Current State — 23 September 2026
 
-**Core 0.1: Donut · Card revision 2**
+**Core 0.1: Donut · Card revision 3**
 
 This checkpoint supersedes the September 21 checkpoint for current card production. The [production rulebook](../production/rules/unhinged-rules.md), [card source](../production/cards/cards.json), and [taxonomy source](../production/cards/taxonomy.json) carry the working specification. Earlier checkpoints and Alpha 0.03 files remain historical evidence.
 
@@ -39,3 +39,7 @@ These are the implemented working revision produced in response to the request t
 Complete the Leader test packages, construct controlled decks from this exact revision, and test under the current rules. Focus on entry-Round attacks, repeated Item damage, ready chains, Undead recursion, temporary-Guard expiration, and whether Tricky's choices stay quick and enjoyable. The archived Mongo simulator cannot validate this revision.
 
 See the [revision notes](../production/cards/revision-2-notes.md) for specific packages and the manual rules audit.
+
+## Revision 3 — requested roster additions
+
+The user’s follow-up cast is implemented in the active 180-card pool. [Request coverage and precise changes](../production/cards/revision-3-notes.md) list every name and stable ID. Neighborhood Lifeguard replaces HOA Pool Monitor and its HOA dependency; Tag Me In! and Reply All are Actions. Glory Days and Peaked in High School are separate cards. Gym Bro is an alternate name for Gym Selfie Guy. The revision 2 complexity mix, all Character Costs/stats, and the three-keyword vocabulary remain intact.

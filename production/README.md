@@ -31,7 +31,7 @@ production/
 ## Production status
 
 - **Rules:** current consolidated playtest rules exist; open decisions are tracked separately.
-- **Cards:** Production Pool v0.1 contains 180 working deck cards, 30 per Style. Revision 2 has a documented Trait/keyword and timing audit, machine-readable draft data, and generated references. Balance and Leader packages still require testing; it is not final print text.
+- **Cards:** Production Pool v0.1 contains 180 working deck cards, 30 per Style. Revision 3 retains the documented Trait/keyword and timing audit, machine-readable draft data, and generated references. Balance and Leader packages still require testing; it is not final print text.
 - **Leaders:** six Leader identities and Style homes are committed; exact Health and ability packages remain playtest work.
 - **Art:** no production art brief or approved art set has been established yet.
 - **Print:** no print-ready templates or printer specifications have been approved yet.
@@ -39,7 +39,7 @@ production/
 
 ## Immediate production sequence
 
-1. Finalize small Leader test packages and review the [revision 2 playtest priorities](cards/revision-2-notes.md).
+1. Finalize small Leader test packages and review the [current roster notes and playtest priorities](cards/revision-3-notes.md).
 2. Build controlled 40-card test decks around each Leader and secondary-Style pairing.
 3. Simulate the cost/stat curve under current 1→7 Fuel and combat rules.
 4. Physically playtest the strongest packages.

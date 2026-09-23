@@ -1,6 +1,6 @@
 # Sketchy / Good Enough — Production Pool v0.1
 
-> Donut revision 2 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -9,11 +9,11 @@
 | P092 | Character | 5 | **General Contractor** | 4/6 | Builder | Rotate: Ready one of your Rotated Items. Activate only once each Round. |
 | P093 | Character | 4 | **Garage Inventor** | 3/5 | Builder | Rotate, Dismiss one of your Items: Draw 2 cards, then Discard a card. |
 | P094 | Character | 2 | **Dumpster Diver** | 2/3 | Scavenger | When this enters play, look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest on the bottom in any order. |
-| P095 | Character | 4 | **Garage Sale Queen** | 4/6 | Scavenger | — |
+| P095 | Character | 4 | **Doomsday Prepper** | 4/6 | Scavenger | — |
 | P096 | Character | 4 | **Shopping Cart Knight** | 5/6 | Scavenger | **Slowpoke**. |
 | P097 | Character | 2 | **Junkyard Dog** | 3/3 | Animal, Scavenger | — |
 | P098 | Character | 5 | **Raccoon of Unusual Size** | 6/5 | Animal, Scavenger | When this enters play, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack. |
-| P099 | Character | 3 | **Cat Lady** | 2/5 | — | Rotate: Look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If you revealed an Animal, heal 1 damage from one of your Characters. |
+| P099 | Character | 3 | **Crazy Cat Lady** | 2/5 | — | Rotate: Look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If you revealed an Animal, heal 1 damage from one of your Characters. |
 | P100 | Character | 3 | **Last-Shift Zombie** | 4/4 | Undead, Scavenger | — |
 | P101 | Character | 3 | **Extension Cord Electrician** | 3/4 | Builder | When this enters play, you may Ready one of your Items. If you have another Builder in play, Draw a card, then Discard a card. |
 | P102 | Character | 5 | **Rat King** | 4/6 | Animal, Rat | Rotate: Choose up to two of your other Characters. Each gets +1 Power this Round. Each chosen Rat also gets +1 Guard this Round. |
@@ -45,8 +45,9 @@ These optional lines are not rules text and do not change a card’s complexity 
 | Card | Flavor |
 | --- | --- |
 | P091 Scout Troop Quartermaster | *Prepared for everything except the inspection.* |
-| P095 Garage Sale Queen | *That belonged to somebody important. Probably.* |
+| P095 Doomsday Prepper | *End times. Curbside pickup.* |
 | P096 Shopping Cart Knight | *Sir Carts-a-Lot yields to no curb.* |
 | P097 Junkyard Dog | *Beware of dog. Also tetanus.* |
+| P099 Crazy Cat Lady | *Every cat has a name. The neighbors have numbers.* |
 | P100 Last-Shift Zombie | *Still waiting for somebody to cover his shift.* |
 | P106 Shopping Cart Golem | *One wheel squeaks. One wheel seeks revenge.* |

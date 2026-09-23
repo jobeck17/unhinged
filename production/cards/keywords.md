@@ -1,6 +1,6 @@
 # Donut Keywords
 
-> Generated from [taxonomy.json](taxonomy.json). Three keywords in this revision; only Hothead is new.
+> Generated from [taxonomy.json](taxonomy.json). Three current keywords; Hothead was introduced in Donut revision 2.
 
 | Keyword | Rule | Status | Printed on |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 - **Explosive:** Only a Blocker receives this exception. Use its Power immediately before it left play. It deals no additional explosion damage unless separate card text says so.
 - **Slowpoke:** It can still Attack. If attacked directly while Rotated, it retaliates if it survives. If it also has Explosive, Slowpoke prevents its blocking retaliation.
 - Multiple instances of the same keyword do not stack.
-- Floor It! grants Hothead temporarily; it is not an additional printed-keyword Character.
+- Floor It! and Tag Me In! can grant Hothead temporarily; neither is an additional printed-keyword Character.
 - Every teaching/print layout should include reminder text or a nearby reference. These short table entries are design sheets, not finished card faces.
 
 ## Ordinary vocabulary, not keywords

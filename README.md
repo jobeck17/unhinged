@@ -7,7 +7,7 @@ Unhinged is a leader-centered card game in development. This repository is the w
 | Need | File | Status |
 | --- | --- | --- |
 | Current decisions and open questions | [Latest checkpoint](docs/current-state-2026-09-23.md) | Latest dated checkpoint |
-| Current 180-card roster, Traits, and keywords | [Donut card workshop](production/cards/README.md) | Revision 2; validated draft data and generated sheets |
+| Current 180-card roster, Traits, and keywords | [Donut card workshop](production/cards/README.md) | Revision 3; validated draft data and generated sheets |
 | Rules for the next paper playtest | [Production rules](production/rules/unhinged-rules.md) | Current consolidated rulebook |
 | Documentation map | [Docs index](docs/README.md) | Where current, historical, legacy, and speculative material belongs |
 | Decisions required before production card text | [Open decisions](production/rules/open-decisions.md) | Deliberate choices still pending |
