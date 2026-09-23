@@ -38,7 +38,7 @@ The working card types and the word Unit are current test language. The Unit-ver
 | **Health** | A Leader's survival total. |
 | **Vulnerable** | A Rotated Leader cannot be Blocked when attacked. |
 
-Formal rules language uses **Rotate**, not tap, exhaust, or exert. It uses **Play** and **enters play**, not deploy.
+Formal rules language uses **Rotate**, **Play**, and **enters play**. The [terminology guide](../../docs/terminology.md) records wording that must not appear in new rules or card text.
 
 ### Card movement
 
