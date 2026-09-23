@@ -46,7 +46,18 @@ Place each piece of information where it can be seen when a player needs it: whi
 
 - Design type and resource icons as different silhouettes, not small variations of one motif. Test them in monochrome, at actual print size, and without labels before trusting the symbol alone.
 
-- Use color as reinforcement for factions or card identity, never as the sole carrier of rules information.
+- Use color as reinforcement for Styles or card identity, never as the sole carrier of rules information.
+
+### Current Style color directions
+
+- **Gnarly / No Chill:** Safety Orange.
+- **Amped / High Turnover:** Hot Pink / Electric Magenta.
+- **Tricky / Funny Business:** Saturated Teal.
+- **Sketchy / Good Enough:** Ochre / Cardboard Brown.
+- **Spiteful / Find Out:** Acid Green.
+- **Wasted / Red Shirts:** Bruise Purple.
+
+Treat these as accent systems rather than full-card background fills. Preserve the light reading field and dark body text. Each Style also needs a distinct non-color cue so the game remains legible in grayscale and for players with color-vision differences.
 
 ## Names and identification
 
