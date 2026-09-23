@@ -70,18 +70,18 @@ This Leader inherits the best part of the old ROOT/Hacker concept: **manipulatio
 
 ### Signature design pillars
 
-**Pick a Card**  
+**Pick a Card**
 The physical interaction is important. A strong baseline concept is to fan cards from the Magician player's hand face down and let the opponent physically choose one. Individual cards may care about being picked or revealed.
 
 The point is not random punishment. It is bluffing, opponent participation, and theatrical tension.
 
-**Vanish / “Now You See Me, Now You Don't”**  
+**Vanish / “Now You See Me, Now You Don't”**
 Bounce and temporary disappearance are natural Tricky tools. Cards can return Characters to hands, save friendly Characters from danger, or make opposing Characters disappear at an inconvenient moment.
 
-**Misdirection**  
+**Misdirection**
 Redirection, target changes, swaps, and committing before the real outcome is revealed all belong here.
 
-**Rule-bending**  
+**Rule-bending**
 Tricky may create narrow, printed exceptions to normal rules. These should be temporary, local, and understandable rather than rewriting the game for an entire Round.
 
 ### Fun guardrail

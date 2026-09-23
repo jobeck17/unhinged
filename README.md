@@ -15,6 +15,7 @@ Unhinged is a leader-centered card game in development. This repository is the w
 | Character, mechanic, and physical-card ideas | [Idea bank](docs/idea-bank.md) | Concepts, not approved cards |
 | Older experiments and design history | [History index](docs/history/README.md) | Historical context only |
 | Original 180-card Alpha 0.03 pool | [Pool status](docs/card-pool/README.md) | Legacy data awaiting rewrite |
+| Next rules prototype | [Donut](prototypes/README.md) | Planned successor to Mongo |
 
 When a newer checkpoint deliberately changes an older one, the newer checkpoint wins. The production rulebook consolidates the current playable core. The LAB snapshot is its source record. The old pool and browser simulator do **not** override current rules. See the [documentation map](docs/README.md) when deciding where a new note belongs.
 
