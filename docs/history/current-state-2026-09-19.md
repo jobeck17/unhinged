@@ -1,6 +1,6 @@
 # Unhinged Current State - 2026-09-19
 
-> **HISTORICAL CHECKPOINT.** Superseded by the [September 21 checkpoint](current-state-2026-09-21.md). Keep this record to explain earlier design decisions, not as current rules.
+> **HISTORICAL CHECKPOINT.** Superseded by the [September 21 checkpoint](../current-state-2026-09-21.md). Keep this record to explain earlier design decisions, not as current rules.
 
 > This is the current design checkpoint after the Mongo tuning pass and the September 19 identity/card-pool work.
 >
@@ -583,7 +583,7 @@ These ideas are preserved so they do not accidentally crawl back in as "current 
 - `docs/card-pool/rules-lab.md` - synchronized current LAB rules
 - `docs/card-pool/traits.md` - Trait model
 - `docs/card-pool/meta-audit-2026-09-19.md` - current heuristic meta audit
-- `docs/mongo-precommit.md` - historical rollback checkpoint, intentionally retained as history
+- `docs/history/mongo-precommit-summary.md` - historical rollback checkpoint, intentionally retained as history
 
 ## Historical rollback anchor
 

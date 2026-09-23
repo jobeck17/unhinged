@@ -1,6 +1,6 @@
 # Unhinged Current State — 2026-09-20
 
-> **HISTORICAL CHECKPOINT.** Superseded by the [September 21 checkpoint](current-state-2026-09-21.md). Keep this record to explain earlier design decisions, not as current rules.
+> **HISTORICAL CHECKPOINT.** Superseded by the [September 21 checkpoint](../current-state-2026-09-21.md). Keep this record to explain earlier design decisions, not as current rules.
 
 > This checkpoint supersedes the September 19 current-state file for active rules decisions while preserving that earlier file as design history.
 >

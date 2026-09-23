@@ -1,6 +1,6 @@
 # Unhinged Card Pool
 
-> **LEGACY TEST POOL — Alpha 0.03 “Mongo”.** The JSON files are the source for this historical pool and simulator, not the canonical card text for the current Fuel rules. They contain retired terms and unrevised effects. The [September 21 checkpoint](../current-state-2026-09-21.md) and [LAB rules](rules-lab.md) govern current work. Rewrite these cards one by one before treating any of them as playable under the new rules. See [terminology](../terminology.md).
+> **LEGACY TEST POOL — Alpha 0.03 “Mongo”.** The JSON files are the source for this historical pool and simulator, not the canonical card text for the current Fuel rules. They contain retired terms and unrevised effects. The [production rules](../../production/rules/unhinged-rules.md) govern current work; the [September 21 checkpoint](../current-state-2026-09-21.md) and [LAB snapshot](rules-lab.md) preserve source detail. Rewrite these cards one by one before treating any of them as playable under the new rules. See [terminology](../terminology.md).
 
 ## Pool
 
@@ -81,7 +81,7 @@ Notable change: **Undead now belongs to Makeshift + Kamikaze**, not Stubborn + K
 - [cards.json](./cards.json) — historical 180-card test data
 - [leaders.json](./leaders.json) — historical Leader test data
 - [test-decks.json](./test-decks.json) — historical curated test decks
-- [rules-lab.md](./rules-lab.md) — current LAB rules snapshot
+- [rules-lab.md](./rules-lab.md) — detailed September 21 LAB source snapshot
 - [design-audit-2026-09-21.md](./design-audit-2026-09-21.md) — 180-card decision-tree / mature-game audit
 - [../current-state-2026-09-21.md](../current-state-2026-09-21.md) — latest project checkpoint
 - [meta-audit-2026-09-19.md](./meta-audit-2026-09-19.md) — historical cross-color balance / usage audit

@@ -1,6 +1,6 @@
 # Unhinged Terminology
 
-Working editorial guide as of September 22, 2026. Use [LAB rules](card-pool/rules-lab.md) for mechanics and the [September 21 checkpoint](current-state-2026-09-21.md) for design status. This guide does not settle decisions the checkpoint leaves open.
+Working editorial guide as of September 22, 2026. Use the [production rules](../production/rules/unhinged-rules.md) for current playtest mechanics and the [September 21 checkpoint](current-state-2026-09-21.md) for design status and rationale. This guide does not settle decisions the checkpoint leaves open.
 
 ## Use in new rules and cards
 
@@ -33,10 +33,10 @@ Working editorial guide as of September 22, 2026. Use [LAB rules](card-pool/rule
 
 ## Open or awaiting rewrite
 
-- **Unit versus Character:** Character is strongly favored as a future printed type/name. LAB rules and the unrevised pool still say Unit. Do not globally rename before that choice is confirmed and card text is reviewed.
+- **Unit versus Character:** Character is strongly favored as a future printed type/name. The current rulebook and unrevised pool still say Unit. Do not globally rename before that choice is confirmed and card text is reviewed.
 - **Owner versus Controller:** Owner is defined; the need for Controller is reopened. Current rules temporarily retain Controller for old interactions. Prefer plain language for new concepts.
 - **Junk Pile:** the design direction is to retire this separate zone in favor of discard. The old Makeshift cards and Trash Baron still depend on it; rewrite and rebalance them together before removing their references.
-- **Identity names:** Reckless, Unruly, Crooked, Makeshift, Stubborn, and Kamikaze label the legacy data. Wild, Amped, Tricky, Sketchy, Spiteful, and Doomed lead the naming exploration; none are locked replacements.
+- **Styles:** Reckless, Unruly, Crooked, Makeshift, Stubborn, and Kamikaze label the legacy data. **Styles** is the current umbrella term, with two soft-locked complete naming sets: Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted, or No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts. Keep each set intact; do not mix names between sets. The final printed voice remains open.
 - **Response:** favored as Action timing, with exact window printed on the card. Chaining and cost limits remain open.
 
 The [legacy card pool](card-pool/README.md) and [historical notes](history/README.md) deliberately show old words. Their status labels prevent those examples from being mistaken for current instructions.

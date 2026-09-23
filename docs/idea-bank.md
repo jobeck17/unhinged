@@ -1,6 +1,6 @@
 # Unhinged Idea Bank
 
-Ideas saved for later design and playtests. None is a current rule merely because it appears here. The [September 21 checkpoint](current-state-2026-09-21.md) and [LAB rules](card-pool/rules-lab.md) control the active game. Historical concepts are in the [brainstorm source](history/brainstorm-2026-09-17.md).
+Ideas saved for later design and playtests. None is a current rule merely because it appears here. The [production rules](../production/rules/unhinged-rules.md) control active playtests; the [September 21 checkpoint](current-state-2026-09-21.md) and [LAB snapshot](card-pool/rules-lab.md) preserve the rationale and source detail. Historical concepts are in the [brainstorm source](history/brainstorm-2026-09-17.md).
 
 ## Physical card play
 

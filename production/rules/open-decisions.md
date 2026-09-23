@@ -9,8 +9,8 @@ These are the latest unresolved items from the September 21 checkpoint. They are
 | Responses | A Response is an Action with its exact timing printed on the card. | Define whether a Response may answer another Response and set a chain limit, if any. |
 | Response costing | Fuel and card opportunity cost are favored. | Establish the cost range after cards exist to test it. |
 | Fuel representation | Fuel progresses from 1 to 7 and Rotates to pay. | Choose the physical implementation: dedicated Fuel cards, tracker, tokens, or another durable play aid. |
-| Deckbuilding colors | Leader color plus one secondary color is the current default. | Lock final identity names and the umbrella term for the six groups. |
-| Legacy identity names | Reckless, Unruly, Crooked, Makeshift, Stubborn, and Kamikaze label old data. Wild, Amped, Tricky, Sketchy, Spiteful, and Doomed lead the current exploration. | Choose the final naming voice before rewriting card headers and deckbuilding text. |
+| Deckbuilding colors | Leader color plus one secondary color is the current default. **Styles** is the soft-locked umbrella term. | Choose which complete Style naming set will appear in the final printed card headers and deckbuilding text. |
+| Style naming | Two complete soft-locked sets map one-to-one: **Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted**, or **No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts**. Do not mix names between sets. | Select the final presentation voice after usability and legal/IP review; keep both sets available during design discussion. |
 | Junk Pile | Retire the separate zone; Makeshift should use discard. | Rewrite and rebalance Trash Baron and every affected card together. |
 | Card type layout | The card frame must support Cost, type, title/subtitle, rules text, Power, Guard, and IDs. | Produce and test the first printable template, including type symbols and stack overlap. |
 

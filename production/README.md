@@ -11,7 +11,7 @@ This directory holds the material that should guide the next production pass: cu
 | Card frame, symbols, and accessibility requirements | [Card design principles](../docs/card-design-principles-2026-09-22.md) |
 | Concepts that are not yet part of production | [Idea bank](../docs/idea-bank.md) |
 
-The rulebook consolidates the locked and current soft-locked mechanics from the September 21 checkpoint and LAB rules. The open-decisions file keeps unfinished choices out of card text and print files.
+The rulebook consolidates the locked and current soft-locked mechanics from the September 21 checkpoint and its LAB source record. The open-decisions file keeps unfinished choices out of card text and print files.
 
 ## Intended structure
 
@@ -24,4 +24,12 @@ production/
 └── releases/    Set plans, release notes, and quality checks
 ```
 
-Only `rules/` exists today because the current card pool still needs a card-by-card rewrite for Fuel, Rotate, modern timing, and the pending terminology choices. Add the other folders when their first production artifact exists.
+The lane README files are intentionally present before their first artifacts so that new work has a clear home. The Alpha 0.03 pool in [`docs/card-pool/`](../docs/card-pool/README.md) remains legacy until its cards are rewritten one by one.
+
+## Production status
+
+- **Rules:** current consolidated playtest rules exist; open decisions are tracked separately.
+- **Cards:** no production card list has been approved yet.
+- **Art:** no production art brief or approved art set has been established yet.
+- **Print:** no print-ready templates or printer specifications have been approved yet.
+- **Releases:** no set or season has been locked yet.
