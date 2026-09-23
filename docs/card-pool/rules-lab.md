@@ -2,6 +2,8 @@
 
 > Synchronized working rules state as of 2026-09-21.
 > **Golden Rule:** base rules apply globally. Printed card text is the exception layer.
+>
+> The consolidated current rulebook is now [Production Rules](../../production/rules/unhinged-rules.md). This LAB snapshot remains the detailed September 21 source record.
 
 ## Status legend
 

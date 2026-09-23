@@ -2,7 +2,7 @@
 
 > This checkpoint supersedes the September 20 current-state file for active design direction while preserving earlier checkpoints as design history.
 >
-> The original Alpha 0.03 card data remains in `docs/card-pool/cards.json` and `docs/card-pool/leaders.json` as legacy test data. Active rules are in `docs/card-pool/rules-lab.md`.
+> The original Alpha 0.03 card data remains in `docs/card-pool/cards.json` and `docs/card-pool/leaders.json` as legacy test data. The current consolidated rules are in [`production/rules/unhinged-rules.md`](../production/rules/unhinged-rules.md); the LAB snapshot remains the September 21 source record.
 >
 > The 180-card test pool has **not yet been rewritten** to reflect all September 21 design decisions. Where this document says "rewrite pending," the old card data remains intentionally untouched until the card-by-card pass.
 
