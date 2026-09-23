@@ -1,6 +1,6 @@
 # Unhinged Card Pool
 
-> Alpha 0.03 “Mongo” working pool. Machine-readable data is canonical; all balance numbers remain playtestable until the build is explicitly frozen.
+> **LEGACY TEST POOL — Alpha 0.03 “Mongo”.** The JSON files are the source for this historical pool and simulator, not the canonical card text for the current Fuel rules. They contain retired terms and unrevised effects. The [September 21 checkpoint](../current-state-2026-09-21.md) and [LAB rules](rules-lab.md) govern current work. Rewrite these cards one by one before treating any of them as playable under the new rules. See [terminology](../terminology.md).
 
 ## Pool
 
@@ -11,7 +11,7 @@
 - Baseline deck: **40 cards = 26 Units / 8 Actions / 6 Items**
 - Leaders live separately in `leaders.json`.
 
-## Current Color Identities
+## Legacy Pool Identities
 
 | Color | Core Identity | Primary Trait |
 |---|---|---|
@@ -42,7 +42,7 @@ Color identity is a **design/deckbuilding identity, not a source of special rule
 
 All gameplay starts from the same global rules. A Leader, Unit, Action, or Item may create an exception through its printed text. Keywords are globally defined and apply only to cards carrying them.
 
-**September 21 rewrite direction:** retire Junk Pile as a separate zone and let Makeshift interact with the normal Discard instead. The canonical card/Leader data still contains legacy Junk text until the coordinated rewrite is completed. **One Man's Trash** is the working Trash Baron signature concept for limited Item access from Discard.
+**September 21 rewrite direction:** retire Junk Pile as a separate zone and let Makeshift interact with the normal Discard instead. The old card/Leader data still contains Junk text until the coordinated rewrite is completed. **One Man's Trash** is the working Trash Baron signature concept for limited Item access from Discard.
 
 
 
@@ -57,7 +57,7 @@ A Response states its exact legal timing in plain English and may be Played duri
 - **Explosive:** An Explosive blocker retaliates even if it is defeated by the incoming attack.
 - **Slowpoke:** A Slowpoke Unit does not deal retaliation damage when it blocks.
 
-## Current Leaders
+## Legacy Leaders
 
 | Color | Leader | Health | Role |
 |---|---|---:|---|
@@ -78,13 +78,13 @@ Notable change: **Undead now belongs to Makeshift + Kamikaze**, not Stubborn + K
 
 ## Files
 
-- [cards.json](./cards.json) — canonical cards
-- [leaders.json](./leaders.json) — canonical Leaders
-- [test-decks.json](./test-decks.json) — six curated baseline decks
+- [cards.json](./cards.json) — historical 180-card test data
+- [leaders.json](./leaders.json) — historical Leader test data
+- [test-decks.json](./test-decks.json) — historical curated test decks
 - [rules-lab.md](./rules-lab.md) — current LAB rules snapshot
 - [design-audit-2026-09-21.md](./design-audit-2026-09-21.md) — 180-card decision-tree / mature-game audit
 - [../current-state-2026-09-21.md](../current-state-2026-09-21.md) — latest project checkpoint
-- [meta-audit-2026-09-19.md](./meta-audit-2026-09-19.md) — current cross-color balance / usage audit
+- [meta-audit-2026-09-19.md](./meta-audit-2026-09-19.md) — historical cross-color balance / usage audit
 - [meta-decks.json](./meta-decks.json) — 30 optimized heuristic stress-test lists
 - [traits.md](./traits.md) — Trait model and distribution
 - [leaders.md](./leaders.md) — readable Leader roster

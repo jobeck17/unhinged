@@ -1,5 +1,7 @@
 # Mongo Meta Audit — 2026-09-19
 
+> **DATED ANALYSIS.** Historical balance audit for the old Alpha 0.03 pool; results do not validate current rules.
+
 > **Important:** Heuristic optimized-deck stress test, not a rules-complete engine. For this pass, **rank/color clustering is more important than the exact win percentage**.
 
 ## Kamikaze dependency + Unruly micro-buff pass

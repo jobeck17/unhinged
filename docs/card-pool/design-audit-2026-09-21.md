@@ -1,5 +1,7 @@
 # Unhinged 180-Card Design Audit — 2026-09-21
 
+> **DATED ANALYSIS.** Audit of the unrevised Alpha 0.03 pool; recommendations remain useful, but card data still awaits rewrite.
+
 > Review basis: canonical `docs/card-pool/cards.json` and `leaders.json`, current rules lab, plus design lessons taken from mature expandable card games (especially Marvel Champions / other Fantasy Flight LCGs).
 >
 > This is a **design audit**, not a canonical card rewrite. No individual card text in `cards.json` is changed by this document.

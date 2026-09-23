@@ -24,7 +24,7 @@ Place each piece of information where it can be seen when a player needs it: whi
 
 - Keep active ability text and combat values in stable places that can be read from the player’s side and, where possible, across the table.
 
-- Use the lower portion for abilities, Attack, and Guard, with consistent positions. Final stat placement remains open.
+- Use the lower portion for abilities, Power, and Guard, with consistent positions. Final stat placement remains open.
 
 - Traits and timing cues must be findable when an effect refers to them. Cost can become less prominent once the card is played.
 

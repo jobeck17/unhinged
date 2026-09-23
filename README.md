@@ -1,79 +1,37 @@
 # Unhinged
 
-Digital playtest harness and design repository for **Unhinged**, currently tracking **Alpha 0.03 "Mongo."**
+Unhinged is a leader-centered card game in development. This repository is the working home for rules, decisions, card design, ideas, history, and playtest code. Nothing here is a published final ruleset.
 
-## Current checkpoint
+## Start here
 
-The current design state is documented in:
+| Need | File | Status |
+| --- | --- | --- |
+| Current decisions and open questions | [Latest checkpoint](docs/current-state-2026-09-21.md) | Latest dated checkpoint |
+| Rules for the next paper playtest | [LAB rules](docs/card-pool/rules-lab.md) | Working rules |
+| Current versus retired language | [Terminology](docs/terminology.md) | Editorial guide for new work |
+| Physical card layout and accessibility | [Card design principles](docs/card-design-principles-2026-09-22.md) | Working guide; [editable Word copy](docs/Unhinged_Card_Design_Principles_2026-09-22.docx) |
+| Character, mechanic, and physical-card ideas | [Idea bank](docs/idea-bank.md) | Concepts, not approved cards |
+| Older experiments and design history | [History index](docs/history/README.md) | Historical context only |
+| Original 180-card Alpha 0.03 pool | [Pool status](docs/card-pool/README.md) | Legacy data awaiting rewrite |
 
-- [Current State - 2026-09-20](./docs/current-state-2026-09-20.md)
-- [LAB Rules](./docs/card-pool/rules-lab.md)
-- [Canonical Card Pool](./docs/card-pool/cards.json)
-- [Canonical Leaders](./docs/card-pool/leaders.json)
+When a newer checkpoint deliberately changes an older one, the newer checkpoint wins. The LAB rules describe the current playable core. The old pool and browser simulator do **not** override current rules.
 
-When older prototype notes conflict with the dated current-state checkpoint, use the newer checkpoint unless a newer file explicitly supersedes it.
+## Current playable foundation
 
-## Current foundation
+- One Leader starts in play; reduce the opposing Leader to 0 Health.
+- Players alternate one-action Turns within shared Rounds.
+- Fuel is the spendable resource. Its working progression is 1 to 7 Fuel across Rounds.
+- Ready and Rotate describe orientation; Blocking Rotates a Blocker.
+- Units use Power and Guard. Damage persists. A surviving Blocker retaliates.
+- An Attack may target the Leader or a Rotated opposing Unit; a Rotated Leader is Vulnerable.
+- Actions resolve once; Items remain in play and Attach only when their text says so.
 
-- 40-card decks
-- 7-card opening hand with 0-7 mulligan
-- One Leader starts in play
-- War compares Cost to determine Round 1 initiative and break tied game-end states
-- Ready, Set, Draw round structure
-- Players alternate one-action **Turns**
-- On a Turn: Play a card, Activate an ability, Attack, or Pass
-- Two consecutive Passes end the Round
-- Single Play Area
-- Multiple Blockers
-- Blocking Rotates the Blocker
-- Rotated Units may be attacked directly and retaliate if they survive
-- Persistent damage
-- Discard cards from hand for +1 temporary Guard each during defense
-- Actions resolve once, then go to discard
-- Items persist in play and Attach only when their text says to
-- Rotated Leaders are Vulnerable
-- Fuel is the spendable resource; Rotate Fuel to pay Costs
+Responses, a possible Character name for Units, and six identity names remain at their stated statuses in the linked documents.
 
-## Current zones
+## Browser prototype
 
-- Deck
-- Hand
-- Discard
-- Play Area
-- Fuel Tank
-- Junk Pile exists as a Trash Baron/card-created special zone
+The [Mongo simulator](prototypes/mongo-legacy.html) is a **legacy mechanics experiment**. It uses Command and Stamina, old deployment language, and simplified card effects. Its results do not validate current Fuel rules. The repository landing page links to current documents and this archived simulator.
 
-## Current card pool
+## Contributing to the project
 
-- 6 playtest pools
-- 30 cards per pool
-- 180 cards total
-- Per pool: 18 Units / 8 Actions / 4 Items
-- Baseline deck skeleton: 26 Units / 8 Actions / 6 Items
-
-Current pools:
-
-- Reckless
-- Unruly
-- Crooked
-- Makeshift
-- Stubborn
-- Kamikaze
-
-Faction names and ordering are the next major design audit.
-
-## Soft-locked testing defaults
-
-- Fuel grows from 1 to 7
-- Both players Draw on Round 1
-- Leader/primary color plus one secondary color
-- Maximum 2 copies of a card
-- Units that entered play this Round may Block, but normally cannot Attack or Activate their own Rotate ability that Round
-
-## Historical rollback anchor
-
-**MONGO-PRECOMMIT-2026-09-18**
-
-The historical pre-commit snapshot remains in [docs/mongo-precommit.md](./docs/mongo-precommit.md). It is intentionally preserved rather than rewritten to match newer rules.
-
-This repository is a playtest and design tool, not a final published rules reference.
+Put new decisions in a dated checkpoint and update LAB rules when playable rules change. Put speculative ideas in the idea bank with their status. Keep historical tests intact and clearly labeled. Do not bulk replace legacy card text: moving from the old pool to current rules requires card-by-card design and balance work.

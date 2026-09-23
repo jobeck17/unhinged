@@ -1,5 +1,7 @@
 # Unhinged Current State - 2026-09-19
 
+> **HISTORICAL CHECKPOINT.** Superseded by the [September 21 checkpoint](current-state-2026-09-21.md). Keep this record to explain earlier design decisions, not as current rules.
+
 > This is the current design checkpoint after the Mongo tuning pass and the September 19 identity/card-pool work.
 >
 > When this file conflicts with older brainstorming or prototype documents, this file describes the current state unless a newer dated checkpoint says otherwise.

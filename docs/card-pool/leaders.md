@@ -1,5 +1,7 @@
 # Unhinged Leaders
 
+> **LEGACY ALPHA 0.03 CARD POOL.** This sheet reflects the old test data, including retired wording. Use the [latest checkpoint](../current-state-2026-09-21.md), [LAB rules](rules-lab.md), and [terminology](../terminology.md) for current design. The cards need a deliberate rewrite before reuse.
+
 > Working Alpha 0.03 “Mongo” Leader roster. All six Leaders use exactly four Traits in the current LAB build.
 
 Using a Leader's Exhaust ability exhausts that Leader. An exhausted Leader is **Vulnerable** until it readies; a Vulnerable Leader may be attacked directly, bypassing normal Unit protection.

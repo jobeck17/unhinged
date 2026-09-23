@@ -2,9 +2,9 @@
 
 > This checkpoint supersedes the September 20 current-state file for active design direction while preserving earlier checkpoints as design history.
 >
-> Canonical card data remains in `docs/card-pool/cards.json` and `docs/card-pool/leaders.json`. Active rules are synchronized in `docs/card-pool/rules-lab.md`.
+> The original Alpha 0.03 card data remains in `docs/card-pool/cards.json` and `docs/card-pool/leaders.json` as legacy test data. Active rules are in `docs/card-pool/rules-lab.md`.
 >
-> The canonical 180-card pool has **not yet been rewritten** to reflect all September 21 design decisions. Where this document says "rewrite pending," the old card data remains intentionally untouched until the card-by-card pass.
+> The 180-card test pool has **not yet been rewritten** to reflect all September 21 design decisions. Where this document says "rewrite pending," the old card data remains intentionally untouched until the card-by-card pass.
 
 ## Status legend
 
@@ -13,7 +13,7 @@
 - 🧪 **LAB / WATCH** — actively monitored.
 - ↺ **REOPENED** — previously settled, now deliberately under review.
 - ◇ **TABLED** — intentionally deferred.
-- ✎ **REWRITE PENDING** — design direction chosen, canonical card text/data not yet converted.
+- ✎ **REWRITE PENDING** — design direction chosen, legacy card text/data not yet converted.
 
 ---
 
@@ -94,7 +94,7 @@ Current preference is **not** to make a Response consume the player's next Turn.
 - **Me Too!** / equivalent — copy-style Response concept.
 - Attack Responses are explicitly valid design space, not only Responses to Actions.
 
-The current 180-card pool already contains numerous Actions that functionally require Response timing, including attack reactions, target redirection, Action cancellation/bounce, Defeat reactions, and "after last Fuel" timing. The Response rules are infrastructure for behavior already present in the pool.
+The old 180-card pool already contains numerous Actions that functionally require Response timing, including attack reactions, target redirection, Action cancellation/bounce, Defeat reactions, and "after last Fuel" timing. The Response rules are infrastructure for behavior already present in that pool.
 
 ---
 
@@ -191,7 +191,7 @@ Important balance warning: Discard fills automatically, so broad unlimited recur
 - "an Item that entered your discard this Round";
 - bottom-deck/remove-style cleanup where needed.
 
-✎ Canonical `cards.json` / `leaders.json` still contain Junk Pile text and have **not yet been mass-converted**.
+✎ Legacy `cards.json` / `leaders.json` still contain Junk Pile text and have **not yet been mass-converted**.
 
 ---
 
@@ -265,11 +265,11 @@ Simple stat cards still have a place, especially as beginner breathing room, but
 
 ---
 
-# Terminology still pending before canonical card rewrite
+# Terminology still pending before the card rewrite
 
 ✎ **Unit → Character** remains strongly favored but is not yet formally locked.
 
-✎ Canonical card text still contains legacy terms such as:
+✎ Legacy card text still contains terms such as:
 - Unit
 - Deploy
 - Exhaust

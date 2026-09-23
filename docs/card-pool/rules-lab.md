@@ -164,9 +164,9 @@ Examples:
 Cards in the Play Area are **in play**.
 
 **LEGACY / REWRITE PENDING**
-- The canonical 180-card pool still contains **Junk Pile** references from the Trash Baron/Makeshift package.
+- The old 180-card test pool still contains **Junk Pile** references from the Trash Baron/Makeshift package.
 - Current design direction is to **retire Junk Pile as a separate zone** and let Makeshift interact with the normal **Discard** instead.
-- This is not yet mechanically applied to the canonical card and Leader data; those cards require a deliberate rewrite and rebalance before Junk can be removed from legacy test data.
+- This is not yet mechanically applied to the legacy card and Leader data; those cards require a deliberate rewrite and rebalance before Junk can be removed from that test pool.
 - **One Man’s Trash** is the working Trash Baron ability concept for limited Item access from Discard, with guardrails such as once-per-Round and paying normal Cost.
 
 ---

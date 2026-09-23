@@ -1,5 +1,7 @@
 # Unruly Card Pool
 
+> **LEGACY ALPHA 0.03 CARD POOL.** This sheet reflects the old test data, including retired wording. Use the [latest checkpoint](../current-state-2026-09-21.md), [LAB rules](rules-lab.md), and [terminology](../terminology.md) for current design. The cards need a deliberate rewrite before reuse.
+
 **Identity:** Teamwork, momentum, bodies, buffs.  
 **Primary Trait:** Team  
 **Secondary Traits:** Hustler • Party • Performer • Fanatic
