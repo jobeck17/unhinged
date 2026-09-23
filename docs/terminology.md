@@ -1,6 +1,6 @@
 # Unhinged Terminology
 
-Working editorial guide as of September 22, 2026. Use the [production rules](../production/rules/unhinged-rules.md) for current playtest mechanics and the [September 21 checkpoint](current-state-2026-09-21.md) for design status and rationale. This guide does not settle decisions the checkpoint leaves open.
+Working editorial guide as of September 23, 2026. Use the [production rules](../production/rules/unhinged-rules.md) for current playtest mechanics and the [September 23 checkpoint](current-state-2026-09-23.md) for design status and rationale. This guide does not settle decisions the checkpoint leaves open.
 
 ## Use in new rules and cards
 
@@ -10,14 +10,14 @@ Working editorial guide as of September 22, 2026. Use the [production rules](../
 | Card orientation | **Ready**, **Rotate**, **Rotated** | Attacking, Blocking, and some abilities Rotate. |
 | Play a permanent | **Play**; it **enters play** | Deploy is not a formal rules verb. |
 | Use a printed activated ability | **Activate** | A triggered ability happens when its condition occurs. |
-| Unit combat numbers | **Power** and **Guard** | Power deals combat damage; damage at or above Guard Defeats the Unit. |
+| Character combat numbers | **Power** and **Guard** | Power deals combat damage; damage at or above Guard Defeats the Character. |
 | Leader survival | **Health** | Do not use Life as the formal Leader stat. |
-| Losing a Unit to damage/effect | **Defeat** | Sacrifice is a specified way to Defeat your own Unit. |
+| Losing a Character to damage/effect | **Defeat** | Sacrifice is a specified way to Defeat your own Character. |
 | Removing a card in play without Defeat | **Dismiss** | Attached Item cleanup does not count as Dismiss. |
 | Attack on a Rotated Leader | **Vulnerable** | The Leader cannot be Blocked while Vulnerable. |
 | Spent Action destination | Put it into its Owner's **discard** | An Action never enters play. Do not say it is Dismissed. |
 
-**Draw**, **Discard**, **Return**, **Defeat**, **Sacrifice**, **Dismiss**, and neutral **Put** are separate events. They are not interchangeable for triggers. Use the LAB definitions before editing card effects.
+**Draw**, **Discard**, **Return**, **Defeat**, **Sacrifice**, **Dismiss**, and neutral **Put** are separate events. They are not interchangeable for triggers. Use the production rulebook definitions before editing card effects. The LAB is a historical source record.
 
 ## Retired from the current base game
 
@@ -33,9 +33,10 @@ Working editorial guide as of September 22, 2026. Use the [production rules](../
 
 ## Open or awaiting rewrite
 
-- **Unit versus Character:** Character is strongly favored as a future printed type/name. The current rulebook and unrevised pool still say Unit. Do not globally rename before that choice is confirmed and card text is reviewed.
-- **Owner versus Controller:** Owner is defined; the need for Controller is reopened. Current rules temporarily retain Controller for old interactions. Prefer plain language for new concepts.
-- **Junk Pile:** the design direction is to retire this separate zone in favor of discard. The old Makeshift cards and Trash Baron still depend on it; rewrite and rebalance them together before removing their references.
+- **Character:** current Donut test name, used consistently in the rulebook and pool. Unit is its historical alias. Final printed presentation remains open; there are not two separate card types.
+- **Relationships:** use your Character, opposing Character, and owner. No production card changes ownership or control.
+- **Discard:** current Sketchy cards use the normal discard. The separate Junk Pile survives only in legacy files; its production rewrite is complete.
+- **Traits and keywords:** use the [current trait register](../production/cards/traits.md) and [keyword reference](../production/cards/keywords.md). Human is unprinted metadata. “Rotate:” is an activation cost, not a new keyword. Hothead is the only new keyword in Donut revision 2.
 - **Styles:** Reckless, Unruly, Crooked, Makeshift, Stubborn, and Kamikaze label the legacy data. **Styles** is the current umbrella term, with two soft-locked complete naming sets: Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted, or No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts. Keep each set intact; do not mix names between sets. The final printed voice remains open.
 - **Response:** favored as Action timing, with exact window printed on the card. Chaining and cost limits remain open.
 

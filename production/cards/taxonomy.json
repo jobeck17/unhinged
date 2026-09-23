@@ -1,0 +1,45 @@
+{
+  "version": "0.1-donut.2",
+  "trait_policy": {
+    "maximum_printed_traits": 4,
+    "soft_floor_percent": 3,
+    "soft_ceiling_percent": 15,
+    "denominator": "Unique deck Characters; exclude Leaders, Actions, Items, copies, and temporarily gained Traits.",
+    "notes": "Traits are exact labels, never automatic abilities. Zero is valid. Actions, Items, and Leaders may carry useful Traits, but this pool prints them only on Characters. Human remains unprinted audit metadata. Limits are design guidance, not deckbuilding restrictions."
+  },
+  "traits": [
+    {"name":"Animal","meaning":"An animal Character, including an explicitly animal Undead Character.","support":["P099","P153"]},
+    {"name":"Undead","meaning":"A Character whose fiction explicitly includes returning from death. Survival alone does not qualify.","support":["P153","P159","P163","P173","P175","P177"]},
+    {"name":"Construct","meaning":"An animated, built, or manufactured Character. Ordinary Items are not Constructs.","support":["P117"]},
+    {"name":"Rat","meaning":"A rat, printed alongside Animal when both apply. Other scavenging animals are not Rats.","support":["P102","P159"]},
+    {"name":"Kid","meaning":"A child or teen in the depicted Character concept.","support":["P036","P038","P041","P046","P056","P126","P127"]},
+    {"name":"Parent","meaning":"A parent or grandparent, without implying a separate Human rule.","support":["P036","P056","P127"]},
+    {"name":"Criminal","meaning":"A Character depicted committing theft, fraud, or another crime. A job, wealth, or an annoying personality is insufficient.","support":["P090"]},
+    {"name":"Musician","meaning":"A musical performer. Road crew and general entertainers are not automatically Musicians.","support":["P032","P056","P059"]},
+    {"name":"Pirate","meaning":"A deliberately pirate-themed Character. A pun in a title does not grant this Trait.","support":["P090"]},
+    {"name":"Scout","meaning":"A member of the fictional Scout troop, including its quartermaster.","support":["P028"]},
+    {"name":"HOA","meaning":"A member of the fictional homeowners association or its administration. General authority figures do not qualify automatically.","support":["P138","P146"]},
+    {"name":"Daredevil","meaning":"A Character who deliberately performs dangerous stunts.","support":["P007","P019","P165","P175"]},
+    {"name":"Wrestler","meaning":"A participating backyard wrestler. Fans, referees, and support staff do not qualify merely by proximity.","support":["P165","P166","P178"]},
+    {"name":"Scavenger","meaning":"A Character who obtains supplies or food from discarded material.","support":["P112","P120"]},
+    {"name":"Builder","meaning":"A Character who builds or repairs things, however questionable the workmanship.","support":["P101","P118"]},
+    {"name":"Hacker","meaning":"A Character whose depicted activity involves exploiting or manipulating computer systems.","support":["P084"]},
+    {"name":"Clown","meaning":"An actual clown performer. Being foolish is insufficient.","support":["P032","P056","P059","P065"]},
+    {"name":"Magician","meaning":"A stage-magic or escape performer; no supernatural rules are implied.","support":["P065"]}
+  ],
+  "keywords": [
+    {"name":"Hothead","status":"New Donut playtest keyword","definition":"This Character may Attack in the Round it enters play.","limits":"Does not Ready it, grant an extra Attack, allow Rotate activations on arrival, or override a cannot-Attack effect. A gained Hothead works the same way while it lasts."},
+    {"name":"Explosive","status":"Existing core keyword; wording clarified","definition":"This Character retaliates when it Blocks even if the incoming Attack Defeats it.","limits":"Only a Blocker receives this exception. Use its Power immediately before it left play. It deals no additional explosion damage unless separate card text says so."},
+    {"name":"Slowpoke","status":"Existing core keyword; wording clarified","definition":"This Character does not retaliate when it Blocks.","limits":"It can still Attack. If attacked directly while Rotated, it retaliates if it survives. If it also has Explosive, Slowpoke prevents its blocking retaliation."}
+  ],
+  "reserved": ["Zombie", "Alien", "Villain", "Possessed"],
+  "retired_printed_labels": ["Human", "Object", "Vermin", "Outlaw", "Tech", "Performer", "Team", "Party", "Hustler", "Authority", "Neighbor", "Menace", "Volunteer", "Fan"],
+  "notes": [
+    "Zombie remains a possible later sub-Trait. The present six-card Undead package works without a second near-duplicate label.",
+    "Rat does not imply Animal, and gaining Undead does not grant Zombie or remove existing Traits. Print every label an effect should see.",
+    "Magician, Hacker, and Wrestler are deliberately concentrated in one Style for this pool. Their support cards work without a matching Trait and can be paired with another Style.",
+    "Three Character appearances are 2.8% of 108, an intentional soft-floor allowance. Do not pad the roster to satisfy rounded percentages.",
+    "No Trait is a Leader requirement. Leader Traits remain future card design, not a mandatory four-label quota.",
+    "Jerry-Rig remains earmarked. Encore, Pick a Card, Scrounge, and related names are card titles, not global keywords. Stack and Response packages remain outside this revision."
+  ]
+}

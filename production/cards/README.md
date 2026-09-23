@@ -1,93 +1,56 @@
-# Production Cards
+# Unhinged — Donut Card Workshop
 
-This directory is now the working home for the **current production card pool**.
+**Core 0.1 · Donut revision 2 · 23 September 2026**
 
-The Alpha 0.03 pool in [`docs/card-pool/`](../../docs/card-pool/README.md) remains legacy test data. Do not copy its text into current production cards.
+The current pool contains **180 deck cards: 108 Characters, 48 Actions, and 24 Items**. The six Leaders remain outside that count. This is the current playtest design, with unverified balance and no final print lock.
 
-## Production Pool v0.1
+| Read or edit | Source |
+| --- | --- |
+| Entire roster, Costs, stats, Traits, and complexity | [Card list](card-list.md) |
+| Eighteen printed Traits, counts, definitions, and support | [Traits](traits.md) |
+| Explosive, Slowpoke, and the new Hothead test keyword | [Keywords](keywords.md) |
+| Exact composition and complexity counts | [Content audit](audit.md) |
+| What changed, why, and what to test | [Revision notes](revision-2-notes.md) |
+| Playtest timing and core mechanics | [Rulebook](../rules/unhinged-rules.md) |
+| Canonical card text and metadata | [cards.json](cards.json) |
+| Canonical Trait and keyword definitions | [taxonomy.json](taxonomy.json) |
 
-The first ground-up production rewrite contains **180 deck cards**, built against the current production rules and current six-Style Leader direction.
+## The six Styles
 
-| Style | Phrase alias | Cards | File |
-| --- | --- | ---: | --- |
-| Gnarly | No Chill | 30 | [gnarly.md](gnarly.md) |
-| Amped | High Turnover | 30 | [amped.md](amped.md) |
-| Tricky | Funny Business | 30 | [tricky.md](tricky.md) |
-| Sketchy | Good Enough | 30 | [sketchy.md](sketchy.md) |
-| Spiteful | Find Out | 30 | [spiteful.md](spiteful.md) |
-| Wasted | Red Shirts | 30 | [wasted.md](wasted.md) |
-| **Total** |  | **180** |  |
+| Style | Phrase alias | Leader | Deck cards | Identity |
+| --- | --- | --- | --- | --- |
+| [Gnarly](gnarly.md) | No Chill | Florida Man | 30 | Choose how far to push a dangerous play. |
+| [Amped](amped.md) | High Turnover | Washed-Up Rock Star | 30 | Sequence a set, then decide who performs and who supports. |
+| [Tricky](tricky.md) | Funny Business | Birthday Party Magician | 30 | Bluff, misdirect, and give the opponent consequential choices. |
+| [Sketchy](sketchy.md) | Good Enough | Trash Baron | 30 | Turn questionable materials into functioning machinery. |
+| [Spiteful](spiteful.md) | Find Out | HOA President | 30 | Prepare a defense and attach consequences to interaction. |
+| [Wasted](wasted.md) | Red Shirts | Backyard Wrestler | 30 | Get value when a Character goes through the table. |
 
-### Pool composition
+Each Style keeps **18 Characters / 8 Actions / 4 Items**. The two complete Style naming sets remain alternative presentation voices. These links use the single-word set consistently.
 
-- **108 Characters**
-- **48 Actions**
-- **24 Items**
-- 18 Characters, 8 Actions, and 4 Items per Style for this first controlled test pool
-- Costs intentionally span the full 1→7 Fuel progression
-- No Response Actions are included yet; Response chaining/timing remains an open production decision
-- No Junk Pile dependency
-- No Command/Stamina costs
-- No legacy Exhaust/Deploy/dies terminology
-- No invisible Leader-only rule required for a secondary Style to function
+## What this revision fixes
 
-## Current Leader cast
+- Human is removed from printed Traits and retained only as audit identity metadata.
+- Eighteen concrete Traits have actual support references. Three-card groups are accepted under the soft 3% floor; no group exceeds the soft 15% ceiling in this revision.
+- Characters now include **27 textless, 6 keyword-only, 18 on-play, 24 dedicated Rotate, 21 single ongoing, and 12 multiple-ability designs**.
+- The 33 textless or keyword-only Characters have optional flavor lines. Flavor is not rules text.
+- Eleven Items have Rotate activations, giving the Hacker and Item-Ready effects functional targets.
+- Attack/Block triggers resolve before their damage checkpoint. Sacrifice, Dismiss, attachment references, temporary Guard, and delayed Returns have explicit handling.
+- Stable deck-card IDs remain P001–P180. Revised identities are recorded in the revision notes; earlier versions remain in git history.
 
-Leader identities and Style homes are maintained in [`docs/leaders.md`](../../docs/leaders.md):
+## Editing without drift
 
-- Florida Man — Gnarly / No Chill
-- Washed-Up Rock Star — Amped / High Turnover
-- Birthday Party Magician — Tricky / Funny Business
-- Trash Baron — Sketchy / Good Enough
-- HOA President — Spiteful / Find Out
-- Backyard Wrestler — Wasted / Red Shirts
+Edit `cards.json` and, when needed, `taxonomy.json`. Then run:
 
-Leader identities are committed direction; exact Health and abilities remain playtest work.
+```bash
+python3 production/cards/build.py
+python3 production/cards/build.py --check
+```
 
-## Vocabulary status
+The script generates the six Style sheets, card list, Trait and keyword references, and audit. Do not hand-edit those generated sheets. It validates structure and consistency; it does not simulate matches or establish balance.
 
-This pool uses **Character** as the working public card type because it is the strongly favored production direction. The current rulebook still uses Unit while that final terminology decision is formally open. If Unit is retained, update this pool deliberately rather than by blind replacement.
+The [Alpha 0.03 pool](../../docs/card-pool/README.md) is historical data. The earlier Donut pool remains available at commit `5dcab3b`. Current card data lives here, not in the Alpha JSON.
 
-Both complete Style naming sets remain visible during design. Do not mix individual names across the two sets.
+## What still needs playtest work
 
-## Design intent by Style
-
-- **Gnarly / No Chill:** risk, self-damage, overcommitment, dangerous payoff. Not generic aggro.
-- **Amped / High Turnover:** sequencing and momentum across a Round. Not static tribal math.
-- **Tricky / Funny Business:** opponent choices, misdirection, bounce, bluffing, and playful redirection. Not hard denial.
-- **Sketchy / Good Enough:** Items, discard, scavenging, and repurposing. Not a private Leader-created zone.
-- **Spiteful / Find Out:** blocking, survival, retaliation, and consequences for interaction. Not a hard lock.
-- **Wasted / Red Shirts:** Defeat and Sacrifice as value, with backyard wrestling, stunt failure, and the Undead package carrying the fiction.
-
-## Identity notes carried into v0.1
-
-Recent card-identity work is reflected in this pool, including:
-
-- Social Media Influencer
-- Single Dad
-- Roll Call
-- Script Kiddie
-- Terms and Conditions
-- Default Password
-- Raccoon of Unusual Size
-- Cat Lady
-- **'Tis But a Scratch**
-- **Grandma's Cigarette Case**
-- **Used Ham Sandwich**
-- **Bath Salts** in the Undead / Wasted package
-
-Several weaker legacy identities were intentionally not preserved. Their old IDs remain available in the Alpha files as history.
-
-## Production status
-
-These cards are **playtest designs, not approved final print text**. The next pass should:
-
-1. run a rules/templating audit against `production/rules/unhinged-rules.md`;
-2. identify cards that still rely on ambiguous trigger timing;
-3. build one or more 40-card test decks for each Leader + secondary Style combination;
-4. simulate and physically playtest the new cost/stat curves;
-5. tune duplicated effects and weak decision points;
-6. revisit Responses only after the Response rule is locked;
-7. promote approved cards into machine-readable production data after the text stabilizes.
-
-A production card should eventually record stable card ID, set/season number, title/subtitle where applicable, type, Cost, Style, Traits, rules text, Power/Guard for Characters, and templating/accessibility status.
+The [six Leader identities](../../docs/leaders.md) are retained; exact Health and ability packages remain unfinished. No Response cards, Stack implementation, separate Junk Pile, or new card type is introduced here. Final Style presentation, physical Fuel, printed type naming, and production layouts remain in [open decisions](../rules/open-decisions.md).

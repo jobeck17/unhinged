@@ -1,5 +1,7 @@
 # Unhinged Current State — 2026-09-21
 
+> **Earlier source checkpoint.** The [September 23 Donut checkpoint](current-state-2026-09-23.md) supersedes this file for current card production. Rewrite-pending statements below describe this earlier snapshot.
+
 > This checkpoint supersedes the September 20 current-state file for active design direction while preserving earlier checkpoints as design history.
 >
 > The original Alpha 0.03 card data remains in `docs/card-pool/cards.json` and `docs/card-pool/leaders.json` as legacy test data. The current consolidated rules are in [`production/rules/unhinged-rules.md`](../production/rules/unhinged-rules.md); the LAB snapshot remains the September 21 source record.

@@ -1,36 +1,51 @@
 # Tricky / Funny Business — Production Pool v0.1
 
-> Working playtest cards. Identity and rules text are draft; Style identity follows the committed Leader direction. No Response cards are included until Response timing is locked.
+> Donut revision 2 · 23 September 2026 · Working playtest text; balance is unverified.
+> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
-| ID | Type | Cost | Card | Stats | Traits | Working text |
-| --- | --- | ---: | --- | --- | --- | --- |
-| P061 | Character | 3 | **Assistant Magician** | 3/4 | Human, Performer | When this enters play, you may return another Character you control to your hand. If you do, Draw a card. |
-| P062 | Character | 1 | **Birthday Kid Who Knows the Trick** | 1/2 | Human, Kid | When an opponent chooses this due to one of your effects, Draw a card, then Discard a card. |
-| P063 | Character | 2 | **Fake Psychic** | 2/3 | Human, Hustler | When this enters play, look at the top 2 cards of your deck. Put one on top and the other on the bottom. |
-| P064 | Character | 4 | **Street Magician** | 4/4 | Human, Performer | When this enters play, choose an opposing Character. Its player may return it to their hand. If they do not, Rotate it. |
-| P065 | Character | 3 | **Escape Artist** | 3/4 | Human, Performer | The first time each Round an opposing Action chooses this, Draw a card, then Discard a card. |
-| P066 | Character | 2 | **Off-Duty Clown** | 2/3 | Human, Performer | When this enters play, an opponent chooses one: you Draw a card, or this gets +2 Power this Round. |
-| P067 | Character | 3 | **Mall Cop** | 3/5 | Human, Authority | When this enters play, choose an opposing Character. Its player chooses to Rotate it or give it -1 Power this Round. |
-| P068 | Character | 4 | **Social Media Grifter** | 4/4 | Human, Hustler | When this enters play, an opponent may Discard a card then Draw a card. If they do not, you Draw a card. |
-| P069 | Character | 4 | **Conspiracy Blogger** | 3/5 | Human, Hustler | At the start of your first Turn each Round, name Character, Action, or Item, then reveal the top card of your deck. If you named its type, put it into your hand. Otherwise put it on the bottom. |
-| P070 | Character | 3 | **Crypto Bro** | 4/2 | Human, Hustler | When this enters play, an opponent chooses one: this gets +2 Guard this Round, or you Draw a card then Discard a card. |
-| P071 | Character | 2 | **Coupon Scammer** | 2/3 | Human, Hustler | Your next Item this Round costs 1 less if you Played an Action earlier this Round. |
-| P072 | Character | 4 | **Neighborhood Group Admin** | 3/6 | Human, Authority | When this enters play, choose up to two opposing Characters. Their owner chooses one of the chosen Characters to Rotate. |
-| P073 | Character | 5 | **IT Guy Who Quit Six Months Ago** | 5/5 | Human, Tech | When this enters play, choose an Item. Its owner chooses one: Dismiss it, or Rotate it and it does not Ready at the start of the next Round. |
-| P074 | Character | 5 | **Identity Thief** | 5/5 | Human, Hustler | When this enters play, choose another Character. This gains one of that Character's Traits while it remains in play. |
-| P075 | Character | 4 | **Pirate Radio Operator** | 4/5 | Human, Outlaw, Performer | When this attacks, an opponent chooses one: it gets +2 Power for this Attack, or you Draw a card then Discard a card. |
-| P076 | Character | 2 | **Wi-Fi Bandit** | 3/2 | Human, Tech, Outlaw | When this enters play, if an opponent controls an Item, Draw a card, then Discard a card. |
-| P077 | Character | 2 | **Script Kiddie** | 2/2 | Human, Tech | When this enters play, choose an Item. Its owner chooses one: Rotate that Item, or this gets +2 Power this Round. |
-| P078 | Character | 6 | **Pirate With a Business License** | 6/7 | Human, Outlaw | When this enters play, an opponent chooses an Action in your discard. Put that card into your hand. Then put another card from your hand on the bottom of your deck. |
-| P079 | Action | 1 | **Pick a Card** |  | Performer | Choose two cards in your hand and present them face down. An opponent chooses one. Reveal the chosen card and keep it in your hand; put the other on the bottom of your deck. Then Draw a card. |
-| P080 | Action | 2 | **Now You See Me** |  | Performer | Return a Character you control to your hand. Then you may Play a Character costing 2 or less from your hand by paying 1 less. |
-| P081 | Action | 1 | **Look Over There!** |  | Performer | Choose an opposing Ready Character. Its owner chooses one: Rotate it, or another opposing Character gets -2 Power this Round. |
-| P082 | Action | 2 | **Wrong Address** |  | Hustler | Choose up to two opposing Characters. Their owner chooses one of the chosen Characters. Return it to their hand. |
-| P083 | Action | 2 | **Terms and Conditions** |  | Authority | Choose an opposing Character. Its owner may Discard a card. If they do not, it gets -2 Power this Round. |
-| P084 | Action | 1 | **Default Password** |  | Tech | Choose an Item. Rotate it. If it was already Rotated, Draw a card. |
-| P085 | Action | 2 | **Have You Tried Turning It Off?** |  | Tech | Choose a Rotated Item or Character. Return it to its owner's hand. |
-| P086 | Action | 2 | **Switcheroo** |  | Performer | Choose a Character you control and an opposing Character with equal or lower Cost. Return both to their owners' hands. |
-| P087 | Item | 1 | **Burner Phone** |  | Tech, Outlaw | Dismiss this: Draw a card, then put a card from your hand on the bottom of your deck. |
-| P088 | Item | 1 | **Marked Deck** |  | Performer | At the start of your first Turn each Round, look at the top card of your deck. You may put it on the bottom. |
-| P089 | Item | 1 | **USB Drive You Found in the Parking Lot** |  | Tech | Dismiss this: choose an Item. Rotate it. Then Draw a card, then Discard a card. |
-| P090 | Item | 2 | **Spoofed Keycard** |  | Tech, Outlaw | Dismiss this: choose a Character. It cannot Block this Round. |
+| ID | Type | Cost | Card | Power / Guard | Traits | Working text |
+| --- | --- | --- | --- | --- | --- | --- |
+| P061 | Character | 3 | **Assistant Magician** | 3/4 | Magician | When this enters play, you may Return another of your Characters to your hand. If you do, Draw a card. |
+| P062 | Character | 1 | **Birthday Kid Who Knows the Trick** | 1/2 | Kid | While this is in your hand, when one of your cards reveals it, you may put it on the bottom of your deck if it is still in your hand. If you do, Draw a card. When this enters play, look at the top card of your deck. You may put it on the bottom. |
+| P063 | Character | 2 | **Fake Psychic** | 3/3 | — | — |
+| P064 | Character | 4 | **Street Magician** | 3/5 | Magician | When this enters play, choose an opposing Character. Its owner may Return it to their hand. If they do not, Rotate it. |
+| P065 | Character | 3 | **Escape Artist** | 3/4 | Magician | Rotate: Return another of your Characters to your hand. If it was a Magician or Clown, Draw a card, then Discard a card. |
+| P066 | Character | 2 | **Off-Duty Clown** | 2/3 | Clown | The first time each Round one of your effects Returns another of your Characters from play to your hand, Draw a card, then Discard a card. |
+| P067 | Character | 3 | **Mall Cop** | 3/5 | — | When this enters play, an opposing Character gets -1 Power this Round. |
+| P068 | Character | 4 | **Social Media Grifter** | 4/4 | Criminal | Rotate: Draw 2 cards, then Discard 2 cards. If one of your cards revealed a card from your hand this Round, Discard 1 card instead. |
+| P069 | Character | 4 | **Conspiracy Blogger** | 3/5 | — | At the start of your first Turn each Round, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise put it on the bottom. |
+| P070 | Character | 3 | **Crypto Bro** | 4/4 | — | — |
+| P071 | Character | 2 | **Coupon Scammer** | 3/3 | Criminal | — |
+| P072 | Character | 4 | **Neighborhood Group Admin** | 3/7 | HOA | — |
+| P073 | Character | 5 | **IT Guy Who Quit Six Months Ago** | 4/6 | Hacker | Rotate: Rotate an opposing Item. It cannot Activate abilities this Round. |
+| P074 | Character | 5 | **Identity Thief** | 5/5 | Criminal | When this enters play, choose another Character with a printed Trait. This gains one of its printed Traits while this remains in play. Rotate: Choose another of your Characters. Draw a card, then Discard a card. If it shares a Trait with this, it gets +2 Power this Round. |
+| P075 | Character | 4 | **Pirate Radio Operator** | 4/5 | Criminal, Musician | When this attacks, an opponent chooses one: this gets +2 Power for this Attack; or you Draw a card, then Discard a card. |
+| P076 | Character | 2 | **Wi-Fi Bandit** | 2/1 | Criminal, Hacker | **Hothead**. |
+| P077 | Character | 2 | **Script Kiddie** | 1/3 | Kid, Hacker | Rotate: Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card, then Discard a card. |
+| P078 | Character | 6 | **Pirate With a Business License** | 6/7 | Pirate | The first time each Round an opponent makes a choice instructed by one of your cards, Draw a card, then Discard a card. |
+| P079 | Action | 1 | **Pick a Card** | — | — | Present a card from your hand face down. An opponent guesses Character or not Character. Reveal it and keep it in your hand. If they guessed wrong, Draw 2 cards. Otherwise, Draw a card, then Discard a card. |
+| P080 | Action | 2 | **Now You See Me** | — | — | Return one of your Characters to your hand. Then you may Play a Character costing 2 or less from your hand by paying 1 less. |
+| P081 | Action | 1 | **Look Over There!** | — | — | Choose an opposing Ready Character. Its owner chooses one: Rotate it; or it gets -2 Power this Round. |
+| P082 | Action | 2 | **Wrong Address** | — | — | Choose two opposing Characters. Their owner chooses one of them. Return that Character to its owner's hand. If they have only one Character, choose and Return that Character instead. |
+| P083 | Action | 2 | **Terms and Conditions** | — | — | Choose an opposing Character. Its owner may Discard a card. If they do not, it gets -2 Power this Round. |
+| P084 | Action | 1 | **Default Password** | — | — | Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card. If you have a Hacker in play, Draw a card, then Discard a card. |
+| P085 | Action | 2 | **Have You Tried Turning It Off?** | — | — | Return a Rotated Item or Character to its owner's hand. |
+| P086 | Action | 2 | **Switcheroo** | — | — | Choose one of your Characters and an opposing Character with equal or lower Cost. Return both to their owners' hands. |
+| P087 | Item | 1 | **Burner Phone** | — | — | Rotate, pay 1 Fuel: Draw a card, then put a card from your hand on the bottom of your deck. |
+| P088 | Item | 1 | **Marked Deck** | — | — | Rotate: Look at the top card of your deck. You may put it on the bottom. |
+| P089 | Item | 1 | **USB Drive You Found in the Parking Lot** | — | — | Dismiss this: Rotate an Item. Draw a card, then Discard a card. |
+| P090 | Item | 3 | **Spoofed Keycard** | — | — | Rotate: An opposing Character cannot Block this Round. If you have a Criminal or Pirate in play, it also gets -1 Power this Round. |
+
+A dash in Working text means no rules text. Traits are still active labels. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
+
+## Flavor text
+
+These optional lines are not rules text and do not change a card’s complexity category.
+
+| Card | Flavor |
+| --- | --- |
+| P063 Fake Psychic | *I see a major charge in your future.* |
+| P070 Crypto Bro | *This time it’s backed by lawn equipment.* |
+| P071 Coupon Scammer | *The expiration date is more of a suggestion.* |
+| P072 Neighborhood Group Admin | *Thirty-seven missed alerts. One unfamiliar sedan.* |
+| P076 Wi-Fi Bandit | *Your password is his password.* |
