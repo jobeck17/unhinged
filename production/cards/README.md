@@ -33,7 +33,7 @@ The first ground-up production rewrite contains **180 deck cards**, built agains
 
 ## Current Leader cast
 
-Leader identities and Style homes are maintained in [`docs/leaders.md`](../..//docs/leaders.md):
+Leader identities and Style homes are maintained in [`docs/leaders.md`](../../docs/leaders.md):
 
 - Florida Man — Gnarly / No Chill
 - Washed-Up Rock Star — Amped / High Turnover
