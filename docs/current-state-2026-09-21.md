@@ -282,47 +282,64 @@ These should be converted only as part of the deliberate card rewrite, not by bl
 
 ---
 
-# Faction naming exploration
+# Style naming — dual soft lock
 
-● The old working names **Reckless / Unruly / Crooked / Makeshift / Stubborn / Kamikaze** have been reopened as part of the faction-identity pass.
+● **SOFT LOCK: the umbrella term is Styles.**
 
-## Leading single-word six
+● **SOFT LOCK: two complete naming sets are active in parallel.** They may be used interchangeably during design discussion, documentation, and testing, but the names must always remain with their respective grouping. **Do not mix names between the two sets.**
 
-The current preferred single-word naming set is:
+## Single-word Styles
 
-- **Wild** — push too far; risk, self-damage, overcommitment, dangerous payoff.
+- **Gnarly** — push too far; risk, self-damage, overcommitment, dangerous payoff.
 - **Amped** — build momentum; Characters feed, tag, replace, or set up the next play.
 - **Tricky** — manipulate plans; redirection, timing, information, unexpected interaction.
 - **Sketchy** — repurpose questionable materials; Items, discard, improvisation, unconventional uses.
 - **Spiteful** — interaction has consequences; survive, retaliate, and make the opponent regret messing with the board.
-- **Doomed** — Defeat is expected and useful; Characters dying advances the plan.
+- **Wasted** — Defeat is expected and useful; Characters dying advances the plan.
 
-These are the **leading single-word candidates**, not yet a final terminology lock.
+Canonical order:
 
-Important identity distinctions:
-- **Wild** wants to flirt with Defeat by pushing too far.
-- **Spiteful** wants to survive interaction and punish it.
-- **Doomed** expects Defeat and turns it into value.
-- **Amped** should be sequencing/momentum, not generic Trait math.
-- **Tricky** should bend or redirect the opponent's plan rather than become generic denial/control.
-- **Sketchy** should repurpose and improvise rather than merely recur cards from discard.
+> **GNARLY · AMPED · TRICKY · SKETCHY · SPITEFUL · WASTED**
 
-## Longer-name comparison set
+## Phrase Styles
 
-A separate phrase-name set is being preserved for later comparison:
+These are the corresponding phrase names for the same six mechanical identities, in the same order:
 
-- **No Chill** ↔ Wild
+- **No Chill** ↔ Gnarly
 - **High Turnover** ↔ Amped
 - **Funny Business** ↔ Tricky
 - **Good Enough** ↔ Sketchy
 - **Find Out** ↔ Spiteful
-- **Red Shirts** ↔ Doomed
+- **Red Shirts** ↔ Wasted
 
-The phrase set is intentionally **not** being mixed into the single-word set yet. The goal is to compare two coherent naming voices before choosing the final format.
+Canonical order:
 
-Design note: **High Turnover**, **Funny Business**, and **Red Shirts** are especially strong phrase candidates. Any commercial use of **Red Shirts** should receive an IP/trademark review because of its strong cultural association with Star Trek.
+> **NO CHILL · HIGH TURNOVER · FUNNY BUSINESS · GOOD ENOUGH · FIND OUT · RED SHIRTS**
 
-The umbrella term for these six identities (e.g. faction/color/attitude/etc.) remains intentionally undecided until the identity names are settled.
+## Grouping rule
+
+The two sets are alternate complete naming voices for the same six Styles. Until deliberately reopened, either complete set may be used, but **hybrid rosters are not part of the active design**. For example, a roster using Gnarly + High Turnover + Tricky is not valid terminology.
+
+Mechanical identity remains paired one-to-one across the sets:
+
+- Gnarly / No Chill = risk and overcommitment.
+- Amped / High Turnover = sequencing and momentum.
+- Tricky / Funny Business = manipulation and redirection.
+- Sketchy / Good Enough = repurposing and improvisation.
+- Spiteful / Find Out = retaliation and consequences.
+- Wasted / Red Shirts = Defeat as value.
+
+Important distinctions:
+- **Gnarly / No Chill** wants to flirt with Defeat by pushing too far.
+- **Spiteful / Find Out** wants to survive interaction and punish it.
+- **Wasted / Red Shirts** expects Defeat and turns it into value.
+- **Amped / High Turnover** should be sequencing/momentum, not generic Trait math.
+- **Tricky / Funny Business** should bend or redirect the opponent's plan rather than become generic denial/control.
+- **Sketchy / Good Enough** should repurpose and improvise rather than merely recur cards from discard.
+
+These are soft locks: stop actively searching for replacements and design forward using them, while retaining the ability to deliberately reopen them if testing, usability, legal/IP review, or a clearly stronger direction warrants it.
+
+Design note: any eventual commercial use of **Red Shirts** should receive an IP/trademark review because of its strong cultural association with Star Trek.
 
 ---
 
