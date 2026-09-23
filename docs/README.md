@@ -6,6 +6,7 @@ This directory holds design guidance, decisions, ideas, and historical source no
 | --- | --- | --- |
 | [`production/`](../production/README.md) | Current rules and material being prepared for a playable product | Highest for active production work |
 | [`current-state-2026-09-21.md`](current-state-2026-09-21.md) | The latest dated design checkpoint and rationale | Current checkpoint; production rules consolidate its playable core |
+| [`leaders.md`](leaders.md) | Current committed six-Leader cast, Style mapping, and Leader-specific design direction | Current Leader authority; exact card stats/abilities remain open |
 | [`card-design-principles-2026-09-22.md`](card-design-principles-2026-09-22.md) | Card layout, readability, accessibility, and metadata requirements | Current design guide |
 | [`terminology.md`](terminology.md) | Preferred terms and retired-language guardrails | Applies to all new work |
 | [`idea-bank.md`](idea-bank.md) | Speculative mechanics and future concepts | Not approved until promoted deliberately |
