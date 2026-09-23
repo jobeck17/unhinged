@@ -19,6 +19,21 @@
 
 The two Style naming sets remain alternate complete naming voices. Do not mix them into a hybrid printed roster unless that terminology decision is deliberately reopened.
 
+## Style color palette
+
+Current committed color directions:
+
+| Style | Color direction | Visual idea |
+| --- | --- | --- |
+| **Gnarly / No Chill** | **Safety Orange** | Hazard markings, warning labels, cones, reckless energy. |
+| **Amped / High Turnover** | **Hot Pink / Electric Magenta** | Stage lights, loud performance energy, momentum. |
+| **Tricky / Funny Business** | **Saturated Teal** | Sleight of hand, holographic playing cards, odd stage lighting, deception without default fantasy-purple signaling. |
+| **Sketchy / Good Enough** | **Ochre / Cardboard Brown** | Junk, cardboard, masking tape, plywood, improvised construction. |
+| **Spiteful / Find Out** | **Acid Green** | Artificial lawn, violation stickers, petty enforcement, poisonous consequence. |
+| **Wasted / Red Shirts** | **Bruise Purple** | Black-eye / impact energy, damage, folding-table aftermath, defeat turned into value. |
+
+These colors are identity accents, not rules by themselves. Cards should remain readable with dark text on light fields, and every Style must also be distinguishable through iconography, shape, labeling, or other non-color cues.
+
 ---
 
 ## Florida Man — Gnarly / No Chill
