@@ -21,11 +21,14 @@ Functional card backs that build a road or map were explored and tabled. Cards f
 
 ## Character and world hooks
 
-- **Florida Man** is a potential Leader; **Bath Salts** is a potential Item that gives an attached Unit the Undead Trait. The exact cost and other effects remain open.
-- **Trash Baron** and **Karen** remain tonal anchors. Recursion, sacrifice, HOA interference, and absurdly earnest local conflict suggest playstyles without requiring every card to be a joke.
+The six current core Leaders have been promoted out of the idea bank and are tracked in [`leaders.md`](leaders.md): **Florida Man, Washed-Up Rock Star, Birthday Party Magician, Trash Baron, HOA President, and Backyard Wrestler**.
+
+- **Boss Babe** is preserved as a strong Character/package rather than a current core Leader. Her natural ecosystem includes recruitment, downlines, starter kits, rank-ups, motivational hustle, and scaling through a network.
+- **Travel Ball Mom / Overenthusiastic Softball Mom** remains a strong Character concept centered on intense team-parent energy, protection, rallying, and escalation around “my kid,” but she is not in the committed six-Leader cast.
 - **Unsupervised Toddler** suggests bounded chaos through dice, flips, or deck reveals; random resolution is not a universal combat rule.
-- Other saved hooks include Cockroach recursion, Clown Car, Creepy Van and Free Puppies, gas station pills, bachelorette party, feral child, washed-up rock star, cat lady, Girl Scouts, zombie kid, mall walker, MLM rep, social media influencer, single dad, grumpy old guy, jam band, pirate, birthday magician, and wedding cover band. Names and effects are not approved cards.
-- Tone compass: **“What if Hyrule had a trailer park?”** Mythic stakes can coexist with swamps, gas stations, junkyards, backyards, and HOA meetings. The setting should be coherent enough to make the humor land.
+- **Bath Salts** remains a potential Florida Man Item that gives an attached Character the Undead Trait. Exact cost and other effects remain open.
+- Other saved hooks include Cockroach recursion, Clown Car, Creepy Van and Free Puppies, gas station pills, bachelorette party, feral child, cat lady, Girl Scouts, zombie kid, mall walker, social media influencer, single dad, grumpy old guy, jam band, pirate, wedding cover band, and other neighborhood disasters. Names and effects are not approved cards merely because they appear here.
+- Tone compass: **“What if Hyrule had a trailer park?”** Mythic stakes can coexist with swamps, gas stations, junkyards, backyards, birthday parties, dive bars, and HOA meetings. The setting should be coherent enough to make the humor land.
 
 ## Systems parked outside the current base
 
