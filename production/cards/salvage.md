@@ -14,12 +14,12 @@
 | P097 | Character | 2 | **Junkyard Dog** | 3/3 | Animal, Scavenger | — |
 | P098 | Character | 5 | **Raccoon of Unusual Size** | 6/5 | Animal, Scavenger | When this enters play, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack. |
 | P099 | Character | 3 | **Crazy Cat Lady** | 2/5 | — | Rotate: Look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If you revealed an Animal, heal 1 damage from one of your Characters. |
-| P100 | Character | 3 | **Last-Shift Zombie** | 4/4 | Undead, Scavenger | — |
+| P100 | Character | 3 | **Wind-Up Toy** | 2/4 | Construct | Sucker Punch. When this attacks a Ready Character, this gets +1 Power for that Attack. |
 | P101 | Character | 3 | **Extension Cord Electrician** | 3/4 | Builder | When this enters play, you may Ready one of your Items. If you have another Builder in play, Draw a card, then Discard a card. |
 | P102 | Character | 5 | **Rat King** | 4/6 | Animal, Rat | Rotate: Choose up to two of your other Characters. Each gets +1 Power this Round. Each chosen Rat also gets +1 Guard this Round. |
 | P103 | Character | 2 | **Possum in the Trash Can** | 2/3 | Animal, Scavenger | When this is Defeated, you may Dismiss one of your Items. If you do, Return this from your discard to your hand. |
 | P104 | Character | 1 | **Trash Palace Cockroach** | 1/2 | Animal, Scavenger | When this is Defeated, you may put it from your discard on the bottom of your deck. |
-| P105 | Character | 3 | **Junkyard Enforcer** | 3/5 | Scavenger | When this Blocks, you may Dismiss one of your Items. If you do, this gets +2 temporary Guard for this Attack. |
+| P105 | Character | 3 | **Jailbroken Robot Vacuum** | 2/4 | Construct, Scavenger | When this attacks, put the top card of your deck face down beneath this if able. This gets +1 Power for this Attack per card beneath it. When this is Defeated, reveal and put them into your discard. You may deal damage to an opposing Character equal to the number of Items revealed. If this leaves play another way, reveal and put them into your discard. |
 | P106 | Character | 2 | **Shopping Cart Golem** | 2/4 | Construct, Scavenger | — |
 | P107 | Character | 3 | **Curbside Mechanic** | 3/4 | Builder, Scavenger | When this enters play, you may Return an Item costing 1 from your discard to your hand. |
 | P108 | Character | 6 | **Unlicensed Pool Guy** | 6/7 | Builder | The first Item you Play each Round costs 1 less. Rotate: Return an Item from your discard to your hand. |
@@ -49,5 +49,5 @@ These optional lines are not rules text and do not change a card’s complexity 
 | P096 Shopping Cart Knight | *Sir Carts-a-Lot yields to no curb.* |
 | P097 Junkyard Dog | *Beware of dog. Also tetanus.* |
 | P099 Crazy Cat Lady | *Every cat has a name. The neighbors have numbers.* |
-| P100 Last-Shift Zombie | *Still waiting for somebody to cover his shift.* |
+| P100 Wind-Up Toy | *No batteries required. No brakes included.* |
 | P106 Shopping Cart Golem | *One wheel squeaks. One wheel seeks revenge.* |

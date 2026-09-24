@@ -33,7 +33,7 @@
 | P086 | Action | 2 | **Switcheroo** | — | — | Choose one of your Characters and an opposing Character with equal or lower Cost. Return both to their owners' hands. |
 | P087 | Item | 1 | **Burner Phone** | — | — | Rotate, pay 1 Fuel: Draw a card, then put a card from your hand on the bottom of your deck. |
 | P088 | Item | 1 | **Marked Deck** | — | — | Rotate: Look at the top card of your deck. You may put it on the bottom. |
-| P089 | Item | 1 | **USB Drive You Found in the Parking Lot** | — | — | Dismiss this: Rotate an Item. Draw a card, then Discard a card. |
+| P089 | Item | 2 | **Inconspicuous Bush** | — | — | When this enters play, you may put a Character costing 2 or less from your hand face down beneath this. When your Leader is Attacked, you may reveal and put it into play Ready before Blockers; it may Block if able. Its enters-play abilities do not trigger. At end of Round or if this leaves play, reveal and Return any hidden card to its Owner's hand. |
 | P090 | Item | 3 | **Spoofed Keycard** | — | — | Rotate: An opposing Character cannot Block this Round. If you have a Criminal or Pirate in play, it also gets -1 Power this Round. |
 
 A dash in Working text means no rules text. Traits are still active labels. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).

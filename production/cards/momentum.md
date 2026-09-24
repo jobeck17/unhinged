@@ -12,7 +12,7 @@
 | P035 | Character | 3 | **Youth Pastor With a Guitar** | 3/5 | Musician | — |
 | P036 | Character | 4 | **Stage Mom** | 3/5 | Parent | When this enters play, another of your Characters gets +1 Power this Round. When you Play your second card in a Round, you may give one of your Parent or Kid Characters +1 Guard this Round. |
 | P037 | Character | 3 | **Reunion Tour Drummer** | 4/3 | Undead, Musician | — |
-| P038 | Character | 3 | **Dance Recital Dad** | 3/4 | Parent | Rotate: Return another of your Characters costing 2 or less to your hand. If it was a Kid, Draw a card, then Discard a card. |
+| P038 | Character | 3 | **Mike** | 3/4 | — | — |
 | P039 | Character | 4 | **Social Media Influencer** | 3/5 | — | Rotate: Draw a card, then Discard a card. If you Played at least two cards this Round, you may give another of your Characters +2 Power this Round. |
 | P040 | Character | 5 | **Boss Babe** | 4/6 | — | When this enters play, look at the top 3 cards of your deck. You may reveal a Character costing 2 or less and put it into your hand. Put the rest on the bottom in any order. |
 | P041 | Character | 5 | **Overenthusiastic Softball Mom** | 4/6 | Parent | Rotate: Ready another of your Rotated Characters that attacked this Round. It cannot Attack again this Round. If it is a Kid, it gets +2 Guard this Round. Activate only once each Round. |

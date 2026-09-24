@@ -8,7 +8,7 @@
 
 ## Playable test packages
 
-The [Florida Man / HOA President duel](../production/playtests/florida-vs-hoa/README.md) now specifies both Leaders at provisional 25 Health, with passive, regular ability, Charge condition, and ultimate. These accepted test drafts supersede the earlier absence of playable packages for those two Leaders. They are not balance locks; the other four packages remain unassigned.
+The [six-deck lab](../production/playtests/six-deck-lab/leaders.md) supplies provisional 25 Health, passive, regular ability, Charge condition, and ultimate for every Leader. The [Florida Man / HOA President duel](../production/playtests/florida-vs-hoa/README.md) preserves the original packages and timing detail for those two. All packages remain test drafts, not balance locks.
 
 ## Core roster
 
@@ -177,4 +177,4 @@ Other strong characters remain available for the card pool or later sets rather 
 - exact bounce/redirection cards;
 - final choice between the single-word and phrase Style naming sets.
 
-The next Leader work should be **small prototype packages**, not more casting.
+The next Leader work is hands-on testing of these six prototype packages and their deck matchups, not more casting.

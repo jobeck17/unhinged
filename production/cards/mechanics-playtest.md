@@ -6,11 +6,11 @@ These are concrete playtest proposals, not card text silently added to the 180-c
 
 | Working name | Proposed rule | First test |
 | --- | --- | --- |
-| **Sucker Punch** | This Character may Attack a Ready opposing Character. | Treat it as a direct Attack: no Blockers, normal rotation, damage and surviving target's retaliation. An entry-Round restriction still applies. |
+| **Sucker Punch** | This Character may Attack a Ready opposing Character. | **Printed on P100 Wind-Up Toy.** It is a direct Attack: no Blockers, normal rotation, damage and surviving target's retaliation. The entry-Round restriction still applies. |
 | **Sneaky** | Playing this from hand on your Turn does not spend that Turn. Pay its normal Fuel Cost; at most one Sneaky Play per Turn. | Finish its Play and triggers, then take your usual action. No out-of-Turn Play or Response. Watch free Plays, Draws and Returns for loops. |
 | **Peekaboo** (also **Shy** or **Cloak**) | A printed ability could turn this Character face down **until the end of the Round** for protection or another payoff. | Test with one card before deciding whether face-down Characters are still in play, can be targeted, keep damage/Items, Block, or are public knowledge. Invulnerability is a candidate payoff, not a current universal rule. |
 
-Sucker Punch is rules-complete enough for a test card. Sneaky needs a full Turn-sequencing check before printing. Peekaboo still needs its face-down behavior decided; do not treat its provisional sentence as blanket immunity.
+Sucker Punch is in the pool on P100 Wind-Up Toy. Sneaky needs a full Turn-sequencing check before printing. Peekaboo still needs its face-down behavior decided; do not treat its provisional sentence as blanket immunity.
 
 ## Card-specific restrictions, not keywords
 

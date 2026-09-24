@@ -19,7 +19,7 @@
 | P132 | Character | 5 | **Church Potluck Grandma** | 4/7 | Parent | Rotate: Heal 2 damage from one of your Characters or your Leader. |
 | P133 | Character | 6 | **Concrete Goose** | 5/10 | Construct | **Slowpoke**. |
 | P134 | Character | 2 | **Church Usher** | 2/4 | — | When this enters play, you may give another of your Characters +1 Guard this Round. |
-| P135 | Character | 4 | **Dad Who Already Said No** | 4/6 | Parent | — |
+| P135 | Character | 4 | **Mall Cop** | 2/6 | Worker | This Character cannot Attack. While this is Ready, other Characters cannot use Hothead. |
 | P136 | Character | 5 | **Tow-Truck Driver** | 5/6 | — | When this enters play, choose a Rotated opposing Character. Its owner may Discard a card. If they do not, that Character skips its next Ready step. |
 | P137 | Character | 5 | **HOA Lawyer** | 4/7 | HOA | The first time each Round an opposing Action that targeted one of your cards finishes resolving, its player may pay 1 Fuel. If they do not, they Discard a card. Rotate: Draw a card, then Discard a card. |
 | P138 | Character | 2 | **Neighborhood Lifeguard** | 2/3 | — | Rotate: Choose an opposing Character. It gets -2 Power this Round, or -3 Power if its Power is greater than this Character’s Power. |
@@ -33,7 +33,7 @@
 | P146 | Action | 2 | **Wait Them Out** | — | — | Draw a card. If you have not attacked this Round, you may give one of your Characters +2 Guard this Round, or +3 Guard if it is an HOA Character. |
 | P147 | Item | 1 | **Security Camera** | — | — | Rotate: An opposing Character gets -1 Power this Round. |
 | P148 | Item | 2 | **Video Doorbell** | — | — | The first time each Round an opposing Character Attacks your Leader, Draw a card, then Discard a card. |
-| P149 | Item | 2 | **Decorative Boulder** | — | — | Attach to one of your Characters. It gets +2 Guard and cannot be Returned to a hand by opposing effects. |
+| P149 | Item | 2 | **Occupied Stroller** | — | — | Attach to one of your Characters. It gets +2 Guard, or +3 Guard if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage. |
 | P150 | Item | 1 | **Grandma's Cigarette Case** | — | — | The first time each Round one of your Characters survives damage, you may Dismiss this. If you do, Draw a card, then Discard a card. |
 
 A dash in Working text means no rules text. Traits are still active labels. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
@@ -49,5 +49,5 @@ These optional lines are not rules text and do not change a card’s complexity 
 | P128 Retired Marine Next Door | *Quiet neighborhood. Strict perimeter.* |
 | P129 HOA Vice President | *Vice is not silent.* |
 | P133 Concrete Goose | *The association has approved its use of force.* |
-| P135 Dad Who Already Said No | *Asked. Answered. Grounded.* |
+| P135 Mall Cop | *No running.* |
 | P138 Neighborhood Lifeguard | *NO RUNNING includes whatever this is.* |

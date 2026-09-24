@@ -85,7 +85,7 @@ Passing immediately gives the opponent a Turn. If either player Plays, Activates
 
 ## 6. Fuel and deckbuilding
 
-Fuel pays normal card and ability Costs. The [Florida Man / HOA President test package](../playtests/florida-vs-hoa/leaders.md) additionally uses a persistent Charge meter for Leader ultimates; Charge cannot pay Fuel Costs. Rotate Fuel to pay a card or ability's Cost. Fuel Readies at the start of each Round.
+Fuel pays normal card and ability Costs. The [six-Leader test packages](../playtests/six-deck-lab/leaders.md) use a persistent Charge meter for Leader ultimates; Charge cannot pay Fuel Costs. Rotate Fuel to pay a card or ability's Cost. Fuel Readies at the start of each Round.
 
 The current progression is a soft lock:
 
@@ -108,6 +108,14 @@ Actions normally may be Played only on their owner's Turn. Resolve the Action, t
 Characters and Items enter play Ready unless an effect says otherwise. Items may Activate in the Round they enter play. Items remain in play. A Character may have any number of attached Items unless card text says otherwise. Items cannot normally be attacked. If a card with attached Items leaves play, put those Items into their Owners' discards unless a card says otherwise. This cleanup is not Dismiss.
 
 A Character that entered play this Round may Block, but cannot Attack or Activate one of its own Rotate abilities that Round unless a card says otherwise. Hothead grants only the Attack permission.
+
+### Cards physically beneath another card
+
+An effect may put a card face down beneath a card in play. Cards beneath another card are not in play, in a hand, or in a deck. They cannot be chosen, Attacked, Block, or use abilities until an effect reveals and moves them. The number beneath a card is public. A player may privately look at a card they put beneath a card from their hand; neither player may look at a face-down card put there from a deck until it is revealed. A Character put into play from beneath a card enters Ready and normally triggers enters-play abilities unless its printed effect says otherwise.
+
+**Inconspicuous Bush** reveals and Returns its hidden Character to its Owner's hand if the Bush leaves play or the Round ends before the Character emerges. The Character emerges during Attack checkpoint 1, before Blockers are declared, and may Block only a blockable Attack. **Jailbroken Robot Vacuum** keeps the cards it swept up between Rounds. When it is Defeated, its trigger reveals and Discards them before counting revealed Items for damage. If it leaves play another way, reveal and Discard those cards without dealing its Defeat damage. Neither card changes the ownership of a card beneath it.
+
+**Hot Potato** is a standalone Item placed beside one Leader and may physically move beside the other. Position beside a Leader does not change ownership, make it an attached Item, or change whose Item it is for other effects. Its printed ability explicitly lets the player whose Leader is beside it Activate it on their Turn, even when the other player owns it. That player pays the listed cost by Rotating one of their own Ready Characters and spends that Turn. When Hot Potato Returns to its Owner's hand, it leaves play regardless of which Leader it is beside.
 
 ### Activated abilities and attached references
 
@@ -165,7 +173,7 @@ A Blocking Character that survives the attack retaliates with its Power. A Block
 - **Slowpoke:** This Character does not retaliate when it Blocks. It may still retaliate after surviving a direct Attack while Rotated.
 - **Hothead:** This Character may Attack in the Round it enters play. It does not gain early Rotate activations, a Ready, or an extra Attack.
 
-If a Character has both Defiant and Slowpoke, Slowpoke prevents its blocking retaliation. Repeated instances of a keyword do not multiply its effect. An explicit cannot-Attack effect takes precedence over Hothead. Sucker Punch, Sneaky, and Peekaboo are [unprinted experiments](../cards/mechanics-playtest.md) and confer no permission on the current cards. See the [keyword reference](../cards/keywords.md).
+If a Character has both Defiant and Slowpoke, Slowpoke prevents its blocking retaliation. Repeated instances of a keyword do not multiply its effect. An explicit cannot-Attack effect takes precedence over Hothead. Sucker Punch permits its Character to Attack a Ready opposing Character directly; this Attack cannot be Blocked, follows ordinary Attack and retaliation timing, Rotates its attacker, and still obeys the entry-Round restriction. Sneaky and Peekaboo remain [unprinted experiments](../cards/mechanics-playtest.md). See the [keyword reference](../cards/keywords.md).
 
 ## 9. Damage, healing, and game end
 

@@ -1,0 +1,193 @@
+{
+  "version": "six-deck-lab-1",
+  "card_pool": "0.1-donut.3",
+  "status": "Provisional playtest; rules and balance still under test",
+  "decks": [
+    {
+      "name": "Hold My Entire Deck",
+      "leader": "Florida Man",
+      "health": 25,
+      "styles": [
+        "Reckless",
+        "Expendable"
+      ],
+      "cards": {
+        "P001": 2,
+        "P002": 2,
+        "P003": 2,
+        "P004": 2,
+        "P005": 2,
+        "P010": 2,
+        "P012": 2,
+        "P013": 2,
+        "P016": 2,
+        "P151": 2,
+        "P160": 2,
+        "P165": 2,
+        "P019": 2,
+        "P022": 2,
+        "P025": 2,
+        "P026": 2,
+        "P172": 2,
+        "P027": 2,
+        "P178": 2,
+        "P179": 2
+      }
+    },
+    {
+      "name": "One More Song",
+      "leader": "Washed-Up Rock Star",
+      "health": 25,
+      "styles": [
+        "Momentum",
+        "Expendable"
+      ],
+      "cards": {
+        "P032": 2,
+        "P033": 2,
+        "P031": 2,
+        "P037": 2,
+        "P043": 2,
+        "P040": 2,
+        "P047": 2,
+        "P049": 2,
+        "P050": 2,
+        "P052": 2,
+        "P053": 2,
+        "P055": 2,
+        "P038": 2,
+        "P059": 2,
+        "P151": 2,
+        "P152": 2,
+        "P158": 2,
+        "P167": 2,
+        "P172": 2,
+        "P178": 2
+      }
+    },
+    {
+      "name": "Pick a Card, Any Card",
+      "leader": "Birthday Party Magician",
+      "health": 25,
+      "styles": [
+        "Misdirection",
+        "Reckless"
+      ],
+      "cards": {
+        "P062": 2,
+        "P063": 2,
+        "P065": 2,
+        "P066": 2,
+        "P067": 2,
+        "P074": 2,
+        "P071": 2,
+        "P076": 2,
+        "P079": 2,
+        "P080": 2,
+        "P081": 2,
+        "P086": 2,
+        "P088": 2,
+        "P089": 2,
+        "P001": 2,
+        "P017": 2,
+        "P016": 2,
+        "P019": 2,
+        "P075": 2,
+        "P029": 2
+      }
+    },
+    {
+      "name": "Curbside Empire",
+      "leader": "Trash Baron",
+      "health": 25,
+      "styles": [
+        "Salvage",
+        "Stonewall"
+      ],
+      "cards": {
+        "P094": 2,
+        "P097": 2,
+        "P103": 2,
+        "P104": 2,
+        "P105": 2,
+        "P106": 2,
+        "P107": 2,
+        "P100": 2,
+        "P109": 2,
+        "P110": 2,
+        "P113": 2,
+        "P115": 2,
+        "P117": 2,
+        "P119": 2,
+        "P120": 2,
+        "P121": 2,
+        "P126": 2,
+        "P135": 2,
+        "P102": 2,
+        "P149": 2
+      }
+    },
+    {
+      "name": "Your Deck Violates the Bylaws",
+      "leader": "HOA President",
+      "health": 25,
+      "styles": [
+        "Stonewall",
+        "Salvage"
+      ],
+      "cards": {
+        "P121": 2,
+        "P122": 2,
+        "P123": 2,
+        "P124": 2,
+        "P125": 2,
+        "P128": 2,
+        "P129": 2,
+        "P132": 2,
+        "P138": 2,
+        "P095": 2,
+        "P097": 2,
+        "P106": 2,
+        "P139": 2,
+        "P141": 2,
+        "P143": 2,
+        "P146": 2,
+        "P112": 2,
+        "P147": 2,
+        "P117": 2,
+        "P120": 2
+      }
+    },
+    {
+      "name": "Tables Are Optional",
+      "leader": "Backyard Wrestler",
+      "health": 25,
+      "styles": [
+        "Expendable",
+        "Reckless"
+      ],
+      "cards": {
+        "P151": 2,
+        "P152": 2,
+        "P153": 2,
+        "P158": 2,
+        "P159": 2,
+        "P164": 2,
+        "P166": 2,
+        "P167": 2,
+        "P169": 2,
+        "P170": 2,
+        "P171": 2,
+        "P172": 2,
+        "P173": 2,
+        "P175": 2,
+        "P178": 2,
+        "P160": 2,
+        "P001": 2,
+        "P002": 2,
+        "P019": 2,
+        "P023": 2
+      }
+    }
+  ]
+}

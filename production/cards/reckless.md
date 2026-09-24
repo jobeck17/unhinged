@@ -33,7 +33,7 @@
 | P026 | Action | 1 | **Walk It Off** | — | — | Heal 2 damage from a Character. Then you may deal 1 damage to it. If you do, Draw a card. |
 | P027 | Item | 1 | **Gas Station Pills** | — | — | Attach to one of your Characters. It gets +1 Power. Dismiss this: Ready the attached Character and deal 1 damage to it. |
 | P028 | Item | 2 | **Roman Candle** | — | — | Attach to one of your Characters. Rotate: Deal 1 damage to an opposing Character. If the attached Character is not a Scout, deal 1 damage to it too. |
-| P029 | Item | 1 | **Cooler Full of Bad Ideas** | — | — | Rotate, pay 1 Fuel: Draw a card, then Discard a card. |
+| P029 | Item | 1 | **Hot Potato** | — | — | When this enters play, place it beside the opposing Leader. Either player may Activate this while it is beside their Leader. Rotate one of your Ready Characters: Move this beside the other Leader. At end of Round, deal 1 damage to the Leader beside this, then Return this to its Owner's hand. |
 | P030 | Item | 2 | **Homemade Launch Ramp** | — | — | Attach to one of your Characters. When it attacks, you may Dismiss this. If you do, it gets +3 Power for this Attack. After the Attack, deal 1 damage to it. |
 
 A dash in Working text means no rules text. Traits are still active labels. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).

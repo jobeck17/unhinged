@@ -9,9 +9,9 @@ Ideas saved for later design and playtests. None is a current rule merely becaus
 | **Stack** | A small set of cards could overlap in a staircase, exposing earlier ability text to form an escalating chain. | Experiment only. Determine order, active stats, damage, removal, and table space. May belong to one identity. |
 | **Persistent sideways card** | A persistent, attackable card with Guard alters the board while placed sideways. | Infant concept. Must be distinguishable from a Rotated card without inventing a new type prematurely. |
 | **Face-down defender or modifier** | Hide a card near the Leader, reveal on Attack or first use to create a bluff. | Explore a clear trigger, costs, and what information is public. The bluff is the reason to hide it. |
-| **Inconspicuous Bush** | Hide a Character underneath, then reveal or release it later. | Saved concept; clarify target and counterplay. |
+| **Inconspicuous Bush** | Hide a Character underneath, then reveal or release it later. | Active Item P089; see [physical-card follow-up](../production/cards/physical-cards-follow-up.md). |
 | **Trench Coat** | Physically stack Child Characters beneath one card. | Saved concept; check visibility and ownership. |
-| **Hot Potato** | An Item physically moves between players or positions. | Saved concept; avoid depending on unresolved Controller language. |
+| **Hot Potato** | An Item physically moves between players or positions. | Active Item P029; see [physical-card follow-up](../production/cards/physical-cards-follow-up.md). |
 | **Lost & Found** | Cards accumulate beneath a persistent Item. | Saved concept; define how contents are inspected and reclaimed. |
 | **Last Slice of Pizza** | Shared physical position or Pass behavior matters. | Saved concept; timing open. |
 | **Absolutely Do Not Push This Button** | A persistent tempting object changes decisions while it remains in play. | Saved concept; effect open. |
@@ -21,7 +21,7 @@ Functional card backs that build a road or map were explored and tabled. Cards f
 
 ## Combat and turn experiments
 
-The [mechanics playtest reference](../production/cards/mechanics-playtest.md) preserves **Sucker Punch** (Attack a Ready Character), **Sneaky** (one extra Play from hand during a Turn), and the face-down-until-end-of-Round **Peekaboo / Shy / Cloak** idea. It also records attack-only, defend-only, and a Ready defender that suppresses Hothead. These candidates are not silently active in the 180-card pool. The printed-keyword correction is in the [current keyword reference](../production/cards/keywords.md): **Defiant** keeps the old blocking-retaliation behavior, and **Explosive** now splashes opposing Characters when Defeated.
+The [mechanics playtest reference](../production/cards/mechanics-playtest.md) preserves **Sucker Punch** (now printed on Wind-Up Toy P100), **Sneaky** (one extra Play from hand during a Turn), and the face-down-until-end-of-Round **Peekaboo / Shy / Cloak** idea. It also records attack-only, defend-only, and a Ready defender that suppresses Hothead (printed on Mall Cop P135). Sneaky and face-down Peekaboo remain unprinted candidates. The printed-keyword correction is in the [current keyword reference](../production/cards/keywords.md): **Defiant** keeps the old blocking-retaliation behavior, and **Explosive** now splashes opposing Characters when Defeated.
 
 ## Character and world hooks
 
@@ -49,3 +49,9 @@ What decision does it give either player? What must stay visible on the table? C
 ## Concepts displaced by the requested roster follow-up
 
 Keep these for later sets or variants: **Parking Lot Boxer, Lawn Chair Daredevil, No, No, Watch This, Little League Coach, Soccer Mom, Group Text, Fake Psychic, Mall Cop, Crypto Bro, Garage Sale Queen, Neighborhood Watch Captain, Safety-Vest Volunteer, and Last Laugh**. Cat Lady is now **Crazy Cat Lady**, and HOA Pool Monitor is now **Neighborhood Lifeguard**. These are recorded roster revisions, not deletions of the underlying idea bank. See [revision 3](../production/cards/revision-3-notes.md).
+
+## September 24 pool follow-up
+
+The six-deck lab promotes **Mike** (P038, just Mike), **Wind-Up Toy** (P100, Construct with Sucker Punch), **Mall Cop** (P135, defend-only Hothead suppression), and **Occupied Stroller** (P149, protective Item for Parent or Kid). **Jailbroken Robot Vacuum** (P105) is the second printed robot and stores hidden cards beneath it. **Inconspicuous Bush** (P089) and **Hot Potato** (P029) are active physical-card experiments. The displaced Dance Recital Dad, Last-Shift Zombie, Dad Who Already Said No, Decorative Boulder, Cooler Full of Bad Ideas, USB Drive You Found in the Parking Lot, and Junkyard Enforcer are saved for later sets.
+
+Other brainstorm hooks, still unprinted: Pizza Delivery Guy; Energy Drink; Big Dave; Chihuahua named Diesel; Drunk Wizard; Cosplayer; Gas Station Hot Dog; Microwave Burrito; Software Pirate; angry Mad Scientist; Cotton Candy; Rabies Shot; mythical creatures; Beekeeper; Bridezilla; Drug Kingpin; Mobile Leprechaun; That One Neighbor; Put It in Reverse Terry; Little League Coach. Gas Station Pills is already P027; Mike is deliberately ordinary. The **Occupied Stroller** could later attach to both a Parent and Kid simultaneously, but this print uses the existing one-Character attachment rule. Stack, Sneaky, and Peekaboo still need separate bounded tests before they enter the active pool.

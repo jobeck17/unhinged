@@ -540,10 +540,10 @@
       "id": "P029",
       "type": "Item",
       "cost": 1,
-      "name": "Cooler Full of Bad Ideas",
+      "name": "Hot Potato",
       "stats": "",
       "traits": [],
-      "text": "Rotate, pay 1 Fuel: Draw a card, then Discard a card.",
+      "text": "When this enters play, place it beside the opposing Leader. Either player may Activate this while it is beside their Leader. Rotate one of your Ready Characters: Move this beside the other Leader. At end of Round, deal 1 damage to the Leader beside this, then Return this to its Owner's hand.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -715,13 +715,11 @@
       "id": "P038",
       "type": "Character",
       "cost": 3,
-      "name": "Dance Recital Dad",
-      "traits": [
-        "Parent"
-      ],
-      "text": "Rotate: Return another of your Characters costing 2 or less to your hand. If it was a Kid, Draw a card, then Discard a card.",
+      "name": "Mike",
+      "traits": [],
+      "text": "",
       "style": "Momentum",
-      "complexity": "activated",
+      "complexity": "textless",
       "keywords": [],
       "power": 3,
       "guard": 4,
@@ -729,7 +727,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "Mike."
     },
     {
       "id": "P039",
@@ -1660,11 +1658,11 @@
     {
       "id": "P089",
       "type": "Item",
-      "cost": 1,
-      "name": "USB Drive You Found in the Parking Lot",
+      "cost": 2,
+      "name": "Inconspicuous Bush",
       "stats": "",
       "traits": [],
-      "text": "Dismiss this: Rotate an Item. Draw a card, then Discard a card.",
+      "text": "When this enters play, you may put a Character costing 2 or less from your hand face down beneath this. When your Leader is Attacked, you may reveal and put it into play Ready before Blockers; it may Block if able. Its enters-play abilities do not trigger. At end of Round or if this leaves play, reveal and Return any hidden card to its Owner's hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1875,22 +1873,21 @@
       "id": "P100",
       "type": "Character",
       "cost": 3,
-      "name": "Last-Shift Zombie",
+      "name": "Wind-Up Toy",
       "traits": [
-        "Undead",
-        "Scavenger"
+        "Construct"
       ],
-      "text": "",
+      "text": "Sucker Punch. When this attacks a Ready Character, this gets +1 Power for that Attack.",
       "style": "Salvage",
-      "complexity": "textless",
-      "keywords": [],
-      "power": 4,
-      "guard": 4,
-      "audit_identity": [
-        "Human"
+      "complexity": "ongoing",
+      "keywords": [
+        "Sucker Punch"
       ],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [],
       "status": "playtest",
-      "flavor": "Still waiting for somebody to cover his shift."
+      "flavor": "No batteries required. No brakes included."
     },
     {
       "id": "P101",
@@ -1973,21 +1970,20 @@
       "id": "P105",
       "type": "Character",
       "cost": 3,
-      "name": "Junkyard Enforcer",
+      "name": "Jailbroken Robot Vacuum",
       "traits": [
+        "Construct",
         "Scavenger"
       ],
-      "text": "When this Blocks, you may Dismiss one of your Items. If you do, this gets +2 temporary Guard for this Attack.",
+      "text": "When this attacks, put the top card of your deck face down beneath this if able. This gets +1 Power for this Attack per card beneath it. When this is Defeated, reveal and put them into your discard. You may deal damage to an opposing Character equal to the number of Items revealed. If this leaves play another way, reveal and put them into your discard.",
       "style": "Salvage",
-      "complexity": "ongoing",
+      "complexity": "mixed",
       "keywords": [],
-      "power": 3,
-      "guard": 5,
-      "audit_identity": [
-        "Human"
-      ],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "The knife attachment voided the warranty."
     },
     {
       "id": "P106",
@@ -2519,21 +2515,21 @@
       "id": "P135",
       "type": "Character",
       "cost": 4,
-      "name": "Dad Who Already Said No",
+      "name": "Mall Cop",
       "traits": [
-        "Parent"
+        "Worker"
       ],
-      "text": "",
+      "text": "This Character cannot Attack. While this is Ready, other Characters cannot use Hothead.",
       "style": "Stonewall",
-      "complexity": "textless",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
+      "power": 2,
       "guard": 6,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Asked. Answered. Grounded."
+      "flavor": "No running."
     },
     {
       "id": "P136",
@@ -2765,10 +2761,10 @@
       "id": "P149",
       "type": "Item",
       "cost": 2,
-      "name": "Decorative Boulder",
+      "name": "Occupied Stroller",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +2 Guard and cannot be Returned to a hand by opposing effects.",
+      "text": "Attach to one of your Characters. It gets +2 Guard, or +3 Guard if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2776,7 +2772,7 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "The safest place in the neighborhood is behind it."
     },
     {
       "id": "P150",
