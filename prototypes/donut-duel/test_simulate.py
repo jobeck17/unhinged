@@ -51,6 +51,7 @@ class Mechanics(unittest.TestCase):
         self.assertEqual(self.g.players[1]['charge'], 0)
 
     def test_guard_discard_absorbs_damage_and_surviving_block_charges(self):
+        self.g.hoa_charge = 'block'
         a = self.add(0, 'P012')
         b = self.add(1, 'P128', old=False)
         self.g.players[1]['hand'] = ['P139']
@@ -61,6 +62,7 @@ class Mechanics(unittest.TestCase):
         self.assertEqual(self.g.players[1]['hand'], [])
 
     def test_overflow_and_zero_damage_second_blocker_retaliates(self):
+        self.g.hoa_charge = 'block'
         a = self.add(0, 'P012')
         b = self.add(1, 'P129')
         c = self.add(1, 'P128')
@@ -97,6 +99,24 @@ class Mechanics(unittest.TestCase):
         self.assertEqual(self.g.players[1]['charge'], 1)
         self.g.damage(x, 1)
         self.assertEqual(self.g.players[1]['charge'], 1)
+
+    def test_hoa_charges_from_first_board_activation_only(self):
+        self.g.hoa_charge = 'activate'
+        healer = self.add(1, 'P124')
+        target = self.add(1, 'P129')
+        target['damage'] = 2
+        self.g.execute(('activate', healer['uid'], target['uid']), 1)
+        self.assertEqual(self.g.players[1]['charge'], 1)
+        tape = self.g.enter(1, 'P117', target['uid'])
+        target['damage'] = 1
+        self.g.execute(('activate', tape['uid'], target['uid']), 1)
+        self.assertEqual(self.g.players[1]['charge'], 1)
+
+    def test_hoa_leader_ability_does_not_charge(self):
+        target = self.add(1, 'P129')
+        target['damage'] = 2
+        self.g.execute(('leader', target['uid']), 1)
+        self.assertEqual(self.g.players[1]['charge'], 0)
 
     def test_ultimate_spends_charge_and_rolls_in_range(self):
         self.g.players[0]['charge'] = 3

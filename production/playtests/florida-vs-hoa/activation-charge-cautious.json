@@ -1,0 +1,237 @@
+{
+  "seed": 240926,
+  "mode": "all",
+  "aggression": 1.0,
+  "hoa_charge": "activate",
+  "note": "Heuristic experiment, not human win rates; see README for policy restrictions.",
+  "games": [
+    {
+      "seed": 240926,
+      "first": 0,
+      "winner": 0,
+      "rounds": 15,
+      "health": [
+        17,
+        0
+      ],
+      "metrics": {
+        "ability_0": 5,
+        "charge_0": 9,
+        "board_activations_0": 9,
+        "attacks_1": 8,
+        "leader_attacks_1": 2,
+        "blocks_0": 0,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 14,
+        "leader_attacks_0": 6,
+        "blocks_1": 5,
+        "guard_discards_1": 4,
+        "vulnerable_attacks_1": 0,
+        "ultimate_0": 3,
+        "first_ultimate_round_0": 9,
+        "ultimate_damage_0": 12,
+        "board_activations_1": 2,
+        "charge_1": 2
+      }
+    },
+    {
+      "seed": 240926,
+      "first": 1,
+      "winner": 0,
+      "rounds": 15,
+      "health": [
+        17,
+        0
+      ],
+      "metrics": {
+        "ability_0": 5,
+        "charge_0": 9,
+        "board_activations_0": 9,
+        "attacks_1": 8,
+        "leader_attacks_1": 2,
+        "blocks_0": 0,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 14,
+        "leader_attacks_0": 6,
+        "blocks_1": 5,
+        "guard_discards_1": 4,
+        "vulnerable_attacks_1": 0,
+        "ultimate_0": 3,
+        "first_ultimate_round_0": 9,
+        "ultimate_damage_0": 12,
+        "board_activations_1": 2,
+        "charge_1": 2
+      }
+    },
+    {
+      "seed": 240927,
+      "first": 0,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        21,
+        25
+      ],
+      "metrics": {
+        "ability_0": 6,
+        "charge_0": 3,
+        "board_activations_1": 3,
+        "charge_1": 3,
+        "attacks_0": 8,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "attacks_1": 12,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 2,
+        "vulnerable_attacks_0": 0,
+        "board_activations_0": 9
+      }
+    },
+    {
+      "seed": 240927,
+      "first": 1,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        21,
+        25
+      ],
+      "metrics": {
+        "ability_0": 6,
+        "charge_0": 3,
+        "board_activations_1": 3,
+        "charge_1": 3,
+        "attacks_0": 8,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "attacks_1": 12,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 2,
+        "vulnerable_attacks_0": 0,
+        "board_activations_0": 9
+      }
+    },
+    {
+      "seed": 240928,
+      "first": 0,
+      "winner": 1,
+      "rounds": 13,
+      "health": [
+        0,
+        21
+      ],
+      "metrics": {
+        "ability_0": 4,
+        "charge_0": 7,
+        "attacks_1": 19,
+        "leader_attacks_1": 11,
+        "blocks_0": 4,
+        "guard_discards_0": 3,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 6,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "ultimate_0": 2,
+        "first_ultimate_round_0": 4,
+        "ultimate_damage_0": 6,
+        "board_activations_0": 2,
+        "board_activations_1": 2,
+        "charge_1": 2
+      }
+    },
+    {
+      "seed": 240928,
+      "first": 1,
+      "winner": 1,
+      "rounds": 13,
+      "health": [
+        0,
+        21
+      ],
+      "metrics": {
+        "ability_0": 4,
+        "charge_0": 7,
+        "attacks_1": 19,
+        "leader_attacks_1": 11,
+        "blocks_0": 4,
+        "guard_discards_0": 3,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 6,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "ultimate_0": 2,
+        "first_ultimate_round_0": 4,
+        "ultimate_damage_0": 6,
+        "board_activations_0": 2,
+        "board_activations_1": 2,
+        "charge_1": 2
+      }
+    },
+    {
+      "seed": 240929,
+      "first": 0,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        22,
+        25
+      ],
+      "metrics": {
+        "ability_0": 4,
+        "charge_0": 3,
+        "attacks_1": 13,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 1,
+        "attacks_0": 13,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "board_activations_0": 4,
+        "board_activations_1": 2,
+        "charge_1": 2
+      }
+    },
+    {
+      "seed": 240929,
+      "first": 1,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        22,
+        25
+      ],
+      "metrics": {
+        "ability_0": 4,
+        "charge_0": 3,
+        "attacks_1": 13,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 1,
+        "attacks_0": 13,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "board_activations_0": 4,
+        "board_activations_1": 2,
+        "charge_1": 2
+      }
+    }
+  ]
+}

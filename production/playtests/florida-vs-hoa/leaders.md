@@ -21,10 +21,10 @@ The passive is consumed only by positive damage that the Character survives. Rep
 
 - **Neighborhood Watch — passive:** The first time each Round one of your Characters Blocks, it gets +1 Power for that Attack.
 - **Property Maintenance — ability:** Rotate: Remove up to 2 damage from one of your Characters.
-- **Document Everything — Charge:** The first time each Round one of your Characters survives an Attack while Blocking, gain 1 Charge.
+- **Document Everything — Charge:** The first time each Round you Activate an ability of one of your Characters or Items, gain 1 Charge.
 - **Violation Notice — ultimate:** Rotate, spend 3 Charge: Choose up to 2 opposing Rotated Characters. Deal 2 damage to each.
 
-For this test, when several Characters make the first Block simultaneously, the HOA player chooses **one** to receive Neighborhood Watch. Charge checks at the end of the Attack after its effects finish; one or more surviving Blockers earn only 1 Charge. Receiving zero incoming damage does not disqualify a surviving Blocker. Directly attacked Characters are not Blocking and cannot earn this Charge.
+For this test, when several Characters make the first Block simultaneously, the HOA player chooses **one** to receive Neighborhood Watch. Document Everything does not trigger from Attacking, Blocking, playing a card, a triggered ability, or either Leader ability. It triggers from a voluntary activation printed on a friendly Character or Item. The activation resolves before the pending Charge trigger; the ability still earns Charge if its source leaves play while paying its cost. The shared once-per-Round Charge limit still applies.
 
 ## Presentation note
 

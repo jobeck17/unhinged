@@ -33,7 +33,7 @@ def validate():
 
 
 class Game:
-    def __init__(self, seed, first=None, leader_mode='all', aggression=1.0, hoa_charge='block'):
+    def __init__(self, seed, first=None, leader_mode='all', aggression=1.0, hoa_charge='activate'):
         self.rng = random.Random(seed)
         self.round = 0
         self.turn = 0
@@ -356,6 +356,9 @@ class Game:
                 if 'Scavenger' in CARDS[y['id']]['traits']:
                     self.draw(p)
                     self.discard(p)
+            self.metrics[f'board_activations_{p}'] += 1
+            if p == 1 and self.hoa_charge == 'activate':
+                self.gain(1)
         elif kind == 'leader':
             s['ready'] = False
             x = self.obj(a[1])
@@ -621,7 +624,7 @@ def main():
     parser.add_argument('--seed', type=int, default=240926)
     parser.add_argument('--mode', choices=['all', 'regular', 'none'], default='all')
     parser.add_argument('--aggression', type=float, default=1.0)
-    parser.add_argument('--hoa-charge', choices=['block', 'damage'], default='block')
+    parser.add_argument('--hoa-charge', choices=['activate', 'block', 'damage'], default='activate')
     parser.add_argument('--output', default='results.json')
     args = parser.parse_args()
     validate()

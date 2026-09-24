@@ -8,14 +8,12 @@ From the repository root:
 
 ```sh
 python3 -m unittest discover -s prototypes/donut-duel -v
-python3 prototypes/donut-duel/simulate.py --games 8 --output results.json
-python3 prototypes/donut-duel/simulate.py --games 8 --mode regular --output regular-only.json
-python3 prototypes/donut-duel/simulate.py --games 8 --aggression 1.5 --output aggressive.json
-python3 prototypes/donut-duel/simulate.py --games 8 --aggression 1.5 --hoa-charge damage --output hoa-charge-experiment.json
+python3 prototypes/donut-duel/simulate.py --games 8 --output activation-charge-cautious.json
+python3 prototypes/donut-duel/simulate.py --games 8 --aggression 1.5 --output activation-charge.json
 python3 prototypes/donut-duel/analyze.py
 ```
 
-Files are written to `production/playtests/florida-vs-hoa/`. Seed defaults to 240926. Paired games share an opening seed and swap first player deliberately, replacing setup War to control initiative. `regular` keeps both passives and regular abilities but disables Charge and ultimates; `none` disables all Leader abilities. The baseline uses the accepted 25-Health drafts without changing the production card pool.
+Files are written to `production/playtests/florida-vs-hoa/`. Seed defaults to 240926. Paired games share an opening seed and swap first player deliberately, replacing setup War to control initiative. `regular` keeps both passives and regular abilities but disables Charge and ultimates; `none` disables all Leader abilities. The current baseline uses HOA's activation-based Charge and the accepted 25-Health drafts without changing the production card pool.
 
 ## Implemented rules
 
@@ -39,4 +37,4 @@ The public score values bodies and survival strongly; it may stall, undervalue a
 
 Only the 40 unique cards in these decks are supported. There is no claim of a general 180-card simulator, Response support, or validated optimal play. Refer to the saved game transcript and the limitations before using the numbers to change cards.
 
-The optional `--hoa-charge damage` switch tests the unadopted alternate condition: the first friendly Character to survive damage during an opponent’s Turn earns 1 Charge (same cap and once-per-Round limit). The original Block-based condition remains the default.
+`--hoa-charge block` reproduces the original condition, while `--hoa-charge damage` reproduces the rejected survived-damage experiment. The current activation-based condition is the default.
