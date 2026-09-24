@@ -53,7 +53,7 @@ No Style needs its own exclusive keyword. Jerry-Rig remains earmarked. Encore!, 
 
 ## Revised roster slots
 
-Stable IDs follow these unpublished playtest slots. They do not assert that an earlier printing with different rules would be interchangeable in a finished product. Removed concepts remain in the [idea bank](../../docs/idea-bank.md) and git history.
+Stable IDs follow these unpublished playtest slots. They do not assert that an earlier printing with different rules would be interchangeable in a finished product. Removed concepts remain in the [idea bank](../../brainstorm/ideas.md) and git history.
 
 | ID | Previous concept | Current concept |
 | --- | --- | --- |

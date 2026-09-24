@@ -2,7 +2,7 @@
 
 **Core 0.1: Donut · Card revision 3**
 
-This checkpoint supersedes the September 21 checkpoint for current card production. The [production rulebook](../production/rules/unhinged-rules.md), [card source](../production/cards/cards.json), and [taxonomy source](../production/cards/taxonomy.json) carry the working specification. Earlier checkpoints and Alpha 0.03 files remain historical evidence.
+This checkpoint supersedes the September 21 checkpoint for current card production. The [production rulebook](../production/rules/unhinged-rules.md), [card source](../production/cards/cards.json), and [taxonomy source](../production/cards/taxonomy.json) carry the working specification. Earlier checkpoints and the Alpha 0.03 pool remain available in git history.
 
 ## Carried-forward foundation
 

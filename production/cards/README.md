@@ -53,7 +53,7 @@ python3 production/cards/build.py --check
 
 The script generates the six Style sheets, card list, Trait and keyword references, and audit. Do not hand-edit those generated sheets. It validates structure and consistency; it does not simulate matches or establish balance.
 
-The [Alpha 0.03 pool](../../docs/card-pool/README.md) is historical data. The earlier Donut pool remains available at commit `5dcab3b`. Current card data lives here, not in the Alpha JSON.
+The Alpha 0.03 pool and earlier Donut revisions are available in git history when a specific comparison is needed. Current card data lives here.
 
 ## What still needs playtest work
 

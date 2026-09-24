@@ -1,41 +1,27 @@
 # Unhinged
 
-Unhinged is a leader-centered card game in development. This repository is the working home for rules, decisions, card design, ideas, history, and playtest code. Nothing here is a published final ruleset.
+**Core 0.1 · Donut** is the current working version of this card game. Start with the files below. The card pool and rules are playtest drafts, not final print text.
 
-## Start here
+| Read this | For |
+| --- | --- |
+| [Current rules](production/rules/unhinged-rules.md) | How to play the current test |
+| [Current decisions](docs/current-state-2026-09-23.md) | Donut status and next evidence needed |
+| [Open decisions](production/rules/open-decisions.md) | Questions that still need a deliberate answer |
+| [Card workshop](production/cards/README.md) | Current 180-card pool, Styles, Traits, and keywords |
+| [Leader cast](docs/leaders.md) | Six Leaders and their design direction |
+| [Card design principles](docs/card-design-principles-2026-09-22.md) | Layout and accessibility |
+| [Terminology](docs/terminology.md) | Current rules vocabulary |
+| [Future ideas](brainstorm/ideas.md) | Concepts that are not in the current build |
+| [Scrapped experiments](brainstorm/scrapped.md) | Approaches to reconsider only by choice |
+| [Duel playtest](production/playtests/florida-vs-hoa/README.md) | Current test decks and observations |
+| [Prototype code](prototypes/donut-duel/README.md) | Run the focused Donut simulator |
 
-| Need | File | Status |
-| --- | --- | --- |
-| Current decisions and open questions | [Latest checkpoint](docs/current-state-2026-09-23.md) | Latest dated checkpoint |
-| Current 180-card roster, Traits, and keywords | [Donut card workshop](production/cards/README.md) | Revision 3; validated draft data and generated sheets |
-| Rules for the next paper playtest | [Production rules](production/rules/unhinged-rules.md) | Current consolidated rulebook |
-| Documentation map | [Docs index](docs/README.md) | Where current, historical, legacy, and speculative material belongs |
-| Decisions required before production card text | [Open decisions](production/rules/open-decisions.md) | Deliberate choices still pending |
-| Current versus retired language | [Terminology](docs/terminology.md) | Editorial guide for new work |
-| Physical card layout and accessibility | [Card design principles](docs/card-design-principles-2026-09-22.md) | Working guide; [editable Word copy](docs/Unhinged_Card_Design_Principles_2026-09-22.docx) |
-| Character, mechanic, and physical-card ideas | [Idea bank](docs/idea-bank.md) | Concepts, not approved cards |
-| Older experiments and design history | [History index](docs/history/README.md) | Historical context only |
-| Original 180-card Alpha 0.03 pool | [Pool status](docs/card-pool/README.md) | Historical data; superseded by Donut |
-| Next rules prototype | [Donut](prototypes/README.md) | Planned successor to Mongo |
+## Where things go
 
-When a newer checkpoint deliberately changes an older one, the newer checkpoint wins. The production rulebook consolidates the current playable core. The LAB snapshot preserves the earlier foundation; the September 23 checkpoint records the current card revision and supporting timing rulings. The old pool and browser simulator do **not** override current rules. See the [documentation map](docs/README.md) when deciding where a new note belongs.
+- `production/rules/` holds the active rulebook and unresolved rules decisions.
+- `production/cards/cards.json` holds card records; `production/cards/taxonomy.json` defines Traits and keywords once. `build.py` validates those references and generates readable Markdown sheets in the same folder. Edit the JSON sources, then run `python3 production/cards/build.py --check`.
+- `docs/` holds current human-readable guides and design status. Code and generated references stay beside the data they describe, so their paths and generation steps remain clear.
+- `brainstorm/` holds unimplemented ideas and scrapped experiments. An idea leaves `ideas.md` when it enters the current rules or card pool.
+- `prototypes/` holds executable Donut experiments. `production/playtests/` holds their deck lists, reports, and results.
 
-## Current playable foundation
-
-- One Leader starts in play; reduce the opposing Leader to 0 Health.
-- Players alternate one-action Turns within shared Rounds.
-- Fuel is the spendable resource. Its working progression is 1 to 7 Fuel across Rounds.
-- Ready and Rotate describe orientation; Blocking Rotates a Blocker.
-- Characters use Power and Guard. Damage persists. A surviving Blocker retaliates.
-- An Attack may target the Leader or a Rotated opposing Character; a Rotated Leader is Vulnerable.
-- Actions resolve once; Items remain in play and Attach only when their text says so.
-
-Character is the consistent Donut test name; its final printed presentation and Response chaining remain open. Style naming is soft-locked in two complete, one-to-one naming sets; see the latest checkpoint and open decisions before writing new card text.
-
-## Browser prototype
-
-The [Mongo simulator](prototypes/mongo-legacy.html) is a **legacy mechanics experiment**. It uses Command and Stamina, old deployment language, and simplified card effects. Its results do not validate current Fuel rules. The repository landing page links to current documents and this archived simulator.
-
-## Contributing to the project
-
-Put new decisions in a dated checkpoint and update the production rulebook when playable rules change. Update the LAB snapshot only when intentionally recording a detailed source snapshot. Put speculative ideas in the idea bank with their status. Keep historical tests intact and clearly labeled. Do not bulk replace legacy card text: moving from the old pool to current rules requires card-by-card design and balance work.
+Old Mongo materials and the Alpha 0.03 card pool have been removed from the working tree. Git history retains prior commits if a specific decision ever needs investigation. Current rules and card data govern all new work.
