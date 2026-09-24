@@ -1,0 +1,43 @@
+name: Publish Donut Duel to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - play/**
+      - production/cards/cards.json
+      - production/playtests/florida-vs-hoa/decks.json
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare static site
+        run: |
+          mkdir -p _site/play _site/production/cards _site/production/playtests/florida-vs-hoa
+          cp index.html _site/index.html
+          cp play/index.html play/app.js play/engine.js play/ai.js play/style.css _site/play/
+          cp production/cards/cards.json _site/production/cards/cards.json
+          cp production/playtests/florida-vs-hoa/decks.json _site/production/playtests/florida-vs-hoa/decks.json
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

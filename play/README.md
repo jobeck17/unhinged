@@ -1,0 +1,7 @@
+# Donut Duel web playtest
+
+Open `play/` on GitHub Pages or serve the repository root with any static HTTP server and visit `/play/`. The app reads the current production `cards.json` and the Florida Man / HOA President 40-card `decks.json` directly. There is no build step, account, external game server, or card art. A user controls either Leader against a local AI; the AI does not read the user's hand or deck order. Tap a card to see its full text, stats, orientation, and legal actions. An Attack prompts for its target, Blockers in damage order, and optional defensive hand Discards.
+
+This is a **playtest implementation for these two decks**, not an engine for all 180 pool cards. Extend the card effect registry and its verification before adding another deck. The AI is an experimental rules-bound opponent; its win rate is not evidence of balance. Games currently restart if the browser reloads. The separate Stack experiment is not included.
+
+Publishing uses `.github/workflows/pages.yml`. GitHub Pages must be enabled with **GitHub Actions** as the publishing source in the repository settings; the default workflow token cannot enable Pages itself. The deployed path is `/unhinged/play/` on the standard project URL.
