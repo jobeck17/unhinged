@@ -12,8 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 STYLES = {
-    'Gnarly': 'No Chill', 'Amped': 'High Turnover', 'Tricky': 'Funny Business',
-    'Sketchy': 'Good Enough', 'Spiteful': 'Find Out', 'Wasted': 'Red Shirts',
+    'Reckless': 'No Chill', 'Momentum': 'High Turnover', 'Misdirection': 'Funny Business',
+    'Salvage': 'Good Enough', 'Stonewall': 'Find Out', 'Expendable': 'Red Shirts',
 }
 CATEGORIES = {
     'textless': 'Textless', 'keyword_only': 'Keyword only',

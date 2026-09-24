@@ -19,14 +19,14 @@ The current pool contains **180 deck cards: 108 Characters, 48 Actions, and 24 I
 
 | Style | Phrase alias | Leader | Deck cards | Identity |
 | --- | --- | --- | --- | --- |
-| [Gnarly](gnarly.md) | No Chill | Florida Man | 30 | Choose how far to push a dangerous play. |
-| [Amped](amped.md) | High Turnover | Washed-Up Rock Star | 30 | Sequence a set, then decide who performs and who supports. |
-| [Tricky](tricky.md) | Funny Business | Birthday Party Magician | 30 | Bluff, misdirect, and give the opponent consequential choices. |
-| [Sketchy](sketchy.md) | Good Enough | Trash Baron | 30 | Turn questionable materials into functioning machinery. |
-| [Spiteful](spiteful.md) | Find Out | HOA President | 30 | Prepare a defense and attach consequences to interaction. |
-| [Wasted](wasted.md) | Red Shirts | Backyard Wrestler | 30 | Get value when a Character goes through the table. |
+| [Reckless](reckless.md) | No Chill | Florida Man | 30 | Choose how far to push a dangerous play. |
+| [Momentum](momentum.md) | High Turnover | Washed-Up Rock Star | 30 | Sequence a set, then decide who performs and who supports. |
+| [Misdirection](misdirection.md) | Funny Business | Birthday Party Magician | 30 | Bluff, misdirect, and give the opponent consequential choices. |
+| [Salvage](salvage.md) | Good Enough | Trash Baron | 30 | Turn questionable materials into functioning machinery. |
+| [Stonewall](stonewall.md) | Find Out | HOA President | 30 | Prepare a defense and attach consequences to interaction. |
+| [Expendable](expendable.md) | Red Shirts | Backyard Wrestler | 30 | Get value when a Character goes through the table. |
 
-Each Style keeps **18 Characters / 8 Actions / 4 Items**. The two complete Style naming sets remain alternative presentation voices. These links use the single-word set consistently.
+Each Style keeps **18 Characters / 8 Actions / 4 Items**. The links use the settled production names; the phrase aliases are retained as design history.
 
 ## Current pool design
 

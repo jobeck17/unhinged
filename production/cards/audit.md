@@ -6,19 +6,19 @@
 
 | Style | Characters | Actions | Items | Total |
 | --- | --- | --- | --- | --- |
-| Gnarly | 18 | 8 | 4 | 30 |
-| Amped | 18 | 8 | 4 | 30 |
-| Tricky | 18 | 8 | 4 | 30 |
-| Sketchy | 18 | 8 | 4 | 30 |
-| Spiteful | 18 | 8 | 4 | 30 |
-| Wasted | 18 | 8 | 4 | 30 |
+| Reckless | 18 | 8 | 4 | 30 |
+| Momentum | 18 | 8 | 4 | 30 |
+| Misdirection | 18 | 8 | 4 | 30 |
+| Salvage | 18 | 8 | 4 | 30 |
+| Stonewall | 18 | 8 | 4 | 30 |
+| Expendable | 18 | 8 | 4 | 30 |
 | Total | 108 | 48 | 24 | 180 |
 
 ## Character complexity
 
 These categories are mutually exclusive. Keyword-only cards are not textless. A Rotate ability plus another independent ability belongs in Multiple abilities. Several instructions within one enters-play ability remain one on-play ability. The single ongoing category includes a static ability or one triggered ability. Printed Rotate activations also occur on some Multiple-ability Characters.
 
-| Category | Count | Percent | Gnarly | Amped | Tricky | Sketchy | Spiteful | Wasted |
+| Category | Count | Percent | Reckless | Momentum | Misdirection | Salvage | Stonewall | Expendable |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Textless | 27 | 25.0% | 4 | 5 | 4 | 5 | 4 | 5 |
 | Keyword only | 6 | 5.6% | 1 | 1 | 1 | 1 | 1 | 1 |
@@ -31,12 +31,12 @@ These categories are mutually exclusive. Keyword-only cards are not textless. A 
 
 | Style | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Gnarly | 2 | 5 | 4 | 3 | 3 | 1 | 0 |
-| Amped | 0 | 5 | 5 | 4 | 3 | 1 | 0 |
-| Tricky | 1 | 5 | 4 | 5 | 2 | 1 | 0 |
-| Sketchy | 1 | 5 | 5 | 3 | 3 | 1 | 0 |
-| Spiteful | 0 | 5 | 4 | 4 | 4 | 1 | 0 |
-| Wasted | 2 | 4 | 4 | 3 | 3 | 1 | 1 |
+| Reckless | 2 | 5 | 4 | 3 | 3 | 1 | 0 |
+| Momentum | 0 | 5 | 5 | 4 | 3 | 1 | 0 |
+| Misdirection | 1 | 5 | 4 | 5 | 2 | 1 | 0 |
+| Salvage | 1 | 5 | 5 | 3 | 3 | 1 | 0 |
+| Stonewall | 0 | 5 | 4 | 4 | 4 | 1 | 0 |
+| Expendable | 2 | 4 | 4 | 3 | 3 | 1 | 1 |
 
 **11 of 24 Items have a Rotate activation.** Rotating, Readying, and disabling Items now has a real target population; passive Items still function while Rotated unless their text says otherwise.
 

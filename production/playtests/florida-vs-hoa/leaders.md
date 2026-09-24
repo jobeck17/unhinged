@@ -8,7 +8,7 @@ Start at 0 Charge; maximum 3. Gain at most 1 Charge per Round. Retain Charge bet
 
 Both regular and ultimate activations Rotate the Leader, use its player's Turn, and leave it Vulnerable until it Readies. No Fuel cost is added. Choose targets before paying costs and before rolling a die. Ultimate damage is ability damage, not an Attack, and cannot be Blocked. Charge itself does not Ready a Leader. In this pool, neither deck can Ready its Leader early.
 
-## Florida Man — Gnarly
+## Florida Man — Reckless
 
 - **Walk It Off — passive:** The first time each Round one of your Characters takes damage during your Turn and survives, it gets +1 Power this Round.
 - **Watch This — ability:** Rotate: Deal 1 damage to one of your Ready Characters. If it survives, it gets +2 Power this Round.
@@ -17,7 +17,7 @@ Both regular and ultimate activations Rotate the Leader, use its player's Turn, 
 
 The passive is consumed only by positive damage that the Character survives. Repeated damage events cannot earn another passive bonus or Charge that Round. Attack-declaration self-damage resolves before Blocks; retaliation damage triggers resolve after retaliation. A pending passive can still earn Charge if its Character subsequently leaves play; its Power bonus cannot affect a departed Character.
 
-## HOA President — Spiteful
+## HOA President — Stonewall
 
 - **Neighborhood Watch — passive:** The first time each Round one of your Characters Blocks, it gets +1 Power for that Attack.
 - **Property Maintenance — ability:** Rotate: Remove up to 2 damage from one of your Characters.
@@ -28,4 +28,4 @@ For this test, when several Characters make the first Block simultaneously, the 
 
 ## Presentation note
 
-The HOA mockup used purple, but the committed Spiteful Style accent is **Acid Green**; Wasted owns Bruise Purple. Deck legality follows printed Style, never illustration color. Correct the HOA accent in the next art pass. Unsupervised Toddler still uses its printed deck reveal; only Florida Man's ultimate uses a die here.
+The HOA mockup used purple, but the committed Stonewall Style accent is **Acid Green**; Expendable owns Bruise Purple. Deck legality follows printed Style, never illustration color. Correct the HOA accent in the next art pass. Unsupervised Toddler still uses its printed deck reveal; only Florida Man's ultimate uses a die here.

@@ -14,12 +14,12 @@ The [Florida Man / HOA President duel](../production/playtests/florida-vs-hoa/RE
 
 | Leader | Single-word Style | Phrase Style | Core identity |
 | --- | --- | --- | --- |
-| **Florida Man** | **Gnarly** | **No Chill** | Push too far. Risk, dangerous payoff, overcommitment, and spectacularly questionable decisions. |
-| **Washed-Up Rock Star** | **Amped** | **High Turnover** | Build momentum through sequencing, encores, repeated hits, bandmates, crew, and one more trip through the set list. |
-| **Birthday Party Magician** | **Tricky** | **Funny Business** | Deception, misdirection, hidden information, opponent choices, bounce, redirection, and playful rule-bending. |
-| **Trash Baron** | **Sketchy** | **Good Enough** | Repurpose junk, Items, discard, scavenging, and questionable materials into useful advantages. |
-| **HOA President** | **Spiteful** | **Find Out** | Survive interaction, retaliate, impose consequences, and make opponents regret touching the board. |
-| **Backyard Wrestler** | **Wasted** | **Red Shirts** | Defeat is expected and useful. Sacrifice, glorious failure, damage, and going through the table are part of the plan. |
+| **Florida Man** | **Reckless** | **No Chill** | Push too far. Risk, dangerous payoff, overcommitment, and spectacularly questionable decisions. |
+| **Washed-Up Rock Star** | **Momentum** | **High Turnover** | Build momentum through sequencing, encores, repeated hits, bandmates, crew, and one more trip through the set list. |
+| **Birthday Party Magician** | **Misdirection** | **Funny Business** | Deception, misdirection, hidden information, opponent choices, bounce, redirection, and playful rule-bending. |
+| **Trash Baron** | **Salvage** | **Good Enough** | Repurpose junk, Items, discard, scavenging, and questionable materials into useful advantages. |
+| **HOA President** | **Stonewall** | **Find Out** | Survive interaction, retaliate, impose consequences, and make opponents regret touching the board. |
+| **Backyard Wrestler** | **Expendable** | **Red Shirts** | Defeat is expected and useful. Sacrifice, glorious failure, damage, and going through the table are part of the plan. |
 
 The two Style naming sets remain alternate complete naming voices. Do not mix them into a hybrid printed roster unless that terminology decision is deliberately reopened.
 
@@ -29,28 +29,28 @@ Current committed color directions:
 
 | Style | Color direction | Visual idea |
 | --- | --- | --- |
-| **Gnarly / No Chill** | **Safety Orange** | Hazard markings, warning labels, cones, reckless energy. |
-| **Amped / High Turnover** | **Hot Pink / Electric Magenta** | Stage lights, loud performance energy, momentum. |
-| **Tricky / Funny Business** | **Saturated Teal** | Sleight of hand, holographic playing cards, odd stage lighting, deception without default fantasy-purple signaling. |
-| **Sketchy / Good Enough** | **Ochre / Cardboard Brown** | Junk, cardboard, masking tape, plywood, improvised construction. |
-| **Spiteful / Find Out** | **Acid Green** | Artificial lawn, violation stickers, petty enforcement, poisonous consequence. |
-| **Wasted / Red Shirts** | **Bruise Purple** | Black-eye / impact energy, damage, folding-table aftermath, defeat turned into value. |
+| **Reckless / No Chill** | **Safety Orange** | Hazard markings, warning labels, cones, reckless energy. |
+| **Momentum / High Turnover** | **Hot Pink / Electric Magenta** | Stage lights, loud performance energy, momentum. |
+| **Misdirection / Funny Business** | **Saturated Teal** | Sleight of hand, holographic playing cards, odd stage lighting, deception without default fantasy-purple signaling. |
+| **Salvage / Good Enough** | **Ochre / Cardboard Brown** | Junk, cardboard, masking tape, plywood, improvised construction. |
+| **Stonewall / Find Out** | **Acid Green** | Artificial lawn, violation stickers, petty enforcement, poisonous consequence. |
+| **Expendable / Red Shirts** | **Bruise Purple** | Black-eye / impact energy, damage, folding-table aftermath, defeat turned into value. |
 
 These colors are identity accents, not rules by themselves. Cards should remain readable with dark text on light fields, and every Style must also be distinguishable through iconography, shape, labeling, or other non-color cues.
 
 ---
 
-## Florida Man — Gnarly / No Chill
+## Florida Man — Reckless / No Chill
 
 **Character promise:** The player should repeatedly face the question, “How far am I willing to push this?”
 
 Florida Man is the risk-and-overcommitment Leader. His cards should reward dangerous choices, reckless attacks, self-inflicted problems, and plays that become spectacular when they work.
 
-Avoid making him generic aggro. Gnarly should be about **risk**, not simply attacking faster.
+Avoid making him generic aggro. Reckless should be about **risk**, not simply attacking faster.
 
 ---
 
-## Washed-Up Rock Star — Amped / High Turnover
+## Washed-Up Rock Star — Momentum / High Turnover
 
 **Character promise:** The show gets better once the band gets rolling, even if everyone has heard this song before.
 
@@ -62,11 +62,11 @@ Promising mechanical territory:
 - Characters that set up the next Character or Action;
 - recurring/replayed “hits” where the repetition itself is the joke and the engine.
 
-Avoid reducing Amped to generic Trait bonuses. The player should feel like they are **building a set**, not adding static numbers.
+Avoid reducing Momentum to generic Trait bonuses. The player should feel like they are **building a set**, not adding static numbers.
 
 ---
 
-## Birthday Party Magician — Tricky / Funny Business
+## Birthday Party Magician — Misdirection / Funny Business
 
 **Character promise:** Everyone else is playing the game. The Magician is playing the audience.
 
@@ -80,17 +80,17 @@ The physical interaction is important. A strong baseline concept is to fan cards
 The point is not random punishment. It is bluffing, opponent participation, and theatrical tension.
 
 **Vanish / “Now You See Me, Now You Don't”**
-Bounce and temporary disappearance are natural Tricky tools. Cards can return Characters to hands, save friendly Characters from danger, or make opposing Characters disappear at an inconvenient moment.
+Bounce and temporary disappearance are natural Misdirection tools. Cards can return Characters to hands, save friendly Characters from danger, or make opposing Characters disappear at an inconvenient moment.
 
 **Misdirection**
 Redirection, target changes, swaps, and committing before the real outcome is revealed all belong here.
 
 **Rule-bending**
-Tricky may create narrow, printed exceptions to normal rules. These should be temporary, local, and understandable rather than rewriting the game for an entire Round.
+Misdirection may create narrow, printed exceptions to normal rules. These should be temporary, local, and understandable rather than rewriting the game for an entire Round.
 
 ### Fun guardrail
 
-Tricky must create **“you got me”** moments, not “I wasn't allowed to play” moments.
+Misdirection must create **“you got me”** moments, not “I wasn't allowed to play” moments.
 
 Prefer:
 - fast opponent choices;
@@ -104,7 +104,7 @@ Playtests should specifically watch frustration and decision time.
 
 ---
 
-## Trash Baron — Sketchy / Good Enough
+## Trash Baron — Salvage / Good Enough
 
 **Character promise:** Somebody else's garbage is infrastructure.
 
@@ -112,11 +112,11 @@ Trash Baron anchors the scavenging, discard, Item, and improvised-material ident
 
 **One Man's Trash** remains a working signature ability concept for controlled Item access from discard. Exact limits and wording are not locked.
 
-Avoid making Sketchy simply “graveyard recursion.” It should feel like **repurposing and improvisation**.
+Avoid making Salvage simply “graveyard recursion.” It should feel like **repurposing and improvisation**.
 
 ---
 
-## HOA President — Spiteful / Find Out
+## HOA President — Stonewall / Find Out
 
 **Character promise:** You touched the board. There will be paperwork.
 
@@ -128,15 +128,15 @@ Avoid hard-lock control patterns where the correct opponent decision becomes “
 
 ---
 
-## Backyard Wrestler — Wasted / Red Shirts
+## Backyard Wrestler — Expendable / Red Shirts
 
 **Character promise:** If somebody is going through a folding table, preferably us, we're getting value out of it.
 
 Backyard Wrestler anchors Defeat-as-value. Damage, sacrifice, risky stunts, replacement Characters, and effects that become useful when Characters are Defeated all fit naturally.
 
 Keep the distinction from Florida Man clear:
-- **Gnarly** flirts with disaster for payoff.
-- **Wasted** expects Characters to be Defeated and turns that outcome into value.
+- **Reckless** flirts with disaster for payoff.
+- **Expendable** expects Characters to be Defeated and turns that outcome into value.
 
 ---
 
@@ -148,8 +148,8 @@ The current roster replaces two Alpha Leaders:
 - **ROOT** is no longer a core Leader.
 
 Their useful mechanical ideas are not discarded:
-- the old Unruly sequencing/teamwork space evolved into **Amped**, now led by **Washed-Up Rock Star**;
-- ROOT's manipulation/redirection identity evolved into **Tricky**, now led by **Birthday Party Magician**.
+- the old Unruly sequencing/teamwork space evolved into **Momentum**, now led by **Washed-Up Rock Star**;
+- ROOT's manipulation/redirection identity evolved into **Misdirection**, now led by **Birthday Party Magician**.
 
 Other strong characters remain available for the card pool or later sets rather than occupying a core Leader seat:
 - **Boss Babe** — recruitment/downline ecosystem;
@@ -162,9 +162,9 @@ Other strong characters remain available for the card pool or later sets rather 
 ### Committed
 - the six Leader characters listed above;
 - one core Leader mapped to each of the six Style identities;
-- Washed-Up Rock Star as Amped;
-- Birthday Party Magician as Tricky;
-- Tricky's identity around deception, manipulation, opponent interaction, redirection, and playful rule-bending;
+- Washed-Up Rock Star as Momentum;
+- Birthday Party Magician as Misdirection;
+- Misdirection's identity around deception, manipulation, opponent interaction, redirection, and playful rule-bending;
 - **Pick a Card** as a priority mechanic to prototype for the Magician.
 
 ### Still open

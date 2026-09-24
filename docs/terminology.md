@@ -35,9 +35,9 @@ Working editorial guide as of September 23, 2026. Use the [production rules](../
 
 - **Character:** current Donut test name, used consistently in the rulebook and pool. Unit is its historical alias. Final printed presentation remains open; there are not two separate card types.
 - **Relationships:** use your Character, opposing Character, and owner. No production card changes ownership or control.
-- **Discard:** current Sketchy cards use the normal discard. The separate Junk Pile survives only in legacy files; its production rewrite is complete.
+- **Discard:** current Salvage cards use the normal discard. The separate Junk Pile survives only in legacy files; its production rewrite is complete.
 - **Traits and keywords:** use the [current trait register](../production/cards/traits.md) and [keyword reference](../production/cards/keywords.md). Human is unprinted metadata. “Rotate:” is an activation cost, not a new keyword. Hothead is the only new keyword in Donut revision 2.
-- **Styles:** Reckless, Unruly, Crooked, Makeshift, Stubborn, and Kamikaze label the legacy data. **Styles** is the current umbrella term, with two soft-locked complete naming sets: Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted, or No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts. Keep each set intact; do not mix names between sets. The final printed voice remains open.
+- **Styles:** The settled production names are Reckless / Momentum / Misdirection / Salvage / Stonewall / Expendable. The older alternate phrase names are No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts. Historical data used Reckless / Unruly / Crooked / Makeshift / Stubborn / Kamikaze; Reckless has been restored for the first Style. Later working names Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted are superseded. **Styles** remains the umbrella term.
 - **Response:** favored as Action timing, with exact window printed on the card. Chaining and cost limits remain open.
 
 The [legacy card pool](card-pool/README.md) and [historical notes](history/README.md) deliberately show old words. Their status labels prevent those examples from being mistaken for current instructions.

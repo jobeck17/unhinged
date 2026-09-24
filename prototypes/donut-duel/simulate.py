@@ -25,7 +25,7 @@ def validate():
     for d in DECKS:
         assert sum(d['cards'].values()) == 40
         assert len(d['styles']) == 2 and len(set(d['styles'])) == 2
-        assert d['styles'][0] == {'Florida Man': 'Gnarly', 'HOA President': 'Spiteful'}[d['leader']]
+        assert d['styles'][0] == {'Florida Man': 'Reckless', 'HOA President': 'Stonewall'}[d['leader']]
         assert all(1 <= n <= 2 for n in d['cards'].values())
         assert set(d['cards']) <= SUPPORTED
         assert all(CARDS[c]['style'] in d['styles'] for c in d['cards'])
