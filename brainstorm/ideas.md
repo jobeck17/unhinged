@@ -19,11 +19,11 @@ These concepts are outside the current Donut build. They have no rules authority
 
 ## Future characters and world
 
-- Future hooks without approved current cards include Clown Car, Creepy Van / Free Puppies, bachelorette party, feral child, Girl Scouts, and other neighborhood disasters. Check the [current card list](../production/cards/card-list.md) before drafting a card to avoid duplicating an existing concept.
+- Future hooks without approved current cards include Clown Car, Creepy Van / Free Puppies, bachelorette party, feral child, Girl Scouts, and other neighborhood disasters. A healer Leader or magical archetype belongs in a later expansion, after the current combat core has been tested. Check the [current card list](../production/cards/card-list.md) before drafting a card to avoid duplicating an existing concept.
 - Displaced roster candidates for later sets or variants: Bottle-Rocket Enthusiast, Dance Mom, Little League Assistant Coach, Dumpster Engineer, Free Puppies Guy, Alley Bruiser, Overenthusiastic Volunteer, Crash-Test Intern, Backyard Wrestling Hype Man, Parking Lot Boxer, Lawn Chair Daredevil, No, No, Watch This, Little League Coach, Soccer Mom, Group Text, Fake Psychic, Mall Cop, Crypto Bro, Garage Sale Queen, Neighborhood Watch Captain, Safety-Vest Volunteer, and Last Laugh. These are concept names, not reserved IDs.
 
 ## Systems outside the base game
 
-Locations; PvE encounters; spellcasting or Channel; optional random effects; spatial lanes; two Leaders with two decks; and a hidden-information package beyond individual card effects. Each needs a specific gameplay decision and a small test before entering the base rules.
+Locations; PvE encounters; spellcasting or Channel; optional random effects; spatial lanes; two Leaders with two decks; a hidden-information package beyond individual card effects; turning defeated Characters into battlefield infrastructure; Upgrades or Overcharge; Range or Speed in a spatial variant; and a distinct Recruit / Rally swarm tool. Each needs a specific gameplay decision and a small test before entering the base rules.
 
 **Tone compass:** “What if Hyrule had a trailer park?” The humor works best when the setting remains coherent.
