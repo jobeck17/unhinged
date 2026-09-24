@@ -88,11 +88,11 @@
       "traits": [
         "Kid"
       ],
-      "text": "Explosive. When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck.",
+      "text": "Defiant. When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck.",
       "style": "Reckless",
       "complexity": "mixed",
       "keywords": [
-        "Explosive"
+        "Defiant"
       ],
       "power": 1,
       "guard": 3,
@@ -3068,10 +3068,11 @@
         "Clown",
         "Daredevil"
       ],
-      "text": "Explosive. When this is Defeated, deal 1 damage to an opposing Character.",
+      "text": "Defiant. Explosive.",
       "style": "Expendable",
       "complexity": "mixed",
       "keywords": [
+        "Defiant",
         "Explosive"
       ],
       "power": 3,

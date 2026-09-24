@@ -141,7 +141,7 @@ These checkpoints resolve the ambiguity in the earlier rulebook's “finish the 
 2. If the attacker or target has left play, end the Attack without damage. Otherwise, if this is a blockable Leader Attack, declare and Rotate all Blockers together and choose their order. Resolve **when this Blocks** triggers and anything they create.
 3. Make the defensive Guard Discards, then resolve triggers they create. A Blocker that left play no longer Blocks. If the attacker or target has left play, end the Attack without damage.
 4. Deal attack damage using the attacker's current Power and the sequential rules below. Check Defeat immediately. Queue damage and Defeat triggers; do not resolve them between Blockers.
-5. Deal retaliation as one damage batch. Every surviving Blocker still in the Attack retaliates, even if earlier Blockers absorbed all incoming damage; Explosive adds a Blocker Defeated by incoming attack damage. A directly attacked Character retaliates only if it survived. Negative Power deals 0 damage.
+5. Deal retaliation as one damage batch. Every surviving Blocker still in the Attack retaliates, even if earlier Blockers absorbed all incoming damage; Defiant adds a Blocker Defeated by incoming attack damage. A directly attacked Character retaliates only if it survived. Negative Power deals 0 damage.
 6. Resolve the pending damage and Defeat triggers in their recorded order, then after-Attack effects and their resulting triggers. Check the game end after the whole action and queue finish.
 
 A departed attacker receives no retaliation damage. These checkpoints do not give players a universal Response or activation window.
@@ -158,13 +158,14 @@ Overflow applies only to an Attack against the Leader through Blockers. Excess d
 
 ### Retaliation
 
-A Blocking Character that survives the attack retaliates with its Power. A Blocker Defeated by the attack does not retaliate unless it has **Explosive**. A Rotated Character attacked directly retaliates if it survives.
+A Blocking Character that survives the attack retaliates with its Power. A Blocker Defeated by the attack does not retaliate unless it has **Defiant**. A Rotated Character attacked directly retaliates if it survives.
 
-- **Explosive:** This Character retaliates when it Blocks even if the incoming Attack Defeats it. Use its Power immediately before it left play. This does not give a directly attacked Character the same exception.
+- **Defiant:** This Character retaliates when it Blocks even if the incoming Attack Defeats it. Use its Power immediately before it left play. This does not give a directly attacked Character the same exception.
+- **Explosive:** When this Character is Defeated, deal 1 damage to each opposing Character in play. This is a Defeat trigger, not retaliation; it does not damage opposing Leaders, Items, or friendly Characters. During an Attack, resolve the splash after the attack-damage and retaliation checkpoints, with other pending triggers. Deal the splash to all affected Characters as one damage batch, then process resulting Defeats and triggers.
 - **Slowpoke:** This Character does not retaliate when it Blocks. It may still retaliate after surviving a direct Attack while Rotated.
 - **Hothead:** This Character may Attack in the Round it enters play. It does not gain early Rotate activations, a Ready, or an extra Attack.
 
-If a Character has both Explosive and Slowpoke, Slowpoke prevents its blocking retaliation. Repeated instances of a keyword do not stack. An explicit cannot-Attack effect takes precedence over Hothead. See the [keyword reference](../cards/keywords.md).
+If a Character has both Defiant and Slowpoke, Slowpoke prevents its blocking retaliation. Repeated instances of a keyword do not multiply its effect. An explicit cannot-Attack effect takes precedence over Hothead. Sucker Punch, Sneaky, and Peekaboo are [unprinted experiments](../cards/mechanics-playtest.md) and confer no permission on the current cards. See the [keyword reference](../cards/keywords.md).
 
 ## 9. Damage, healing, and game end
 

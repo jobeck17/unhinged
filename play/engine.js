@@ -92,7 +92,8 @@ export class Game {
  if(!this.obj(uid))return this.advance();
  if(target!==-1&&a.id==='P001'&&this.guard(this.obj(target))>=3)bonus+=2;
  if(target===-1){for(let x of this.chars(opp))if(x.id==='P122'&&!x.committee){x.committee=true;bonus--}}
- let blockers=[];if(target===-1&&this.players[opp].ready){let ready=this.chars(opp).filter(x=>x.ready);if(ready.length){let chosen=await this.ask({title:'Declare Blockers in damage order (tap to order)',player:opp,multi:true,options:ready.map(x=>({label:`${this.card(x).name} · ${this.power(x)}/${this.guard(x)-x.damage}`,value:x.uid}))});blockers=(chosen||[]).map(id=>this.obj(id)).filter(Boolean)}}
+ this.pendingAttack.power=Math.max(0,this.power(a)+bonus);
+ let blockers=[];if(target===-1&&this.players[opp].ready){let ready=this.chars(opp).filter(x=>x.ready);if(ready.length){let chosen=await this.ask({title:`Blockers: ${this.card(a).name} attacks your Leader`,attackContext:{name:this.card(a).name,power:this.pendingAttack.power,guard:this.guard(a),damage:a.damage,text:this.card(a).text},player:opp,multi:true,options:ready.map(x=>({label:`${this.card(x).name} · ${this.power(x)}/${this.guard(x)-x.damage}`,value:x.uid}))});blockers=(chosen||[]).map(id=>this.obj(id)).filter(Boolean)}}
  for(let x of blockers)x.ready=false;
  let watch=null;if(blockers.length&&opp===1&&!this.players[1].passive){this.players[1].passive=true;watch=await this.pick('Neighborhood Watch: choose one Blocker for +1 Power',opp,blockers)}
  for(let x of blockers){if(x.id==='P121')bonus--;for(let y of this.chars(opp))if(y.id==='P125'&&y.uid!==x.uid)y.power++}

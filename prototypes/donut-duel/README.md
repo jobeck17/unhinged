@@ -20,7 +20,7 @@ Files are written to `production/playtests/florida-vs-hoa/`. Seed defaults to 24
 - 40 cards, Leader outside deck, leader Style plus one secondary Style, maximum two copies.
 - Seven-card hand, replace-then-shuffle mulligan, Round 1 Draw; alternating single-action Turns, two Passes and first-passer initiative; Fuel 1–7.
 - Entry restrictions, Hothead, all selected card effects, attachments, persistent damage, healing, direct attacks on Rotated Characters, Leader Vulnerability.
-- Sequential blocker damage/overflow, free surviving-blocker retaliation including zero-damage Blockers, Explosive, defensive hand Discards, relevant attack/Block trigger timing.
+- Sequential blocker damage/overflow, free surviving-blocker retaliation including zero-damage Blockers, Defiant (formerly Explosive), defensive hand Discards, relevant attack/Block trigger timing. The duel decks contain no Explosive Character under the revised splash definition.
 - Two 25-Health Leader packages, once-per-Round shared Charge limit, persistent Charge, spending/rotation, actual d6 Florida ultimate. Toddler retains its production deck reveal.
 - End-of-Round stat expiry and Defeat checks; empty-deck Draw loss; War for simultaneous losses. A 30-Round limit is a **censored run**, never a game-rule draw or assigned win.
 - Per-action card conservation, nonnegative Fuel and Charge bounds. Fifteen targeted tests cover high-risk interactions.

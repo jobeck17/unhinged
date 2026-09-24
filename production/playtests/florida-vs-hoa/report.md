@@ -63,7 +63,7 @@ The HOA list intentionally has no 1-cost Characters; it usually starts establish
 
 ## Verification and limits
 
-17 targeted mechanical tests passed, including both current and historical Charge timing, multi-block/overflow, temporary Guard, Explosive, Vulnerability, entry restrictions, Tag Me In instance/attachment cleanup, self-damage timing, and Charge caps. The unchanged 180-card production pool passes its generator check. Every simulated action checks card conservation, nonnegative Fuel, and Charge bounds.
+17 targeted mechanical tests passed, including both current and historical Charge timing, multi-block/overflow, temporary Guard, Defiant (called Explosive at the time), Vulnerability, entry restrictions, Tag Me In instance/attachment cleanup, self-damage timing, and Charge caps. The 180-card production pool passed its generator check before the later keyword revision. Every simulated action checks card conservation, nonnegative Fuel, and Charge bounds.
 
 The harness implements these 40 unique cards and the current timing, but its pilots use one-action evaluation, at most two of five candidate Blockers, at most two defensive Discards, no strategic multi-Turn plan, and rough stochastic planning. These restrictions can materially change outcomes. [Full methodology and reproduction commands](../../../prototypes/donut-duel/README.md).
 

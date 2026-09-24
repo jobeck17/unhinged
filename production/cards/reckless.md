@@ -9,7 +9,7 @@
 | P002 | Character | 2 | **Gas Station Daredevil** | 3/2 | Daredevil | When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power for this Attack. |
 | P003 | Character | 3 | **Firework Dad** | 3/4 | Parent, Daredevil | Rotate: Deal 1 damage to another of your Characters. If it survives, it gets +2 Power this Round. |
 | P004 | Character | 2 | **Bachelorette Party** | 3/3 | — | — |
-| P005 | Character | 2 | **Unsupervised Toddler** | 1/3 | Kid | **Explosive**. When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck. |
+| P005 | Character | 2 | **Unsupervised Toddler** | 1/3 | Kid | **Defiant**. When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck. |
 | P006 | Character | 4 | **Road Rage Ron** | 5/4 | — | While attacking a damaged Character, this gets +2 Power. |
 | P007 | Character | 3 | **Scout With a Flare Gun** | 3/3 | Kid, Scout, Daredevil | Rotate: Deal 1 damage to a Character. If it is one of your Daredevils, Draw a card, then Discard a card. |
 | P008 | Character | 4 | **Pool Pirate** | 4/5 | Pirate, Criminal | When this enters play, you may Dismiss one of your Items. If you do, Draw a card. |

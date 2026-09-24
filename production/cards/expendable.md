@@ -18,7 +18,7 @@
 | P161 | Character | 4 | **Zombie Mall Walker** | 3/5 | Undead | When this is Defeated, you may Return it from your discard to your hand at the end of this Round. |
 | P162 | Character | 5 | **Guy Who Cut the Wrong Wire** | 6/5 | Daredevil | — |
 | P163 | Character | 6 | **Dumpster Phoenix** | 5/6 | Animal, Undead, Scavenger | Rotate, Sacrifice another of your Characters: Return a Character from your discard to your hand. If it is Undead, heal 2 damage from this. |
-| P164 | Character | 3 | **Stunt Clown** | 3/2 | Clown, Daredevil | **Explosive**. When this is Defeated, deal 1 damage to an opposing Character. |
+| P164 | Character | 3 | **Stunt Clown** | 3/2 | Clown, Daredevil | **Defiant**. **Explosive**. |
 | P165 | Character | 2 | **Backyard Wrestling Superfan** | 1/3 | — | Rotate: Another of your Characters gets +2 Power this Round, or +3 Power if it is a Wrestler or Daredevil. |
 | P166 | Character | 4 | **Backyard Tag-Team Captain** | 3/5 | Wrestler | Rotate: Return another of your damaged Characters to your hand. If it was a Wrestler, Draw a card, then Discard a card. |
 | P167 | Character | 1 | **Rat in the Fireworks Box** | 1/1 | Animal, Rat | When this is Defeated, deal 1 damage to the opposing Leader. |

@@ -40,7 +40,7 @@ Rotate: Deal 1 damage to another of your Characters. If it survives, it gets +2 
 
 Traits: Kid.
 
-Explosive. When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck.
+Defiant. When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck.
 
 ### P010 — Guy Who Definitely Read the Instructions
 

@@ -8,7 +8,8 @@ The current pool contains **180 deck cards: 108 Characters, 48 Actions, and 24 I
 | --- | --- |
 | Entire roster, Costs, stats, Traits, and complexity | [Card list](card-list.md) |
 | Eighteen printed Traits, counts, definitions, and support | [Traits](traits.md) |
-| Explosive, Slowpoke, and the new Hothead test keyword | [Keywords](keywords.md) |
+| Four printed keywords and three unprinted candidates | [Keywords](keywords.md) |
+| Attack-only, defend-only, and other saved mechanics | [Mechanics playtest](mechanics-playtest.md) |
 | Exact composition and complexity counts | [Content audit](audit.md) |
 | What changed, why, and what to test | [Revision notes](revision-3-notes.md) |
 | Playtest timing and core mechanics | [Rulebook](../rules/unhinged-rules.md) |
@@ -36,6 +37,7 @@ Each Style keeps **18 Characters / 8 Actions / 4 Items**. The links use the sett
 - The 33 textless or keyword-only Characters have optional flavor lines. Flavor is not rules text.
 - Eleven Items have Rotate activations, giving the Hacker and Item-Ready effects functional targets.
 - Attack/Block triggers resolve before their damage checkpoint. Sacrifice, Dismiss, attachment references, temporary Guard, and delayed Returns have explicit handling.
+- Defiant retains the former Explosive blocking-retaliation rule; Explosive now splashes 1 damage to every opposing Character on Defeat. Sucker Punch, Sneaky, Peekaboo, and the attack/defend-only restrictions are documented test space, not printed on current cards.
 - Stable deck-card IDs remain P001–P180. Revised identities are recorded in the revision notes; earlier versions remain in git history.
 
 ## Requested roster follow-up

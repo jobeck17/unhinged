@@ -9,6 +9,7 @@ This directory holds the material that should guide the next production pass: cu
 | Current test rulebook | [Rules](rules/unhinged-rules.md) |
 | Items that still need a deliberate decision | [Open decisions](rules/open-decisions.md) |
 | Current 180-card production playtest pool | [Production cards](cards/README.md) |
+| Keyword candidates and attack/defend restrictions | [Mechanics playtest](cards/mechanics-playtest.md) |
 | Two playable Leader drafts and legal 40-card duel decks | [Florida Man vs. HOA President](playtests/florida-vs-hoa/README.md) |
 | Current six-Leader cast and Style identities | [Leaders](../docs/leaders.md) |
 | Card frame, symbols, and accessibility requirements | [Card design principles](../docs/card-design-principles-2026-09-22.md) |

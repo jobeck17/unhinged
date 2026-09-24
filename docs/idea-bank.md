@@ -19,6 +19,10 @@ Ideas saved for later design and playtests. None is a current rule merely becaus
 
 Functional card backs that build a road or map were explored and tabled. Cards from opposing decks intermingling would be awkward to separate. Face-down bluffing currently has the stronger gameplay reason to exist. Do not treat map backs as an approved card requirement. [Visual experiments](../assets/concepts/README.md) are preserved as references.
 
+## Combat and turn experiments
+
+The [mechanics playtest reference](../production/cards/mechanics-playtest.md) preserves **Sucker Punch** (Attack a Ready Character), **Sneaky** (one extra Play from hand during a Turn), and the face-down-until-end-of-Round **Peekaboo / Shy / Cloak** idea. It also records attack-only, defend-only, and a Ready defender that suppresses Hothead. These candidates are not silently active in the 180-card pool. The printed-keyword correction is in the [current keyword reference](../production/cards/keywords.md): **Defiant** keeps the old blocking-retaliation behavior, and **Explosive** now splashes opposing Characters when Defeated.
+
 ## Character and world hooks
 
 The six current core Leaders have been promoted out of the idea bank and are tracked in [`leaders.md`](leaders.md): **Florida Man, Washed-Up Rock Star, Birthday Party Magician, Trash Baron, HOA President, and Backyard Wrestler**.

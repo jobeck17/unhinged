@@ -27,5 +27,5 @@ for(let k=0;k<12;k++){
  assert.notEqual(g.winner,null,`game ${k} should finish`);
 }
 // The attacking player, not the defender, must choose the attack target.
-let chosenBy=[];let g=new Game(pool,decks,async request=>{chosenBy.push(request.player);return request.options[0].value},()=>{});g.begin();g.round=3;g.turn=0;let x=g.enter(0,'P001');x.born=1;await g.attack(x.uid);assert.equal(chosenBy[0],0);
-console.log('12 completed games, card/resource invariants, and attack target ownership: OK');
+let chosenBy=[],blockPrompt;let g=new Game(pool,decks,async request=>{chosenBy.push(request.player);if(request.multi){blockPrompt=request;return []}return request.options[0].value},()=>{});g.begin();g.round=3;g.turn=0;let x=g.enter(0,'P001');x.born=1;g.enter(1,'P095');await g.attack(x.uid);assert.equal(chosenBy[0],0);assert.equal(blockPrompt.player,1);assert.equal(blockPrompt.attackContext.name,'Feral Chihuahua');assert.equal(blockPrompt.attackContext.power,2);
+console.log('12 completed games, card/resource invariants, attack ownership, and blocker prompt: OK');

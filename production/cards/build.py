@@ -54,7 +54,14 @@ def validate(data, taxonomy):
         require(not banned.search(text), f'{cid}: retired label in rules text.')
         require(not re.search(r'\b(Command|Stamina|Exhaust|Deploy|dies|died|Controller|Response)\b|Junk Pile', text, re.I), f'{cid}: retired or unimplemented mechanics.')
         require('|' not in text and '\n' not in text, f'{cid}: invalid table text.')
-        printed_keywords = [k for k in keyword_names if text.startswith(k+'.')]
+        printed_keywords = []
+        remainder = text
+        while True:
+            keyword = next((k for k in sorted(keyword_names, key=len, reverse=True) if remainder.startswith(k+'.')), None)
+            if keyword is None:
+                break
+            printed_keywords.append(keyword)
+            remainder = remainder[len(keyword)+1:].lstrip()
         require(set(c['keywords']) == set(printed_keywords), f'{cid}: keyword metadata disagrees with text.')
         if c['type'] == 'Character':
             require(type(c['power']) is int and c['power'] >= 0 and type(c['guard']) is int and c['guard'] > 0, f'{cid}: invalid combat stats.')
@@ -121,8 +128,13 @@ def render(data, taxonomy):
     keyword_rows=[]
     for k in taxonomy['keywords']:
         members=[c for c in chars if k['name'] in c['keywords']]
-        keyword_rows.append([k['name'],k['definition'],k['status'],', '.join(c['id']+' '+c['name'] for c in members)])
-    files['keywords.md']='# Donut Keywords\n\n> Generated from [taxonomy.json](taxonomy.json). Three current keywords; Hothead was introduced in Donut revision 2.\n\n'+table(['Keyword','Rule','Status','Printed on'],keyword_rows)+'\n## Scope and edge cases\n\n'+'\n'.join('- **'+k['name']+':** '+k['limits'] for k in taxonomy['keywords'])+'\n- Multiple instances of the same keyword do not stack.\n- Floor It! and Tag Me In! can grant Hothead temporarily; neither is an additional printed-keyword Character.\n- Every teaching/print layout should include reminder text or a nearby reference. These short table entries are design sheets, not finished card faces.\n\n## Ordinary vocabulary, not keywords\n\nRotate, Ready, Attack, Block, Defeat, Sacrifice, Dismiss, Draw, and Discard are core instructions. Vulnerable is a Leader state. Enters-play and Defeat triggers need their full timing sentence. Traits such as Undead, Rat, and Daredevil grant no behavior on their own.\n\nJerry-Rig remains earmarked. Encore!, Pick a Card, Scrounge, and similar phrases are card titles, not global abilities. No keyword was added merely to give every Style an exclusive mechanic.\n'
+        keyword_rows.append([k['name'],k['definition'],k['status'],', '.join(c['id']+' '+c['name'] for c in members) or '—'])
+    prototypes=taxonomy.get('keyword_prototypes', [])
+    require_prototypes = len({k['name'] for k in prototypes}) == len(prototypes) and not ({k['name'] for k in prototypes} & {k['name'] for k in taxonomy['keywords']})
+    if not require_prototypes:
+        raise ValueError('Candidate keyword names must be unique and separate from printed keywords.')
+    prototype_rows=[[k['name'],k['definition'],k['status']] for k in prototypes]
+    files['keywords.md']='# Donut Keywords\n\n> Generated from [taxonomy.json](taxonomy.json). Four current printed keywords; candidate mechanics below are not active in the production pool.\n\n'+table(['Keyword','Rule','Status','Printed on'],keyword_rows)+'\n## Scope and edge cases\n\n'+'\n'.join('- **'+k['name']+':** '+k['limits'] for k in taxonomy['keywords'])+'\n- Multiple instances of the same keyword do not multiply its effect.\n- Floor It! and Tag Me In! can grant Hothead temporarily; neither is an additional printed-keyword Character.\n- Every teaching/print layout should include reminder text or a nearby reference. These short table entries are design sheets, not finished card faces.\n\n## Keyword candidates — not yet printed\n\n'+table(['Working name','Proposed effect','Status'],prototype_rows)+'\n'+'\n'.join('- **'+k['name']+':** '+k['limits'] for k in prototypes)+'\n\nSee [other ability experiments](mechanics-playtest.md) for attack-only, defend-only, Hothead suppression, and face-down handling.\n\n## Ordinary vocabulary, not keywords\n\nRotate, Ready, Attack, Block, Defeat, Sacrifice, Dismiss, Draw, and Discard are core instructions. Vulnerable is a Leader state. Enters-play and Defeat triggers need their full timing sentence. Traits such as Undead, Rat, and Daredevil grant no behavior on their own.\n\nJerry-Rig remains earmarked. Encore!, Pick a Card, Scrounge, and similar phrases are card titles, not global abilities. No keyword was added merely to give every Style an exclusive mechanic.\n'
     composition=[[s,18,8,4,30] for s in STYLES]+[['Total',108,48,24,180]]
     complexity=[]
     for key,label in CATEGORIES.items():
