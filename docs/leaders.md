@@ -4,7 +4,7 @@
 >
 > These six characters are the current core Leader roster. Their **character identities and Style homes are committed design direction**. Exact Health, Traits, passive abilities, activated abilities, costs, and card text remain subject to design and playtest.
 >
-> The old Alpha 0.03 Leader data in `docs/card-pool/leaders.md` and `leaders.json` is legacy test data only.
+> The old Alpha 0.03 Leader data has been removed from the working tree. Current test packages are linked below.
 
 ## Playable test packages
 

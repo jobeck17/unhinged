@@ -17,7 +17,7 @@ Working editorial guide as of September 23, 2026. Use the [production rules](../
 | Attack on a Rotated Leader | **Vulnerable** | The Leader cannot be Blocked while Vulnerable. |
 | Spent Action destination | Put it into its Owner's **discard** | An Action never enters play. Do not say it is Dismissed. |
 
-**Draw**, **Discard**, **Return**, **Defeat**, **Sacrifice**, **Dismiss**, and neutral **Put** are separate events. They are not interchangeable for triggers. Use the production rulebook definitions before editing card effects. The LAB is a historical source record.
+**Draw**, **Discard**, **Return**, **Defeat**, **Sacrifice**, **Dismiss**, and neutral **Put** are separate events. They are not interchangeable for triggers. Use the production rulebook definitions before editing card effects. 
 
 ## Retired from the current base game
 
@@ -40,4 +40,4 @@ Working editorial guide as of September 23, 2026. Use the [production rules](../
 - **Styles:** The settled production names are Reckless / Momentum / Misdirection / Salvage / Stonewall / Expendable. The older alternate phrase names are No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts. Historical data used Reckless / Unruly / Crooked / Makeshift / Stubborn / Kamikaze; Reckless has been restored for the first Style. Later working names Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted are superseded. **Styles** remains the umbrella term.
 - **Response:** favored as Action timing, with exact window printed on the card. Chaining and cost limits remain open.
 
-The [legacy card pool](card-pool/README.md) and [historical notes](history/README.md) deliberately show old words. Their status labels prevent those examples from being mistaken for current instructions.
+Historical versions are available in git history. New work follows this vocabulary and the current rulebook.

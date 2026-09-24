@@ -12,11 +12,11 @@ This directory holds the material that should guide the next production pass: cu
 | Two playable Leader drafts and legal 40-card duel decks | [Florida Man vs. HOA President](playtests/florida-vs-hoa/README.md) |
 | Current six-Leader cast and Style identities | [Leaders](../docs/leaders.md) |
 | Card frame, symbols, and accessibility requirements | [Card design principles](../docs/card-design-principles-2026-09-22.md) |
-| Concepts that are not yet part of production | [Idea bank](../docs/idea-bank.md) |
+| Concepts that are not yet part of production | [Brainstorm](../brainstorm/ideas.md) |
 
 The rulebook carries forward the September 21 foundation and the [September 23 Donut revision](../docs/current-state-2026-09-23.md). The open-decisions file keeps unfinished choices out of card text and print files.
 
-The Production Pool v0.1 is a **ground-up rewrite**, not a terminology conversion of Alpha 0.03. The old pool in `docs/card-pool/` remains legacy test data for history and comparison.
+The Production Pool v0.1 is a **ground-up rewrite**, not a terminology conversion of Alpha 0.03. The old Alpha pool has been removed from the working tree; git history retains it if a specific comparison is needed.
 
 ## Intended structure
 
