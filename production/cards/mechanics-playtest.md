@@ -1,25 +1,19 @@
-# Unhinged mechanics: saved test rules
+# Unhinged mechanics: active limited tests
 
-These are concrete playtest proposals, not card text silently added to the 180-card pool. The [keyword reference](keywords.md) distinguishes printed keywords from unprinted candidates. The active [rulebook](../rules/unhinged-rules.md) applies to the current decks.
+Eight keywords now have rules in the [active rulebook](../rules/unhinged-rules.md) and [keyword reference](keywords.md). Here is why the newly printed ones occupy small packages instead of every eligible card.
 
-## Keyword candidates
-
-| Working name | Proposed rule | First test |
+| Keyword | Current cards | Table question |
 | --- | --- | --- |
-| **Sucker Punch** | This Character may Attack a Ready opposing Character. | **Printed on P100 Wind-Up Toy.** It is a direct Attack: no Blockers, normal rotation, damage and surviving target's retaliation. The entry-Round restriction still applies. |
-| **Sneaky** | Playing this from hand on your Turn does not spend that Turn. Pay its normal Fuel Cost; at most one Sneaky Play per Turn. | Finish its Play and triggers, then take your usual action. No out-of-Turn Play or Response. Watch free Plays, Draws and Returns for loops. |
-| **Peekaboo** (also **Shy** or **Cloak**) | A printed ability could turn this Character face down **until the end of the Round** for protection or another payoff. | Test with one card before deciding whether face-down Characters are still in play, can be targeted, keep damage/Items, Block, or are public knowledge. Invulnerability is a candidate payoff, not a current universal rule. |
+| **Sucker Punch** | P100 Wind-Up Toy | Does attacking a Ready Character make a small Construct worthwhile despite retaliation? |
+| **Sneaky** | P050 Roll Call, P084 Default Password, P114 Curb Alert | Is paying Fuel for an extra Play on your Turn satisfying without creating long chains? Only one Sneaky Play per Turn. |
+| **Cloak** | P063 Alien Abduction Victim, P066 Off-Duty Clown | Does face-down protection until end of Round justify rotating and losing both the Attack and Block? The card remains inspectable and in play; this is not a hidden-card bluff. |
+| **Stack** | P037 Reunion Tour Drummer, P106 Shopping Cart Golem | Does a two-layer Character worth normal Fuel outperform two bodies when the upper card adds a payoff? Top stats, both abilities, bottom-to-top trigger order. |
 
-Sucker Punch is in the pool on P100 Wind-Up Toy. Sneaky needs a full Turn-sequencing check before printing. Peekaboo still needs its face-down behavior decided; do not treat its provisional sentence as blanket immunity.
+**Vacuum separation:** Jailbroken Robot Vacuum P105 puts the top card of the deck face down *beneath* it on each Attack. Those tucked cards are out of play and do not activate abilities, provide stats, or become Stack layers. [Physical-card handling](physical-cards-follow-up.md) has its exact reveal and cleanup.
 
-## Card-specific restrictions, not keywords
+## Individual restrictions, not keywords
 
-- **Attack-only:** Print **“This Character cannot Block.”** It may still Attack when otherwise allowed, activate abilities, or be directly attacked while Rotated.
-- **Defend-only:** Print **“This Character cannot Attack.”** It may still Block while Ready and activate a Rotate ability if it has one.
-- **Defend-only plus Hothead suppression:** A prototype Character could read: **“This Character cannot Attack. While this is Ready, other Characters cannot use Hothead.”** “Other Characters” means both players' Characters; the suppression ends when this Character Rotates or leaves play. It does not remove printed Hothead from a card, and it does not stop an unrelated printed effect that explicitly grants an entry-Round Attack. If playtesting favors affecting only opposing Characters, change that phrase on the individual card rather than redefining Hothead globally.
+- **Attack-only:** Print “This Character cannot Block.” It may still Attack and Activate abilities. No current printed Character has this restriction; reserve it for a matchup that demonstrates the need.
+- **Defend-only:** P135 Mall Cop says “This Character cannot Attack.” While it is Ready, other Characters cannot use Hothead, on either side of the board. The suppression ends when it Rotates or leaves play. Its text does not erase printed Hothead or stop a separate effect granting an entry-Round Attack.
 
-These restrictions are intended for a few specific cards after matchup testing. Neither becomes a universal keyword or a new action type by appearing here. Under the current rulebook a cannot-Attack restriction takes precedence over Hothead. A defender with a Rotate ability must decide between keeping the Hothead suppression active and rotating to use that ability.
-
-## Published keyword correction
-
-**Defiant** is the working name for the former Explosive blocking-retaliation exception. **Explosive** now means 1 damage to *every* opposing Character when the source is Defeated. Unsupervised Toddler retains its previous combat function as Defiant. Stunt Clown has both Defiant and Explosive; the old targeted 1-damage Defeat text is replaced by splash. Check Stunt Clown's cost and matchup impact before considering this balance-approved. These changes do not add Stack to the pool.
+Defiant is the old blocking-retaliation rule. Explosive splashes 1 damage to all opposing Characters on Defeat. P164 Stunt Clown has both. The printed instances are playtest designs, not balance locks.

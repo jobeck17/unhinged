@@ -66,9 +66,9 @@ All six decks use exactly two Styles, at most two copies per ID, and a Leader ou
 
 | Copies | Cost | Type | Card |
 | ---: | ---: | --- | --- |
-| 2 | 1 | Action | Hold My Beer (P019) |
 | 2 | 1 | Action | Pick a Card (P079) |
 | 2 | 1 | Action | Look Over There! (P081) |
+| 2 | 1 | Action | Default Password (P084) |
 | 2 | 1 | Character | Feral Chihuahua (P001) |
 | 2 | 1 | Character | Vape Kid (P017) |
 | 2 | 1 | Character | Birthday Kid Who Knows the Trick (P062) |
@@ -97,10 +97,10 @@ All six decks use exactly two Styles, at most two copies per ID, and a Leader ou
 | ---: | ---: | --- | --- |
 | 2 | 1 | Action | Scrounge (P109) |
 | 2 | 1 | Action | I Can Fix That (P110) |
+| 2 | 1 | Action | Curb Alert (P114) |
 | 2 | 1 | Character | Trash Palace Cockroach (P104) |
 | 2 | 1 | Item | Used Ham Sandwich (P120) |
 | 2 | 2 | Action | Make It Work (P113) |
-| 2 | 2 | Action | Don't Throw That Away (P115) |
 | 2 | 2 | Character | Dumpster Diver (P094) |
 | 2 | 2 | Character | Junkyard Dog (P097) |
 | 2 | 2 | Character | Possum in the Trash Can (P103) |
@@ -116,7 +116,7 @@ All six decks use exactly two Styles, at most two copies per ID, and a Leader ou
 | 2 | 4 | Character | Mall Cop (P135) |
 | 2 | 5 | Character | Rat King (P102) |
 
-**Cost curve:** 1 cost: 8, 2 cost: 22, 3 cost: 6, 4 cost: 2, 5 cost: 2.
+**Cost curve:** 1 cost: 10, 2 cost: 20, 3 cost: 6, 4 cost: 2, 5 cost: 2.
 
 ## HOA President — Your Deck Violates the Bylaws
 

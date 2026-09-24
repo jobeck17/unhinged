@@ -1,6 +1,6 @@
 {
   "version": "0.1-donut.3",
-  "date": "2026-09-23",
+  "date": "2026-09-24",
   "status": "Balance unverified; playtest revision, not final print text.",
   "cards": [
     {
@@ -699,10 +699,12 @@
         "Undead",
         "Musician"
       ],
-      "text": "",
+      "text": "Stack. When this attacks while stacked, it gets +2 Power for this Attack.",
       "style": "Momentum",
-      "complexity": "textless",
-      "keywords": [],
+      "complexity": "mixed",
+      "keywords": [
+        "Stack"
+      ],
       "power": 4,
       "guard": 3,
       "audit_identity": [
@@ -946,9 +948,11 @@
       "name": "Roll Call",
       "stats": "",
       "traits": [],
-      "text": "Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order.",
+      "text": "Sneaky. Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order.",
       "style": "Momentum",
-      "keywords": [],
+      "keywords": [
+        "Sneaky"
+      ],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -1172,10 +1176,12 @@
       "cost": 2,
       "name": "Alien Abduction Victim",
       "traits": [],
-      "text": "",
+      "text": "Cloak.",
       "style": "Misdirection",
-      "complexity": "textless",
-      "keywords": [],
+      "complexity": "keyword_only",
+      "keywords": [
+        "Cloak"
+      ],
       "power": 3,
       "guard": 3,
       "audit_identity": [
@@ -1232,10 +1238,12 @@
       "traits": [
         "Clown"
       ],
-      "text": "The first time each Round one of your effects Returns another of your Characters from play to your hand, Draw a card, then Discard a card.",
+      "text": "Cloak. The first time each Round one of your effects Returns another of your Characters from play to your hand, Draw a card, then Discard a card.",
       "style": "Misdirection",
-      "complexity": "ongoing",
-      "keywords": [],
+      "complexity": "mixed",
+      "keywords": [
+        "Cloak"
+      ],
       "power": 2,
       "guard": 3,
       "audit_identity": [
@@ -1577,9 +1585,11 @@
       "name": "Default Password",
       "stats": "",
       "traits": [],
-      "text": "Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card. If you have a Hacker in play, Draw a card, then Discard a card.",
+      "text": "Sneaky. Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card. If you have a Hacker in play, Draw a card, then Discard a card.",
       "style": "Misdirection",
-      "keywords": [],
+      "keywords": [
+        "Sneaky"
+      ],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -1994,10 +2004,12 @@
         "Construct",
         "Scavenger"
       ],
-      "text": "",
+      "text": "Stack. When this is Defeated while stacked, Return its lower card from your discard to its Owner's hand.",
       "style": "Salvage",
-      "complexity": "textless",
-      "keywords": [],
+      "complexity": "mixed",
+      "keywords": [
+        "Stack"
+      ],
       "power": 2,
       "guard": 4,
       "audit_identity": [],
@@ -2137,9 +2149,11 @@
       "name": "Curb Alert",
       "stats": "",
       "traits": [],
-      "text": "Put an Item from your discard on the bottom of your deck. If you do, Draw a card.",
+      "text": "Sneaky. Put an Item from your discard on the bottom of your deck. If you do, Draw a card.",
       "style": "Salvage",
-      "keywords": [],
+      "keywords": [
+        "Sneaky"
+      ],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -2516,9 +2530,7 @@
       "type": "Character",
       "cost": 4,
       "name": "Mall Cop",
-      "traits": [
-        "Worker"
-      ],
+      "traits": [],
       "text": "This Character cannot Attack. While this is Ready, other Characters cannot use Hothead.",
       "style": "Stonewall",
       "complexity": "ongoing",
@@ -3361,5 +3373,5 @@
       "flavor": ""
     }
   ],
-  "revision": 3
+  "revision": 4
 }

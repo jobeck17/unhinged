@@ -1,6 +1,6 @@
 # Momentum / High Turnover — Production Pool v0.1
 
-> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 4 · 2026-09-24 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -11,7 +11,7 @@
 | P034 | Character | 4 | **Jam Band Hippie** | 3/6 | Musician | When you Play your third card in a Round, heal 2 damage from one of your Characters. |
 | P035 | Character | 3 | **Youth Pastor With a Guitar** | 3/5 | Musician | — |
 | P036 | Character | 4 | **Stage Mom** | 3/5 | Parent | When this enters play, another of your Characters gets +1 Power this Round. When you Play your second card in a Round, you may give one of your Parent or Kid Characters +1 Guard this Round. |
-| P037 | Character | 3 | **Reunion Tour Drummer** | 4/3 | Undead, Musician | — |
+| P037 | Character | 3 | **Reunion Tour Drummer** | 4/3 | Undead, Musician | **Stack**. When this attacks while stacked, it gets +2 Power for this Attack. |
 | P038 | Character | 3 | **Mike** | 3/4 | — | — |
 | P039 | Character | 4 | **Social Media Influencer** | 3/5 | — | Rotate: Draw a card, then Discard a card. If you Played at least two cards this Round, you may give another of your Characters +2 Power this Round. |
 | P040 | Character | 5 | **Boss Babe** | 4/6 | — | When this enters play, look at the top 3 cards of your deck. You may reveal a Character costing 2 or less and put it into your hand. Put the rest on the bottom in any order. |
@@ -24,7 +24,7 @@
 | P047 | Character | 2 | **Cookie Scout** | 2/2 | Kid, Scout | When this enters play, Draw a card, then Discard a card. If you Played another card this Round, this gets +1 Guard this Round. |
 | P048 | Character | 6 | **Roadie Who Never Left** | 5/7 | — | When you Play your third card in a Round, Ready one Fuel. Rotate: Draw a card, then Discard a card. |
 | P049 | Action | 1 | **Reply All** | — | — | Each player Draws a card. Then Draw a card. |
-| P050 | Action | 1 | **Roll Call** | — | — | Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. |
+| P050 | Action | 1 | **Roll Call** | — | — | **Sneaky**. Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. |
 | P051 | Action | 2 | **Carpool** | — | — | Return one of your Characters to your hand. The next Character you Play this Round costs 1 less. |
 | P052 | Action | 2 | **Encore!** | — | — | Choose an Action in your discard costing 1 or less. You may Play it without paying its Cost. If you do, put it on the bottom of your deck instead of into your discard. |
 | P053 | Action | 1 | **One More Song** | — | — | If you Played a Character earlier this Round, Draw a card. If you Played another Action earlier this Round, Ready one Fuel. |
@@ -47,6 +47,7 @@ These optional lines are not rules text and do not change a card’s complexity 
 | P031 Wedding Cover Band | *We take requests. Mostly to turn it down.* |
 | P035 Youth Pastor With a Guitar | *Three chords. Forty-seven announcements.* |
 | P037 Reunion Tour Drummer | *The band said they were getting everybody back together.* |
+| P038 Mike | *Mike.* |
 | P042 Peaked in High School | *He still calls the principal “Coach.”* |
 | P043 Little Leaguer | *The scouting report just says “sugar.”* |
 | P044 Clown Who Booked the Wrong Gig | *The invitation said “bring something for the grill.”* |

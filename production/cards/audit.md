@@ -1,4 +1,4 @@
-# Donut Revision 3 — Content Audit
+# Donut Revision 4 — Content Audit
 
 > Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.
 
@@ -20,12 +20,12 @@ These categories are mutually exclusive. Keyword-only cards are not textless. A 
 
 | Category | Count | Percent | Reckless | Momentum | Misdirection | Salvage | Stonewall | Expendable |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Textless | 27 | 25.0% | 4 | 5 | 4 | 5 | 4 | 5 |
-| Keyword only | 6 | 5.6% | 1 | 1 | 1 | 1 | 1 | 1 |
+| Textless | 23 | 21.3% | 4 | 5 | 3 | 3 | 3 | 5 |
+| Keyword only | 7 | 6.5% | 1 | 1 | 2 | 1 | 1 | 1 |
 | On play | 18 | 16.7% | 3 | 3 | 3 | 3 | 3 | 3 |
-| Rotate ability | 24 | 22.2% | 4 | 4 | 4 | 4 | 4 | 4 |
-| Single ongoing ability | 21 | 19.4% | 4 | 3 | 4 | 3 | 4 | 3 |
-| Multiple abilities | 12 | 11.1% | 2 | 2 | 2 | 2 | 2 | 2 |
+| Rotate ability | 23 | 21.3% | 4 | 3 | 4 | 4 | 4 | 4 |
+| Single ongoing ability | 21 | 19.4% | 4 | 3 | 3 | 3 | 5 | 3 |
+| Multiple abilities | 16 | 14.8% | 2 | 3 | 3 | 4 | 2 | 2 |
 
 ## Character Cost curve
 
@@ -40,7 +40,7 @@ These categories are mutually exclusive. Keyword-only cards are not textless. A 
 
 **11 of 24 Items have a Rotate activation.** Rotating, Readying, and disabling Items now has a real target population; passive Items still function while Rotated unless their text says otherwise.
 
-P028 Roman Candle, P029 Cooler Full of Bad Ideas, P059 Portable Bluetooth Speaker, P087 Burner Phone, P088 Marked Deck, P090 Spoofed Keycard, P117 Duct Tape, P119 Mystery Drawer of Cables, P147 Security Camera, P179 Definitely Safe Helmet, P180 Button Marked DO NOT PRESS
+P028 Roman Candle, P029 Hot Potato, P059 Portable Bluetooth Speaker, P087 Burner Phone, P088 Marked Deck, P090 Spoofed Keycard, P117 Duct Tape, P119 Mystery Drawer of Cables, P147 Security Camera, P179 Definitely Safe Helmet, P180 Button Marked DO NOT PRESS
 
 ## Automated checks
 

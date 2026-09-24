@@ -1,6 +1,6 @@
 # Unhinged — Donut Card Workshop
 
-**Core 0.1 · Donut revision 3 · 23 September 2026**
+**Core 0.1 · Donut revision 4 · 24 September 2026**
 
 The current pool contains **180 deck cards: 108 Characters, 48 Actions, and 24 Items**. The six Leaders remain outside that count. This is the current playtest design, with unverified balance and no final print lock.
 
@@ -8,8 +8,8 @@ The current pool contains **180 deck cards: 108 Characters, 48 Actions, and 24 I
 | --- | --- |
 | Entire roster, Costs, stats, Traits, and complexity | [Card list](card-list.md) |
 | Eighteen printed Traits, counts, definitions, and support | [Traits](traits.md) |
-| Four printed keywords and three unprinted candidates | [Keywords](keywords.md) |
-| Attack-only, defend-only, and other saved mechanics | [Mechanics playtest](mechanics-playtest.md) |
+| Eight printed playtest keywords | [Keywords](keywords.md) |
+| Printed keyword tests and card-specific restrictions | [Mechanics playtest](mechanics-playtest.md) and [Stack test](stack-playtest.md) |
 | Exact composition and complexity counts | [Content audit](audit.md) |
 | What changed, why, and what to test | [Revision notes](revision-3-notes.md) |
 | Playtest timing and core mechanics | [Rulebook](../rules/unhinged-rules.md) |
@@ -33,16 +33,16 @@ Each Style keeps **18 Characters / 8 Actions / 4 Items**. The links use the sett
 
 - Human is removed from printed Traits and retained only as audit identity metadata.
 - Eighteen concrete Traits have actual support references. Three-card groups are accepted under the soft 3% floor; no group exceeds the soft 15% ceiling in this revision.
-- Characters now include **27 textless, 6 keyword-only, 18 on-play, 24 dedicated Rotate, 21 single ongoing, and 12 multiple-ability designs**.
-- The 33 textless or keyword-only Characters have optional flavor lines. Flavor is not rules text.
+- Character complexity counts are in the generated [content audit](audit.md); small keyword trials have replaced some textless slots.
+- Textless and keyword-only Characters can carry optional flavor lines. Flavor is not rules text.
 - Eleven Items have Rotate activations, giving the Hacker and Item-Ready effects functional targets.
 - Attack/Block triggers resolve before their damage checkpoint. Sacrifice, Dismiss, attachment references, temporary Guard, and delayed Returns have explicit handling.
-- Defiant retains the former Explosive blocking-retaliation rule; Explosive now splashes 1 damage to every opposing Character on Defeat. Sucker Punch, Sneaky, Peekaboo, and the attack/defend-only restrictions are documented test space, not printed on current cards.
+- Defiant retains the former Explosive blocking-retaliation rule; Explosive now splashes 1 damage to every opposing Character on Defeat. Sucker Punch, Sneaky, Cloak, and Stack each have small printed test packages. Mall Cop has a defend-only restriction; attack-only remains a card-specific candidate.
 - Stable deck-card IDs remain P001–P180. Revised identities are recorded in the revision notes; earlier versions remain in git history.
 
 ## Requested roster follow-up
 
-Revision 3 incorporates the requested cast, adds Reply All and Tag Me In!, keeps Used Ham Sandwich, Grandma’s Cigarette Case, and Coupon Lady, and replaces HOA Pool Monitor with Neighborhood Lifeguard. See the [complete request-coverage table](revision-3-notes.md). Glory Days is an Action; Peaked in High School is a Character. Gym Bro is an alternate name for Gym Selfie Guy.
+Revision 3 incorporated the requested cast, adds Reply All and Tag Me In!, keeps Used Ham Sandwich, Grandma’s Cigarette Case, and Coupon Lady, and replaces HOA Pool Monitor with Neighborhood Lifeguard. See the [complete request-coverage table](revision-3-notes.md). Glory Days is an Action; Peaked in High School is a Character. Gym Bro is an alternate name for Gym Selfie Guy.
 
 ## Editing without drift
 
@@ -59,4 +59,4 @@ The [Alpha 0.03 pool](../../docs/card-pool/README.md) is historical data. The ea
 
 ## What still needs playtest work
 
-The [six Leader identities](../../docs/leaders.md) are retained; exact Health and ability packages remain unfinished. No Response cards, Stack implementation, separate Junk Pile, or new card type is introduced here. Final Style presentation, physical Fuel, printed type naming, and production layouts remain in [open decisions](../rules/open-decisions.md).
+The [six Leader identities](../../docs/leaders.md) are retained; all six have provisional 25-Health packages and ultimates. Stack now has a limited two-layer implementation on two cards; Response cards, a separate Junk Pile, and new card types remain outside the pool. Final Style presentation, physical Fuel, printed type naming, and production layouts remain in [open decisions](../rules/open-decisions.md).

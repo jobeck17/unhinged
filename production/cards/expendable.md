@@ -1,6 +1,6 @@
 # Expendable / Red Shirts — Production Pool v0.1
 
-> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 4 · 2026-09-24 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |

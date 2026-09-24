@@ -1,6 +1,6 @@
 # Unhinged Current Rules
 
-Working production rulebook • 23 September 2026
+Working production rulebook • 24 September 2026
 
 This is the consolidated rules source for the next Unhinged playtest and card-production pass. It carries forward the September 21 foundation and includes the [September 23 Donut revision](../../docs/current-state-2026-09-23.md). The timing clarifications below support the current card pool; they are current playtest rulings, not claims of tested balance. Items still deliberately unresolved are listed in [Open decisions](open-decisions.md).
 
@@ -79,7 +79,7 @@ If closing triggers create new “this Round” effects, expire those too and re
 
 “Skips its next Ready step” stops only that card's next scheduled Round-start Ready. It does not prevent another card from Readying it sooner, and the skip is consumed even if the card is already Ready at that step.
 
-On a Turn, choose one: Play a card, Activate an ability, Attack, or Pass. Each uses that Turn except for triggered and static abilities. Blocking happens during the opponent's Turn and does not use a future Turn.
+On a Turn, choose one: Play a card, Activate an ability, Attack, or Pass. Each uses that Turn except for triggered and static abilities. You may first Play **at most one Sneaky card from your hand** on that Turn by paying its normal Fuel Cost; that Play and all triggers it creates finish before your normal choice. Playing a Sneaky card from another zone, or without paying its normal Cost, does not use this exception. If you have no legal normal choice afterward, Pass. Blocking happens during the opponent's Turn and does not use a future Turn.
 
 Passing immediately gives the opponent a Turn. If either player Plays, Activates, or Attacks after a Pass, the consecutive-Pass count resets. Two consecutive Passes end the Round. The player who made the first of those Passes takes the first Turn next Round. A player who has no legal Play, Activation, or Attack must Pass.
 
@@ -109,6 +109,12 @@ Characters and Items enter play Ready unless an effect says otherwise. Items may
 
 A Character that entered play this Round may Block, but cannot Attack or Activate one of its own Rotate abilities that Round unless a card says otherwise. Hothead grants only the Attack permission.
 
+### Cloak, face-down Characters, and tucked cards
+
+**Cloak** is an activated Character keyword: **Rotate: Turn this face down until the end of the Round.** Activating it takes your Turn, and the usual restriction on newly entered Characters activating Rotate abilities applies. A face-down Character stays in play, counts as a Character, and keeps its damage, orientation and attached Items. It cannot Attack, Block, Activate, be chosen by either player's effects, take damage, or be Defeated while face down. Its printed abilities and keywords are inactive. It has no new secret identity: either player may look at this face-down Character, and a player may mark it as Cloaked. Attached Items remain in play; their abilities function normally unless they require the Character to do something it cannot do. Reveal the Character during the end-of-Round procedure **before** expiring Round-limited bonuses, and check whether existing damage Defeats it. If it leaves play by an effect that does not choose or damage it, reveal it and move it normally. Cloak is protection traded for an unavailable Blocker, not a hidden bluff.
+
+A face-down card **beneath** another card is different: it is not in play and has no abilities, stats, keywords or attachment slots. Only its public count and the effect that put it there matter. A face-down stack layer is never permitted; **Stack** layers remain face up.
+
 ### Cards physically beneath another card
 
 An effect may put a card face down beneath a card in play. Cards beneath another card are not in play, in a hand, or in a deck. They cannot be chosen, Attacked, Block, or use abilities until an effect reveals and moves them. The number beneath a card is public. A player may privately look at a card they put beneath a card from their hand; neither player may look at a face-down card put there from a deck until it is revealed. A Character put into play from beneath a card enters Ready and normally triggers enters-play abilities unless its printed effect says otherwise.
@@ -116,6 +122,14 @@ An effect may put a card face down beneath a card in play. Cards beneath another
 **Inconspicuous Bush** reveals and Returns its hidden Character to its Owner's hand if the Bush leaves play or the Round ends before the Character emerges. The Character emerges during Attack checkpoint 1, before Blockers are declared, and may Block only a blockable Attack. **Jailbroken Robot Vacuum** keeps the cards it swept up between Rounds. When it is Defeated, its trigger reveals and Discards them before counting revealed Items for damage. If it leaves play another way, reveal and Discard those cards without dealing its Defeat damage. Neither card changes the ownership of a card beneath it.
 
 **Hot Potato** is a standalone Item placed beside one Leader and may physically move beside the other. Position beside a Leader does not change ownership, make it an attached Item, or change whose Item it is for other effects. Its printed ability explicitly lets the player whose Leader is beside it Activate it on their Turn, even when the other player owns it. That player pays the listed cost by Rotating one of their own Ready Characters and spends that Turn. When Hot Potato Returns to its Owner's hand, it leaves play regardless of which Leader it is beside.
+
+### Stack: two face-up Character layers
+
+A Character bearing **Stack** may be Played normally, or Played atop one of your own Characters. Pay the top card's full normal Fuel Cost and use your Turn for the Play. You may place it on an unstacked Character only: a pile contains at most two face-up cards and cannot be rearranged. Neither a lower card nor an Item needs Stack. A card tucked beneath an Item or Character cannot become a stack layer.
+
+The resulting pile is **one Character** for Attack, Block, Rotate, attachments, targeting and counts. The top card supplies printed Power, Guard, Traits, and attack/block restrictions. All printed abilities and keywords of both cards function as abilities of that Character; duplicate keywords do not stack. Fan the cards so both ability boxes remain visible. Simultaneous abilities from these layers resolve bottom to top, after any relevant attack/block checkpoints. An enters-play ability on the newly Played top card triggers; the bottom card does not enter play again. A Rotate ability rotates the entire pile. Stack does not grant a free Play, discount, Ready, extra Attack or permission to Attack or activate before the relevant card would otherwise be able to. A pile with a just-entered top card cannot activate a Rotate ability from either layer that Round; it can Attack that Round only if it has Hothead.
+
+Damage, Ready/Rotated state, and Attack history belong to the whole pile. Preserve them when adding a layer. Evaluate existing damage immediately against the new top card's Guard; if lethal, Defeat the pile. Defeat moves both cards to their Owners' discards together; simultaneous layer Defeat abilities resolve bottom to top. A Return moves both cards to their Owners' hands, and a Dismiss moves both to their Owners' discards. An attached Item leaves under the usual cleanup rule when the pile leaves. A printed ability may specifically recover a lower card **after** both cards reach discard. "This Character" refers to the pile, while "this card" refers to its printed layer. This shared-pile rule does not apply to the Vacuum's tucked cards, which never contribute abilities or stats.
 
 ### Activated abilities and attached references
 
@@ -173,7 +187,7 @@ A Blocking Character that survives the attack retaliates with its Power. A Block
 - **Slowpoke:** This Character does not retaliate when it Blocks. It may still retaliate after surviving a direct Attack while Rotated.
 - **Hothead:** This Character may Attack in the Round it enters play. It does not gain early Rotate activations, a Ready, or an extra Attack.
 
-If a Character has both Defiant and Slowpoke, Slowpoke prevents its blocking retaliation. Repeated instances of a keyword do not multiply its effect. An explicit cannot-Attack effect takes precedence over Hothead. Sucker Punch permits its Character to Attack a Ready opposing Character directly; this Attack cannot be Blocked, follows ordinary Attack and retaliation timing, Rotates its attacker, and still obeys the entry-Round restriction. Sneaky and Peekaboo remain [unprinted experiments](../cards/mechanics-playtest.md). See the [keyword reference](../cards/keywords.md).
+If a Character has both Defiant and Slowpoke, Slowpoke prevents its blocking retaliation. Repeated instances of a keyword do not multiply its effect. An explicit cannot-Attack effect takes precedence over Hothead. See the [keyword reference](../cards/keywords.md) for all eight active keywords.
 
 ## 9. Damage, healing, and game end
 

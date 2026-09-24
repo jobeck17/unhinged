@@ -75,7 +75,7 @@ def validate(data, taxonomy):
             elif category == 'on_play':
                 require(text.startswith('When this enters play,') and 'Rotate:' not in text, f'{cid}: expected an enters-play ability.')
             elif category == 'ongoing':
-                require(not text.startswith('When this enters play,') and not c['keywords'] and not re.search(r'Rotate[^.:]*:', text), f'{cid}: not a single ongoing ability.')
+                require(not text.startswith('When this enters play,') and not re.search(r'Rotate[^.:]*:', text), f'{cid}: not a single ongoing ability.')
             require(set(c['audit_identity']) <= {'Human'}, f'{cid}: unexpected unprinted identity metadata.')
         else:
             require(c['power'] is None and c['guard'] is None and c['complexity'] is None, f'{cid}: non-Character has Character-only fields.')
@@ -86,8 +86,6 @@ def validate(data, taxonomy):
         require(bool(t['support']), f"{t['name']}: no support card recorded.")
         for cid in t['support']:
             require(cid in by_id and re.search(r'\b'+re.escape(t['name'])+r's?\b',by_id[cid]['text']) is not None, f"{t['name']}: missing reference in {cid}.")
-    require(sum(not c['text'] for c in chars) == 27, 'Revision target: 27 textless Characters.')
-    require(sum(c['complexity']=='activated' for c in chars) == 24, 'Revision target: 24 dedicated Rotate Characters.')
     if errors:
         raise ValueError('\n'.join(errors))
 
@@ -107,7 +105,7 @@ def render(data, taxonomy):
     by_id = {c['id']:c for c in cards}
     files = {}
     revision = data.get('revision', 2)
-    header = f'> Donut revision {revision} · 23 September 2026 · Working playtest text; balance is unverified.\n> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.\n\n'
+    header = f'> Donut revision {revision} · {data.get("date", "2026-09-23")} · Working playtest text; balance is unverified.\n> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.\n\n'
     for style, alias in STYLES.items():
         rows = [[c['id'], c['type'], c['cost'], '**'+c['name']+'**', f"{c['power']}/{c['guard']}" if c['type']=='Character' else '—', ', '.join(c['traits']) or '—', display_text(c)] for c in cards if c['style']==style]
         flavor_rows = [[c['id']+' '+c['name'], '*'+c['flavor']+'*'] for c in cards if c['style']==style and c.get('flavor')]
@@ -127,14 +125,13 @@ def render(data, taxonomy):
     files['traits.md']='# Donut Traits\n\n> Generated from [taxonomy.json](taxonomy.json) and [cards.json](cards.json). Current playtest specification, not a final print lock.\n\nA **Trait** describes what a Character is. It has no automatic ability. A **keyword** supplies a defined rule. A **Style** determines deckbuilding identity. Keep those three jobs separate.\n\n'+taxonomy['trait_policy']['notes']+'\n\nThe saturation guide is roughly **3–15% of the 108 unique deck Characters**. It is a soft design guide. A Character with two Traits counts once in each relevant row; the percentages do not sum to 100%. Human metadata, gained Traits, deck copies, Actions, Items, and Leaders do not inflate these counts.\n\n'+table(['Trait','Characters','Saturation','Style distribution','Cards that use it'],trait_rows)+'\n## Assignment guide\n\n'+table(['Trait','Use it for'],[[t['name'],t['meaning']] for t in taxonomy['traits']])+'\n## Boundaries and reserved space\n\n'+'\n'.join('- '+s for s in taxonomy['notes'])+'\n\nReserved: '+', '.join(taxonomy['reserved'])+'. None has current printed support.\n\nRemoved from current printed labels: '+', '.join(taxonomy['retired_printed_labels'])+'. Old concepts remain in history; these are not automatic aliases. Porch Pirate is Criminal, Pirate Radio Operator is Criminal / Musician, and a living possum is Animal / Scavenger. Their titles do not secretly grant more Traits.\n'
     keyword_rows=[]
     for k in taxonomy['keywords']:
-        members=[c for c in chars if k['name'] in c['keywords']]
+        members=[c for c in cards if k['name'] in c['keywords']]
         keyword_rows.append([k['name'],k['definition'],k['status'],', '.join(c['id']+' '+c['name'] for c in members) or '—'])
     prototypes=taxonomy.get('keyword_prototypes', [])
     require_prototypes = len({k['name'] for k in prototypes}) == len(prototypes) and not ({k['name'] for k in prototypes} & {k['name'] for k in taxonomy['keywords']})
     if not require_prototypes:
         raise ValueError('Candidate keyword names must be unique and separate from printed keywords.')
-    prototype_rows=[[k['name'],k['definition'],k['status']] for k in prototypes]
-    files['keywords.md']='# Donut Keywords\n\n> Generated from [taxonomy.json](taxonomy.json). Four current printed keywords; candidate mechanics below are not active in the production pool.\n\n'+table(['Keyword','Rule','Status','Printed on'],keyword_rows)+'\n## Scope and edge cases\n\n'+'\n'.join('- **'+k['name']+':** '+k['limits'] for k in taxonomy['keywords'])+'\n- Multiple instances of the same keyword do not multiply its effect.\n- Floor It! and Tag Me In! can grant Hothead temporarily; neither is an additional printed-keyword Character.\n- Every teaching/print layout should include reminder text or a nearby reference. These short table entries are design sheets, not finished card faces.\n\n## Keyword candidates — not yet printed\n\n'+table(['Working name','Proposed effect','Status'],prototype_rows)+'\n'+'\n'.join('- **'+k['name']+':** '+k['limits'] for k in prototypes)+'\n\nSee [other ability experiments](mechanics-playtest.md) for attack-only, defend-only, Hothead suppression, and face-down handling.\n\n## Ordinary vocabulary, not keywords\n\nRotate, Ready, Attack, Block, Defeat, Sacrifice, Dismiss, Draw, and Discard are core instructions. Vulnerable is a Leader state. Enters-play and Defeat triggers need their full timing sentence. Traits such as Undead, Rat, and Daredevil grant no behavior on their own.\n\nJerry-Rig remains earmarked. Encore!, Pick a Card, Scrounge, and similar phrases are card titles, not global abilities. No keyword was added merely to give every Style an exclusive mechanic.\n'
+    files['keywords.md']=f"# Donut Keywords\n\n> Generated from [taxonomy.json](taxonomy.json). {len(taxonomy['keywords'])} printed playtest keywords in the active pool.\n\n"+table(['Keyword','Rule','Status','Printed on'],keyword_rows)+'\n## Scope and edge cases\n\n'+'\n'.join('- **'+k['name']+':** '+k['limits'] for k in taxonomy['keywords'])+'\n- Multiple instances of the same keyword do not multiply its effect.\n- Floor It! and Tag Me In! can grant Hothead temporarily; neither is an additional printed-keyword Character.\n- Every teaching/print layout should include reminder text or a nearby reference. These short table entries are design sheets, not finished card faces.\n\nSee [other ability experiments](mechanics-playtest.md) for attack-only, defend-only, Hothead suppression, and face-down handling.\n\n## Ordinary vocabulary, not keywords\n\nRotate, Ready, Attack, Block, Defeat, Sacrifice, Dismiss, Draw, and Discard are core instructions. Vulnerable is a Leader state. Enters-play and Defeat triggers need their full timing sentence. Traits such as Undead, Rat, and Daredevil grant no behavior on their own.\n\nJerry-Rig remains earmarked. Encore!, Pick a Card, Scrounge, and similar phrases are card titles, not global abilities. No keyword was added merely to give every Style an exclusive mechanic.\n'
     composition=[[s,18,8,4,30] for s in STYLES]+[['Total',108,48,24,180]]
     complexity=[]
     for key,label in CATEGORIES.items():

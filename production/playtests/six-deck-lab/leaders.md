@@ -54,18 +54,18 @@ All Leaders begin at **25 Health** outside the 40-card deck. The [Florida Man an
 
 ## Backyard Wrestler — Expendable
 
-**Passive · Crowd Goes Wild:** The first time each Round one of your Characters is Defeated, deal 1 damage to the opposing Leader. This works on either player's Turn; Sacrifice is not Defeat.
+**Passive · Crowd Goes Wild:** The first time each Round one of your Characters is Defeated, deal 1 damage to the opposing Leader. This works on either player's Turn, including a Sacrifice, which is a Defeat under the core rules.
 
 **Ability · Set Up the Table:** Rotate, Sacrifice one of your Characters: Deal 2 damage to an opposing Character. You must have both a friendly Character to Sacrifice and a legal target to activate it.
 
-**Charge · Worth the Bruise:** The first time each Round one of your Characters is Defeated, gain 1 Charge. Sacrificing a Character never earns Charge unless another effect explicitly Defeats it instead.
+**Charge · Worth the Bruise:** The first time each Round one of your Characters is Defeated, gain 1 Charge. A Sacrifice is a Defeat and can earn Charge.
 
-**Ultimate · Through the Table:** Rotate, spend 3 Charge, Sacrifice one of your Characters: Choose an opposing Character or Leader. Deal damage equal to the sacrificed Character's last Power to that target. If the target was a Character, also deal 2 damage to the opposing Leader. Sacrifice does not trigger Crowd Goes Wild or Worth the Bruise; damage from the ultimate can trigger other Defeat abilities.
+**Ultimate · Through the Table:** Rotate, spend 3 Charge, Sacrifice one of your Characters: Choose an opposing Character or Leader. Deal damage equal to the sacrificed Character's last Power to that target. If the target was a Character, also deal 2 damage to the opposing Leader. The sacrificed Character can trigger Crowd Goes Wild and Worth the Bruise. Those triggers wait until this activation finishes. Damage from the ultimate can trigger other Defeat abilities.
 
 ## Playtest watchpoints
 
 - **Momentum:** Free Plays from the ultimate trigger second-card effects. Check action count and big turns with Encore! and Bring a Friend. The ultimate's total printed Cost cap is 4 even if discounts are active.
 - **Misdirection:** Return effects should create a moment of choice, not repeat stalls. Check opponent choice and whether Pick a Card is enough to fuel Charge.
 - **Salvage:** The ultimate Plays from discard, so it cannot by itself meet the from-hand Play clause of Curbside Collection. Dismiss effects may still earn Charge after a spent ultimate if that Round's gain has not happened.
-- **Expendable:** The first Defeat gives one Leader ping and one Charge. Sacrifice is a separate action and does not count as Defeat; if too few Characters die in actual games, loosen Charge after testing.
+- **Expendable:** The first Defeat gives one Leader ping and one Charge. Sacrifice counts as Defeat and can fuel both triggers. Watch Leader damage from repeatable self-sacrifice; reduce the payoff if it ends games too quickly.
 - **Stonewall:** Keep this deck an advanced challenge; long deck-out games are a known risk, not the intended first matchup.

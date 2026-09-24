@@ -1,6 +1,6 @@
 # Stonewall / Find Out — Production Pool v0.1
 
-> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 4 · 2026-09-24 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -19,7 +19,7 @@
 | P132 | Character | 5 | **Church Potluck Grandma** | 4/7 | Parent | Rotate: Heal 2 damage from one of your Characters or your Leader. |
 | P133 | Character | 6 | **Concrete Goose** | 5/10 | Construct | **Slowpoke**. |
 | P134 | Character | 2 | **Church Usher** | 2/4 | — | When this enters play, you may give another of your Characters +1 Guard this Round. |
-| P135 | Character | 4 | **Mall Cop** | 2/6 | Worker | This Character cannot Attack. While this is Ready, other Characters cannot use Hothead. |
+| P135 | Character | 4 | **Mall Cop** | 2/6 | — | This Character cannot Attack. While this is Ready, other Characters cannot use Hothead. |
 | P136 | Character | 5 | **Tow-Truck Driver** | 5/6 | — | When this enters play, choose a Rotated opposing Character. Its owner may Discard a card. If they do not, that Character skips its next Ready step. |
 | P137 | Character | 5 | **HOA Lawyer** | 4/7 | HOA | The first time each Round an opposing Action that targeted one of your cards finishes resolving, its player may pay 1 Fuel. If they do not, they Discard a card. Rotate: Draw a card, then Discard a card. |
 | P138 | Character | 2 | **Neighborhood Lifeguard** | 2/3 | — | Rotate: Choose an opposing Character. It gets -2 Power this Round, or -3 Power if its Power is greater than this Character’s Power. |
@@ -51,3 +51,4 @@ These optional lines are not rules text and do not change a card’s complexity 
 | P133 Concrete Goose | *The association has approved its use of force.* |
 | P135 Mall Cop | *No running.* |
 | P138 Neighborhood Lifeguard | *NO RUNNING includes whatever this is.* |
+| P149 Occupied Stroller | *The safest place in the neighborhood is behind it.* |

@@ -1,6 +1,6 @@
 # Donut Card List
 
-> Donut revision 3 · 23 September 2026 · Working playtest text; balance is unverified.
+> Donut revision 4 · 2026-09-24 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
@@ -35,7 +35,7 @@
 | P026 | Walk It Off | Reckless | Action | 1 | — | — | — |
 | P027 | Gas Station Pills | Reckless | Item | 1 | — | — | — |
 | P028 | Roman Candle | Reckless | Item | 2 | — | — | — |
-| P029 | Cooler Full of Bad Ideas | Reckless | Item | 1 | — | — | — |
+| P029 | Hot Potato | Reckless | Item | 1 | — | — | — |
 | P030 | Homemade Launch Ramp | Reckless | Item | 2 | — | — | — |
 | P031 | Wedding Cover Band | Momentum | Character | 4 | 5/5 | Musician | Textless |
 | P032 | Wedding DJ | Momentum | Character | 2 | 2/3 | Musician | Rotate ability |
@@ -43,8 +43,8 @@
 | P034 | Jam Band Hippie | Momentum | Character | 4 | 3/6 | Musician | Single ongoing ability |
 | P035 | Youth Pastor With a Guitar | Momentum | Character | 3 | 3/5 | Musician | Textless |
 | P036 | Stage Mom | Momentum | Character | 4 | 3/5 | Parent | Multiple abilities |
-| P037 | Reunion Tour Drummer | Momentum | Character | 3 | 4/3 | Undead, Musician | Textless |
-| P038 | Dance Recital Dad | Momentum | Character | 3 | 3/4 | Parent | Rotate ability |
+| P037 | Reunion Tour Drummer | Momentum | Character | 3 | 4/3 | Undead, Musician | Multiple abilities |
+| P038 | Mike | Momentum | Character | 3 | 3/4 | — | Textless |
 | P039 | Social Media Influencer | Momentum | Character | 4 | 3/5 | — | Rotate ability |
 | P040 | Boss Babe | Momentum | Character | 5 | 4/6 | — | On play |
 | P041 | Overenthusiastic Softball Mom | Momentum | Character | 5 | 4/6 | Parent | Rotate ability |
@@ -69,10 +69,10 @@
 | P060 | Starter Kit | Momentum | Item | 2 | — | — | — |
 | P061 | Assistant Magician | Misdirection | Character | 3 | 3/4 | Magician | On play |
 | P062 | Birthday Kid Who Knows the Trick | Misdirection | Character | 1 | 1/2 | Kid | Multiple abilities |
-| P063 | Alien Abduction Victim | Misdirection | Character | 2 | 3/3 | — | Textless |
+| P063 | Alien Abduction Victim | Misdirection | Character | 2 | 3/3 | — | Keyword only |
 | P064 | Street Magician | Misdirection | Character | 4 | 3/5 | Magician | On play |
 | P065 | Escape Artist | Misdirection | Character | 3 | 3/4 | Magician | Rotate ability |
-| P066 | Off-Duty Clown | Misdirection | Character | 2 | 2/3 | Clown | Single ongoing ability |
+| P066 | Off-Duty Clown | Misdirection | Character | 2 | 2/3 | Clown | Multiple abilities |
 | P067 | Kid With an iPad | Misdirection | Character | 3 | 3/5 | Kid | On play |
 | P068 | Social Media Grifter | Misdirection | Character | 4 | 4/4 | Criminal | Rotate ability |
 | P069 | Conspiracy Blogger | Misdirection | Character | 4 | 3/5 | — | Single ongoing ability |
@@ -95,7 +95,7 @@
 | P086 | Switcheroo | Misdirection | Action | 2 | — | — | — |
 | P087 | Burner Phone | Misdirection | Item | 1 | — | — | — |
 | P088 | Marked Deck | Misdirection | Item | 1 | — | — | — |
-| P089 | USB Drive You Found in the Parking Lot | Misdirection | Item | 1 | — | — | — |
+| P089 | Inconspicuous Bush | Misdirection | Item | 2 | — | — | — |
 | P090 | Spoofed Keycard | Misdirection | Item | 3 | — | — | — |
 | P091 | Scout Troop Quartermaster | Salvage | Character | 2 | 3/3 | Scout, Scavenger | Textless |
 | P092 | General Contractor | Salvage | Character | 5 | 4/6 | Builder | Rotate ability |
@@ -106,13 +106,13 @@
 | P097 | Junkyard Dog | Salvage | Character | 2 | 3/3 | Animal, Scavenger | Textless |
 | P098 | Raccoon of Unusual Size | Salvage | Character | 5 | 6/5 | Animal, Scavenger | Multiple abilities |
 | P099 | Crazy Cat Lady | Salvage | Character | 3 | 2/5 | — | Rotate ability |
-| P100 | Last-Shift Zombie | Salvage | Character | 3 | 4/4 | Undead, Scavenger | Textless |
+| P100 | Wind-Up Toy | Salvage | Character | 3 | 2/4 | Construct | Single ongoing ability |
 | P101 | Extension Cord Electrician | Salvage | Character | 3 | 3/4 | Builder | On play |
 | P102 | Rat King | Salvage | Character | 5 | 4/6 | Animal, Rat | Rotate ability |
 | P103 | Possum in the Trash Can | Salvage | Character | 2 | 2/3 | Animal, Scavenger | Single ongoing ability |
 | P104 | Trash Palace Cockroach | Salvage | Character | 1 | 1/2 | Animal, Scavenger | Single ongoing ability |
-| P105 | Junkyard Enforcer | Salvage | Character | 3 | 3/5 | Scavenger | Single ongoing ability |
-| P106 | Shopping Cart Golem | Salvage | Character | 2 | 2/4 | Construct, Scavenger | Textless |
+| P105 | Jailbroken Robot Vacuum | Salvage | Character | 3 | 2/4 | Construct, Scavenger | Multiple abilities |
+| P106 | Shopping Cart Golem | Salvage | Character | 2 | 2/4 | Construct, Scavenger | Multiple abilities |
 | P107 | Curbside Mechanic | Salvage | Character | 3 | 3/4 | Builder, Scavenger | On play |
 | P108 | Unlicensed Pool Guy | Salvage | Character | 6 | 6/7 | Builder | Multiple abilities |
 | P109 | Scrounge | Salvage | Action | 1 | — | — | — |
@@ -141,7 +141,7 @@
 | P132 | Church Potluck Grandma | Stonewall | Character | 5 | 4/7 | Parent | Rotate ability |
 | P133 | Concrete Goose | Stonewall | Character | 6 | 5/10 | Construct | Keyword only |
 | P134 | Church Usher | Stonewall | Character | 2 | 2/4 | — | On play |
-| P135 | Dad Who Already Said No | Stonewall | Character | 4 | 4/6 | Parent | Textless |
+| P135 | Mall Cop | Stonewall | Character | 4 | 2/6 | — | Single ongoing ability |
 | P136 | Tow-Truck Driver | Stonewall | Character | 5 | 5/6 | — | On play |
 | P137 | HOA Lawyer | Stonewall | Character | 5 | 4/7 | HOA | Multiple abilities |
 | P138 | Neighborhood Lifeguard | Stonewall | Character | 2 | 2/3 | — | Rotate ability |
@@ -155,7 +155,7 @@
 | P146 | Wait Them Out | Stonewall | Action | 2 | — | — | — |
 | P147 | Security Camera | Stonewall | Item | 1 | — | — | — |
 | P148 | Video Doorbell | Stonewall | Item | 2 | — | — | — |
-| P149 | Decorative Boulder | Stonewall | Item | 2 | — | — | — |
+| P149 | Occupied Stroller | Stonewall | Item | 2 | — | — | — |
 | P150 | Grandma's Cigarette Case | Stonewall | Item | 1 | — | — | — |
 | P151 | First-Time Wrestler | Expendable | Character | 1 | 2/2 | Wrestler | Textless |
 | P152 | Florida Man's Stunt Double | Expendable | Character | 2 | 3/1 | Daredevil | Multiple abilities |
