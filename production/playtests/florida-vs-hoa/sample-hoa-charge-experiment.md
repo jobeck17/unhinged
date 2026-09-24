@@ -1,0 +1,100 @@
+# Seeded heuristic game transcript
+
+- R1 Florida Man: Pass
+- R1 HOA President: Pass
+- R1 HOA President: Round end: Health [25, 25]
+- R2 Florida Man: Play Bachelorette Party
+- R2 HOA President: Play Shopping Cart Golem
+- R2 Florida Man: Leader ability → Bachelorette Party
+- R2 HOA President: Pass
+- R2 Florida Man: Pass
+- R2 Florida Man: Round end: Health [25, 25]
+- R3 HOA President: Play HOA Enforcement Committee
+- R3 Florida Man: Play Firework Dad
+- R3 HOA President: Pass
+- R3 Florida Man: Leader ability → Bachelorette Party
+- R3 HOA President: Shopping Cart Golem attacks Leader; blocks=[], Guard Discards=0
+- R3 Florida Man: Bachelorette Party attacks Shopping Cart Golem; blocks=[], Guard Discards=0
+- R3 HOA President: Pass
+- R3 Florida Man: Pass
+- R3 Florida Man: Round end: Health [23, 25]
+- R4 HOA President: Play Doomsday Prepper
+- R4 Florida Man: Play Gym Selfie Guy
+- R4 HOA President: Pass
+- R4 Florida Man: Leader ability → Firework Dad
+- R4 HOA President: HOA Enforcement Committee attacks Leader; blocks=[], Guard Discards=0
+- R4 Florida Man: Firework Dad attacks HOA Enforcement Committee; blocks=[], Guard Discards=0
+- R4 HOA President: Pass
+- R4 Florida Man: Pass
+- R4 Florida Man: Round end: Health [21, 25]
+- R5 HOA President: Play HOA Vice President
+- R5 Florida Man: Play Gas Station Daredevil
+- R5 HOA President: Play Absolutely Not → Bachelorette Party
+- R5 Florida Man: Play Backyard Wrestling Superfan
+- R5 HOA President: Pass
+- R5 Florida Man: Play Walk It Off → Bachelorette Party
+- R5 HOA President: Pass
+- R5 Florida Man: Ultimate → -1, die 6
+- R5 HOA President: Doomsday Prepper attacks Leader; blocks=[], Guard Discards=0
+- R5 Florida Man: Pass
+- R5 HOA President: Pass
+- R5 HOA President: Round end: Health [17, 19]
+- R6 Florida Man: Play First-Time Wrestler
+- R6 HOA President: Play Shopping Cart Golem
+- R6 Florida Man: Play First-Time Wrestler
+- R6 HOA President: Play Wait Them Out → HOA Vice President
+- R6 Florida Man: Play Unsupervised Toddler
+- R6 HOA President: Play Mall Walker
+- R6 Florida Man: Play Unsupervised Toddler
+- R6 HOA President: Pass
+- R6 Florida Man: Activate Backyard Wrestling Superfan
+- R6 HOA President: Doomsday Prepper attacks Backyard Wrestling Superfan; blocks=[], Guard Discards=0
+- R6 Florida Man: Gas Station Daredevil attacks Doomsday Prepper; blocks=[], Guard Discards=0
+- R6 HOA President: HOA Vice President attacks Gas Station Daredevil; blocks=[], Guard Discards=0
+- R6 Florida Man: Firework Dad attacks Leader; blocks=['Shopping Cart Golem', 'Mall Walker'], Guard Discards=0
+- R6 HOA President: Pass
+- R6 Florida Man: Bachelorette Party attacks Leader; blocks=[], Guard Discards=0
+- R6 HOA President: Leader ability → Mall Walker
+- R6 Florida Man: Leader ability → Gym Selfie Guy
+- R6 HOA President: Pass
+- R6 Florida Man: Gym Selfie Guy attacks Leader; blocks=[], Guard Discards=0
+- R6 HOA President: Pass
+- R6 Florida Man: Pass
+- R6 Florida Man: Round end: Health [17, 11]
+- R7 HOA President: Play Grumpy Old Guy
+- R7 Florida Man: Play Guy Who Definitely Read the Instructions → Unsupervised Toddler
+- R7 HOA President: Play File a Complaint → Firework Dad
+- R7 Florida Man: Play Porch Pirate
+- R7 HOA President: Play Duct Tape → HOA Vice President
+- R7 Florida Man: Activate Firework Dad
+- R7 HOA President: Mall Walker attacks Firework Dad; blocks=[], Guard Discards=0
+- R7 Florida Man: Pass
+- R7 HOA President: Pass
+- R7 HOA President: Round end: Health [17, 11]
+- R8 Florida Man: Play Guy Who Definitely Read the Instructions → Gym Selfie Guy
+- R8 HOA President: Play Keyboard Warrior
+- R8 Florida Man: Play Porch Pirate
+- R8 HOA President: Pass
+- R8 Florida Man: Ultimate → -1, die 2
+- R8 HOA President: HOA Vice President attacks Leader; blocks=[], Guard Discards=0
+- R8 Florida Man: Guy Who Definitely Read the Instructions attacks HOA Vice President; blocks=[], Guard Discards=0
+- R8 HOA President: Grumpy Old Guy attacks Leader; blocks=[], Guard Discards=0
+- R8 Florida Man: Gym Selfie Guy attacks Grumpy Old Guy; blocks=[], Guard Discards=0
+- R8 HOA President: Mall Walker attacks Leader; blocks=[], Guard Discards=0
+- R8 Florida Man: Pass
+- R8 HOA President: Pass
+- R8 HOA President: Round end: Health [10, 9]
+- R9 Florida Man: Play Backyard Wrestling Superfan
+- R9 HOA President: Play Neighborhood Lifeguard
+- R9 Florida Man: Leader ability → Bachelorette Party
+- R9 HOA President: Keyboard Warrior attacks Leader; blocks=[], Guard Discards=0
+- R9 Florida Man: Guy Who Definitely Read the Instructions attacks Keyboard Warrior; blocks=[], Guard Discards=0
+- R9 HOA President: Mall Walker attacks Leader; blocks=[], Guard Discards=0
+- R9 Florida Man: Guy Who Definitely Read the Instructions attacks Leader; blocks=['Neighborhood Lifeguard'], Guard Discards=2
+- R9 HOA President: Pass
+- R9 Florida Man: Bachelorette Party attacks Leader; blocks=[], Guard Discards=0
+- R9 HOA President: Pass
+- R9 Florida Man: Toddler reveals Firework Dad
+- R9 Florida Man: Unsupervised Toddler attacks Leader; blocks=[], Guard Discards=0
+
+Winner: 0; final Health: [5, -3].

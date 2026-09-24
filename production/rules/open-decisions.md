@@ -10,7 +10,7 @@ These are the remaining production decisions after the September 23 Donut card r
 | Fuel representation | Fuel progresses from 1 to 7 and Rotates to pay. | Choose the physical implementation: dedicated Fuel cards, tracker, tokens, or another durable play aid. |
 | Deckbuilding Styles | Leader Style plus one secondary Style is the current default. **Styles** is the soft-locked umbrella term. | Choose which complete Style naming set will appear in the final printed card headers and deckbuilding text. |
 | Style naming | Two complete soft-locked sets map one-to-one: **Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted**, or **No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts**. Do not mix names between sets. | Select the final presentation voice after usability and legal/IP review; keep both sets available during design discussion. |
-| Leader packages | Six identities and Style homes are committed; deck cards now use normal discard throughout. | Set playable Health and ability packages, including Trash Baron's Item access, before balance testing. |
+| Leader packages | [Florida Man and HOA President](../playtests/florida-vs-hoa/leaders.md) have provisional 25-Health packages and Charge/ultimates for the first duel. | Test these two; assign the remaining four packages, including Trash Baron's Item access. |
 | Card type layout | The card frame must support Cost, type, title/subtitle, rules text, Power, Guard, and IDs. | Produce and test the first printable template, including type symbols, reminder text, and rotation. Stack overlap remains an optional later experiment. |
 
 ## Completed in Donut revision 2

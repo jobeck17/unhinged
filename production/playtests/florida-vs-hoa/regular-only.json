@@ -1,0 +1,192 @@
+{
+  "seed": 240926,
+  "mode": "regular",
+  "aggression": 1.0,
+  "note": "Heuristic experiment, not human win rates; see README for policy restrictions.",
+  "games": [
+    {
+      "seed": 240926,
+      "first": 0,
+      "winner": 0,
+      "rounds": 16,
+      "health": [
+        17,
+        0
+      ],
+      "metrics": {
+        "ability_0": 9,
+        "attacks_1": 10,
+        "leader_attacks_1": 2,
+        "blocks_0": 0,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 21,
+        "leader_attacks_0": 10,
+        "blocks_1": 4,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0
+      }
+    },
+    {
+      "seed": 240926,
+      "first": 1,
+      "winner": 0,
+      "rounds": 16,
+      "health": [
+        17,
+        0
+      ],
+      "metrics": {
+        "ability_0": 9,
+        "attacks_1": 10,
+        "leader_attacks_1": 2,
+        "blocks_0": 0,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 21,
+        "leader_attacks_0": 10,
+        "blocks_1": 4,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0
+      }
+    },
+    {
+      "seed": 240927,
+      "first": 0,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        21,
+        25
+      ],
+      "metrics": {
+        "ability_0": 6,
+        "attacks_0": 8,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "attacks_1": 11,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 2,
+        "vulnerable_attacks_0": 0
+      }
+    },
+    {
+      "seed": 240927,
+      "first": 1,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        21,
+        25
+      ],
+      "metrics": {
+        "ability_0": 6,
+        "attacks_0": 8,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0,
+        "attacks_1": 11,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 2,
+        "vulnerable_attacks_0": 0
+      }
+    },
+    {
+      "seed": 240928,
+      "first": 0,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        19,
+        25
+      ],
+      "metrics": {
+        "ability_0": 5,
+        "attacks_1": 12,
+        "leader_attacks_1": 2,
+        "blocks_0": 0,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 9,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0
+      }
+    },
+    {
+      "seed": 240928,
+      "first": 1,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        19,
+        25
+      ],
+      "metrics": {
+        "ability_0": 5,
+        "attacks_1": 12,
+        "leader_attacks_1": 2,
+        "blocks_0": 0,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 2,
+        "attacks_0": 9,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0
+      }
+    },
+    {
+      "seed": 240929,
+      "first": 0,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        22,
+        25
+      ],
+      "metrics": {
+        "ability_0": 4,
+        "attacks_1": 10,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 1,
+        "attacks_0": 12,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0
+      }
+    },
+    {
+      "seed": 240929,
+      "first": 1,
+      "winner": null,
+      "rounds": 30,
+      "health": [
+        22,
+        25
+      ],
+      "metrics": {
+        "ability_0": 4,
+        "attacks_1": 10,
+        "leader_attacks_1": 2,
+        "blocks_0": 2,
+        "guard_discards_0": 0,
+        "vulnerable_attacks_0": 1,
+        "attacks_0": 12,
+        "leader_attacks_0": 0,
+        "blocks_1": 0,
+        "guard_discards_1": 0,
+        "vulnerable_attacks_1": 0
+      }
+    }
+  ]
+}

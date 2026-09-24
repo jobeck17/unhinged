@@ -9,6 +9,7 @@ This directory holds the material that should guide the next production pass: cu
 | Current test rulebook | [Rules](rules/unhinged-rules.md) |
 | Items that still need a deliberate decision | [Open decisions](rules/open-decisions.md) |
 | Current 180-card production playtest pool | [Production cards](cards/README.md) |
+| Two playable Leader drafts and legal 40-card duel decks | [Florida Man vs. HOA President](playtests/florida-vs-hoa/README.md) |
 | Current six-Leader cast and Style identities | [Leaders](../docs/leaders.md) |
 | Card frame, symbols, and accessibility requirements | [Card design principles](../docs/card-design-principles-2026-09-22.md) |
 | Concepts that are not yet part of production | [Idea bank](../docs/idea-bank.md) |
@@ -32,7 +33,7 @@ production/
 
 - **Rules:** current consolidated playtest rules exist; open decisions are tracked separately.
 - **Cards:** Production Pool v0.1 contains 180 working deck cards, 30 per Style. Revision 3 retains the documented Trait/keyword and timing audit, machine-readable draft data, and generated references. Balance and Leader packages still require testing; it is not final print text.
-- **Leaders:** six Leader identities and Style homes are committed; exact Health and ability packages remain playtest work.
+- **Leaders:** six identities and Style homes are committed. Florida Man and HOA President now have provisional 25-Health packages, Charge/ultimates, and two 40-card test decks; the other four packages remain open.
 - **Art:** no production art brief or approved art set has been established yet.
 - **Print:** no print-ready templates or printer specifications have been approved yet.
 - **Releases:** no set or season has been locked yet.

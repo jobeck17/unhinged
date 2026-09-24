@@ -43,3 +43,7 @@ See the [revision notes](../production/cards/revision-2-notes.md) for specific p
 ## Revision 3 — requested roster additions
 
 The user’s follow-up cast is implemented in the active 180-card pool. [Request coverage and precise changes](../production/cards/revision-3-notes.md) list every name and stable ID. Neighborhood Lifeguard replaces HOA Pool Monitor and its HOA dependency; Tag Me In! and Reply All are Actions. Glory Days and Peaked in High School are separate cards. Gym Bro is an alternate name for Gym Selfie Guy. The revision 2 complexity mix, all Character Costs/stats, and the three-keyword vocabulary remain intact.
+
+## September 24 — first two-Leader duel
+
+Florida Man and HOA President now have accepted-for-test 25-Health packages with passives, regular abilities, Charge, and ultimates. The [duel packet](../production/playtests/florida-vs-hoa/README.md) contains legal two-Style 40-card decks, full card references, leader timing rulings, and an exploratory test report. The limited computer pilots show severe HOA Charge starvation and policy-sensitive stalls; no competitive win-rate or balance claim is established. A broader damage-based HOA Charge condition was tested separately and remains unadopted. The remaining four Leader packages are still open.

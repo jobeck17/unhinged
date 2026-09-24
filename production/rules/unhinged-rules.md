@@ -85,7 +85,7 @@ Passing immediately gives the opponent a Turn. If either player Plays, Activates
 
 ## 6. Fuel and deckbuilding
 
-Fuel is the only current spendable resource. Rotate Fuel to pay a card or ability's Cost. Fuel Readies at the start of each Round.
+Fuel pays normal card and ability Costs. The [Florida Man / HOA President test package](../playtests/florida-vs-hoa/leaders.md) additionally uses a persistent Charge meter for Leader ultimates; Charge cannot pay Fuel Costs. Rotate Fuel to pay a card or ability's Cost. Fuel Readies at the start of each Round.
 
 The current progression is a soft lock:
 

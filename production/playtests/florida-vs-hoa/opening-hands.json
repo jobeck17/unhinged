@@ -1,0 +1,16 @@
+[
+  {
+    "leader": "Florida Man",
+    "samples": 10000,
+    "seed_start": 1000000,
+    "round1_one_cost_character": 7809,
+    "round1_character_cost_at_most_two": 9999
+  },
+  {
+    "leader": "HOA President",
+    "samples": 10000,
+    "seed_start": 1000000,
+    "round1_one_cost_character": 0,
+    "round1_character_cost_at_most_two": 9910
+  }
+]

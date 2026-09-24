@@ -1,0 +1,21 @@
+{
+  "version": "donut-duel-1",
+  "card_pool": "0.1-donut.3",
+  "status": "Playtest only; leader packages and 25 Health are provisional",
+  "decks": [
+    {
+      "name": "Hold My Entire Deck",
+      "leader": "Florida Man",
+      "health": 25,
+      "styles": ["Gnarly", "Wasted"],
+      "cards": {"P001":2,"P002":2,"P003":2,"P004":2,"P005":2,"P010":2,"P012":2,"P013":2,"P016":2,"P151":2,"P160":2,"P165":2,"P019":2,"P022":2,"P025":2,"P026":2,"P172":2,"P027":2,"P178":2,"P179":2}
+    },
+    {
+      "name": "Your Deck Violates the Bylaws",
+      "leader": "HOA President",
+      "health": 25,
+      "styles": ["Spiteful", "Sketchy"],
+      "cards": {"P121":2,"P122":2,"P123":2,"P124":2,"P125":2,"P128":2,"P129":2,"P132":2,"P138":2,"P095":2,"P097":2,"P106":2,"P139":2,"P141":2,"P143":2,"P146":2,"P112":2,"P147":2,"P117":2,"P120":2}
+    }
+  ]
+}

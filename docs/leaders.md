@@ -6,6 +6,10 @@
 >
 > The old Alpha 0.03 Leader data in `docs/card-pool/leaders.md` and `leaders.json` is legacy test data only.
 
+## Playable test packages
+
+The [Florida Man / HOA President duel](../production/playtests/florida-vs-hoa/README.md) now specifies both Leaders at provisional 25 Health, with passive, regular ability, Charge condition, and ultimate. These accepted test drafts supersede the earlier absence of playable packages for those two Leaders. They are not balance locks; the other four packages remain unassigned.
+
 ## Core roster
 
 | Leader | Single-word Style | Phrase Style | Core identity |
