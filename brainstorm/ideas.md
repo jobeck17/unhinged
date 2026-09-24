@@ -19,10 +19,7 @@ These concepts are outside the current Donut build. They have no rules authority
 
 ## Future characters and world
 
-- Boss Babe: recruitment, downlines, starter kits, rank-ups, and network scaling. A future Character or package.
-- Travel Ball Mom / Overenthusiastic Softball Mom: parent energy, protection, and escalation around her kid.
-- Unsupervised Toddler: optional bounded chaos through dice, flips, or deck reveals; not a universal combat rule.
-- Saved hooks without approved current cards: Cockroach recursion, Clown Car, Creepy Van / Free Puppies, gas station pills, bachelorette party, feral child, Girl Scouts, zombie kid, mall walker, social media influencer, single dad, grumpy old guy, jam band, pirate, and wedding cover band. Check the active [card list](../production/cards/card-list.md) before assigning a name: some related concepts are already implemented under different names.
+- Future hooks without approved current cards include Clown Car, Creepy Van / Free Puppies, bachelorette party, feral child, Girl Scouts, and other neighborhood disasters. Check the [current card list](../production/cards/card-list.md) before drafting a card to avoid duplicating an existing concept.
 - Displaced roster candidates for later sets or variants: Bottle-Rocket Enthusiast, Dance Mom, Little League Assistant Coach, Dumpster Engineer, Free Puppies Guy, Alley Bruiser, Overenthusiastic Volunteer, Crash-Test Intern, Backyard Wrestling Hype Man, Parking Lot Boxer, Lawn Chair Daredevil, No, No, Watch This, Little League Coach, Soccer Mom, Group Text, Fake Psychic, Mall Cop, Crypto Bro, Garage Sale Queen, Neighborhood Watch Captain, Safety-Vest Volunteer, and Last Laugh. These are concept names, not reserved IDs.
 
 ## Systems outside the base game
