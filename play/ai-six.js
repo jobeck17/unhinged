@@ -1,9 +1,9 @@
 // Rules-bound opponent. It sees public board data and its own hand, never the player's hidden cards.
 export function aiChoice(g,r){let {player:p,options=[],multi=false,max=2,title=''}=r;
  if(!options.length)return multi?[]:null;
- if(multi){if(title.includes('Blockers')){let n=g.pendingAttack?.power||3,chosen=[],absorbed=0;for(let o of options){let x=g.obj(o.value);if(!x)continue;if(absorbed>=n)break;chosen.push(o.value);absorbed+=Math.max(1,g.guard(x)-x.damage)}return chosen}return options.slice(0,max).map(o=>o.value)}
+ if(multi){if(title.includes('Blockers')){let incoming=g.pendingAttack?.power??0,hp=g.players[p].hp,attacker=g.obj(g.pendingAttack?.attacker);let choices=options.map(o=>g.obj(o.value)).filter(Boolean);let best=choices.sort((a,b)=>(g.guard(b)-b.damage)-(g.guard(a)-a.damage))[0];if(!best)return [];let absorb=Math.min(incoming,Math.max(0,g.guard(best)-best.damage));let kills=attacker&&g.power(best)+(g.name(p)==='HOA President'&&!g.players[p].passive?1:0)>=g.guard(attacker)-attacker.damage;return hp<=incoming||hp<=12&&kills&&absorb>=2||hp<=7&&absorb>=3?[best.uid]:[]}return options.slice(0,max).map(o=>o.value)}
  if(title.includes('Guard Discard'))return 0;
- if(title.includes('Attack which')){let win=options.find(o=>o.value===-1),kill=options.find(o=>o.value!==-1&&g.obj(o.value)&&g.guard(g.obj(o.value))-g.obj(o.value).damage<=g.pendingAttack?.power||3);return g.players[1-p].hp>6&&kill?kill.value:win?.value??options[0].value}
+ if(title.includes('Attack which')){let win=options.find(o=>o.value===-1),kill=options.find(o=>o.value!==-1&&g.obj(o.value)&&g.guard(g.obj(o.value))-g.obj(o.value).damage<=(g.pendingAttackerPower??0));return g.players[1-p].hp>6&&kill?kill.value:win?.value??options[0].value}
  if(title.includes('Pick a Card: guess'))return Math.random()<.5;
  if(title.includes('Dismiss Occupied Stroller'))return true;
  if(title.includes('Rotate Character'))return true;
