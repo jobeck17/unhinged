@@ -2,3 +2,5 @@
 .attack-context{padding:12px 14px;margin:12px 0;border-radius:10px;background:#243135;color:#f3f0e4;display:grid;gap:4px}.attack-context strong{color:#ffb179;font-size:.86rem}.attack-context span{font-size:.8rem;color:#d8dfd6}.attack-context p{font-size:.88rem;line-height:1.35;margin:4px 0 0}
 
 .mulligan-count{font-weight:800;color:#ffe3b2;margin:14px 0 9px}.card.mulligan-selected{outline:4px solid #ffb451;outline-offset:-4px;box-shadow:0 0 0 3px #fff1c4,0 6px 16px #0008;background:#fff1d1}.mulligan-marker{align-self:flex-end;padding:3px 6px;border-radius:5px;background:#344449;color:#fff;font-size:.62rem;font-weight:900;letter-spacing:.04em}.mulligan-selected .mulligan-marker{background:#ae4b15;color:white}
+
+.option.momentum,.card.momentum{border-left:7px solid #f375bd}.option.misdirection,.card.misdirection{border-left:7px solid #43cabd}.option.salvage,.card.salvage{border-left:7px solid #af874f}.option.expendable,.card.expendable{border-left:7px solid #9374cc}.card.cloaked{background:#596c70;color:#fff;outline:2px dotted #a8e2de}.card.cloaked .summary{color:#e0ebdf}
