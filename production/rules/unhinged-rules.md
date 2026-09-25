@@ -1,6 +1,6 @@
 # Unhinged Current Rules
 
-**Web playtest notice:** The live web app currently tests [Character Lab 2](../playtests/character-lab/README.md), with full turns, simultaneous combat, four-copy construction, revised cards, and Leaders reduced to deck identity plus 25 Health. That lab’s rules override this baseline for the web experiment.
+**Web playtest notice:** The live web app currently tests [Character Lab 2](../playtests/character-lab/README.md), with full turns, simultaneous combat, four-copy construction, revised cards, and Leaders reduced to deck identity, 25 Health, and one automatic passive. That lab’s rules override this baseline for the web experiment.
 
 Working production rulebook • 25 September 2026
 
@@ -16,7 +16,7 @@ The normal win condition is reducing the opposing Leader to 0 Health. A game has
 
 Each player has a Deck, Hand, Discard, Play Area, and Fuel Tank. Cards in the Play Area are **in play**.
 
-- A **Leader** is the identity for its owner's deck and its 25-Health target. It stays outside the deck and is not a card in play.
+- A **Leader** is the identity for its owner's deck, its 25-Health target, and the source of one automatic passive. It stays outside the deck and is not a card in play.
 - A **Character** has Power and Guard. When damage on a Character equals or exceeds its Guard, it is Defeated.
 - An **Action** resolves once, then goes to its Owner's discard unless its text says otherwise.
 - An **Item** enters play and remains there. It attaches only when its text says to Attach it; otherwise it is a standalone Item.
@@ -56,7 +56,7 @@ Ownership never changes. Current production wording should prefer “your Charac
 ## 4. Setup and War
 
 1. Each player brings a 40-card deck and one Leader.
-2. Display each Leader outside the deck and set its Health to 25. Leaders have no abilities, Charge, orientation, Power, or Guard.
+2. Display each Leader outside the deck and set its Health to 25. Each Leader has one automatic passive, but no activated ability, Charge, orientation, Power, or Guard.
 3. Shuffle each deck and perform **War** to determine the first Turn of Round 1.
 4. Draw seven cards.
 5. Each player may mulligan from zero to seven cards: choose cards to replace, draw the replacements, then shuffle the chosen cards into the deck.
@@ -151,7 +151,7 @@ One Character attacks per Attack unless card text says otherwise. Declaring an A
 - Rotated enemy Characters may be attacked directly. A direct Attack against a Rotated Character cannot be Blocked.
 - Ready Characters cannot normally be attacked directly.
 - Items cannot normally be attacked.
-- Leaders never Rotate, Attack, Block, or retaliate. They have no activated, passive, or ultimate abilities.
+- Leaders never Rotate, Attack, Block, or retaliate. Their automatic passive does not require an action; Leaders currently have no activated or ultimate abilities.
 
 Only Ready Characters may Block. The defender declares all Blockers at once and chooses their order. Blocking Rotates each Blocker. A newly entered Character may Block and Rotate in the Round it entered play.
 

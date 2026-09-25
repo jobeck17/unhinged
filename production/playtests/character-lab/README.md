@@ -18,7 +18,7 @@ Featured decks use up to four copies of key cards; all six decks remain 40 cards
 4. Attack a Leader or a Rotated opposing Character (Sucker Punch also permits Ready Characters). A Leader attack permits at most one Ready, non-Cloaked blocker. Blocking rotates that Character.
 5. Damage in Character combat is simultaneous, including when either Character is defeated. Determine both damage amounts before applying either. Remove all combat casualties before their Defeat triggers resolve. Damage persists. Damage in excess of a blocker's remaining Guard reaches the Leader; excess from attacking a Character directly is lost.
 6. No Guard Discards. Defiant, Slowpoke, and Sneaky are retired in this variant: their old text is removed from its pool. Cloak, Stack, Hothead, Explosive, and Sucker Punch remain subject to the variant timing above.
-7. A Leader is only deck identity and a 25-Health target. Leaders have no passive, activated ability, Charge, ultimate, Ready state, rotation, vulnerability, Power, or Guard. They never attack or block.
+7. A Leader provides deck identity, a 25-Health target, and one automatic passive. Leaders have no activated ability, Charge, ultimate, Ready state, rotation, vulnerability, Power, or Guard. They never attack or block.
 8. The prior baseline's printed text is not authoritative for this variant. The app displays this lab's card text, including simplified Actions. Only the six listed decks are supported by the engine; the full copied pool is not a generic promise of implementation for every card.
 
 ## Action and support revisions
@@ -27,9 +27,16 @@ Hold My Beer has a flat +3 Power; Walk It Off heals and draws; Reply All draws 2
 
 Wedding DJ supports Musicians passively; Wrestling Superfan supports Wrestlers; Rat King supports Animals. Escape Artist returns another friendly Character on entry. Mystery Drawer of Cables costs 1 and draws on entry, supplying a useful Item to play and later dismiss. Activated ability options for converted Characters are removed, including their lower Stack layers.
 
-## Engine boundary
+## Leader passives
 
-The lab engine exposes no Leader action method and stores no Leader ability, Charge, Ready, or passive state. Leader names identify decks, label logs, and identify the Health target; card effects interact with Leader Health only. Regression tests enforce this boundary so the removed subsystem cannot remain silently active.
+- **Florida Man — Walk It Off:** The first friendly Character that survives damage during your turn gets +1 Power this turn.
+- **Washed-Up Rock Star — Crowd Warms Up:** The second card you play each turn gives a friendly Character +1 Power this turn.
+- **Birthday Party Magician — Sleight of Hand:** The first friendly Character returned from play to your hand each turn lets you draw, then discard.
+- **Trash Baron — Waste Not:** The first Item you dismiss each turn deals 1 damage to the opposing Leader.
+- **HOA President — Neighborhood Watch:** Your first blocker each turn gets +1 Power for that attack.
+- **Backyard Wrestler — Crowd Goes Wild:** Your first friendly Character defeated each turn deals 1 damage to the opposing Leader.
+
+The lab engine routes these through one passive event boundary and stores only whether each Leader's once-per-turn passive has triggered. It exposes no Leader action method and stores no Charge or Leader Ready state. Activated Leader abilities can be evaluated later without restoring the removed ultimate subsystem.
 
 ## Verification and next questions
 

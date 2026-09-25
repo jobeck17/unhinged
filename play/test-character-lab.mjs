@@ -14,7 +14,7 @@ function setup(a=0,b=4){let g=new Game(pool,{decks:[full.decks[a],full.decks[b]]
 {
  let g=setup(),a=g.enter(0,'P012'),b=g.enter(1,'P001');a.born=1;
  g.ask=async r=>{assert(!r.title.includes('Guard Discard'));return r.multi?[b.uid]:r.options[0]?.value};
- await g.attack(a.uid);assert.equal(g.players[1].hp,22,'overflow through 1 Guard');assert.equal(a.damage,2,'defeated blocker still deals simultaneous damage');
+ await g.attack(a.uid);assert.equal(g.players[1].hp,22,'overflow through 1 Guard');assert.equal(a.damage,3,'HOA passive adds 1 to simultaneous blocker damage');
 }
 {
  let g=setup();let order=[];for(let i=0;i<4;i++){order.push(g.turn);await g.pass()}assert.deepEqual(order,[0,1,0,1]);
@@ -27,8 +27,8 @@ function setup(a=0,b=4){let g=new Game(pool,{decks:[full.decks[a],full.decks[b]]
 {
  let g=setup(1),road=g.enter(0,'P048');road.born=1;g.players[0].hand=['P053','P053','P053','P038'];
  for(let i=0;i<3;i++)await g.play(0);
- assert(g.chars(0).some(x=>x.id==='P038'),'third Action gives free Mike');assert.equal(g.power(road),7);assert.equal(g.players[0].fuel,4);
- console.log('Roadie: 3 Actions draw 3 cards, reach 7 Power, and play Mike free.');
+ assert(g.chars(0).some(x=>x.id==='P038'),'third Action gives free Mike');assert.equal(g.power(road),8);assert.equal(g.players[0].fuel,4);
+ console.log('Roadie: Leader passive plus 3 Actions reach 8 Power and play Mike free.');
 }
 {
  let g=setup(3),vac=g.enter(0,'P105');vac.born=1;g.players[0].hand=['P119','P119','P119'];for(let i=0;i<3;i++)await g.play(0);
@@ -37,7 +37,19 @@ function setup(a=0,b=4){let g=new Game(pool,{decks:[full.decks[a],full.decks[b]]
 }
 {
  const g=setup();assert.equal(typeof g.leader,'undefined','Leader has no gameplay action API');
- for(const s of g.players){assert(!('charge' in s),'Leader has no Charge state');assert(!('ready' in s),'Leader does not rotate');assert(!('passive' in s),'Leader has no passive state')}
+ for(const s of g.players){assert(!('charge' in s),'Leader has no Charge state');assert(!('ready' in s),'Leader does not rotate');assert.equal(s.leaderPassiveUsed,false)}
+}
+{
+ const g=setup(),x=g.enter(0,'P012');await g.damage(x,1);assert.equal(x.power,1,'Florida passive buffs first survivor');await g.damage(x,1);assert.equal(x.power,1,'Florida passive triggers once per turn');
+}
+{
+ const g=setup(2),x=g.enter(0,'P063'),before=g.players[0].deck.length;await g.remove(x,'hand');assert.equal(g.players[0].deck.length,before-1,'Magician passive rummages after a return');assert(g.players[0].leaderPassiveUsed);
+}
+{
+ const g=setup(3),item=g.enter(0,'P119'),hp=g.players[1].hp;await g.dismiss(item);assert.equal(g.players[1].hp,hp-1,'Trash Baron passive damages opposing Leader');
+}
+{
+ const g=setup(5),x=g.enter(0,'P012'),hp=g.players[1].hp;await g.remove(x,'discard',true);assert.equal(g.players[1].hp,hp-1,'Wrestler passive damages opposing Leader on first defeat');
 }
 {
  const g=setup(2),x=g.enter(0,'P063');x.born=1;await g.activate(x.uid);await g.damage(x,9);assert.equal(x.damage,0);await g.pass();assert.equal(x.cloaked,false);
@@ -52,7 +64,7 @@ try{for(let a=0;a<6;a++)for(let b=0;b<6;b++){if(a===b)continue;let g=new Game(po
  while(g.winner===null&&g.round<30&&limit--){let m=aiAction(g,g.turn),events=g.eventCount;
  assert(['pass','attack','play','activate'].includes(m.type),`unsupported AI action ${m.type}`);if(m.type==='pass')await g.pass();else if(m.type==='attack')await g.attack(m.uid);else if(m.type==='play')await g.play(m.index);else if(m.type==='activate')await g.activate(m.uid);
  assert(g.eventCount!==events||g.winner!==null,`stuck ${g.name(g.turn)} ${JSON.stringify(m)}`);
- for(let p=0;p<2;p++){let s=g.players[p],seen={};for(let id of [...s.deck,...s.hand,...s.discard,...s.board.flatMap(x=>[x.id,...(x.lower?[x.lower]:[]),...x.cargo,...(x.hidden?[x.hidden]:[])])])seen[id]=(seen[id]||0)+1;assert.deepEqual(seen,g.decks[p].cards);assert(s.fuel>=0);assert(!('charge' in s)&&!('ready' in s)&&!('passive' in s))}
+ for(let p=0;p<2;p++){let s=g.players[p],seen={};for(let id of [...s.deck,...s.hand,...s.discard,...s.board.flatMap(x=>[x.id,...(x.lower?[x.lower]:[]),...x.cargo,...(x.hidden?[x.hidden]:[])])])seen[id]=(seen[id]||0)+1;assert.deepEqual(seen,g.decks[p].cards);assert(s.fuel>=0);assert(!('charge' in s)&&!('ready' in s));assert.equal(typeof s.leaderPassiveUsed,'boolean')}
  }
  assert(limit>0&&g.winner!==null,`unfinished ${a}/${b}`);rounds.push(g.round);engineEvents+=g.log.filter(s=>/ENCORE|VACUUM UNLEASHED|FIREWORKS/.test(s)).length;
 }}finally{Math.random=oldRandom}
