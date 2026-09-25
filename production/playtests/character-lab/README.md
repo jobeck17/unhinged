@@ -6,9 +6,10 @@ This is the current GitHub Pages playtest. Its cards.json and decks.json are the
 
 - **Florida Man / Fireworks Finale:** Fourth of July Showrunner costs 5, is 4/5, injures your other Characters on entry and draws for up to three survivors. Its attacks deal direct Leader damage for each damaged friendly Character. Build a team before playing it.
 - **Washed-Up Rock Star / One More Encore:** Roadie Who Never Left costs 5, is 4/5, grows with each Action, and your third Action of a turn lets it play a Character costing at most 3 from hand for free. Karaoke Champion and Wedding DJ support the chain. Prepare the hand before spending the Actions.
+- **Birthday Party Magician / Pick a Card, Any Card:** Pirate With a Business License costs 5 and is 4/7. The first opposing choice caused by one of your cards each turn reveals the top card of your deck; you may play it free or put it on the bottom. Marked Deck prepares the reveal, while Pick a Card causes the choice and then plays the opponent's face-down selection free.
 - **Trash Baron / Vacuum Goes BRRR:** Jailbroken Robot Vacuum costs 4, is 3/5, tucks a deck card for each Item you play, and gets +1 Power per tucked card. On attack, choose to retain that Power or discard all cargo for equal direct Leader damage before ordinary combat. Leaving play discards cargo with no additional damage.
 
-Featured decks use up to four copies of key cards; all six decks remain 40 cards, two Styles, 25 Leader Health. Four is a maximum, not a required count. Build-around stars identify the three experimental headliners, not an established rarity system.
+Featured decks use up to four copies of key cards; all six decks remain 40 cards, two Styles, 25 Leader Health. Four is a maximum, not a required count. Build-around stars identify the four experimental headliners, not an established rarity system.
 
 ## Rules for this experiment
 
@@ -40,6 +41,6 @@ The lab engine routes these through one passive event boundary and stores only w
 
 ## Verification and next questions
 
-Run `node play/test-character-lab.mjs` and `node play/test-app.mjs` from the repository root. The lab test checks all six lists, prepared headline scenarios, simultaneous lethal combat, overflow, full-turn order, and 30 seeded directed AI matchups with card conservation. These checks demonstrate functioning mechanics, not fun or reliable competitive win rates.
+Run `node play/test-character-lab.mjs` and `node play/test-app.mjs` from the repository root. The lab test checks all six lists, prepared headline scenarios—including Pirate turning one opposing choice into two free plays—simultaneous lethal combat, overflow, full-turn order, and 30 seeded directed AI matchups with card conservation. These checks demonstrate functioning mechanics, not fun or reliable competitive win rates.
 
 Next human test: try Vacuum versus Rock Star, then Showrunner. Record whether the headliner appeared, whether you could prepare its payoff, whether the opponent had meaningful responses, and whether you wanted another game. Draft construction and broader pool implementation remain future tests.

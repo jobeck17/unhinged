@@ -25,12 +25,12 @@ export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p)
  let attackers=own.filter(x=>g.canAttack(x)).sort((a,b)=>g.power(b)-g.power(a));
  const play=o=>({type:'play',index:o.index});
  // Establish an engine before spending its trigger cards.
- let engine=legal.find(o=>['P011','P048','P105'].includes(o.c.id)&&(!['P011'].includes(o.c.id)||own.length>=2));if(engine)return play(engine);
+ let engine=legal.find(o=>['P011','P048','P078','P105'].includes(o.c.id)&&(!['P011'].includes(o.c.id)||own.length>=2));if(engine)return play(engine);
  // Spend buffs and attachments while there is still an attack to improve.
  let setup=legal.find(o=>['P019','P027','P178'].includes(o.c.id)&&attackers.some(x=>g.guard(x)-x.damage>2));if(setup)return play(setup);
  let chair=s.board.find(x=>x.id==='P178'&&g.canUse(x)&&g.obj(x.attached)?.ready);if(chair&&attackers.some(x=>x.uid===chair.attached))return {type:'activate',uid:chair.uid};
  // Item and Action engines should fire before combat, not afterward.
- let trigger=legal.find(o=>o.c.type==='Item'&&own.some(x=>g.has(x,'P105'))||o.c.type==='Action'&&['P049','P050','P052','P053','P022'].includes(o.c.id));if(trigger)return play(trigger);
+ let trigger=legal.find(o=>o.c.type==='Item'&&own.some(x=>g.has(x,'P105'))||o.c.id==='P079'&&own.some(x=>g.has(x,'P078'))||o.c.type==='Action'&&['P049','P050','P052','P053','P022'].includes(o.c.id));if(trigger)return play(trigger);
  let discount=legal.find(o=>o.c.id==='P055'&&legal.some(v=>v.c.type==='Character'&&s.fuel>=o.c.cost+Math.max(0,v.c.cost-2)));if(discount)return play(discount);
  let bodies=legal.filter(o=>o.c.type==='Character');if(bodies.length&&own.length<8){bodies.sort((a,b)=>b.c.cost-a.c.cost);return play(bodies[0])}
  let removal=legal.find(o=>['P139','P141','P081'].includes(o.c.id));if(removal)return play(removal);

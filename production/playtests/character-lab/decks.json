@@ -66,27 +66,23 @@
         "Reckless"
       ],
       "cards": {
-        "P062": 2,
+        "P062": 4,
         "P063": 2,
-        "P065": 2,
-        "P066": 2,
+        "P065": 3,
+        "P066": 3,
         "P067": 2,
         "P074": 2,
-        "P071": 2,
-        "P076": 2,
-        "P079": 2,
-        "P080": 2,
-        "P081": 2,
-        "P086": 2,
-        "P088": 2,
+        "P075": 3,
+        "P078": 3,
+        "P079": 4,
+        "P080": 3,
+        "P088": 3,
         "P089": 2,
-        "P001": 2,
-        "P017": 2,
-        "P016": 2,
-        "P075": 2,
-        "P029": 2,
-        "P084": 2
-      }
+        "P005": 3,
+        "P010": 3
+      },
+      "guide": "Keep a cheap Character, Marked Deck, and Pick a Card. Set up Pirate With a Business License, arrange a strong top card, then make the opponent choose: Pirate can play the top card free before their chosen card resolves.",
+      "featured": true
     },
     {
       "name": "Vacuum Goes BRRR",

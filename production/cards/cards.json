@@ -1476,22 +1476,23 @@
     {
       "id": "P078",
       "type": "Character",
-      "cost": 6,
+      "cost": 5,
       "name": "Pirate With a Business License",
       "traits": [
         "Pirate"
       ],
-      "text": "The first time each Round an opponent makes a choice instructed by one of your cards, Draw a card, then Discard a card.",
+      "text": "The first time each turn an opponent makes a choice instructed by one of your cards, reveal the top card of your deck. You may play it without paying its Cost. Otherwise, put it on the bottom of your deck.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 6,
+      "power": 4,
       "guard": 7,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "Every trick is fully licensed, bonded, and questionably insured.",
+      "build_around": true
     },
     {
       "id": "P079",

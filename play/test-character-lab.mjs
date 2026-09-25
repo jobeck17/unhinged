@@ -7,6 +7,7 @@ const full=JSON.parse(fs.readFileSync(new URL('../production/playtests/character
 const cards=Object.fromEntries(pool.cards.map(c=>[c.id,c]));
 for(const d of full.decks){assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40);for(const [id,n] of Object.entries(d.cards)){assert(n>=1&&n<=4);assert(d.styles.includes(cards[id].style))}}
 assert.equal(cards.P079.cost,3);assert(cards.P079.text.includes('draw until you have three'));
+assert.equal(cards.P078.cost,5);assert.equal(cards.P078.power,4);assert(cards.P078.build_around&&cards.P078.text.includes('top card of your deck'));
 function setup(a=0,b=4){let g=new Game(pool,{decks:[full.decks[a],full.decks[b]]},async r=>r.multi?[]:r.options[0]?.value,()=>{});g.round=6;g.first=0;g.turn=0;g.players[0].fuel=7;g.players[0].hand=[];return g}
 {
  let g=setup(),a=g.enter(0,'P012'),b=g.enter(1,'P012');a.born=1;b.ready=false;g.ask=async r=>r.title.includes('Attack which')?b.uid:r.options[0]?.value;
@@ -58,6 +59,12 @@ function setup(a=0,b=4){let g=new Game(pool,{decks:[full.decks[a],full.decks[b]]
  assert(g.canPlay(0),'Pick a Card can be played as the last card in hand');await g.play(0);
  assert.equal(choice.options.length,3,'refills to three face-down choices');assert(choice.options.every((o,i)=>o.label===`Face-down card ${i+1}`),'opponent cannot see card identities');
  assert(g.chars(0).some(x=>x.id==='P001'),'chosen card is played for free');assert.equal(g.players[0].hand.length,2);assert.equal(g.players[0].fuel,4);assert(g.players[0].discard.includes('P079'));
+}
+{
+ const g=setup(2),pirate=g.enter(0,'P078');pirate.born=1;g.players[0].hand=['P079','P001','P002','P005'];g.players[0].deck.push('P010');
+ g.ask=async r=>r.title.includes('Pick a Card: choose')?0:r.title.includes('Fine Print:')?true:r.options[0]?.value;
+ await g.play(0);let ids=g.chars(0).map(x=>x.id);assert(ids.includes('P010')&&ids.includes('P001'),'Pirate and Pick a Card each play a free Character');assert(pirate.once);assert.equal(g.players[0].hand.length,2);assert.equal(g.players[0].fuel,4);
+ console.log('Pirate: one opponent choice plays the arranged top card, then the chosen hand card, both free.');
 }
 {
  const g=setup(2),x=g.enter(0,'P063');x.born=1;await g.activate(x.uid);await g.damage(x,9);assert.equal(x.damage,0);await g.pass();assert.equal(x.cloaked,false);

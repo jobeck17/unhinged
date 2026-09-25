@@ -84,7 +84,7 @@
 | P075 | Pirate Radio Operator | Misdirection | Character | 4 | 4/5 | Criminal, Musician | Single ongoing ability |
 | P076 | Wi-Fi Bandit | Misdirection | Character | 2 | 2/1 | Criminal, Hacker | Keyword only |
 | P077 | Script Kiddie | Misdirection | Character | 2 | 1/3 | Kid, Hacker | Rotate ability |
-| P078 | Pirate With a Business License | Misdirection | Character | 6 | 6/7 | Pirate | Single ongoing ability |
+| P078 | Pirate With a Business License | Misdirection | Character | 5 | 4/7 | Pirate | Opponent-choice build-around |
 | P079 | Pick a Card | Misdirection | Action | 1 | — | — | — |
 | P080 | Now You See Me | Misdirection | Action | 2 | — | — | — |
 | P081 | Look Over There! | Misdirection | Action | 1 | — | — | — |

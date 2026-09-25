@@ -22,7 +22,7 @@
 | P075 | Character | 4 | **Pirate Radio Operator** | 4/5 | Criminal, Musician | When this attacks, an opponent chooses one: this gets +2 Power for this Attack; or you Draw a card, then Discard a card. |
 | P076 | Character | 2 | **Wi-Fi Bandit** | 2/1 | Criminal, Hacker | **Hothead**. |
 | P077 | Character | 2 | **Script Kiddie** | 1/3 | Kid, Hacker | Rotate: Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card, then Discard a card. |
-| P078 | Character | 6 | **Pirate With a Business License** | 6/7 | Pirate | The first time each Round an opponent makes a choice instructed by one of your cards, Draw a card, then Discard a card. |
+| P078 | Character | 5 | **Pirate With a Business License** | 4/7 | Pirate | The first time each turn an opponent makes a choice instructed by one of your cards, reveal the top card of your deck. You may play it without paying its Cost. Otherwise, put it on the bottom of your deck. |
 | P079 | Action | 1 | **Pick a Card** | — | — | Present a card from your hand face down. An opponent guesses Character or not Character. Reveal it and keep it in your hand. If they guessed wrong, Draw 2 cards. Otherwise, Draw a card, then Discard a card. |
 | P080 | Action | 2 | **Now You See Me** | — | — | Return one of your Characters to your hand. Then you may Play a Character costing 2 or less from your hand by paying 1 less. |
 | P081 | Action | 1 | **Look Over There!** | — | — | Choose an opposing Ready Character. Its owner chooses one: Rotate it; or it gets -2 Power this Round. |
