@@ -6,6 +6,7 @@ const pool=JSON.parse(fs.readFileSync(new URL('../production/playtests/character
 const full=JSON.parse(fs.readFileSync(new URL('../production/playtests/character-lab/decks.json',import.meta.url)));
 const cards=Object.fromEntries(pool.cards.map(c=>[c.id,c]));
 for(const d of full.decks){assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40);for(const [id,n] of Object.entries(d.cards)){assert(n>=1&&n<=4);assert(d.styles.includes(cards[id].style))}}
+assert.equal(cards.P079.cost,3);assert(cards.P079.text.includes('draw until you have three'));
 function setup(a=0,b=4){let g=new Game(pool,{decks:[full.decks[a],full.decks[b]]},async r=>r.multi?[]:r.options[0]?.value,()=>{});g.round=6;g.first=0;g.turn=0;g.players[0].fuel=7;g.players[0].hand=[];return g}
 {
  let g=setup(),a=g.enter(0,'P012'),b=g.enter(1,'P012');a.born=1;b.ready=false;g.ask=async r=>r.title.includes('Attack which')?b.uid:r.options[0]?.value;
@@ -50,6 +51,13 @@ function setup(a=0,b=4){let g=new Game(pool,{decks:[full.decks[a],full.decks[b]]
 }
 {
  const g=setup(5),x=g.enter(0,'P012'),hp=g.players[1].hp;await g.remove(x,'discard',true);assert.equal(g.players[1].hp,hp-1,'Wrestler passive damages opposing Leader on first defeat');
+}
+{
+ const g=setup(2);g.players[0].hand=['P079'];g.players[0].deck=['P119','P038','P001'];let choice;
+ g.ask=async r=>{if(r.title.includes('Pick a Card: choose')){choice=r;return 0}return r.options[0]?.value};
+ assert(g.canPlay(0),'Pick a Card can be played as the last card in hand');await g.play(0);
+ assert.equal(choice.options.length,3,'refills to three face-down choices');assert(choice.options.every((o,i)=>o.label===`Face-down card ${i+1}`),'opponent cannot see card identities');
+ assert(g.chars(0).some(x=>x.id==='P001'),'chosen card is played for free');assert.equal(g.players[0].hand.length,2);assert.equal(g.players[0].fuel,4);assert(g.players[0].discard.includes('P079'));
 }
 {
  const g=setup(2),x=g.enter(0,'P063');x.born=1;await g.activate(x.uid);await g.damage(x,9);assert.equal(x.damage,0);await g.pass();assert.equal(x.cloaked,false);

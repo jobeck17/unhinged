@@ -23,7 +23,7 @@ Featured decks use up to four copies of key cards; all six decks remain 40 cards
 
 ## Action and support revisions
 
-Hold My Beer has a flat +3 Power; Walk It Off heals and draws; Reply All draws 2 for you and 1 for the opponent; One More Song draws 1; Bring a Friend discounts the next Character by 2; Look Over There prevents blocking; Make It Work dismisses an Item to draw 2; Again returns a small Character; Light the Fuse sacrifices for 2 direct damage. File a Complaint deals Character-count damage; Absolutely Not deals 3. Removal costs were adjusted to 2.
+Hold My Beer has a flat +3 Power; Walk It Off heals and draws; Reply All draws 2 for you and 1 for the opponent; One More Song draws 1; Bring a Friend discounts the next Character by 2; Look Over There prevents blocking; Make It Work dismisses an Item to draw 2; Again returns a small Character; Light the Fuse sacrifices for 2 direct damage. File a Complaint deals Character-count damage; Absolutely Not deals 3. Removal costs were adjusted to 2. Pick a Card costs 3: it refills its owner's hand to three, presents that entire hand face down, and lets the opponent choose one card to reveal and play for free.
 
 Wedding DJ supports Musicians passively; Wrestling Superfan supports Wrestlers; Rat King supports Animals. Escape Artist returns another friendly Character on entry. Mystery Drawer of Cables costs 1 and draws on entry, supplying a useful Item to play and later dismiss. Activated ability options for converted Characters are removed, including their lower Stack layers.
 

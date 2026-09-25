@@ -1494,11 +1494,11 @@
     {
       "id": "P079",
       "type": "Action",
-      "cost": 1,
+      "cost": 3,
       "name": "Pick a Card",
       "stats": "",
       "traits": [],
-      "text": "Present a card from your hand face down. An opponent guesses Character or not Character. Reveal it and keep it in your hand. If they guessed wrong, Draw 2 cards. Otherwise, Draw a card, then Discard a card.",
+      "text": "If you have fewer than three cards in your hand, draw until you have three. Present your hand face down. An opponent chooses a card. Reveal and play it without paying its Cost.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
