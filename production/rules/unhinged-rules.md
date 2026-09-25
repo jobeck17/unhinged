@@ -1,8 +1,8 @@
 # Unhinged Current Rules
 
-**Web playtest notice:** The live web app currently tests [Character Lab 1](../playtests/character-lab/README.md), with full turns, simultaneous combat, four-copy construction, and revised cards. That lab’s rules override this baseline for the web experiment.
+**Web playtest notice:** The live web app currently tests [Character Lab 2](../playtests/character-lab/README.md), with full turns, simultaneous combat, four-copy construction, revised cards, and Leaders reduced to deck identity plus 25 Health. That lab’s rules override this baseline for the web experiment.
 
-Working production rulebook • 24 September 2026
+Working production rulebook • 25 September 2026
 
 This is the consolidated rules source for the next Unhinged playtest and card-production pass. It carries forward the September 21 foundation and includes the [September 23 Donut revision](../../docs/current-state-2026-09-23.md). The timing clarifications below support the current card pool; they are current playtest rulings, not claims of tested balance. Items still deliberately unresolved are listed in [Open decisions](open-decisions.md).
 
@@ -16,7 +16,7 @@ The normal win condition is reducing the opposing Leader to 0 Health. A game has
 
 Each player has a Deck, Hand, Discard, Play Area, and Fuel Tank. Cards in the Play Area are **in play**.
 
-- A **Leader** starts in play outside its owner's deck.
+- A **Leader** is the identity for its owner's deck and its 25-Health target. It stays outside the deck and is not a card in play.
 - A **Character** has Power and Guard. When damage on a Character equals or exceeds its Guard, it is Defeated.
 - An **Action** resolves once, then goes to its Owner's discard unless its text says otherwise.
 - An **Item** enters play and remains there. It attaches only when its text says to Attach it; otherwise it is a standalone Item.
@@ -38,7 +38,6 @@ Character is the working type throughout the Donut rulebook and card pool. Older
 | **Power** | Combat damage dealt by a Character. |
 | **Guard** | A Character's damage threshold. Damage persists unless healed or the Character leaves play. |
 | **Health** | A Leader's survival total. |
-| **Vulnerable** | A Rotated Leader cannot be Blocked when attacked. |
 
 Formal rules language uses **Rotate**, **Play**, and **enters play**. The [terminology guide](../../docs/terminology.md) records wording that must not appear in new rules or card text.
 
@@ -57,7 +56,7 @@ Ownership never changes. Current production wording should prefer “your Charac
 ## 4. Setup and War
 
 1. Each player brings a 40-card deck and one Leader.
-2. Put each Leader into play. Leaders are outside the deck.
+2. Display each Leader outside the deck and set its Health to 25. Leaders have no abilities, Charge, orientation, Power, or Guard.
 3. Shuffle each deck and perform **War** to determine the first Turn of Round 1.
 4. Draw seven cards.
 5. Each player may mulligan from zero to seven cards: choose cards to replace, draw the replacements, then shuffle the chosen cards into the deck.
@@ -87,7 +86,7 @@ Passing immediately gives the opponent a Turn. If either player Plays, Activates
 
 ## 6. Fuel and deckbuilding
 
-Fuel pays normal card and ability Costs. The [six-Leader test packages](../playtests/six-deck-lab/leaders.md) use a persistent Charge meter for Leader ultimates; Charge cannot pay Fuel Costs. Rotate Fuel to pay a card or ability's Cost. Fuel Readies at the start of each Round.
+Fuel pays normal card and ability Costs. Rotate Fuel to pay a card or ability's Cost. Fuel Readies at the start of each Round.
 
 The current progression is a soft lock:
 
@@ -152,8 +151,7 @@ One Character attacks per Attack unless card text says otherwise. Declaring an A
 - Rotated enemy Characters may be attacked directly. A direct Attack against a Rotated Character cannot be Blocked.
 - Ready Characters cannot normally be attacked directly.
 - Items cannot normally be attacked.
-- A Rotated Leader is Vulnerable. It may still be attacked as normal, but that Attack cannot be Blocked.
-- Leaders do not retaliate unless card text says otherwise.
+- Leaders never Rotate, Attack, Block, or retaliate. They have no activated, passive, or ultimate abilities.
 
 Only Ready Characters may Block. The defender declares all Blockers at once and chooses their order. Blocking Rotates each Blocker. A newly entered Character may Block and Rotate in the Round it entered play.
 

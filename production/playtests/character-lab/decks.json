@@ -1,7 +1,8 @@
 {
-  "version": "character-lab-1",
+  "version": "character-lab-2",
   "card_pool": "0.1-donut.character-lab.1",
   "status": "Provisional playtest; rules and balance still under test",
+  "leader_model": "Deck identity and 25 Health only; no abilities, rotation, Charge, or ultimate",
   "decks": [
     {
       "name": "Fireworks Finale",
