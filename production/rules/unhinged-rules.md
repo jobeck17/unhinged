@@ -1,5 +1,7 @@
 # Unhinged Current Rules
 
+**Web playtest notice:** The live web app currently tests [Character Lab 1](../playtests/character-lab/README.md), with full turns, simultaneous combat, four-copy construction, and revised cards. That lab’s rules override this baseline for the web experiment.
+
 Working production rulebook • 24 September 2026
 
 This is the consolidated rules source for the next Unhinged playtest and card-production pass. It carries forward the September 21 foundation and includes the [September 23 Donut revision](../../docs/current-state-2026-09-23.md). The timing clarifications below support the current card pool; they are current playtest rulings, not claims of tested balance. Items still deliberately unresolved are listed in [Open decisions](open-decisions.md).

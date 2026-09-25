@@ -1,0 +1,3367 @@
+{
+  "version": "0.1-donut.character-lab.1",
+  "date": "2026-09-24",
+  "status": "Experimental character-first web playtest",
+  "cards": [
+    {
+      "id": "P001",
+      "type": "Character",
+      "cost": 1,
+      "name": "Feral Chihuahua",
+      "traits": [
+        "Animal"
+      ],
+      "text": "While attacking a Character with Guard 3 or more, this gets +2 Power.",
+      "style": "Reckless",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 1,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P002",
+      "type": "Character",
+      "cost": 2,
+      "name": "Gas Station Daredevil",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power for this Attack.",
+      "style": "Reckless",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 3,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P003",
+      "type": "Character",
+      "cost": 3,
+      "name": "Firework Dad",
+      "traits": [
+        "Parent",
+        "Daredevil"
+      ],
+      "text": "Rotate: Deal 1 damage to another of your Characters. If it survives, it gets +2 Power this turn.",
+      "style": "Reckless",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P004",
+      "type": "Character",
+      "cost": 2,
+      "name": "Bachelorette Party",
+      "traits": [],
+      "text": "",
+      "style": "Reckless",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Matching shirts. Conflicting alibis."
+    },
+    {
+      "id": "P005",
+      "type": "Character",
+      "cost": 2,
+      "name": "Unsupervised Toddler",
+      "traits": [
+        "Kid"
+      ],
+      "text": "When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck.",
+      "style": "Reckless",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 1,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P006",
+      "type": "Character",
+      "cost": 4,
+      "name": "Road Rage Ron",
+      "traits": [],
+      "text": "While attacking a damaged Character, this gets +2 Power.",
+      "style": "Reckless",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 5,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P007",
+      "type": "Character",
+      "cost": 3,
+      "name": "Scout With a Flare Gun",
+      "traits": [
+        "Kid",
+        "Scout",
+        "Daredevil"
+      ],
+      "text": "Rotate: Deal 1 damage to a Character. If it is one of your Daredevils, Draw a card, then Discard a card.",
+      "style": "Reckless",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P008",
+      "type": "Character",
+      "cost": 4,
+      "name": "Pool Pirate",
+      "traits": [
+        "Pirate",
+        "Criminal"
+      ],
+      "text": "When this enters play, you may Dismiss one of your Items. If you do, Draw a card.",
+      "style": "Reckless",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P009",
+      "type": "Character",
+      "cost": 3,
+      "name": "Pirate With No Exit Strategy",
+      "traits": [
+        "Pirate",
+        "Criminal"
+      ],
+      "text": "",
+      "style": "Reckless",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The treasure map ends at the tow yard."
+    },
+    {
+      "id": "P010",
+      "type": "Character",
+      "cost": 5,
+      "name": "Guy Who Definitely Read the Instructions",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "When this enters play, deal 2 damage to another of your Characters or to your Leader.",
+      "style": "Reckless",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 7,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P011",
+      "type": "Character",
+      "cost": 5,
+      "name": "Fourth of July Showrunner",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "When this enters play, deal 1 damage to each of your other Characters. Draw a card for each that survives, up to 3. When this attacks, deal 1 damage to the opposing Leader for each of your damaged Characters.",
+      "style": "Reckless",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "",
+      "build_around": true
+    },
+    {
+      "id": "P012",
+      "type": "Character",
+      "cost": 3,
+      "name": "Giga Chad",
+      "traits": [],
+      "text": "",
+      "style": "Reckless",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Even his warm-up has a warm-up."
+    },
+    {
+      "id": "P013",
+      "type": "Character",
+      "cost": 2,
+      "name": "Florida Man's Cousin",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "",
+      "style": "Reckless",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The family keeps him off the news with a spelling change."
+    },
+    {
+      "id": "P014",
+      "type": "Character",
+      "cost": 5,
+      "name": "Guy Who Brought His Own Ramp",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "When this attacks, you may Rotate another of your Ready Characters. If you do, this gets +3 Power for this Attack.",
+      "style": "Reckless",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 6,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P015",
+      "type": "Character",
+      "cost": 4,
+      "name": "Jet Ski Mechanic",
+      "traits": [
+        "Builder"
+      ],
+      "text": "Rotate, Dismiss one of your Items: One of your Characters gets +3 Power this turn.",
+      "style": "Reckless",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P016",
+      "type": "Character",
+      "cost": 2,
+      "name": "Porch Pirate",
+      "traits": [
+        "Criminal"
+      ],
+      "text": "Hothead.",
+      "style": "Reckless",
+      "complexity": "keyword_only",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 2,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Free shipping. For him."
+    },
+    {
+      "id": "P017",
+      "type": "Character",
+      "cost": 1,
+      "name": "Vape Kid",
+      "traits": [
+        "Kid"
+      ],
+      "text": "When this enters play, you may deal 1 damage to your Leader. If you do, Draw a card, then Discard a card.",
+      "style": "Reckless",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The cloud has entered the group chat."
+    },
+    {
+      "id": "P018",
+      "type": "Character",
+      "cost": 6,
+      "name": "Minibike Menace",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "Hothead. When this attacks, you may deal 1 damage to each of your other Characters. This gets +1 Power for this Attack for each Character damaged this way.",
+      "style": "Reckless",
+      "complexity": "mixed",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 6,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P019",
+      "type": "Action",
+      "cost": 1,
+      "name": "Hold My Beer",
+      "stats": "",
+      "traits": [],
+      "text": "Deal 1 damage to one of your Characters. It gets +3 Power this turn.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P020",
+      "type": "Action",
+      "cost": 1,
+      "name": "Send It!",
+      "stats": "",
+      "traits": [],
+      "text": "One of your Characters gets +3 Power and -1 Guard this turn.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P021",
+      "type": "Action",
+      "cost": 1,
+      "name": "Glory Days",
+      "stats": "",
+      "traits": [],
+      "text": "Ready one of your Rotated Characters that attacked this turn. It gets +2 Power this turn and cannot Attack again this turn.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": "The story gets faster every year."
+    },
+    {
+      "id": "P022",
+      "type": "Action",
+      "cost": 2,
+      "name": "No, I'm Fine",
+      "stats": "",
+      "traits": [],
+      "text": "Draw 2 cards. Deal 1 damage to your Leader.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P023",
+      "type": "Action",
+      "cost": 2,
+      "name": "Fireworks Incident",
+      "stats": "",
+      "traits": [],
+      "text": "Choose one of your Characters and an opposing Character. Deal 2 damage to each. If your Character survives, Draw a card, then Discard a card.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P024",
+      "type": "Action",
+      "cost": 1,
+      "name": "Commit to the Bit",
+      "stats": "",
+      "traits": [],
+      "text": "One of your Ready Characters gets +4 Power this turn and skips its next Ready step.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P025",
+      "type": "Action",
+      "cost": 2,
+      "name": "Floor It!",
+      "stats": "",
+      "traits": [],
+      "text": "Choose one of your Rotated Characters. Ready it and deal 2 damage to it. It gains Hothead this turn.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P026",
+      "type": "Action",
+      "cost": 1,
+      "name": "Walk It Off",
+      "stats": "",
+      "traits": [],
+      "text": "Heal 2 damage from a Character. Draw a card.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P027",
+      "type": "Item",
+      "cost": 1,
+      "name": "Gas Station Pills",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. It gets +1 Power. Dismiss this: Ready the attached Character and deal 1 damage to it.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P028",
+      "type": "Item",
+      "cost": 2,
+      "name": "Roman Candle",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. Rotate: Deal 1 damage to an opposing Character. If the attached Character is not a Scout, deal 1 damage to it too.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P029",
+      "type": "Item",
+      "cost": 1,
+      "name": "Hot Potato",
+      "stats": "",
+      "traits": [],
+      "text": "When this enters play, place it beside the opposing Leader. Either player may Activate this while it is beside their Leader. Rotate one of your Ready Characters: Move this beside the other Leader. At end of turn, deal 1 damage to the Leader beside this, then Return this to its Owner's hand.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P030",
+      "type": "Item",
+      "cost": 2,
+      "name": "Homemade Launch Ramp",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. When it attacks, you may Dismiss this. If you do, it gets +3 Power for this Attack. After the Attack, deal 1 damage to it.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P031",
+      "type": "Character",
+      "cost": 4,
+      "name": "Wedding Cover Band",
+      "traits": [
+        "Musician"
+      ],
+      "text": "",
+      "style": "Momentum",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 5,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "We take requests. Mostly to turn it down."
+    },
+    {
+      "id": "P032",
+      "type": "Character",
+      "cost": 2,
+      "name": "Wedding DJ",
+      "traits": [
+        "Musician"
+      ],
+      "text": "Your other Musicians get +1 Power.",
+      "style": "Momentum",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P033",
+      "type": "Character",
+      "cost": 2,
+      "name": "Karaoke Champion",
+      "traits": [
+        "Musician"
+      ],
+      "text": "Whenever you play an Action, this gets +1 Power this turn.",
+      "style": "Momentum",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P034",
+      "type": "Character",
+      "cost": 4,
+      "name": "Jam Band Hippie",
+      "traits": [
+        "Musician"
+      ],
+      "text": "When you Play your third card in a Round, heal 2 damage from one of your Characters.",
+      "style": "Momentum",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 3,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P035",
+      "type": "Character",
+      "cost": 3,
+      "name": "Youth Pastor With a Guitar",
+      "traits": [
+        "Musician"
+      ],
+      "text": "",
+      "style": "Momentum",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Three chords. Forty-seven announcements."
+    },
+    {
+      "id": "P036",
+      "type": "Character",
+      "cost": 4,
+      "name": "Stage Mom",
+      "traits": [
+        "Parent"
+      ],
+      "text": "When this enters play, another of your Characters gets +1 Power this turn. When you Play your second card in a Round, you may give one of your Parent or Kid Characters +1 Guard this turn.",
+      "style": "Momentum",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P037",
+      "type": "Character",
+      "cost": 3,
+      "name": "Reunion Tour Drummer",
+      "traits": [
+        "Undead",
+        "Musician"
+      ],
+      "text": "Stack. When this attacks while stacked, it gets +2 Power for this Attack.",
+      "style": "Momentum",
+      "complexity": "mixed",
+      "keywords": [
+        "Stack"
+      ],
+      "power": 4,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The band said they were getting everybody back together."
+    },
+    {
+      "id": "P038",
+      "type": "Character",
+      "cost": 3,
+      "name": "Mike",
+      "traits": [],
+      "text": "",
+      "style": "Momentum",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Mike."
+    },
+    {
+      "id": "P039",
+      "type": "Character",
+      "cost": 4,
+      "name": "Social Media Influencer",
+      "traits": [],
+      "text": "Rotate: Draw a card, then Discard a card. If you Played at least two cards this turn, you may give another of your Characters +2 Power this turn.",
+      "style": "Momentum",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P040",
+      "type": "Character",
+      "cost": 5,
+      "name": "Boss Babe",
+      "traits": [],
+      "text": "When this enters play, look at the top 3 cards of your deck. You may reveal a Character costing 2 or less and put it into your hand. Put the rest on the bottom in any order.",
+      "style": "Momentum",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P041",
+      "type": "Character",
+      "cost": 5,
+      "name": "Overenthusiastic Softball Mom",
+      "traits": [
+        "Parent"
+      ],
+      "text": "Rotate: Ready another of your Rotated Characters that attacked this turn. It cannot Attack again this turn. If it is a Kid, it gets +2 Guard this turn. Activate only once each turn.",
+      "style": "Momentum",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P042",
+      "type": "Character",
+      "cost": 5,
+      "name": "Peaked in High School",
+      "traits": [],
+      "text": "The first time each turn you Play a Character after Playing another card, that Character gets +1 Power and +1 Guard this turn.",
+      "style": "Momentum",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 5,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "He still calls the principal “Coach.”"
+    },
+    {
+      "id": "P043",
+      "type": "Character",
+      "cost": 2,
+      "name": "Little Leaguer",
+      "traits": [
+        "Kid"
+      ],
+      "text": "Hothead.",
+      "style": "Momentum",
+      "complexity": "keyword_only",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 2,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The scouting report just says “sugar.”"
+    },
+    {
+      "id": "P044",
+      "type": "Character",
+      "cost": 3,
+      "name": "Clown Who Booked the Wrong Gig",
+      "traits": [
+        "Clown"
+      ],
+      "text": "",
+      "style": "Momentum",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The invitation said “bring something for the grill.”"
+    },
+    {
+      "id": "P045",
+      "type": "Character",
+      "cost": 2,
+      "name": "Basic White Girl",
+      "traits": [],
+      "text": "",
+      "style": "Momentum",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The itinerary is mostly iced coffee."
+    },
+    {
+      "id": "P046",
+      "type": "Character",
+      "cost": 3,
+      "name": "Single Dad",
+      "traits": [
+        "Parent"
+      ],
+      "text": "When this enters play, another of your Characters gets +2 Guard this turn. If that Character is a Kid, heal 1 damage from it.",
+      "style": "Momentum",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P047",
+      "type": "Character",
+      "cost": 2,
+      "name": "Cookie Scout",
+      "traits": [
+        "Kid",
+        "Scout"
+      ],
+      "text": "When this enters play, Draw a card, then Discard a card. If you Played another card this turn, this gets +1 Guard this turn.",
+      "style": "Momentum",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P048",
+      "type": "Character",
+      "cost": 5,
+      "name": "Roadie Who Never Left",
+      "traits": [],
+      "text": "Whenever you play an Action, this gets +1 Power this turn. After your third Action each turn, you may play a Character costing 3 or less from your hand for free.",
+      "style": "Momentum",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "",
+      "build_around": true
+    },
+    {
+      "id": "P049",
+      "type": "Action",
+      "cost": 1,
+      "name": "Reply All",
+      "stats": "",
+      "traits": [],
+      "text": "Draw 2 cards. Your opponent draws 1.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": "You do not need to be on this thread."
+    },
+    {
+      "id": "P050",
+      "type": "Action",
+      "cost": 1,
+      "name": "Roll Call",
+      "stats": "",
+      "traits": [],
+      "text": "Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P051",
+      "type": "Action",
+      "cost": 2,
+      "name": "Carpool",
+      "stats": "",
+      "traits": [],
+      "text": "Return one of your Characters to your hand. The next Character you Play this turn costs 1 less.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P052",
+      "type": "Action",
+      "cost": 2,
+      "name": "Encore!",
+      "stats": "",
+      "traits": [],
+      "text": "Choose an Action in your discard costing 1 or less. You may Play it without paying its Cost. If you do, put it on the bottom of your deck instead of into your discard.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P053",
+      "type": "Action",
+      "cost": 1,
+      "name": "One More Song",
+      "stats": "",
+      "traits": [],
+      "text": "Draw a card.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P054",
+      "type": "Action",
+      "cost": 2,
+      "name": "Everybody Bats",
+      "stats": "",
+      "traits": [],
+      "text": "Choose up to three of your Characters. Each gets +1 Power this turn. If you chose three, Draw a card.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P055",
+      "type": "Action",
+      "cost": 2,
+      "name": "Bring a Friend",
+      "stats": "",
+      "traits": [],
+      "text": "The next Character you play this turn costs 2 less.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P056",
+      "type": "Action",
+      "cost": 1,
+      "name": "Parking Lot Pep Talk",
+      "stats": "",
+      "traits": [],
+      "text": "A Character gets +1 Power and +2 Guard this turn. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P057",
+      "type": "Item",
+      "cost": 1,
+      "name": "Participation Trophy",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. When you Play your second card in a Round, the attached Character gets +1 Power this turn.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P058",
+      "type": "Item",
+      "cost": 1,
+      "name": "Orange Slices",
+      "stats": "",
+      "traits": [],
+      "text": "Dismiss this: Heal 2 damage from a Character, or 3 damage if you Played another card this turn.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P059",
+      "type": "Item",
+      "cost": 2,
+      "name": "Portable Bluetooth Speaker",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate: One of your Characters gets +1 Power this turn. If you Played another card this turn and that Character is a Musician or Clown, it gets +2 Power instead.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P060",
+      "type": "Item",
+      "cost": 2,
+      "name": "Starter Kit",
+      "stats": "",
+      "traits": [],
+      "text": "When this enters play, Draw a card, then Discard a card. Dismiss this: The next Character costing 2 or less you Play this turn costs 1 less.",
+      "style": "Momentum",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P061",
+      "type": "Character",
+      "cost": 3,
+      "name": "Assistant Magician",
+      "traits": [
+        "Magician"
+      ],
+      "text": "When this enters play, you may Return another of your Characters to your hand. If you do, Draw a card.",
+      "style": "Misdirection",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P062",
+      "type": "Character",
+      "cost": 1,
+      "name": "Birthday Kid Who Knows the Trick",
+      "traits": [
+        "Kid"
+      ],
+      "text": "While this is in your hand, when one of your cards reveals it, you may put it on the bottom of your deck if it is still in your hand. If you do, Draw a card. When this enters play, look at the top card of your deck. You may put it on the bottom.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P063",
+      "type": "Character",
+      "cost": 2,
+      "name": "Alien Abduction Victim",
+      "traits": [],
+      "text": "Cloak.",
+      "style": "Misdirection",
+      "complexity": "keyword_only",
+      "keywords": [
+        "Cloak"
+      ],
+      "power": 3,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Missed three hours. Still got charged for parking."
+    },
+    {
+      "id": "P064",
+      "type": "Character",
+      "cost": 4,
+      "name": "Street Magician",
+      "traits": [
+        "Magician"
+      ],
+      "text": "When this enters play, choose an opposing Character. Its owner may Return it to their hand. If they do not, Rotate it.",
+      "style": "Misdirection",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P065",
+      "type": "Character",
+      "cost": 3,
+      "name": "Escape Artist",
+      "traits": [
+        "Magician"
+      ],
+      "text": "When this enters play, you may return another of your Characters to your hand.",
+      "style": "Misdirection",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P066",
+      "type": "Character",
+      "cost": 2,
+      "name": "Off-Duty Clown",
+      "traits": [
+        "Clown"
+      ],
+      "text": "Cloak. The first time each turn one of your effects Returns another of your Characters from play to your hand, Draw a card, then Discard a card.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [
+        "Cloak"
+      ],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P067",
+      "type": "Character",
+      "cost": 3,
+      "name": "Kid With an iPad",
+      "traits": [
+        "Kid"
+      ],
+      "text": "When this enters play, an opposing Character gets -1 Power this turn.",
+      "style": "Misdirection",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The battery is at one percent. So is everyone’s patience."
+    },
+    {
+      "id": "P068",
+      "type": "Character",
+      "cost": 4,
+      "name": "Social Media Grifter",
+      "traits": [
+        "Criminal"
+      ],
+      "text": "Rotate: Draw 2 cards, then Discard 2 cards. If one of your cards revealed a card from your hand this turn, Discard 1 card instead.",
+      "style": "Misdirection",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P069",
+      "type": "Character",
+      "cost": 4,
+      "name": "Conspiracy Blogger",
+      "traits": [],
+      "text": "At the start of your first Turn each turn, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise put it on the bottom.",
+      "style": "Misdirection",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P070",
+      "type": "Character",
+      "cost": 3,
+      "name": "Tech Bro",
+      "traits": [],
+      "text": "",
+      "style": "Misdirection",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "It’s a normal doorbell, but the subscription is mandatory."
+    },
+    {
+      "id": "P071",
+      "type": "Character",
+      "cost": 2,
+      "name": "Coupon Scammer",
+      "traits": [
+        "Criminal"
+      ],
+      "text": "",
+      "style": "Misdirection",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The expiration date is more of a suggestion."
+    },
+    {
+      "id": "P072",
+      "type": "Character",
+      "cost": 4,
+      "name": "Neighborhood Group Admin",
+      "traits": [
+        "HOA"
+      ],
+      "text": "",
+      "style": "Misdirection",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 7,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Thirty-seven missed alerts. One unfamiliar sedan."
+    },
+    {
+      "id": "P073",
+      "type": "Character",
+      "cost": 5,
+      "name": "IT Guy Who Quit Six Months Ago",
+      "traits": [
+        "Hacker"
+      ],
+      "text": "Rotate: Rotate an opposing Item. It cannot Activate abilities this turn.",
+      "style": "Misdirection",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P074",
+      "type": "Character",
+      "cost": 5,
+      "name": "Identity Thief",
+      "traits": [
+        "Criminal"
+      ],
+      "text": "When this enters play, choose another Character with a printed Trait. This gains one of its printed Traits while this remains in play. Rotate: Choose another of your Characters. Draw a card, then Discard a card. If it shares a Trait with this, it gets +2 Power this turn.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 5,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P075",
+      "type": "Character",
+      "cost": 4,
+      "name": "Pirate Radio Operator",
+      "traits": [
+        "Criminal",
+        "Musician"
+      ],
+      "text": "When this attacks, an opponent chooses one: this gets +2 Power for this Attack; or you Draw a card, then Discard a card.",
+      "style": "Misdirection",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P076",
+      "type": "Character",
+      "cost": 2,
+      "name": "Wi-Fi Bandit",
+      "traits": [
+        "Criminal",
+        "Hacker"
+      ],
+      "text": "Hothead.",
+      "style": "Misdirection",
+      "complexity": "keyword_only",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 2,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Your password is his password."
+    },
+    {
+      "id": "P077",
+      "type": "Character",
+      "cost": 2,
+      "name": "Script Kiddie",
+      "traits": [
+        "Kid",
+        "Hacker"
+      ],
+      "text": "Rotate: Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card, then Discard a card.",
+      "style": "Misdirection",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 1,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P078",
+      "type": "Character",
+      "cost": 6,
+      "name": "Pirate With a Business License",
+      "traits": [
+        "Pirate"
+      ],
+      "text": "The first time each turn an opponent makes a choice instructed by one of your cards, Draw a card, then Discard a card.",
+      "style": "Misdirection",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 6,
+      "guard": 7,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P079",
+      "type": "Action",
+      "cost": 1,
+      "name": "Pick a Card",
+      "stats": "",
+      "traits": [],
+      "text": "Present a card from your hand face down. An opponent guesses Character or not Character. Reveal it and keep it in your hand. If they guessed wrong, Draw 2 cards. Otherwise, Draw a card, then Discard a card.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P080",
+      "type": "Action",
+      "cost": 2,
+      "name": "Now You See Me",
+      "stats": "",
+      "traits": [],
+      "text": "Return one of your Characters to your hand. Then you may Play a Character costing 2 or less from your hand by paying 1 less.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P081",
+      "type": "Action",
+      "cost": 1,
+      "name": "Look Over There!",
+      "stats": "",
+      "traits": [],
+      "text": "Choose an opposing Character. It cannot block this turn.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P082",
+      "type": "Action",
+      "cost": 2,
+      "name": "Wrong Address",
+      "stats": "",
+      "traits": [],
+      "text": "Choose two opposing Characters. Their owner chooses one of them. Return that Character to its owner's hand. If they have only one Character, choose and Return that Character instead.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P083",
+      "type": "Action",
+      "cost": 2,
+      "name": "Terms and Conditions",
+      "stats": "",
+      "traits": [],
+      "text": "Choose an opposing Character. Its owner may Discard a card. If they do not, it gets -2 Power this turn.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P084",
+      "type": "Action",
+      "cost": 1,
+      "name": "Default Password",
+      "stats": "",
+      "traits": [],
+      "text": "Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card. If you have a Hacker in play, Draw a card, then Discard a card.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P085",
+      "type": "Action",
+      "cost": 2,
+      "name": "Have You Tried Turning It Off?",
+      "stats": "",
+      "traits": [],
+      "text": "Return a Rotated Item or Character to its owner's hand.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P086",
+      "type": "Action",
+      "cost": 2,
+      "name": "Switcheroo",
+      "stats": "",
+      "traits": [],
+      "text": "Choose one of your Characters and an opposing Character with equal or lower Cost. Return both to their owners' hands.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P087",
+      "type": "Item",
+      "cost": 1,
+      "name": "Burner Phone",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate, pay 1 Fuel: Draw a card, then put a card from your hand on the bottom of your deck.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P088",
+      "type": "Item",
+      "cost": 1,
+      "name": "Marked Deck",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate: Look at the top card of your deck. You may put it on the bottom.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P089",
+      "type": "Item",
+      "cost": 2,
+      "name": "Inconspicuous Bush",
+      "stats": "",
+      "traits": [],
+      "text": "When this enters play, you may put a Character costing 2 or less from your hand face down beneath this. When your Leader is Attacked, you may reveal and put it into play Ready before Blockers; it may Block if able. Its enters-play abilities do not trigger. At end of turn or if this leaves play, reveal and Return any hidden card to its Owner's hand.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P090",
+      "type": "Item",
+      "cost": 3,
+      "name": "Spoofed Keycard",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate: An opposing Character cannot Block this turn. If you have a Criminal or Pirate in play, it also gets -1 Power this turn.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P091",
+      "type": "Character",
+      "cost": 2,
+      "name": "Scout Troop Quartermaster",
+      "traits": [
+        "Scout",
+        "Scavenger"
+      ],
+      "text": "",
+      "style": "Salvage",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Prepared for everything except the inspection."
+    },
+    {
+      "id": "P092",
+      "type": "Character",
+      "cost": 5,
+      "name": "General Contractor",
+      "traits": [
+        "Builder"
+      ],
+      "text": "Rotate: Ready one of your Rotated Items. Activate only once each turn.",
+      "style": "Salvage",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P093",
+      "type": "Character",
+      "cost": 4,
+      "name": "Garage Inventor",
+      "traits": [
+        "Builder"
+      ],
+      "text": "Rotate, Dismiss one of your Items: Draw 2 cards, then Discard a card.",
+      "style": "Salvage",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P094",
+      "type": "Character",
+      "cost": 2,
+      "name": "Dumpster Diver",
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "When this enters play, look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest on the bottom in any order.",
+      "style": "Salvage",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P095",
+      "type": "Character",
+      "cost": 4,
+      "name": "Doomsday Prepper",
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "",
+      "style": "Salvage",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "End times. Curbside pickup.",
+      "art_note": "A backyard bunker stocked from curbside giveaways and salvaged supplies."
+    },
+    {
+      "id": "P096",
+      "type": "Character",
+      "cost": 4,
+      "name": "Shopping Cart Knight",
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "",
+      "style": "Salvage",
+      "complexity": "keyword_only",
+      "keywords": [],
+      "power": 5,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Sir Carts-a-Lot yields to no curb."
+    },
+    {
+      "id": "P097",
+      "type": "Character",
+      "cost": 2,
+      "name": "Junkyard Dog",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "",
+      "style": "Salvage",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": "Beware of dog. Also tetanus."
+    },
+    {
+      "id": "P098",
+      "type": "Character",
+      "cost": 5,
+      "name": "Raccoon of Unusual Size",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "When this enters play, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 6,
+      "guard": 5,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P099",
+      "type": "Character",
+      "cost": 3,
+      "name": "Crazy Cat Lady",
+      "traits": [],
+      "text": "Rotate: Look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If you revealed an Animal, heal 1 damage from one of your Characters.",
+      "style": "Salvage",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 2,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Every cat has a name. The neighbors have numbers."
+    },
+    {
+      "id": "P100",
+      "type": "Character",
+      "cost": 3,
+      "name": "Wind-Up Toy",
+      "traits": [
+        "Construct"
+      ],
+      "text": "Sucker Punch. When this attacks a Ready Character, this gets +1 Power for that Attack.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": "No batteries required. No brakes included."
+    },
+    {
+      "id": "P101",
+      "type": "Character",
+      "cost": 3,
+      "name": "Extension Cord Electrician",
+      "traits": [
+        "Builder"
+      ],
+      "text": "When this enters play, you may Ready one of your Items. If you have another Builder in play, Draw a card, then Discard a card.",
+      "style": "Salvage",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P102",
+      "type": "Character",
+      "cost": 5,
+      "name": "Rat King",
+      "traits": [
+        "Animal",
+        "Rat"
+      ],
+      "text": "Your other Animals get +1 Power.",
+      "style": "Salvage",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P103",
+      "type": "Character",
+      "cost": 2,
+      "name": "Possum in the Trash Can",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "When this is Defeated, you may Dismiss one of your Items. If you do, Return this from your discard to your hand.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P104",
+      "type": "Character",
+      "cost": 1,
+      "name": "Trash Palace Cockroach",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "When this is Defeated, you may put it from your discard on the bottom of your deck.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P105",
+      "type": "Character",
+      "cost": 4,
+      "name": "Jailbroken Robot Vacuum",
+      "traits": [
+        "Construct",
+        "Scavenger"
+      ],
+      "text": "Whenever you play an Item, tuck the top card of your deck beneath this. This gets +1 Power per tucked card. When this attacks, you may discard all tucked cards to deal that much damage to the opposing Leader.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": "The knife attachment voided the warranty.",
+      "build_around": true
+    },
+    {
+      "id": "P106",
+      "type": "Character",
+      "cost": 2,
+      "name": "Shopping Cart Golem",
+      "traits": [
+        "Construct",
+        "Scavenger"
+      ],
+      "text": "Stack. When this is Defeated while stacked, Return its lower card from your discard to its Owner's hand.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [
+        "Stack"
+      ],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": "One wheel squeaks. One wheel seeks revenge."
+    },
+    {
+      "id": "P107",
+      "type": "Character",
+      "cost": 3,
+      "name": "Curbside Mechanic",
+      "traits": [
+        "Builder",
+        "Scavenger"
+      ],
+      "text": "When this enters play, you may Return an Item costing 1 from your discard to your hand.",
+      "style": "Salvage",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P108",
+      "type": "Character",
+      "cost": 6,
+      "name": "Unlicensed Pool Guy",
+      "traits": [
+        "Builder"
+      ],
+      "text": "The first Item you Play each turn costs 1 less. Rotate: Return an Item from your discard to your hand.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 6,
+      "guard": 7,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P109",
+      "type": "Action",
+      "cost": 1,
+      "name": "Scrounge",
+      "stats": "",
+      "traits": [],
+      "text": "Look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest into your discard.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P110",
+      "type": "Action",
+      "cost": 1,
+      "name": "I Can Fix That",
+      "stats": "",
+      "traits": [],
+      "text": "Return an Item costing 1 from your discard to your hand.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P111",
+      "type": "Action",
+      "cost": 2,
+      "name": "Found This in the Garage",
+      "stats": "",
+      "traits": [],
+      "text": "Reveal the top 4 cards of your deck. You may put an Item among them into your hand. Put the rest into your discard.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P112",
+      "type": "Action",
+      "cost": 1,
+      "name": "That's Probably Still Good",
+      "stats": "",
+      "traits": [],
+      "text": "Heal 2 damage from a Character, or 3 damage if it is a Scavenger.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P113",
+      "type": "Action",
+      "cost": 2,
+      "name": "Make It Work",
+      "stats": "",
+      "traits": [],
+      "text": "Dismiss one of your Items to draw 2 cards.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P114",
+      "type": "Action",
+      "cost": 1,
+      "name": "Curb Alert",
+      "stats": "",
+      "traits": [],
+      "text": "Put an Item from your discard on the bottom of your deck. If you do, Draw a card.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P115",
+      "type": "Action",
+      "cost": 2,
+      "name": "Don't Throw That Away",
+      "stats": "",
+      "traits": [],
+      "text": "Return an Item that entered your discard this turn to your hand.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P116",
+      "type": "Action",
+      "cost": 2,
+      "name": "Good as New",
+      "stats": "",
+      "traits": [],
+      "text": "Choose a damaged Character. Heal all damage from it, then Rotate it.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P117",
+      "type": "Item",
+      "cost": 2,
+      "name": "Duct Tape",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P118",
+      "type": "Item",
+      "cost": 1,
+      "name": "Zip Ties",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this turn, or +3 Guard if it is a Builder.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P119",
+      "type": "Item",
+      "cost": 1,
+      "name": "Mystery Drawer of Cables",
+      "stats": "",
+      "traits": [],
+      "text": "When this enters play, draw a card. Dismiss this: Ready another of your Items.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P120",
+      "type": "Item",
+      "cost": 1,
+      "name": "Used Ham Sandwich",
+      "stats": "",
+      "traits": [],
+      "text": "Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P121",
+      "type": "Character",
+      "cost": 2,
+      "name": "Grumpy Old Guy",
+      "traits": [],
+      "text": "When this Blocks, the attacker gets -1 Power for this Attack.",
+      "style": "Stonewall",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P122",
+      "type": "Character",
+      "cost": 3,
+      "name": "HOA Enforcement Committee",
+      "traits": [
+        "HOA"
+      ],
+      "text": "The first opposing Character to Attack your Leader each turn gets -1 Power for that Attack.",
+      "style": "Stonewall",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P123",
+      "type": "Character",
+      "cost": 3,
+      "name": "Coupon Lady",
+      "traits": [],
+      "text": "",
+      "style": "Stonewall",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "She has a binder. You have a problem."
+    },
+    {
+      "id": "P124",
+      "type": "Character",
+      "cost": 2,
+      "name": "Mall Walker",
+      "traits": [],
+      "text": "Rotate: Heal 2 damage from this or another of your Characters.",
+      "style": "Stonewall",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 1,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P125",
+      "type": "Character",
+      "cost": 4,
+      "name": "Keyboard Warrior",
+      "traits": [],
+      "text": "When another of your Characters Blocks, this gets +1 Power this turn.",
+      "style": "Stonewall",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Brave enough to hit send."
+    },
+    {
+      "id": "P126",
+      "type": "Character",
+      "cost": 2,
+      "name": "Crossing Guard",
+      "traits": [],
+      "text": "Rotate: Another of your Characters gets +2 Guard this turn, or +3 Guard if it is a Kid.",
+      "style": "Stonewall",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P127",
+      "type": "Character",
+      "cost": 4,
+      "name": "PTA President",
+      "traits": [
+        "Parent"
+      ],
+      "text": "When this enters play, another of your Characters gets +2 Guard this turn. If it is a Parent or Kid, Draw a card, then Discard a card.",
+      "style": "Stonewall",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P128",
+      "type": "Character",
+      "cost": 3,
+      "name": "Retired Marine Next Door",
+      "traits": [],
+      "text": "",
+      "style": "Stonewall",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Quiet neighborhood. Strict perimeter."
+    },
+    {
+      "id": "P129",
+      "type": "Character",
+      "cost": 4,
+      "name": "HOA Vice President",
+      "traits": [
+        "HOA"
+      ],
+      "text": "",
+      "style": "Stonewall",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Vice is not silent."
+    },
+    {
+      "id": "P130",
+      "type": "Character",
+      "cost": 5,
+      "name": "Linda From Neighborhood Watch",
+      "traits": [],
+      "text": "When this Blocks, Draw a card, then Discard a card. Rotate: Another of your Characters gets +2 Guard this turn.",
+      "style": "Stonewall",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 4,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P131",
+      "type": "Character",
+      "cost": 3,
+      "name": "Old Dog",
+      "traits": [
+        "Animal"
+      ],
+      "text": "When this Blocks, you may give another of your Blocking Characters +2 temporary Guard for this Attack.",
+      "style": "Stonewall",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 5,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P132",
+      "type": "Character",
+      "cost": 5,
+      "name": "Church Potluck Grandma",
+      "traits": [
+        "Parent"
+      ],
+      "text": "Rotate: Heal 2 damage from one of your Characters or your Leader.",
+      "style": "Stonewall",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 4,
+      "guard": 7,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P133",
+      "type": "Character",
+      "cost": 6,
+      "name": "Concrete Goose",
+      "traits": [
+        "Construct"
+      ],
+      "text": "",
+      "style": "Stonewall",
+      "complexity": "keyword_only",
+      "keywords": [],
+      "power": 5,
+      "guard": 10,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": "The association has approved its use of force."
+    },
+    {
+      "id": "P134",
+      "type": "Character",
+      "cost": 2,
+      "name": "Church Usher",
+      "traits": [],
+      "text": "When this enters play, you may give another of your Characters +1 Guard this turn.",
+      "style": "Stonewall",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P135",
+      "type": "Character",
+      "cost": 4,
+      "name": "Mall Cop",
+      "traits": [],
+      "text": "This Character cannot Attack. While this is Ready, other Characters cannot use Hothead.",
+      "style": "Stonewall",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "No running."
+    },
+    {
+      "id": "P136",
+      "type": "Character",
+      "cost": 5,
+      "name": "Tow-Truck Driver",
+      "traits": [],
+      "text": "When this enters play, choose a Rotated opposing Character. Its owner may Discard a card. If they do not, that Character skips its next Ready step.",
+      "style": "Stonewall",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 5,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P137",
+      "type": "Character",
+      "cost": 5,
+      "name": "HOA Lawyer",
+      "traits": [
+        "HOA"
+      ],
+      "text": "The first time each turn an opposing Action that targeted one of your cards finishes resolving, its player may pay 1 Fuel. If they do not, they Discard a card. Rotate: Draw a card, then Discard a card.",
+      "style": "Stonewall",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 4,
+      "guard": 7,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P138",
+      "type": "Character",
+      "cost": 2,
+      "name": "Neighborhood Lifeguard",
+      "traits": [],
+      "text": "Rotate: Choose an opposing Character. It gets -2 Power this turn, or -3 Power if its Power is greater than this Character’s Power.",
+      "style": "Stonewall",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "NO RUNNING includes whatever this is."
+    },
+    {
+      "id": "P139",
+      "type": "Action",
+      "cost": 2,
+      "name": "File a Complaint",
+      "stats": "",
+      "traits": [],
+      "text": "Deal damage to an opposing Character equal to the number of Characters you control.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P140",
+      "type": "Action",
+      "cost": 2,
+      "name": "Not in My Neighborhood",
+      "stats": "",
+      "traits": [],
+      "text": "Choose a Rotated opposing Character. Its owner may Discard a card. If they do not, it skips its next Ready step.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P141",
+      "type": "Action",
+      "cost": 2,
+      "name": "Absolutely Not",
+      "stats": "",
+      "traits": [],
+      "text": "Deal 3 damage to an opposing Character.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P142",
+      "type": "Action",
+      "cost": 2,
+      "name": "I Want to Speak to Your Manager",
+      "stats": "",
+      "traits": [],
+      "text": "Return an Item to its owner's hand. If it belongs to an opponent, they Draw a card, then Discard a card.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P143",
+      "type": "Action",
+      "cost": 1,
+      "name": "Read the Fine Print",
+      "stats": "",
+      "traits": [],
+      "text": "A Character gets -1 Power and -1 Guard this turn.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P144",
+      "type": "Action",
+      "cost": 2,
+      "name": "'Tis But a Scratch",
+      "stats": "",
+      "traits": [],
+      "text": "Heal 3 damage from your Leader. This costs 1 less if your Leader has less Health than the opposing Leader.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P145",
+      "type": "Action",
+      "cost": 2,
+      "name": "Dig In",
+      "stats": "",
+      "traits": [],
+      "text": "Your Characters get +1 Guard this turn. If you have fewer Characters in play than an opponent, Draw a card.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P146",
+      "type": "Action",
+      "cost": 2,
+      "name": "Wait Them Out",
+      "stats": "",
+      "traits": [],
+      "text": "Draw a card. If you have not attacked this turn, you may give one of your Characters +2 Guard this turn, or +3 Guard if it is an HOA Character.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P147",
+      "type": "Item",
+      "cost": 1,
+      "name": "Security Camera",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate: An opposing Character gets -1 Power this turn.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P148",
+      "type": "Item",
+      "cost": 2,
+      "name": "Video Doorbell",
+      "stats": "",
+      "traits": [],
+      "text": "The first time each turn an opposing Character Attacks your Leader, Draw a card, then Discard a card.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P149",
+      "type": "Item",
+      "cost": 2,
+      "name": "Occupied Stroller",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. It gets +2 Guard, or +3 Guard if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": "The safest place in the neighborhood is behind it."
+    },
+    {
+      "id": "P150",
+      "type": "Item",
+      "cost": 1,
+      "name": "Grandma's Cigarette Case",
+      "stats": "",
+      "traits": [],
+      "text": "The first time each turn one of your Characters survives damage, you may Dismiss this. If you do, Draw a card, then Discard a card.",
+      "style": "Stonewall",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P151",
+      "type": "Character",
+      "cost": 1,
+      "name": "First-Time Wrestler",
+      "traits": [
+        "Wrestler"
+      ],
+      "text": "",
+      "style": "Expendable",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 2,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Signed the waiver in crayon."
+    },
+    {
+      "id": "P152",
+      "type": "Character",
+      "cost": 2,
+      "name": "Florida Man's Stunt Double",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "Hothead. When this is Defeated during an Attack, deal 1 damage to the opposing Leader.",
+      "style": "Expendable",
+      "complexity": "mixed",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 3,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P153",
+      "type": "Character",
+      "cost": 3,
+      "name": "Zombie Kid, Turtle Fan",
+      "traits": [
+        "Undead",
+        "Kid"
+      ],
+      "text": "When this enters play, look at the top 3 cards of your deck. You may reveal an Animal or Undead Character and put it into your hand. Put the rest on the bottom in any order.",
+      "style": "Expendable",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P154",
+      "type": "Character",
+      "cost": 3,
+      "name": "Dumpster Zombie",
+      "traits": [
+        "Undead",
+        "Scavenger"
+      ],
+      "text": "",
+      "style": "Expendable",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 4,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Taking “eat out of the trash” in a concerning direction."
+    },
+    {
+      "id": "P155",
+      "type": "Character",
+      "cost": 5,
+      "name": "Retired Crash-Test Dummy",
+      "traits": [
+        "Construct",
+        "Daredevil"
+      ],
+      "text": "When this enters play, you may deal 2 damage to it. If you do, Ready one Fuel.",
+      "style": "Expendable",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 5,
+      "guard": 6,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P156",
+      "type": "Character",
+      "cost": 7,
+      "name": "Rooster Nobody Can Catch",
+      "traits": [
+        "Animal"
+      ],
+      "text": "",
+      "style": "Expendable",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 8,
+      "guard": 9,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": "Seven counties. Six warrants. Zero witnesses."
+    },
+    {
+      "id": "P157",
+      "type": "Character",
+      "cost": 3,
+      "name": "Fireworks Technician",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "Rotate, Sacrifice another of your Characters: Deal 2 damage to an opposing Character.",
+      "style": "Expendable",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P158",
+      "type": "Character",
+      "cost": 2,
+      "name": "Patio-Table Prodigy",
+      "traits": [
+        "Wrestler",
+        "Daredevil"
+      ],
+      "text": "Hothead.",
+      "style": "Expendable",
+      "complexity": "keyword_only",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 3,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "The patio set was still under warranty."
+    },
+    {
+      "id": "P159",
+      "type": "Character",
+      "cost": 2,
+      "name": "Rabid Rat",
+      "traits": [
+        "Animal",
+        "Rat"
+      ],
+      "text": "When this is Defeated, another of your Characters gets +2 Power this turn. If it is a Rat or Undead, it also gets +1 Guard this turn.",
+      "style": "Expendable",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 2,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P160",
+      "type": "Character",
+      "cost": 4,
+      "name": "Gym Selfie Guy",
+      "traits": [],
+      "text": "",
+      "style": "Expendable",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 3,
+      "guard": 7,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "Three sets. Forty-seven takes.",
+      "aliases": [
+        "Gym Bro"
+      ]
+    },
+    {
+      "id": "P161",
+      "type": "Character",
+      "cost": 4,
+      "name": "Zombie Mall Walker",
+      "traits": [
+        "Undead"
+      ],
+      "text": "When this is Defeated, you may Return it from your discard to your hand at the end of this turn.",
+      "style": "Expendable",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P162",
+      "type": "Character",
+      "cost": 5,
+      "name": "Guy Who Cut the Wrong Wire",
+      "traits": [
+        "Daredevil"
+      ],
+      "text": "",
+      "style": "Expendable",
+      "complexity": "textless",
+      "keywords": [],
+      "power": 6,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "He remembers it as more of a group decision."
+    },
+    {
+      "id": "P163",
+      "type": "Character",
+      "cost": 6,
+      "name": "Dumpster Phoenix",
+      "traits": [
+        "Animal",
+        "Undead",
+        "Scavenger"
+      ],
+      "text": "Rotate, Sacrifice another of your Characters: Return a Character from your discard to your hand. If it is Undead, heal 2 damage from this.",
+      "style": "Expendable",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 5,
+      "guard": 6,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P164",
+      "type": "Character",
+      "cost": 3,
+      "name": "Stunt Clown",
+      "traits": [
+        "Clown",
+        "Daredevil"
+      ],
+      "text": "Explosive.",
+      "style": "Expendable",
+      "complexity": "mixed",
+      "keywords": [
+        "Explosive"
+      ],
+      "power": 3,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P165",
+      "type": "Character",
+      "cost": 2,
+      "name": "Backyard Wrestling Superfan",
+      "traits": [],
+      "text": "Your other Wrestlers get +1 Power.",
+      "style": "Expendable",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 1,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P166",
+      "type": "Character",
+      "cost": 4,
+      "name": "Backyard Tag-Team Captain",
+      "traits": [
+        "Wrestler"
+      ],
+      "text": "Rotate: Return another of your damaged Characters to your hand. If it was a Wrestler, Draw a card, then Discard a card.",
+      "style": "Expendable",
+      "complexity": "activated",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P167",
+      "type": "Character",
+      "cost": 1,
+      "name": "Rat in the Fireworks Box",
+      "traits": [
+        "Animal",
+        "Rat"
+      ],
+      "text": "When this is Defeated, deal 1 damage to the opposing Leader.",
+      "style": "Expendable",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 1,
+      "guard": 1,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P168",
+      "type": "Character",
+      "cost": 5,
+      "name": "Guy Who Took the Chair Shot",
+      "traits": [
+        "Wrestler"
+      ],
+      "text": "When this enters play, you may deal 1 damage to another of your Characters. If you do, Draw a card.",
+      "style": "Expendable",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 5,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P169",
+      "type": "Action",
+      "cost": 1,
+      "name": "Take One for the Team",
+      "stats": "",
+      "traits": [],
+      "text": "Sacrifice one of your Characters. If you do, prevent the next 3 damage that would be dealt to your Leader this turn.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P170",
+      "type": "Action",
+      "cost": 1,
+      "name": "This Seemed Like a Good Idea",
+      "stats": "",
+      "traits": [],
+      "text": "Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Power and +2 Guard this turn.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P171",
+      "type": "Action",
+      "cost": 2,
+      "name": "Worth It",
+      "stats": "",
+      "traits": [],
+      "text": "Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P172",
+      "type": "Action",
+      "cost": 2,
+      "name": "Tag Me In!",
+      "stats": "",
+      "traits": [],
+      "text": "Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this turn.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": "I’ve got this. Please do not ask what “this” is."
+    },
+    {
+      "id": "P173",
+      "type": "Action",
+      "cost": 2,
+      "name": "Again!",
+      "stats": "",
+      "traits": [],
+      "text": "Return a Character costing 2 or less from your discard to your hand.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P174",
+      "type": "Action",
+      "cost": 1,
+      "name": "Sign the Waiver",
+      "stats": "",
+      "traits": [],
+      "text": "Sacrifice one of your Characters. If you do, Draw 2 cards, then Discard a card.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P175",
+      "type": "Action",
+      "cost": 1,
+      "name": "Light the Fuse",
+      "stats": "",
+      "traits": [],
+      "text": "Sacrifice one of your Characters to deal 2 damage to the opposing Leader.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P176",
+      "type": "Action",
+      "cost": 2,
+      "name": "Keep It Going!",
+      "stats": "",
+      "traits": [],
+      "text": "If one of your Characters was Defeated during your Turn this turn, Ready one Fuel and Draw a card. You may Play only one Keep It Going! each turn.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P177",
+      "type": "Item",
+      "cost": 1,
+      "name": "Bath Salts",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. It gains Undead. Dismiss this: The Character this was attached to gets +2 Power this turn.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P178",
+      "type": "Item",
+      "cost": 1,
+      "name": "Folding Chair",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. Dismiss this: The Character this was attached to gets +2 Power this turn, or +3 Power if it is a Wrestler.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P179",
+      "type": "Item",
+      "cost": 2,
+      "name": "Definitely Safe Helmet",
+      "stats": "",
+      "traits": [],
+      "text": "Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "P180",
+      "type": "Item",
+      "cost": 2,
+      "name": "Button Marked DO NOT PRESS",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate, Sacrifice one of your Characters: Deal 2 damage to an opposing Character. This Item skips its next Ready step.",
+      "style": "Expendable",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": ""
+    }
+  ],
+  "revision": 4
+}

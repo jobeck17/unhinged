@@ -6,6 +6,7 @@ on:
     paths:
       - index.html
       - play/**
+      - production/playtests/character-lab/**
       - production/cards/cards.json
       - production/playtests/florida-vs-hoa/decks.json
       - production/playtests/six-deck-lab/decks.json
@@ -31,9 +32,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Prepare static site
         run: |
-          mkdir -p _site/play _site/production/cards _site/production/playtests/florida-vs-hoa _site/production/playtests/six-deck-lab
+          mkdir -p _site/production/playtests/character-lab _site/play _site/production/cards _site/production/playtests/florida-vs-hoa _site/production/playtests/six-deck-lab
           cp index.html _site/index.html
-          cp play/index.html play/app.js play/engine.js play/ai.js play/engine-six.js play/ai-six.js play/style.css _site/play/
+          cp play/index.html play/app.js play/engine.js play/ai.js play/engine-six.js play/ai-six.js play/style.css play/engine-lab.js play/ai-lab.js _site/play/
+          cp production/playtests/character-lab/cards.json production/playtests/character-lab/decks.json _site/production/playtests/character-lab/
           cp production/cards/cards.json _site/production/cards/cards.json
           cp production/playtests/florida-vs-hoa/decks.json _site/production/playtests/florida-vs-hoa/decks.json
           cp production/playtests/six-deck-lab/decks.json _site/production/playtests/six-deck-lab/decks.json

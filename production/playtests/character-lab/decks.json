@@ -1,0 +1,180 @@
+{
+  "version": "character-lab-1",
+  "card_pool": "0.1-donut.character-lab.1",
+  "status": "Provisional playtest; rules and balance still under test",
+  "decks": [
+    {
+      "name": "Fireworks Finale",
+      "leader": "Florida Man",
+      "health": 25,
+      "styles": [
+        "Reckless",
+        "Expendable"
+      ],
+      "cards": {
+        "P001": 4,
+        "P002": 3,
+        "P003": 2,
+        "P005": 2,
+        "P011": 3,
+        "P012": 3,
+        "P151": 3,
+        "P165": 2,
+        "P019": 4,
+        "P022": 3,
+        "P026": 3,
+        "P025": 2,
+        "P027": 3,
+        "P179": 3
+      },
+      "guide": "Keep a cheap Character and draw. Build a team, injure it safely, then play Fourth of July Showrunner to refill your hand. Its attacks turn the damaged team into Leader damage.",
+      "featured": true
+    },
+    {
+      "name": "One More Encore",
+      "leader": "Washed-Up Rock Star",
+      "health": 25,
+      "styles": [
+        "Momentum",
+        "Expendable"
+      ],
+      "cards": {
+        "P032": 3,
+        "P033": 4,
+        "P043": 3,
+        "P047": 3,
+        "P048": 3,
+        "P038": 2,
+        "P151": 3,
+        "P049": 4,
+        "P050": 4,
+        "P052": 3,
+        "P053": 4,
+        "P055": 2,
+        "P178": 2
+      },
+      "guide": "Keep cheap Characters and draw Actions. Karaoke Champion grows with each Action. Roadie Who Never Left turns your third Action into a free Character.",
+      "featured": true
+    },
+    {
+      "name": "Pick a Card, Any Card",
+      "leader": "Birthday Party Magician",
+      "health": 25,
+      "styles": [
+        "Misdirection",
+        "Reckless"
+      ],
+      "cards": {
+        "P062": 2,
+        "P063": 2,
+        "P065": 2,
+        "P066": 2,
+        "P067": 2,
+        "P074": 2,
+        "P071": 2,
+        "P076": 2,
+        "P079": 2,
+        "P080": 2,
+        "P081": 2,
+        "P086": 2,
+        "P088": 2,
+        "P089": 2,
+        "P001": 2,
+        "P017": 2,
+        "P016": 2,
+        "P075": 2,
+        "P029": 2,
+        "P084": 2
+      }
+    },
+    {
+      "name": "Vacuum Goes BRRR",
+      "leader": "Trash Baron",
+      "health": 25,
+      "styles": [
+        "Salvage",
+        "Stonewall"
+      ],
+      "cards": {
+        "P094": 4,
+        "P097": 3,
+        "P105": 4,
+        "P107": 3,
+        "P104": 3,
+        "P102": 2,
+        "P121": 3,
+        "P109": 3,
+        "P113": 3,
+        "P119": 4,
+        "P120": 4,
+        "P117": 2,
+        "P149": 2
+      },
+      "guide": "Keep Dumpster Diver, a cheap Item, and the Vacuum. Play Items after the Vacuum to load it. Attack with the growing Vacuum or cash out its cargo for direct Leader damage.",
+      "featured": true
+    },
+    {
+      "name": "Your Deck Violates the Bylaws",
+      "leader": "HOA President",
+      "health": 25,
+      "styles": [
+        "Stonewall",
+        "Salvage"
+      ],
+      "cards": {
+        "P121": 2,
+        "P122": 2,
+        "P123": 2,
+        "P124": 2,
+        "P125": 2,
+        "P128": 2,
+        "P129": 2,
+        "P132": 2,
+        "P138": 2,
+        "P095": 2,
+        "P097": 2,
+        "P106": 2,
+        "P139": 2,
+        "P141": 2,
+        "P143": 2,
+        "P146": 2,
+        "P112": 2,
+        "P147": 2,
+        "P117": 2,
+        "P120": 2
+      }
+    },
+    {
+      "name": "Tables Are Optional",
+      "leader": "Backyard Wrestler",
+      "health": 25,
+      "styles": [
+        "Expendable",
+        "Reckless"
+      ],
+      "cards": {
+        "P151": 2,
+        "P152": 2,
+        "P153": 2,
+        "P158": 2,
+        "P159": 2,
+        "P164": 2,
+        "P166": 2,
+        "P167": 2,
+        "P169": 2,
+        "P170": 2,
+        "P171": 2,
+        "P172": 2,
+        "P173": 2,
+        "P175": 2,
+        "P178": 2,
+        "P160": 2,
+        "P001": 2,
+        "P002": 2,
+        "P019": 2,
+        "P023": 2
+      }
+    }
+  ],
+  "copy_limit": 4
+}
