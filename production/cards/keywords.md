@@ -10,7 +10,7 @@
 | Slowpoke | This Character does not retaliate when it Blocks. | Existing core keyword; wording clarified | P096 Shopping Cart Knight, P133 Concrete Goose |
 | Sucker Punch | This Character may Attack Ready opposing Characters. | Printed playtest keyword | P100 Wind-Up Toy |
 | Sneaky | Playing this card from your hand on your Turn does not use that Turn. Pay its normal Cost; only one Sneaky Play may occur per Turn. | Printed playtest keyword | P050 Roll Call, P084 Default Password, P114 Curb Alert |
-| Cloak | The first time each Round this Character would take retaliation damage, turn it face down until the end of the Round instead. | Printed playtest keyword | P063 Alien Abduction Victim, P065 Escape Artist |
+| Cloak | The first time each Round this Character would take retaliation damage, turn it face down until the end of the Round instead. | Printed playtest keyword | P065 Escape Artist, P066 Off-Duty Clown |
 | Stack | When Playing this Character, you may put it atop one of your Characters; pay its normal Cost. The two face-up layers form one Character. | Printed limited playtest keyword | P037 Reunion Tour Drummer, P106 Shopping Cart Golem |
 
 ## Scope and edge cases
