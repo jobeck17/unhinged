@@ -14,13 +14,13 @@ The normal win condition is reducing the opposing Leader to 0 Health. A game has
 
 ## 2. Game objects and zones
 
-Each player has a Deck, Hand, Discard, Play Area, and Fuel Tank. Cards in the Play Area are **in play**.
+Each player has a Deck, Hand, Discard, Play Area, and Stash. Cards in the Play Area are **in play**.
 
 - A **Leader** is the identity for its owner's deck, its 25-Health target, and the source of one automatic passive. It stays outside the deck and is not a card in play.
 - A **Character** has Power and Guard. When damage on a Character equals or exceeds its Guard, it is Defeated.
 - An **Action** resolves once, then goes to its Owner's discard unless its text says otherwise.
 - An **Item** enters play and remains there. It attaches only when its text says to Attach it; otherwise it is a standalone Item.
-- **Fuel** is the spendable resource used to pay Costs.
+- A **Stash** is a row of cards placed face down from hand. Each Ready card in your Stash can be Rotated to pay 1 toward a Cost.
 
 Character is the working type throughout the Donut rulebook and card pool. Older documents call it Unit; that is the same game object, not an additional type. The final printed name remains a presentation decision in [Open decisions](open-decisions.md).
 
@@ -34,7 +34,7 @@ Character is the working type throughout the Donut rulebook and card pool. Older
 | **Play** | Play a card from a zone where a rule or effect allows it. |
 | **Enters play** | A Character or Item arrives in the Play Area. Its normal enters-play abilities trigger. |
 | **Activate** | Voluntarily use an activated ability and pay its listed cost. Attack and Block are not activated abilities. |
-| **Cost** | The number paid by Rotating Fuel, unless a card says otherwise. |
+| **Cost** | The number paid by Rotating cards in your Stash, unless a card says otherwise. |
 | **Power** | Combat damage dealt by a Character. |
 | **Guard** | A Character's damage threshold. Damage persists unless healed or the Character leaves play. |
 | **Health** | A Leader's survival total. |
@@ -69,12 +69,11 @@ War also decides a tied game-ending state: if both Leaders are at 0 or less afte
 
 A Round contains alternating player Turns. At the start of every Round:
 
-1. **Ready** all eligible cards and Fuel.
-2. **Set** the Fuel total for that Round.
-3. **Draw** one card.
-4. The initiative player takes the first Turn.
+1. **Ready** all eligible cards, including every card in each Stash.
+2. **Draw** one card.
+3. The initiative player takes the first Turn.
 
-Round 1 includes this normal Draw step. At the end of a Round, expire all “this Round” effects together, check for Defeated Characters, and resolve the resulting triggers. Then resolve end-of-Round effects, including delayed Returns. Finish their resulting triggers before the next Ready, Set, Draw. A delayed end-of-Round effect created during this closing procedure resolves before the Round closes; it does not wait an extra Round. Round counters reset only when the next Round begins.
+Round 1 includes this normal Draw step. At the end of a Round, expire all “this Round” effects together, check for Defeated Characters, and resolve the resulting triggers. Then resolve end-of-Round effects, including delayed Returns. Finish their resulting triggers before the next Ready and Draw. A delayed end-of-Round effect created during this closing procedure resolves before the Round closes; it does not wait an extra Round. Round counters reset only when the next Round begins.
 
 If closing triggers create new “this Round” effects, expire those too and resolve any resulting Defeats and triggers before the Round closes. Repeat as needed; no Round-limited bonus carries into the next Round. The end-of-Round event itself happens only once.
 
@@ -84,15 +83,15 @@ On a Turn, choose one: Play a card, Activate an ability, Attack, or Pass. Each u
 
 Passing immediately gives the opponent a Turn. If either player Plays, Activates, or Attacks after a Pass, the consecutive-Pass count resets. Two consecutive Passes end the Round. The player who made the first of those Passes takes the first Turn next Round. A player who has no legal Play, Activation, or Attack must Pass.
 
-## 6. Fuel and deckbuilding
+## 6. Stash and deckbuilding
 
-Fuel pays normal card and ability Costs. Rotate Fuel to pay a card or ability's Cost. Fuel Readies at the start of each Round.
+The **Stash** is the current resource-system playtest. It replaces the automatic Round-based Fuel progression.
 
-The current progression is a soft lock:
+Once during each of your Turns, you may **Stash a card** from your hand by placing it face down into your Stash. This does not use your normal Turn choice. A card enters the Stash Ready. Each Ready card in your Stash can be Rotated to pay 1 toward a card or ability's Cost. Ready all cards in your Stash at the start of the next Round.
 
-| Round | 1 | 2 | 3 | 4 | 5 | 6 | 7+ |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Fuel | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+A card in the Stash has no name, type, Style, Traits, Cost, text, Power, or Guard while it remains there. Its identity is private to its owner; the number of cards in each Stash and whether each is Ready or Rotated are public. A card can leave the Stash only when a rule or effect explicitly moves it.
+
+There is no automatic resource gain. If you do not Stash cards, your available economy does not grow. Current cards do not yet manipulate the Stash; ramp, recovery, and resource-matters effects are future design space to test after the base economy is observed.
 
 Cost reductions cannot reduce a payment below 0. They change the amount paid, not printed Cost for War, searches, or card comparisons. A 'next card' reduction is consumed by that next qualifying Play even if its payment is already 0.
 
