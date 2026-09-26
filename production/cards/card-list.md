@@ -67,12 +67,12 @@
 | P058 | Orange Slices | Momentum | Item | 1 | — | — | — |
 | P059 | Portable Bluetooth Speaker | Momentum | Item | 2 | — | — | — |
 | P060 | Starter Kit | Momentum | Item | 2 | — | — | — |
-| P061 | Assistant Magician | Misdirection | Character | 3 | 3/4 | Magician | On play |
+| P061 | Magician's Assistant | Misdirection | Character | 3 | 3/4 | Magician | On play |
 | P062 | Birthday Kid Who Knows the Trick | Misdirection | Character | 1 | 1/2 | Kid | Multiple abilities |
 | P063 | Alien Abduction Victim | Misdirection | Character | 2 | 3/3 | — | Keyword only |
-| P064 | Street Magician | Misdirection | Character | 4 | 3/5 | Magician | On play |
-| P065 | Escape Artist | Misdirection | Character | 3 | 3/4 | Magician | Rotate ability |
-| P066 | Off-Duty Clown | Misdirection | Character | 2 | 2/3 | Clown | Multiple abilities |
+| P064 | Volunteer From the Audience | Misdirection | Character | 4 | 3/5 | Magician | On play |
+| P065 | Escape Artist | Misdirection | Character | 5 | 7/1 | Magician | Keyword only |
+| P066 | Rabbit | Misdirection | Character | 2 | 2/3 | Animal | Single ongoing ability |
 | P067 | Kid With an iPad | Misdirection | Character | 3 | 3/5 | Kid | On play |
 | P068 | Social Media Grifter | Misdirection | Character | 4 | 4/4 | Criminal | Rotate ability |
 | P069 | Conspiracy Blogger | Misdirection | Character | 4 | 3/5 | — | Single ongoing ability |
