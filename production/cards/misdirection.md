@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | P061 | Character | 3 | **Magician's Assistant** | 3/4 | Magician | When this enters play, you may Return another of your Characters to your hand. |
 | P062 | Character | 1 | **Birthday Kid Who Knows the Trick** | 1/2 | Kid | While this is in your hand, when one of your cards reveals it, you may put it on the bottom of your deck if it is still in your hand. If you do, Draw a card. When this enters play, look at the top card of your deck. You may put it on the bottom. |
-| P063 | Character | 2 | **Rabbit** | 2/3 | Animal | When this Character is Returned from play to your hand by one of your effects, Draw a card. |
+| P063 | Character | 2 | **Rabbit** | 2/3 | Animal | When this Character is Returned from play to your hand, Draw a card. |
 | P064 | Character | 4 | **Volunteer From the Audience** | 3/5 | Magician | When this enters play, reveal the top card of an opponent's deck. If it is a Character, you may Dismiss this Character to put the revealed Character into play under your control. Otherwise, put the revealed card on the bottom of its Owner's deck. |
 | P065 | Character | 5 | **Escape Artist** | 7/1 | Magician | **Cloak**. |
 | P066 | Character | 2 | **Off-Duty Clown** | 2/3 | Clown | **Cloak**. The first time each Round one of your effects Returns another of your Characters from play to your hand, Draw a card, then Discard a card. |
