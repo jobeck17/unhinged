@@ -67,10 +67,8 @@
       ],
       "cards": {
         "P062": 4,
-        "P063": 2,
         "P065": 3,
         "P066": 3,
-        "P067": 2,
         "P074": 2,
         "P075": 3,
         "P078": 3,
@@ -79,9 +77,11 @@
         "P088": 3,
         "P089": 2,
         "P005": 3,
-        "P010": 3
+        "P010": 3,
+        "P061": 2,
+        "P064": 2
       },
-      "guide": "Keep a cheap Character, Marked Deck, and Pick a Card. Set up Pirate With a Business License, arrange a strong top card, then make the opponent choose: Pirate can play the top card free before their chosen card resolves.",
+      "guide": "Use Magician's Assistant to Return Rabbit for repeatable draw value and Sleight of Hand filtering. Volunteer From the Audience can trade itself for an opposing top-deck Character. Escape Artist is a 7/1 Cloak threat: retaliation makes it vanish face down for the rest of the Round.",
       "featured": true
     },
     {
