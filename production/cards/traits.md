@@ -10,7 +10,7 @@ The saturation guide is roughly **3–15% of the 108 unique deck Characters**. I
 
 | Trait | Characters | Saturation | Style distribution | Cards that use it |
 | --- | --- | --- | --- | --- |
-| Animal | 11 | 10.2% | Reckless 1, Salvage 5, Stonewall 1, Expendable 4 | P099 Crazy Cat Lady, P153 Zombie Kid, Turtle Fan |
+| Animal | 12 | 11.1% | Reckless 1, Misdirection 1, Salvage 5, Stonewall 1, Expendable 4 | P099 Crazy Cat Lady, P153 Zombie Kid, Turtle Fan |
 | Undead | 5 | 4.6% | Momentum 1, Expendable 4 | P153 Zombie Kid, Turtle Fan, P159 Rabid Rat, P163 Dumpster Phoenix, P173 Again!, P175 Light the Fuse, P177 Bath Salts |
 | Construct | 5 | 4.6% | Salvage 3, Stonewall 1, Expendable 1 | P117 Duct Tape |
 | Rat | 3 | 2.8% | Salvage 1, Expendable 2 | P102 Rat King, P159 Rabid Rat |
