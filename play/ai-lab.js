@@ -20,7 +20,7 @@ export function aiChoice(g,r){let {player:p,options=[],multi=false,max=2,title='
  if(title.toLowerCase().includes('discard')&&title.includes('Choose a card')){let hand=g.players[p].hand;return options.map(o=>({o,c:g.card(hand[o.value])})).sort((a,b)=>b.c.cost-a.c.cost)[0].o.value}
  if(title.includes('Skip')||title.includes('Play')||title.includes('Return')||title.includes('Reveal'))return options.find(o=>o.value!==null)?.value??null;
  return options[0].value}
-export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p);
+export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p);if(!s.stashedThisTurn&&s.hand.length)return {type:'stash',index:0};
  let legal=s.hand.map((id,index)=>({c:g.card(id),index})).filter(o=>g.canPlay(o.index,p));
  let attackers=own.filter(x=>g.canAttack(x)).sort((a,b)=>g.power(b)-g.power(a));
  const play=o=>({type:'play',index:o.index});
