@@ -1176,7 +1176,7 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this Character is Returned from play to your hand by one of your effects, Draw a card.",
+      "text": "When this Character is Returned from play to your hand, Draw a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
