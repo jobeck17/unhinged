@@ -5,12 +5,12 @@
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
-| P061 | Character | 3 | **Assistant Magician** | 3/4 | Magician | When this enters play, you may Return another of your Characters to your hand. If you do, Draw a card. |
+| P061 | Character | 3 | **Magician's Assistant** | 3/4 | Magician | When this enters play, you may Return another of your Characters to your hand. |
 | P062 | Character | 1 | **Birthday Kid Who Knows the Trick** | 1/2 | Kid | While this is in your hand, when one of your cards reveals it, you may put it on the bottom of your deck if it is still in your hand. If you do, Draw a card. When this enters play, look at the top card of your deck. You may put it on the bottom. |
 | P063 | Character | 2 | **Alien Abduction Victim** | 3/3 | — | **Cloak**. |
-| P064 | Character | 4 | **Street Magician** | 3/5 | Magician | When this enters play, choose an opposing Character. Its owner may Return it to their hand. If they do not, Rotate it. |
-| P065 | Character | 3 | **Escape Artist** | 3/4 | Magician | Rotate: Return another of your Characters to your hand. If it was a Magician or Clown, Draw a card, then Discard a card. |
-| P066 | Character | 2 | **Off-Duty Clown** | 2/3 | Clown | **Cloak**. The first time each Round one of your effects Returns another of your Characters from play to your hand, Draw a card, then Discard a card. |
+| P064 | Character | 4 | **Volunteer From the Audience** | 3/5 | Magician | When this enters play, reveal the top card of an opponent's deck. If it is a Character, you may Dismiss this Character to put the revealed Character into play under your control. Otherwise, put the revealed card on the bottom of its Owner's deck. |
+| P065 | Character | 5 | **Escape Artist** | 7/1 | Magician | **Cloak**. |
+| P066 | Character | 2 | **Rabbit** | 2/3 | Animal | When this Character is Returned from play to your hand by one of your effects, Draw a card. |
 | P067 | Character | 3 | **Kid With an iPad** | 3/5 | Kid | When this enters play, an opposing Character gets -1 Power this Round. |
 | P068 | Character | 4 | **Social Media Grifter** | 4/4 | Criminal | Rotate: Draw 2 cards, then Discard 2 cards. If one of your cards revealed a card from your hand this Round, Discard 1 card instead. |
 | P069 | Character | 4 | **Conspiracy Blogger** | 3/5 | — | At the start of your first Turn each Round, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise put it on the bottom. |
