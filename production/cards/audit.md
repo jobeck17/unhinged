@@ -23,8 +23,8 @@ These categories are mutually exclusive. Keyword-only cards are not textless. A 
 | Textless | 23 | 21.3% | 4 | 5 | 3 | 3 | 3 | 5 |
 | Keyword only | 7 | 6.5% | 1 | 1 | 2 | 1 | 1 | 1 |
 | On play | 18 | 16.7% | 3 | 3 | 3 | 3 | 3 | 3 |
-| Rotate ability | 23 | 21.3% | 4 | 3 | 4 | 4 | 4 | 4 |
-| Single ongoing ability | 21 | 19.4% | 4 | 3 | 3 | 3 | 5 | 3 |
+| Rotate ability | 22 | 20.4% | 4 | 3 | 3 | 4 | 4 | 4 |
+| Single ongoing ability | 22 | 20.4% | 4 | 3 | 4 | 3 | 5 | 3 |
 | Multiple abilities | 16 | 14.8% | 2 | 3 | 3 | 4 | 2 | 2 |
 
 ## Character Cost curve
@@ -33,7 +33,7 @@ These categories are mutually exclusive. Keyword-only cards are not textless. A 
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Reckless | 2 | 5 | 4 | 3 | 3 | 1 | 0 |
 | Momentum | 0 | 5 | 5 | 4 | 3 | 1 | 0 |
-| Misdirection | 1 | 5 | 4 | 5 | 2 | 1 | 0 |
+| Misdirection | 1 | 5 | 3 | 5 | 3 | 1 | 0 |
 | Salvage | 1 | 5 | 5 | 3 | 3 | 1 | 0 |
 | Stonewall | 0 | 5 | 4 | 4 | 4 | 1 | 0 |
 | Expendable | 2 | 4 | 4 | 3 | 3 | 1 | 1 |
