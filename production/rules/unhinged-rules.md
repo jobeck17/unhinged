@@ -51,7 +51,7 @@ Formal rules language uses **Rotate**, **Play**, and **enters play**. The [termi
 - **Dismiss:** move a card from play to its Owner's discard without Defeating it.
 - **Put:** neutral movement to the stated destination. It is not automatically any event above.
 
-Ownership never changes. Current production wording should prefer “your Character,” “an opposing Character,” and “the player who played this Action.” No current card changes ownership or control. Use these plain relationships consistently.
+Ownership never changes. A card can change control only when an effect explicitly says so. If a controlled card leaves play, it moves to its Owner's appropriate zone. Current production wording should otherwise prefer “your Character,” “an opposing Character,” and “the player who played this Action.” Use these plain relationships consistently.
 
 ## 4. Setup and War
 
