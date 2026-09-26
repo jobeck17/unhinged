@@ -13,8 +13,8 @@ Featured decks use up to four copies of key cards; all six decks remain 40 cards
 
 ## Rules for this experiment
 
-1. Full turns alternate A, B, A, B. The starting player remains fixed. A Round counts one turn from each player and sets Fuel: 1 through 7, capped at 7.
-2. At the start of your turn, ready your board, refill Fuel, and draw one. Newly played Characters may block but cannot attack or use Rotate abilities until a later Round, unless Hothead permits attacking.
+1. Full turns alternate A, B, A, B. The starting player remains fixed. A Round counts one turn from each player. There is no automatic resource progression. Once during each Turn, a player may Stash one card from hand face down; each Ready Stashed card pays 1 Cost.
+2. At the start of your turn, ready your board and Stash, then draw one. Newly played Characters may block but cannot attack or use Rotate abilities until a later Round, unless Hothead permits attacking.
 3. Play, attack, and activate while resources permit, then End turn. Effects saying "this turn" expire at every End turn. Cloak persists until the Round ends; other lab-specific end-of-turn effects resolve as implemented.
 4. Attack a Leader or a Rotated opposing Character (Sucker Punch also permits Ready Characters). A Leader attack permits at most one Ready, non-Cloaked blocker. Blocking rotates that Character.
 5. Damage in Character combat is simultaneous, including when either Character is defeated. Determine both damage amounts before applying either. Remove all combat casualties before their Defeat triggers resolve. Damage persists. Damage in excess of a blocker's remaining Guard reaches the Leader; excess from attacking a Character directly is lost.
