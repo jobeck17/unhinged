@@ -54,4 +54,18 @@ Using an opponent's Stash should Rotate those cards as payment, not remove or pe
 - Whether Spy becomes a Misdirection/Stonewall cross-Style package, with economy interference as part of its identity.
 - Balance implications of taxes, temporary Stash rotation, Stash recovery, and any effects that move cards out of Stash.
 
+### Flexible base Stash timing
+
+Working experiment: Round opening remains **Ready → Draw → first Turn** rather than forcing a Stash decision during upkeep. Each player gets **one Stash opportunity per Round**, usable during one of their own Turns. Stashing does not consume the normal Turn choice, and the card enters Stash Ready, so it may be used to pay a Cost immediately.
+
+This intentionally lets a player delay the decision until after cards have been played and new information is available. The decision to test is whether that flexibility creates useful interaction and bluffing or makes Stashing too consequence-free. This would replace the current wording that allows one Stash during each Turn; extra Turns should not create extra base Stash opportunities.
+
+### Salvage: temporary Item Stash
+
+Working Salvage economy concept: the first qualifying Item each Round that would be discarded or Dismissed may instead move into its owner's Stash **face up and Rotated**. It counts as 1 Stash but cannot be used that Round because it enters Rotated. When that face-up Item is later used from Stash to pay a Cost, **discard it instead of leaving it in Stash**.
+
+The Item remains face up specifically so both players can identify which Stash card is temporary and know which card must be discarded when spent. Normal Stashed cards remain face down and reusable. This gives Salvage recycled, temporary economy rather than Momentum-style permanent ramp.
+
+Still unresolved: whether the trigger should catch discarded Items only, Dismissed Items only, or both; whether this belongs on a Leader/passive, card package, or broader Salvage mechanic; and the final rules wording for a face-up card retaining its Item identity while in Stash.
+
 Do not convert this section into locked card text or global rules until the base Stash economy has been playtested.
