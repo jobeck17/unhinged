@@ -446,3 +446,130 @@ This is exploratory, not a locked color pie:
 
 Thematic packages can then sit on top of or across these mechanics. Examples already worth exploring include Magician/Bounce, Spy/hidden information + denial, HOA/Tax, Wrestlers/tagging, Undead/recursion, Junkyard/Item recycling, and Musician/chain-play.
 
+
+
+---
+
+# Damage-state and functional-healing ideas
+
+> **Status: package / ability-bank exploration. Not production-locked.**
+
+## Character-only damage / Leader-safe interaction
+
+Direct-damage cards can be intentionally constrained to **Characters rather than Leaders**. This creates stronger board-control damage without automatically becoming Leader burn.
+
+Prefer natural targeting language such as:
+
+> Deal 3 damage to a Character.
+
+rather than extra reminder text saying the effect cannot target a Leader when the target restriction already establishes that.
+
+This restriction can be used on Actions, Items, triggered abilities, and Character abilities.
+
+## Damaged-Character / self-damage payoffs
+
+Damage on a friendly Character can function as a resource or state rather than only a liability.
+
+Candidate effects:
+
+> **While this Character has damage, it gets +2 Power.**
+
+> **When this Character attacks, you may Draw cards equal to the damage currently on it.**
+
+The second effect is intentionally banked in its raw form; exact scaling or a cap should be determined in balance testing.
+
+Reusable scaling vocabulary to explore:
+
+- Amount of damage currently on this Character.
+- Whether this Character has any damage.
+- Whether this Character has at least X damage.
+- Amount of damage among your Characters.
+- Damage added to this Character this Round.
+
+Possible payoffs include Power, Draw/filtering, direct damage, Cost reduction, healing, Ready effects, or other package-specific rewards.
+
+The intended tension is that self-damage can make a Character more valuable while simultaneously putting it closer to Defeat.
+
+## Damage Everywhere: leave-play Leader ping
+
+Candidate effect:
+
+> **When this card leaves play, deal 1 damage to the opposing Leader.**
+
+Because **leaves play** is broader than Defeated, this can potentially trigger from Defeat, Dismiss, Return, Sacrifice, and other methods of leaving play. That interaction is intentional design space but requires balance testing, particularly with Bounce and Sacrifice packages.
+
+This belongs in the broader **Damage Everywhere** identity: damage can originate from Attacks, Actions, Items, triggers, self-damage interactions, and cards leaving play.
+
+---
+
+# Functional healing
+
+Healing should have meaningful functions beyond simply reversing damage. Damage can be something a player intentionally accumulates and later **converts into another resource or payoff**.
+
+This creates tension with damaged-Character packages: healing a Character may make it safer while turning off abilities that reward remaining damaged.
+
+## Heal into cards
+
+Candidate template:
+
+> **Heal up to 3 damage from a Character. Draw a card for each damage healed this way.**
+
+Exact numbers require testing. The important mechanic is that **actual damage removed determines the payoff**.
+
+## Heal into Power
+
+Candidate template:
+
+> Heal any amount of damage from one of your Characters. It gets +1 Power this Round for each damage healed this way.
+
+## Heal into Stash utility
+
+Candidate template:
+
+> Heal 2 damage from a Character. If you healed 2 damage this way, Ready one Stash.
+
+## Heal into Ready
+
+Candidate template:
+
+> Heal up to 2 damage from a Rotated Character. If you healed damage this way, Ready it.
+
+This can bridge healing with Freeze/Stall counterplay.
+
+## Transfer damage
+
+Candidate template:
+
+> Move up to 2 damage from another friendly Character to this Character.
+
+Moving damage is mechanically distinct from healing. It can save one Character while deliberately activating a damaged-Character payoff on another.
+
+## Redistribute damage
+
+Explore effects that move damage among friendly Characters without reducing the total amount of damage in play.
+
+This creates tactical damage management and can support Characters that actively want to be damaged.
+
+## Threshold healing and payoff
+
+Possible patterns:
+
+- If you healed at least 2 damage, gain X.
+- If a Character has 3 or more damage, heal it and gain a larger payoff.
+- Heal a Character just before it would otherwise be Defeated.
+- Heal a Leader, then gain an effect based on the amount actually healed.
+- Effects that care about whether a Character remains damaged after healing.
+
+## Self-damage / healing ecosystem
+
+Treat these as three related but distinct mechanical families:
+
+1. **Self-Damage** — intentionally place damage on your own Characters for tempo or setup.
+2. **Damaged-Character Payoffs** — reward Characters for having or accumulating damage.
+3. **Functional Healing** — remove accumulated damage and convert the amount removed into cards, Power, Stash utility, Ready effects, or other value.
+
+A possible gameplay loop is:
+
+**damage yourself → unlock damaged bonuses → accumulate damage → cash out the damage through healing → receive a second payoff**
+
+Functional healing should also appear outside dedicated self-damage decks so that healing remains a broadly useful mechanic rather than merely one half of a single combo package.
