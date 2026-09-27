@@ -249,9 +249,9 @@ Direct damage bypasses normal combat interaction, so it should not simply be a m
 
 A Style package should deliberately explore forcing the opponent to Discard.
 
-## Preferred current home: Misdirection
+## Style home under review
 
-The strongest thematic fit is the **Hacker / Spy side of Misdirection**, rather than the Magician package.
+Earlier exploration placed this in Misdirection, but the fresh Style audit suggests **Stonewall / denial-control** may be the cleaner primary home. Keep both possibilities open until the Style/package reorganization is complete. Hacker should lean toward system/Stash manipulation; Spy may naturally cross Misdirection and Stonewall.
 
 Working identity:
 - Magician manipulates board position, Return effects, and replay value.
@@ -285,7 +285,7 @@ These ideas should move through the following pipeline rather than being dumped 
 2. Identify which existing cards are natural homes for the strongest banked mechanics.
 3. Map mechanics to Style identity so every Style has recognizable interaction patterns.
 4. Add only genuinely repeated mechanics to the keyword list.
-5. Build the Misdirection Hacker/Spy discard package.
+5. Build and test a forced-discard/hand-disruption package, with Stonewall as the leading mechanical home and Spy as a possible cross-Style bridge.
 6. Add direct-damage answers, including ways to damage Ready Characters without Attacking.
 7. Seed On Play, When Attacking, When Blocking, and leave-play triggers across the pool.
 8. Use conditional triggers to create smaller packages and surprising cross-card interactions.
@@ -293,3 +293,156 @@ These ideas should move through the following pipeline rather than being dumped 
 10. Playtest packages before declaring them production-complete.
 
 The goal is not to maximize the number of mechanics. The bank exists so production cards can draw from a coherent vocabulary instead of repeatedly inventing isolated effects.
+
+
+---
+
+# Package architecture exploration
+
+> **Status: fresh package ideas. Preserve without forcing them into the current Style assignments.**
+
+A useful design hierarchy is emerging:
+
+- **Style** = broad mechanical identity / how a deck tends to play.
+- **Package** = a smaller repeatable gameplay loop that cards can be built around.
+- **Trait/theme** = who or what the cards are.
+- **Role** = what an individual card contributes to its package, such as enabler, payoff, engine, interaction, finisher, or glue.
+
+Packages should not be created merely because several cards share a Trait. A strong package should have a recognizable little game or loop. Packages may cross Styles when that creates useful deckbuilding overlap.
+
+## Freeze / Stall
+
+**Core loop:** Rotate opposing Ready Characters, keep important Characters Rotated, and gain value from Characters being or remaining Rotated.
+
+Candidate effects:
+- Rotate an opposing Ready Character.
+- Choose a Rotated Character. It does not Ready at the start of the next Round.
+- The first time each Round an opposing Character fails to Ready, gain a benefit.
+- Gain a bonus while attacking a Rotated Character.
+- Punish an opponent for having multiple Rotated Characters.
+- Create ways for the opponent to fight back by Ready-ing or protecting key Characters.
+
+This should generally **block, delay, or freeze rather than remove**. Current leading Style home is Stonewall.
+
+## Damage Everywhere
+
+This may be a **larger Style identity rather than a narrow package**.
+
+Core idea: deal damage through many different vectors:
+- Attacks.
+- Actions.
+- Items.
+- On Play abilities.
+- When Attacking triggers.
+- Defeat / leave-play triggers.
+- Self-damage converted into value.
+- Leader damage.
+- Splash or secondary damage.
+
+Reckless is the leading home for proactive, broad-spectrum damage. Other Styles may access direct damage through their own costs or conditions, such as Stonewall retaliation/traps, Expendable sacrifice, or Salvage dismissing Items.
+
+Preserve the rule distinction that **dealing damage is not the same as Attacking**.
+
+## Bounce / Return to Hand
+
+**Core loop:** Return Characters to hand, benefit from leaving play or increased hand size, then replay them for On Play value.
+
+Candidate pieces:
+- Return your own Character to hand.
+- Return opposing Characters to hand.
+- Reward a friendly Character being Returned.
+- Reward replaying a previously Returned Character.
+- On Play abilities that become attractive to reuse.
+- Effects that care about the number of cards in hand.
+
+Magician is a natural thematic implementation, but Bounce should be treated as a mechanical package rather than exclusively a Magician rule.
+
+## Big Hand
+
+**Core condition:** gain bonuses while you have more cards in hand than the opponent.
+
+Candidate effects:
+- If you have more cards in hand than an opponent, gain Power/Guard.
+- If you have more cards, improve an On Play or triggered ability.
+- Compare hand sizes for Cost reduction or other value.
+- Reward ending a Turn with more cards.
+- Pair naturally with friendly Bounce because Returning your own Character increases hand size.
+
+Important tension: bouncing an **opposing** Character also increases their hand size, so Bounce is not automatically beneficial to Big Hand.
+
+## Copycat
+
+**Core loop:** when the opponent performs a useful game action, receive a smaller or mirrored benefit.
+
+Candidate triggers:
+- When an opponent Draws, Draw or filter.
+- When an opponent heals, heal.
+- When an opponent Readies Stash outside normal Ready timing, Ready Stash.
+- When an opponent Stashes, gain a related benefit.
+- When an opponent Returns a Character, you may Return one of yours.
+- When an opponent plays a second Character/card in a Round, trigger.
+- When an opponent gains a temporary bonus, gain a smaller analogous bonus.
+
+The package should feel like **“you do it, I get to do something too”**, not literal text-copying of every card. This can discourage or complicate opponent choices without simply prohibiting them. Stonewall is a strong possible home.
+
+## Stash Recharge
+
+**Core loop:** spend Stash, then Ready some of it again to extend a turn or sequence.
+
+Candidate effects:
+- Ready one Stash.
+- When you play your second/third card this Round, Ready one Stash.
+- Ready multiple Stash with a delayed drawback.
+- Trigger when Stash Readies outside the normal Round Ready.
+
+Momentum is the leading home. This is mechanically distinct from **Ramp**:
+- Ramp increases total permanent Stash.
+- Recharge lets existing Stash be used again.
+
+## Stash Retrieval / Exchange
+
+**Core loop:** recover a card previously committed to Stash, usually while replacing the resource so the effect is manipulation rather than free card advantage.
+
+Candidate effects:
+- Return a card from your Stash to your hand, then Stash a card from your hand.
+- Exchange a hand card with a Stashed card.
+- Look at one of your Stashed cards and optionally retrieve it at a cost.
+- Retrieve a Stashed card and replace it with a card that enters Rotated.
+- Trigger when a card leaves Stash.
+
+Misdirection, especially Hacker, is the leading home. The fantasy is changing your mind, accessing buried information, or manipulating the resource system rather than generating more resources.
+
+## Hand Reset
+
+Candidate baseline effect:
+
+> **Shuffle your hand into your deck, then Draw 3 cards.**
+
+This naturally changes value with hand size:
+- Excellent from a very small or poor hand.
+- Roughly filtering/resetting around three cards.
+- A real cost when used with a large hand.
+
+Do not force a Style home yet.
+
+Possible experimental variant:
+
+> Shuffle your hand into your deck, then Draw 3 cards. If you shuffled no cards this way, Draw 4 instead.
+
+This could seed an **Empty Hand** package that intentionally spends through its hand and reloads, creating a natural opposite to Big Hand.
+
+## Possible mechanical package map
+
+This is exploratory, not a locked color pie:
+
+| Style | Candidate mechanical packages / identities |
+| --- | --- |
+| Reckless | Damage Everywhere; self-damage; aggressive Attack; Step Aside; risk/borrow |
+| Momentum | Ramp; Stash Recharge; chaining multiple plays; growth |
+| Misdirection | Bounce; Big Hand; Stash Retrieval/Exchange; hidden/face-down manipulation |
+| Salvage | Item recycling; temporary Item Stash; discard reuse; junk/build engines |
+| Stonewall | Freeze/Stall; Copycat; Tax; forced discard; reactive punishment |
+| Expendable | Sacrifice; Defeat/leave-play payoffs; recursion; possible Empty Hand exploration |
+
+Thematic packages can then sit on top of or across these mechanics. Examples already worth exploring include Magician/Bounce, Spy/hidden information + denial, HOA/Tax, Wrestlers/tagging, Undead/recursion, Junkyard/Item recycling, and Musician/chain-play.
+
