@@ -141,6 +141,15 @@ A matched 30,000-game round robin using revision-7 cards and **Ace Up My Sleeve*
 
 See `production/playtests/six-deck-lab/snapshot-revision-7-turn-order.md`.
 
+## Revision 8 Jerry-Rig tuning
+
+Trash Baron remains unchanged. Jerry-Rig density is reduced from four Salvage Items to two:
+
+- Duct Tape and Mystery Drawer of Cables retain Jerry-Rig.
+- Zip Ties and Used Ham Sandwich lose Jerry-Rig.
+
+This specifically targets Salvage's excess economy rather than the Leader's opposing-unused-Stash identity.
+
 ## Next validation work
 
 1. Build six 40-card mono-Style test decks from the rebuilt pool.
