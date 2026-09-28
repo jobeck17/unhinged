@@ -165,54 +165,79 @@
   "keywords": [
     {
       "name": "Hothead",
-      "status": "New Donut playtest keyword",
-      "definition": "This Character may Attack in the Round it enters play.",
+      "status": "Current rebuild keyword",
+      "definition": "This Character may Attack on the Turn it enters play.",
       "limits": "Does not Ready it, grant an extra Attack, allow Rotate activations on arrival, or override a cannot-Attack effect. A gained Hothead works the same way while it lasts."
     },
     {
       "name": "Defiant",
-      "status": "Renamed from the old Explosive rule; printed playtest keyword",
+      "status": "Current rebuild keyword",
       "definition": "This Character retaliates when it Blocks even if the incoming Attack Defeats it.",
       "limits": "Only a Blocker receives this exception. Use its Power immediately before it left play. Slowpoke prevents this retaliation."
     },
     {
       "name": "Explosive",
-      "status": "Revised splash-damage playtest keyword",
+      "status": "Current rebuild keyword",
       "definition": "When this Character is Defeated, deal 1 damage to each opposing Character.",
       "limits": "This is a Defeat trigger, not retaliation. It affects opposing Characters in play, not Leaders, Items, or your Characters. Resolve it with other pending Defeat triggers, after the Attack damage and retaliation checkpoints when Defeated during an Attack."
     },
     {
       "name": "Slowpoke",
-      "status": "Existing core keyword; wording clarified",
+      "status": "Current rebuild keyword",
       "definition": "This Character does not retaliate when it Blocks.",
       "limits": "It can still Attack. If attacked directly while Rotated, it retaliates if it survives. If it also has Defiant, Slowpoke prevents its blocking retaliation."
     },
     {
       "name": "Sucker Punch",
-      "status": "Printed playtest keyword",
+      "status": "Current rebuild keyword",
       "definition": "This Character may Attack Ready opposing Characters.",
       "limits": "Such an Attack is direct, cannot be Blocked, and follows normal rotation, damage and retaliation. The entry-Round Attack restriction still applies."
     },
     {
       "name": "Sneaky",
-      "status": "Printed playtest keyword",
+      "status": "Shelved for starting rebuild; retained for legacy pool compatibility",
       "definition": "Playing this card from your hand on your Turn does not use that Turn. Pay its normal Cost; only one Sneaky Play may occur per Turn.",
       "limits": "Finish the Play and all its triggers before taking the normal Turn action. It grants neither an extra Turn nor a Response window. A free Play from another zone cannot use Sneaky."
     },
     {
       "name": "Cloak",
-      "status": "Printed playtest keyword",
+      "status": "Shelved for starting rebuild; retained for legacy pool compatibility",
       "definition": "The first time each Round this Character would take retaliation damage, turn it face down until the end of the Round instead.",
       "limits": "Cloak replaces retaliation damage only. It does not protect from attack damage, Action damage, Dismiss, Return, or other non-retaliation effects. A face-down Cloaked Character remains in play, keeps its damage, orientation and attachments, and counts as a Character. It cannot Attack, Block, Activate, be chosen, take damage, or be Defeated; its printed abilities are inactive. Reveal it at end of Round before Round-limited effects expire and check Defeat when revealed."
     },
     {
       "name": "Stack",
-      "status": "Printed limited playtest keyword",
+      "status": "Shelved for starting rebuild; retained for legacy pool compatibility",
       "definition": "When Playing this Character, you may put it atop one of your Characters; pay its normal Cost. The two face-up layers form one Character.",
       "limits": "At most two layers. Top supplies Power, Guard, Traits, and attack/block restrictions. Both layers supply abilities; resolve simultaneous layer triggers bottom to top. Keep damage and orientation; the pile leaves play together, except explicit card text. Stacking does not Ready or grant an extra Attack."
+    },
+    {
+      "name": "Jerry-Rig",
+      "status": "Current rebuild keyword; not yet assigned in legacy 180-card pool",
+      "definition": "If this Item would go to your discard, you may put it face up and Rotated into your Stash instead. When this card is used to pay a Cost, discard it.",
+      "limits": "While in Stash, this card is not mechanically an Item. Its face-up state only marks it as temporary Stash that will be discarded when spent."
     }
   ],
-  "keyword_prototypes": [],
+  "keyword_prototypes": [
+    {
+      "name": "Chicken",
+      "status": "Approved candidate for card audit",
+      "definition": "When this Character is attacked, you may Return it to your hand.",
+      "limits": "Optional. Best suited to Characters whose board presence gives the opponent a reason to attack them."
+    },
+    {
+      "name": "Stubborn",
+      "status": "Approved candidate for card audit",
+      "definition": "The first time each Round this Character would be Returned or Dismissed, it remains in play instead.",
+      "limits": "Protects from both Return and Dismiss once per Round."
+    },
+    {
+      "name": "Bodyguard",
+      "status": "Approved candidate; working name",
+      "definition": "This Character may be attacked while Ready. While Ready, it must Block an Attack against your Leader if able.",
+      "limits": "Final wording and name remain subject to card testing."
+    }
+  ],
   "reserved": [
     "Zombie",
     "Alien",
@@ -241,6 +266,7 @@
     "Magician, Hacker, and Wrestler are deliberately concentrated in one Style for this pool. Their support cards work without a matching Trait and can be paired with another Style.",
     "Three Character appearances are 2.8% of 108, an intentional soft-floor allowance. Do not pad the roster to satisfy rounded percentages.",
     "No Trait is a Leader requirement. Leader Traits remain future card design, not a mandatory four-label quota.",
-    "Jerry-Rig remains earmarked. Encore, Pick a Card, Scrounge, and related names are card titles, not global keywords. Response remains outside this revision."
+    "Sneaky, Cloak, Stack, Step Aside, and Overkill are shelved for the starting rebuild. Legacy card data may still reference Sneaky, Cloak, or Stack until the 180-card audit.",
+    "Jerry-Rig is promoted for the rebuild and is intended to be tested on all Salvage Items."
   ]
 }
