@@ -1,6 +1,6 @@
 # Donut Card List
 
-> Donut revision 7 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 8 · 2026-09-28 · Working playtest text; balance is unverified.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
 
