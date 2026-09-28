@@ -14,9 +14,9 @@ This is the current baseline after comparing it against a version that refilled 
 
 ## Birthday Party Magician — Misdirection
 
-**Passive:** Whenever one of your Characters is Returned from play to your hand, **Draw a card**.
+**Ace Up My Sleeve:** Once during your Turn, when one of your Characters is Returned from play to your hand, **Ready 1 Stash**.
 
-This is the revision 6 test. The former damaged-Character put-damage passive is no longer active and remains available as future card/Leader design space.
+This replaces the former Draw-on-Return passive. Revision 7 gives Misdirection more card flow on its Characters, so the Leader now converts Bounce into tempo.
 
 ## Trash Baron — Salvage
 
