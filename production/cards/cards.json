@@ -2085,10 +2085,10 @@
       "id": "P111",
       "type": "Action",
       "cost": 2,
-      "name": "Found This in the Garage",
+      "name": "Cash In the Clutter",
       "stats": "",
       "traits": [],
-      "text": "Reveal the top 4 cards of your deck. You may put an Item among them into your hand. Put the rest into your discard.",
+      "text": "Choose up to 3 Ready Stash controlled by either player and Rotate them. Draw a card for each Stash Rotated this way.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2096,7 +2096,7 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "Somebody was going to use it eventually."
     },
     {
       "id": "P112",
@@ -2122,7 +2122,7 @@
       "name": "Make It Work",
       "stats": "",
       "traits": [],
-      "text": "Dismiss one of your Items. If you do, Draw 2 cards. The next Item you Play this Round costs 1 less.",
+      "text": "Dismiss one of your Items. If you do, Draw 2 cards. Your next Item this Turn costs 1 less.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2139,11 +2139,9 @@
       "name": "Curb Alert",
       "stats": "",
       "traits": [],
-      "text": "Sneaky. Put an Item from your discard on the bottom of your deck. If you do, Draw a card.",
+      "text": "Return an Item costing 1 or less from your discard to your hand. If you have more cards in hand than an opponent, Draw a card, then Discard a card.",
       "style": "Salvage",
-      "keywords": [
-        "Sneaky"
-      ],
+      "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
