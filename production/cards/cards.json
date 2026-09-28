@@ -1714,22 +1714,23 @@
     {
       "id": "P092",
       "type": "Character",
-      "cost": 5,
-      "name": "General Contractor",
+      "cost": 6,
+      "name": "Guy Fixing His Trans Am",
       "traits": [
-        "Builder"
+        "Builder",
+        "Scavenger"
       ],
-      "text": "Rotate: Ready one of your Rotated Items. Activate only once each Round.",
+      "text": "When this enters play, Return an Item from your discard to your hand. Your Jerry-Rig cards enter your Stash Ready instead of Rotated.",
       "style": "Salvage",
-      "complexity": "activated",
+      "complexity": "mixed",
       "keywords": [],
       "power": 4,
-      "guard": 6,
+      "guard": 7,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "It has been almost running for three summers."
     },
     {
       "id": "P093",
@@ -1739,9 +1740,9 @@
       "traits": [
         "Builder"
       ],
-      "text": "Rotate, Dismiss one of your Items: Draw 2 cards, then Discard a card.",
+      "text": "Whenever you Dismiss one of your Items, Draw a card, then Discard a card.",
       "style": "Salvage",
-      "complexity": "activated",
+      "complexity": "ongoing",
       "keywords": [],
       "power": 3,
       "guard": 5,
@@ -1774,14 +1775,14 @@
     {
       "id": "P095",
       "type": "Character",
-      "cost": 4,
-      "name": "Doomsday Prepper",
+      "cost": 5,
+      "name": "Hoarder",
       "traits": [
         "Scavenger"
       ],
-      "text": "",
+      "text": "When this enters play, Return an Item costing 2 or less from your discard to your hand. While you have 6 or more cards in hand, your Items cost 1 less.",
       "style": "Salvage",
-      "complexity": "textless",
+      "complexity": "mixed",
       "keywords": [],
       "power": 4,
       "guard": 6,
@@ -1789,7 +1790,7 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "End times. Curbside pickup.",
+      "flavor": "It is not clutter if there is a system.",
       "art_note": "A backyard bunker stocked from curbside giveaways and salvaged supplies."
     },
     {
@@ -1858,9 +1859,9 @@
       "cost": 3,
       "name": "Crazy Cat Lady",
       "traits": [],
-      "text": "Rotate: Look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If you revealed an Animal, heal 1 damage from one of your Characters.",
+      "text": "At the start of your Turn, look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If the revealed Character is an Animal, heal 1 damage from a Character.",
       "style": "Salvage",
-      "complexity": "activated",
+      "complexity": "ongoing",
       "keywords": [],
       "power": 2,
       "guard": 5,
@@ -1919,9 +1920,9 @@
         "Animal",
         "Rat"
       ],
-      "text": "Rotate: Choose up to two of your other Characters. Each gets +1 Power this Round. Each chosen Rat also gets +1 Guard this Round.",
+      "text": "When this enters play, you may Return an Animal from your discard to your hand. Your other Rat Characters get +1 Power.",
       "style": "Salvage",
-      "complexity": "activated",
+      "complexity": "mixed",
       "keywords": [],
       "power": 4,
       "guard": 6,
@@ -1970,18 +1971,18 @@
     {
       "id": "P105",
       "type": "Character",
-      "cost": 3,
+      "cost": 4,
       "name": "Jailbroken Robot Vacuum",
       "traits": [
         "Construct",
         "Scavenger"
       ],
-      "text": "When this attacks, put the top card of your deck face down beneath this if able. This gets +1 Power for this Attack per card beneath it. When this is Defeated, reveal and put them into your discard. You may deal damage to an opposing Character equal to the number of Items revealed. If this leaves play another way, reveal and put them into your discard.",
+      "text": "Whenever you play an Item, put the top card of your deck into your discard. This gets +1 Power for each Item in your discard, up to +3 Power.",
       "style": "Salvage",
-      "complexity": "mixed",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 2,
-      "guard": 4,
+      "power": 3,
+      "guard": 5,
       "audit_identity": [],
       "status": "playtest",
       "flavor": "The knife attachment voided the warranty."
@@ -1995,12 +1996,10 @@
         "Construct",
         "Scavenger"
       ],
-      "text": "Stack. When this is Defeated while stacked, Return its lower card from your discard to its Owner's hand.",
+      "text": "While you have a face-up card in your Stash, this gets +2 Power.",
       "style": "Salvage",
-      "complexity": "mixed",
-      "keywords": [
-        "Stack"
-      ],
+      "complexity": "ongoing",
+      "keywords": [],
       "power": 2,
       "guard": 4,
       "audit_identity": [],
@@ -2036,7 +2035,7 @@
       "traits": [
         "Builder"
       ],
-      "text": "The first Item you Play each Round costs 1 less. Rotate: Return an Item from your discard to your hand.",
+      "text": "When this enters play, Return an Item from your discard to your hand. Your Items cost 1 less.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
