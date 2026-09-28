@@ -589,3 +589,20 @@ Why it may be interesting:
 - top-deck-to-Stash explicitly breaks the normal hand-to-Stash rule and should therefore feel special.
 
 Do **not** add this to the current Misdirection bounce package during revision 6. Preserve it for a later Leader/passive experiment.
+
+## Restricted-access combat layer — post-baseline idea
+
+Explore a future keyword or paired-access system similar in strategic purpose to flying/evasive units: certain Characters would be attackable only by Characters with the appropriate access keyword or counter-trait.
+
+Two possible structures:
+
+1. **Shared-access keyword:** a Character with the keyword can only be directly attacked by another Character with that keyword. This creates a deckbuilding sub-layer and protected utility threats.
+2. **Contrasting access:** one classification can interact with its explicit opposite or counter-classification. Example design pattern only: one elemental type can directly challenge its opposing elemental type. Avoid building this around literal fire/water unless the setting earns it.
+
+Design goals:
+- add a small deckbuilding wrinkle without creating a second combat game;
+- make some threats require deliberate answers;
+- preserve readability and avoid a large chart of type matchups;
+- test only after the current mono-Style balance round stabilizes.
+
+Do **not** add this mechanic to revision 7.
