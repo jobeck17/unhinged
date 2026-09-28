@@ -45,7 +45,7 @@ Two packages per Style is a guideline, not a hard law. Every package must functi
 | Washed-Up Rock Star | Momentum | Chain / Acceleration | **Packed House:** while 6 or more Characters and Items are in play total, your cards cost 1 less. |
 | Birthday Party Magician | Misdirection | Bounce / Return | Whenever one of your Characters is Returned from play to your hand, Draw a card. |
 | Trash Baron | Salvage | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
-| HOA President | Stonewall | Freeze / Stall | **Passive paused for revision 6 testing.** |
+| HOA President | Stonewall | Freeze / Stall | **Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks. |
 | Backyard Wrestler | Expendable | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character; if you do, free-play another Character from hand with the same Cost or less. |
 
 Leader design goal: one visible passive that bends a basic rule, changes overall playstyle, and gives the opponent something meaningful to play around.
@@ -113,7 +113,7 @@ The source and taxonomy versions are **0.2-donut-rebuild**.
 
 A 30,000-game heuristic round robin after the card-flow/low-end pass averaged **8.64 Rounds** (median 8) and a **60.07% first-player win rate**. Game length improved dramatically without changing 25 Health. See `production/playtests/six-deck-lab/snapshot-revision-6-card-flow.md` for the full snapshot.
 
-Current priorities are Momentum hand sustainability, a toned-down non-Stash HOA tax, Salvage efficiency, and Misdirection tempo conversion.
+Current priorities are Salvage efficiency, Expendable efficiency, Misdirection physical-play validation, and continued first-player monitoring. Rock Star now uses Comeback Tour, and HOA now uses Failure to Respond.
 
 ## Next validation work
 
