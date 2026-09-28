@@ -2,7 +2,7 @@
 
 **Working production rulebook • 27 September 2026**
 
-This rulebook reflects the September 27 architecture interview and supersedes the older single-action-turn baseline. The current 180-card pool has **not yet been fully audited against these rules**. Card text that depends on shelved mechanics will be rewritten during the production pass.
+This rulebook reflects the September 27 architecture interview and supersedes the older single-action-turn baseline. The 180-card pool was rebuilt against these rules on September 28, 2026. Balance remains unverified and is now the focus of testing.
 
 ## 1. Core principle
 
@@ -396,4 +396,4 @@ Traits are inert until referenced. Trait-support cards should still be playable 
 
 Actions should generally create an immediate effect and then go to discard. Persistent engines should usually live on Characters or Items.
 
-The current 180-card pool is now subject to a full **Keep / Rehome / Rewrite / Replace** audit under these rules.
+The September 28 rebuild applied the **Keep / Rehome / Rewrite / Replace** audit to all 180 cards. Future changes should be driven by package playtests, rules clarity, and balance evidence rather than preserving the pre-rebuild text.
