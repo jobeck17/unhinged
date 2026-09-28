@@ -1,8 +1,8 @@
 {
-  "version": "six-deck-lab-2",
+  "version": "six-deck-lab-3",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Mono-Style baseline decks for package and Leader validation; balance unverified.",
+  "status": "Mono-Style baseline after card-flow/pressure tuning; first player skips first Draw; HOA tax paused for comparison.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -19,9 +19,9 @@
       "cards": {
         "P002": 4,
         "P003": 3,
-        "P005": 4,
-        "P006": 2,
+        "P005": 3,
         "P007": 2,
+        "P009": 3,
         "P013": 4,
         "P017": 3,
         "P011": 2,
@@ -42,7 +42,8 @@
         "Does Florida Man create meaningful Sucker Punch decisions?",
         "Is self-damage too easy to convert into upside?",
         "Does Damage Everywhere matter without simply becoming burn?"
-      ]
+      ],
+      "status_note": "Low-end card-flow tuning baseline."
     },
     {
       "name": "Packed House",
@@ -58,19 +59,20 @@
       "cards": {
         "P032": 4,
         "P033": 4,
-        "P037": 2,
+        "P037": 1,
+        "P038": 2,
         "P043": 4,
         "P047": 2,
         "P123": 4,
-        "P040": 2,
-        "P042": 2,
         "P048": 2,
-        "P050": 3,
+        "P049": 3,
+        "P050": 2,
         "P052": 2,
         "P053": 3,
         "P054": 2,
-        "P055": 2,
-        "P059": 2
+        "P055": 1,
+        "P059": 2,
+        "P060": 2
       },
       "mulligan_priority": [
         "Guy Who Mows at 7 AM or Coupon Lady",
@@ -81,7 +83,8 @@
         "How often does Packed House turn on naturally?",
         "Can Low Hand function without feeling deliberately starved?",
         "Do discounts create explosive but understandable turns?"
-      ]
+      ],
+      "status_note": "Low-end card-flow tuning baseline."
     },
     {
       "name": "Now You See Me",
@@ -95,20 +98,19 @@
         "Manipulation / Deception"
       ],
       "cards": {
+        "P062": 4,
+        "P061": 4,
         "P063": 4,
-        "P066": 4,
-        "P089": 4,
-        "P061": 3,
+        "P065": 4,
         "P067": 3,
-        "P077": 2,
-        "P064": 2,
+        "P070": 3,
+        "P089": 3,
         "P080": 4,
-        "P081": 3,
+        "P081": 2,
         "P082": 2,
-        "P084": 2,
-        "P086": 2,
         "P079": 2,
-        "P087": 3
+        "P087": 2,
+        "P088": 3
       },
       "mulligan_priority": [
         "Rabbit, Off-Duty Clown, or Lady Who's Moving Out Again",
@@ -119,7 +121,8 @@
         "Can damaged Bounce happen often enough to showcase the Leader?",
         "Does Return create tempo without repeated non-games?",
         "Are Stash manipulation decisions interesting enough to justify breaking Stash secrecy?"
-      ]
+      ],
+      "status_note": "Low-end card-flow tuning baseline."
     },
     {
       "name": "Curbside Empire",
@@ -133,17 +136,19 @@
         "Scrounge / Big Hand"
       ],
       "cards": {
+        "P091": 2,
         "P094": 4,
-        "P095": 3,
-        "P092": 2,
+        "P095": 2,
+        "P092": 1,
         "P093": 3,
+        "P101": 2,
         "P105": 3,
         "P107": 3,
-        "P106": 2,
+        "P106": 1,
         "P109": 4,
         "P111": 3,
         "P113": 3,
-        "P114": 2,
+        "P114": 1,
         "P117": 2,
         "P118": 2,
         "P119": 2,
@@ -158,7 +163,8 @@
         "Is Jerry-Rig useful without becoming free permanent ramp?",
         "Does Trash Baron create enough incentive to leave opposing Stash unspent?",
         "Can Salvage reach Big Hand through scavenging rather than generic Draw?"
-      ]
+      ],
+      "status_note": "Low-end card-flow tuning baseline."
     },
     {
       "name": "Violation Notice",
@@ -172,20 +178,21 @@
         "Reaction / Denial"
       ],
       "cards": {
-        "P124": 4,
+        "P124": 2,
         "P126": 4,
         "P121": 3,
-        "P122": 3,
+        "P122": 2,
         "P128": 2,
-        "P129": 3,
-        "P136": 2,
-        "P137": 2,
+        "P129": 2,
         "P130": 1,
+        "P134": 3,
+        "P137": 2,
         "P139": 2,
         "P143": 2,
         "P140": 3,
         "P141": 3,
         "P083": 2,
+        "P146": 3,
         "P148": 2,
         "P149": 2
       },
@@ -198,7 +205,8 @@
         "Does HOA's Ready-step tax slow the game without locking it?",
         "Is Absolutely Not worth holding 3 Stash open?",
         "Can Stonewall answer threats while still advancing its own board?"
-      ]
+      ],
+      "status_note": "Low-end card-flow tuning baseline."
     },
     {
       "name": "Tag Team Trashfire",
@@ -213,19 +221,19 @@
       ],
       "cards": {
         "P151": 4,
+        "P152": 3,
         "P165": 4,
         "P158": 3,
         "P166": 2,
-        "P168": 2,
-        "P161": 3,
+        "P161": 2,
         "P157": 2,
         "P164": 2,
-        "P163": 2,
         "P172": 4,
         "P174": 3,
         "P171": 2,
         "P173": 2,
         "P169": 1,
+        "P176": 2,
         "P178": 2,
         "P179": 2
       },
@@ -238,7 +246,8 @@
         "How often does the Leader's end-of-opponent-Turn Tag Out fire?",
         "Are free same-or-lower-Cost replacements too efficient with On Play effects?",
         "Does recursion feel distinct from Salvage and self-damage distinct from Reckless?"
-      ]
+      ],
+      "status_note": "Low-end card-flow tuning baseline."
     }
   ]
 }
