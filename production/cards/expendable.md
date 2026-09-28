@@ -1,6 +1,6 @@
 # Expendable / Red Shirts — Production Pool v0.2
 
-> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 7 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -12,7 +12,7 @@
 | P155 | Character | 5 | **Retired Crash-Test Dummy** | 5/6 | Construct, Daredevil | When this enters play, you may Sacrifice another Character. If you do, your next card this Turn costs 2 less. |
 | P156 | Character | 7 | **Rooster Nobody Can Catch** | 8/9 | Animal | — |
 | P157 | Character | 3 | **Fireworks Technician** | 3/3 | Daredevil | Whenever you Sacrifice another Character, deal 1 damage to an opposing Character. |
-| P158 | Character | 2 | **Patio-Table Prodigy** | 3/1 | Wrestler, Daredevil | **Hothead**. When this Character Defeats another Character in combat, Draw a card. |
+| P158 | Character | 2 | **Patio-Table Prodigy** | 3/1 | Wrestler, Daredevil | When this Character Defeats another Character in combat, Draw a card. |
 | P159 | Character | 2 | **Rabid Rat** | 2/2 | Animal, Rat | When this is Defeated, another of your Characters gets +2 Power this Turn. If it is a Rat or Undead, it also gets +1 Guard this Turn. |
 | P160 | Character | 4 | **Gym Selfie Guy** | 3/7 | — | — |
 | P161 | Character | 4 | **Zombie Mall Walker** | 3/5 | Undead | When this is Defeated, you may Return it from your discard to your hand at the end of this Turn. |
@@ -26,7 +26,7 @@
 | P169 | Action | 1 | **Take One for the Team** | — | — | Response — Before damage would be dealt to your Leader: Sacrifice one of your Characters. Prevent up to 3 of that damage. |
 | P170 | Action | 1 | **This Seemed Like a Good Idea** | — | — | Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Power and +2 Guard this Turn. |
 | P171 | Action | 2 | **Worth It** | — | — | Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character. |
-| P172 | Action | 2 | **Tag Me In!** | — | — | Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this Turn. |
+| P172 | Action | 3 | **Tag Me In!** | — | — | Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this Turn. |
 | P173 | Action | 2 | **Again!** | — | — | Return a Character costing 2 or less from your discard to your hand. If it is Undead and one of your Characters was Defeated this Turn, it costs 1 less the next time you Play it this Turn. |
 | P174 | Action | 1 | **Sign the Waiver** | — | — | Sacrifice one of your Characters. If you do, Draw 2 cards, then Discard a card. |
 | P175 | Action | 1 | **Light the Fuse** | — | — | Sacrifice one of your Characters. If you do, deal 1 damage to the opposing Leader, or 2 damage if the sacrificed Character was Undead or a Daredevil. |
