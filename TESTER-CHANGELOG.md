@@ -336,3 +336,19 @@ These have been discussed but are **not part of the current tester build**:
 - **Washed-Up** as a possible Trait.
 - **Reality Show Contract** and other Washed-Up celebrity synergy cards.
 - Interaction-to-economy concepts inspired by rewarding opponents for attacking your board.
+
+## Revision 7 targeted tuning
+
+### Misdirection
+- **Rabbit** is now 2/4 and reads: “When this Character enters or leaves play, Draw a card.”
+- **Lady Who's Moving Out Again** is now 3/5 so key bounce targets can survive combat before being Returned and replayed.
+- **School Bully** is now **Sucker Punch. Chicken.** This gives Misdirection one clean way to challenge Ready Characters while still threatening to disappear when attacked.
+
+### Expendable
+- **Tag Me In!** now costs **3** instead of 2.
+- **Patio-Table Prodigy** no longer has printed Hothead. Wrestler synergies can still grant it.
+
+### Salvage
+- Trash Baron's Leader passive is unchanged: he may still use any opposing Ready Stash to pay his Costs.
+- **Cash In the Clutter** now Rotates up to 2 Ready Stash and Draws only if at least one was an opponent's Stash.
+- **Make It Work** now Dismisses an Item to Draw 2, then Discard 1. The extra Item discount was removed.
