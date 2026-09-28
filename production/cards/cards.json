@@ -1349,7 +1349,7 @@
         "HOA"
       ],
       "text": "",
-      "style": "Misdirection",
+      "style": "Stonewall",
       "complexity": "textless",
       "keywords": [],
       "power": 3,
@@ -1368,9 +1368,9 @@
       "traits": [
         "Hacker"
       ],
-      "text": "Rotate: Rotate an opposing Item. It cannot Activate abilities this Round.",
+      "text": "You may look at your Stash. When this enters play, you may Return one card from your Stash to your hand. If you do, put a card from your hand into your Stash Rotated.",
       "style": "Misdirection",
-      "complexity": "activated",
+      "complexity": "mixed",
       "keywords": [],
       "power": 4,
       "guard": 6,
@@ -1388,9 +1388,9 @@
       "traits": [
         "Criminal"
       ],
-      "text": "When this enters play, choose another Character with a printed Trait. This gains one of its printed Traits while this remains in play. Rotate: Choose another of your Characters. Draw a card, then Discard a card. If it shares a Trait with this, it gets +2 Power this Round.",
+      "text": "When this enters play, choose another Character. This gains one of that Character's printed Traits and one of its printed keywords while that Character remains in play.",
       "style": "Misdirection",
-      "complexity": "mixed",
+      "complexity": "on_play",
       "keywords": [],
       "power": 5,
       "guard": 5,
@@ -1430,14 +1430,12 @@
         "Criminal",
         "Hacker"
       ],
-      "text": "Hothead.",
+      "text": "When this enters play, Return a random card from your Stash to your hand. Then put a card from your hand into your Stash Rotated.",
       "style": "Misdirection",
-      "complexity": "keyword_only",
-      "keywords": [
-        "Hothead"
-      ],
+      "complexity": "on_play",
+      "keywords": [],
       "power": 2,
-      "guard": 1,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
@@ -1453,11 +1451,11 @@
         "Kid",
         "Hacker"
       ],
-      "text": "Rotate: Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card, then Discard a card.",
+      "text": "When this enters play, look at one card in your Stash. You may Return it to your hand. If you do, put a card from your hand into your Stash Rotated.",
       "style": "Misdirection",
-      "complexity": "activated",
+      "complexity": "on_play",
       "keywords": [],
-      "power": 1,
+      "power": 2,
       "guard": 3,
       "audit_identity": [
         "Human"
@@ -1473,7 +1471,7 @@
       "traits": [
         "Pirate"
       ],
-      "text": "The first time each turn an opponent makes a choice instructed by one of your cards, reveal the top card of your deck. You may play it without paying its Cost. Otherwise, put it on the bottom of your deck.",
+      "text": "Whenever an opponent makes a choice instructed by one of your cards, reveal the top card of your deck. If it costs 2 or less, you may Play it without paying its Cost. Otherwise, put it on the bottom of your deck.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
@@ -1493,7 +1491,7 @@
       "name": "Pick a Card",
       "stats": "",
       "traits": [],
-      "text": "If you have fewer than three cards in your hand, draw until you have three. Present your hand face down. An opponent chooses a card. Reveal and play it without paying its Cost.",
+      "text": "If you have fewer than 3 cards in hand, Draw until you have 3. Shuffle your hand face down. An opponent chooses one card. Reveal it. You may Play it without paying its Cost.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1527,7 +1525,7 @@
       "name": "Look Over There!",
       "stats": "",
       "traits": [],
-      "text": "Choose an opposing Ready Character. Its owner chooses one: Rotate it; or it gets -2 Power this Round.",
+      "text": "Response — When one of your Characters is attacked: Return that Character to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1562,7 +1560,7 @@
       "stats": "",
       "traits": [],
       "text": "Choose an opposing Character. Its owner may Discard a card. If they do not, it gets -2 Power this Round.",
-      "style": "Misdirection",
+      "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
@@ -1578,11 +1576,9 @@
       "name": "Default Password",
       "stats": "",
       "traits": [],
-      "text": "Sneaky. Choose an Item. If it is Ready, Rotate it. Otherwise, Draw a card. If you have a Hacker in play, Draw a card, then Discard a card.",
+      "text": "Return a random card from your Stash to your hand. Then put a card from your hand into your Stash Rotated.",
       "style": "Misdirection",
-      "keywords": [
-        "Sneaky"
-      ],
+      "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -1631,7 +1627,7 @@
       "name": "Burner Phone",
       "stats": "",
       "traits": [],
-      "text": "Rotate, pay 1 Fuel: Draw a card, then put a card from your hand on the bottom of your deck.",
+      "text": "Rotate: Look at up to 2 cards in your Stash. You may Return one to your hand. If you do, put a card from your hand into your Stash Rotated.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1660,20 +1656,22 @@
     },
     {
       "id": "P089",
-      "type": "Item",
-      "cost": 2,
-      "name": "Inconspicuous Bush",
+      "type": "Character",
+      "cost": 3,
+      "name": "Lady Who's Moving Out Again",
       "stats": "",
       "traits": [],
-      "text": "When this enters play, you may put a Character costing 2 or less from your hand face down beneath this. When your Leader is Attacked, you may reveal and put it into play Ready before Blockers; it may Block if able. Its enters-play abilities do not trigger. At end of Round or if this leaves play, reveal and Return any hidden card to its Owner's hand.",
+      "text": "When this Character is Returned from play to your hand, Draw cards equal to the damage on it.",
       "style": "Misdirection",
       "keywords": [],
-      "power": null,
-      "guard": null,
-      "audit_identity": [],
-      "complexity": null,
+      "power": 3,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "complexity": "ongoing",
       "status": "playtest",
-      "flavor": ""
+      "flavor": "The truck is still warm from last time."
     },
     {
       "id": "P090",
@@ -1682,7 +1680,7 @@
       "name": "Spoofed Keycard",
       "stats": "",
       "traits": [],
-      "text": "Rotate: An opposing Character cannot Block this Round. If you have a Criminal or Pirate in play, it also gets -1 Power this Round.",
+      "text": "Rotate: An opposing Character cannot Block this Turn. If you have a Criminal or Pirate in play, it also gets -1 Power this Turn.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -2650,8 +2648,8 @@
       "name": "I Want to Speak to Your Manager",
       "stats": "",
       "traits": [],
-      "text": "Return an Item to its owner's hand. If it belongs to an opponent, they Draw a card, then Discard a card.",
-      "style": "Stonewall",
+      "text": "Return an Item or Character costing 2 or less to its owner's hand.",
+      "style": "Misdirection",
       "keywords": [],
       "power": null,
       "guard": null,
