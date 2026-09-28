@@ -8,9 +8,9 @@ All Leaders begin at **25 Health** outside the 40-card deck. The current test mo
 
 ## Washed-Up Rock Star — Momentum
 
-**Packed House:** While there are 6 or more Characters and Items in play total, your cards cost 1 less.
+**Comeback Tour:** At the end of your Turn, if you have no cards in hand, **Draw 3 cards**.
 
-Cards controlled by either player count. Leaders and Stash do not.
+This is the current baseline after comparing it against a version that refilled to 3 from one or fewer cards.
 
 ## Birthday Party Magician — Misdirection
 
@@ -26,9 +26,9 @@ This remains uncapped in the revision 6 baseline so the simulation can measure i
 
 ## HOA President — Stonewall
 
-**Passive paused for revision 6.**
+**Passive currently paused.**
 
-The previous Ready-step tax is intentionally disabled to isolate Stonewall's deck strength. A Character/Item-only version that never taxes Stash is the leading next test.
+The leading replacement candidate is **Late Fee:** beginning in Round 8, opposing Characters cannot Block attacks made by HOA's Characters. Late Fee has been tested in simulation but is not yet the live production passive.
 
 ## Backyard Wrestler — Expendable
 
