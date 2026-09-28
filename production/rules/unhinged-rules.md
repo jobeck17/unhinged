@@ -1,227 +1,397 @@
 # Unhinged Current Rules
 
-**Web playtest notice:** The live web app currently tests [Character Lab 2](../playtests/character-lab/README.md), with full turns, simultaneous combat, four-copy construction, revised cards, and Leaders reduced to deck identity, 25 Health, and one automatic passive. That lab’s rules override this baseline for the web experiment.
+**Working production rulebook • 27 September 2026**
 
-Working production rulebook • 25 September 2026
-
-This is the consolidated rules source for the next Unhinged playtest and card-production pass. It carries forward the September 21 foundation and includes the [September 23 Donut revision](../../docs/current-state-2026-09-23.md). The timing clarifications below support the current card pool; they are current playtest rulings, not claims of tested balance. Items still deliberately unresolved are listed in [Open decisions](open-decisions.md).
+This rulebook reflects the September 27 architecture interview and supersedes the older single-action-turn baseline. The current 180-card pool has **not yet been fully audited against these rules**. Card text that depends on shelved mechanics will be rewritten during the production pass.
 
 ## 1. Core principle
 
-Base rules apply to every player. Printed card text may add to, change, or override a base rule. A deck identity, Trait, or keyword does nothing unless a rule or card text says it does.
+Base rules apply to every player. Printed card text may add to, change, or override a base rule.
 
-The normal win condition is reducing the opposing Leader to 0 Health. A game has no draw: **War** resolves a tied game-end state.
+A Trait has no inherent rules meaning unless a card refers to it. A keyword has only the meaning defined by the rules.
+
+The normal win condition is reducing the opposing Leader to 0 Health. A game has no draw. **War** resolves a tied game-ending state.
 
 ## 2. Game objects and zones
 
-Each player has a Deck, Hand, Discard, Play Area, and Stash. Cards in the Play Area are **in play**.
+Each player has a Deck, Hand, Discard, Play Area, and Stash.
 
-- A **Leader** is the identity for its owner's deck, its 25-Health target, and the source of one automatic passive. It stays outside the deck and is not a card in play.
-- A **Character** has Power and Guard. When damage on a Character equals or exceeds its Guard, it is Defeated.
-- An **Action** resolves once, then goes to its Owner's discard unless its text says otherwise.
-- An **Item** enters play and remains there. It attaches only when its text says to Attach it; otherwise it is a standalone Item.
-- A **Stash** is a row of cards placed face down from hand. Each Ready card in your Stash can be Rotated to pay 1 toward a Cost.
+- A **Leader** stays outside the deck and play area. It provides deck identity, 25 Health, and one visible automatic passive.
+- A **Character** has Power and Guard.
+- An **Action** resolves once, then goes to its owner's discard.
+- An **Item** enters play and remains there until an effect moves it. Most Items are standalone; an Item attaches only when its text says so.
+- A **Stash** is the face-down resource row used to pay Costs.
 
-Character is the working type throughout the Donut rulebook and card pool. Older documents call it Unit; that is the same game object, not an additional type. The final printed name remains a presentation decision in [Open decisions](open-decisions.md).
+Only Characters and Items are **in play**. Leaders, Actions, Stash cards, cards in hand, cards in decks, and cards in discard are not in play.
+
+There is no base limit on Characters in play, Items in play, Stash size, or hand size.
 
 ## 3. Core vocabulary
 
 | Term | Meaning |
 | --- | --- |
 | **Ready** | Upright and available. |
-| **Rotate** | Turn a Ready card 90 degrees sideways. A sideways card is **Rotated**. |
-| **Ready a card** | Return a Rotated card upright. |
+| **Rotate** | Turn a Ready card 90 degrees sideways. |
+| **Rotated** | A card that is sideways. |
 | **Play** | Play a card from a zone where a rule or effect allows it. |
-| **Enters play** | A Character or Item arrives in the Play Area. Its normal enters-play abilities trigger. |
-| **Activate** | Voluntarily use an activated ability and pay its listed cost. Attack and Block are not activated abilities. |
-| **Cost** | The number paid by Rotating cards in your Stash, unless a card says otherwise. |
+| **Enters play** | A Character or Item arrives in the Play Area. |
+| **Activate** | Voluntarily use an activated ability and pay its listed cost. |
+| **Cost** | The amount paid by Rotating Ready Stash unless a card says otherwise. |
 | **Power** | Combat damage dealt by a Character. |
-| **Guard** | A Character's damage threshold. Damage persists unless healed or the Character leaves play. |
+| **Guard** | The amount of damage a Character can have before it is Defeated. |
 | **Health** | A Leader's survival total. |
-
-Formal rules language uses **Rotate**, **Play**, and **enters play**. The [terminology guide](../../docs/terminology.md) records wording that must not appear in new rules or card text.
 
 ### Card movement
 
-- **Draw:** move the top card of a deck to its owner's hand.
+- **Draw:** move the top card of your deck to your hand.
 - **Discard:** move a card from a hand to its owner's discard.
-- **Return:** move a card from another zone to its Owner's hand.
-- **Defeat:** move a Character from play to its Owner's discard.
+- **Return:** move a card from another zone to its owner's hand.
+- **Defeat:** move a Character from play to its owner's discard.
 - **Sacrifice:** Defeat one of your own Characters as a cost or effect. A Sacrifice is also a Defeat.
-- **Dismiss:** move a card from play to its Owner's discard without Defeating it.
-- **Put:** neutral movement to the stated destination. It is not automatically any event above.
+- **Dismiss:** move a card from play to its owner's discard without Defeating it.
+- **Put:** neutral movement to the stated destination. It is not automatically a Draw, Discard, Return, Defeat, Sacrifice, or Dismiss.
 
-Ownership never changes. A card can change control only when an effect explicitly says so. If a controlled card leaves play, it moves to its Owner's appropriate zone. Current production wording should otherwise prefer “your Character,” “an opposing Character,” and “the player who played this Action.” Use these plain relationships consistently.
+Ownership never changes unless a future effect explicitly creates a control exception.
 
 ## 4. Setup and War
 
 1. Each player brings a 40-card deck and one Leader.
-2. Display each Leader outside the deck and set its Health to 25. Each Leader has one automatic passive, but no activated ability, Charge, orientation, Power, or Guard.
-3. Shuffle each deck and perform **War** to determine the first Turn of Round 1.
-4. Draw seven cards.
-5. Each player may mulligan from zero to seven cards: choose cards to replace, draw the replacements, then shuffle the chosen cards into the deck.
+2. A deck may contain cards from the Leader's Style and **up to one additional Style**. Mono-Style decks are legal.
+3. A deck may contain up to **four copies** of a card.
+4. There is no required Character, Action, or Item ratio.
+5. Set each Leader to 25 Health.
+6. Shuffle decks and perform **War** to determine which player goes first.
+7. Draw seven cards.
+8. Each player may mulligan any number of cards from 0 to 7. Draw that many replacements, then shuffle the replaced cards into the deck.
 
-For War, each player reveals the top card of their deck and compares Cost. The higher Cost wins. On a tie, reveal another card until the tie breaks. Return all revealed cards to their Owners' decks and shuffle. Card text does not trigger during War.
+### War
 
-War also decides a tied game-ending state: if both Leaders are at 0 or less after all relevant effects resolve, each player uses War and the winner wins the game. If both players would lose to an empty-deck Draw, shuffle each discard into a temporary deck and use War.
+Each player reveals the top card of their deck and compares printed Cost. Higher Cost wins. On a tie, reveal again until the tie breaks. Return all revealed cards to their decks and shuffle.
+
+War also resolves simultaneous Leader defeat and simultaneous empty-deck losses.
 
 ## 5. Rounds and Turns
 
-A Round contains alternating player Turns. At the start of every Round:
+A Round consists of one full Turn from each player.
 
-1. **Ready** all eligible cards, including every card in each Stash.
-2. **Draw** one card.
-3. The initiative player takes the first Turn.
+The player who won War takes the first Turn of every Round. The same player therefore goes first each Round unless a future card explicitly changes that rule.
 
-Round 1 includes this normal Draw step. At the end of a Round, expire all “this Round” effects together, check for Defeated Characters, and resolve the resulting triggers. Then resolve end-of-Round effects, including delayed Returns. Finish their resulting triggers before the next Ready and Draw. A delayed end-of-Round effect created during this closing procedure resolves before the Round closes; it does not wait an extra Round. Round counters reset only when the next Round begins.
+### Start of Turn
 
-If closing triggers create new “this Round” effects, expire those too and resolve any resulting Defeats and triggers before the Round closes. Repeat as needed; no Round-limited bonus carries into the next Round. The end-of-Round event itself happens only once.
+At the start of your Turn:
 
-“Skips its next Ready step” stops only that card's next scheduled Round-start Ready. It does not prevent another card from Readying it sooner, and the skip is consumed even if the card is already Ready at that step.
+1. **Ready step:** Ready your eligible Characters, Items, and Stash.
+2. **Draw step:** Draw one card.
+3. Proceed to the main part of your Turn.
 
-On a Turn, choose one: Play a card, Activate an ability, Attack, or Pass. Each uses that Turn except for triggered and static abilities. You may first Play **at most one Sneaky card from your hand** on that Turn by paying its normal Fuel Cost; that Play and all triggers it creates finish before your normal choice. Playing a Sneaky card from another zone, or without paying its normal Cost, does not use this exception. If you have no legal normal choice afterward, Pass. Blocking happens during the opponent's Turn and does not use a future Turn.
+The current test rule gives the War winner a normal Draw on their first Turn. A controlled test comparing this against skipping the first player's first Draw remains open.
 
-Passing immediately gives the opponent a Turn. If either player Plays, Activates, or Attacks after a Pass, the consecutive-Pass count resets. Two consecutive Passes end the Round. The player who made the first of those Passes takes the first Turn next Round. A player who has no legal Play, Activation, or Attack must Pass.
+### Main Turn
 
-## 6. Stash and deckbuilding
+During your Turn, you may Play cards, Activate abilities, and Attack in any order and as many times as the rules and available Ready cards/resources allow.
 
-The **Stash** is the current resource-system playtest. It replaces the automatic Round-based Fuel progression.
+End your Turn when you are finished.
 
-Once during each of your Turns, you may **Stash a card** from your hand by placing it face down into your Stash. This does not use your normal Turn choice. A card enters the Stash Ready. Each Ready card in your Stash can be Rotated to pay 1 toward a card or ability's Cost. Ready all cards in your Stash at the start of the next Round.
+Effects that say "this Turn" expire at the end of that Turn. Effects that say "this Round" expire after the second player's Turn and all end-of-Round effects have resolved.
 
-A card in the Stash has no name, type, Style, Traits, Cost, text, Power, or Guard while it remains there. Its identity is private to its owner; the number of cards in each Stash and whether each is Ready or Rotated are public. A card can leave the Stash only when a rule or effect explicitly moves it.
+## 6. Stash
 
-There is no automatic resource gain. If you do not Stash cards, your available economy does not grow. Current cards do not yet manipulate the Stash; ramp, recovery, and resource-matters effects are future design space to test after the base economy is observed.
+There is no automatic resource progression.
 
-Cost reductions cannot reduce a payment below 0. They change the amount paid, not printed Cost for War, searches, or card comparisons. A 'next card' reduction is consumed by that next qualifying Play even if its payment is already 0.
+Once per Round, during your own Turn, you may put one card from your hand face down into your Stash. You may do this at any legal point during your Turn. Stashing does not consume a separate action.
 
-The working deckbuilding rules are also soft locks: choose one Leader; a deck may include that Leader's Style plus one secondary Style; use up to two copies of a card; and keep the Leader outside the deck. There is no required mix of Characters, Actions, and Items, and no base limit on Characters in play.
+A normally Stashed card:
+
+- enters Ready;
+- pays 1 toward a Cost when Rotated;
+- has no name, type, Style, Traits, Cost, text, Power, or Guard while in Stash;
+- is unknowable even to its owner unless a card explicitly allows a player to look at it;
+- may leave Stash only when a rule or effect explicitly moves it.
+
+The number of Stash cards and whether each is Ready or Rotated are public information.
+
+Cost reductions may reduce a Cost to 0.
+
+### Stash design space
+
+Cards may explicitly break normal Stash rules. Current approved directions include:
+
+- Momentum may Stash additional cards or Ready some Rotated Stash.
+- Misdirection may inspect, retrieve, or exchange Stash cards.
+- Salvage may repurpose Items into temporary Stash and may exploit unused opposing Stash.
+- Stonewall may temporarily Rotate opposing Stash.
+- Expendable may convert Characters into temporary purchasing power or Cost reduction.
+- Reckless may test borrowing future economy, but bookkeeping must remain manageable.
+
+Permanent theft or permanent destruction of opposing Stash is not part of the current base design.
 
 ## 7. Playing cards
 
-A card may be Played when its Cost can be paid and its required choices and targets can legally be made. It need not be guaranteed to change the game state. Optional choices may be declined. An enters-play trigger is not a targeting requirement for Playing its Character or Item: if that trigger has no legal required target, the card still enters play and the trigger does nothing.
+Actions resolve immediately and then go to their owner's discard. They do not enter play.
 
-If a card explicitly lets you Play another card during its resolution, that Play is part of the current Turn. Pay the stated Cost and check the new card's own required choices. It counts as a card Played for sequencing effects. The resolving Action is not in discard until it finishes resolving.
+Characters and Items enter play Ready unless an effect says otherwise.
 
-Actions normally may be Played only on their owner's Turn. Resolve the Action, then put it into its Owner's discard unless it says otherwise. An Action does not enter play.
+A Character that enters play:
 
-Characters and Items enter play Ready unless an effect says otherwise. Items may Activate in the Round they enter play. Items remain in play. A Character may have any number of attached Items unless card text says otherwise. Items cannot normally be attacked. If a card with attached Items leaves play, put those Items into their Owners' discards unless a card says otherwise. This cleanup is not Dismiss.
+- may Block immediately;
+- cannot Attack until its controller's next Turn unless it has Hothead or another effect says otherwise;
+- cannot use one of its own Rotate abilities until its controller's next Turn unless an effect says otherwise.
 
-A Character that entered play this Round may Block, but cannot Attack or Activate one of its own Rotate abilities that Round unless a card says otherwise. Hothead grants only the Attack permission.
+Items may use their abilities in the Turn they enter play unless card text says otherwise.
 
-### Cloak, face-down Characters, and tucked cards
+Most Character abilities should be static, triggered, or On Play. Rotate abilities are intentionally uncommon and should exist when giving up attacking or blocking is the meaningful cost.
 
-**Cloak** is a triggered Character keyword: **The first time each Round this Character would take retaliation damage, turn it face down until the end of the Round instead.** Cloak replaces that retaliation damage; the damage is not dealt. It does not trigger from attack damage, Action damage, or any other non-retaliation damage. A face-down Character stays in play, counts as a Character, and keeps its damage, orientation and attached Items. It cannot Attack, Block, Activate, be chosen by either player's effects, take damage, or be Defeated while face down. Its printed abilities and keywords are inactive. It has no new secret identity: either player may look at this face-down Character, and a player may mark it as Cloaked. Attached Items remain in play; their abilities function normally unless they require the Character to do something it cannot do. Reveal the Character during the end-of-Round procedure **before** expiring Round-limited bonuses, and check whether existing damage Defeats it. If it leaves play by an effect that does not choose or damage it, reveal it and move it normally. Cloak does not protect from Dismiss, Return, or other non-damage removal.
+Some Characters may have an On Play ability plus a persistent board-presence ability. Higher-impact marquee Characters may combine multiple complementary abilities.
 
-A face-down card **beneath** another card is different: it is not in play and has no abilities, stats, keywords or attachment slots. Only its public count and the effect that put it there matter. A face-down stack layer is never permitted; **Stack** layers remain face up.
+### Attached Items
 
-### Cards physically beneath another card
+An Item attaches only when its text says to Attach it.
 
-An effect may put a card face down beneath a card in play. Cards beneath another card are not in play, in a hand, or in a deck. They cannot be chosen, Attacked, Block, or use abilities until an effect reveals and moves them. The number beneath a card is public. A player may privately look at a card they put beneath a card from their hand; neither player may look at a face-down card put there from a deck until it is revealed. A Character put into play from beneath a card enters Ready and normally triggers enters-play abilities unless its printed effect says otherwise.
+If a Character with attached Items leaves play, put its attached Items into their owners' discards unless a card says otherwise. This cleanup is not Dismiss.
 
-**Inconspicuous Bush** reveals and Returns its hidden Character to its Owner's hand if the Bush leaves play or the Round ends before the Character emerges. The Character emerges during Attack checkpoint 1, before Blockers are declared, and may Block only a blockable Attack. **Jailbroken Robot Vacuum** keeps the cards it swept up between Rounds. When it is Defeated, its trigger reveals and Discards them before counting revealed Items for damage. If it leaves play another way, reveal and Discard those cards without dealing its Defeat damage. Neither card changes the ownership of a card beneath it.
+## 8. Attacking and Blocking
 
-**Hot Potato** is a standalone Item placed beside one Leader and may physically move beside the other. Position beside a Leader does not change ownership, make it an attached Item, or change whose Item it is for other effects. Its printed ability explicitly lets the player whose Leader is beside it Activate it on their Turn, even when the other player owns it. That player pays the listed cost by Rotating one of their own Ready Characters and spends that Turn. When Hot Potato Returns to its Owner's hand, it leaves play regardless of which Leader it is beside.
+Declaring an Attack Rotates the attacker.
 
-### Stack: two face-up Character layers
+A Character may normally Attack:
 
-A Character bearing **Stack** may be Played normally, or Played atop one of your own Characters. Pay the top card's full normal Fuel Cost and use your Turn for the Play. You may place it on an unstacked Character only: a pile contains at most two face-up cards and cannot be rearranged. Neither a lower card nor an Item needs Stack. A card tucked beneath an Item or Character cannot become a stack layer.
+- the opposing Leader; or
+- an opposing **Rotated Character**.
 
-The resulting pile is **one Character** for Attack, Block, Rotate, attachments, targeting and counts. The top card supplies printed Power, Guard, Traits, and attack/block restrictions. All printed abilities and keywords of both cards function as abilities of that Character; duplicate keywords do not stack. Fan the cards so both ability boxes remain visible. Simultaneous abilities from these layers resolve bottom to top, after any relevant attack/block checkpoints. An enters-play ability on the newly Played top card triggers; the bottom card does not enter play again. A Rotate ability rotates the entire pile. Stack does not grant a free Play, discount, Ready, extra Attack or permission to Attack or activate before the relevant card would otherwise be able to. A pile with a just-entered top card cannot activate a Rotate ability from either layer that Round; it can Attack that Round only if it has Hothead.
+Ready opposing Characters cannot normally be attacked directly. **Sucker Punch** and specific card text may create exceptions.
 
-Damage, Ready/Rotated state, and Attack history belong to the whole pile. Preserve them when adding a layer. Evaluate existing damage immediately against the new top card's Guard; if lethal, Defeat the pile. Defeat moves both cards to their Owners' discards together; simultaneous layer Defeat abilities resolve bottom to top. A Return moves both cards to their Owners' hands, and a Dismiss moves both to their Owners' discards. An attached Item leaves under the usual cleanup rule when the pile leaves. A printed ability may specifically recover a lower card **after** both cards reach discard. "This Character" refers to the pile, while "this card" refers to its printed layer. This shared-pile rule does not apply to the Vacuum's tucked cards, which never contribute abilities or stats.
+A direct Attack against a Character cannot be Blocked.
 
-### Activated abilities and attached references
+### Leader attacks
 
-An activated ability has a cost before a colon. **Rotate:** means Rotate the card bearing the ability. Comma-separated costs must all be paid; “pay 1 Fuel” means Rotate one Ready Fuel. An activation normally happens only on your Turn and uses that Turn. A triggered ability that instructs you to Rotate a card is not an activation.
+When a Character attacks a Leader, the defending player may choose **one Ready Character** to Block. Blocking Rotates that Character.
 
-Choose required targets before paying activation costs. A cost must be paid completely; a Sacrificed Character or Dismissed Item is already out of play before the ability's effect resolves. Triggers caused by paying the costs wait until the activation has resolved. A Return target must already be in the specified zone when chosen; it cannot be the Character you are about to Sacrifice as the cost.
+A Character that entered play this Turn may Block.
 
-An attached Item's ability can refer to the Character it was attached to immediately before being Dismissed. It cannot affect that Character if the Character has left play. Static bonuses and granted Traits from an Item end immediately when it leaves play. Item cleanup after its Character leaves play is not Dismiss.
+If no Character Blocks, the attacker deals its Power to the Leader.
 
-Rotating an Item does not switch off its static or triggered text, its attachments, or its Dismiss-only abilities. It prevents paying another Rotate cost until the Item Readies. “Cannot Activate abilities” blocks activated abilities only.
+If a Character Blocks:
 
-## 8. Attack and Block
+1. The attacker deals its Power to the Blocker.
+2. Determine how much damage was needed to Defeat that Blocker based on its remaining Guard.
+3. Any excess attack damage overflows to the Leader.
+4. Check whether the Blocker is Defeated.
+5. If the Blocker survives, it retaliates with its Power.
+6. A Blocker with **Defiant** retaliates even if the Attack Defeats it.
+7. A Blocker with **Slowpoke** does not retaliate.
 
-One Character attacks per Attack unless card text says otherwise. Declaring an Attack Rotates the attacker.
+There is no defensive discard-for-Guard rule.
 
-- A Leader may always be attacked.
-- Ready defending Characters may Block an Attack against their Leader. The defender may choose not to Block.
-- Rotated enemy Characters may be attacked directly. A direct Attack against a Rotated Character cannot be Blocked.
-- Ready Characters cannot normally be attacked directly.
-- Items cannot normally be attacked.
-- Leaders never Rotate, Attack, Block, or retaliate. Their automatic passive does not require an action; Leaders currently have no activated or ultimate abilities.
+### Direct Character attacks
 
-Only Ready Characters may Block. The defender declares all Blockers at once and chooses their order. Blocking Rotates each Blocker. A newly entered Character may Block and Rotate in the Round it entered play.
+When a Character directly attacks another Character:
 
-### Attack timing checkpoints
+1. The attacker deals its Power to the target.
+2. Check Defeat.
+3. If the target survives, it retaliates with its Power.
+4. Excess damage does not overflow anywhere.
 
-These checkpoints resolve the ambiguity in the earlier rulebook's “finish the action, then its triggers” shorthand. Attack and Block bonuses must resolve before they can affect damage.
+A Ready Character attacked through Sucker Punch follows the same direct-attack procedure.
 
-1. Declare the target and Rotate the attacker. Resolve the pending **when this attacks** triggers and anything they create before choosing Blockers.
-2. If the attacker or target has left play, end the Attack without damage. Otherwise, if this is a blockable Leader Attack, declare and Rotate all Blockers together and choose their order. Resolve **when this Blocks** triggers and anything they create.
-3. Make the defensive Guard Discards, then resolve triggers they create. A Blocker that left play no longer Blocks. If the attacker or target has left play, end the Attack without damage.
-4. Deal attack damage using the attacker's current Power and the sequential rules below. Check Defeat immediately. Queue damage and Defeat triggers; do not resolve them between Blockers.
-5. Deal retaliation as one damage batch. Every surviving Blocker still in the Attack retaliates, even if earlier Blockers absorbed all incoming damage; Defiant adds a Blocker Defeated by incoming attack damage. A directly attacked Character retaliates only if it survived. Negative Power deals 0 damage.
-6. Resolve the pending damage and Defeat triggers in their recorded order, then after-Attack effects and their resulting triggers. Check the game end after the whole action and queue finish.
+## 9. Damage, put damage, healing, and Defeat
 
-A departed attacker receives no retaliation damage. These checkpoints do not give players a universal Response or activation window.
+Damage on Characters persists until healed or the Character leaves play.
 
-### Defensive Guard
+A Character is Defeated immediately when the amount of damage on it equals or exceeds its Guard.
 
-During defense, the defender may Discard any number of cards from hand to give specific Blockers +1 temporary Guard for each card Discarded. Temporary Guard, including a card effect explicitly granting it, absorbs damage before normal Guard, does not increase retaliation Power, and disappears after that Attack resolves. Damage absorbed by temporary Guard does not persist.
+### Deal damage
 
-### Multi-block damage and Overflow
+An effect that says **deal damage** creates a damage-dealt event.
 
-Damage through Blockers is sequential in the defender's chosen order. The attacker must deal lethal damage to the current Blocker before remaining damage continues to the next one. After the final Blocker, remaining damage reaches the Leader.
+It can trigger effects that care about a Character being dealt damage, taking damage, or surviving damage, and it can interact with effects that prevent or modify dealt damage.
 
-Overflow applies only to an Attack against the Leader through Blockers. Excess damage from an Attack against a Rotated Character is lost.
+### Put damage
 
-### Retaliation
+An effect that says **put damage on** a Character adds that amount of damage without dealing it.
 
-A Blocking Character that survives the attack retaliates with its Power. A Blocker Defeated by the attack does not retaliate unless it has **Defiant**. A Rotated Character attacked directly retaliates if it survives.
+Putting damage:
 
-- **Defiant:** This Character retaliates when it Blocks even if the incoming Attack Defeats it. Use its Power immediately before it left play. This does not give a directly attacked Character the same exception.
-- **Explosive:** When this Character is Defeated, deal 1 damage to each opposing Character in play. This is a Defeat trigger, not retaliation; it does not damage opposing Leaders, Items, or friendly Characters. During an Attack, resolve the splash after the attack-damage and retaliation checkpoints, with other pending triggers. Deal the splash to all affected Characters as one damage batch, then process resulting Defeats and triggers.
-- **Slowpoke:** This Character does not retaliate when it Blocks. It may still retaliate after surviving a direct Attack while Rotated.
-- **Hothead:** This Character may Attack in the Round it enters play. It does not gain early Rotate activations, a Ready, or an extra Attack.
+- does not count as damage being dealt;
+- does not trigger effects that require damage to be dealt or taken;
+- is not prevented by effects that prevent dealt damage unless they explicitly mention put damage;
+- still causes the normal Defeat check immediately.
 
-If a Character has both Defiant and Slowpoke, Slowpoke prevents its blocking retaliation. Repeated instances of a keyword do not multiply its effect. An explicit cannot-Attack effect takes precedence over Hothead. See the [keyword reference](../cards/keywords.md) for all eight active keywords.
+This distinction is intentional design space.
 
-## 9. Damage, healing, and game end
+### Healing
 
-Damage persists between Rounds until healed or the card leaves play. A Character is Defeated immediately when damage equals or exceeds its current Guard, including after a Guard reduction. Healing cannot exceed current normal Guard or Health unless an effect increases that maximum.
+Healing removes existing damage. A Character cannot be healed below 0 damage.
 
-Do not immediately end a game when a Leader reaches 0 during resolution. Finish the current action and every pending trigger it created. Then check Leader Health. If only one Leader is at 0 or less, that Leader's player loses. If both are at 0 or less, resolve War.
+Leader healing is intended to be rare. A Leader normally cannot be healed above 25 Health unless an effect explicitly raises or changes its maximum Health.
 
-## 10. Triggers, choices, and timing
+## 10. Responses
 
-A pending trigger is a triggered ability waiting to resolve. Finish the current Turn action and all resulting pending triggers before the opponent begins the next Turn.
+A **Response** is an Action with a specific off-turn timing condition printed on the card. It is not a separate card type.
 
-Pending triggers resolve in the order they were triggered. If one player creates several simultaneous triggers, that player chooses their order. If both players create simultaneous triggers, the player whose Turn caused them adds their triggers first, then the opponent adds theirs. A trigger created while another trigger resolves goes to the end of the queue.
+A Response may be played only when its printed timing condition is satisfied.
 
-Choose is the normal instruction for selecting legal options. When an effect chooses a game object to affect, that object is a target. Choosing a mode, value, or instruction does not target a game object by itself. Targets are chosen when a trigger becomes pending, not when it starts resolving. A target that has become illegal is not affected; resolve the rest of the effect as far as possible. A trigger with no legal required target does nothing. Later optional Plays, card searches, and opponent mode choices are made when their instruction is reached, using the information then available.
+Each qualifying event opens **at most one Response opportunity total**:
 
-Unless explicitly stated otherwise, abilities function only while their source is in play. A Defeat trigger uses the source's last information in play, including its Power and Traits. An ability can follow its source to the stated destination, but a delayed Return from discard fails if the card has already left that discard, even if the same physical card later returns there. A card that re-enters play is a new instance with no old damage, temporary bonuses, or use history.
+1. The non-active player gets the first opportunity.
+2. If the non-active player plays a Response, the window closes.
+3. If the non-active player passes, the active player may play one Response.
+4. If both pass, the window closes.
+5. A Response cannot be answered by another Response.
 
-Once an ability has been Activated or a trigger has become pending, it resolves independently of its source remaining in play. It still needs legal targets and any specifically required source state. Dismissing an Item as its activation cost therefore does not cancel its effect.
+Responses use their normal Cost, paid with Ready Stash, unless the card says otherwise.
 
-Effects that reveal a card from hand must say so explicitly. A reveal temporarily makes that card public; it does not Play it. Birthday Kid's printed hand ability is an explicit exception to the in-play default. Its trigger waits for the revealing action to finish, and its movement requires the card still to be in hand. Opponent guesses and choices printed on a card are choices for Pirate With a Business License; ordinary Blocking and defensive Discards are not.
+Valid printed windows may include moments such as:
 
-When an effect asks a player to Discard more cards than they have, they Discard as many as possible. This does not let a player partially pay a Discard cost. An effect instructing a Draw still follows the normal empty-deck loss rule.
+- when a Character is attacked;
+- when a Character Blocks;
+- before combat damage is dealt;
+- when an opponent plays an Action;
+- when an ability is Activated;
+- when another specifically named event occurs.
 
-“If you do” requires the immediately preceding optional instruction to have been completed. For example: “You may Dismiss an Item. If you do, Draw 2 cards” draws cards only if the Item was actually Dismissed.
+Resolve the Response completely, including triggers it creates, before the interrupted event continues.
 
-## 11. Responses: current experimental rule
+Hard cancellation is allowed design space but should be rare, expensive, or conditional.
 
-Response is a special timing designation on an Action, not a fifth card type. A Response may be Played during an opponent's Turn only at the exact timing printed on that card. It resolves before the interrupted Play, Activation, or Attack continues. There is no universal Response window after every event.
+## 11. Triggers and timing
 
-The printed timing sentence is authoritative; an optional scan label such as “Attack Response” may help players read a hand. Response chains and a universal chain limit have not been settled. Do not include Responses in a production card list until the relevant decision is locked.
+A triggered ability happens automatically when its condition occurs.
 
-## 12. Card production rules
+Unless a card says otherwise, abilities function only while their source is in play.
 
-Card text should use the vocabulary in this rulebook. Use [cards.json](../cards/cards.json) for current card data and [taxonomy.json](../cards/taxonomy.json) for defined Traits and keywords; the readable sheets are generated from those files.
+If several triggers controlled by one player happen simultaneously, that player chooses their order.
 
-A card may have zero to four useful printed Traits. Human is unprinted identity metadata. Traits do not imply one another: Rat does not automatically grant Animal, and Bath Salts grants only Undead. The [trait reference](../cards/traits.md) records assignments, support, and the soft saturation guide. No universal four-Trait requirement applies to Leaders. A Trait normally improves a card rather than being its only reason to work; use hard Trait gates only when that restriction is the point of the design.
+If both players create simultaneous triggers, resolve the active player's triggers first, then the non-active player's triggers, preserving each player's chosen order.
 
-The physical card must preserve needed information in a fanned hand, on the table, and when cards overlap. Cost and type need fast recognition in hand. Rules text, Power, Guard, and timing information need consistent visible positions on the table. Follow [Card design principles](../../docs/card-design-principles-2026-09-22.md) for layout, symbols, IDs, titles/subtitles, and accessibility.
+An ability that has triggered or been Activated resolves independently of its source remaining in play unless the effect specifically requires that source to remain.
+
+A card that leaves play and later re-enters is a new instance. It has no old damage, temporary bonuses, or use history.
+
+"If you do" requires the immediately preceding optional instruction to have actually happened.
+
+## 12. Current keyword rules
+
+### Hothead
+
+**This Character may Attack on the Turn it enters play.**
+
+Hothead does not Ready the Character, grant an extra Attack, or let it use its own Rotate ability early.
+
+### Defiant
+
+**This Character retaliates when it Blocks even if the incoming Attack Defeats it.**
+
+### Explosive
+
+**When this Character is Defeated, deal 1 damage to each opposing Character.**
+
+Explosive does not damage Leaders, Items, or friendly Characters.
+
+### Slowpoke
+
+**This Character does not retaliate when it Blocks.**
+
+### Sucker Punch
+
+**This Character may Attack Ready opposing Characters.**
+
+Sucker Punch is a working keyword name and may be renamed later.
+
+### Jerry-Rig
+
+**If this Item would go to your discard, you may put it face up and Rotated into your Stash instead. When this card is used to pay a Cost, discard it.**
+
+A Jerry-Rigged card in Stash is not mechanically an Item while there. Its face-up state exists only to show that it is temporary Stash and will be discarded when spent.
+
+The current production direction is to test Jerry-Rig on all Salvage Items.
+
+### Approved keyword candidates for the card audit
+
+These mechanics are approved for testing but do not yet need to appear in the current 180 until the audit assigns them homes.
+
+- **Chicken:** When this Character is attacked, you may Return it to your hand.
+- **Stubborn:** The first time each Round this Character would be Returned or Dismissed, it remains in play instead.
+- **Bodyguard:** Working name. This Character may be attacked while Ready. While Ready, it must Block an Attack against your Leader if able.
+
+### Shelved mechanics
+
+Sneaky, Cloak, Stack, and Step Aside are shelved for the starting rebuild. Preserve them in design history, but do not treat them as active starting-set mechanics.
+
+## 13. Current Leader model
+
+Leaders:
+
+- stay visible outside the deck;
+- have 25 Health;
+- have one automatic passive;
+- do not Attack, Block, Rotate, have Power/Guard, or use activated abilities in the current test;
+- should preferably bend a basic rule of the game rather than merely grant a stat bonus;
+- should create visible counterplay that can change how the opponent plays.
+
+Trait references on Leaders are not part of the current starting design.
+
+### Current six Leader directions
+
+**Florida Man, Reckless**  
+Your damaged Characters have Hothead and Sucker Punch. If all damage is healed from a Character, it immediately loses those granted keywords.
+
+**Washed-Up Rock Star, Momentum — Packed House**  
+While there are 6 or more Characters and Items in play total, your cards cost 1 less. Characters and Items controlled by either player count. Leaders and Stash do not.
+
+**Birthday Party Magician, Misdirection**  
+When one of your damaged Characters is Returned from play to your hand, choose up to X opposing Characters, where X is the amount of damage that Character had immediately before it left play. Put 1 damage on each chosen Character. This triggers whether you or the opponent caused the Return.
+
+**Trash Baron, Salvage**  
+You may use opposing Ready Stash to pay your Costs as though it were your own. You may combine opposing Stash with your own Stash in one payment. This includes opposing face-up Jerry-Rig Stash.
+
+**HOA President, Stonewall**  
+At the start of an opponent's Ready step, if they have any Rotated Characters, Items, or Stash, they choose one of those cards. That card does not Ready during that Ready step. If they have no Rotated cards, this passive does nothing. Another effect may Ready that card later in the Turn.
+
+**Backyard Wrestler, Expendable — Tag Out**  
+At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may play **another** Character from your hand with the same Cost or less without paying its Cost. The replacement is Played normally, enters Ready, and its On Play abilities trigger.
+
+These are playtest passives, not final balance claims.
+
+## 14. Game end and deck-out
+
+Do not end the game in the middle of resolving an Action, ability, combat sequence, or its resulting triggers. Finish the current resolution, then check game-ending conditions.
+
+If only one Leader is at 0 or less Health, that player loses.
+
+If both Leaders are at 0 or less after the same resolution, use War.
+
+If a player must Draw from an empty deck, that player loses. Deck-out should not be a common primary strategy in the starting environment.
+
+If both players would lose to empty-deck Draws at the same time, use War.
+
+## 15. Production design rules
+
+The starting card pool remains 180 cards, 30 per Style.
+
+The six current Styles are:
+
+- Reckless: damage + risk
+- Momentum: growth + chaining + economy acceleration
+- Misdirection: movement + deception
+- Salvage: reuse + scavenging + repurposing
+- Stonewall: denial + stall + reaction
+- Expendable: sacrifice + death value + recursion
+
+The starting package targets are:
+
+- Reckless: Damage Everywhere; Self-Damage / Damaged Characters
+- Momentum: Chain / Acceleration; Low Hand
+- Misdirection: Bounce / Return; Manipulation / Deception
+- Salvage: Items / Jerry-Rig / Repurpose; Scrounge / Big Hand
+- Stonewall: Freeze / Stall; Reaction / Denial
+- Expendable: Sacrifice / Defeat Value; Recursion / Refuse to Stay Dead
+
+Each package must function inside its own Style. A secondary Style should create interesting combinations, not complete an otherwise nonfunctional package.
+
+Use **2 Best / 4 Better / 6 Good / 18 Simple-support** as an internal per-Style design target, not a printed rarity system. Simpler cards may still have keywords, basic abilities, useful stats, or package relevance.
+
+Traits are inert until referenced. Trait-support cards should still be playable on their own, and Trait payoff should usually be upside rather than a hard gate.
+
+Actions should generally create an immediate effect and then go to discard. Persistent engines should usually live on Characters or Items.
+
+The current 180-card pool is now subject to a full **Keep / Rehome / Rewrite / Replace** audit under these rules.
