@@ -12,7 +12,7 @@ A Leader should preferably **bend a basic game rule**, change overall playstyle,
 | --- | --- | --- | --- |
 | **Florida Man** | **Reckless** | Self-Damage / Damaged Characters | Your damaged Characters have Hothead and Sucker Punch. |
 | **Washed-Up Rock Star** | **Momentum** | Low Hand / Refill | **Comeback Tour:** At the end of your Turn, if you have no cards in hand, Draw 3 cards. |
-| **Birthday Party Magician** | **Misdirection** | Bounce / Return | Whenever one of your Characters is Returned from play to your hand, Draw a card. |
+| **Birthday Party Magician** | **Misdirection** | Bounce / Return | **Ace Up My Sleeve:** Once during your Turn, when one of your Characters is Returned from play to your hand, Ready 1 Stash. |
 | **Trash Baron** | **Salvage** | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
 | **HOA President** | **Stonewall** | Freeze / Stall | **Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks. |
 | **Backyard Wrestler** | **Expendable** | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may play another Character from your hand with the same Cost or less without paying its Cost. |
@@ -37,9 +37,11 @@ This makes the Rock Star the dedicated Low Hand Leader. The former Packed House 
 
 ## Birthday Party Magician — Misdirection / Funny Business
 
-**Character promise:** the act of disappearing replaces itself.
+**Character promise:** every disappearance opens one more move.
 
-Whenever one of your Characters is Returned from play to your hand, Draw a card. The current test intentionally makes Bounce a card-advantage engine, closer to the play pattern where cheap Return enablers repeatedly reuse On Play and leave-play value.
+**Ace Up My Sleeve:** Once during your Turn, when one of your Characters is Returned from play to your hand, Ready 1 Stash.
+
+The Misdirection card pool now carries more of its own card flow, so the Leader converts Bounce into tempo instead of adding another layer of Draw. This helps the deck replay Characters, chain tricks, and turn damaged Characters leaving play into renewed resources.
 
 ## Trash Baron — Salvage / Good Enough
 
