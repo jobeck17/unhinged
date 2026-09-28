@@ -23,12 +23,12 @@
 | P016 | Character | 2 | **Porch Pirate** | 2/1 | Criminal | **Hothead**. |
 | P017 | Character | 1 | **Vape Kid** | 1/2 | Kid | When this enters play, you may deal 1 damage to this Character. If you do, Draw a card, then Discard a card. |
 | P018 | Character | 6 | **Minibike Menace** | 6/5 | Daredevil | **Hothead**. When this attacks, you may deal 1 damage to each of your other Characters. This gets +1 Power for this Attack for each Character damaged this way. |
-| P019 | Action | 1 | **Hold My Beer** | — | — | Choose one of your Characters. Deal 1 damage to it. It gets +2 Power this Round, or +3 Power if it is a Daredevil. |
+| P019 | Action | 1 | **Hold My Beer** | — | — | Choose one of your Characters. Deal 1 damage to it. It gets +2 Power this Turn, or +3 Power if it is a Daredevil. |
 | P020 | Action | 1 | **Send It!** | — | — | Response — Before combat damage is dealt: One of your Characters gets +3 Power and -1 Guard for this combat. |
-| P021 | Action | 1 | **Glory Days** | — | — | Ready one of your Rotated Characters that attacked this Round. It gets +2 Power this Round and cannot Attack again this Round. |
+| P021 | Action | 1 | **Glory Days** | — | — | Ready one of your Rotated Characters that attacked this Turn. It gets +2 Power this Turn and cannot Attack again this Turn. |
 | P022 | Action | 2 | **No, I'm Fine** | — | — | Draw 2 cards. Deal 1 damage to one of your Characters. |
 | P023 | Action | 2 | **Fireworks Incident** | — | — | Choose one of your Characters and an opposing Character. Deal 2 damage to each. If your Character survives, Draw a card, then Discard a card. |
-| P024 | Action | 1 | **Commit to the Bit** | — | — | One of your Ready Characters gets +4 Power this Round and skips its next Ready step. |
+| P024 | Action | 1 | **Commit to the Bit** | — | — | One of your Ready Characters gets +4 Power this Turn and skips its next Ready step. |
 | P025 | Action | 2 | **Floor It!** | — | — | Ready one of your Rotated Characters. Deal 2 damage to it. |
 | P026 | Action | 2 | **Walk It Off** | — | — | Heal up to 2 damage from a Character. Draw a card for each damage healed this way. Then deal 1 damage to that Character. |
 | P027 | Item | 1 | **Gas Station Pills** | — | — | Attach to one of your Characters. It gets +1 Power. Dismiss this: Ready the attached Character and deal 1 damage to it. |
