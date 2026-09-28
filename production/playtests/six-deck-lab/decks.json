@@ -2,7 +2,7 @@
   "version": "six-deck-lab-3",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Mono-Style baseline after card-flow/pressure tuning; first player skips first Draw; HOA tax paused for comparison.",
+  "status": "Mono-Style baseline after revision 6 card-flow tuning; first player skips first Draw; Rock Star uses Comeback Tour; HOA Late Fee remains a test candidate.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -46,7 +46,7 @@
       "status_note": "Low-end card-flow tuning baseline."
     },
     {
-      "name": "Packed House",
+      "name": "Comeback Tour",
       "leader": "Washed-Up Rock Star",
       "health": 25,
       "styles": [
@@ -75,14 +75,14 @@
         "P060": 2
       },
       "mulligan_priority": [
-        "Guy Who Mows at 7 AM or Coupon Lady",
         "A cheap Character",
-        "One More Song or Roll Call"
+        "A Low Hand payoff",
+        "Reply All, Reset the Vibes, or another refill bridge"
       ],
       "watchpoints": [
-        "How often does Packed House turn on naturally?",
-        "Can Low Hand function without feeling deliberately starved?",
-        "Do discounts create explosive but understandable turns?"
+        "Can the deck intentionally reach zero cards without making obviously bad plays?",
+        "Does Comeback Tour refill often enough to sustain Momentum without causing routine deck-out?",
+        "Do acceleration cards help create explosive turns rather than simply emptying the hand?"
       ],
       "status_note": "Low-end card-flow tuning baseline."
     },
