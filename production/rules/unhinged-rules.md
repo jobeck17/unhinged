@@ -20,7 +20,7 @@ Each player has a Deck, Hand, Discard, Play Area, and Stash.
 - A **Character** has Power and Guard.
 - An **Action** resolves once, then goes to its owner's discard.
 - An **Item** enters play and remains there until an effect moves it. Most Items are standalone; an Item attaches only when its text says so.
-- A **Stash** is the face-down resource row used to pay Costs.
+- A **Stash** is the resource row used to pay Costs. Normal Stash is face down; some rules and effects create face-up temporary Stash.
 
 Only Characters and Items are **in play**. Leaders, Actions, Stash cards, cards in hand, cards in decks, and cards in discard are not in play.
 
@@ -63,6 +63,7 @@ Ownership never changes. Control changes only when an effect explicitly says so.
 6. Shuffle decks and perform **War** to determine which player goes first.
 7. Draw seven cards.
 8. Each player may mulligan any number of cards from 0 to 7. Draw that many replacements, then shuffle the replaced cards into the deck.
+9. After mulligans are complete, the player going second may put the top card of their deck face up and Rotated into their Stash. This is temporary Stash.
 
 ### War
 
@@ -109,6 +110,16 @@ A normally Stashed card:
 - may leave Stash only when a rule or effect explicitly moves it.
 
 The number of Stash cards and whether each is Ready or Rotated are public information.
+
+### Temporary Stash
+
+Some rules and effects put cards **face up** into Stash. A face-up Stash card is temporary Stash.
+
+- A face-up Stash card is still Stash, not its printed card type, while it remains there.
+- Unless an effect says otherwise, when a face-up Stash card is used to pay a Cost, put it into its owner's discard instead of leaving it Rotated in Stash.
+- Face-up Stash may be affected by anything that affects Stash unless a rule or effect says otherwise.
+- The second player's setup Stash begins Rotated, then Readies normally during that player's first Ready step.
+- If the second player does not spend that temporary Stash and it is later Ready, effects that can use opposing Ready Stash may use it normally.
 
 Cost reductions may reduce a Cost to 0.
 
@@ -340,8 +351,8 @@ Your damaged Characters have Hothead and Sucker Punch. If all damage is healed f
 **Washed-Up Rock Star, Momentum — Comeback Tour**  
 At the end of your Turn, if you have no cards in hand, Draw 3 cards.
 
-**Birthday Party Magician, Misdirection**  
-Whenever one of your Characters is Returned from play to your hand, Draw a card.
+**Birthday Party Magician, Misdirection — Ace Up My Sleeve**  
+Once during your Turn, when one of your Characters is Returned from play to your hand, Ready 1 Stash.
 
 **Trash Baron, Salvage**  
 You may use opposing Ready Stash to pay your Costs as though it were your own. You may combine opposing Stash with your own Stash in one payment. This includes opposing face-up Jerry-Rig Stash.
