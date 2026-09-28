@@ -735,9 +735,9 @@
       "cost": 4,
       "name": "Social Media Influencer",
       "traits": [],
-      "text": "Rotate: Draw a card, then Discard a card. If you Played at least two cards this Round, you may give another of your Characters +2 Power this Round.",
+      "text": "When this enters play, look at the top card of an opponent's deck. While this remains in play, opponents play with the top card of their deck revealed.",
       "style": "Misdirection",
-      "complexity": "activated",
+      "complexity": "mixed",
       "keywords": [],
       "power": 3,
       "guard": 5,
@@ -1150,9 +1150,9 @@
       "traits": [
         "Kid"
       ],
-      "text": "While this is in your hand, when one of your cards reveals it, you may put it on the bottom of your deck if it is still in your hand. If you do, Draw a card. When this enters play, look at the top card of your deck. You may put it on the bottom.",
+      "text": "When this enters play, look at the top 2 cards of your deck. Put one on top and the other on the bottom.",
       "style": "Misdirection",
-      "complexity": "mixed",
+      "complexity": "on_play",
       "keywords": [],
       "power": 1,
       "guard": 2,
@@ -1190,7 +1190,7 @@
       "traits": [
         "Magician"
       ],
-      "text": "When this enters play, reveal the top card of an opponent's deck. If it is a Character, you may Dismiss this Character to put the revealed Character into play under your control. Otherwise, put the revealed card on the bottom of its Owner's deck.",
+      "text": "When this enters play, reveal the top card of an opponent's deck. If it is a Character, you may put it into play under your control. At the end of your Turn, put that Character into its owner's discard. Otherwise, put the revealed card on the bottom of its owner's deck.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1210,12 +1210,10 @@
       "traits": [
         "Magician"
       ],
-      "text": "Cloak.",
+      "text": "When this attacks, after it deals attack damage, you may Return it to your hand before retaliation.",
       "style": "Misdirection",
-      "complexity": "keyword_only",
-      "keywords": [
-        "Cloak"
-      ],
+      "complexity": "ongoing",
+      "keywords": [],
       "power": 7,
       "guard": 1,
       "audit_identity": [
@@ -1232,12 +1230,10 @@
       "traits": [
         "Clown"
       ],
-      "text": "Cloak. The first time each Round one of your effects Returns another of your Characters from play to your hand, Draw a card, then Discard a card.",
+      "text": "Whenever another of your Characters is Returned from play to your hand, Draw a card, then Discard a card.",
       "style": "Misdirection",
-      "complexity": "mixed",
-      "keywords": [
-        "Cloak"
-      ],
+      "complexity": "ongoing",
+      "keywords": [],
       "power": 2,
       "guard": 3,
       "audit_identity": [
@@ -1250,21 +1246,23 @@
       "id": "P067",
       "type": "Character",
       "cost": 3,
-      "name": "Kid With an iPad",
+      "name": "School Bully",
       "traits": [
         "Kid"
       ],
-      "text": "When this enters play, an opposing Character gets -1 Power this Round.",
+      "text": "Chicken. Opposing Characters with Power 2 or less cannot Block.",
       "style": "Misdirection",
-      "complexity": "on_play",
-      "keywords": [],
+      "complexity": "mixed",
+      "keywords": [
+        "Chicken"
+      ],
       "power": 3,
-      "guard": 5,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The battery is at one percent. So is everyone’s patience."
+      "flavor": "Toughest kid on the playground until somebody swings back."
     },
     {
       "id": "P068",
@@ -1274,9 +1272,9 @@
       "traits": [
         "Criminal"
       ],
-      "text": "Rotate: Draw 2 cards, then Discard 2 cards. If one of your cards revealed a card from your hand this Round, Discard 1 card instead.",
+      "text": "When this enters play, Draw 2 cards, then Discard 2 cards.",
       "style": "Misdirection",
-      "complexity": "activated",
+      "complexity": "on_play",
       "keywords": [],
       "power": 4,
       "guard": 4,
@@ -1292,7 +1290,7 @@
       "cost": 4,
       "name": "Conspiracy Blogger",
       "traits": [],
-      "text": "At the start of your first Turn each Round, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise put it on the bottom.",
+      "text": "At the start of your Turn, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise, put it on the bottom of your deck.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
