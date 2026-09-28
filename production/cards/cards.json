@@ -1,7 +1,7 @@
 {
   "version": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Revision 7 targeted tuning: sturdier Misdirection bounce bodies, lower Expendable low-end efficiency, and reduced Salvage stacked value; balance unverified.",
+  "status": "Revision 8 targeted economy tuning: Jerry-Rig reduced to two Salvage Items; revision-7 combat and turn-order changes remain in place.",
   "cards": [
     {
       "id": "P001",
@@ -2212,11 +2212,9 @@
       "name": "Zip Ties",
       "stats": "",
       "traits": [],
-      "text": "Jerry-Rig. Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder.",
+      "text": "Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder.",
       "style": "Salvage",
-      "keywords": [
-        "Jerry-Rig"
-      ],
+      "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -2250,11 +2248,9 @@
       "name": "Used Ham Sandwich",
       "stats": "",
       "traits": [],
-      "text": "Jerry-Rig. Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card.",
+      "text": "Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card.",
       "style": "Salvage",
-      "keywords": [
-        "Jerry-Rig"
-      ],
+      "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -3374,5 +3370,5 @@
       "flavor": ""
     }
   ],
-  "revision": 7
+  "revision": 8
 }
