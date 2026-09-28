@@ -1,4 +1,4 @@
-# Donut Revision 7 — Content Audit
+# Donut Revision 8 — Content Audit
 
 > Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.
 
@@ -40,9 +40,10 @@
 
 **4 Actions currently use Response timing:** P020 Send It!, P081 Look Over There!, P141 Absolutely Not, P169 Take One for the Team.
 
-## Revision 7 tuning focus
+## Revision 8 tuning focus
 
-- Misdirection: Rabbit is now a 2/4 enter-or-leave Draw engine; Lady Who's Moving Out Again is 3/5; School Bully now carries Sucker Punch + Chicken.
-- Expendable: Tag Me In! costs 3; Patio-Table Prodigy no longer has printed Hothead.
-- Salvage: Cash In the Clutter caps at two Stash and draws only if opposing Stash was Rotated; Make It Work loses its Item discount and now Draws 2 then Discards 1.
-- Trash Baron's opposing-Stash passive remains unchanged.
+- Jerry-Rig is now printed on **two** Salvage Items instead of all four.
+- **Duct Tape** and **Mystery Drawer of Cables** retain Jerry-Rig.
+- **Zip Ties** and **Used Ham Sandwich** no longer become temporary Stash when they leave play.
+- The goal is to reduce Salvage's passive economy acceleration without changing Trash Baron's Leader ability.
+- Revision-7 Misdirection and Expendable changes remain in place.
