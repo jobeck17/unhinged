@@ -1,11 +1,11 @@
 # Salvage / Good Enough — Production Pool v0.2
 
-> Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
-| P091 | Character | 2 | **Scout Troop Quartermaster** | 3/3 | Scout, Scavenger | — |
+| P091 | Character | 2 | **Scout Troop Quartermaster** | 3/2 | Scout, Scavenger | When this Character Defeats another Character in combat, Draw a card. |
 | P092 | Character | 6 | **Guy Fixing His Trans Am** | 4/7 | Builder, Scavenger | When this enters play, Return an Item from your discard to your hand. Your Jerry-Rig cards enter your Stash Ready instead of Rotated. |
 | P093 | Character | 4 | **Garage Inventor** | 3/5 | Builder | Whenever you Dismiss one of your Items, Draw a card, then Discard a card. |
 | P094 | Character | 2 | **Dumpster Diver** | 2/3 | Scavenger | When this enters play, look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest on the bottom in any order. |
@@ -15,7 +15,7 @@
 | P098 | Character | 5 | **Raccoon of Unusual Size** | 6/5 | Animal, Scavenger | When this enters play, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack. |
 | P099 | Character | 3 | **Crazy Cat Lady** | 2/5 | — | At the start of your Turn, look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If the revealed Character is an Animal, heal 1 damage from a Character. |
 | P100 | Character | 3 | **Wind-Up Toy** | 2/4 | Construct | **Sucker Punch**. When this attacks a Ready Character, this gets +1 Power for that Attack. |
-| P101 | Character | 3 | **Extension Cord Electrician** | 3/4 | Builder | When this enters play, you may Ready one of your Items. If you have another Builder in play, Draw a card, then Discard a card. |
+| P101 | Character | 3 | **Extension Cord Electrician** | 3/4 | Builder | When this enters play, you may Ready one of your Items. If you have another Builder in play, Draw a card. |
 | P102 | Character | 5 | **Rat King** | 4/6 | Animal, Rat | When this enters play, you may Return an Animal from your discard to your hand. Your other Rat Characters get +1 Power. |
 | P103 | Character | 2 | **Possum in the Trash Can** | 2/3 | Animal, Scavenger | When this is Defeated, you may Dismiss one of your Items. If you do, Return this from your discard to your hand. |
 | P104 | Character | 1 | **Trash Palace Cockroach** | 1/2 | Animal, Scavenger | When this is Defeated, you may put it from your discard on the bottom of your deck. |
@@ -33,7 +33,7 @@
 | P116 | Action | 2 | **Good as New** | — | — | Choose a damaged Character. Heal all damage from it, then Rotate it. |
 | P117 | Item | 2 | **Duct Tape** | — | — | **Jerry-Rig**. Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct. |
 | P118 | Item | 1 | **Zip Ties** | — | — | **Jerry-Rig**. Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder. |
-| P119 | Item | 2 | **Mystery Drawer of Cables** | — | — | **Jerry-Rig**. When this enters play, Draw a card, then Discard a card. Rotate, Dismiss this: Ready another of your Items. |
+| P119 | Item | 2 | **Mystery Drawer of Cables** | — | — | **Jerry-Rig**. When this enters play, Draw a card. Rotate, Dismiss this: Ready another of your Items. |
 | P120 | Item | 1 | **Used Ham Sandwich** | — | — | **Jerry-Rig**. Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card. |
 
 Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
