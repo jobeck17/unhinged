@@ -1,18 +1,18 @@
 # Expendable / Red Shirts — Production Pool v0.2
 
-> Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
-| P151 | Character | 1 | **First-Time Wrestler** | 2/2 | Wrestler | — |
+| P151 | Character | 1 | **First-Time Wrestler** | 2/1 | Wrestler | — |
 | P152 | Character | 2 | **Florida Man's Stunt Double** | 3/1 | Daredevil | **Hothead**. When this is Defeated during an Attack, deal 1 damage to the opposing Leader. |
 | P153 | Character | 3 | **Zombie Kid, Turtle Fan** | 2/3 | Undead, Kid | When this enters play, look at the top 3 cards of your deck. You may reveal an Animal or Undead Character and put it into your hand. Put the rest on the bottom in any order. |
 | P154 | Character | 3 | **Dumpster Zombie** | 4/4 | Undead, Scavenger | — |
 | P155 | Character | 5 | **Retired Crash-Test Dummy** | 5/6 | Construct, Daredevil | When this enters play, you may Sacrifice another Character. If you do, your next card this Turn costs 2 less. |
 | P156 | Character | 7 | **Rooster Nobody Can Catch** | 8/9 | Animal | — |
 | P157 | Character | 3 | **Fireworks Technician** | 3/3 | Daredevil | Whenever you Sacrifice another Character, deal 1 damage to an opposing Character. |
-| P158 | Character | 2 | **Patio-Table Prodigy** | 3/1 | Wrestler, Daredevil | **Hothead**. |
+| P158 | Character | 2 | **Patio-Table Prodigy** | 3/1 | Wrestler, Daredevil | **Hothead**. When this Character Defeats another Character in combat, Draw a card. |
 | P159 | Character | 2 | **Rabid Rat** | 2/2 | Animal, Rat | When this is Defeated, another of your Characters gets +2 Power this Turn. If it is a Rat or Undead, it also gets +1 Guard this Turn. |
 | P160 | Character | 4 | **Gym Selfie Guy** | 3/7 | — | — |
 | P161 | Character | 4 | **Zombie Mall Walker** | 3/5 | Undead | When this is Defeated, you may Return it from your discard to your hand at the end of this Turn. |
