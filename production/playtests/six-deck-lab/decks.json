@@ -2,7 +2,7 @@
   "version": "six-deck-lab-3",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Mono-Style baseline after revision 6 card-flow tuning; first player skips first Draw; Rock Star uses Comeback Tour; HOA Late Fee remains a test candidate.",
+  "status": "Mono-Style revision-6 baseline; first player skips first Draw; Rock Star uses Comeback Tour; HOA uses Failure to Respond.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -202,11 +202,11 @@
         "A cheap interaction Action"
       ],
       "watchpoints": [
-        "Does HOA's Ready-step tax slow the game without locking it?",
-        "Is Absolutely Not worth holding 3 Stash open?",
-        "Can Stonewall answer threats while still advancing its own board?"
+        "Does Failure to Respond create real urgency before Round 8 without making the endgame feel predetermined?",
+        "Can Stonewall survive long enough to threaten the deadline without simply stalling for its own sake?",
+        "Is Absolutely Not worth holding 3 Stash open?"
       ],
-      "status_note": "Low-end card-flow tuning baseline."
+      "status_note": "Failure to Respond baseline."
     },
     {
       "name": "Tag Team Trashfire",
