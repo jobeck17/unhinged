@@ -193,7 +193,7 @@ Your damaged Characters have **Hothead** and **Sucker Punch**.
 
 ### Washed-Up Rock Star — Momentum
 
-**Packed House:** While there are 6 or more Characters and Items in play total, your cards cost 1 less.
+**Comeback Tour:** At the end of your Turn, if you have no cards in hand, **Draw 3 cards**.
 
 ### Birthday Party Magician — Misdirection
 
@@ -333,7 +333,7 @@ The best feedback is not only balance feedback. Please report moments that made 
 
 These have been discussed but are **not part of the current tester build**:
 
-- HOA President **Late Fee** concept: a delayed late-game passive that eventually prevents opposing Characters from Blocking HOA attacks.
+- HOA President **Late Fee** remains a test candidate, not yet live: beginning in Round 8, opposing Characters would be unable to Block HOA attacks.
 - **Washed-Up** as a possible Trait.
 - **Reality Show Contract** and other Washed-Up celebrity synergy cards.
 - Interaction-to-economy concepts inspired by rewarding opponents for attacking your board.
