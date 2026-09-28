@@ -1,7 +1,7 @@
 {
   "version": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "September 28 low-end card-flow tuning pass; balance unverified.",
+  "status": "Revision 7 targeted tuning: sturdier Misdirection bounce bodies, lower Expendable low-end efficiency, and reduced Salvage stacked value; balance unverified.",
   "cards": [
     {
       "id": "P001",
@@ -1170,12 +1170,12 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this enters play, Draw a card. When this Character is Returned from play to your hand, Draw a card.",
+      "text": "When this Character enters or leaves play, Draw a card.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
       "power": 2,
-      "guard": 2,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
@@ -1252,10 +1252,11 @@
       "traits": [
         "Kid"
       ],
-      "text": "Chicken. Opposing Characters with Power 2 or less cannot Block.",
+      "text": "Sucker Punch. Chicken.",
       "style": "Misdirection",
-      "complexity": "mixed",
+      "complexity": "keyword_only",
       "keywords": [
+        "Sucker Punch",
         "Chicken"
       ],
       "power": 4,
@@ -1667,7 +1668,7 @@
       "style": "Misdirection",
       "keywords": [],
       "power": 3,
-      "guard": 4,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
@@ -2090,7 +2091,7 @@
       "name": "Cash In the Clutter",
       "stats": "",
       "traits": [],
-      "text": "Choose up to 3 Ready Stash controlled by either player and Rotate them. Draw a card for each Stash Rotated this way.",
+      "text": "Choose up to 2 Ready Stash controlled by either player and Rotate them. If you Rotated an opponent's Stash this way, Draw a card.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2124,7 +2125,7 @@
       "name": "Make It Work",
       "stats": "",
       "traits": [],
-      "text": "Dismiss one of your Items. If you do, Draw 2 cards. Your next Item this Turn costs 1 less.",
+      "text": "Dismiss one of your Items. If you do, Draw 2 cards, then Discard a card.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2955,12 +2956,10 @@
         "Wrestler",
         "Daredevil"
       ],
-      "text": "Hothead. When this Character Defeats another Character in combat, Draw a card.",
+      "text": "When this Character Defeats another Character in combat, Draw a card.",
       "style": "Expendable",
-      "complexity": "mixed",
-      "keywords": [
-        "Hothead"
-      ],
+      "complexity": "ongoing",
+      "keywords": [],
       "power": 3,
       "guard": 1,
       "audit_identity": [
@@ -3224,7 +3223,7 @@
     {
       "id": "P172",
       "type": "Action",
-      "cost": 2,
+      "cost": 3,
       "name": "Tag Me In!",
       "stats": "",
       "traits": [],
@@ -3375,5 +3374,5 @@
       "flavor": ""
     }
   ],
-  "revision": 6
+  "revision": 7
 }
