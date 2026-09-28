@@ -72,7 +72,7 @@ Shelved for the starting rebuild: **Sneaky, Cloak, Stack, Step Aside, Overkill**
 - **Put damage** adds damage without creating a damage-dealt event.
 - Either can Defeat a Character when accumulated damage reaches Guard.
 
-This distinction is intentional and currently used by Birthday Party Magician.
+This distinction remains intentional design space, but the current Birthday Party Magician passive no longer uses put damage.
 
 ## Card-design rules
 
@@ -95,7 +95,7 @@ Notable production changes include:
 
 - **Amateur Electrician** as a damaged-state Reckless payoff.
 - **School Bully** with Chicken and must-answer board presence.
-- **Lady Who's Moving Out Again** as a damaged-Bounce payoff.
+- **Lady Who's Moving Out Again** as an enter/Return tempo payoff.
 - **Hoarder** for Salvage Big Hand.
 - **Guy Fixing His Trans Am** as a Jerry-Rig/Item build-around.
 - **Reset the Vibes** as Momentum's symmetrical hand reset.
