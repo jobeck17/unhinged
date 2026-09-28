@@ -598,9 +598,9 @@
       "traits": [
         "Musician"
       ],
-      "text": "Rotate: One of your Characters gets +1 Power this Round, or +2 Power if it is a Musician or Clown.",
+      "text": "During your Ready step, if this Character is Rotated, you may leave it Rotated. While it remains Rotated this way, your other Musicians cost 1 less.",
       "style": "Momentum",
-      "complexity": "activated",
+      "complexity": "ongoing",
       "keywords": [],
       "power": 2,
       "guard": 3,
@@ -618,7 +618,7 @@
       "traits": [
         "Musician"
       ],
-      "text": "The first time each Round you Play an Action after Playing a Character, this gets +2 Power this Round.",
+      "text": "While you have 2 or fewer cards in hand, this gets +2 Power.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -638,7 +638,7 @@
       "traits": [
         "Musician"
       ],
-      "text": "When you Play your third card in a Round, heal 2 damage from one of your Characters.",
+      "text": "Whenever you play a card while you have 2 or fewer cards in hand, heal 1 damage from a Character.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -678,7 +678,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, another of your Characters gets +1 Power this Round. When you Play your second card in a Round, you may give one of your Parent or Kid Characters +1 Guard this Round.",
+      "text": "When this enters play, another of your Characters gets +1 Power this Turn. Your other Parent and Kid Characters get +1 Guard.",
       "style": "Momentum",
       "complexity": "mixed",
       "keywords": [],
@@ -699,12 +699,10 @@
         "Undead",
         "Musician"
       ],
-      "text": "Stack. When this attacks while stacked, it gets +2 Power for this Attack.",
+      "text": "While there are 6 or more Characters and Items in play, your other Musicians get +1 Power.",
       "style": "Momentum",
-      "complexity": "mixed",
-      "keywords": [
-        "Stack"
-      ],
+      "complexity": "ongoing",
+      "keywords": [],
       "power": 4,
       "guard": 3,
       "audit_identity": [
@@ -755,7 +753,7 @@
       "cost": 5,
       "name": "Boss Babe",
       "traits": [],
-      "text": "When this enters play, look at the top 3 cards of your deck. You may reveal a Character costing 2 or less and put it into your hand. Put the rest on the bottom in any order.",
+      "text": "When this enters play, if an opponent has more cards in hand than you, Draw until you have the same number of cards.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -775,9 +773,9 @@
       "traits": [
         "Parent"
       ],
-      "text": "Rotate: Ready another of your Rotated Characters that attacked this Round. It cannot Attack again this Round. If it is a Kid, it gets +2 Guard this Round. Activate only once each Round.",
+      "text": "When this enters play, heal 2 damage from a Character. Your other Kid Characters get +1 Guard.",
       "style": "Momentum",
-      "complexity": "activated",
+      "complexity": "mixed",
       "keywords": [],
       "power": 4,
       "guard": 6,
@@ -793,7 +791,7 @@
       "cost": 5,
       "name": "Peaked in High School",
       "traits": [],
-      "text": "The first time each Round you Play a Character after Playing another card, that Character gets +1 Power and +1 Guard this Round.",
+      "text": "While you have fewer cards in hand than an opponent, your other Characters get +1 Power.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
