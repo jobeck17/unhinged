@@ -1,4 +1,4 @@
-# Donut Revision 6 — Content Audit
+# Donut Revision 7 — Content Audit
 
 > Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.
 
@@ -19,11 +19,11 @@
 | Category | Count | Percent | Reckless | Momentum | Misdirection | Salvage | Stonewall | Expendable |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Textless | 13 | 11.9% | 2 | 4 | 1 | 1 | 0 | 5 |
-| Keyword only | 5 | 4.6% | 1 | 0 | 0 | 1 | 3 | 0 |
+| Keyword only | 6 | 5.5% | 1 | 0 | 1 | 1 | 3 | 0 |
 | On play | 24 | 22.0% | 4 | 6 | 7 | 3 | 2 | 2 |
 | Rotate ability | 0 | 0.0% | 0 | 0 | 0 | 0 | 0 | 0 |
-| Single ongoing ability | 45 | 41.3% | 8 | 6 | 5 | 8 | 11 | 7 |
-| Multiple abilities | 22 | 20.2% | 3 | 2 | 6 | 5 | 2 | 4 |
+| Single ongoing ability | 46 | 42.2% | 8 | 6 | 5 | 8 | 11 | 8 |
+| Multiple abilities | 20 | 18.3% | 3 | 2 | 5 | 5 | 2 | 3 |
 
 ## Character Cost curve
 
@@ -40,6 +40,9 @@
 
 **4 Actions currently use Response timing:** P020 Send It!, P081 Look Over There!, P141 Absolutely Not, P169 Take One for the Team.
 
-## Revision 6 tuning focus
+## Revision 7 tuning focus
 
-This pass adds card replacement and low-end pressure without changing Leader Health or core combat. It includes enter-play Draw, combat-Defeat Draw, a persistent paid Draw Item, a clean Draw-2 Action, and several higher-Power/lower-Guard early Characters.
+- Misdirection: Rabbit is now a 2/4 enter-or-leave Draw engine; Lady Who's Moving Out Again is 3/5; School Bully now carries Sucker Punch + Chicken.
+- Expendable: Tag Me In! costs 3; Patio-Table Prodigy no longer has printed Hothead.
+- Salvage: Cash In the Clutter caps at two Stash and draws only if opposing Stash was Rotated; Make It Work loses its Item discount and now Draws 2 then Discards 1.
+- Trash Baron's opposing-Stash passive remains unchanged.
