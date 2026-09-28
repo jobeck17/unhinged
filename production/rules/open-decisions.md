@@ -6,13 +6,13 @@ This file now tracks only decisions that remain genuinely open after the Septemb
 
 | Topic | Current test | Comparison needed |
 | --- | --- | --- |
-| First-player Draw | Both players Draw normally on their first Turn. | Run a controlled simulation where the War winner skips only their first Draw. Change no other rule and compare first-player advantage. |
+| First-player Draw | **War winner skips the Draw step of their first Turn.** | Adopted after the baseline simulation reduced first-player advantage materially. Continue measuring after card-flow tuning. |
 | Response Cost | Responses pay normal Cost with Ready Stash. | Test whether this creates useful open-resource decisions or makes defensive interaction too expensive. |
 | Packed House threshold | 6 total Characters + Items in play gives Rock Star a global -1 Cost. | Tune threshold and power only after package decks exist. |
 | Florida Man passive | Damaged Characters gain Hothead + Sucker Punch. | Test whether both keywords together are exciting without making self-damage trivial to exploit. |
-| HOA passive | One Rotated Character, Item, or Stash stays Rotated during each opposing Ready step. | Test whether the tax/stall pressure is meaningful without becoming oppressive. |
+| HOA passive | **Paused for current tuning test.** | Previous Ready-step tax is preserved for later comparison. Measure Stonewall win rate and game length with no Leader passive before choosing a toned-down version. |
 | Tag Out | End of opponent Turn: Return one damaged Character, then free-play another Character of same Cost or less. | Test On Play loops, tempo, and whether 'another Character' sufficiently prevents abuse. |
-| Magician damage transfer | Returned damaged friendly Character puts 1 damage on up to X opposing Characters. | Test board-wide ping potential and cross-Style damage interactions. |
+| Magician passive | **Whenever one of your Characters is Returned from play to your hand, Draw a card.** | Test whether Bounce now sustains hand size without creating runaway replay loops. Preserve the former put-damage concept in the idea bank for a card or future Leader. |
 
 ## Card-pool rebuild
 
