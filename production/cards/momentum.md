@@ -1,6 +1,6 @@
 # Momentum / High Turnover — Production Pool v0.2
 
-> Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -9,10 +9,10 @@
 | P032 | Character | 2 | **Wedding DJ** | 2/3 | Musician | During your Ready step, if this Character is Rotated, you may leave it Rotated. While it remains Rotated this way, your other Musicians cost 1 less. |
 | P033 | Character | 2 | **Karaoke Champion** | 2/3 | Musician | While you have 2 or fewer cards in hand, this gets +2 Power. |
 | P034 | Character | 4 | **Jam Band Hippie** | 3/6 | Musician | Whenever you play a card while you have 2 or fewer cards in hand, heal 1 damage from a Character. |
-| P035 | Character | 3 | **Youth Pastor With a Guitar** | 3/5 | Musician | — |
+| P035 | Character | 3 | **Youth Pastor With a Guitar** | 4/2 | Musician | When this enters play, if you have 2 or fewer cards in hand, Draw a card. |
 | P036 | Character | 4 | **Stage Mom** | 3/5 | Parent | When this enters play, another of your Characters gets +1 Power this Turn. Your other Parent and Kid Characters get +1 Guard. |
 | P037 | Character | 3 | **Reunion Tour Drummer** | 4/3 | Undead, Musician | While there are 6 or more Characters and Items in play, your other Musicians get +1 Power. |
-| P038 | Character | 3 | **Mike** | 3/4 | — | — |
+| P038 | Character | 3 | **Mike** | 4/2 | — | — |
 | P040 | Character | 5 | **Boss Babe** | 4/6 | — | When this enters play, if an opponent has more cards in hand than you, Draw until you have the same number of cards. |
 | P041 | Character | 5 | **Overenthusiastic Softball Mom** | 4/6 | Parent | When this enters play, heal 2 damage from a Character. Your other Kid Characters get +1 Guard. |
 | P042 | Character | 5 | **Peaked in High School** | 5/6 | — | While you have fewer cards in hand than an opponent, your other Characters get +1 Power. |
@@ -33,7 +33,7 @@
 | P057 | Item | 1 | **Participation Trophy** | — | — | Attach to one of your Characters. While you have fewer cards in hand than an opponent, the attached Character gets +2 Power. |
 | P058 | Item | 1 | **Orange Slices** | — | — | Dismiss this: Heal up to 3 damage from a Character. If you have fewer cards in hand than an opponent, Draw a card. |
 | P059 | Item | 2 | **Portable Bluetooth Speaker** | — | — | Your Musician Characters get +1 Power. |
-| P060 | Item | 2 | **Starter Kit** | — | — | When this enters play, Draw a card, then Discard a card. Dismiss this: Your next Character this Turn costs 1 less. |
+| P060 | Item | 2 | **Starter Kit** | — | — | When this enters play, Draw a card. Dismiss this: Your next Character this Turn costs 1 less. |
 | P123 | Character | 3 | **Coupon Lady** | 3/5 | — | When this enters play, you may Stash an additional card from your hand. |
 
 Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
