@@ -14,7 +14,7 @@ A Leader should preferably **bend a basic game rule**, change overall playstyle,
 | **Washed-Up Rock Star** | **Momentum** | Low Hand / Refill | **Comeback Tour:** At the end of your Turn, if you have no cards in hand, Draw 3 cards. |
 | **Birthday Party Magician** | **Misdirection** | Bounce / Return | Whenever one of your Characters is Returned from play to your hand, Draw a card. |
 | **Trash Baron** | **Salvage** | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
-| **HOA President** | **Stonewall** | Freeze / Stall | **Passive paused. Late Fee is the leading test candidate.** |
+| **HOA President** | **Stonewall** | Freeze / Stall | **Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks. |
 | **Backyard Wrestler** | **Expendable** | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may play another Character from your hand with the same Cost or less without paying its Cost. |
 
 These are playtest passives, not final balance locks.
@@ -53,7 +53,9 @@ The opponent can deny him by spending or Rotating their Stash first.
 
 **Character promise:** denial and reaction without relying on an automatic tax.
 
-The previous Ready-step tax remains **paused**. The leading replacement candidate is **Late Fee**: beginning in Round 8, opposing Characters cannot Block attacks made by HOA's Characters. Late Fee has been simulation-tested but is not yet the live production passive.
+**Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks.
+
+The old Ready-step tax is retired from the active Leader. Failure to Respond creates a visible deadline instead of taxing resources every Turn: the opponent has seven Rounds to break through the Stonewall board or enter an endgame where Blocking no longer protects them.
 
 ## Backyard Wrestler — Expendable / Red Shirts
 
