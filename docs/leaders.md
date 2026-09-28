@@ -37,11 +37,9 @@ The opponent can interact with the passive by shrinking the board instead of bli
 
 ## Birthday Party Magician — Misdirection / Funny Business
 
-**Character promise:** damage disappears from one place and turns up somewhere else.
+**Character promise:** the act of disappearing replaces itself.
 
-When a damaged friendly Character Returns to hand, the Magician may distribute that Character's former damage as **put damage**, at most 1 per chosen opposing Character.
-
-This intentionally does not create damage-dealt triggers. The opponent can play around it by fully Defeating damaged Characters, Dismissing them, or keeping a narrower board.
+Whenever one of your Characters is Returned from play to your hand, Draw a card. The current test intentionally makes Bounce a card-advantage engine, closer to the play pattern where cheap Return enablers repeatedly reuse On Play and leave-play value.
 
 ## Trash Baron — Salvage / Good Enough
 
@@ -53,11 +51,9 @@ The opponent can deny him by spending or Rotating their Stash first.
 
 ## HOA President — Stonewall / Find Out
 
-**Character promise:** something is always stuck in paperwork.
+**Character promise:** denial and reaction without relying on an automatic tax.
 
-During an opponent's Ready step, if they have any Rotated Character, Item, or Stash, they must choose one to remain Rotated. If everything is already Ready, the passive does nothing.
-
-Another effect may Ready that card later in the Turn.
+The previous Ready-step tax is **paused** during the current low-end/card-flow test. This isolates whether Stonewall's Characters, Responses, freeze effects, and denial package can carry the deck without an always-on Leader tax.
 
 ## Backyard Wrestler — Expendable / Red Shirts
 
