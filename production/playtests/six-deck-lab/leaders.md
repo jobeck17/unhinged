@@ -6,8 +6,6 @@ All Leaders begin at **25 Health** outside the 40-card deck. The current test mo
 
 **Passive:** Your damaged Characters have **Hothead** and **Sucker Punch**.
 
-If all damage is healed from a Character, it immediately loses those granted keywords.
-
 ## Washed-Up Rock Star — Momentum
 
 **Packed House:** While there are 6 or more Characters and Items in play total, your cards cost 1 less.
@@ -16,21 +14,21 @@ Cards controlled by either player count. Leaders and Stash do not.
 
 ## Birthday Party Magician — Misdirection
 
-When one of your damaged Characters is Returned from play to your hand, choose up to X opposing Characters, where X is the amount of damage that Character had immediately before it left play. **Put 1 damage** on each chosen Character.
+**Passive:** Whenever one of your Characters is Returned from play to your hand, **Draw a card**.
 
-This is put damage, not dealt damage.
+This is the revision 6 test. The former damaged-Character put-damage passive is no longer active and remains available as future card/Leader design space.
 
 ## Trash Baron — Salvage
 
-You may use opposing Ready Stash to pay your Costs as though it were your own.
+**Passive:** You may use opposing Ready Stash to pay your Costs as though it were your own.
 
-You may combine opposing Stash with your own in one payment. Opposing face-up Jerry-Rig Stash is legal to spend.
+This remains uncapped in the revision 6 baseline so the simulation can measure its full pressure. Targeted cap variants are being tested separately.
 
 ## HOA President — Stonewall
 
-During an opponent's Ready step, if they have any Rotated Characters, Items, or Stash, they choose one of those cards. That card does not Ready during that Ready step.
+**Passive paused for revision 6.**
 
-If they have no Rotated cards, the passive does nothing. Another effect may Ready the chosen card later that Turn.
+The previous Ready-step tax is intentionally disabled to isolate Stonewall's deck strength. A Character/Item-only version that never taxes Stash is the leading next test.
 
 ## Backyard Wrestler — Expendable
 
