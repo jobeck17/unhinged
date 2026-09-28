@@ -11,10 +11,10 @@ A Leader should preferably **bend a basic game rule**, change overall playstyle,
 | Leader | Style | Package lean | Current passive |
 | --- | --- | --- | --- |
 | **Florida Man** | **Reckless** | Self-Damage / Damaged Characters | Your damaged Characters have Hothead and Sucker Punch. |
-| **Washed-Up Rock Star** | **Momentum** | Chain / Acceleration | **Packed House:** While 6 or more Characters and Items are in play total, your cards cost 1 less. |
-| **Birthday Party Magician** | **Misdirection** | Bounce / Return | When one of your damaged Characters Returns from play to your hand, choose up to X opposing Characters, where X was that Character's damage. Put 1 damage on each chosen Character. |
+| **Washed-Up Rock Star** | **Momentum** | Low Hand / Refill | **Comeback Tour:** At the end of your Turn, if you have no cards in hand, Draw 3 cards. |
+| **Birthday Party Magician** | **Misdirection** | Bounce / Return | Whenever one of your Characters is Returned from play to your hand, Draw a card. |
 | **Trash Baron** | **Salvage** | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
-| **HOA President** | **Stonewall** | Freeze / Stall | During an opponent's Ready step, if they have Rotated Characters, Items, or Stash, they choose one of those cards to leave Rotated. |
+| **HOA President** | **Stonewall** | Freeze / Stall | **Passive paused. Late Fee is the leading test candidate.** |
 | **Backyard Wrestler** | **Expendable** | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may play another Character from your hand with the same Cost or less without paying its Cost. |
 
 These are playtest passives, not final balance locks.
@@ -29,11 +29,11 @@ Opponent counterplay is visible: partial damage may empower Florida Man's board,
 
 ## Washed-Up Rock Star — Momentum / High Turnover
 
-**Character promise:** the bigger the show, the cheaper the set gets.
+**Character promise:** burn through the set list, then somehow book another season.
 
-**Packed House** counts Characters and Items controlled by both players. Leaders and Stash do not count.
+**Comeback Tour:** At the end of your Turn, if you have no cards in hand, Draw 3 cards.
 
-The opponent can interact with the passive by shrinking the board instead of blindly developing into the discount.
+This makes the Rock Star the dedicated Low Hand Leader. The former Packed House discount remains useful design space for a future Momentum Leader or marquee card.
 
 ## Birthday Party Magician — Misdirection / Funny Business
 
@@ -53,7 +53,7 @@ The opponent can deny him by spending or Rotating their Stash first.
 
 **Character promise:** denial and reaction without relying on an automatic tax.
 
-The previous Ready-step tax is **paused** during the current low-end/card-flow test. This isolates whether Stonewall's Characters, Responses, freeze effects, and denial package can carry the deck without an always-on Leader tax.
+The previous Ready-step tax remains **paused**. The leading replacement candidate is **Late Fee**: beginning in Round 8, opposing Characters cannot Block attacks made by HOA's Characters. Late Fee has been simulation-tested but is not yet the live production passive.
 
 ## Backyard Wrestler — Expendable / Red Shirts
 
