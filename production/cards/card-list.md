@@ -1,7 +1,6 @@
 # Donut Card List
 
 > Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
-> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
 
