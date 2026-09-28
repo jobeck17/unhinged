@@ -1,8 +1,29 @@
 # Six-deck lab
 
-- [All six 40-card lists](decks.md), [structured deck data](decks.json), and [all six Leader packages](leaders.md).
-- The [active 180-card pool](../../cards/cards.json) includes seven promoted concepts from the idea bank; the [physical card handling notes](../../cards/physical-cards-follow-up.md) explain the Bush, Hot Potato, and Vacuum.
-- Run `python production/playtests/six-deck-lab/validate.py` from the repository root to check Styles, copy limits, type composition, and early curves.
-- First games: **Washed-Up Rock Star versus Backyard Wrestler**, then **Birthday Party Magician versus Trash Baron**. Rotate pilots and starting player. HOA President remains an advanced control challenge.
+This is the **September 28 mono-Style baseline** for the rebuilt 0.2 Donut card pool.
 
-These decks and the four new Leader packages, including small Sneaky, Cloak, and Stack tests, are tabletop-ready drafts, **not yet simulated or balanced**. The existing [Donut Duel web app](../../../play/README.md) currently implements the original Florida Man versus HOA duel only. It does not yet execute the effects and Leader abilities of these four new decks or all seven new cards. A no-art engine expansion is a separate piece of work; keep the distinction visible to testers.
+- [All six 40-card lists](decks.md)
+- [Structured deck data](decks.json)
+- [Current six Leader passives](leaders.md)
+- Run `python3 production/playtests/six-deck-lab/validate.py` from the repository root to verify card count, copy limits, Style legality, and card-pool version.
+
+## Why mono-Style first
+
+The first job is to prove that each Style works by itself:
+
+- both major packages can appear in one coherent 40-card deck;
+- the Leader passive has enough support inside its own Style;
+- a weak package cannot hide behind a stronger secondary Style;
+- balance problems can be attributed to the correct engine.
+
+Dual-Style construction comes **after** these six baselines function.
+
+## First matchup slate
+
+1. Florida Man vs. HOA President
+2. Washed-Up Rock Star vs. Trash Baron
+3. Birthday Party Magician vs. Backyard Wrestler
+
+Then rotate through the full six-deck round robin with pilots and starting player alternated.
+
+These are validation decks, not optimized lists. Do not treat early win rates as final balance evidence until rules execution and package function are stable.
