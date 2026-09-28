@@ -100,49 +100,104 @@ def display_text(c):
 
 def render(data, taxonomy):
     cards = data['cards']
-    chars = [c for c in cards if c['type']=='Character']
-    by_id = {c['id']:c for c in cards}
+    chars = [c for c in cards if c['type'] == 'Character']
+    by_id = {c['id']: c for c in cards}
     files = {}
-    revision = data.get('revision', 2)
-    header = f'> Donut revision {revision} · {data.get("date", "2026-09-23")} · Working playtest text; balance is unverified.\n> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.\n\n'
+    revision = data.get('revision', 5)
+    date = data.get('date', '2026-09-28')
+
     for style, alias in STYLES.items():
-        rows = [[c['id'], c['type'], c['cost'], '**'+c['name']+'**', f"{c['power']}/{c['guard']}" if c['type']=='Character' else '—', ', '.join(c['traits']) or '—', display_text(c)] for c in cards if c['style']==style]
-        flavor_rows = [[c['id']+' '+c['name'], '*'+c['flavor']+'*'] for c in cards if c['style']==style and c.get('flavor')]
-        files[style.lower()+'.md'] = f'# {style} / {alias} — Production Pool v0.1\n\n'+header+table(['ID','Type','Cost','Card','Power / Guard','Traits','Working text'],rows)+'\nA dash in Working text means no rules text. Traits are still active labels. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).\n\n## Flavor text\n\nThese optional lines are not rules text and do not change a card’s complexity category.\n\n'+table(['Card','Flavor'],flavor_rows)
-    rows = [[c['id'],c['name'] + (' (also: '+', '.join(c['aliases'])+')' if c.get('aliases') else ''),c['style'],c['type'],c['cost'],f"{c['power']}/{c['guard']}" if c['type']=='Character' else '—',', '.join(c['traits']) or '—',CATEGORIES.get(c['complexity'],'—')] for c in cards]
-    files['card-list.md']='# Donut Card List\n\n'+header+'180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.\n\n'+table(['ID','Card','Style','Type','Cost','Power / Guard','Traits','Ability category'],rows)
-    for style in STYLES:
-        aliases = [[c['id']+' '+c['name'], ', '.join(c['aliases'])] for c in cards if c['style']==style and c.get('aliases')]
-        if aliases:
-            files[style.lower()+'.md'] += '\n## Alternate concept names\n\nThese are alternate names for the same card, not additional cards or copy-limit exceptions.\n\n'+table(['Card','Alternate name'], aliases)
-    trait_rows=[]
+        pool = [c for c in cards if c['style'] == style]
+        rows = [[
+            c['id'], c['type'], c['cost'], '**'+c['name']+'**',
+            f"{c['power']}/{c['guard']}" if c['type']=='Character' else '—',
+            ', '.join(c['traits']) or '—', display_text(c)
+        ] for c in pool]
+        flavor_rows = [[c['id']+' '+c['name'], '*'+c['flavor']+'*'] for c in pool if c.get('flavor')]
+        flavor = table(['Card','Flavor'], flavor_rows) if flavor_rows else '_No current flavor-text entries._\n'
+        files[style.lower()+'.md'] = (
+            f'# {style} / {alias} — Production Pool v0.2\n\n'
+            f'> Donut revision {revision} · {date} · Working playtest text; balance is unverified.\n'
+            f'> Generated from [cards.json](cards.json).\n\n'
+            + table(['ID','Type','Cost','Card','Power / Guard','Traits','Working text'], rows)
+            + '\nTraits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).\n\n'
+            + '## Flavor text\n\n' + flavor
+        )
+
+    rows = [[
+        c['id'], c['name'] + (' (also: '+', '.join(c['aliases'])+')' if c.get('aliases') else ''),
+        c['style'], c['type'], c['cost'],
+        f"{c['power']}/{c['guard']}" if c['type']=='Character' else '—',
+        ', '.join(c['traits']) or '—', CATEGORIES.get(c['complexity'],'—')
+    ] for c in cards]
+    files['card-list.md'] = (
+        f'# Donut Card List\n\n> Donut revision {revision} · {date} · Working playtest text; balance is unverified.\n\n'
+        '180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.\n\n'
+        + table(['ID','Card','Style','Type','Cost','Power / Guard','Traits','Ability category'], rows)
+    )
+
+    trait_rows = []
     for t in taxonomy['traits']:
-        members=[c for c in chars if t['name'] in c['traits']]
-        styles=', '.join(f'{s} {sum(c["style"]==s for c in members)}' for s in STYLES if any(c['style']==s for c in members))
-        supports=', '.join(f"{cid} {by_id[cid]['name']}" for cid in t['support'])
-        trait_rows.append([t['name'],len(members),f'{100*len(members)/len(chars):.1f}%',styles,supports])
-    files['traits.md']='# Donut Traits\n\n> Generated from [taxonomy.json](taxonomy.json) and [cards.json](cards.json). Current playtest specification, not a final print lock.\n\nA **Trait** describes what a Character is. It has no automatic ability. A **keyword** supplies a defined rule. A **Style** determines deckbuilding identity. Keep those three jobs separate.\n\n'+taxonomy['trait_policy']['notes']+'\n\nThe saturation guide is roughly **3–15% of the unique deck Characters**. It is a soft design guide. A Character with two Traits counts once in each relevant row; the percentages do not sum to 100%. Human metadata, gained Traits, deck copies, Actions, Items, and Leaders do not inflate these counts.\n\n'+table(['Trait','Characters','Saturation','Style distribution','Cards that use it'],trait_rows)+'\n## Assignment guide\n\n'+table(['Trait','Use it for'],[[t['name'],t['meaning']] for t in taxonomy['traits']])+'\n## Boundaries and reserved space\n\n'+'\n'.join('- '+s for s in taxonomy['notes'])+'\n\nReserved: '+', '.join(taxonomy['reserved'])+'. None has current printed support.\n\nRemoved from current printed labels: '+', '.join(taxonomy['retired_printed_labels'])+'. Old concepts remain in history; these are not automatic aliases. Porch Pirate is Criminal, Pirate Radio Operator is Criminal / Musician, and a living possum is Animal / Scavenger. Their titles do not secretly grant more Traits.\n'
-    keyword_rows=[]
+        members = [c for c in chars if t['name'] in c['traits']]
+        styles = ', '.join(f'{style} {sum(c["style"]==style for c in members)}' for style in STYLES if any(c['style']==style for c in members)) or '—'
+        supports = ', '.join(f"{cid} {by_id[cid]['name']}" for cid in t.get('support', [])) or '—'
+        trait_rows.append([t['name'], len(members), f'{100*len(members)/len(chars):.1f}%', styles, supports])
+    files['traits.md'] = (
+        '# Donut Traits\n\n> Generated from [taxonomy.json](taxonomy.json) and [cards.json](cards.json). Current rebuild specification, not a final print lock.\n\n'
+        'A **Trait** describes what a Character is. It has no automatic ability. A **keyword** supplies a defined rule. A **Style** determines deckbuilding identity.\n\n'
+        'The saturation guide is roughly **3–15% of the unique deck Characters** and is only a soft guide. Traits may exist before they receive dedicated support.\n\n'
+        + table(['Trait','Characters','Saturation','Style distribution','Cards that use it'], trait_rows)
+        + '\n## Assignment guide\n\n'
+        + table(['Trait','Use it for'], [[t['name'],t['meaning']] for t in taxonomy['traits']])
+        + '\n## Boundaries and reserved space\n\n'
+        + '\n'.join('- '+note for note in taxonomy['notes'])
+        + '\n\nReserved: ' + ', '.join(taxonomy['reserved']) + '.\n'
+    )
+
+    keyword_rows = []
     for k in taxonomy['keywords']:
-        members=[c for c in cards if k['name'] in c['keywords']]
-        keyword_rows.append([k['name'],k['definition'],k['status'],', '.join(c['id']+' '+c['name'] for c in members) or '—'])
-    prototypes=taxonomy.get('keyword_prototypes', [])
-    require_prototypes = len({k['name'] for k in prototypes}) == len(prototypes) and not ({k['name'] for k in prototypes} & {k['name'] for k in taxonomy['keywords']})
-    if not require_prototypes:
-        raise ValueError('Candidate keyword names must be unique and separate from printed keywords.')
-    files['keywords.md']=f"# Donut Keywords\n\n> Generated from [taxonomy.json](taxonomy.json). {len(taxonomy['keywords'])} printed playtest keywords in the active pool.\n\n"+table(['Keyword','Rule','Status','Printed on'],keyword_rows)+'\n## Scope and edge cases\n\n'+'\n'.join('- **'+k['name']+':** '+k['limits'] for k in taxonomy['keywords'])+'\n- Multiple instances of the same keyword do not multiply its effect.\n- Tag Me In! can grant Hothead temporarily; it is not an additional printed-keyword Character.\n- Every teaching/print layout should include reminder text or a nearby reference. These short table entries are design sheets, not finished card faces.\n\nSee [other ability experiments](mechanics-playtest.md) for attack-only, defend-only, Hothead suppression, and face-down handling.\n\n## Ordinary vocabulary, not keywords\n\nRotate, Ready, Attack, Block, Defeat, Sacrifice, Dismiss, Draw, and Discard are core instructions. Vulnerable is a Leader state. Enters-play and Defeat triggers need their full timing sentence. Traits such as Undead, Rat, and Daredevil grant no behavior on their own.\n\nJerry-Rig remains earmarked. Encore!, Pick a Card, Scrounge, and similar phrases are card titles, not global abilities. No keyword was added merely to give every Style an exclusive mechanic.\n'
-    composition=[]
+        members = [c for c in cards if k['name'] in c['keywords']]
+        keyword_rows.append([k['name'], k['definition'], k['status'], ', '.join(c['id']+' '+c['name'] for c in members) or '—'])
+    files['keywords.md'] = (
+        f"# Donut Keywords\n\n> Generated from [taxonomy.json](taxonomy.json). {len(taxonomy['keywords'])} active rebuild keywords.\n\n"
+        + table(['Keyword','Rule','Status','Printed on'], keyword_rows)
+        + '\n## Scope and edge cases\n\n'
+        + '\n'.join('- **'+k['name']+':** '+k['limits'] for k in taxonomy['keywords'])
+        + '\n- Multiple instances of the same keyword do not multiply its effect unless a card explicitly says otherwise.\n'
+        + '- Tag Me In! can grant Hothead temporarily; it is not an additional printed-keyword Character.\n\n'
+        + '## Shelved mechanics\n\n'
+        + ', '.join(taxonomy.get('shelved_keywords', []))
+        + ' are preserved in design history but are not active starting-set mechanics.\n\n'
+        + '## Ordinary vocabulary, not keywords\n\n'
+        + 'Rotate, Ready, Attack, Block, Defeat, Sacrifice, Dismiss, Draw, Discard, Return, **deal damage**, and **put damage** are core instructions. Traits grant no behavior on their own.\n'
+    )
+
+    composition = []
     for style in STYLES:
-        pool=[c for c in cards if c['style']==style]
-        composition.append([style,sum(c['type']=='Character' for c in pool),sum(c['type']=='Action' for c in pool),sum(c['type']=='Item' for c in pool),len(pool)])
-    composition.append(['Total',sum(c['type']=='Character' for c in cards),sum(c['type']=='Action' for c in cards),sum(c['type']=='Item' for c in cards),len(cards)])
-    complexity=[]
-    for key,label in CATEGORIES.items():
-        count=sum(c['complexity']==key for c in chars)
-        complexity.append([label,count,f'{100*count/len(chars):.1f}%']+[sum(c['style']==s and c['complexity']==key for c in chars) for s in STYLES])
-    rotators=[c for c in cards if c['type']=='Item' and re.search(r'Rotate[^.:]*:',c['text'])]
-    curves=[[s]+[sum(c['style']==s and c['cost']==cost for c in chars) for cost in range(1,8)] for s in STYLES]
-    files['audit.md']=f'# Donut Revision {revision} — Content Audit\n\n> Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.\n\n## Pool composition\n\n'+table(['Style','Characters','Actions','Items','Total'],composition)+'\n## Character complexity\n\nThese categories are mutually exclusive. Keyword-only cards are not textless. A Rotate ability plus another independent ability belongs in Multiple abilities. Several instructions within one enters-play ability remain one on-play ability. The single ongoing category includes a static ability or one triggered ability. Printed Rotate activations also occur on some Multiple-ability Characters.\n\n'+table(['Category','Count','Percent',*STYLES],complexity)+'\n## Character Cost curve\n\n'+table(['Style',*map(str,range(1,8))],curves)+f'\n**{len(rotators)} of 24 Items have a Rotate activation.** Rotating, Readying, and disabling Items now has a real target population; passive Items still function while Rotated unless their text says otherwise.\n\n'+', '.join(c['id']+' '+c['name'] for c in rotators)+'\n\n## Automated checks\n\nStable IDs P001–P180, unique names, 30 cards per Style, valid stats/Costs, registered Traits/keywords, support-card references, Character complexity metadata, retired wording in rules text, and generated-sheet freshness. Run `python3 production/cards/build.py --check`.\n\nThe validator does not prove card balance, complete natural-language rules correctness, or playable Leader packages. See [Current revision notes](revision-3-notes.md) for the roster follow-up and [the previous rules audit](revision-2-notes.md) for timing review and playtest priorities.\n'
+        pool = [c for c in cards if c['style'] == style]
+        composition.append([style, sum(c['type']=='Character' for c in pool), sum(c['type']=='Action' for c in pool), sum(c['type']=='Item' for c in pool), len(pool)])
+    composition.append(['Total', sum(c['type']=='Character' for c in cards), sum(c['type']=='Action' for c in cards), sum(c['type']=='Item' for c in cards), len(cards)])
+
+    complexity = []
+    for key, label in CATEGORIES.items():
+        count = sum(c['complexity']==key for c in chars)
+        complexity.append([label, count, f'{100*count/len(chars):.1f}%'] + [sum(c['style']==style and c['complexity']==key for c in chars) for style in STYLES])
+    curves = [[style] + [sum(c['style']==style and c['cost']==cost for c in chars) for cost in range(1,8)] for style in STYLES]
+    char_rotators = [c for c in chars if re.search(r'Rotate[^.:]*:', c['text'])]
+    responses = [c for c in cards if c['type']=='Action' and c['text'].startswith('Response')]
+    files['audit.md'] = (
+        f'# Donut Revision {revision} — Content Audit\n\n> Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.\n\n'
+        + '## Pool composition\n\n'
+        + table(['Style','Characters','Actions','Items','Total'], composition)
+        + '\n## Character complexity\n\n'
+        + table(['Category','Count','Percent',*STYLES], complexity)
+        + '\n## Character Cost curve\n\n'
+        + table(['Style',*map(str,range(1,8))], curves)
+        + f'\n**{len(char_rotators)} Characters currently have printed Rotate activations.** The rebuild intentionally favors static, triggered, and On Play Character abilities.\n\n'
+        + f'**{len(responses)} Actions currently use Response timing:** ' + ', '.join(c['id']+' '+c['name'] for c in responses) + '.\n\n'
+        + '## Automated-check targets\n\n'
+        + '180 stable IDs, unique names, 30 cards per Style, legal types/stats/Costs, registered Traits/keywords, current terminology, Character complexity metadata, and generated-sheet freshness.\n'
+    )
     return files
 
 def main():
