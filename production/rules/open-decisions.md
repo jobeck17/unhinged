@@ -1,71 +1,175 @@
-# Rules Decisions Needed Before Production Card Text
+# Open Decisions After the September 27 Architecture Pass
 
-These are the remaining production decisions after the September 23 Donut card revision. They are not rules gaps to fill casually while writing cards. Each needs a deliberate decision, then an update to [the production rulebook](unhinged-rules.md), card templates, and any affected card text.
+This file now tracks only decisions that remain genuinely open after the September 27 design interview. The production rulebook contains the current test rules.
 
-| Topic | Current direction | Needed decision |
+## Immediate controlled tests
+
+| Topic | Current test | Comparison needed |
 | --- | --- | --- |
-| Final printed type name | **Character** is used consistently in the current Donut rulebook and pool; Unit is the historical alias. | Confirm the final printed presentation before card-frame work. |
-| Responses | A Response is an Action with its exact timing printed on the card. | Define whether a Response may answer another Response and set a chain limit, if any. |
-| Response costing | Fuel and card opportunity cost are favored. | Establish the cost range after cards exist to test it. |
-| Fuel representation | Fuel progresses from 1 to 7 and Rotates to pay. | Choose the physical implementation: dedicated Fuel cards, tracker, tokens, or another durable play aid. |
-| Deckbuilding Styles | Leader Style plus one secondary Style is the current default. **Styles** is the soft-locked umbrella term. | Confirm the final printed Style names in card headers and deckbuilding text. |
-| Style naming | The settled production roster is **Reckless / Momentum / Misdirection / Salvage / Stonewall / Expendable**. The older alternate phrase set remains **No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts** for reference. | Validate name clarity in playtests and choose the final printed presentation after usability and legal/IP review. |
-| Leader model | Leaders provide deck identity, a 25-Health target, and one automatic passive. The Character Lab removes activated abilities, Charge, rotation, and ultimates. Older Leader packages are historical experiments. | Test the passive-only model first; then decide whether Leaders also need a simple activated ability. |
-| Card type layout | The card frame must support Cost, type, title/subtitle, rules text, Power, Guard, and IDs. | Produce and test the first printable template, including type symbols, reminder text, and rotation. Stack overlap remains an optional later experiment. |
+| First-player Draw | Both players Draw normally on their first Turn. | Run a controlled simulation where the War winner skips only their first Draw. Change no other rule and compare first-player advantage. |
+| Response Cost | Responses pay normal Cost with Ready Stash. | Test whether this creates useful open-resource decisions or makes defensive interaction too expensive. |
+| Packed House threshold | 6 total Characters + Items in play gives Rock Star a global -1 Cost. | Tune threshold and power only after package decks exist. |
+| Florida Man passive | Damaged Characters gain Hothead + Sucker Punch. | Test whether both keywords together are exciting without making self-damage trivial to exploit. |
+| HOA passive | One Rotated Character, Item, or Stash stays Rotated during each opposing Ready step. | Test whether the tax/stall pressure is meaningful without becoming oppressive. |
+| Tag Out | End of opponent Turn: Return one damaged Character, then free-play another Character of same Cost or less. | Test On Play loops, tempo, and whether 'another Character' sufficiently prevents abuse. |
+| Magician damage transfer | Returned damaged friendly Character puts 1 damage on up to X opposing Characters. | Test board-wide ping potential and cross-Style damage interactions. |
 
-## Completed in Donut revision 2
+## Card-pool rebuild
 
-Current Trait and keyword definitions, Human removal, draft card-data structure, consistent Character test wording, and the normal-discard card rewrite are complete for this pass. Active text uses ordinary ownership language without a Controller subsystem. Attack/Block checkpoints and card-reference timing are documented as working rulings. Their playtest quality remains open to evidence; they are no longer missing specifications.
+The current 180-card pool predates the package architecture and must be audited before being called production-ready.
 
-## Production gate
+Every card should receive one status:
 
-Do not treat a legacy card as production-ready until it has been reviewed against the current rulebook. In particular, rewrite uses of Command, Stamina, Exhaust, Deploy, dies/died, Resource, Junk Pile, Controller, and old combat actions. A word-for-word replacement is not enough because costs, timing, and balance changed with the rules.
+- **Keep:** concept and text already fit.
+- **Rehome:** card is good but belongs in another Style.
+- **Rewrite:** concept/name is good but mechanics should be rebuilt.
+- **Replace:** slot should be given to a stronger concept.
 
+### Per-Style structure
 
-## Stash economy color-pie exploration
+- 30 cards per Style remains the starting-set target.
+- No fixed Character / Action / Item ratio.
+- Salvage may intentionally run more Items.
+- Responses count as Actions.
+- Internal excitement target: **2 Best / 4 Better / 6 Good / 18 Simple-support**.
+- Most Styles should have roughly two major packages, but this is a guideline, not a law.
+- Each package should receive enough cards to function in mono-Style construction.
+- Preserve package-neutral staples and straightforward threats so decks are not preassembled engines.
 
-> **Status: unfinished design direction. Preserve for testing; not a locked rules package.**
+## Style and package map
 
-With Stash replacing automatic Fuel progression as the current economy experiment, each Style should eventually have a distinct way to accelerate, exploit, manipulate, or combat economy. The working direction is:
-
-| Style | Working economy identity | Design direction |
+| Style | Broad identity | Starting packages |
 | --- | --- | --- |
-| Reckless | Borrow | Spend or commit future economy for immediate tempo. |
-| Momentum | Ramp | Primary home for true ramp: exceed the normal Stash-development rate and build permanent Stash faster. |
-| Misdirection | Manipulate | Exchange, recover, rearrange, conceal, or otherwise manipulate cards in Stash without simply becoming the ramp Style. Hacker is a natural thematic home for this space. |
-| Salvage | Scavenge | Gain economic value from things already used, discarded, or left over rather than being the primary permanent-ramp Style. |
-| Stonewall | Tax | Make opposing economy less efficient through taxes, temporary rotation/denial, or punishment for economic choices. Permanent Stash destruction should be approached cautiously. |
-| Expendable | Sacrifice | Convert Characters or other board assets into temporary purchasing power or cost reduction. |
+| Reckless | Damage + risk | Damage Everywhere; Self-Damage / Damaged Characters |
+| Momentum | Growth + chaining + economy acceleration | Chain / Acceleration; Low Hand |
+| Misdirection | Movement + deception | Bounce / Return; Manipulation / Deception |
+| Salvage | Reuse + scavenging + repurposing | Items / Jerry-Rig / Repurpose; Scrounge / Big Hand |
+| Stonewall | Denial + stall + reaction | Freeze / Stall; Reaction / Denial |
+| Expendable | Sacrifice + death value + recursion | Sacrifice / Defeat Value; Recursion / Refuse to Stay Dead |
 
-### Trash Baron economy passive
+## Economy identities
 
-Current concept to preserve for the Trash Baron Leader:
+- **Reckless:** borrow from future economy may be tested, but avoid heavy bookkeeping.
+- **Momentum:** true Ramp and selective Stash Recharge.
+- **Misdirection:** inspect, retrieve, exchange, or otherwise manipulate normally unknowable Stash.
+- **Salvage:** Jerry-Rig temporary Stash and exploitation of unused Stash.
+- **Stonewall:** temporary Stash denial/tax.
+- **Expendable:** convert Characters into temporary purchasing power or Cost reduction.
 
-> **You may use your opponent's Ready Stash to pay your Costs. You may combine it with your own Stash.**
+### Jerry-Rig
 
-Using an opponent's Stash should Rotate those cards as payment, not remove or permanently steal them. This gives Trash Baron an economy advantage based on the opponent's *unused* Stash, so he should **not also receive ordinary ramp as part of his Leader package**. The opponent can reduce the Baron's available scavenged economy by spending their own Stash before leaving it available.
+Current rule:
 
-### Open questions
+> **Jerry-Rig:** If this Item would go to your discard, you may put it face up and Rotated into your Stash instead. When this card is used to pay a Cost, discard it.
 
-- Exact wording and name of Trash Baron's passive.
-- How much true ramp Momentum can receive without creating runaway development.
-- Whether every Style needs a minimum amount of generic Stash interaction in addition to its signature economy identity.
-- Exact verbs/terminology for Stash movement and temporary economy effects.
-- Whether Spy becomes a Misdirection/Stonewall cross-Style package, with economy interference as part of its identity.
-- Balance implications of taxes, temporary Stash rotation, Stash recovery, and any effects that move cards out of Stash.
+Current test direction is to give Jerry-Rig to every Salvage Item and initially impose no once-per-Round cap. The Item is not mechanically an Item while in Stash.
 
-### Flexible base Stash timing
+### Salvage unused-Stash Action
 
-Working experiment: Round opening remains **Ready → Draw → first Turn** rather than forcing a Stash decision during upkeep. Each player gets **one Stash opportunity per Round**, usable during one of their own Turns. Stashing does not consume the normal Turn choice, and the card enters Stash Ready, so it may be used to pay a Cost immediately.
+Preserve for card design:
 
-This intentionally lets a player delay the decision until after cards have been played and new information is available. The decision to test is whether that flexibility creates useful interaction and bluffing or makes Stashing too consequence-free. This would replace the current wording that allows one Stash during each Turn; extra Turns should not create extra base Stash opportunities.
+> Rotate up to 3 Ready Stash. Draw a card for each Stash Rotated this way.
 
-### Salvage: temporary Item Stash
+The chosen Stash may belong to either player or be mixed across players. Exact Cost and final wording require testing.
 
-Working Salvage economy concept: the first qualifying Item each Round that would be discarded or Dismissed may instead move into its owner's Stash **face up and Rotated**. It counts as 1 Stash but cannot be used that Round because it enters Rotated. When that face-up Item is later used from Stash to pay a Cost, **discard it instead of leaving it in Stash**.
+## Hand-economy directions
 
-The Item remains face up specifically so both players can identify which Stash card is temporary and know which card must be discarded when spent. Normal Stashed cards remain face down and reusable. This gives Salvage recycled, temporary economy rather than Momentum-style permanent ramp.
+### Momentum Low Hand
 
-Still unresolved: whether the trigger should catch discarded Items only, Dismissed Items only, or both; whether this belongs on a Leader/passive, card package, or broader Salvage mechanic; and the final rules wording for a face-up card retaining its Item identity while in Stash.
+Approved mechanical space includes:
 
-Do not convert this section into locked card text or global rules until the base Stash economy has been playtested.
+- bonuses while you have fewer cards than an opponent;
+- bonuses while you have 2 or fewer cards in hand;
+- symmetrical hand reset effects such as all players discarding their hands and Drawing 3;
+- effects that Return opposing Characters to increase the opponent's hand;
+- catch-up Draw such as Drawing until you have as many cards as an opponent;
+- rewards based on an opponent having a large hand.
+
+Momentum should have very little Hothead, possibly none, because Hothead is a natural counter to Bounce-based tempo.
+
+### Salvage Big Hand / Scrounge
+
+Salvage should build a large hand primarily through scavenging and recovery rather than generic raw Draw.
+
+Approved directions include:
+
+- recover Items or Characters from discard;
+- reveal/search narrow categories of cards;
+- accumulate hand resources;
+- rewards for having more cards than an opponent;
+- threshold rewards such as having 6 or more cards in hand.
+
+**Hoarder** is reserved for this package. **Coupon Lady** may become either Momentum Ramp or Salvage Big Hand depending on final card design.
+
+## Keyword status
+
+### Active / promoted for the rebuild
+
+- Hothead
+- Defiant
+- Explosive
+- Slowpoke
+- Sucker Punch, working name
+- Jerry-Rig
+
+### Approved candidates
+
+- Chicken
+- Stubborn
+- Bodyguard, working name
+
+### Shelved
+
+- Sneaky
+- Cloak
+- Stack
+- Step Aside
+- Overkill
+
+Do not force a keyword merely to give each Style a proprietary mechanic.
+
+## Character design guidance
+
+- Most Character abilities should be static, triggered, or On Play.
+- Rotate abilities should be uncommon.
+- Board presence should create must-answer Characters.
+- Some marquee cards may combine an On Play ability with a persistent engine.
+- A recurring architecture may let an already-Rotated Character remain Rotated during its Ready step in exchange for either:
+  - a one-time payoff; or
+  - an ongoing effect that lasts only while it remains Rotated.
+- If another effect Readies that Character later, an ongoing 'while Rotated this way' effect ends.
+- Keep this architecture as card text for now rather than committing to a keyword.
+- Some clean early Characters may be textless or keyword-only.
+- Large late-game bodies may sometimes be threatening primarily because of stats, but no Style is required to contain the same generic stat monster.
+- Trait effects should be scattered appropriately and work as upside. Example design space: 'Your other Wrestlers have Hothead.'
+- Traits themselves remain meaningless until referenced.
+
+## Leader design guidance
+
+Current starting Leaders:
+
+- Florida Man -> Self-Damage / Damaged Characters
+- Washed-Up Rock Star -> Chain / Acceleration
+- Birthday Party Magician -> Bounce / Return
+- Trash Baron -> Repurpose / Stash exploitation
+- HOA President -> Freeze / Stall
+- Backyard Wrestler -> Sacrifice / Defeat Value
+
+Leader goals:
+
+- one visible automatic passive for now;
+- no Trait references in the starting Leader passives;
+- bend a basic game rule when possible;
+- change overall playstyle without simply giving raw efficiency;
+- give the opponent a visible way to play around the passive;
+- direct Leader damage from passives should be rare, not forbidden;
+- activated Leader abilities may return in later testing.
+
+Do not design the second Leader per Style until the rebuilt card pool shows what the second package actually needs.
+
+## Remaining naming / presentation decisions
+
+- Sucker Punch is a working keyword name.
+- Bodyguard is a working keyword name.
+- Final printed Style names remain Reckless / Momentum / Misdirection / Salvage / Stonewall / Expendable for this iteration, but final product naming/legal review is later.
+- Card-frame and final rarity/product presentation remain later production work.
