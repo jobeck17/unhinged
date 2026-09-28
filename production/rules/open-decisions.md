@@ -6,13 +6,13 @@ This file now tracks only decisions that remain genuinely open after the Septemb
 
 | Topic | Current test | Comparison needed |
 | --- | --- | --- |
-| First-player Draw | **War winner skips the Draw step of their first Turn.** | Adopted after the baseline simulation reduced first-player advantage materially. Continue measuring after card-flow tuning. |
+| Turn-order balance | **War winner skips the Draw step of their first Turn. After mulligans, the second player may put the top card of their deck face up and Rotated into Stash as temporary Stash.** | Revision-7 simulation moved first-player win rate from 65.06% without the bonus to 54.98% with it. Keep monitoring in human play. |
 | Response Cost | Responses pay normal Cost with Ready Stash. | Test whether this creates useful open-resource decisions or makes defensive interaction too expensive. |
 | Rock Star passive | **Comeback Tour:** end your Turn with no cards in hand -> Draw 3. | Adopted after a full A/B against the version that refilled to 3 from one or fewer cards. Preserve Packed House for future Momentum design space. |
 | Florida Man passive | Damaged Characters gain Hothead + Sucker Punch. | Test whether both keywords together are exciting without making self-damage trivial to exploit. |
 | HOA passive | **Locked: Failure to Respond — beginning in Round 8, opposing Characters cannot Block your Attacks.** | Validate the Round-8 clock in physical play; the old Ready-step tax is retired from the active Leader. |
 | Tag Out | End of opponent Turn: Return one damaged Character, then free-play another Character of same Cost or less. | Test On Play loops, tempo, and whether 'another Character' sufficiently prevents abuse. |
-| Magician passive | **Whenever one of your Characters is Returned from play to your hand, Draw a card.** | Test whether Bounce now sustains hand size without creating runaway replay loops. Preserve the former put-damage concept in the idea bank for a card or future Leader. |
+| Magician passive | **Ace Up My Sleeve:** once during your Turn, when one of your Characters is Returned from play to your hand, Ready 1 Stash. | Replaces Draw-on-Return after revision-7 simulation improved Magician's model win rate and sharply reduced deck-out. Validate with human pilots because Bounce remains simulator-sensitive. |
 
 ## Card-pool rebuild
 
