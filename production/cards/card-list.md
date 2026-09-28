@@ -1,6 +1,6 @@
 # Donut Card List
 
-> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 7 · 2026-09-28 · Working playtest text; balance is unverified.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
 
@@ -68,11 +68,11 @@
 | P060 | Starter Kit | Momentum | Item | 2 | — | — | — |
 | P061 | Magician's Assistant | Misdirection | Character | 2 | 2/2 | Magician | On play |
 | P062 | Birthday Kid Who Knows the Trick | Misdirection | Character | 1 | 2/1 | Kid | On play |
-| P063 | Rabbit | Misdirection | Character | 3 | 2/2 | Animal | Multiple abilities |
+| P063 | Rabbit | Misdirection | Character | 3 | 2/4 | Animal | Multiple abilities |
 | P064 | Volunteer From the Audience | Misdirection | Character | 4 | 3/5 | Magician | On play |
 | P065 | Escape Artist | Misdirection | Character | 3 | 4/2 | Magician | Multiple abilities |
 | P066 | Off-Duty Clown | Misdirection | Character | 2 | 2/3 | Clown | Single ongoing ability |
-| P067 | School Bully | Misdirection | Character | 3 | 4/2 | Kid | Multiple abilities |
+| P067 | School Bully | Misdirection | Character | 3 | 4/2 | Kid | Keyword only |
 | P068 | Social Media Grifter | Misdirection | Character | 4 | 4/3 | Criminal | On play |
 | P069 | Conspiracy Blogger | Misdirection | Character | 4 | 3/5 | — | Single ongoing ability |
 | P070 | Tech Bro | Misdirection | Character | 3 | 4/2 | — | Single ongoing ability |
@@ -94,7 +94,7 @@
 | P086 | Switcheroo | Misdirection | Action | 2 | — | — | — |
 | P087 | Burner Phone | Misdirection | Item | 1 | — | — | — |
 | P088 | Marked Deck | Misdirection | Item | 2 | — | — | — |
-| P089 | Lady Who's Moving Out Again | Misdirection | Character | 3 | 3/4 | — | Multiple abilities |
+| P089 | Lady Who's Moving Out Again | Misdirection | Character | 3 | 3/5 | — | Multiple abilities |
 | P090 | Spoofed Keycard | Misdirection | Item | 3 | — | — | — |
 | P091 | Scout Troop Quartermaster | Salvage | Character | 2 | 3/2 | Scout, Scavenger | Single ongoing ability |
 | P092 | Guy Fixing His Trans Am | Salvage | Character | 6 | 4/7 | Builder, Scavenger | Multiple abilities |
@@ -163,7 +163,7 @@
 | P155 | Retired Crash-Test Dummy | Expendable | Character | 5 | 5/6 | Construct, Daredevil | On play |
 | P156 | Rooster Nobody Can Catch | Expendable | Character | 7 | 8/9 | Animal | Textless |
 | P157 | Fireworks Technician | Expendable | Character | 3 | 3/3 | Daredevil | Single ongoing ability |
-| P158 | Patio-Table Prodigy | Expendable | Character | 2 | 3/1 | Wrestler, Daredevil | Multiple abilities |
+| P158 | Patio-Table Prodigy | Expendable | Character | 2 | 3/1 | Wrestler, Daredevil | Single ongoing ability |
 | P159 | Rabid Rat | Expendable | Character | 2 | 2/2 | Animal, Rat | Single ongoing ability |
 | P160 | Gym Selfie Guy | Expendable | Character | 4 | 3/7 | — | Textless |
 | P161 | Zombie Mall Walker | Expendable | Character | 4 | 3/5 | Undead | Single ongoing ability |
@@ -177,7 +177,7 @@
 | P169 | Take One for the Team | Expendable | Action | 1 | — | — | — |
 | P170 | This Seemed Like a Good Idea | Expendable | Action | 1 | — | — | — |
 | P171 | Worth It | Expendable | Action | 2 | — | — | — |
-| P172 | Tag Me In! | Expendable | Action | 2 | — | — | — |
+| P172 | Tag Me In! | Expendable | Action | 3 | — | — | — |
 | P173 | Again! | Expendable | Action | 2 | — | — | — |
 | P174 | Sign the Waiver | Expendable | Action | 1 | — | — | — |
 | P175 | Light the Fuse | Expendable | Action | 1 | — | — | — |
