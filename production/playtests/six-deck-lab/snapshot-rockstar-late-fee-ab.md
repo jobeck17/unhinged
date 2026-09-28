@@ -1,4 +1,4 @@
-# Full Leader A/B Snapshot — Comeback Tour and Late Fee
+# Full Leader A/B Snapshot — Comeback Tour and Failure to Respond
 
 **Date:** September 28, 2026  
 **Decks:** six revision-6 mono-Style baselines  
@@ -14,7 +14,7 @@ Shared rules:
 - Leaders begin at 25 Health.
 - Birthday Party Magician draws when one of its Characters Returns to hand.
 - Trash Baron remains uncapped.
-- HOA President uses the **Late Fee candidate** for this simulation only:
+- HOA President uses the **Failure to Respond candidate** for this simulation only:
   - **Beginning in Round 8, opposing Characters cannot Block attacks made by HOA's Characters.**
 - All other revision-6 card text remains unchanged.
 
@@ -36,7 +36,7 @@ The simulator is heuristic. Exact win rates are directional rather than tourname
 | Washed-Up Rock Star | **56.3%** | **57.2%** |
 | Birthday Party Magician | 19.8% | 19.5% |
 | Trash Baron | 61.4% | 61.2% |
-| HOA President / Late Fee | **48.6%** | **48.5%** |
+| HOA President / Failure to Respond | **48.6%** | **48.5%** |
 | Backyard Wrestler | 69.0% | 69.0% |
 
 ## Rock Star economy comparison
@@ -54,23 +54,23 @@ The broader version gained less than one percentage point of win rate while addi
 
 **Decision:** use the empty-hand version.
 
-## HOA Late Fee result
+## HOA Failure to Respond result
 
-With Late Fee active only from Round 8 onward, HOA landed at approximately **48.5–48.6%** across the two Rock Star variants.
+With Failure to Respond active only from Round 8 onward, HOA landed at approximately **48.5–48.6%** across the two Rock Star variants.
 
 That is dramatically healthier than:
 
 - the original always-on Ready-step tax, which was carrying too much power; and
 - the no-passive HOA baseline, which fell well below the middle of the field.
 
-Late Fee therefore looks like a strong thematic and mechanical candidate. It creates urgency without taxing the opponent's economy every Turn.
+Failure to Respond therefore looks like a strong thematic and mechanical candidate. It creates urgency without taxing the opponent's economy every Turn.
 
-It is **not yet the live production passive** pending physical-play validation.
+It is now the **live production passive**; physical play should still validate whether the Round-8 deadline feels fair and exciting.
 
 ## Current balance signals
 
 ### Closest to target in this harness
-- HOA President with Late Fee: ~48.5%
+- HOA President with Failure to Respond: ~48.5%
 - Florida Man: ~45%
 - Rock Star with Comeback Tour: ~56%
 
@@ -93,7 +93,7 @@ The one-or-fewer version is not needed. It creates substantially more card throu
 
 ## Next recommended tests
 
-1. Physically test HOA Late Fee before making it production-live.
+1. Physically validate HOA Failure to Respond as the new production passive.
 2. Investigate Wrestler/Expendable efficiency before touching Tag Out itself.
 3. Investigate Salvage engine density and Trash Baron's resource access together.
 4. Test Magician with human pilots before nerfing or buffing it based on simulation win rate.
