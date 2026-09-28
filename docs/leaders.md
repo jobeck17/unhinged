@@ -1,180 +1,87 @@
 # Unhinged Leaders
 
-> **CURRENT LEADER CAST — committed September 22, 2026.**
+> **CURRENT LEADER CAST AND PASSIVES — 28 September 2026.**
 >
-> These six characters are the current core Leader roster. Their **character identities and Style homes are committed design direction**. Exact Health, Traits, passive abilities, activated abilities, costs, and card text remain subject to design and playtest.
->
-> The old Alpha 0.03 Leader data in `docs/card-pool/leaders.md` and `leaders.json` is legacy test data only.
+> These six Leaders are the starting roster. Each currently has one visible automatic passive, 25 Health, and no activated ability, Charge system, Power, Guard, or orientation.
 
-## Playable test packages
+## Leader design rule
 
-The [six-deck lab](../production/playtests/six-deck-lab/leaders.md) supplies provisional 25 Health, passive, regular ability, Charge condition, and ultimate for every Leader. The [Florida Man / HOA President duel](../production/playtests/florida-vs-hoa/README.md) preserves the original packages and timing detail for those two. All packages remain test drafts, not balance locks.
+A Leader should preferably **bend a basic game rule**, change overall playstyle, and create visible counterplay for the opponent. Trait references are intentionally absent from the starting Leader passives.
 
-## Core roster
-
-| Leader | Single-word Style | Phrase Style | Core identity |
+| Leader | Style | Package lean | Current passive |
 | --- | --- | --- | --- |
-| **Florida Man** | **Reckless** | **No Chill** | Push too far. Risk, dangerous payoff, overcommitment, and spectacularly questionable decisions. |
-| **Washed-Up Rock Star** | **Momentum** | **High Turnover** | Build momentum through sequencing, encores, repeated hits, bandmates, crew, and one more trip through the set list. |
-| **Birthday Party Magician** | **Misdirection** | **Funny Business** | Deception, misdirection, hidden information, opponent choices, bounce, redirection, and playful rule-bending. |
-| **Trash Baron** | **Salvage** | **Good Enough** | Repurpose junk, Items, discard, scavenging, and questionable materials into useful advantages. |
-| **HOA President** | **Stonewall** | **Find Out** | Survive interaction, retaliate, impose consequences, and make opponents regret touching the board. |
-| **Backyard Wrestler** | **Expendable** | **Red Shirts** | Defeat is expected and useful. Sacrifice, glorious failure, damage, and going through the table are part of the plan. |
+| **Florida Man** | **Reckless** | Self-Damage / Damaged Characters | Your damaged Characters have Hothead and Sucker Punch. |
+| **Washed-Up Rock Star** | **Momentum** | Chain / Acceleration | **Packed House:** While 6 or more Characters and Items are in play total, your cards cost 1 less. |
+| **Birthday Party Magician** | **Misdirection** | Bounce / Return | When one of your damaged Characters Returns from play to your hand, choose up to X opposing Characters, where X was that Character's damage. Put 1 damage on each chosen Character. |
+| **Trash Baron** | **Salvage** | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
+| **HOA President** | **Stonewall** | Freeze / Stall | During an opponent's Ready step, if they have Rotated Characters, Items, or Stash, they choose one of those cards to leave Rotated. |
+| **Backyard Wrestler** | **Expendable** | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may play another Character from your hand with the same Cost or less without paying its Cost. |
 
-The two Style naming sets remain alternate complete naming voices. Do not mix them into a hybrid printed roster unless that terminology decision is deliberately reopened.
-
-## Style color palette
-
-Current committed color directions:
-
-| Style | Color direction | Visual idea |
-| --- | --- | --- |
-| **Reckless / No Chill** | **Safety Orange** | Hazard markings, warning labels, cones, reckless energy. |
-| **Momentum / High Turnover** | **Hot Pink / Electric Magenta** | Stage lights, loud performance energy, momentum. |
-| **Misdirection / Funny Business** | **Saturated Teal** | Sleight of hand, holographic playing cards, odd stage lighting, deception without default fantasy-purple signaling. |
-| **Salvage / Good Enough** | **Ochre / Cardboard Brown** | Junk, cardboard, masking tape, plywood, improvised construction. |
-| **Stonewall / Find Out** | **Acid Green** | Artificial lawn, violation stickers, petty enforcement, poisonous consequence. |
-| **Expendable / Red Shirts** | **Bruise Purple** | Black-eye / impact energy, damage, folding-table aftermath, defeat turned into value. |
-
-These colors are identity accents, not rules by themselves. Cards should remain readable with dark text on light fields, and every Style must also be distinguishable through iconography, shape, labeling, or other non-color cues.
-
----
+These are playtest passives, not final balance locks.
 
 ## Florida Man — Reckless / No Chill
 
-**Character promise:** The player should repeatedly face the question, “How far am I willing to push this?”
+**Character promise:** danger turns into permission.
 
-Florida Man is the risk-and-overcommitment Leader. His cards should reward dangerous choices, reckless attacks, self-inflicted problems, and plays that become spectacular when they work.
+Florida Man rewards Characters for surviving damage. A damaged Character becomes more aggressive and can attack Ready enemies through Sucker Punch while also gaining Hothead.
 
-Avoid making him generic aggro. Reckless should be about **risk**, not simply attacking faster.
-
----
+Opponent counterplay is visible: partial damage may empower Florida Man's board, while fully Defeating, healing, Dismissing, or Returning Characters can remove the damaged-state payoff.
 
 ## Washed-Up Rock Star — Momentum / High Turnover
 
-**Character promise:** The show gets better once the band gets rolling, even if everyone has heard this song before.
+**Character promise:** the bigger the show, the cheaper the set gets.
 
-The Rock Star should create momentum through sequencing. Bandmates, roadies, opening acts, encores, reunion tours, greatest hits, and repeated performances provide a large natural ecosystem.
+**Packed House** counts Characters and Items controlled by both players. Leaders and Stash do not count.
 
-Promising mechanical territory:
-- effects that reward playing cards in sequence;
-- “encore” or repeat/replay patterns;
-- Characters that set up the next Character or Action;
-- recurring/replayed “hits” where the repetition itself is the joke and the engine.
-
-Avoid reducing Momentum to generic Trait bonuses. The player should feel like they are **building a set**, not adding static numbers.
-
----
+The opponent can interact with the passive by shrinking the board instead of blindly developing into the discount.
 
 ## Birthday Party Magician — Misdirection / Funny Business
 
-**Character promise:** Everyone else is playing the game. The Magician is playing the audience.
+**Character promise:** damage disappears from one place and turns up somewhere else.
 
-This Leader inherits the best part of the old ROOT/Hacker concept: **manipulation and rule-bending**. The Hacker character is no longer needed to justify the mechanic.
+When a damaged friendly Character Returns to hand, the Magician may distribute that Character's former damage as **put damage**, at most 1 per chosen opposing Character.
 
-### Signature design pillars
-
-**Pick a Card**
-The physical interaction is important. A strong baseline concept is to fan cards from the Magician player's hand face down and let the opponent physically choose one. Individual cards may care about being picked or revealed.
-
-The point is not random punishment. It is bluffing, opponent participation, and theatrical tension.
-
-**Vanish / “Now You See Me, Now You Don't”**
-Bounce and temporary disappearance are natural Misdirection tools. Cards can return Characters to hands, save friendly Characters from danger, or make opposing Characters disappear at an inconvenient moment.
-
-**Misdirection**
-Redirection, target changes, swaps, and committing before the real outcome is revealed all belong here.
-
-**Rule-bending**
-Misdirection may create narrow, printed exceptions to normal rules. These should be temporary, local, and understandable rather than rewriting the game for an entire Round.
-
-### Fun guardrail
-
-Misdirection must create **“you got me”** moments, not “I wasn't allowed to play” moments.
-
-Prefer:
-- fast opponent choices;
-- bluffing over hard denial;
-- redirection over cancellation;
-- visible ranges of possible outcomes;
-- local exceptions over global rule rewrites;
-- memorable reveals over repeated interruption.
-
-Playtests should specifically watch frustration and decision time.
-
----
+This intentionally does not create damage-dealt triggers. The opponent can play around it by fully Defeating damaged Characters, Dismissing them, or keeping a narrower board.
 
 ## Trash Baron — Salvage / Good Enough
 
-**Character promise:** Somebody else's garbage is infrastructure.
+**Character promise:** unused resources are public property if nobody stops him.
 
-Trash Baron anchors the scavenging, discard, Item, and improvised-material identity. The current direction is to use normal discard rather than a separate Junk Pile.
+Trash Baron may spend any opposing Ready Stash as though it were his own, including face-up Jerry-Rig Stash. He may combine opposing and friendly Stash in one payment.
 
-**One Man's Trash** remains a working signature ability concept for controlled Item access from discard. Exact limits and wording are not locked.
-
-Avoid making Salvage simply “graveyard recursion.” It should feel like **repurposing and improvisation**.
-
----
+The opponent can deny him by spending or Rotating their Stash first.
 
 ## HOA President — Stonewall / Find Out
 
-**Character promise:** You touched the board. There will be paperwork.
+**Character promise:** something is always stuck in paperwork.
 
-HOA President represents retaliation, defensive consequences, petty enforcement, and making interaction costly without preventing interaction altogether.
+During an opponent's Ready step, if they have any Rotated Character, Item, or Stash, they must choose one to remain Rotated. If everything is already Ready, the passive does nothing.
 
-The opponent should still want to attack and interact. The interesting question is whether the consequence is worth it.
-
-Avoid hard-lock control patterns where the correct opponent decision becomes “do nothing.”
-
----
+Another effect may Ready that card later in the Turn.
 
 ## Backyard Wrestler — Expendable / Red Shirts
 
-**Character promise:** If somebody is going through a folding table, preferably us, we're getting value out of it.
+**Character promise:** survive the hit, hit the corner, tag somebody else in.
 
-Backyard Wrestler anchors Defeat-as-value. Damage, sacrifice, risky stunts, replacement Characters, and effects that become useful when Characters are Defeated all fit naturally.
+At the end of the opponent's Turn, the Wrestler may Return one damaged Character. If so, another Character of the same Cost or less may be played from hand without paying its Cost.
 
-Keep the distinction from Florida Man clear:
-- **Reckless** flirts with disaster for payoff.
-- **Expendable** expects Characters to be Defeated and turns that outcome into value.
+The returned Character cannot tag itself back in because the passive explicitly requires **another Character**. The replacement is genuinely Played, enters Ready, and triggers On Play abilities.
 
----
+## Style color palette
 
-## Cast changes from Alpha 0.03
+| Style | Color direction | Visual idea |
+| --- | --- | --- |
+| Reckless | Safety Orange | Hazard markings, warning labels, reckless energy |
+| Momentum | Hot Pink / Electric Magenta | Stage lights, loud performance energy |
+| Misdirection | Saturated Teal | Sleight of hand, holographic cards, odd stage lighting |
+| Salvage | Ochre / Cardboard Brown | Junk, cardboard, masking tape, improvised construction |
+| Stonewall | Acid Green | Artificial lawn, violation stickers, petty enforcement |
+| Expendable | Bruise Purple | Impact energy, folding-table aftermath, Defeat turned into value |
 
-The current roster replaces two Alpha Leaders:
+Colors are identity accents, not rules. Every Style must remain distinguishable through non-color cues as well.
 
-- **Little League Coach** is no longer a core Leader.
-- **ROOT** is no longer a core Leader.
+## Current scope
 
-Their useful mechanical ideas are not discarded:
-- the old Unruly sequencing/teamwork space evolved into **Momentum**, now led by **Washed-Up Rock Star**;
-- ROOT's manipulation/redirection identity evolved into **Misdirection**, now led by **Birthday Party Magician**.
+The starting package focuses on these six Leaders only. A second Leader per Style is planned eventually, likely leaning toward the package the current Leader does not emphasize, but those should not be designed until the rebuilt card pool shows what each Style actually needs.
 
-Other strong characters remain available for the card pool or later sets rather than occupying a core Leader seat:
-- **Boss Babe** — recruitment/downline ecosystem;
-- **Travel Ball Mom / Overenthusiastic Softball Mom** — intense team-parent ecosystem;
-- **Unsupervised Toddler** — chaos character;
-- other saved hooks remain in the idea bank.
-
-## What is committed vs. still open
-
-### Committed
-- the six Leader characters listed above;
-- one core Leader mapped to each of the six Style identities;
-- Washed-Up Rock Star as Momentum;
-- Birthday Party Magician as Misdirection;
-- Misdirection's identity around deception, manipulation, opponent interaction, redirection, and playful rule-bending;
-- **Pick a Card** as a priority mechanic to prototype for the Magician.
-
-### Still open
-- exact Leader Health;
-- final Traits;
-- passive and activated ability text;
-- whether every Leader needs the same ability structure;
-- costs and once-per-Round limits;
-- exact implementation of Pick a Card;
-- exact bounce/redirection cards;
-- final choice between the single-word and phrase Style naming sets.
-
-The next Leader work is hands-on testing of these six prototype packages and their deck matchups, not more casting.
+See [Current State — September 28](current-state-2026-09-28.md) and the [production rules](../production/rules/unhinged-rules.md) for the active baseline.
