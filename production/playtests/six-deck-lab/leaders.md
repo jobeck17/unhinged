@@ -26,9 +26,9 @@ This remains uncapped in the revision 6 baseline so the simulation can measure i
 
 ## HOA President — Stonewall
 
-**Passive currently paused.**
+**Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks.
 
-The leading replacement candidate is **Late Fee:** beginning in Round 8, opposing Characters cannot Block attacks made by HOA's Characters. Late Fee has been tested in simulation but is not yet the live production passive.
+This replaces the retired Ready-step tax and is the current baseline passive.
 
 ## Backyard Wrestler — Expendable
 
