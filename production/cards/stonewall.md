@@ -1,6 +1,6 @@
 # Stonewall / Find Out — Production Pool v0.2
 
-> Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -19,7 +19,7 @@
 | P131 | Character | 3 | **Old Dog** | 2/5 | Animal | When this Blocks and survives, heal 1 damage from it. |
 | P132 | Character | 5 | **Church Potluck Grandma** | 4/7 | Parent | At the start of your Turn, heal 1 damage from another Character. |
 | P133 | Character | 6 | **Concrete Goose** | 5/10 | Construct | **Slowpoke**. |
-| P134 | Character | 2 | **Church Usher** | 2/4 | — | When this enters play, you may give another of your Characters +1 Guard this Turn. |
+| P134 | Character | 2 | **Church Usher** | 2/2 | — | When this enters play, Draw a card. |
 | P135 | Character | 4 | **Mall Cop** | 2/6 | — | This Character cannot Attack. While this is Ready, other Characters cannot use Hothead. |
 | P136 | Character | 5 | **Tow-Truck Driver** | 5/6 | — | When this enters play, choose a Rotated opposing Character. Its owner may Discard a card. If they do not, that Character skips its next Ready step. |
 | P137 | Character | 5 | **HOA Lawyer** | 4/7 | HOA | Opposing Actions that target one or more of your cards cost 1 more. |
@@ -30,7 +30,7 @@
 | P143 | Action | 1 | **Read the Fine Print** | — | — | A Character gets -1 Power and -1 Guard this Turn. |
 | P144 | Action | 2 | **'Tis But a Scratch** | — | — | Heal 3 damage from your Leader. This costs 1 less if your Leader has less Health than the opposing Leader. |
 | P145 | Action | 2 | **Dig In** | — | — | Your Characters get +1 Guard this Turn. If you have fewer Characters in play than an opponent, Draw a card. |
-| P146 | Action | 2 | **Wait Them Out** | — | — | Draw a card. If you have not Attacked this Turn, heal 2 damage from a Character. |
+| P146 | Action | 2 | **Wait Them Out** | — | — | Draw 2 cards. You cannot Attack this Turn. |
 | P147 | Item | 1 | **Security Camera** | — | — | Whenever an opposing Character becomes Rotated outside combat, Draw a card, then Discard a card. |
 | P148 | Item | 2 | **Video Doorbell** | — | — | Whenever an opposing Character Attacks your Leader, Draw a card, then Discard a card. |
 | P149 | Item | 2 | **Occupied Stroller** | — | — | Attach to one of your Characters. It gets +2 Guard, or +3 Guard if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage. |
