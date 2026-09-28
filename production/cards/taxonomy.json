@@ -1,5 +1,5 @@
 {
-  "version": "0.1-donut.3",
+  "version": "0.2-donut-rebuild",
   "trait_policy": {
     "maximum_printed_traits": 4,
     "soft_floor_percent": 3,
@@ -13,6 +13,7 @@
       "meaning": "An animal Character, including an explicitly animal Undead Character.",
       "support": [
         "P099",
+        "P102",
         "P153"
       ]
     },
@@ -51,8 +52,8 @@
         "P041",
         "P046",
         "P056",
-        "P126",
-        "P127"
+        "P127",
+        "P149"
       ]
     },
     {
@@ -61,7 +62,8 @@
       "support": [
         "P036",
         "P056",
-        "P127"
+        "P127",
+        "P149"
       ]
     },
     {
@@ -76,6 +78,7 @@
       "meaning": "A musical performer. Road crew and general entertainers are not automatically Musicians.",
       "support": [
         "P032",
+        "P037",
         "P056",
         "P059"
       ]
@@ -97,17 +100,13 @@
     {
       "name": "HOA",
       "meaning": "A member of the fictional homeowners association or its administration. General authority figures do not qualify automatically.",
-      "support": [
-        "P146"
-      ]
+      "support": []
     },
     {
       "name": "Daredevil",
       "meaning": "A Character who deliberately performs dangerous stunts.",
       "support": [
-        "P007",
         "P019",
-        "P165",
         "P175"
       ]
     },
@@ -116,7 +115,6 @@
       "meaning": "A participating backyard wrestler. Fans, referees, and support staff do not qualify merely by proximity.",
       "support": [
         "P165",
-        "P166",
         "P172",
         "P178"
       ]
@@ -140,26 +138,19 @@
     {
       "name": "Hacker",
       "meaning": "A Character whose depicted activity involves exploiting or manipulating computer systems.",
-      "support": [
-        "P084"
-      ]
+      "support": []
     },
     {
       "name": "Clown",
       "meaning": "An actual clown performer. Being foolish is insufficient.",
       "support": [
-        "P032",
-        "P056",
-        "P059",
-        "P065"
+        "P056"
       ]
     },
     {
       "name": "Magician",
       "meaning": "A stage-magic or escape performer; no supernatural rules are implied.",
-      "support": [
-        "P065"
-      ]
+      "support": []
     }
   ],
   "keywords": [
@@ -167,77 +158,58 @@
       "name": "Hothead",
       "status": "Current rebuild keyword",
       "definition": "This Character may Attack on the Turn it enters play.",
-      "limits": "Does not Ready it, grant an extra Attack, allow Rotate activations on arrival, or override a cannot-Attack effect. A gained Hothead works the same way while it lasts."
+      "limits": "Does not Ready it, grant an extra Attack, allow its own Rotate abilities early, or override a cannot-Attack effect."
     },
     {
       "name": "Defiant",
       "status": "Current rebuild keyword",
       "definition": "This Character retaliates when it Blocks even if the incoming Attack Defeats it.",
-      "limits": "Only a Blocker receives this exception. Use its Power immediately before it left play. Slowpoke prevents this retaliation."
+      "limits": "Applies to blocking retaliation. Slowpoke prevents this retaliation if both apply."
     },
     {
       "name": "Explosive",
       "status": "Current rebuild keyword",
       "definition": "When this Character is Defeated, deal 1 damage to each opposing Character.",
-      "limits": "This is a Defeat trigger, not retaliation. It affects opposing Characters in play, not Leaders, Items, or your Characters. Resolve it with other pending Defeat triggers, after the Attack damage and retaliation checkpoints when Defeated during an Attack."
+      "limits": "This is a Defeat trigger and does not damage Leaders, Items, or friendly Characters."
     },
     {
       "name": "Slowpoke",
       "status": "Current rebuild keyword",
       "definition": "This Character does not retaliate when it Blocks.",
-      "limits": "It can still Attack. If attacked directly while Rotated, it retaliates if it survives. If it also has Defiant, Slowpoke prevents its blocking retaliation."
+      "limits": "It may still Attack and may retaliate after surviving a direct Attack."
     },
     {
       "name": "Sucker Punch",
-      "status": "Current rebuild keyword",
+      "status": "Current rebuild keyword; working name",
       "definition": "This Character may Attack Ready opposing Characters.",
-      "limits": "Such an Attack is direct, cannot be Blocked, and follows normal rotation, damage and retaliation. The entry-Round Attack restriction still applies."
-    },
-    {
-      "name": "Sneaky",
-      "status": "Shelved for starting rebuild; retained for legacy pool compatibility",
-      "definition": "Playing this card from your hand on your Turn does not use that Turn. Pay its normal Cost; only one Sneaky Play may occur per Turn.",
-      "limits": "Finish the Play and all its triggers before taking the normal Turn action. It grants neither an extra Turn nor a Response window. A free Play from another zone cannot use Sneaky."
-    },
-    {
-      "name": "Cloak",
-      "status": "Shelved for starting rebuild; retained for legacy pool compatibility",
-      "definition": "The first time each Round this Character would take retaliation damage, turn it face down until the end of the Round instead.",
-      "limits": "Cloak replaces retaliation damage only. It does not protect from attack damage, Action damage, Dismiss, Return, or other non-retaliation effects. A face-down Cloaked Character remains in play, keeps its damage, orientation and attachments, and counts as a Character. It cannot Attack, Block, Activate, be chosen, take damage, or be Defeated; its printed abilities are inactive. Reveal it at end of Round before Round-limited effects expire and check Defeat when revealed."
-    },
-    {
-      "name": "Stack",
-      "status": "Shelved for starting rebuild; retained for legacy pool compatibility",
-      "definition": "When Playing this Character, you may put it atop one of your Characters; pay its normal Cost. The two face-up layers form one Character.",
-      "limits": "At most two layers. Top supplies Power, Guard, Traits, and attack/block restrictions. Both layers supply abilities; resolve simultaneous layer triggers bottom to top. Keep damage and orientation; the pile leaves play together, except explicit card text. Stacking does not Ready or grant an extra Attack."
+      "limits": "The direct Attack cannot be Blocked and follows normal damage and retaliation. Entry-Turn restrictions still apply unless another effect grants Hothead."
     },
     {
       "name": "Jerry-Rig",
-      "status": "Current rebuild keyword; not yet assigned in legacy 180-card pool",
+      "status": "Current rebuild keyword",
       "definition": "If this Item would go to your discard, you may put it face up and Rotated into your Stash instead. When this card is used to pay a Cost, discard it.",
-      "limits": "While in Stash, this card is not mechanically an Item. Its face-up state only marks it as temporary Stash that will be discarded when spent."
-    }
-  ],
-  "keyword_prototypes": [
+      "limits": "While in Stash, this card is not mechanically an Item. Its face-up state only marks it as temporary Stash."
+    },
     {
       "name": "Chicken",
-      "status": "Approved candidate for card audit",
+      "status": "Current rebuild keyword",
       "definition": "When this Character is attacked, you may Return it to your hand.",
-      "limits": "Optional. Best suited to Characters whose board presence gives the opponent a reason to attack them."
+      "limits": "Optional. Returning it ends the Attack before combat damage if it was the direct target."
     },
     {
       "name": "Stubborn",
-      "status": "Approved candidate for card audit",
+      "status": "Current rebuild keyword",
       "definition": "The first time each Round this Character would be Returned or Dismissed, it remains in play instead.",
-      "limits": "Protects from both Return and Dismiss once per Round."
+      "limits": "Protects against both Return and Dismiss once per Round."
     },
     {
       "name": "Bodyguard",
-      "status": "Approved candidate; working name",
+      "status": "Current rebuild keyword; working name",
       "definition": "This Character may be attacked while Ready. While Ready, it must Block an Attack against your Leader if able.",
-      "limits": "Final wording and name remain subject to card testing."
+      "limits": "This changes legal direct-attack targeting and mandatory blocking while Ready."
     }
   ],
+  "keyword_prototypes": [],
   "reserved": [
     "Zombie",
     "Alien",
@@ -261,12 +233,18 @@
     "Fan"
   ],
   "notes": [
-    "Zombie remains a possible later sub-Trait. The present six-card Undead package works without a second near-duplicate label.",
+    "Traits have no automatic behavior and may exist in the pool before they receive dedicated support.",
+    "Trait-support cards should usually remain useful without the matching Trait; the Trait payoff is upside, not the card's only function.",
     "Rat does not imply Animal, and gaining Undead does not grant Zombie or remove existing Traits. Print every label an effect should see.",
-    "Magician, Hacker, and Wrestler are deliberately concentrated in one Style for this pool. Their support cards work without a matching Trait and can be paired with another Style.",
-    "Three Character appearances are 2.8% of 108, an intentional soft-floor allowance. Do not pad the roster to satisfy rounded percentages.",
-    "No Trait is a Leader requirement. Leader Traits remain future card design, not a mandatory four-label quota.",
-    "Sneaky, Cloak, Stack, Step Aside, and Overkill are shelved for the starting rebuild. Legacy card data may still reference Sneaky, Cloak, or Stack until the 180-card audit.",
-    "Jerry-Rig is promoted for the rebuild and is intended to be tested on all Salvage Items."
+    "Human remains unprinted audit metadata.",
+    "Sneaky, Cloak, Stack, Step Aside, and Overkill are shelved for the starting rebuild.",
+    "Jerry-Rig is being tested on every current Salvage Item."
+  ],
+  "shelved_keywords": [
+    "Sneaky",
+    "Cloak",
+    "Stack",
+    "Step Aside",
+    "Overkill"
   ]
 }
