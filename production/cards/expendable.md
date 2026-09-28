@@ -15,7 +15,7 @@
 | P158 | Character | 2 | **Patio-Table Prodigy** | 3/1 | Wrestler, Daredevil | **Hothead**. |
 | P159 | Character | 2 | **Rabid Rat** | 2/2 | Animal, Rat | When this is Defeated, another of your Characters gets +2 Power this Turn. If it is a Rat or Undead, it also gets +1 Guard this Turn. |
 | P160 | Character | 4 | **Gym Selfie Guy** | 3/7 | — | — |
-| P161 | Character | 4 | **Zombie Mall Walker** | 3/5 | Undead | When this is Defeated, you may Return it from your discard to your hand at the end of this Round. |
+| P161 | Character | 4 | **Zombie Mall Walker** | 3/5 | Undead | When this is Defeated, you may Return it from your discard to your hand at the end of this Turn. |
 | P162 | Character | 5 | **Guy Who Cut the Wrong Wire** | 6/5 | Daredevil | — |
 | P163 | Character | 6 | **Dumpster Phoenix** | 5/6 | Animal, Undead, Scavenger | Once during your Turn, you may Play an Undead Character from your discard by paying its Cost. When you do, Sacrifice another Character. |
 | P164 | Character | 3 | **Stunt Clown** | 3/2 | Clown, Daredevil | **Defiant**. **Explosive**. |
@@ -31,7 +31,7 @@
 | P174 | Action | 1 | **Sign the Waiver** | — | — | Sacrifice one of your Characters. If you do, Draw 2 cards, then Discard a card. |
 | P175 | Action | 1 | **Light the Fuse** | — | — | Sacrifice one of your Characters. If you do, deal 1 damage to the opposing Leader, or 2 damage if the sacrificed Character was Undead or a Daredevil. |
 | P176 | Action | 2 | **Keep It Going!** | — | — | If one of your Characters was Defeated this Turn, Ready one Stash and Draw a card. You may Play only one Keep It Going! each Turn. |
-| P177 | Item | 1 | **Bath Salts** | — | — | Attach to one of your Characters. It gains Undead. Dismiss this: The Character this was attached to gets +2 Power this Round. |
+| P177 | Item | 1 | **Bath Salts** | — | — | Attach to one of your Characters. It gains Undead. Dismiss this: The Character this was attached to gets +2 Power this Turn. |
 | P178 | Item | 1 | **Folding Chair** | — | — | Attach to one of your Characters. Dismiss this: The Character this was attached to gets +2 Power this Turn, or +3 Power if it is a Wrestler. |
 | P179 | Item | 2 | **Definitely Safe Helmet** | — | — | Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character. |
 | P180 | Item | 2 | **Button Marked DO NOT PRESS** | — | — | Rotate, Sacrifice one of your Characters: Deal 2 damage to an opposing Character. This Item skips its next Ready step. |
