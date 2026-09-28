@@ -1,7 +1,7 @@
 # Misdirection / Funny Business — Production Pool v0.2
 
 > Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
-> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
+> Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | P090 | Item | 3 | **Spoofed Keycard** | — | — | Rotate: An opposing Character cannot Block this Turn. If you have a Criminal or Pirate in play, it also gets -1 Power this Turn. |
 | P142 | Action | 2 | **I Want to Speak to Your Manager** | — | — | Return an Item or Character costing 2 or less to its owner's hand. |
 
-A dash in Working text means no rules text. Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
+Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
 
 ## Flavor text
 
