@@ -1,43 +1,96 @@
 # Unhinged Terminology
 
-Working editorial guide as of September 23, 2026. Use the [production rules](../production/rules/unhinged-rules.md) for current playtest mechanics and the [September 23 checkpoint](current-state-2026-09-23.md) for design status and rationale. This guide does not settle decisions the checkpoint leaves open.
+Working editorial guide as of September 27, 2026. Use the production rulebook as the current mechanical source.
 
 ## Use in new rules and cards
 
 | Concept | Current wording | Note |
 | --- | --- | --- |
-| Pay for a card | **Cost**, paid with **Fuel** | Rotate Fuel to pay. Do not assign separate Command and Stamina prices in new cards. |
-| Card orientation | **Ready**, **Rotate**, **Rotated** | Attacking, Blocking, and some abilities Rotate. |
+| Pay for a card/effect | **Cost**, paid with **Stash** | Rotate one Ready Stash for each 1 paid unless an effect says otherwise. |
+| Card orientation | **Ready**, **Rotate**, **Rotated** | Attacking, Blocking, costs, and some effects Rotate cards. |
 | Play a permanent | **Play**; it **enters play** | Deploy is not a formal rules verb. |
-| Use a printed activated ability | **Activate** | A triggered ability happens when its condition occurs. |
-| Character combat numbers | **Power** and **Guard** | Power deals combat damage; damage at or above Guard Defeats the Character. |
-| Leader survival | **Health** | Do not use Life as the formal Leader stat. |
-| Losing a Character to damage/effect | **Defeat** | Sacrifice is a specified way to Defeat your own Character. |
-| Removing a card in play without Defeat | **Dismiss** | Attached Item cleanup does not count as Dismiss. |
-| Attack on a Rotated Leader | **Vulnerable** | The Leader cannot be Blocked while Vulnerable. |
-| Spent Action destination | Put it into its Owner's **discard** | An Action never enters play. Do not say it is Dismissed. |
+| Use an activated ability | **Activate** | Activated abilities should be uncommon on Characters. |
+| Character combat numbers | **Power** and **Guard** | Power deals combat damage; damage at or above Guard Defeats. |
+| Leader survival | **Health** | Starting Health is 25. |
+| Lose a Character to damage/effect | **Defeat** | Sacrifice is a specified way to Defeat your own Character. |
+| Remove a card in play without Defeat | **Dismiss** | Attached Item cleanup does not count as Dismiss. |
+| Move a card to its owner's hand | **Return** | Return is not Draw. |
+| Spent Action destination | Owner's **discard** | Actions resolve, then go to discard. |
+| Damage event | **Deal X damage** | Creates a damage-dealt event and can trigger damage-based abilities. |
+| Add damage without a damage event | **Put X damage on** | Adds damage and can Defeat, but does not count as dealt damage. |
 
-**Draw**, **Discard**, **Return**, **Defeat**, **Sacrifice**, **Dismiss**, and neutral **Put** are separate events. They are not interchangeable for triggers. Use the production rulebook definitions before editing card effects. The LAB is a historical source record.
+**Draw**, **Discard**, **Return**, **Defeat**, **Sacrifice**, **Dismiss**, **deal damage**, **put damage**, and neutral **Put** are distinct instructions and should not be used interchangeably.
 
-## Retired from the current base game
+## Current game-structure terms
+
+- **Round:** one full Turn for each player.
+- **Turn:** the active player's full opportunity to Play cards, Activate abilities, and Attack.
+- **Ready step:** start-of-Turn step where eligible Characters, Items, and Stash Ready.
+- **Draw step:** follows the Ready step.
+- **Response:** an Action with an exact off-turn timing condition printed on it.
+- **War:** reveal Cost comparison used to determine starting player and resolve tied game endings.
+- **Stash:** face-down resource row. Normal Stash cards have no characteristics while there and are unknowable even to their owner unless an effect says otherwise.
+
+## Styles
+
+Current iteration:
+
+- Reckless
+- Momentum
+- Misdirection
+- Salvage
+- Stonewall
+- Expendable
+
+**Styles** is the umbrella term.
+
+## Traits
+
+Traits have no inherent rules meaning. They matter only when a card refers to them.
+
+Human remains unprinted identity metadata.
+
+Trait-support cards should generally work without the supported Trait already being present. Trait payoff should usually be upside rather than a hard gate.
+
+## Current keyword status
+
+Promoted/current rebuild vocabulary:
+
+- Hothead
+- Defiant
+- Explosive
+- Slowpoke
+- Sucker Punch, working name
+- Jerry-Rig
+
+Approved candidates:
+
+- Chicken
+- Stubborn
+- Bodyguard, working name
+
+Shelved for the starting rebuild:
+
+- Sneaky
+- Cloak
+- Stack
+- Step Aside
+- Overkill
+
+## Retired / legacy wording
 
 | Older wording or mechanic | Current handling |
 | --- | --- |
-| Exhaust, Exert, Tap | Say Rotate. Historical snapshots may retain the old terms. |
-| Deploy as a formal verb | Say Play or enters play, depending on the event. |
-| Command and Stamina as two resource pools | Current core uses Fuel. These remain in old simulations and archived brainstorms. |
-| Strike, Assault, Intercept, Counter as mandatory combat actions | Current core uses Attack, Block, retaliation, and Guard. Do not import the older action sequence. |
-| Claim Initiative | Two consecutive Passes end the Round; the player who Passed first acts first next Round. |
-| Frontline, backline, lanes, staged marching, separate objective scoring | Not in the current base game. Preserve as historical experiments only. |
-| The Bag as formal trigger term | Use the pending trigger queue. |
+| Fuel | Replaced by Stash. |
+| Exhaust, Exert, Tap | Say Rotate. |
+| Deploy | Say Play or enters play. |
+| Command / Stamina | Retired resource systems. |
+| Strike / Assault / Intercept / Counter | Current core uses Attack, Block, and retaliation. |
+| Single-action alternating Turns | Replaced by full player Turns. |
+| Defensive Guard discard | Scrapped for now. |
+| Multiple Blockers | Current base allows one Blocker on a Leader Attack. |
+| Frontline / backline / lanes | Historical experiments only. |
+| Leader Charge / ultimates | Not in the current Leader model. |
+| Vulnerable Leader state | Not in the current base game. |
 
-## Open or awaiting rewrite
-
-- **Character:** current Donut test name, used consistently in the rulebook and pool. Unit is its historical alias. Final printed presentation remains open; there are not two separate card types.
-- **Relationships:** use your Character, opposing Character, and owner. No production card changes ownership or control.
-- **Discard:** current Salvage cards use the normal discard. The separate Junk Pile survives only in legacy files; its production rewrite is complete.
-- **Traits and keywords:** use the [current trait register](../production/cards/traits.md) and [keyword reference](../production/cards/keywords.md). Human is unprinted metadata. “Rotate:” is an activation cost, not a new keyword. Hothead is the only new keyword in Donut revision 2.
-- **Styles:** The settled production names are Reckless / Momentum / Misdirection / Salvage / Stonewall / Expendable. The older alternate phrase names are No Chill / High Turnover / Funny Business / Good Enough / Find Out / Red Shirts. Historical data used Reckless / Unruly / Crooked / Makeshift / Stubborn / Kamikaze; Reckless has been restored for the first Style. Later working names Gnarly / Amped / Tricky / Sketchy / Spiteful / Wasted are superseded. **Styles** remains the umbrella term.
-- **Response:** favored as Action timing, with exact window printed on the card. Chaining and cost limits remain open.
-
-The [legacy card pool](card-pool/README.md) and [historical notes](history/README.md) deliberately show old words. Their status labels prevent those examples from being mistaken for current instructions.
+Historical files may preserve retired language for design history. Do not copy it into new production card text.
