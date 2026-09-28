@@ -29,7 +29,7 @@
 | P112 | Action | 1 | **That's Probably Still Good** | — | — | Heal 2 damage from a Character, or 3 damage if it is a Scavenger. |
 | P113 | Action | 2 | **Make It Work** | — | — | Dismiss one of your Items. If you do, Draw 2 cards. Your next Item this Turn costs 1 less. |
 | P114 | Action | 1 | **Curb Alert** | — | — | Return an Item costing 1 or less from your discard to your hand. If you have more cards in hand than an opponent, Draw a card, then Discard a card. |
-| P115 | Action | 2 | **Don't Throw That Away** | — | — | Return an Item that entered your discard this Round to your hand. |
+| P115 | Action | 2 | **Don't Throw That Away** | — | — | Return an Item that entered your discard this Turn to your hand. |
 | P116 | Action | 2 | **Good as New** | — | — | Choose a damaged Character. Heal all damage from it, then Rotate it. |
 | P117 | Item | 2 | **Duct Tape** | — | — | **Jerry-Rig**. Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct. |
 | P118 | Item | 1 | **Zip Ties** | — | — | **Jerry-Rig**. Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder. |
