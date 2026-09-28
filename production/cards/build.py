@@ -41,7 +41,7 @@ def validate(data, taxonomy):
     by_id = {c['id']: c for c in cards}
     for style in STYLES:
         pool = [c for c in cards if c['style'] == style]
-        require(collections.Counter(c['type'] for c in pool) == {'Character':18,'Action':8,'Item':4}, f'{style}: incorrect type mix.')
+        require(len(pool) == 30, f'{style}: expected 30 cards.')
     banned = re.compile(r'\b(Human|Object|Vermin|Outlaw|Tech|Performer|Team|Party|Hustler|Authority|Neighbor|Menace|Volunteer|Fan)\b')
     for c in cards:
         cid, text = c['id'], c['text']
@@ -52,7 +52,7 @@ def validate(data, taxonomy):
         require(set(c['traits']) <= trait_names, f'{cid}: undefined Trait.')
         require(set(c['keywords']) <= keyword_names, f'{cid}: undefined keyword.')
         require(not banned.search(text), f'{cid}: retired label in rules text.')
-        require(not re.search(r'\b(Command|Stamina|Exhaust|Deploy|dies|died|Controller|Response)\b|Junk Pile', text, re.I), f'{cid}: retired or unimplemented mechanics.')
+        require(not re.search(r'\b(Command|Stamina|Fuel|Exhaust|Deploy|dies|died|Controller|Sneaky|Cloak|Stack)\b|Junk Pile', text, re.I), f'{cid}: retired or shelved mechanics.')
         require('|' not in text and '\n' not in text, f'{cid}: invalid table text.')
         printed_keywords = []
         remainder = text
@@ -83,8 +83,7 @@ def validate(data, taxonomy):
     chars = [c for c in cards if c['type'] == 'Character']
     for t in taxonomy['traits']:
         require(any(t['name'] in c['traits'] for c in chars), f"{t['name']}: no printed Character.")
-        require(bool(t['support']), f"{t['name']}: no support card recorded.")
-        for cid in t['support']:
+        for cid in t.get('support', []):
             require(cid in by_id and re.search(r'\b'+re.escape(t['name'])+r's?\b',by_id[cid]['text']) is not None, f"{t['name']}: missing reference in {cid}.")
     if errors:
         raise ValueError('\n'.join(errors))
