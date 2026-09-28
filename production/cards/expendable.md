@@ -1,7 +1,7 @@
 # Expendable / Red Shirts — Production Pool v0.2
 
 > Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
-> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
+> Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | P179 | Item | 2 | **Definitely Safe Helmet** | — | — | Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character. |
 | P180 | Item | 2 | **Button Marked DO NOT PRESS** | — | — | Rotate, Sacrifice one of your Characters: Deal 2 damage to an opposing Character. This Item skips its next Ready step. |
 
-A dash in Working text means no rules text. Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
+Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
 
 ## Flavor text
 
@@ -49,9 +49,3 @@ A dash in Working text means no rules text. Traits have no automatic behavior. S
 | P160 Gym Selfie Guy | *Three sets. Forty-seven takes.* |
 | P162 Guy Who Cut the Wrong Wire | *He remembers it as more of a group decision.* |
 | P172 Tag Me In! | *I’ve got this. Please do not ask what “this” is.* |
-
-## Alternate concept names
-
-| Card | Alternate name |
-| --- | --- |
-| P160 Gym Selfie Guy | Gym Bro |
