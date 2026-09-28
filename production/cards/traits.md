@@ -1,33 +1,31 @@
 # Donut Traits
 
-> Generated from [taxonomy.json](taxonomy.json) and [cards.json](cards.json). Current playtest specification, not a final print lock.
+> Generated from [taxonomy.json](taxonomy.json) and [cards.json](cards.json). Current rebuild specification, not a final print lock.
 
-A **Trait** describes what a Character is. It has no automatic ability. A **keyword** supplies a defined rule. A **Style** determines deckbuilding identity. Keep those three jobs separate.
+A **Trait** describes what a Character is. It has no automatic ability. A **keyword** supplies a defined rule. A **Style** determines deckbuilding identity.
 
-Traits are exact labels, never automatic abilities. Zero is valid. Actions, Items, and Leaders may carry useful Traits, but this pool prints them only on Characters. Human remains unprinted audit metadata. Limits are design guidance, not deckbuilding restrictions.
-
-The saturation guide is roughly **3–15% of the 108 unique deck Characters**. It is a soft design guide. A Character with two Traits counts once in each relevant row; the percentages do not sum to 100%. Human metadata, gained Traits, deck copies, Actions, Items, and Leaders do not inflate these counts.
+The saturation guide is roughly **3–15% of the unique deck Characters** and is only a soft guide. Traits may exist before they receive dedicated support.
 
 | Trait | Characters | Saturation | Style distribution | Cards that use it |
 | --- | --- | --- | --- | --- |
-| Animal | 12 | 11.1% | Reckless 1, Misdirection 1, Salvage 5, Stonewall 1, Expendable 4 | P099 Crazy Cat Lady, P153 Zombie Kid, Turtle Fan |
+| Animal | 12 | 11.0% | Reckless 1, Misdirection 1, Salvage 5, Stonewall 1, Expendable 4 | P099 Crazy Cat Lady, P102 Rat King, P153 Zombie Kid, Turtle Fan |
 | Undead | 5 | 4.6% | Momentum 1, Expendable 4 | P153 Zombie Kid, Turtle Fan, P159 Rabid Rat, P163 Dumpster Phoenix, P173 Again!, P175 Light the Fuse, P177 Bath Salts |
 | Construct | 5 | 4.6% | Salvage 3, Stonewall 1, Expendable 1 | P117 Duct Tape |
 | Rat | 3 | 2.8% | Salvage 1, Expendable 2 | P102 Rat King, P159 Rabid Rat |
-| Kid | 9 | 8.3% | Reckless 3, Momentum 2, Misdirection 3, Expendable 1 | P036 Stage Mom, P041 Overenthusiastic Softball Mom, P046 Single Dad, P056 Parking Lot Pep Talk, P126 Crossing Guard, P127 PTA President |
-| Parent | 6 | 5.6% | Reckless 1, Momentum 3, Stonewall 2 | P036 Stage Mom, P056 Parking Lot Pep Talk, P127 PTA President |
-| Criminal | 8 | 7.4% | Reckless 3, Misdirection 5 | P090 Spoofed Keycard |
-| Musician | 7 | 6.5% | Momentum 6, Misdirection 1 | P032 Wedding DJ, P056 Parking Lot Pep Talk, P059 Portable Bluetooth Speaker |
+| Kid | 8 | 7.3% | Reckless 3, Momentum 1, Misdirection 3, Expendable 1 | P036 Stage Mom, P041 Overenthusiastic Softball Mom, P046 Single Dad, P056 Parking Lot Pep Talk, P127 PTA President, P149 Occupied Stroller |
+| Parent | 6 | 5.5% | Reckless 1, Momentum 3, Stonewall 2 | P036 Stage Mom, P056 Parking Lot Pep Talk, P127 PTA President, P149 Occupied Stroller |
+| Criminal | 8 | 7.3% | Reckless 3, Misdirection 5 | P090 Spoofed Keycard |
+| Musician | 7 | 6.4% | Momentum 6, Misdirection 1 | P032 Wedding DJ, P037 Reunion Tour Drummer, P056 Parking Lot Pep Talk, P059 Portable Bluetooth Speaker |
 | Pirate | 3 | 2.8% | Reckless 2, Misdirection 1 | P090 Spoofed Keycard |
 | Scout | 3 | 2.8% | Reckless 1, Momentum 1, Salvage 1 | P028 Roman Candle |
-| HOA | 4 | 3.7% | Misdirection 1, Stonewall 3 | P146 Wait Them Out |
-| Daredevil | 14 | 13.0% | Reckless 8, Expendable 6 | P007 Scout With a Flare Gun, P019 Hold My Beer, P165 Backyard Wrestling Superfan, P175 Light the Fuse |
-| Wrestler | 4 | 3.7% | Expendable 4 | P165 Backyard Wrestling Superfan, P166 Backyard Tag-Team Captain, P172 Tag Me In!, P178 Folding Chair |
-| Scavenger | 13 | 12.0% | Salvage 11, Expendable 2 | P112 That's Probably Still Good, P120 Used Ham Sandwich |
-| Builder | 6 | 5.6% | Reckless 1, Salvage 5 | P101 Extension Cord Electrician, P118 Zip Ties |
-| Hacker | 3 | 2.8% | Misdirection 3 | P084 Default Password |
-| Clown | 3 | 2.8% | Momentum 1, Misdirection 1, Expendable 1 | P032 Wedding DJ, P056 Parking Lot Pep Talk, P059 Portable Bluetooth Speaker, P065 Escape Artist |
-| Magician | 3 | 2.8% | Misdirection 3 | P065 Escape Artist |
+| HOA | 4 | 3.7% | Stonewall 4 | — |
+| Daredevil | 13 | 11.9% | Reckless 7, Expendable 6 | P019 Hold My Beer, P175 Light the Fuse |
+| Wrestler | 4 | 3.7% | Expendable 4 | P165 Backyard Wrestling Superfan, P172 Tag Me In!, P178 Folding Chair |
+| Scavenger | 14 | 12.8% | Salvage 12, Expendable 2 | P112 That's Probably Still Good, P120 Used Ham Sandwich |
+| Builder | 7 | 6.4% | Reckless 2, Salvage 5 | P101 Extension Cord Electrician, P118 Zip Ties |
+| Hacker | 3 | 2.8% | Misdirection 3 | — |
+| Clown | 3 | 2.8% | Momentum 1, Misdirection 1, Expendable 1 | P056 Parking Lot Pep Talk |
+| Magician | 3 | 2.8% | Misdirection 3 | — |
 
 ## Assignment guide
 
@@ -54,13 +52,11 @@ The saturation guide is roughly **3–15% of the 108 unique deck Characters**. I
 
 ## Boundaries and reserved space
 
-- Zombie remains a possible later sub-Trait. The present six-card Undead package works without a second near-duplicate label.
+- Traits have no automatic behavior and may exist in the pool before they receive dedicated support.
+- Trait-support cards should usually remain useful without the matching Trait; the Trait payoff is upside, not the card's only function.
 - Rat does not imply Animal, and gaining Undead does not grant Zombie or remove existing Traits. Print every label an effect should see.
-- Magician, Hacker, and Wrestler are deliberately concentrated in one Style for this pool. Their support cards work without a matching Trait and can be paired with another Style.
-- Three Character appearances are 2.8% of 108, an intentional soft-floor allowance. Do not pad the roster to satisfy rounded percentages.
-- No Trait is a Leader requirement. Leader Traits remain future card design, not a mandatory four-label quota.
-- Jerry-Rig remains earmarked. Encore, Pick a Card, Scrounge, and related names are card titles, not global keywords. Response remains outside this revision.
+- Human remains unprinted audit metadata.
+- Sneaky, Cloak, Stack, Step Aside, and Overkill are shelved for the starting rebuild.
+- Jerry-Rig is being tested on every current Salvage Item.
 
-Reserved: Zombie, Alien, Villain, Possessed. None has current printed support.
-
-Removed from current printed labels: Human, Object, Vermin, Outlaw, Tech, Performer, Team, Party, Hustler, Authority, Neighbor, Menace, Volunteer, Fan. Old concepts remain in history; these are not automatic aliases. Porch Pirate is Criminal, Pirate Radio Operator is Criminal / Musician, and a living possum is Animal / Scavenger. Their titles do not secretly grant more Traits.
+Reserved: Zombie, Alien, Villain, Possessed.
