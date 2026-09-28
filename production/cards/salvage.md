@@ -1,7 +1,7 @@
 # Salvage / Good Enough — Production Pool v0.2
 
 > Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
-> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
+> Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | P119 | Item | 2 | **Mystery Drawer of Cables** | — | — | **Jerry-Rig**. When this enters play, Draw a card, then Discard a card. Rotate, Dismiss this: Ready another of your Items. |
 | P120 | Item | 1 | **Used Ham Sandwich** | — | — | **Jerry-Rig**. Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card. |
 
-A dash in Working text means no rules text. Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
+Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
 
 ## Flavor text
 
