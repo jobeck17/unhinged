@@ -10,12 +10,12 @@ This directory holds the material that should guide the next production pass: cu
 | Items that still need a deliberate decision | [Open decisions](rules/open-decisions.md) |
 | Current 180-card production playtest pool | [Production cards](cards/README.md) |
 | Keyword candidates and attack/defend restrictions | [Mechanics playtest](cards/mechanics-playtest.md) |
-| Two playable Leader drafts and legal 40-card duel decks | [Florida Man vs. HOA President](playtests/florida-vs-hoa/README.md) |
+| Six current mono-Style 40-card baseline decks | [Six-deck lab](playtests/six-deck-lab/README.md) |
 | Current six-Leader cast and Style identities | [Leaders](../docs/leaders.md) |
 | Card frame, symbols, and accessibility requirements | [Card design principles](../docs/card-design-principles-2026-09-22.md) |
 | Concepts that are not yet part of production | [Idea bank](../docs/idea-bank.md) |
 
-The rulebook carries forward the September 21 foundation and the [September 23 Donut revision](../docs/current-state-2026-09-23.md). The open-decisions file keeps unfinished choices out of card text and print files.
+The rulebook and [September 28 checkpoint](../docs/current-state-2026-09-28.md) define the active rebuild baseline. The open-decisions file keeps unfinished choices out of card text and print files.
 
 The Production Pool v0.1 is a **ground-up rewrite**, not a terminology conversion of Alpha 0.03. The old pool in `docs/card-pool/` remains legacy test data for history and comparison.
 
@@ -33,16 +33,16 @@ production/
 ## Production status
 
 - **Rules:** current consolidated playtest rules exist; open decisions are tracked separately.
-- **Cards:** Production Pool v0.1 contains 180 working deck cards, 30 per Style. Revision 3 retains the documented Trait/keyword and timing audit, machine-readable draft data, and generated references. Balance and Leader packages still require testing; it is not final print text.
-- **Leaders:** six identities and Style homes are committed. Florida Man and HOA President now have provisional 25-Health packages, Charge/ultimates, and two 40-card test decks; the other four packages remain open.
+- **Cards:** Production Pool v0.2 contains 180 rebuilt deck cards, 30 per Style. Revision 5 is the current package-based playtest pool. Balance remains unverified.
+- **Leaders:** six identities, Style homes, 25 Health, and one-passive playtest packages are current. Activated abilities, Charge, and ultimates are not part of this baseline.
 - **Art:** no production art brief or approved art set has been established yet.
 - **Print:** no print-ready templates or printer specifications have been approved yet.
 - **Releases:** no set or season has been locked yet.
 
 ## Immediate production sequence
 
-1. Finalize small Leader test packages and review the [current roster notes and playtest priorities](cards/revision-3-notes.md).
-2. Build controlled 40-card test decks around each Leader and secondary-Style pairing.
-3. Simulate the cost/stat curve under current 1→7 Fuel and combat rules.
-4. Physically playtest the strongest packages.
-5. Tune the existing machine-readable draft before freezing card text or producing print layouts.
+1. Play the six mono-Style 40-card baseline decks and validate both packages in each Style.
+2. Fix rules-execution or package-function failures before broad balance tuning.
+3. Run the controlled first-player Draw versus skip-first-Draw test with no other rule changes.
+4. Build and test dual-Style combinations after the mono baselines function.
+5. Tune Costs, Power, Guard, and package density before freezing card text or producing print layouts.
