@@ -337,8 +337,8 @@ Trait references on Leaders are not part of the current starting design.
 **Florida Man, Reckless**  
 Your damaged Characters have Hothead and Sucker Punch. If all damage is healed from a Character, it immediately loses those granted keywords.
 
-**Washed-Up Rock Star, Momentum — Packed House**  
-While there are 6 or more Characters and Items in play total, your cards cost 1 less. Characters and Items controlled by either player count. Leaders and Stash do not.
+**Washed-Up Rock Star, Momentum — Comeback Tour**  
+At the end of your Turn, if you have no cards in hand, Draw 3 cards.
 
 **Birthday Party Magician, Misdirection**  
 Whenever one of your Characters is Returned from play to your hand, Draw a card.
