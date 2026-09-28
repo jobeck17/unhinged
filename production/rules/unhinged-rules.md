@@ -346,8 +346,8 @@ Whenever one of your Characters is Returned from play to your hand, Draw a card.
 **Trash Baron, Salvage**  
 You may use opposing Ready Stash to pay your Costs as though it were your own. You may combine opposing Stash with your own Stash in one payment. This includes opposing face-up Jerry-Rig Stash.
 
-**HOA President, Stonewall**  
-**Passive paused for the current low-end tuning test.** The Ready-step tax remains preserved as an experimental Leader passive in Open Decisions, but HOA is being tested without it to isolate the strength of the Stonewall deck itself.
+**HOA President, Stonewall — Failure to Respond**  
+Beginning in Round 8, opposing Characters cannot Block your Attacks.
 
 **Backyard Wrestler, Expendable — Tag Out**  
 At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may play **another** Character from your hand with the same Cost or less without paying its Cost. The replacement is Played normally, enters Ready, and its On Play abilities trigger.
