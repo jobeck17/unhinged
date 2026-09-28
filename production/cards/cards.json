@@ -2190,9 +2190,11 @@
       "name": "Duct Tape",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct.",
+      "text": "Jerry-Rig. Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct.",
       "style": "Salvage",
-      "keywords": [],
+      "keywords": [
+        "Jerry-Rig"
+      ],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -2207,9 +2209,11 @@
       "name": "Zip Ties",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Round, or +3 Guard if it is a Builder.",
+      "text": "Jerry-Rig. Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder.",
       "style": "Salvage",
-      "keywords": [],
+      "keywords": [
+        "Jerry-Rig"
+      ],
       "power": null,
       "guard": null,
       "audit_identity": [],
