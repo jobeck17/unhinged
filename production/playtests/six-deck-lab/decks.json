@@ -2,7 +2,7 @@
   "version": "six-deck-lab-4",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Mono-Style revision-7 baseline; first player skips first Draw; Rock Star uses Comeback Tour; HOA uses Failure to Respond.",
+  "status": "Mono-Style revision-7 baseline; first player skips first Draw; second player may begin with temporary Stash; Rock Star uses Comeback Tour; Magician uses Ace Up My Sleeve; HOA uses Failure to Respond.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -118,11 +118,11 @@
         "An enter/Return payoff"
       ],
       "watchpoints": [
-        "Can cheap Return bodies generate tempo as well as card advantage?",
-        "Does the Leader's Draw-on-Return passive create satisfying replay chains without runaway loops?",
-        "Can the deck convert Bounce into enough pressure to win before its card advantage becomes deck-out risk?"
+        "Does Ace Up My Sleeve turn Return effects into useful tempo without creating runaway resource loops?",
+        "Can damaged Characters attack, survive, Return, and be replayed often enough to make Bounce feel like healing plus tempo?",
+        "Can the deck convert Bounce into enough pressure to win before its card flow becomes deck-out risk?"
       ],
-      "status_note": "Revision 7 targeted tuning baseline."
+      "status_note": "Revision 7 targeted tuning baseline with Ace Up My Sleeve."
     },
     {
       "name": "Curbside Empire",
