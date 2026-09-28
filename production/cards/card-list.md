@@ -1,6 +1,6 @@
 # Donut Card List
 
-> Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
 
@@ -14,7 +14,7 @@
 | P006 | Road Rage Ron | Reckless | Character | 4 | 5/4 | — | Single ongoing ability |
 | P007 | Scout With a Flare Gun | Reckless | Character | 3 | 2/4 | Kid, Scout, Daredevil | On play |
 | P008 | Pool Pirate | Reckless | Character | 4 | 4/5 | Pirate, Criminal | Single ongoing ability |
-| P009 | Pirate With No Exit Strategy | Reckless | Character | 3 | 4/3 | Pirate, Criminal | Textless |
+| P009 | Pirate With No Exit Strategy | Reckless | Character | 3 | 4/2 | Pirate, Criminal | Single ongoing ability |
 | P010 | Guy Who Definitely Read the Instructions | Reckless | Character | 5 | 7/5 | Daredevil | On play |
 | P011 | Fourth of July Showrunner | Reckless | Character | 5 | 4/6 | Daredevil | Multiple abilities |
 | P012 | Giga Chad | Reckless | Character | 3 | 4/4 | — | Textless |
@@ -40,10 +40,10 @@
 | P032 | Wedding DJ | Momentum | Character | 2 | 2/3 | Musician | Single ongoing ability |
 | P033 | Karaoke Champion | Momentum | Character | 2 | 2/3 | Musician | Single ongoing ability |
 | P034 | Jam Band Hippie | Momentum | Character | 4 | 3/6 | Musician | Single ongoing ability |
-| P035 | Youth Pastor With a Guitar | Momentum | Character | 3 | 3/5 | Musician | Textless |
+| P035 | Youth Pastor With a Guitar | Momentum | Character | 3 | 4/2 | Musician | On play |
 | P036 | Stage Mom | Momentum | Character | 4 | 3/5 | Parent | Multiple abilities |
 | P037 | Reunion Tour Drummer | Momentum | Character | 3 | 4/3 | Undead, Musician | Single ongoing ability |
-| P038 | Mike | Momentum | Character | 3 | 3/4 | — | Textless |
+| P038 | Mike | Momentum | Character | 3 | 4/2 | — | Textless |
 | P039 | Social Media Influencer | Misdirection | Character | 4 | 3/5 | — | Multiple abilities |
 | P040 | Boss Babe | Momentum | Character | 5 | 4/6 | — | On play |
 | P041 | Overenthusiastic Softball Mom | Momentum | Character | 5 | 4/6 | Parent | Multiple abilities |
@@ -66,17 +66,17 @@
 | P058 | Orange Slices | Momentum | Item | 1 | — | — | — |
 | P059 | Portable Bluetooth Speaker | Momentum | Item | 2 | — | — | — |
 | P060 | Starter Kit | Momentum | Item | 2 | — | — | — |
-| P061 | Magician's Assistant | Misdirection | Character | 3 | 3/4 | Magician | On play |
-| P062 | Birthday Kid Who Knows the Trick | Misdirection | Character | 1 | 1/2 | Kid | On play |
-| P063 | Rabbit | Misdirection | Character | 2 | 2/3 | Animal | Single ongoing ability |
+| P061 | Magician's Assistant | Misdirection | Character | 2 | 2/2 | Magician | On play |
+| P062 | Birthday Kid Who Knows the Trick | Misdirection | Character | 1 | 2/1 | Kid | On play |
+| P063 | Rabbit | Misdirection | Character | 3 | 2/2 | Animal | Multiple abilities |
 | P064 | Volunteer From the Audience | Misdirection | Character | 4 | 3/5 | Magician | On play |
-| P065 | Escape Artist | Misdirection | Character | 5 | 7/1 | Magician | Single ongoing ability |
+| P065 | Escape Artist | Misdirection | Character | 3 | 4/2 | Magician | Multiple abilities |
 | P066 | Off-Duty Clown | Misdirection | Character | 2 | 2/3 | Clown | Single ongoing ability |
-| P067 | School Bully | Misdirection | Character | 3 | 3/4 | Kid | Multiple abilities |
-| P068 | Social Media Grifter | Misdirection | Character | 4 | 4/4 | Criminal | On play |
+| P067 | School Bully | Misdirection | Character | 3 | 4/2 | Kid | Multiple abilities |
+| P068 | Social Media Grifter | Misdirection | Character | 4 | 4/3 | Criminal | On play |
 | P069 | Conspiracy Blogger | Misdirection | Character | 4 | 3/5 | — | Single ongoing ability |
-| P070 | Tech Bro | Misdirection | Character | 3 | 4/4 | — | Textless |
-| P071 | Coupon Scammer | Misdirection | Character | 2 | 3/3 | Criminal | Textless |
+| P070 | Tech Bro | Misdirection | Character | 3 | 4/2 | — | Single ongoing ability |
+| P071 | Coupon Scammer | Misdirection | Character | 2 | 3/2 | Criminal | Textless |
 | P072 | Neighborhood Group Admin | Stonewall | Character | 4 | 3/7 | HOA | Single ongoing ability |
 | P073 | IT Guy Who Quit Six Months Ago | Misdirection | Character | 5 | 4/6 | Hacker | Multiple abilities |
 | P074 | Identity Thief | Misdirection | Character | 5 | 5/5 | Criminal | On play |
@@ -93,10 +93,10 @@
 | P085 | Have You Tried Turning It Off? | Misdirection | Action | 2 | — | — | — |
 | P086 | Switcheroo | Misdirection | Action | 2 | — | — | — |
 | P087 | Burner Phone | Misdirection | Item | 1 | — | — | — |
-| P088 | Marked Deck | Misdirection | Item | 1 | — | — | — |
-| P089 | Lady Who's Moving Out Again | Misdirection | Character | 3 | 3/4 | — | Single ongoing ability |
+| P088 | Marked Deck | Misdirection | Item | 2 | — | — | — |
+| P089 | Lady Who's Moving Out Again | Misdirection | Character | 3 | 3/4 | — | Multiple abilities |
 | P090 | Spoofed Keycard | Misdirection | Item | 3 | — | — | — |
-| P091 | Scout Troop Quartermaster | Salvage | Character | 2 | 3/3 | Scout, Scavenger | Textless |
+| P091 | Scout Troop Quartermaster | Salvage | Character | 2 | 3/2 | Scout, Scavenger | Single ongoing ability |
 | P092 | Guy Fixing His Trans Am | Salvage | Character | 6 | 4/7 | Builder, Scavenger | Multiple abilities |
 | P093 | Garage Inventor | Salvage | Character | 4 | 3/5 | Builder | Single ongoing ability |
 | P094 | Dumpster Diver | Salvage | Character | 2 | 2/3 | Scavenger | On play |
@@ -139,7 +139,7 @@
 | P131 | Old Dog | Stonewall | Character | 3 | 2/5 | Animal | Single ongoing ability |
 | P132 | Church Potluck Grandma | Stonewall | Character | 5 | 4/7 | Parent | Single ongoing ability |
 | P133 | Concrete Goose | Stonewall | Character | 6 | 5/10 | Construct | Keyword only |
-| P134 | Church Usher | Stonewall | Character | 2 | 2/4 | — | On play |
+| P134 | Church Usher | Stonewall | Character | 2 | 2/2 | — | On play |
 | P135 | Mall Cop | Stonewall | Character | 4 | 2/6 | — | Single ongoing ability |
 | P136 | Tow-Truck Driver | Stonewall | Character | 5 | 5/6 | — | On play |
 | P137 | HOA Lawyer | Stonewall | Character | 5 | 4/7 | HOA | Single ongoing ability |
@@ -156,16 +156,16 @@
 | P148 | Video Doorbell | Stonewall | Item | 2 | — | — | — |
 | P149 | Occupied Stroller | Stonewall | Item | 2 | — | — | — |
 | P150 | Grandma's Cigarette Case | Stonewall | Item | 1 | — | — | — |
-| P151 | First-Time Wrestler | Expendable | Character | 1 | 2/2 | Wrestler | Textless |
+| P151 | First-Time Wrestler | Expendable | Character | 1 | 2/1 | Wrestler | Textless |
 | P152 | Florida Man's Stunt Double | Expendable | Character | 2 | 3/1 | Daredevil | Multiple abilities |
 | P153 | Zombie Kid, Turtle Fan | Expendable | Character | 3 | 2/3 | Undead, Kid | On play |
 | P154 | Dumpster Zombie | Expendable | Character | 3 | 4/4 | Undead, Scavenger | Textless |
 | P155 | Retired Crash-Test Dummy | Expendable | Character | 5 | 5/6 | Construct, Daredevil | On play |
 | P156 | Rooster Nobody Can Catch | Expendable | Character | 7 | 8/9 | Animal | Textless |
 | P157 | Fireworks Technician | Expendable | Character | 3 | 3/3 | Daredevil | Single ongoing ability |
-| P158 | Patio-Table Prodigy | Expendable | Character | 2 | 3/1 | Wrestler, Daredevil | Keyword only |
+| P158 | Patio-Table Prodigy | Expendable | Character | 2 | 3/1 | Wrestler, Daredevil | Multiple abilities |
 | P159 | Rabid Rat | Expendable | Character | 2 | 2/2 | Animal, Rat | Single ongoing ability |
-| P160 | Gym Selfie Guy (also: Gym Bro) | Expendable | Character | 4 | 3/7 | — | Textless |
+| P160 | Gym Selfie Guy | Expendable | Character | 4 | 3/7 | — | Textless |
 | P161 | Zombie Mall Walker | Expendable | Character | 4 | 3/5 | Undead | Single ongoing ability |
 | P162 | Guy Who Cut the Wrong Wire | Expendable | Character | 5 | 6/5 | Daredevil | Textless |
 | P163 | Dumpster Phoenix | Expendable | Character | 6 | 5/6 | Animal, Undead, Scavenger | Single ongoing ability |
