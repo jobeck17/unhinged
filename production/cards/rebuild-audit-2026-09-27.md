@@ -1,5 +1,9 @@
 # Unhinged 180-Card Rebuild Audit — 27 September 2026
 
+## Implementation status
+
+**Implemented September 28, 2026.** This file is now the historical triage/rationale record. The current card text lives in `cards.json` and the generated Style sheets.
+
 > **Status: production triage. This file does not itself change card text.**
 >
 > Basis: the September 27 full-turn/Stash rules, six Style identities, two-package guideline, Leader passives, keyword decisions, and current brainstorm banks. Every legacy card is evaluated against the new game rather than protected by history.
