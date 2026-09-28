@@ -10,7 +10,7 @@ This file now tracks only decisions that remain genuinely open after the Septemb
 | Response Cost | Responses pay normal Cost with Ready Stash. | Test whether this creates useful open-resource decisions or makes defensive interaction too expensive. |
 | Rock Star passive | **Comeback Tour:** end your Turn with no cards in hand -> Draw 3. | Adopted after a full A/B against the version that refilled to 3 from one or fewer cards. Preserve Packed House for future Momentum design space. |
 | Florida Man passive | Damaged Characters gain Hothead + Sucker Punch. | Test whether both keywords together are exciting without making self-damage trivial to exploit. |
-| HOA passive | **Paused in production. Leading candidate: Late Fee — beginning in Round 8, opposing Characters cannot Block HOA attacks.** | Full-deck simulation put the Late Fee version near the middle of the field; validate in physical play before locking. |
+| HOA passive | **Locked: Failure to Respond — beginning in Round 8, opposing Characters cannot Block your Attacks.** | Validate the Round-8 clock in physical play; the old Ready-step tax is retired from the active Leader. |
 | Tag Out | End of opponent Turn: Return one damaged Character, then free-play another Character of same Cost or less. | Test On Play loops, tempo, and whether 'another Character' sufficiently prevents abuse. |
 | Magician passive | **Whenever one of your Characters is Returned from play to your hand, Draw a card.** | Test whether Bounce now sustains hand size without creating runaway replay loops. Preserve the former put-damage concept in the idea bank for a card or future Leader. |
 
