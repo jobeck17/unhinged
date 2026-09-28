@@ -1,8 +1,8 @@
 {
-  "version": "six-deck-lab-3",
+  "version": "six-deck-lab-4",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Mono-Style revision-6 baseline; first player skips first Draw; Rock Star uses Comeback Tour; HOA uses Failure to Respond.",
+  "status": "Mono-Style revision-7 baseline; first player skips first Draw; Rock Star uses Comeback Tour; HOA uses Failure to Respond.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -43,7 +43,7 @@
         "Is self-damage too easy to convert into upside?",
         "Does Damage Everywhere matter without simply becoming burn?"
       ],
-      "status_note": "Low-end card-flow tuning baseline."
+      "status_note": "Revision 7 targeted tuning baseline."
     },
     {
       "name": "Comeback Tour",
@@ -84,7 +84,7 @@
         "Does Comeback Tour refill often enough to sustain Momentum without causing routine deck-out?",
         "Do acceleration cards help create explosive turns rather than simply emptying the hand?"
       ],
-      "status_note": "Low-end card-flow tuning baseline."
+      "status_note": "Revision 7 targeted tuning baseline."
     },
     {
       "name": "Now You See Me",
@@ -122,7 +122,7 @@
         "Does the Leader's Draw-on-Return passive create satisfying replay chains without runaway loops?",
         "Can the deck convert Bounce into enough pressure to win before its card advantage becomes deck-out risk?"
       ],
-      "status_note": "Low-end card-flow tuning baseline."
+      "status_note": "Revision 7 targeted tuning baseline."
     },
     {
       "name": "Curbside Empire",
@@ -164,7 +164,7 @@
         "Does Trash Baron create enough incentive to leave opposing Stash unspent?",
         "Can Salvage reach Big Hand through scavenging rather than generic Draw?"
       ],
-      "status_note": "Low-end card-flow tuning baseline."
+      "status_note": "Revision 7 targeted tuning baseline."
     },
     {
       "name": "Violation Notice",
@@ -206,7 +206,7 @@
         "Can Stonewall survive long enough to threaten the deadline without simply stalling for its own sake?",
         "Is Absolutely Not worth holding 3 Stash open?"
       ],
-      "status_note": "Failure to Respond baseline."
+      "status_note": "Revision 7 targeted tuning baseline."
     },
     {
       "name": "Tag Team Trashfire",
@@ -247,7 +247,7 @@
         "Are free same-or-lower-Cost replacements too efficient with On Play effects?",
         "Does recursion feel distinct from Salvage and self-damage distinct from Reckless?"
       ],
-      "status_note": "Low-end card-flow tuning baseline."
+      "status_note": "Revision 7 targeted tuning baseline."
     }
   ]
 }
