@@ -19,17 +19,17 @@
 | P131 | Character | 3 | **Old Dog** | 2/5 | Animal | When this Blocks and survives, heal 1 damage from it. |
 | P132 | Character | 5 | **Church Potluck Grandma** | 4/7 | Parent | At the start of your Turn, heal 1 damage from another Character. |
 | P133 | Character | 6 | **Concrete Goose** | 5/10 | Construct | **Slowpoke**. |
-| P134 | Character | 2 | **Church Usher** | 2/4 | — | When this enters play, you may give another of your Characters +1 Guard this Round. |
+| P134 | Character | 2 | **Church Usher** | 2/4 | — | When this enters play, you may give another of your Characters +1 Guard this Turn. |
 | P135 | Character | 4 | **Mall Cop** | 2/6 | — | This Character cannot Attack. While this is Ready, other Characters cannot use Hothead. |
 | P136 | Character | 5 | **Tow-Truck Driver** | 5/6 | — | When this enters play, choose a Rotated opposing Character. Its owner may Discard a card. If they do not, that Character skips its next Ready step. |
 | P137 | Character | 5 | **HOA Lawyer** | 4/7 | HOA | Opposing Actions that target one or more of your cards cost 1 more. |
 | P138 | Character | 2 | **Neighborhood Lifeguard** | 2/3 | — | Opposing damaged Characters get -1 Power. |
-| P139 | Action | 1 | **File a Complaint** | — | — | An opposing Character gets -2 Power this Round. |
+| P139 | Action | 1 | **File a Complaint** | — | — | An opposing Character gets -2 Power this Turn. |
 | P140 | Action | 2 | **Not in My Neighborhood** | — | — | Choose a Rotated opposing Character. Its owner may Discard a card. If they do not, it skips its next Ready step. |
 | P141 | Action | 3 | **Absolutely Not** | — | — | Response — When an opponent plays an Action: Cancel that Action. |
-| P143 | Action | 1 | **Read the Fine Print** | — | — | A Character gets -1 Power and -1 Guard this Round. |
+| P143 | Action | 1 | **Read the Fine Print** | — | — | A Character gets -1 Power and -1 Guard this Turn. |
 | P144 | Action | 2 | **'Tis But a Scratch** | — | — | Heal 3 damage from your Leader. This costs 1 less if your Leader has less Health than the opposing Leader. |
-| P145 | Action | 2 | **Dig In** | — | — | Your Characters get +1 Guard this Round. If you have fewer Characters in play than an opponent, Draw a card. |
+| P145 | Action | 2 | **Dig In** | — | — | Your Characters get +1 Guard this Turn. If you have fewer Characters in play than an opponent, Draw a card. |
 | P146 | Action | 2 | **Wait Them Out** | — | — | Draw a card. If you have not Attacked this Turn, heal 2 damage from a Character. |
 | P147 | Item | 1 | **Security Camera** | — | — | Whenever an opposing Character becomes Rotated outside combat, Draw a card, then Discard a card. |
 | P148 | Item | 2 | **Video Doorbell** | — | — | Whenever an opposing Character Attacks your Leader, Draw a card, then Discard a card. |
