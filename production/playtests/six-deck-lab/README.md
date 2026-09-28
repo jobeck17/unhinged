@@ -1,29 +1,30 @@
 # Six-deck lab
 
-This is the **September 28 mono-Style baseline** for the rebuilt 0.2 Donut card pool.
+This is the **revision 6 mono-Style baseline** for the rebuilt 0.2 Donut card pool.
 
 - [All six 40-card lists](decks.md)
 - [Structured deck data](decks.json)
 - [Current six Leader passives](leaders.md)
-- Run `python3 production/playtests/six-deck-lab/validate.py` from the repository root to verify card count, copy limits, Style legality, and card-pool version.
+- [Revision 6 simulation snapshot](snapshot-revision-6-card-flow.md)
+
+## Current test conditions
+
+- War winner skips the Draw step of their first Turn.
+- Birthday Party Magician draws whenever one of their Characters is Returned from play to hand.
+- HOA President's previous Ready-step tax is **paused** for the baseline simulation.
+- Revision 6 adds more card replacement, combat-Defeat Draw, a paid Draw Item, a Draw-2 Action, and more high-Power/low-Guard early Characters.
+
+The latest 30,000-game heuristic round robin averaged **8.64 Rounds** with a **60.07% first-player win rate**. Treat exact deck win rates as directional; the simulator is strongest for pacing, economy, hand-size, and large package-engagement signals.
 
 ## Why mono-Style first
 
-The first job is to prove that each Style works by itself:
+The first job is still to prove that each Style works by itself before dual-Style construction can hide weak packages.
 
-- both major packages can appear in one coherent 40-card deck;
-- the Leader passive has enough support inside its own Style;
-- a weak package cannot hide behind a stronger secondary Style;
-- balance problems can be attributed to the correct engine.
+Current tuning priorities:
 
-Dual-Style construction comes **after** these six baselines function.
+1. Momentum: make Low Hand sustainable rather than zero-hand topdecking.
+2. Stonewall: test a toned-down HOA passive that affects Characters/Items but not Stash.
+3. Salvage: reduce total engine efficiency; a simple one-opposing-Stash-per-Turn cap was not enough.
+4. Misdirection: improve tempo/board conversion rather than adding more generic Draw.
 
-## First matchup slate
-
-1. Florida Man vs. HOA President
-2. Washed-Up Rock Star vs. Trash Baron
-3. Birthday Party Magician vs. Backyard Wrestler
-
-Then rotate through the full six-deck round robin with pilots and starting player alternated.
-
-These are validation decks, not optimized lists. Do not treat early win rates as final balance evidence until rules execution and package function are stable.
+Dual-Style testing comes after these mono baselines stabilize.
