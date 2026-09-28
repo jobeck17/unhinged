@@ -1,7 +1,7 @@
 # Stonewall / Find Out — Production Pool v0.2
 
 > Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
-> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
+> Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | P149 | Item | 2 | **Occupied Stroller** | — | — | Attach to one of your Characters. It gets +2 Guard, or +3 Guard if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage. |
 | P150 | Item | 1 | **Grandma's Cigarette Case** | — | — | Whenever an opponent Readies a card outside their Ready step, Ready one of your Rotated Items. |
 
-A dash in Working text means no rules text. Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
+Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
 
 ## Flavor text
 
