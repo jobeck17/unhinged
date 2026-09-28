@@ -363,3 +363,16 @@ These have been discussed but are **not part of the current tester build**:
 - Trash Baron's Leader passive is unchanged: he may still use any opposing Ready Stash to pay his Costs.
 - **Cash In the Clutter** now Rotates up to 2 Ready Stash and Draws only if at least one was an opponent's Stash.
 - **Make It Work** now Dismisses an Item to Draw 2, then Discard 1. The extra Item discount was removed.
+
+## Revision 8 Jerry-Rig tuning
+
+Trash Baron's Leader passive remains unchanged.
+
+Jerry-Rig is reduced from all four Salvage Items to two:
+
+- **Duct Tape** keeps Jerry-Rig.
+- **Mystery Drawer of Cables** keeps Jerry-Rig.
+- **Zip Ties** loses Jerry-Rig.
+- **Used Ham Sandwich** loses Jerry-Rig.
+
+The goal is to reduce Salvage's extra Stash generation while preserving Jerry-Rig as a signature mechanic.
