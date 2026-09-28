@@ -1,7 +1,7 @@
 # Momentum / High Turnover — Production Pool v0.2
 
 > Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
-> Generated from [cards.json](cards.json). Edit the source and run `python3 production/cards/build.py`.
+> Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | P060 | Item | 2 | **Starter Kit** | — | — | When this enters play, Draw a card, then Discard a card. Dismiss this: Your next Character this Turn costs 1 less. |
 | P123 | Character | 3 | **Coupon Lady** | 3/5 | — | When this enters play, you may Stash an additional card from your hand. |
 
-A dash in Working text means no rules text. Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
+Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
 
 ## Flavor text
 
