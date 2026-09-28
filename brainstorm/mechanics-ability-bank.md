@@ -606,3 +606,14 @@ Design goals:
 - test only after the current mono-Style balance round stabilizes.
 
 Do **not** add this mechanic to revision 7.
+
+## You're Getting Sleepy — Misdirection stall candidate
+
+**Action concept:** Choose an opposing Character. It skips its next Ready step.
+
+This is a lightweight "sleep" / freeze effect for Birthday Party Magician. Keep it as a limited Misdirection trick rather than a full stall package so Stonewall remains the primary denial Style.
+
+Possible final wording:
+> Choose an opposing Character. It does not Ready during its controller's next Ready step.
+
+Future testing should compare unrestricted targeting against a cheaper restriction such as Rotated Character, low Cost, or damaged Character.
