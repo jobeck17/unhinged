@@ -205,9 +205,9 @@ You may use opposing Ready Stash to pay your Costs as though it were your own.
 
 ### HOA President — Stonewall
 
-**Passive currently paused for testing.**
+**Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks.
 
-Do not use the previous Ready-step tax during the revision 6 baseline.
+This replaces the old Ready-step tax.
 
 ### Backyard Wrestler — Expendable
 
@@ -333,7 +333,6 @@ The best feedback is not only balance feedback. Please report moments that made 
 
 These have been discussed but are **not part of the current tester build**:
 
-- HOA President **Late Fee** remains a test candidate, not yet live: beginning in Round 8, opposing Characters would be unable to Block HOA attacks.
 - **Washed-Up** as a possible Trait.
 - **Reality Show Contract** and other Washed-Up celebrity synergy cards.
 - Interaction-to-economy concepts inspired by rewarding opponents for attacking your board.
