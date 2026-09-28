@@ -2228,9 +2228,11 @@
       "name": "Mystery Drawer of Cables",
       "stats": "",
       "traits": [],
-      "text": "When this enters play, Draw a card, then Discard a card. Rotate, Dismiss this: Ready another of your Items.",
+      "text": "Jerry-Rig. When this enters play, Draw a card, then Discard a card. Rotate, Dismiss this: Ready another of your Items.",
       "style": "Salvage",
-      "keywords": [],
+      "keywords": [
+        "Jerry-Rig"
+      ],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -2245,9 +2247,11 @@
       "name": "Used Ham Sandwich",
       "stats": "",
       "traits": [],
-      "text": "Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card.",
+      "text": "Jerry-Rig. Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card.",
       "style": "Salvage",
-      "keywords": [],
+      "keywords": [
+        "Jerry-Rig"
+      ],
       "power": null,
       "guard": null,
       "audit_identity": [],
