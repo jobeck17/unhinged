@@ -1,4 +1,4 @@
-# Unhinged Tester Changelog — Donut Duel → Revision 6
+# Unhinged Tester Changelog — Donut Duel → Revision 7
 
 **Current playtest baseline: September 28, 2026**
 
@@ -40,6 +40,17 @@ War still determines who goes first.
 The War winner takes the first Turn of every Round, but **skips the Draw step of their first Turn**.
 
 Beginning with their second Turn, they Draw normally.
+
+### Second player gets optional temporary Stash
+
+After mulligans are complete, the player going second may put the top card of their deck **face up and Rotated into their Stash**.
+
+- It Readies normally during that player's first Ready step.
+- It is temporary Stash.
+- When it is used to pay a Cost, put it into its owner's discard.
+- The second player may still use their normal once-per-Round Stash from hand.
+- Because it begins Rotated, Trash Baron cannot use it before the second player gets their first Turn.
+- The setup Stash is optional.
 
 ## Deckbuilding
 
@@ -197,7 +208,7 @@ Your damaged Characters have **Hothead** and **Sucker Punch**.
 
 ### Birthday Party Magician — Misdirection
 
-Whenever one of your Characters is Returned from play to your hand, **Draw a card**.
+**Ace Up My Sleeve:** Once during your Turn, when one of your Characters is Returned from play to your hand, **Ready 1 Stash**.
 
 ### Trash Baron — Salvage
 
@@ -272,7 +283,7 @@ The goal is to avoid long empty-hand topdeck games while making early combat mat
 
 ## Major Misdirection / Bounce update
 
-Birthday Party Magician now Draws whenever one of your Characters Returns to your hand.
+Birthday Party Magician now uses **Ace Up My Sleeve** to turn one Return each Turn into a Stash Ready rather than another Draw.
 
 Current Bounce support includes:
 
