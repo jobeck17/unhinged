@@ -16,14 +16,9 @@ This file now tracks only decisions that remain genuinely open after the Septemb
 
 ## Card-pool rebuild
 
-The current 180-card pool predates the package architecture and must be audited before being called production-ready.
+**Completed September 28, 2026.** All 180 cards were reviewed and the production pool was rebuilt around the new Style/package architecture. The current work is validation and tuning, not migration from the old pool.
 
-Every card should receive one status:
-
-- **Keep:** concept and text already fit.
-- **Rehome:** card is good but belongs in another Style.
-- **Rewrite:** concept/name is good but mechanics should be rebuilt.
-- **Replace:** slot should be given to a stronger concept.
+The historical Keep / Rehome / Rewrite / Replace audit remains in `production/cards/rebuild-audit-2026-09-27.md` as the rationale record.
 
 ### Per-Style structure
 
@@ -166,6 +161,14 @@ Leader goals:
 - activated Leader abilities may return in later testing.
 
 Do not design the second Leader per Style until the rebuilt card pool shows what the second package actually needs.
+
+## Rebuild validation priorities
+
+- Verify each major package functions in mono-Style construction.
+- Build and test all six current Leader decks against the rebuilt cards.
+- Test two-Style combinations for multiplicative package interactions.
+- Run the dedicated first-player Draw vs. no-first-Draw simulation with no other rule changes.
+- Tune Costs, Power, Guard, and package density only after the engines are observed in play.
 
 ## Remaining naming / presentation decisions
 
