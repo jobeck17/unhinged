@@ -113,14 +113,14 @@
         "P088": 3
       },
       "mulligan_priority": [
-        "Rabbit, Off-Duty Clown, or Lady Who's Moving Out Again",
+        "Magician's Assistant, Rabbit, or Escape Artist",
         "A Return effect",
-        "Cheap Stash manipulation"
+        "An enter/Return payoff"
       ],
       "watchpoints": [
-        "Can damaged Bounce happen often enough to showcase the Leader?",
-        "Does Return create tempo without repeated non-games?",
-        "Are Stash manipulation decisions interesting enough to justify breaking Stash secrecy?"
+        "Can cheap Return bodies generate tempo as well as card advantage?",
+        "Does the Leader's Draw-on-Return passive create satisfying replay chains without runaway loops?",
+        "Can the deck convert Bounce into enough pressure to win before its card advantage becomes deck-out risk?"
       ],
       "status_note": "Low-end card-flow tuning baseline."
     },
