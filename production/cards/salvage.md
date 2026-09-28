@@ -1,6 +1,6 @@
 # Salvage / Good Enough — Production Pool v0.2
 
-> Donut revision 7 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 8 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -32,9 +32,9 @@
 | P115 | Action | 2 | **Don't Throw That Away** | — | — | Return an Item that entered your discard this Turn to your hand. |
 | P116 | Action | 2 | **Good as New** | — | — | Choose a damaged Character. Heal all damage from it, then Rotate it. |
 | P117 | Item | 2 | **Duct Tape** | — | — | **Jerry-Rig**. Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct. |
-| P118 | Item | 1 | **Zip Ties** | — | — | **Jerry-Rig**. Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder. |
+| P118 | Item | 1 | **Zip Ties** | — | — | Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder. |
 | P119 | Item | 2 | **Mystery Drawer of Cables** | — | — | **Jerry-Rig**. When this enters play, Draw a card. Rotate, Dismiss this: Ready another of your Items. |
-| P120 | Item | 1 | **Used Ham Sandwich** | — | — | **Jerry-Rig**. Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card. |
+| P120 | Item | 1 | **Used Ham Sandwich** | — | — | Dismiss this: Heal 2 damage from a Character. If it is a Scavenger, Draw a card, then Discard a card. |
 
 Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
 
