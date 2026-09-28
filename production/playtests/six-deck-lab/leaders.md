@@ -1,71 +1,41 @@
-# Six Leader playtest packages
+# Six Leader baseline passives
 
-All Leaders begin at **25 Health** outside the 40-card deck. The [Florida Man and HOA packages](../florida-vs-hoa/leaders.md) remain the authoritative text for those two Leaders, including their timing notes. All six use the following Charge rules: start at 0, maximum 3, gain at most 1 per Round, retain it between Rounds, and spend 3 for the ultimate. A Charge gain at the cap still consumes that Round's opportunity. A regular or ultimate ability costs a Turn, Rotates its Leader, and leaves that Leader Vulnerable until Ready. Choose targets before costs; a Leader cannot use both activations while Rotated. Neither kind of activation costs Fuel. Resolving a Leader's ability, including an ultimate, follows the same trigger timing as any activated ability. Each printed first-time trigger resets each Round. These are playable test drafts, not balance locks.
+All Leaders begin at **25 Health** outside the 40-card deck. The current test model gives each Leader one automatic passive and no activated ability, Charge, ultimate, Power, Guard, or orientation.
 
 ## Florida Man — Reckless
 
-**Passive · Walk It Off:** The first time each Round one of your Characters takes damage during your Turn and survives, it gets +1 Power this Round.
+**Passive:** Your damaged Characters have **Hothead** and **Sucker Punch**.
 
-**Ability · Watch This:** Rotate: Deal 1 damage to one of your Ready Characters. If it survives, it gets +2 Power this Round.
-
-**Charge · Bad Decisions:** When Walk It Off triggers, gain 1 Charge.
-
-**Ultimate · Hold My Entire Cooler:** Rotate, spend 3 Charge: Choose an opposing Character or Leader. Roll a six-sided die. Deal damage equal to the result to the chosen target.
+If all damage is healed from a Character, it immediately loses those granted keywords.
 
 ## Washed-Up Rock Star — Momentum
 
-**Passive · Crowd Warms Up:** The first time each Round you Play your second card, choose one of your Characters. It gets +1 Power this Round. If you have no Character, the bonus is lost.
+**Packed House:** While there are 6 or more Characters and Items in play total, your cards cost 1 less.
 
-**Ability · Sound Check:** Rotate: Draw a card, then Discard a card.
-
-**Charge · One More Song:** The first time each Round you Play a second card, gain 1 Charge. Sound Check is an activation, not a Play.
-
-**Ultimate · The Reunion Tour:** Rotate, spend 3 Charge: You may Play up to two Characters from your hand with combined printed Cost 4 or less without paying their Costs. One of those Characters gains Hothead this Round. Resolve each Play fully before choosing the next. These are Plays for card triggers but do not spend extra Turns; any unspent choice is lost.
+Cards controlled by either player count. Leaders and Stash do not.
 
 ## Birthday Party Magician — Misdirection
 
-**Passive · Sleight of Hand:** The first time each Round an effect you control Returns one of your Characters from play to your hand, Draw a card, then Discard a card. The Character must actually reach your hand.
+When one of your damaged Characters is Returned from play to your hand, choose up to X opposing Characters, where X is the amount of damage that Character had immediately before it left play. **Put 1 damage** on each chosen Character.
 
-**Ability · Check Behind Your Ear:** Rotate: Look at the top two cards of your deck. Put one on the bottom and the other back on top in any order. If only one remains, you may put it on the bottom instead. This ability does not Draw.
-
-**Charge · Is This Your Card?:** The first time each Round one of your effects reveals a card from your hand **or** Returns one of your Characters from play to your hand, gain 1 Charge. Revealing several cards simultaneously or Returning several Characters still earns only one Charge.
-
-**Ultimate · The Disappearing Act:** Rotate, spend 3 Charge: Choose up to two opposing Characters. If you chose two, their owner chooses one to Return to hand; Rotate the other. If you chose one, Return it to hand. Then you may Play one Character costing 3 or less from your hand without paying its Cost. If a returned card is no longer in play, resolve the remaining instructions where possible. The free Play is a Play for triggers and uses no additional Turn.
+This is put damage, not dealt damage.
 
 ## Trash Baron — Salvage
 
-**Passive · Waste Not:** The first time each Round one of your Items is Dismissed, deal 1 damage to the opposing Leader. Leaving play another way is not Dismiss.
+You may use opposing Ready Stash to pay your Costs as though it were your own.
 
-**Ability · One Man's Trash:** Rotate, Dismiss one of your Items: Return a different Item costing 2 or less from your discard to your hand. Choose that target before Dismissing; the dismissed Item cannot be the one Returned.
-
-**Charge · Curbside Collection:** The first time each Round you Play an Item from your hand or Dismiss one of your Items, gain 1 Charge. These are alternatives for the same once-per-Round gain.
-
-**Ultimate · The Junkyard Kingdom:** Rotate, spend 3 Charge: You may Play up to two Items costing 2 or less from your discard without paying their Costs. Each Play fully resolves before the next, uses no extra Turn, and chooses a legal Character for an attached Item. Items in discard cannot Activate until in play. If the first Item's effect moves the second, select another legal Item or stop.
+You may combine opposing Stash with your own in one payment. Opposing face-up Jerry-Rig Stash is legal to spend.
 
 ## HOA President — Stonewall
 
-**Passive · Neighborhood Watch:** The first time each Round one of your Characters Blocks, it gets +1 Power for that Attack.
+During an opponent's Ready step, if they have any Rotated Characters, Items, or Stash, they choose one of those cards. That card does not Ready during that Ready step.
 
-**Ability · Property Maintenance:** Rotate: Remove up to 2 damage from one of your Characters.
-
-**Charge · Document Everything:** The first time each Round you Activate an ability of one of your Characters or Items, gain 1 Charge.
-
-**Ultimate · Violation Notice:** Rotate, spend 3 Charge: Choose up to 2 opposing Rotated Characters. Deal 2 damage to each.
+If they have no Rotated cards, the passive does nothing. Another effect may Ready the chosen card later that Turn.
 
 ## Backyard Wrestler — Expendable
 
-**Passive · Crowd Goes Wild:** The first time each Round one of your Characters is Defeated, deal 1 damage to the opposing Leader. This works on either player's Turn, including a Sacrifice, which is a Defeat under the core rules.
+**Tag Out:** At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may Play **another Character** from your hand with the same Cost or less without paying its Cost.
 
-**Ability · Set Up the Table:** Rotate, Sacrifice one of your Characters: Deal 2 damage to an opposing Character. You must have both a friendly Character to Sacrifice and a legal target to activate it.
+The replacement is Played normally, enters Ready, and its On Play abilities trigger.
 
-**Charge · Worth the Bruise:** The first time each Round one of your Characters is Defeated, gain 1 Charge. A Sacrifice is a Defeat and can earn Charge.
-
-**Ultimate · Through the Table:** Rotate, spend 3 Charge, Sacrifice one of your Characters: Choose an opposing Character or Leader. Deal damage equal to the sacrificed Character's last Power to that target. If the target was a Character, also deal 2 damage to the opposing Leader. The sacrificed Character can trigger Crowd Goes Wild and Worth the Bruise. Those triggers wait until this activation finishes. Damage from the ultimate can trigger other Defeat abilities.
-
-## Playtest watchpoints
-
-- **Momentum:** Free Plays from the ultimate trigger second-card effects. Check action count and big turns with Encore! and Bring a Friend. The ultimate's total printed Cost cap is 4 even if discounts are active.
-- **Misdirection:** Return effects should create a moment of choice, not repeat stalls. Check opponent choice and whether Pick a Card is enough to fuel Charge.
-- **Salvage:** The ultimate Plays from discard, so it cannot by itself meet the from-hand Play clause of Curbside Collection. Dismiss effects may still earn Charge after a spent ultimate if that Round's gain has not happened.
-- **Expendable:** The first Defeat gives one Leader ping and one Charge. Sacrifice counts as Defeat and can fuel both triggers. Watch Leader damage from repeatable self-sacrifice; reduce the payoff if it ends games too quickly.
-- **Stonewall:** Keep this deck an advanced challenge; long deck-out games are a known risk, not the intended first matchup.
+These are playtest passives, not final balance locks.
