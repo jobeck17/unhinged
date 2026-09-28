@@ -19,7 +19,7 @@
 | P043 | Character | 2 | **Guy Who Mows at 7 AM** | 2/3 | — | When this enters play, you may Stash an additional card from your hand. |
 | P044 | Character | 3 | **Clown Who Booked the Wrong Gig** | 4/4 | Clown | — |
 | P045 | Character | 2 | **Basic White Girl** | 2/4 | — | — |
-| P046 | Character | 3 | **Single Dad** | 3/4 | Parent | When this enters play, another of your Characters gets +2 Guard this Round. If that Character is a Kid, heal 1 damage from it. |
+| P046 | Character | 3 | **Single Dad** | 3/4 | Parent | When this enters play, another of your Characters gets +2 Guard this Turn. If that Character is a Kid, heal 1 damage from it. |
 | P047 | Character | 2 | **Cookie Scout** | 2/2 | Kid, Scout | When this enters play, if an opponent has more cards in hand than you, Draw a card. |
 | P048 | Character | 6 | **Roadie Who Never Left** | 4/6 | — | Whenever you play a card costing 3 or more, your next card this Turn costs 1 less. |
 | P049 | Action | 1 | **Reply All** | — | — | Each player Draws a card. Then Draw a card. |
@@ -28,7 +28,7 @@
 | P052 | Action | 2 | **Encore!** | — | — | Choose an Action in your discard costing 1 or less. You may Play it without paying its Cost. If you do, put it on the bottom of your deck instead of into your discard. |
 | P053 | Action | 1 | **One More Song** | — | — | Ready one Stash. If you have 2 or fewer cards in hand, Ready another Stash. |
 | P054 | Action | 2 | **Reset the Vibes** | — | — | Each player Discards their hand, then Draws 3 cards. |
-| P055 | Action | 2 | **Bring a Friend** | — | — | The next Character you Play this Round costs 1 less. When it enters play, you may give another of your Characters +1 Power this Round. |
+| P055 | Action | 2 | **Bring a Friend** | — | — | The next Character you Play this Turn costs 1 less. When it enters play, you may give another of your Characters +1 Power this Turn. |
 | P056 | Action | 1 | **Parking Lot Pep Talk** | — | — | A Character gets +1 Power and +2 Guard this Turn. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card. |
 | P057 | Item | 1 | **Participation Trophy** | — | — | Attach to one of your Characters. While you have fewer cards in hand than an opponent, the attached Character gets +2 Power. |
 | P058 | Item | 1 | **Orange Slices** | — | — | Dismiss this: Heal up to 3 damage from a Character. If you have fewer cards in hand than an opponent, Draw a card. |
