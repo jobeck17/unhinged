@@ -14,7 +14,7 @@
 - Leaders begin at **25 Health**.
 - Same War winner goes first each Round.
 - Full player Turns: **Ready -> Draw -> main Turn**.
-- First-player opening Draw remains a controlled test.
+- The War winner **skips the Draw step of their first Turn**. This is now the working baseline.
 - Stash replaces Fuel. One normal Stash opportunity per Round.
 - Characters may Block on the Turn they enter but may not Attack until their controller's next Turn unless Hothead or card text says otherwise.
 - Leader attacks allow one Blocker. Surviving Blockers retaliate; Defiant and Slowpoke modify retaliation.
@@ -43,9 +43,9 @@ Two packages per Style is a guideline, not a hard law. Every package must functi
 | --- | --- | --- | --- |
 | Florida Man | Reckless | Self-Damage | Your damaged Characters have Hothead and Sucker Punch. |
 | Washed-Up Rock Star | Momentum | Chain / Acceleration | **Packed House:** while 6 or more Characters and Items are in play total, your cards cost 1 less. |
-| Birthday Party Magician | Misdirection | Bounce / Return | When one of your damaged Characters Returns from play to your hand, put 1 damage on up to X opposing Characters, where X was that Character's damage. |
+| Birthday Party Magician | Misdirection | Bounce / Return | Whenever one of your Characters is Returned from play to your hand, Draw a card. |
 | Trash Baron | Salvage | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
-| HOA President | Stonewall | Freeze / Stall | During an opponent's Ready step, if they have Rotated Characters, Items, or Stash, they choose one to leave Rotated. |
+| HOA President | Stonewall | Freeze / Stall | **Passive paused for revision 6 testing.** |
 | Backyard Wrestler | Expendable | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character; if you do, free-play another Character from hand with the same Cost or less. |
 
 Leader design goal: one visible passive that bends a basic rule, changes overall playstyle, and gives the opponent something meaningful to play around.
@@ -108,6 +108,12 @@ Notable production changes include:
 - Jerry-Rig is printed on all four current Salvage Items.
 
 The source and taxonomy versions are **0.2-donut-rebuild**.
+
+## Revision 6 tuning checkpoint
+
+A 30,000-game heuristic round robin after the card-flow/low-end pass averaged **8.64 Rounds** (median 8) and a **60.07% first-player win rate**. Game length improved dramatically without changing 25 Health. See `production/playtests/six-deck-lab/snapshot-revision-6-card-flow.md` for the full snapshot.
+
+Current priorities are Momentum hand sustainability, a toned-down non-Stash HOA tax, Salvage efficiency, and Misdirection tempo conversion.
 
 ## Next validation work
 
