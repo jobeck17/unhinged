@@ -1,6 +1,6 @@
 # Salvage / Good Enough — Production Pool v0.2
 
-> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 7 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -25,9 +25,9 @@
 | P108 | Character | 6 | **Unlicensed Pool Guy** | 6/7 | Builder | When this enters play, Return an Item from your discard to your hand. Your Items cost 1 less. |
 | P109 | Action | 1 | **Scrounge** | — | — | Look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest into your discard. |
 | P110 | Action | 1 | **I Can Fix That** | — | — | Return an Item costing 1 from your discard to your hand. |
-| P111 | Action | 2 | **Cash In the Clutter** | — | — | Choose up to 3 Ready Stash controlled by either player and Rotate them. Draw a card for each Stash Rotated this way. |
+| P111 | Action | 2 | **Cash In the Clutter** | — | — | Choose up to 2 Ready Stash controlled by either player and Rotate them. If you Rotated an opponent's Stash this way, Draw a card. |
 | P112 | Action | 1 | **That's Probably Still Good** | — | — | Heal 2 damage from a Character, or 3 damage if it is a Scavenger. |
-| P113 | Action | 2 | **Make It Work** | — | — | Dismiss one of your Items. If you do, Draw 2 cards. Your next Item this Turn costs 1 less. |
+| P113 | Action | 2 | **Make It Work** | — | — | Dismiss one of your Items. If you do, Draw 2 cards, then Discard a card. |
 | P114 | Action | 1 | **Curb Alert** | — | — | Return an Item costing 1 or less from your discard to your hand. If you have more cards in hand than an opponent, Draw a card, then Discard a card. |
 | P115 | Action | 2 | **Don't Throw That Away** | — | — | Return an Item that entered your discard this Turn to your hand. |
 | P116 | Action | 2 | **Good as New** | — | — | Choose a damaged Character. Heal all damage from it, then Rotate it. |
