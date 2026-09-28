@@ -51,7 +51,7 @@ There is no base limit on Characters in play, Items in play, Stash size, or hand
 - **Dismiss:** move a card from play to its owner's discard without Defeating it.
 - **Put:** neutral movement to the stated destination. It is not automatically a Draw, Discard, Return, Defeat, Sacrifice, or Dismiss.
 
-Ownership never changes unless a future effect explicitly creates a control exception.
+Ownership never changes. Control changes only when an effect explicitly says so. A card that changes control remains owned by its original owner; if it leaves play, it goes to its owner's appropriate zone unless the effect says otherwise. A temporary control effect ends when its stated duration ends or when the card leaves play.
 
 ## 4. Setup and War
 
@@ -160,7 +160,7 @@ A Character may normally Attack:
 
 Ready opposing Characters cannot normally be attacked directly. **Sucker Punch** and specific card text may create exceptions.
 
-A direct Attack against a Character cannot be Blocked.
+A direct Attack against a Character cannot be Blocked. If the direct target leaves play before combat damage, the Attack ends; the attacker remains Rotated.
 
 ### Leader attacks
 
@@ -250,6 +250,8 @@ Valid printed windows may include moments such as:
 - when another specifically named event occurs.
 
 Resolve the Response completely, including triggers it creates, before the interrupted event continues.
+
+If an Action is **canceled**, none of its effect resolves. Put that Action into its owner's discard, then continue with any triggers created by the Response that canceled it.
 
 Hard cancellation is allowed design space but should be rare, expensive, or conditional.
 
