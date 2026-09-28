@@ -807,23 +807,19 @@
       "id": "P043",
       "type": "Character",
       "cost": 2,
-      "name": "Little Leaguer",
-      "traits": [
-        "Kid"
-      ],
-      "text": "Hothead.",
+      "name": "Guy Who Mows at 7 AM",
+      "traits": [],
+      "text": "When this enters play, you may Stash an additional card from your hand.",
       "style": "Momentum",
-      "complexity": "keyword_only",
-      "keywords": [
-        "Hothead"
-      ],
+      "complexity": "on_play",
+      "keywords": [],
       "power": 2,
-      "guard": 1,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The scouting report just says “sugar.”"
+      "flavor": "Everybody is awake now."
     },
     {
       "id": "P044",
@@ -892,7 +888,7 @@
         "Kid",
         "Scout"
       ],
-      "text": "When this enters play, Draw a card, then Discard a card. If you Played another card this Round, this gets +1 Guard this Round.",
+      "text": "When this enters play, if an opponent has more cards in hand than you, Draw a card.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -910,12 +906,12 @@
       "cost": 6,
       "name": "Roadie Who Never Left",
       "traits": [],
-      "text": "When you Play your third card in a Round, Ready one Fuel. Rotate: Draw a card, then Discard a card.",
+      "text": "Whenever you play a card costing 3 or more, your next card this Turn costs 1 less.",
       "style": "Momentum",
-      "complexity": "mixed",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 5,
-      "guard": 7,
+      "power": 4,
+      "guard": 6,
       "audit_identity": [
         "Human"
       ],
@@ -946,11 +942,9 @@
       "name": "Roll Call",
       "stats": "",
       "traits": [],
-      "text": "Sneaky. Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order.",
+      "text": "Look at the top 4 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order.",
       "style": "Momentum",
-      "keywords": [
-        "Sneaky"
-      ],
+      "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
@@ -965,7 +959,7 @@
       "name": "Carpool",
       "stats": "",
       "traits": [],
-      "text": "Return one of your Characters to your hand. The next Character you Play this Round costs 1 less.",
+      "text": "Return an opposing Character costing 2 or less to its owner's hand. If that opponent now has more cards in hand than you, Draw a card.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -999,7 +993,7 @@
       "name": "One More Song",
       "stats": "",
       "traits": [],
-      "text": "If you Played a Character earlier this Round, Draw a card. If you Played another Action earlier this Round, Ready one Fuel.",
+      "text": "Ready one Stash. If you have 2 or fewer cards in hand, Ready another Stash.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1013,10 +1007,10 @@
       "id": "P054",
       "type": "Action",
       "cost": 2,
-      "name": "Everybody Bats",
+      "name": "Reset the Vibes",
       "stats": "",
       "traits": [],
-      "text": "Choose up to three of your Characters. Each gets +1 Power this Round. If you chose three, Draw a card.",
+      "text": "Each player Discards their hand, then Draws 3 cards.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1024,7 +1018,7 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "Nobody remembers what the original plan was."
     },
     {
       "id": "P055",
@@ -1050,7 +1044,7 @@
       "name": "Parking Lot Pep Talk",
       "stats": "",
       "traits": [],
-      "text": "A Character gets +1 Power and +2 Guard this Round. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card.",
+      "text": "A Character gets +1 Power and +2 Guard this Turn. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
