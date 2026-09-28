@@ -8,9 +8,9 @@ This file now tracks only decisions that remain genuinely open after the Septemb
 | --- | --- | --- |
 | First-player Draw | **War winner skips the Draw step of their first Turn.** | Adopted after the baseline simulation reduced first-player advantage materially. Continue measuring after card-flow tuning. |
 | Response Cost | Responses pay normal Cost with Ready Stash. | Test whether this creates useful open-resource decisions or makes defensive interaction too expensive. |
-| Packed House threshold | 6 total Characters + Items in play gives Rock Star a global -1 Cost. | Tune threshold and power only after package decks exist. |
+| Rock Star passive | **Comeback Tour:** end your Turn with no cards in hand -> Draw 3. | Adopted after a full A/B against the version that refilled to 3 from one or fewer cards. Preserve Packed House for future Momentum design space. |
 | Florida Man passive | Damaged Characters gain Hothead + Sucker Punch. | Test whether both keywords together are exciting without making self-damage trivial to exploit. |
-| HOA passive | **Paused for current tuning test.** | Previous Ready-step tax is preserved for later comparison. Measure Stonewall win rate and game length with no Leader passive before choosing a toned-down version. |
+| HOA passive | **Paused in production. Leading candidate: Late Fee — beginning in Round 8, opposing Characters cannot Block HOA attacks.** | Full-deck simulation put the Late Fee version near the middle of the field; validate in physical play before locking. |
 | Tag Out | End of opponent Turn: Return one damaged Character, then free-play another Character of same Cost or less. | Test On Play loops, tempo, and whether 'another Character' sufficiently prevents abuse. |
 | Magician passive | **Whenever one of your Characters is Returned from play to your hand, Draw a card.** | Test whether Bounce now sustains hand size without creating runaway replay loops. Preserve the former put-damage concept in the idea bank for a card or future Leader. |
 
@@ -144,7 +144,7 @@ Do not force a keyword merely to give each Style a proprietary mechanic.
 Current starting Leaders:
 
 - Florida Man -> Self-Damage / Damaged Characters
-- Washed-Up Rock Star -> Chain / Acceleration
+- Washed-Up Rock Star -> Low Hand / Refill
 - Birthday Party Magician -> Bounce / Return
 - Trash Baron -> Repurpose / Stash exploitation
 - HOA President -> Freeze / Stall
