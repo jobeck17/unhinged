@@ -6,15 +6,17 @@ This is the **revision 7 mono-Style baseline** for the rebuilt 0.2 Donut card po
 - [Structured deck data](decks.json)
 - [Current six Leader passives](leaders.md)
 - [Revision 6 simulation snapshot](snapshot-revision-6-card-flow.md)
+- [Revision 7 turn-order / Ace Up My Sleeve snapshot](snapshot-revision-7-turn-order.md)
 
 ## Current test conditions
 
 - War winner skips the Draw step of their first Turn.
-- Birthday Party Magician draws whenever one of their Characters is Returned from play to hand.
+- After mulligans, the second player may put the top card of their deck face up and Rotated into Stash as optional temporary Stash.
+- Birthday Party Magician uses **Ace Up My Sleeve**: once during your Turn, when one of your Characters Returns from play to hand, Ready 1 Stash.
 - HOA President uses **Failure to Respond**: beginning in Round 8, opposing Characters cannot Block HOA's Attacks.
 - Revision 7 keeps the revision-6 card-flow foundation and makes targeted Misdirection, Expendable, and Salvage balance changes.
 
-The latest 30,000-game heuristic round robin averaged **8.64 Rounds** with a **60.07% first-player win rate**. Treat exact deck win rates as directional; the simulator is strongest for pacing, economy, hand-size, and large package-engagement signals.
+The revision-7 turn-order test moved first-player wins from **65.06% without the second-player bonus to 54.98% with the temporary Stash**, while average game length stayed effectively flat in the same harness. Treat exact deck win rates as directional; the simulator is strongest for relative A/B comparisons, pacing, economy, hand-size, and large package-engagement signals.
 
 ## Why mono-Style first
 
