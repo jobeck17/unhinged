@@ -6,8 +6,8 @@ Unhinged is a leader-centered card game in development. This repository is the w
 
 | Need | File | Status |
 | --- | --- | --- |
-| Current decisions and open questions | [Latest checkpoint](docs/current-state-2026-09-23.md) | Latest dated checkpoint |
-| Current 180-card roster, Traits, and keywords | [Donut card workshop](production/cards/README.md) | Revision 3; validated draft data and generated sheets |
+| Current decisions and open questions | [Latest checkpoint](docs/current-state-2026-09-28.md) | Latest dated checkpoint |
+| Current 180-card roster, Traits, and keywords | [Donut card workshop](production/cards/README.md) | Revision 5; rebuilt 180-card pool and generated sheets |
 | Rules for the next paper playtest | [Production rules](production/rules/unhinged-rules.md) | Current consolidated rulebook |
 | Documentation map | [Docs index](docs/README.md) | Where current, historical, legacy, and speculative material belongs |
 | Decisions required before production card text | [Open decisions](production/rules/open-decisions.md) | Deliberate choices still pending |
@@ -18,19 +18,23 @@ Unhinged is a leader-centered card game in development. This repository is the w
 | Original 180-card Alpha 0.03 pool | [Pool status](docs/card-pool/README.md) | Historical data; superseded by Donut |
 | Next rules prototype | [Donut](prototypes/README.md) | Planned successor to Mongo |
 
-When a newer checkpoint deliberately changes an older one, the newer checkpoint wins. The production rulebook consolidates the current playable core. The LAB snapshot preserves the earlier foundation; the September 23 checkpoint records the current card revision and supporting timing rulings. The old pool and browser simulator do **not** override current rules. See the [documentation map](docs/README.md) when deciding where a new note belongs.
+When a newer checkpoint deliberately changes an older one, the newer checkpoint wins. The production rulebook consolidates the current playable core. The September 28 checkpoint records the rebuilt rules/card architecture and current playtest baseline. The old pool and browser simulator do **not** override current rules. See the [documentation map](docs/README.md) when deciding where a new note belongs.
 
 ## Current playable foundation
 
-- One Leader starts in play; reduce the opposing Leader to 0 Health.
-- Players alternate one-action Turns within shared Rounds.
-- Fuel is the spendable resource. Its working progression is 1 to 7 Fuel across Rounds.
-- Ready and Rotate describe orientation; Blocking Rotates a Blocker.
-- Characters use Power and Guard. Damage persists. A surviving Blocker retaliates.
-- An Attack may target the Leader or a Rotated opposing Character; a Rotated Leader is Vulnerable.
-- Actions resolve once; Items remain in play and Attach only when their text says so.
+- One Leader outside the 40-card deck; reduce the opposing Leader from 25 Health to 0.
+- Full player Turns: Ready, Draw, then Play cards, Activate abilities, and Attack in any legal order.
+- The War winner currently goes first every Round.
+- **Stash** is the resource system. Once per Round, during your Turn, you may put one card from hand face down into Stash; each Ready Stash pays 1 Cost when Rotated.
+- Decks may use the Leader's Style plus up to one additional Style. Mono-Style decks are legal. Up to four copies of a card.
+- Characters may Block on the Turn they enter but normally cannot Attack until their controller's next Turn.
+- Leader attacks allow one Blocker. Surviving Blockers retaliate; excess attack damage overflows to the Leader.
+- Ready enemy Characters normally cannot be attacked directly unless card text such as Sucker Punch says otherwise.
+- Actions resolve once and go to discard. Items remain in play unless moved by an effect.
+- Traits have no automatic rules meaning.
+- Response is Action timing, not a separate card type.
 
-Character is the consistent Donut test name; its final printed presentation and Response chaining remain open. Style naming is soft-locked in two complete, one-to-one naming sets; see the latest checkpoint and open decisions before writing new card text.
+The September 28 checkpoint and production rulebook are the active source of truth. Older Fuel, single-action-Turn, Vulnerable-Leader, Cloak, Stack, and Mongo-era material is historical only.
 
 ## Browser prototype
 
