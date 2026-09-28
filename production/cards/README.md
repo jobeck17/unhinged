@@ -1,48 +1,77 @@
 # Unhinged — Donut Card Workshop
 
-**Core 0.1 · Donut revision 4 · 24 September 2026**
+**Core 0.2 · Donut revision 5 · 28 September 2026**
 
-The current pool contains **180 deck cards: 108 Characters, 48 Actions, and 24 Items**. The six Leaders remain outside that count. This is the current playtest design, with unverified balance and no final print lock.
+The current pool contains **180 deck cards: 109 Characters, 48 Actions, and 23 Items**. The six Leaders remain outside that count. This is the rebuilt playtest pool under the September 28 rules; balance is unverified.
 
 | Read or edit | Source |
 | --- | --- |
 | Entire roster, Costs, stats, Traits, and complexity | [Card list](card-list.md) |
-| Eighteen printed Traits, counts, definitions, and support | [Traits](traits.md) |
-| Eight printed playtest keywords | [Keywords](keywords.md) |
-| Printed keyword tests and card-specific restrictions | [Mechanics playtest](mechanics-playtest.md) and [Stack test](stack-playtest.md) |
+| Trait counts, definitions, and support | [Traits](traits.md) |
+| Current rebuild keywords | [Keywords](keywords.md) |
 | Exact composition and complexity counts | [Content audit](audit.md) |
-| What changed, why, and what to test | [Revision notes](revision-3-notes.md) |
+| Historical Keep / Rehome / Rewrite / Replace rationale | [Rebuild audit](rebuild-audit-2026-09-27.md) |
 | Playtest timing and core mechanics | [Rulebook](../rules/unhinged-rules.md) |
 | Canonical card text and metadata | [cards.json](cards.json) |
 | Canonical Trait and keyword definitions | [taxonomy.json](taxonomy.json) |
 
 ## The six Styles
 
-| Style | Phrase alias | Leader | Deck cards | Identity |
-| --- | --- | --- | --- | --- |
-| [Reckless](reckless.md) | No Chill | Florida Man | 30 | Choose how far to push a dangerous play. |
-| [Momentum](momentum.md) | High Turnover | Washed-Up Rock Star | 30 | Sequence a set, then decide who performs and who supports. |
-| [Misdirection](misdirection.md) | Funny Business | Birthday Party Magician | 30 | Bluff, misdirect, and give the opponent consequential choices. |
-| [Salvage](salvage.md) | Good Enough | Trash Baron | 30 | Turn questionable materials into functioning machinery. |
-| [Stonewall](stonewall.md) | Find Out | HOA President | 30 | Prepare a defense and attach consequences to interaction. |
-| [Expendable](expendable.md) | Red Shirts | Backyard Wrestler | 30 | Get value when a Character goes through the table. |
+| Style | Phrase alias | Leader | Starting packages |
+| --- | --- | --- | --- |
+| [Reckless](reckless.md) | No Chill | Florida Man | Damage Everywhere; Self-Damage / Damaged Characters |
+| [Momentum](momentum.md) | High Turnover | Washed-Up Rock Star | Chain / Acceleration; Low Hand |
+| [Misdirection](misdirection.md) | Funny Business | Birthday Party Magician | Bounce / Return; Manipulation / Deception |
+| [Salvage](salvage.md) | Good Enough | Trash Baron | Items / Jerry-Rig / Repurpose; Scrounge / Big Hand |
+| [Stonewall](stonewall.md) | Find Out | HOA President | Freeze / Stall; Reaction / Denial |
+| [Expendable](expendable.md) | Red Shirts | Backyard Wrestler | Sacrifice / Defeat Value; Recursion / Refuse to Stay Dead |
 
-Each Style keeps **18 Characters / 8 Actions / 4 Items**. The links use the settled production names; the phrase aliases are retained as design history.
+Each Style has exactly **30 cards**, but there is no hard Character / Action / Item ratio.
 
-## Current pool design
+## Current rebuild principles
 
-- Human is removed from printed Traits and retained only as audit identity metadata.
-- Eighteen concrete Traits have actual support references. Three-card groups are accepted under the soft 3% floor; no group exceeds the soft 15% ceiling in this revision.
-- Character complexity counts are in the generated [content audit](audit.md); small keyword trials have replaced some textless slots.
-- Textless and keyword-only Characters can carry optional flavor lines. Flavor is not rules text.
-- Eleven Items have Rotate activations, giving the Hacker and Item-Ready effects functional targets.
-- Attack/Block triggers resolve before their damage checkpoint. Sacrifice, Dismiss, attachment references, temporary Guard, and delayed Returns have explicit handling.
-- Defiant retains the former Explosive blocking-retaliation rule; Explosive now splashes 1 damage to every opposing Character on Defeat. Sucker Punch, Sneaky, Cloak, and Stack each have small printed test packages. Mall Cop has a defend-only restriction; attack-only remains a card-specific candidate.
-- Stable deck-card IDs remain P001–P180. Revised identities are recorded in the revision notes; earlier versions remain in git history.
+- Stable card IDs remain P001–P180.
+- Traits have no automatic behavior.
+- Internal per-Style target is **2 Best / 4 Better / 6 Good / 18 Simple-support**.
+- Most Character abilities are static, triggered, or On Play.
+- The current rebuilt pool has **zero Character Rotate abilities**.
+- Actions generally resolve immediately and go to discard.
+- Persistent engines usually live on Characters or Items.
+- Package cards should remain useful without perfect synergy.
+- Every major package must function in mono-Style deckbuilding.
+- Two-Style decks should create interesting combinations rather than complete incomplete mono-Style engines.
 
-## Requested roster follow-up
+## Current keywords
 
-Revision 3 incorporated the requested cast, adds Reply All and Tag Me In!, keeps Used Ham Sandwich, Grandma’s Cigarette Case, and Coupon Lady, and replaces HOA Pool Monitor with Neighborhood Lifeguard. See the [complete request-coverage table](revision-3-notes.md). Glory Days is an Action; Peaked in High School is a Character. Gym Bro is an alternate name for Gym Selfie Guy.
+Active rebuild keywords:
+
+- Hothead
+- Defiant
+- Explosive
+- Slowpoke
+- Sucker Punch, working name
+- Jerry-Rig
+- Chicken
+- Stubborn
+- Bodyguard, working name
+
+Shelved for the starting rebuild: Sneaky, Cloak, Stack, Step Aside, Overkill.
+
+Jerry-Rig is currently printed on all four Salvage Items.
+
+## Notable September 28 rebuilds
+
+- Amateur Electrician anchors damaged-state Reckless play.
+- School Bully introduces Chicken on a must-answer Character.
+- Lady Who's Moving Out Again rewards damaged Bounce.
+- Hoarder anchors Salvage Big Hand.
+- Guy Fixing His Trans Am anchors Jerry-Rig/Item payoff.
+- Reset the Vibes gives Momentum a symmetrical hand reset.
+- Cash In the Clutter converts unused Stash into card flow.
+- Coupon Lady moved to Momentum.
+- Neighborhood Group Admin and Terms and Conditions moved to Stonewall.
+- Social Media Influencer and I Want to Speak to Your Manager moved to Misdirection.
+- Four current Response tests exist: Send It!, Look Over There!, Absolutely Not, and Take One for the Team.
 
 ## Editing without drift
 
@@ -53,10 +82,14 @@ python3 production/cards/build.py
 python3 production/cards/build.py --check
 ```
 
-The script generates the six Style sheets, card list, Trait and keyword references, and audit. Do not hand-edit those generated sheets. It validates structure and consistency; it does not simulate matches or establish balance.
+The script generates the six Style sheets, card list, Trait and keyword references, and audit. Do not hand-edit those generated sheets.
 
-The [Alpha 0.03 pool](../../docs/card-pool/README.md) is historical data. The earlier Donut pool remains available at commit `5dcab3b`. Current card data lives here, not in the Alpha JSON.
+## Next playtest work
 
-## What still needs playtest work
+1. Build six 40-card mono-Style test decks.
+2. Validate package function before aggressive stat tuning.
+3. Test all six current Leader passives.
+4. Run the controlled first-player Draw versus no-first-Draw simulation with no other rule changes.
+5. Test two-Style combinations for multiplicative package interactions.
 
-The [six Leader identities](../../docs/leaders.md) are retained; all six have provisional 25-Health packages and ultimates. Stack now has a limited two-layer implementation on two cards; Response cards, a separate Junk Pile, and new card types remain outside the pool. Final Style presentation, physical Fuel, printed type naming, and production layouts remain in [open decisions](../rules/open-decisions.md).
+See the [September 28 checkpoint](../../docs/current-state-2026-09-28.md) for the full current state.
