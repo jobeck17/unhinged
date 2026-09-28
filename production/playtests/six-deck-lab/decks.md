@@ -1,6 +1,6 @@
 # Six mono-Style 40-card baseline decks
 
-> **Revision 6 low-end/card-flow baseline.** First player skips their first Draw. HOA's Leader tax is paused. These lists are validation decks, not final optimized builds.
+> **Revision 7 targeted-tuning baseline.** First player skips their first Draw. Rock Star uses Comeback Tour. HOA uses Failure to Respond. These are validation decks, not final optimized builds.
 
 ## Florida Man — Bad Decisions
 
@@ -28,7 +28,7 @@
 **Curve:** 1: 10 · 2: 14 · 3: 12 · 5: 2 · 6: 2  
 **Average Cost:** 2.40
 
-## Washed-Up Rock Star — Packed House
+## Washed-Up Rock Star — Comeback Tour
 
 **Style:** Momentum · **Cards:** 40 · **Packages:** Chain / Acceleration + Low Hand
 
@@ -147,24 +147,25 @@
 | 2 | 1 | Item | Folding Chair (P178) |
 | 2 | 2 | Action | Again! (P173) |
 | 2 | 2 | Action | Keep It Going! (P176) |
-| 4 | 2 | Action | Tag Me In! (P172) |
 | 2 | 2 | Action | Worth It (P171) |
 | 4 | 2 | Character | Backyard Wrestling Superfan (P165) |
 | 3 | 2 | Character | Florida Man's Stunt Double (P152) |
 | 3 | 2 | Character | Patio-Table Prodigy (P158) |
 | 2 | 2 | Item | Definitely Safe Helmet (P179) |
+| 4 | 3 | Action | Tag Me In! (P172) |
 | 2 | 3 | Character | Fireworks Technician (P157) |
 | 2 | 3 | Character | Stunt Clown (P164) |
 | 2 | 4 | Character | Backyard Tag-Team Captain (P166) |
 | 2 | 4 | Character | Zombie Mall Walker (P161) |
 
 **Type mix:** 22 Characters / 14 Actions / 4 Items  
-**Curve:** 1: 10 · 2: 22 · 3: 4 · 4: 4  
-**Average Cost:** 2.05
+**Curve:** 1: 10 · 2: 18 · 3: 8 · 4: 4  
+**Average Cost:** 2.15
 
-## Current test rules
+## Current Leader rules
 
 - War winner skips the Draw step of their first Turn.
-- Birthday Party Magician: whenever one of your Characters is Returned from play to your hand, Draw a card.
-- HOA President's Ready-step tax is paused for this test.
-- All other September 28 production rules apply.
+- Washed-Up Rock Star — **Comeback Tour:** end your Turn with no cards in hand -> Draw 3.
+- Birthday Party Magician — whenever one of your Characters Returns from play to hand, Draw a card.
+- HOA President — **Failure to Respond:** beginning in Round 8, opposing Characters cannot Block your Attacks.
+- All other current production rules apply.
