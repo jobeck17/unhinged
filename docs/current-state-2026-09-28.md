@@ -115,6 +115,16 @@ A 30,000-game heuristic round robin after the card-flow/low-end pass averaged **
 
 Current priorities are Salvage efficiency, Expendable efficiency, Misdirection physical-play validation, and continued first-player monitoring. Rock Star now uses Comeback Tour, and HOA now uses Failure to Respond.
 
+## Revision 7 targeted tuning
+
+The current card pool is now **revision 7**. This pass intentionally leaves core rules and the settled Leader identities alone while tuning three problem areas:
+
+- Misdirection bounce targets gained survivability and one Sucker Punch/Chicken combat tool.
+- Expendable lost some cheap standalone efficiency without changing Backyard Wrestler's passive.
+- Salvage lost stacked card/economy value around Jerry-Rig while Trash Baron's opposing-unused-Stash identity remains intact.
+
+A new evasion/opposed-access mechanic is being held in the mechanic bank until this balance round is complete.
+
 ## Next validation work
 
 1. Build six 40-card mono-Style test decks from the rebuilt pool.
