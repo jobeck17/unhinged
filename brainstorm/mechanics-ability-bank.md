@@ -573,3 +573,19 @@ A possible gameplay loop is:
 **damage yourself → unlock damaged bonuses → accumulate damage → cash out the damage through healing → receive a second payoff**
 
 Functional healing should also appear outside dedicated self-damage decks so that healing remains a broadly useful mechanic rather than merely one half of a single combo package.
+
+## Interaction-to-economy passive idea — banked
+
+Inspired by the general pattern of cards that reward an opponent for attacking into your board, not by copying any specific implementation.
+
+Possible Unhinged direction:
+
+> **When one of your Characters is attacked, you may put the top card of your deck into your Stash face down and Rotated.**
+
+Why it may be interesting:
+- turns opponent interaction into economy without preventing the interaction;
+- creates a visible decision about whether attacking a utility Character is worth accelerating its controller;
+- could fit a future Leader, Item, or package bridge;
+- top-deck-to-Stash explicitly breaks the normal hand-to-Stash rule and should therefore feel special.
+
+Do **not** add this to the current Misdirection bounce package during revision 6. Preserve it for a later Leader/passive experiment.
