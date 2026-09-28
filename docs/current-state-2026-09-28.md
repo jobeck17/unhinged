@@ -14,7 +14,8 @@
 - Leaders begin at **25 Health**.
 - Same War winner goes first each Round.
 - Full player Turns: **Ready -> Draw -> main Turn**.
-- The War winner **skips the Draw step of their first Turn**. This is now the working baseline.
+- The War winner **skips the Draw step of their first Turn**.
+- After mulligans, the second player may put the top card of their deck face up and Rotated into Stash as optional temporary Stash. It Readies normally on their first Turn and goes to discard when spent.
 - Stash replaces Fuel. One normal Stash opportunity per Round.
 - Characters may Block on the Turn they enter but may not Attack until their controller's next Turn unless Hothead or card text says otherwise.
 - Leader attacks allow one Blocker. Surviving Blockers retaliate; Defiant and Slowpoke modify retaliation.
@@ -42,8 +43,8 @@ Two packages per Style is a guideline, not a hard law. Every package must functi
 | Leader | Style | Package lean | Current passive |
 | --- | --- | --- | --- |
 | Florida Man | Reckless | Self-Damage | Your damaged Characters have Hothead and Sucker Punch. |
-| Washed-Up Rock Star | Momentum | Chain / Acceleration | **Packed House:** while 6 or more Characters and Items are in play total, your cards cost 1 less. |
-| Birthday Party Magician | Misdirection | Bounce / Return | Whenever one of your Characters is Returned from play to your hand, Draw a card. |
+| Washed-Up Rock Star | Momentum | Low Hand / Refill | **Comeback Tour:** At the end of your Turn, if you have no cards in hand, Draw 3 cards. |
+| Birthday Party Magician | Misdirection | Bounce / Return | **Ace Up My Sleeve:** Once during your Turn, when one of your Characters is Returned from play to your hand, Ready 1 Stash. |
 | Trash Baron | Salvage | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
 | HOA President | Stonewall | Freeze / Stall | **Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks. |
 | Backyard Wrestler | Expendable | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character; if you do, free-play another Character from hand with the same Cost or less. |
@@ -113,7 +114,7 @@ The source and taxonomy versions are **0.2-donut-rebuild**.
 
 A 30,000-game heuristic round robin after the card-flow/low-end pass averaged **8.64 Rounds** (median 8) and a **60.07% first-player win rate**. Game length improved dramatically without changing 25 Health. See `production/playtests/six-deck-lab/snapshot-revision-6-card-flow.md` for the full snapshot.
 
-Current priorities are Salvage efficiency, Expendable efficiency, Misdirection physical-play validation, and continued first-player monitoring. Rock Star now uses Comeback Tour, and HOA now uses Failure to Respond.
+Current priorities are Salvage efficiency, Misdirection physical-play validation, and continued first-player monitoring. Rock Star uses Comeback Tour, Magician uses Ace Up My Sleeve, and HOA uses Failure to Respond.
 
 ## Revision 7 targeted tuning
 
@@ -124,6 +125,21 @@ The current card pool is now **revision 7**. This pass intentionally leaves core
 - Salvage lost stacked card/economy value around Jerry-Rig while Trash Baron's opposing-unused-Stash identity remains intact.
 
 A new evasion/opposed-access mechanic is being held in the mechanic bank until this balance round is complete.
+
+## Revision 7 turn-order simulation
+
+A matched 30,000-game round robin using revision-7 cards and **Ace Up My Sleeve** produced:
+
+- **65.06%** first-player wins with no second-player setup bonus.
+- **54.98%** first-player wins when the second player always took the temporary setup Stash.
+- Average game length remained essentially unchanged in the same harness: **14.83 -> 14.80 Rounds**.
+- Magician with Ace Up My Sleeve reached **27.6%** in the heuristic model versus **21.3%** with the former Draw-on-Return passive under the same temporary-Stash condition.
+- Magician deck-out fell from **26.9%** with Draw-on-Return to **10.48%** with Ace Up My Sleeve.
+- Expendable fell substantially from the previous hot baseline after the revision-7 card changes, landing at **55.6%** in this harness.
+- Rock Star and Trash Baron remain the clearest hot decks for minor tuning.
+- Exact deck win rates remain simulator-sensitive, especially for Misdirection; human play is authoritative for feel and sequencing.
+
+See `production/playtests/six-deck-lab/snapshot-revision-7-turn-order.md`.
 
 ## Next validation work
 
