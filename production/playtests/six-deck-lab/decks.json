@@ -1,193 +1,244 @@
 {
-  "version": "six-deck-lab-1",
-  "card_pool": "0.1-donut.3",
-  "status": "Provisional playtest; rules and balance still under test",
+  "version": "six-deck-lab-2",
+  "card_pool": "0.2-donut-rebuild",
+  "date": "2026-09-28",
+  "status": "Mono-Style baseline decks for package and Leader validation; balance unverified.",
+  "rules": "September 28 production rules",
   "decks": [
     {
-      "name": "Hold My Entire Deck",
+      "name": "Bad Decisions",
       "leader": "Florida Man",
       "health": 25,
       "styles": [
-        "Reckless",
-        "Expendable"
+        "Reckless"
+      ],
+      "packages": [
+        "Damage Everywhere",
+        "Self-Damage / Damaged Characters"
       ],
       "cards": {
-        "P001": 2,
-        "P002": 2,
-        "P003": 2,
-        "P004": 2,
-        "P005": 2,
-        "P010": 2,
-        "P012": 2,
-        "P013": 2,
-        "P016": 2,
-        "P151": 2,
-        "P160": 2,
-        "P165": 2,
-        "P019": 2,
+        "P002": 4,
+        "P003": 3,
+        "P005": 4,
+        "P006": 2,
+        "P007": 2,
+        "P013": 4,
+        "P017": 3,
+        "P011": 2,
+        "P018": 2,
+        "P019": 3,
+        "P020": 2,
         "P022": 2,
-        "P025": 2,
+        "P023": 3,
         "P026": 2,
-        "P172": 2,
-        "P027": 2,
-        "P178": 2,
-        "P179": 2
-      }
+        "P027": 2
+      },
+      "mulligan_priority": [
+        "A 1–2 Cost play",
+        "A self-damage enabler",
+        "A damaged-state payoff"
+      ],
+      "watchpoints": [
+        "Does Florida Man create meaningful Sucker Punch decisions?",
+        "Is self-damage too easy to convert into upside?",
+        "Does Damage Everywhere matter without simply becoming burn?"
+      ]
     },
     {
-      "name": "One More Song",
+      "name": "Packed House",
       "leader": "Washed-Up Rock Star",
       "health": 25,
       "styles": [
-        "Momentum",
-        "Expendable"
+        "Momentum"
+      ],
+      "packages": [
+        "Chain / Acceleration",
+        "Low Hand"
       ],
       "cards": {
-        "P032": 2,
-        "P033": 2,
-        "P031": 2,
+        "P032": 4,
+        "P033": 4,
         "P037": 2,
-        "P043": 2,
-        "P040": 2,
+        "P043": 4,
         "P047": 2,
-        "P049": 2,
-        "P050": 2,
+        "P123": 4,
+        "P040": 2,
+        "P042": 2,
+        "P048": 2,
+        "P050": 3,
         "P052": 2,
-        "P053": 2,
+        "P053": 3,
+        "P054": 2,
         "P055": 2,
-        "P038": 2,
-        "P059": 2,
-        "P151": 2,
-        "P152": 2,
-        "P158": 2,
-        "P167": 2,
-        "P172": 2,
-        "P178": 2
-      }
+        "P059": 2
+      },
+      "mulligan_priority": [
+        "Guy Who Mows at 7 AM or Coupon Lady",
+        "A cheap Character",
+        "One More Song or Roll Call"
+      ],
+      "watchpoints": [
+        "How often does Packed House turn on naturally?",
+        "Can Low Hand function without feeling deliberately starved?",
+        "Do discounts create explosive but understandable turns?"
+      ]
     },
     {
-      "name": "Pick a Card, Any Card",
+      "name": "Now You See Me",
       "leader": "Birthday Party Magician",
       "health": 25,
       "styles": [
-        "Misdirection",
-        "Reckless"
+        "Misdirection"
+      ],
+      "packages": [
+        "Bounce / Return",
+        "Manipulation / Deception"
       ],
       "cards": {
-        "P062": 2,
-        "P063": 2,
-        "P065": 2,
-        "P066": 2,
-        "P067": 2,
-        "P074": 2,
-        "P071": 2,
-        "P076": 2,
-        "P079": 2,
-        "P080": 2,
-        "P081": 2,
+        "P063": 4,
+        "P066": 4,
+        "P089": 4,
+        "P061": 3,
+        "P067": 3,
+        "P077": 2,
+        "P064": 2,
+        "P080": 4,
+        "P081": 3,
+        "P082": 2,
+        "P084": 2,
         "P086": 2,
-        "P088": 2,
-        "P089": 2,
-        "P001": 2,
-        "P017": 2,
-        "P016": 2,
-        "P075": 2,
-        "P029": 2,
-        "P084": 2
-      }
+        "P079": 2,
+        "P087": 3
+      },
+      "mulligan_priority": [
+        "Rabbit, Off-Duty Clown, or Lady Who's Moving Out Again",
+        "A Return effect",
+        "Cheap Stash manipulation"
+      ],
+      "watchpoints": [
+        "Can damaged Bounce happen often enough to showcase the Leader?",
+        "Does Return create tempo without repeated non-games?",
+        "Are Stash manipulation decisions interesting enough to justify breaking Stash secrecy?"
+      ]
     },
     {
       "name": "Curbside Empire",
       "leader": "Trash Baron",
       "health": 25,
       "styles": [
-        "Salvage",
-        "Stonewall"
+        "Salvage"
+      ],
+      "packages": [
+        "Items / Jerry-Rig / Repurpose",
+        "Scrounge / Big Hand"
       ],
       "cards": {
-        "P094": 2,
-        "P097": 2,
-        "P103": 2,
-        "P104": 2,
-        "P105": 2,
+        "P094": 4,
+        "P095": 3,
+        "P092": 2,
+        "P093": 3,
+        "P105": 3,
+        "P107": 3,
         "P106": 2,
-        "P107": 2,
-        "P100": 2,
-        "P109": 2,
-        "P110": 2,
-        "P113": 2,
+        "P109": 4,
+        "P111": 3,
+        "P113": 3,
+        "P114": 2,
         "P117": 2,
+        "P118": 2,
         "P119": 2,
-        "P120": 2,
-        "P121": 2,
-        "P126": 2,
-        "P135": 2,
-        "P102": 2,
-        "P149": 2,
-        "P114": 2
-      }
+        "P120": 2
+      },
+      "mulligan_priority": [
+        "Dumpster Diver or Scrounge",
+        "At least one Jerry-Rig Item",
+        "An Item payoff Character"
+      ],
+      "watchpoints": [
+        "Is Jerry-Rig useful without becoming free permanent ramp?",
+        "Does Trash Baron create enough incentive to leave opposing Stash unspent?",
+        "Can Salvage reach Big Hand through scavenging rather than generic Draw?"
+      ]
     },
     {
-      "name": "Your Deck Violates the Bylaws",
+      "name": "Violation Notice",
       "leader": "HOA President",
       "health": 25,
       "styles": [
-        "Stonewall",
-        "Salvage"
+        "Stonewall"
+      ],
+      "packages": [
+        "Freeze / Stall",
+        "Reaction / Denial"
       ],
       "cards": {
-        "P121": 2,
-        "P122": 2,
-        "P123": 2,
-        "P124": 2,
-        "P125": 2,
+        "P124": 4,
+        "P126": 4,
+        "P121": 3,
+        "P122": 3,
         "P128": 2,
-        "P129": 2,
-        "P132": 2,
-        "P138": 2,
-        "P095": 2,
-        "P097": 2,
-        "P106": 2,
+        "P129": 3,
+        "P136": 2,
+        "P137": 2,
+        "P130": 1,
         "P139": 2,
-        "P141": 2,
         "P143": 2,
-        "P146": 2,
-        "P112": 2,
-        "P147": 2,
-        "P117": 2,
-        "P120": 2
-      }
+        "P140": 3,
+        "P141": 3,
+        "P083": 2,
+        "P148": 2,
+        "P149": 2
+      },
+      "mulligan_priority": [
+        "A 2 Cost defender",
+        "Mall Walker or HOA Enforcement Committee",
+        "A cheap interaction Action"
+      ],
+      "watchpoints": [
+        "Does HOA's Ready-step tax slow the game without locking it?",
+        "Is Absolutely Not worth holding 3 Stash open?",
+        "Can Stonewall answer threats while still advancing its own board?"
+      ]
     },
     {
-      "name": "Tables Are Optional",
+      "name": "Tag Team Trashfire",
       "leader": "Backyard Wrestler",
       "health": 25,
       "styles": [
-        "Expendable",
-        "Reckless"
+        "Expendable"
+      ],
+      "packages": [
+        "Sacrifice / Defeat Value",
+        "Recursion / Refuse to Stay Dead"
       ],
       "cards": {
-        "P151": 2,
-        "P152": 2,
-        "P153": 2,
-        "P158": 2,
-        "P159": 2,
-        "P164": 2,
+        "P151": 4,
+        "P165": 4,
+        "P158": 3,
         "P166": 2,
-        "P167": 2,
-        "P169": 2,
-        "P170": 2,
+        "P168": 2,
+        "P161": 3,
+        "P157": 2,
+        "P164": 2,
+        "P163": 2,
+        "P172": 4,
+        "P174": 3,
         "P171": 2,
-        "P172": 2,
         "P173": 2,
-        "P175": 2,
+        "P169": 1,
         "P178": 2,
-        "P160": 2,
-        "P001": 2,
-        "P002": 2,
-        "P019": 2,
-        "P023": 2
-      }
+        "P179": 2
+      },
+      "mulligan_priority": [
+        "A cheap Wrestler or sacrifice body",
+        "Backyard Wrestling Superfan",
+        "Tag Me In! or a sacrifice payoff"
+      ],
+      "watchpoints": [
+        "How often does the Leader's end-of-opponent-Turn Tag Out fire?",
+        "Are free same-or-lower-Cost replacements too efficient with On Play effects?",
+        "Does recursion feel distinct from Salvage and self-damage distinct from Reckless?"
+      ]
     }
   ]
 }
