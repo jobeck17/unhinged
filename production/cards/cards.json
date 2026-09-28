@@ -1,7 +1,7 @@
 {
-  "version": "0.1-donut.3",
-  "date": "2026-09-24",
-  "status": "Balance unverified; playtest revision, not final print text.",
+  "version": "0.2-donut-rebuild",
+  "date": "2026-09-28",
+  "status": "September 28 package rebuild in progress; balance unverified.",
   "cards": [
     {
       "id": "P001",
@@ -11,7 +11,7 @@
       "traits": [
         "Animal"
       ],
-      "text": "While attacking a Character with Guard 3 or more, this gets +2 Power.",
+      "text": "When this leaves play, deal 1 damage to the opposing Leader.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -50,9 +50,9 @@
         "Parent",
         "Daredevil"
       ],
-      "text": "Rotate: Deal 1 damage to another of your Characters. If it survives, it gets +2 Power this Round.",
+      "text": "When this enters play, you may deal 1 damage to one of your Characters.",
       "style": "Reckless",
-      "complexity": "activated",
+      "complexity": "on_play",
       "keywords": [],
       "power": 3,
       "guard": 4,
@@ -88,7 +88,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "Defiant. When this attacks, reveal the top card of your deck. If its Cost is 3 or more, this gets +3 Power for this Attack. Put the revealed card on the bottom of your deck.",
+      "text": "Defiant. While this Character has damage, it gets +2 Power.",
       "style": "Reckless",
       "complexity": "mixed",
       "keywords": [
@@ -108,7 +108,7 @@
       "cost": 4,
       "name": "Road Rage Ron",
       "traits": [],
-      "text": "While attacking a damaged Character, this gets +2 Power.",
+      "text": "While attacking a damaged Character, this gets +2 Power for that Attack.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -130,12 +130,12 @@
         "Scout",
         "Daredevil"
       ],
-      "text": "Rotate: Deal 1 damage to a Character. If it is one of your Daredevils, Draw a card, then Discard a card.",
+      "text": "When this enters play, deal 1 damage to a Character. If you dealt that damage to one of your Characters, it gets +1 Power this Turn.",
       "style": "Reckless",
-      "complexity": "activated",
+      "complexity": "on_play",
       "keywords": [],
-      "power": 3,
-      "guard": 3,
+      "power": 2,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
@@ -151,9 +151,9 @@
         "Pirate",
         "Criminal"
       ],
-      "text": "When this enters play, you may Dismiss one of your Items. If you do, Draw a card.",
+      "text": "When this attacks a damaged Character, deal 1 damage to that Character before combat damage.",
       "style": "Reckless",
-      "complexity": "on_play",
+      "complexity": "ongoing",
       "keywords": [],
       "power": 4,
       "guard": 5,
@@ -212,9 +212,9 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "Rotate, pay 1 Fuel: Deal 1 damage to every other Character.",
+      "text": "When this enters play, deal 1 damage to each other Character. Whenever another of your Characters is dealt damage and survives, deal 1 damage to an opposing Character.",
       "style": "Reckless",
-      "complexity": "activated",
+      "complexity": "mixed",
       "keywords": [],
       "power": 4,
       "guard": 6,
@@ -245,22 +245,22 @@
     {
       "id": "P013",
       "type": "Character",
-      "cost": 2,
-      "name": "Florida Man's Cousin",
+      "cost": 3,
+      "name": "Amateur Electrician",
       "traits": [
-        "Daredevil"
+        "Builder"
       ],
-      "text": "",
+      "text": "While this Character has damage, it gets +3 Power.",
       "style": "Reckless",
-      "complexity": "textless",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 2,
-      "guard": 3,
+      "power": 1,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The family keeps him off the news with a spelling change."
+      "flavor": "He watched most of a tutorial."
     },
     {
       "id": "P014",
@@ -270,11 +270,11 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "When this attacks, you may Rotate another of your Ready Characters. If you do, this gets +3 Power for this Attack.",
+      "text": "When this attacks, it gets +1 Power for this Attack for each other damaged Character you control.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 6,
+      "power": 5,
       "guard": 5,
       "audit_identity": [
         "Human"
@@ -290,11 +290,11 @@
       "traits": [
         "Builder"
       ],
-      "text": "Rotate, Dismiss one of your Items: One of your Characters gets +3 Power this Round.",
+      "text": "Damage dealt by your Items to opposing Characters is increased by 1.",
       "style": "Reckless",
-      "complexity": "activated",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
+      "power": 3,
       "guard": 5,
       "audit_identity": [
         "Human"
@@ -332,7 +332,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "When this enters play, you may deal 1 damage to your Leader. If you do, Draw a card, then Discard a card.",
+      "text": "When this enters play, you may deal 1 damage to this Character. If you do, Draw a card, then Discard a card.",
       "style": "Reckless",
       "complexity": "on_play",
       "keywords": [],
@@ -390,7 +390,7 @@
       "name": "Send It!",
       "stats": "",
       "traits": [],
-      "text": "One of your Characters gets +3 Power and -1 Guard this Round.",
+      "text": "Response — Before combat damage is dealt: One of your Characters gets +3 Power and -1 Guard for this combat.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -424,7 +424,7 @@
       "name": "No, I'm Fine",
       "stats": "",
       "traits": [],
-      "text": "Draw 2 cards. Deal 1 damage to your Leader.",
+      "text": "Draw 2 cards. Deal 1 damage to one of your Characters.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -475,7 +475,7 @@
       "name": "Floor It!",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Rotated Characters. Ready it and deal 2 damage to it. It gains Hothead this Round.",
+      "text": "Ready one of your Rotated Characters. Deal 2 damage to it.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -488,11 +488,11 @@
     {
       "id": "P026",
       "type": "Action",
-      "cost": 1,
+      "cost": 2,
       "name": "Walk It Off",
       "stats": "",
       "traits": [],
-      "text": "Heal 2 damage from a Character. Then you may deal 1 damage to it. If you do, Draw a card.",
+      "text": "Heal up to 2 damage from a Character. Draw a card for each damage healed this way. Then deal 1 damage to that Character.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -543,7 +543,7 @@
       "name": "Hot Potato",
       "stats": "",
       "traits": [],
-      "text": "When this enters play, place it beside the opposing Leader. Either player may Activate this while it is beside their Leader. Rotate one of your Ready Characters: Move this beside the other Leader. At end of Round, deal 1 damage to the Leader beside this, then Return this to its Owner's hand.",
+      "text": "When this enters play, place it beside the opposing Leader. At the end of each Turn, deal 1 damage to the Leader this is beside. Then that player may Rotate one of their Ready Characters. If they do, move this beside the other Leader.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -3376,5 +3376,5 @@
       "flavor": ""
     }
   ],
-  "revision": 4
+  "revision": 5
 }
