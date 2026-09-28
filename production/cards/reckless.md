@@ -1,6 +1,6 @@
 # Reckless / No Chill — Production Pool v0.2
 
-> Donut revision 5 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 6 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -13,7 +13,7 @@
 | P006 | Character | 4 | **Road Rage Ron** | 5/4 | — | While attacking a damaged Character, this gets +2 Power for that Attack. |
 | P007 | Character | 3 | **Scout With a Flare Gun** | 2/4 | Kid, Scout, Daredevil | When this enters play, deal 1 damage to a Character. If you dealt that damage to one of your Characters, it gets +1 Power this Turn. |
 | P008 | Character | 4 | **Pool Pirate** | 4/5 | Pirate, Criminal | When this attacks a damaged Character, deal 1 damage to that Character before combat damage. |
-| P009 | Character | 3 | **Pirate With No Exit Strategy** | 4/3 | Pirate, Criminal | — |
+| P009 | Character | 3 | **Pirate With No Exit Strategy** | 4/2 | Pirate, Criminal | When this Character Defeats another Character in combat, Draw a card. |
 | P010 | Character | 5 | **Guy Who Definitely Read the Instructions** | 7/5 | Daredevil | When this enters play, deal 2 damage to another of your Characters or to your Leader. |
 | P011 | Character | 5 | **Fourth of July Showrunner** | 4/6 | Daredevil | When this enters play, deal 1 damage to each other Character. Whenever another of your Characters is dealt damage and survives, deal 1 damage to an opposing Character. |
 | P012 | Character | 3 | **Giga Chad** | 4/4 | — | — |
