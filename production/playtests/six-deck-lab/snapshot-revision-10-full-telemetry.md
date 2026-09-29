@@ -15,40 +15,40 @@
 - Per-round state is sampled at the end of completed Rounds; later rows have survivorship bias, so n is shown.
 
 ## Overall
-- First-player win rate: **33.54%**
-- Average game length: **24.3 Rounds**
-- Median game length: **17 Rounds**
+- First-player win rate: **46.79%**
+- Average game length: **8.38 Rounds**
+- Median game length: **8 Rounds**
 - Censored games: **0**
 
 ## Deck summary
 
 | Leader | Win % | Avg Rounds | Extra Draw | Own Returns | Opp Returns | Leader dmg | Attacks | Blocks | Cards played | Deck-out % |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Florida Man | 17.91 | 25.49 | 1.48 | 0 | 0 | 49.187 | 16.41 | 1.741 | 6.393 | 25.8 |
-| Washed-Up Rock Star | 35.97 | 25.93 | 9.83 | 0 | 0 | 41.202 | 16.653 | 3.401 | 13.953 | 36.2 |
-| Birthday Party Magician | 34.41 | 23.8 | 5.24 | 3.124 | 0.094 | 18.303 | 9.573 | 2.81 | 12.289 | 25.01 |
-| Trash Baron | 54.39 | 22.96 | 2.343 | 0 | 0 | 29.871 | 14.338 | 1.955 | 8.621 | 24.24 |
-| HOA President | 74.3 | 23.64 | 2.063 | 0 | 0 | 17.764 | 8.63 | 2.64 | 5.922 | 13.05 |
-| Backyard Wrestler | 83.02 | 23.98 | 1.707 | 0.253 | 0 | 15.848 | 11.422 | 2.157 | 8.093 | 17.03 |
+| Florida Man | 57.09 | 8.52 | 1.461 | 0 | 0 | 16.604 | 10.393 | 1.573 | 6.301 | 0.02 |
+| Washed-Up Rock Star | 72.64 | 8.01 | 9.763 | 0 | 0 | 19.891 | 11.298 | 2.941 | 13.683 | 6.84 |
+| Birthday Party Magician | 32.2 | 8.75 | 4.268 | 2.665 | 0.08 | 9.896 | 6.955 | 2.754 | 10.688 | 2.11 |
+| Trash Baron | 65.41 | 8.34 | 2.32 | 0 | 0 | 18.421 | 11.03 | 1.875 | 8.553 | 0.09 |
+| HOA President | 26.06 | 8.07 | 1.855 | 0 | 0 | 8.559 | 5.534 | 2.6 | 5.082 | 0.2 |
+| Backyard Wrestler | 46.6 | 8.61 | 1.661 | 0.253 | 0 | 13.483 | 9.938 | 2.152 | 7.889 | 0.06 |
 
 ## Matchups
 | Deck A | Deck B | A win % | B win % |
 | --- | --- | ---: | ---: |
-| Florida Man | Washed-Up Rock Star | 8.4 | 91.5 |
-| Florida Man | Birthday Party Magician | 23.1 | 76.8 |
-| Florida Man | Trash Baron | 25.3 | 74.8 |
-| Florida Man | HOA President | 14.6 | 85.5 |
-| Florida Man | Backyard Wrestler | 18.1 | 81.8 |
-| Washed-Up Rock Star | Birthday Party Magician | 33.4 | 66.6 |
-| Washed-Up Rock Star | Trash Baron | 23.3 | 76.7 |
-| Washed-Up Rock Star | HOA President | 9.4 | 90.5 |
-| Washed-Up Rock Star | Backyard Wrestler | 22.1 | 77.8 |
-| Birthday Party Magician | Trash Baron | 8.3 | 91.7 |
-| Birthday Party Magician | HOA President | 9.2 | 90.8 |
-| Birthday Party Magician | Backyard Wrestler | 11.2 | 88.8 |
-| Trash Baron | HOA President | 7 | 93 |
-| Trash Baron | Backyard Wrestler | 21.9 | 78.2 |
-| HOA President | Backyard Wrestler | 11.6 | 88.4 |
+| Florida Man | Washed-Up Rock Star | 37.5 | 62.5 |
+| Florida Man | Birthday Party Magician | 62.3 | 37.7 |
+| Florida Man | Trash Baron | 43.3 | 56.8 |
+| Florida Man | HOA President | 78.2 | 21.9 |
+| Florida Man | Backyard Wrestler | 64.3 | 35.8 |
+| Washed-Up Rock Star | Birthday Party Magician | 92.6 | 7.4 |
+| Washed-Up Rock Star | Trash Baron | 47.2 | 52.8 |
+| Washed-Up Rock Star | HOA President | 93 | 7 |
+| Washed-Up Rock Star | Backyard Wrestler | 67.9 | 32.1 |
+| Birthday Party Magician | Trash Baron | 20.5 | 79.5 |
+| Birthday Party Magician | HOA President | 62 | 38 |
+| Birthday Party Magician | Backyard Wrestler | 33.4 | 66.7 |
+| Trash Baron | HOA President | 77.2 | 22.9 |
+| Trash Baron | Backyard Wrestler | 60.9 | 39.1 |
+| HOA President | Backyard Wrestler | 40.6 | 59.4 |
 
 ## Magician per-round telemetry
 | Round | n | Mag HP | Opp HP | Mag hand | Opp hand | Mag chars | Opp chars | Mag items | Opp items | Mag in play | Opp in play | Mag Stash | Opp Stash | Mag deck | Opp deck |
