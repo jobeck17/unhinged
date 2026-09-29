@@ -1,6 +1,6 @@
 # Donut Card List
 
-> Donut revision 8 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 9 · 2026-09-28 · Working playtest text; balance is unverified.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
 
@@ -76,7 +76,7 @@
 | P068 | Social Media Grifter | Misdirection | Character | 4 | 4/3 | Criminal | On play |
 | P069 | Conspiracy Blogger | Misdirection | Character | 4 | 3/5 | — | Single ongoing ability |
 | P070 | Tech Bro | Misdirection | Character | 3 | 4/2 | — | Single ongoing ability |
-| P071 | Coupon Scammer | Misdirection | Character | 2 | 3/2 | Criminal | Textless |
+| P071 | Trapdoor Assistant | Misdirection | Character | 3 | 1/1 | Magician | On play |
 | P072 | Neighborhood Group Admin | Stonewall | Character | 4 | 3/7 | HOA | Single ongoing ability |
 | P073 | IT Guy Who Quit Six Months Ago | Misdirection | Character | 5 | 4/6 | Hacker | Multiple abilities |
 | P074 | Identity Thief | Misdirection | Character | 5 | 5/5 | Criminal | On play |
@@ -95,7 +95,7 @@
 | P087 | Burner Phone | Misdirection | Item | 1 | — | — | — |
 | P088 | Marked Deck | Misdirection | Item | 2 | — | — | — |
 | P089 | Lady Who's Moving Out Again | Misdirection | Character | 3 | 3/5 | — | Multiple abilities |
-| P090 | Spoofed Keycard | Misdirection | Item | 3 | — | — | — |
+| P090 | Poof! | Misdirection | Action | 2 | — | — | — |
 | P091 | Scout Troop Quartermaster | Salvage | Character | 2 | 3/2 | Scout, Scavenger | Single ongoing ability |
 | P092 | Guy Fixing His Trans Am | Salvage | Character | 6 | 4/7 | Builder, Scavenger | Multiple abilities |
 | P093 | Garage Inventor | Salvage | Character | 4 | 3/5 | Builder | Single ongoing ability |
