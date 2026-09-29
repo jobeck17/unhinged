@@ -1,7 +1,7 @@
 {
   "version": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Revision 8 targeted economy tuning: Jerry-Rig reduced to two Salvage Items; revision-7 combat and turn-order changes remain in place.",
+  "status": "Revision 9 Misdirection pressure pass: adds replayable opposing bounce and a one-shot unblockable attack line; revision-8 Jerry-Rig tuning remains.",
   "cards": [
     {
       "id": "P001",
@@ -1326,22 +1326,22 @@
     {
       "id": "P071",
       "type": "Character",
-      "cost": 2,
-      "name": "Coupon Scammer",
+      "cost": 3,
+      "name": "Trapdoor Assistant",
       "traits": [
-        "Criminal"
+        "Magician"
       ],
-      "text": "",
+      "text": "When this enters play, you may Return an opposing Character costing 3 or less to its owner's hand.",
       "style": "Misdirection",
-      "complexity": "textless",
+      "complexity": "on_play",
       "keywords": [],
-      "power": 3,
-      "guard": 2,
+      "power": 1,
+      "guard": 1,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The expiration date is more of a suggestion."
+      "flavor": "Nobody saw where the floor went."
     },
     {
       "id": "P072",
@@ -1678,12 +1678,12 @@
     },
     {
       "id": "P090",
-      "type": "Item",
-      "cost": 3,
-      "name": "Spoofed Keycard",
+      "type": "Action",
+      "cost": 2,
+      "name": "Poof!",
       "stats": "",
       "traits": [],
-      "text": "Rotate: An opposing Character cannot Block this Turn. If you have a Criminal or Pirate in play, it also gets -1 Power this Turn.",
+      "text": "Choose one of your Characters. The next time it attacks a Leader this Turn, that Attack cannot be Blocked. After that Attack, Return that Character to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1691,7 +1691,7 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "Now you see me. Now you owe me a new tablecloth."
     },
     {
       "id": "P091",
@@ -3370,5 +3370,5 @@
       "flavor": ""
     }
   ],
-  "revision": 8
+  "revision": 9
 }
