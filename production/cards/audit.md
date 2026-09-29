@@ -1,4 +1,4 @@
-# Donut Revision 9 — Content Audit
+# Donut Revision 10 — Content Audit
 
 > Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.
 
@@ -40,10 +40,11 @@
 
 **4 Actions currently use Response timing:** P020 Send It!, P081 Look Over There!, P141 Absolutely Not, P169 Take One for the Team.
 
-## Revision 9 tuning focus
+## Revision 10 rollback baseline
 
-- **Trapdoor Assistant** replaces the textless Coupon Scammer slot as a 3-Cost 1/1 Magician that Returns an opposing Character costing 3 or less when it enters play.
-- **Poof!** replaces Spoofed Keycard as a 2-Cost Action that makes one Leader Attack unblockable, then Returns the attacker to hand after the Attack.
-- The mono-Misdirection baseline now runs 3 Trapdoor Assistants and 2 Poof! copies, replacing Tech Bro and two Marked Deck copies.
-- The goal is to let Misdirection narrow opposing boards and convert its tempo into Leader damage rather than merely accumulating bounce/card advantage.
+- The revision-9 Trapdoor Assistant and Poof! experiment is rolled back.
+- **P071 Coupon Scammer** returns as the 2-Cost 3/2 textless Misdirection Character.
+- **P090 Spoofed Keycard** returns as the 3-Cost Misdirection Item that prevents one opposing Character from Blocking this Turn.
+- The mono-Misdirection deck is restored exactly to its revision-8 list.
 - Revision-8 Jerry-Rig tuning remains in place.
+- The next Magician changes should be driven by full telemetry rather than win-rate-only simulation.
