@@ -1,7 +1,7 @@
 {
   "version": "0.2-donut-rebuild",
   "date": "2026-09-29",
-  "status": "Revision 11 baseline: School Bully gains Hothead; revision-8 Jerry-Rig tuning, Ace Up My Sleeve, Failure to Respond, Comeback Tour, and second-player temporary Stash remain.",
+  "status": "Revision 12 baseline: Rock Star hand-gated low-hand package, cross-Style Return counterplay, HOA Rotated-board return, Stash-scaled Tag Out, and revision-11 School Bully Hothead.",
   "cards": [
     {
       "id": "P001",
@@ -441,7 +441,7 @@
       "name": "Fireworks Incident",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters and an opposing Character. Deal 2 damage to each. If your Character survives, Draw a card, then Discard a card.",
+      "text": "Choose one of your Characters and an opposing Character. Deal 2 damage to each. If your Character survives, Draw a card, then Discard a card. If the opposing Character survives, Return it to its owner's hand.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -613,17 +613,17 @@
     {
       "id": "P033",
       "type": "Character",
-      "cost": 2,
+      "cost": 3,
       "name": "Karaoke Champion",
       "traits": [
         "Musician"
       ],
-      "text": "While you have 2 or fewer cards in hand, this gets +2 Power.",
+      "text": "While you have 2 or fewer cards in hand, this gets +3 Power.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 2,
-      "guard": 3,
+      "power": 0,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
@@ -715,19 +715,19 @@
       "id": "P038",
       "type": "Character",
       "cost": 3,
-      "name": "Mike",
+      "name": "One-Hit Wonder",
       "traits": [],
-      "text": "",
+      "text": "While you have no cards in hand, this gets +4 Power.",
       "style": "Momentum",
-      "complexity": "textless",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 2,
+      "power": 0,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Mike."
+      "flavor": "Still waiting on the second hit."
     },
     {
       "id": "P039",
@@ -806,7 +806,7 @@
     {
       "id": "P043",
       "type": "Character",
-      "cost": 2,
+      "cost": 3,
       "name": "Guy Who Mows at 7 AM",
       "traits": [],
       "text": "When this enters play, you may Stash an additional card from your hand.",
@@ -925,7 +925,7 @@
       "name": "Reply All",
       "stats": "",
       "traits": [],
-      "text": "Each player Draws a card. Then Draw a card.",
+      "text": "Each player Draws a card.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1112,7 +1112,7 @@
       "name": "Starter Kit",
       "stats": "",
       "traits": [],
-      "text": "When this enters play, Draw a card. Dismiss this: Your next Character this Turn costs 1 less.",
+      "text": "Dismiss this: Your next Character this Turn costs 1 less.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -2177,7 +2177,7 @@
       "name": "Good as New",
       "stats": "",
       "traits": [],
-      "text": "Choose a damaged Character. Heal all damage from it, then Rotate it.",
+      "text": "Choose a damaged Character. If you control it, heal all damage from it, then Rotate it. Otherwise, Return it to its owner's hand.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2640,7 +2640,7 @@
       "name": "Absolutely Not",
       "stats": "",
       "traits": [],
-      "text": "Response — When an opponent plays an Action: Cancel that Action.",
+      "text": "Return all Rotated Characters and Items in play to their owners' hands.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -3207,7 +3207,7 @@
       "name": "Worth It",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character.",
+      "text": "Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character. If that Character survives, Return it to its owner's hand.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3371,5 +3371,5 @@
       "flavor": ""
     }
   ],
-  "revision": 11
+  "revision": 12
 }
