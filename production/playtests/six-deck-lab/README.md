@@ -7,6 +7,8 @@ This is the **revision 10 mono-Style baseline** for the rebuilt 0.2 Donut card p
 - [Current six Leader passives](leaders.md)
 - [Revision 6 simulation snapshot](snapshot-revision-6-card-flow.md)
 - [Revision 7 turn-order / Ace Up My Sleeve snapshot](snapshot-revision-7-turn-order.md)
+- [Revision 10 full telemetry snapshot](snapshot-revision-10-full-telemetry.md)
+- [Revision 10 full telemetry JSON](snapshot-revision-10-full-telemetry.json)
 
 ## Current test conditions
 
@@ -30,3 +32,7 @@ Current tuning priorities:
 4. Use full per-round telemetry to diagnose why Misdirection struggles to convert bounce/card flow into Leader pressure.
 
 Dual-Style testing comes after these mono baselines stabilize.
+
+## Simulation correction
+
+Revision 10 found a winner-index bug in the older heuristic harness: player index 0 was falsey in a loop condition, so some older win-rate and turn-order numbers are not authoritative. Use the corrected revision-10 telemetry harness for current balance work. The historical snapshots remain for design history only.
