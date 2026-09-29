@@ -1,6 +1,6 @@
 # Salvage / Good Enough — Production Pool v0.2
 
-> Donut revision 8 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 11 · 2026-09-29 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
