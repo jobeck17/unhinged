@@ -150,6 +150,15 @@ Trash Baron remains unchanged. Jerry-Rig density is reduced from four Salvage It
 
 This specifically targets Salvage's excess economy rather than the Leader's opposing-unused-Stash identity.
 
+## Revision 9 Misdirection pressure pass
+
+Misdirection receives two targeted pressure tools:
+
+- **Trapdoor Assistant** — 3-Cost 1/1 Magician; on entry may Return an opposing Character costing 3 or less.
+- **Poof!** — 2-Cost Action; makes one Leader Attack unblockable, then Returns that attacker to hand after the Attack.
+
+The mono-Misdirection baseline replaces Tech Bro and two Marked Deck copies with these tools. The purpose is to test whether Magician's low win rate comes from failing to convert Bounce into Leader pressure rather than from insufficient card advantage.
+
 ## Next validation work
 
 1. Build six 40-card mono-Style test decks from the rebuilt pool.
