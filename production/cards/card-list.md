@@ -1,6 +1,6 @@
 # Donut Card List
 
-> Donut revision 11 · 2026-09-29 · Working playtest text; balance is unverified.
+> Donut revision 12 · 2026-09-29 · Working playtest text; balance is unverified.
 
 180 deck cards; Leaders are outside this count. The six Style sheets contain complete card text.
 
@@ -38,17 +38,17 @@
 | P030 | Homemade Launch Ramp | Reckless | Item | 2 | — | — | — |
 | P031 | Wedding Cover Band | Momentum | Character | 4 | 5/5 | Musician | Textless |
 | P032 | Wedding DJ | Momentum | Character | 2 | 2/3 | Musician | Single ongoing ability |
-| P033 | Karaoke Champion | Momentum | Character | 2 | 2/3 | Musician | Single ongoing ability |
+| P033 | Karaoke Champion | Momentum | Character | 3 | 0/4 | Musician | Single ongoing ability |
 | P034 | Jam Band Hippie | Momentum | Character | 4 | 3/6 | Musician | Single ongoing ability |
 | P035 | Youth Pastor With a Guitar | Momentum | Character | 3 | 4/2 | Musician | On play |
 | P036 | Stage Mom | Momentum | Character | 4 | 3/5 | Parent | Multiple abilities |
 | P037 | Reunion Tour Drummer | Momentum | Character | 3 | 4/3 | Undead, Musician | Single ongoing ability |
-| P038 | Mike | Momentum | Character | 3 | 4/2 | — | Textless |
+| P038 | One-Hit Wonder | Momentum | Character | 3 | 0/3 | — | Single ongoing ability |
 | P039 | Social Media Influencer | Misdirection | Character | 4 | 3/5 | — | Multiple abilities |
 | P040 | Boss Babe | Momentum | Character | 5 | 4/6 | — | On play |
 | P041 | Overenthusiastic Softball Mom | Momentum | Character | 5 | 4/6 | Parent | Multiple abilities |
 | P042 | Peaked in High School | Momentum | Character | 5 | 5/6 | — | Single ongoing ability |
-| P043 | Guy Who Mows at 7 AM | Momentum | Character | 2 | 2/3 | — | On play |
+| P043 | Guy Who Mows at 7 AM | Momentum | Character | 3 | 2/3 | — | On play |
 | P044 | Clown Who Booked the Wrong Gig | Momentum | Character | 3 | 4/4 | Clown | Textless |
 | P045 | Basic White Girl | Momentum | Character | 2 | 2/4 | — | Textless |
 | P046 | Single Dad | Momentum | Character | 3 | 3/4 | Parent | On play |
@@ -165,7 +165,7 @@
 | P157 | Fireworks Technician | Expendable | Character | 3 | 3/3 | Daredevil | Single ongoing ability |
 | P158 | Patio-Table Prodigy | Expendable | Character | 2 | 3/1 | Wrestler, Daredevil | Single ongoing ability |
 | P159 | Rabid Rat | Expendable | Character | 2 | 2/2 | Animal, Rat | Single ongoing ability |
-| P160 | Gym Selfie Guy | Expendable | Character | 4 | 3/7 | — | Textless |
+| P160 | Gym Selfie Guy (also: Gym Bro) | Expendable | Character | 4 | 3/7 | — | Textless |
 | P161 | Zombie Mall Walker | Expendable | Character | 4 | 3/5 | Undead | Single ongoing ability |
 | P162 | Guy Who Cut the Wrong Wire | Expendable | Character | 5 | 6/5 | Daredevil | Textless |
 | P163 | Dumpster Phoenix | Expendable | Character | 6 | 5/6 | Animal, Undead, Scavenger | Single ongoing ability |
