@@ -6,6 +6,10 @@
 **Deck set:** six-deck-lab-7  
 **Censored at 60 Rounds:** 0
 
+## Harness correction
+
+This run fixes a winner-index truthiness bug discovered in the older heuristic harness. Historical exact win-rate and turn-order results from older snapshots are not directly authoritative. This corrected run supersedes them for current baseline analysis.
+
 ## Conditions
 - Magician restored to the pre-revision-9 list.
 - War winner skips the first Draw.
