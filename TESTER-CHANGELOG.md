@@ -396,3 +396,16 @@ Choose one of your Characters. The next time it attacks a Leader this Turn, that
 This gives the deck a direct way to convert tempo into Leader damage while also feeding its Return synergies.
 
 The mono-Misdirection baseline now runs 3 Trapdoor Assistants and 2 Poof!, replacing 3 Tech Bro and 2 Marked Deck copies.
+
+## Revision 10 Magician rollback
+
+The revision-9 Misdirection pressure experiment is rolled back after simulation showed that Trapdoor Assistant + Poof! did not improve Magician's ability to close games.
+
+Magician returns to the revision-8 card pool and 40-card deck:
+- Coupon Scammer returns.
+- Spoofed Keycard returns.
+- Tech Bro returns to the mono deck.
+- Marked Deck returns to 3 copies.
+- Trapdoor Assistant and Poof! are no longer active production cards.
+
+Revision-8 Jerry-Rig tuning and the second-player temporary-Stash rule remain active.
