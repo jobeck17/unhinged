@@ -1,6 +1,6 @@
 # Unhinged Tester Changelog — Donut Duel → Revision 7
 
-**Current playtest baseline: September 28, 2026**
+**Current playtest baseline: September 29, 2026 · Revision 11**
 
 If you previously tested **Donut Duel**, use this changelog as the quick guide to what has changed. Current production rules and card text override older playtest packets.
 
@@ -409,3 +409,16 @@ Magician returns to the revision-8 card pool and 40-card deck:
 - Trapdoor Assistant and Poof! are no longer active production cards.
 
 Revision-8 Jerry-Rig tuning and the second-player temporary-Stash rule remain active.
+
+## Revision 11 School Bully Hothead
+
+**School Bully** now reads:
+
+**3 Cost · 4/2 · Kid**  
+**Hothead. Sucker Punch. Chicken.**
+
+No other production card text changed from revision 10.
+
+A corrected 30,000-game paired A/B moved Magician from **32.20% to 45.90%** in the heuristic model. Magician attacks rose from **6.96 to 8.85 per game** and Leader damage from **9.90 to 13.19**, while extra Draws and Ace triggers stayed effectively flat.
+
+The revision-11 full-field model now shows a pronounced matchup structure. Rock Star and Trash Baron are broadly strong, HOA is broadly weak, and Magician is strongly favored into HOA but heavily unfavored into Rock Star.
