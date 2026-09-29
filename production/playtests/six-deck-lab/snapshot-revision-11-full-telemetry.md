@@ -53,7 +53,7 @@ Each cell is the **row deck's win rate against the column deck**.
 ## Current matchup read
 
 - **Rock Star** is broadly strong, not merely a Magician counter. It beats Florida, Magician, HOA, and Wrestler, while losing narrowly to Trash Baron.
-- **Trash Baron** is also broadly strong and beats every deck except Rock Star.
+- **Trash Baron** is currently favored into all five other mono-Style decks, including a narrow **52.8% to 47.2%** edge over Rock Star.
 - **Magician** now has a pronounced counter profile: favored into Florida and HOA, close but unfavored into Wrestler, unfavored into Trash Baron, and extremely weak into Rock Star.
 - **HOA** is broadly weak in the current heuristic field rather than simply having one bad counter.
 - Aggregate win rate should not be the sole tuning target. Pairwise matchup shape is important for preserving a counter-driven meta.
