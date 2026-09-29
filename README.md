@@ -6,7 +6,7 @@ Unhinged is a leader-centered card game in development. This repository is the w
 
 | Need | File | Status |
 | --- | --- | --- |
-| Current decisions and open questions | [Latest checkpoint](docs/current-state-2026-09-28.md) | Latest dated checkpoint |
+| Current decisions and open questions | [Latest checkpoint](docs/current-state-2026-09-29.md) | Latest dated checkpoint |
 | Current 180-card roster, Traits, and keywords | [Donut card workshop](production/cards/README.md) | Revision 5; rebuilt 180-card pool and generated sheets |
 | Rules for the next paper playtest | [Production rules](production/rules/unhinged-rules.md) | Current consolidated rulebook |
 | Documentation map | [Docs index](docs/README.md) | Where current, historical, legacy, and speculative material belongs |
@@ -18,7 +18,7 @@ Unhinged is a leader-centered card game in development. This repository is the w
 | Original 180-card Alpha 0.03 pool | [Pool status](docs/card-pool/README.md) | Historical data; superseded by Donut |
 | Next rules prototype | [Donut](prototypes/README.md) | Planned successor to Mongo |
 
-When a newer checkpoint deliberately changes an older one, the newer checkpoint wins. The production rulebook consolidates the current playable core. The September 28 checkpoint records the rebuilt rules/card architecture and current playtest baseline. The old pool and browser simulator do **not** override current rules. See the [documentation map](docs/README.md) when deciding where a new note belongs.
+When a newer checkpoint deliberately changes an older one, the newer checkpoint wins. The production rulebook consolidates the current playable core. The September 29 checkpoint records the rebuilt rules/card architecture and revision-11 playtest baseline. The old pool and browser simulator do **not** override current rules. See the [documentation map](docs/README.md) when deciding where a new note belongs.
 
 ## Current playable foundation
 
