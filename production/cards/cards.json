@@ -1,7 +1,7 @@
 {
   "version": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Revision 9 Misdirection pressure pass: adds replayable opposing bounce and a one-shot unblockable attack line; revision-8 Jerry-Rig tuning remains.",
+  "status": "Revision 10 baseline: Magician rolled back to the pre-revision-9 build; revision-8 Jerry-Rig tuning and turn-order rules remain.",
   "cards": [
     {
       "id": "P001",
@@ -3370,5 +3370,5 @@
       "flavor": ""
     }
   ],
-  "revision": 9
+  "revision": 10
 }
