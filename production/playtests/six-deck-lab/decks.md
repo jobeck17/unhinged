@@ -1,6 +1,6 @@
 # Six mono-Style 40-card baseline decks
 
-> **Revision 9 targeted-tuning baseline.** First player skips their first Draw. Second player may begin with temporary Stash. Rock Star uses Comeback Tour. Magician uses Ace Up My Sleeve. HOA uses Failure to Respond.
+> **Revision 10 telemetry baseline.** Magician is restored to the pre-revision-9 list. First player skips their first Draw; second player may begin with temporary Stash.
 
 ## Florida Man — Bad Decisions
 
@@ -65,18 +65,17 @@
 | 4 | 1 | Character | Birthday Kid Who Knows the Trick (P062) |
 | 2 | 1 | Item | Burner Phone (P087) |
 | 4 | 2 | Action | Now You See Me (P080) |
-| 2 | 2 | Action | Poof! (P090) |
 | 2 | 2 | Action | Wrong Address (P082) |
 | 4 | 2 | Character | Magician's Assistant (P061) |
-| 1 | 2 | Item | Marked Deck (P088) |
+| 3 | 2 | Item | Marked Deck (P088) |
 | 2 | 3 | Action | Pick a Card (P079) |
 | 4 | 3 | Character | Escape Artist (P065) |
 | 3 | 3 | Character | Lady Who's Moving Out Again (P089) |
 | 4 | 3 | Character | Rabbit (P063) |
 | 3 | 3 | Character | School Bully (P067) |
-| 3 | 3 | Character | Trapdoor Assistant (P071) |
+| 3 | 3 | Character | Tech Bro (P070) |
 
-**Type mix:** 25 Characters / 12 Actions / 3 Items  
+**Type mix:** 25 Characters / 10 Actions / 5 Items  
 **Curve:** 1: 8 · 2: 13 · 3: 19  
 **Average Cost:** 2.27
 
