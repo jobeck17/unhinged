@@ -46,3 +46,7 @@ production/
 3. Run the controlled first-player Draw versus skip-first-Draw test with no other rule changes.
 4. Build and test dual-Style combinations after the mono baselines function.
 5. Tune Costs, Power, Guard, and package density before freezing card text or producing print layouts.
+
+## Revision 11 baseline
+
+School Bully now has **Hothead. Sucker Punch. Chicken.** The authoritative mono-Style simulation baseline is in `playtests/six-deck-lab/snapshot-revision-11-full-telemetry.md` and its JSON companion.
