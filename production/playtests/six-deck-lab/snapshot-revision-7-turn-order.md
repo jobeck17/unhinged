@@ -1,3 +1,5 @@
+> **Historical simulator warning, September 29, 2026:** Revision 10 discovered a winner-index truthiness bug in the older heuristic harness. Exact win rates and first-player percentages in this snapshot are retained for history but are **not authoritative**. Use `snapshot-revision-10-full-telemetry.md` for the corrected current baseline.
+
 # Revision 7 Turn-Order + Ace Up My Sleeve Snapshot
 
 **Date:** September 28, 2026  
