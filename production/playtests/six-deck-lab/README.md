@@ -1,6 +1,6 @@
 # Six-deck lab
 
-This is the **revision 11 mono-Style baseline** for the rebuilt 0.2 Donut card pool.
+This is the **revision 12 mono-Style baseline** for the rebuilt 0.2 Donut card pool.
 
 - [All six 40-card lists](decks.md)
 - [Structured deck data](decks.json)
@@ -11,6 +11,8 @@ This is the **revision 11 mono-Style baseline** for the rebuilt 0.2 Donut card p
 - [Revision 10 full telemetry JSON](snapshot-revision-10-full-telemetry.json)
 - [Revision 11 full telemetry baseline](snapshot-revision-11-full-telemetry.md)
 - [Revision 11 full telemetry JSON](snapshot-revision-11-full-telemetry.json)
+- [Revision 12 matchup baseline](snapshot-revision-12-matchup-baseline.md)
+- [Revision 12 matchup JSON](snapshot-revision-12-matchup-baseline.json)
 
 ## Current test conditions
 
@@ -18,9 +20,9 @@ This is the **revision 11 mono-Style baseline** for the rebuilt 0.2 Donut card p
 - After mulligans, the second player may put the top card of their deck face up and Rotated into Stash as optional temporary Stash.
 - Birthday Party Magician uses **Ace Up My Sleeve**: once during your Turn, when one of your Characters Returns from play to hand, Ready 1 Stash.
 - HOA President uses **Failure to Respond**: beginning in Round 8, opposing Characters cannot Block HOA's Attacks.
-- Revision 11 keeps the revision-8 economy changes and adds **Hothead** to School Bully after a corrected one-variable 30,000-game A/B.
+- Revision 12 keeps School Bully Hothead and adds Rock Star's hand-gated Comeback Tour package, HOA's symmetric Rotated-board Return Action, cross-Style Return counterplay, and Wrestler's Stash-scaled Tag Out.
 
-The corrected revision-11 harness measures **47.11% first-player wins**, **8.49 average Rounds**, and an **8-Round median** with the temporary-Stash setup. Exact win rates remain heuristic; paired A/B changes, pacing, economy, hand-size, and matchup topology are the strongest simulation signals.
+Revision 12's matchup baseline reuses the ten unchanged pairings from the corrected full-field test and reruns the five Wrestler pairings with the corrected 'during your Turn' Tag Out timing. Exact win rates remain heuristic; paired A/B changes, pacing, economy, hand-size, and matchup topology are the strongest simulation signals.
 
 ## Why mono-Style first
 
