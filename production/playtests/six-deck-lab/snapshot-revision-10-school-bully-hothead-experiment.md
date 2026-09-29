@@ -7,14 +7,14 @@ School Bully is treated as:
 > **3 Cost · 4/2**  
 > **Hothead. Sucker Punch. Chicken.**
 
-All other revision-10 rules, cards, decks, seeds, and the second-player temporary-Stash setup are unchanged.
+This corrected run preserves the original revision-10 AI play priorities. Hothead is the only experimental variable.
 
 ## Run
 
 - 30,000 games
-- 1,000 games per starting order for each of the 15 unordered matchups
+- Same deterministic seeds as the corrected revision-10 baseline
+- 1,000 games per starting order for each of 15 unordered matchups
 - Corrected winner handling
-- 60-round safety cap
 - Censored games: **0**
 
 ## Overall
@@ -22,35 +22,35 @@ All other revision-10 rules, cards, decks, seeds, and the second-player temporar
 | Metric | Rev 10 baseline | Bully Hothead | Delta |
 | --- | ---: | ---: | ---: |
 | First-player win % | 46.79 | 47.11 | +0.32 |
-| Avg Rounds | 8.38 | 8.47 | +0.09 |
+| Avg Rounds | 8.38 | 8.49 | +0.11 |
 | Median Rounds | 8 | 8 | — |
 
 ## Magician A/B
 
 | Metric | Baseline | Bully Hothead | Delta |
 | --- | ---: | ---: | ---: |
-| Win % | 32.2 | 51.84 | 19.64 |
-| Attacks/game | 6.955 | 9.672 | 2.717 |
-| Leader attacks/game | 4.966 | 6.413 | 1.447 |
-| Direct attacks/game | 1.989 | 3.259 | 1.270 |
-| Leader damage/game | 9.896 | 14.635 | 4.739 |
-| Blocks/game | 2.754 | 1.85 | -0.904 |
-| Characters defeated/game | 5.444 | 4.426 | -1.018 |
-| Own Returns/game | 2.665 | 3.579 | 0.914 |
-| Opp Returns/game | 0.08 | 0.076 | -0.004 |
-| Extra Draw/game | 4.268 | 3.511 | -0.757 |
-| Ace triggers/game | 1.678 | 1.641 | -0.037 |
-| Deck-out % | 2.11 | 0.4 | -1.71 |
+| Win % | 32.2 | 45.9 | 13.70 |
+| Attacks/game | 6.955 | 8.852 | 1.897 |
+| Leader attacks/game | 4.966 | 5.981 | 1.015 |
+| Direct attacks/game | 1.989 | 2.871 | 0.882 |
+| Leader damage/game | 9.896 | 13.188 | 3.292 |
+| Blocks/game | 2.754 | 2.241 | -0.513 |
+| Characters defeated/game | 5.444 | 4.978 | -0.466 |
+| Own Returns/game | 2.665 | 3.364 | 0.699 |
+| Opp Returns/game | 0.08 | 0.079 | -0.001 |
+| Extra Draw/game | 4.268 | 4.284 | 0.016 |
+| Ace triggers/game | 1.678 | 1.709 | 0.031 |
+| Deck-out % | 2.11 | 1.47 | -0.64 |
 
 ## Magician matchups
 
 | Opponent | Baseline win % | Bully Hothead win % | Delta |
 | --- | ---: | ---: | ---: |
-| Florida Man | 37.7 | 65.7 | 28.0 |
-| Washed-Up Rock Star | 7.4 | 22.3 | 14.9 |
-| Trash Baron | 20.5 | 44.8 | 24.3 |
-| HOA President | 62.0 | 78.8 | 16.8 |
-| Backyard Wrestler | 33.4 | 47.6 | 14.2 |
+| Florida Man | 37.7 | 58.6 | 20.9 |
+| Washed-Up Rock Star | 7.4 | 16.1 | 8.7 |
+| Trash Baron | 20.5 | 39.0 | 18.5 |
+| HOA President | 62.0 | 72.2 | 10.2 |
+| Backyard Wrestler | 33.4 | 43.8 | 10.4 |
 
 ## Magician per-round state with Bully Hothead
 
@@ -58,15 +58,15 @@ All other revision-10 rules, cards, decks, seeds, and the second-player temporar
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 1 | 10000 | 24.90 | 25.00 | 5.84 | 6.05 | 0.58 | 0.43 | 0.67 | 0.47 |
 | 2 | 10000 | 24.23 | 24.70 | 5.15 | 5.35 | 0.80 | 0.95 | 1.00 | 1.03 |
-| 3 | 10000 | 22.99 | 23.71 | 4.56 | 4.42 | 1.02 | 1.39 | 1.28 | 1.50 |
-| 4 | 9997 | 21.24 | 22.25 | 4.02 | 3.36 | 1.23 | 1.87 | 1.51 | 2.02 |
-| 5 | 9668 | 19.00 | 21.08 | 3.52 | 2.47 | 1.30 | 2.31 | 1.60 | 2.51 |
-| 6 | 8372 | 17.15 | 20.21 | 2.81 | 1.60 | 1.57 | 2.53 | 1.89 | 2.80 |
-| 7 | 6685 | 16.13 | 19.06 | 2.23 | 0.94 | 1.76 | 2.43 | 2.10 | 2.74 |
-| 8 | 5143 | 15.39 | 17.22 | 1.85 | 0.62 | 1.94 | 2.03 | 2.32 | 2.37 |
-| 9 | 3864 | 14.21 | 15.09 | 1.62 | 0.52 | 2.10 | 1.76 | 2.54 | 2.13 |
-| 10 | 2625 | 13.05 | 13.26 | 1.48 | 0.47 | 2.10 | 1.64 | 2.60 | 2.04 |
-| 11 | 1619 | 12.24 | 11.74 | 1.28 | 0.40 | 1.94 | 1.52 | 2.44 | 1.93 |
-| 12 | 894 | 11.45 | 10.97 | 0.86 | 0.25 | 1.55 | 1.23 | 2.00 | 1.60 |
+| 3 | 10000 | 22.97 | 23.88 | 4.60 | 4.43 | 0.98 | 1.44 | 1.23 | 1.55 |
+| 4 | 9996 | 21.08 | 22.72 | 4.09 | 3.38 | 1.16 | 2.00 | 1.44 | 2.15 |
+| 5 | 9698 | 18.57 | 21.73 | 3.66 | 2.53 | 1.24 | 2.52 | 1.56 | 2.72 |
+| 6 | 8341 | 16.75 | 20.79 | 3.02 | 1.68 | 1.53 | 2.73 | 1.87 | 2.99 |
+| 7 | 6641 | 15.81 | 19.66 | 2.45 | 0.99 | 1.72 | 2.58 | 2.08 | 2.87 |
+| 8 | 5114 | 15.05 | 17.96 | 2.14 | 0.62 | 1.88 | 2.14 | 2.29 | 2.45 |
+| 9 | 3877 | 14.06 | 15.86 | 1.90 | 0.46 | 2.10 | 1.76 | 2.57 | 2.09 |
+| 10 | 2756 | 12.90 | 13.79 | 1.79 | 0.39 | 2.20 | 1.53 | 2.73 | 1.89 |
+| 11 | 1778 | 12.08 | 11.89 | 1.77 | 0.33 | 2.13 | 1.42 | 2.70 | 1.77 |
+| 12 | 980 | 11.21 | 10.75 | 1.24 | 0.19 | 1.65 | 1.18 | 2.14 | 1.51 |
 
 Full per-round telemetry for all six decks and all event counters is in the accompanying JSON.
