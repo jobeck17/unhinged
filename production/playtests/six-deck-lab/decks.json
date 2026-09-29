@@ -1,8 +1,8 @@
 {
-  "version": "six-deck-lab-5",
+  "version": "six-deck-lab-6",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Mono-Style revision-8 baseline; first player skips first Draw; second player may begin with temporary Stash; Magician uses Ace Up My Sleeve; HOA uses Failure to Respond; Salvage has two Jerry-Rig Items.",
+  "status": "Mono-Style revision-9 baseline; second-player temporary Stash; Magician uses Ace Up My Sleeve plus new opposing-bounce and Poof pressure tools.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -103,14 +103,15 @@
         "P063": 4,
         "P065": 4,
         "P067": 3,
-        "P070": 3,
         "P089": 3,
         "P080": 4,
         "P081": 2,
         "P082": 2,
         "P079": 2,
         "P087": 2,
-        "P088": 3
+        "P088": 1,
+        "P071": 3,
+        "P090": 2
       },
       "mulligan_priority": [
         "Magician's Assistant, Rabbit, or Escape Artist",
@@ -118,11 +119,12 @@
         "An enter/Return payoff"
       ],
       "watchpoints": [
-        "Does Ace Up My Sleeve turn Return effects into useful tempo without creating runaway resource loops?",
-        "Can damaged Characters attack, survive, Return, and be replayed often enough to make Bounce feel like healing plus tempo?",
-        "Can the deck convert Bounce into enough pressure to win before its card flow becomes deck-out risk?"
+        "Does Trapdoor Assistant meaningfully narrow opposing boards without creating oppressive replay loops?",
+        "Does Poof! let Misdirection convert tempo into actual Leader damage?",
+        "Does Ace Up My Sleeve make bounce chains feel clever rather than resource-positive by default?",
+        "Can damaged Characters attack, survive, Return, and be replayed often enough to make Bounce feel like healing plus tempo?"
       ],
-      "status_note": "Revision 8 baseline."
+      "status_note": "Revision 9 pressure-conversion baseline."
     },
     {
       "name": "Curbside Empire",
