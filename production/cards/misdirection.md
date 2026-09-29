@@ -1,6 +1,6 @@
 # Misdirection / Funny Business — Production Pool v0.2
 
-> Donut revision 9 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 10 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
