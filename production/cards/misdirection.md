@@ -1,6 +1,6 @@
 # Misdirection / Funny Business — Production Pool v0.2
 
-> Donut revision 7 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 9 · 2026-09-28 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -16,7 +16,7 @@
 | P068 | Character | 4 | **Social Media Grifter** | 4/3 | Criminal | When this enters play, Draw 2 cards, then Discard a card. |
 | P069 | Character | 4 | **Conspiracy Blogger** | 3/5 | — | At the start of your Turn, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise, put it on the bottom of your deck. |
 | P070 | Character | 3 | **Tech Bro** | 4/2 | — | When this Character Defeats another Character in combat, Draw a card. |
-| P071 | Character | 2 | **Coupon Scammer** | 3/2 | Criminal | — |
+| P071 | Character | 3 | **Trapdoor Assistant** | 1/1 | Magician | When this enters play, you may Return an opposing Character costing 3 or less to its owner's hand. |
 | P073 | Character | 5 | **IT Guy Who Quit Six Months Ago** | 4/6 | Hacker | You may look at your Stash. When this enters play, you may Return one card from your Stash to your hand. If you do, put a card from your hand into your Stash Rotated. |
 | P074 | Character | 5 | **Identity Thief** | 5/5 | Criminal | When this enters play, choose another Character. This gains one of that Character's printed Traits and one of its printed keywords while that Character remains in play. |
 | P075 | Character | 4 | **Pirate Radio Operator** | 4/5 | Criminal, Musician | When this attacks, an opponent chooses one: this gets +2 Power for this Attack; or you Draw a card, then Discard a card. |
@@ -33,7 +33,7 @@
 | P087 | Item | 1 | **Burner Phone** | — | — | Rotate: Look at up to 2 cards in your Stash. You may Return one to your hand. If you do, put a card from your hand into your Stash Rotated. |
 | P088 | Item | 2 | **Marked Deck** | — | — | Once during your Turn, Rotate this and Rotate 1 Ready Stash: Draw a card. |
 | P089 | Character | 3 | **Lady Who's Moving Out Again** | 3/5 | — | When this enters play and when this Character is Returned from play to your hand, another of your Characters gets +2 Power this Turn. |
-| P090 | Item | 3 | **Spoofed Keycard** | — | — | Rotate: An opposing Character cannot Block this Turn. If you have a Criminal or Pirate in play, it also gets -1 Power this Turn. |
+| P090 | Action | 2 | **Poof!** | — | — | Choose one of your Characters. The next time it attacks a Leader this Turn, that Attack cannot be Blocked. After that Attack, Return that Character to your hand. |
 | P142 | Action | 2 | **I Want to Speak to Your Manager** | — | — | Return an Item or Character costing 2 or less to its owner's hand. |
 
 Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.md), and [Rules](../rules/unhinged-rules.md).
@@ -44,7 +44,8 @@ Traits have no automatic behavior. See [Traits](traits.md), [Keywords](keywords.
 | --- | --- |
 | P067 School Bully | *Toughest kid on the playground until somebody swings back.* |
 | P070 Tech Bro | *It’s a normal doorbell, but the subscription is mandatory.* |
-| P071 Coupon Scammer | *The expiration date is more of a suggestion.* |
+| P071 Trapdoor Assistant | *Nobody saw where the floor went.* |
 | P076 Wi-Fi Bandit | *Your password is his password.* |
 | P078 Pirate With a Business License | *Every trick is fully licensed, bonded, and questionably insured.* |
 | P089 Lady Who's Moving Out Again | *The truck is still warm from last time.* |
+| P090 Poof! | *Now you see me. Now you owe me a new tablecloth.* |
