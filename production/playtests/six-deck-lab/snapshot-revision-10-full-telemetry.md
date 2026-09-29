@@ -2,57 +2,55 @@
 
 **Date:** September 29, 2026  
 **Games:** 30,000  
-**Card pool revision:** 10  
-**Deck set:** six-deck-lab-7
+**Card pool:** revision 10  
+**Deck set:** six-deck-lab-7  
+**Censored at 60 Rounds:** 0
 
 ## Conditions
-
-- Magician is restored to the pre-revision-9 list.
+- Magician restored to the pre-revision-9 list.
 - War winner skips the first Draw.
-- The second player always accepts the optional face-up Rotated temporary Stash for this simulation.
+- Second player always accepts the optional temporary Stash in this simulation.
 - Revision-8 Jerry-Rig reduction remains active.
-- Each unordered matchup uses 1,000 games with each player going first, for 2000 games per matchup.
-- Per-round telemetry is sampled at the end of completed Rounds. Late-round rows therefore have survivorship bias; the observation count (n) is shown.
+- 1,000 games per starting order per matchup.
+- Per-round state is sampled at the end of completed Rounds; later rows have survivorship bias, so n is shown.
 
 ## Overall
-
-- First-player win rate: **55.04%**
-- Average game length: **16.93 Rounds**
+- First-player win rate: **33.54%**
+- Average game length: **24.3 Rounds**
 - Median game length: **17 Rounds**
+- Censored games: **0**
 
 ## Deck summary
 
 | Leader | Win % | Avg Rounds | Extra Draw | Own Returns | Opp Returns | Leader dmg | Attacks | Blocks | Cards played | Deck-out % |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Florida Man | 43.66 | 17.05 | 1.48 | 0 | 0 | 39.27 | 14.545 | 1.741 | 6.393 | 0.14 |
-| Washed-Up Rock Star | 51.24 | 18.12 | 9.83 | 0 | 0 | 38.436 | 15.971 | 3.401 | 13.953 | 18.98 |
-| Birthday Party Magician | 29.11 | 16.47 | 5.24 | 3.124 | 0.094 | 16.605 | 9.119 | 2.81 | 12.289 | 10.99 |
-| Trash Baron | 61.1 | 15.65 | 2.343 | 0 | 0 | 27.11 | 13.582 | 1.955 | 8.621 | 1.3 |
-| HOA President | 52.99 | 17.79 | 2.053 | 0 | 0 | 16.636 | 8.316 | 2.64 | 5.922 | 1.11 |
-| Backyard Wrestler | 61.9 | 16.49 | 1.707 | 0.253 | 0 | 15.784 | 11.387 | 2.157 | 8.092 | 0.27 |
+| Florida Man | 17.91 | 25.49 | 1.48 | 0 | 0 | 49.187 | 16.41 | 1.741 | 6.393 | 25.8 |
+| Washed-Up Rock Star | 35.97 | 25.93 | 9.83 | 0 | 0 | 41.202 | 16.653 | 3.401 | 13.953 | 36.2 |
+| Birthday Party Magician | 34.41 | 23.8 | 5.24 | 3.124 | 0.094 | 18.303 | 9.573 | 2.81 | 12.289 | 25.01 |
+| Trash Baron | 54.39 | 22.96 | 2.343 | 0 | 0 | 29.871 | 14.338 | 1.955 | 8.621 | 24.24 |
+| HOA President | 74.3 | 23.64 | 2.063 | 0 | 0 | 17.764 | 8.63 | 2.64 | 5.922 | 13.05 |
+| Backyard Wrestler | 83.02 | 23.98 | 1.707 | 0.253 | 0 | 15.848 | 11.422 | 2.157 | 8.093 | 17.03 |
 
 ## Matchups
-
 | Deck A | Deck B | A win % | B win % |
 | --- | --- | ---: | ---: |
-| Florida Man | Washed-Up Rock Star | 21.9 | 78 |
-| Florida Man | Birthday Party Magician | 53.3 | 46.8 |
-| Florida Man | Trash Baron | 42 | 58 |
-| Florida Man | HOA President | 52.1 | 47.9 |
-| Florida Man | Backyard Wrestler | 49 | 51 |
-| Washed-Up Rock Star | Birthday Party Magician | 66.6 | 33.4 |
-| Washed-Up Rock Star | Trash Baron | 29.1 | 71 |
-| Washed-Up Rock Star | HOA President | 42.8 | 57.3 |
-| Washed-Up Rock Star | Backyard Wrestler | 39.8 | 60.3 |
-| Birthday Party Magician | Trash Baron | 14.6 | 85.5 |
-| Birthday Party Magician | HOA President | 29.2 | 70.8 |
-| Birthday Party Magician | Backyard Wrestler | 21.6 | 78.3 |
-| Trash Baron | HOA President | 43 | 57 |
-| Trash Baron | Backyard Wrestler | 48.1 | 51.9 |
-| HOA President | Backyard Wrestler | 32 | 68 |
+| Florida Man | Washed-Up Rock Star | 8.4 | 91.5 |
+| Florida Man | Birthday Party Magician | 23.1 | 76.8 |
+| Florida Man | Trash Baron | 25.3 | 74.8 |
+| Florida Man | HOA President | 14.6 | 85.5 |
+| Florida Man | Backyard Wrestler | 18.1 | 81.8 |
+| Washed-Up Rock Star | Birthday Party Magician | 33.4 | 66.6 |
+| Washed-Up Rock Star | Trash Baron | 23.3 | 76.7 |
+| Washed-Up Rock Star | HOA President | 9.4 | 90.5 |
+| Washed-Up Rock Star | Backyard Wrestler | 22.1 | 77.8 |
+| Birthday Party Magician | Trash Baron | 8.3 | 91.7 |
+| Birthday Party Magician | HOA President | 9.2 | 90.8 |
+| Birthday Party Magician | Backyard Wrestler | 11.2 | 88.8 |
+| Trash Baron | HOA President | 7 | 93 |
+| Trash Baron | Backyard Wrestler | 21.9 | 78.2 |
+| HOA President | Backyard Wrestler | 11.6 | 88.4 |
 
 ## Magician per-round telemetry
-
 | Round | n | Mag HP | Opp HP | Mag hand | Opp hand | Mag chars | Opp chars | Mag items | Opp items | Mag in play | Opp in play | Mag Stash | Opp Stash | Mag deck | Opp deck |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 1 | 10000 | 24.90 | 25.00 | 5.84 | 6.05 | 0.58 | 0.43 | 0.09 | 0.04 | 0.67 | 0.47 | 1.08 | 1.09 | 31.93 | 31.55 |
@@ -80,14 +78,16 @@
 | 23 | 6 | 7.33 | 12.00 | 0.00 | 0.00 | 0.33 | 0.50 | 0.00 | 0.00 | 0.33 | 0.50 | 23.00 | 23.00 | 8.83 | 8.33 |
 | 24 | 4 | 7.50 | 16.50 | 0.00 | 0.00 | 0.25 | 0.50 | 0.00 | 0.00 | 0.25 | 0.50 | 24.00 | 24.00 | 8.25 | 7.25 |
 | 25 | 3 | 8.00 | 21.67 | 0.00 | 0.00 | 0.00 | 0.67 | 0.00 | 0.00 | 0.00 | 0.67 | 25.00 | 25.00 | 8.00 | 7.00 |
+| 26 | 3 | 7.33 | 21.67 | 0.00 | 0.00 | 0.00 | 0.67 | 0.00 | 0.00 | 0.00 | 0.67 | 26.00 | 26.00 | 7.00 | 6.00 |
+| 27 | 2 | 10.00 | 22.50 | 0.00 | 0.00 | 0.00 | 0.50 | 0.00 | 0.00 | 0.00 | 0.50 | 27.00 | 27.00 | 6.00 | 6.00 |
+| 28 | 1 | 19.00 | 21.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 28.00 | 28.00 | 6.00 | 4.00 |
+| 29 | 1 | 19.00 | 21.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 29.00 | 29.00 | 5.00 | 3.00 |
+| 30 | 1 | 19.00 | 21.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 30.00 | 30.00 | 4.00 | 2.00 |
+| 31 | 1 | 19.00 | 21.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 31.00 | 31.00 | 3.00 | 1.00 |
+| 32 | 1 | 19.00 | 21.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 32.00 | 32.00 | 2.00 | 0.00 |
 
-## Metric definitions
-
-- **Extra Draw:** cards Drawn outside the normal Draw step, including card effects and Leader refill effects.
-- **Own Returns:** own Characters Returned from play to hand by the player’s own effects/choices.
-- **Opp Returns:** opposing Characters Returned to hand by that player’s effects.
-- **Leader damage:** damage dealt to opposing Leader by combat/overflow as modeled.
-- **Cards played:** Characters + Actions + Items successfully played.
-- **n:** number of completed-Round observations contributing to that row.
-
-The complete JSON contains the same per-round telemetry for all six Leaders plus all tracked event counters.
+## Notes
+- Extra Draw means Draws outside the normal Draw step.
+- Own Returns are the player's own Characters Returned to hand by their own effects/choices.
+- Opp Returns are opposing Characters Returned by that player's effects.
+- Full JSON includes these round-state fields for all six decks plus event counters.
