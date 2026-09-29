@@ -1,8 +1,8 @@
 {
-  "version": "six-deck-lab-8",
+  "version": "six-deck-lab-9",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-29",
-  "status": "Mono-Style revision-11 baseline; School Bully has Hothead; revision-8 Jerry-Rig tuning and second-player temporary Stash remain.",
+  "status": "Mono-Style revision-12 baseline: Rock Star hand gate, HOA board-return Action, Stash-scaled Tag Out, cross-Style Return counterplay, and revision-11 School Bully Hothead.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -84,7 +84,7 @@
         "Does Comeback Tour refill often enough to sustain Momentum without causing routine deck-out?",
         "Do acceleration cards help create explosive turns rather than simply emptying the hand?"
       ],
-      "status_note": "Revision 11 baseline; no card-list change from revision 10."
+      "status_note": "Revision 12 baseline; Comeback Tour uses the start-of-Turn hand gate and low-hand tiered bodies."
     },
     {
       "name": "Now You See Me",
@@ -148,12 +148,13 @@
         "P106": 1,
         "P109": 4,
         "P111": 3,
-        "P113": 3,
+        "P113": 2,
         "P114": 1,
         "P117": 2,
         "P118": 2,
         "P119": 2,
-        "P120": 2
+        "P120": 2,
+        "P116": 1
       },
       "mulligan_priority": [
         "Dumpster Diver or Scrounge",
@@ -165,7 +166,7 @@
         "Does Trash Baron create enough incentive to leave opposing Stash unspent?",
         "Can Salvage reach Big Hand through scavenging rather than generic Draw?"
       ],
-      "status_note": "Revision 11 baseline; revision-8 Jerry-Rig tuning retained."
+      "status_note": "Revision 12 baseline; one Good as New added as Salvage Return counterplay."
     },
     {
       "name": "Violation Notice",
@@ -207,7 +208,7 @@
         "Can Stonewall survive long enough to threaten the deadline without simply stalling for its own sake?",
         "Is Absolutely Not worth holding 3 Stash open?"
       ],
-      "status_note": "Revision 11 baseline; no card-list change from revision 10."
+      "status_note": "Revision 12 baseline; Absolutely Not is now a symmetric Rotated-board Return Action rather than a Response."
     },
     {
       "name": "Tag Team Trashfire",
@@ -244,11 +245,11 @@
         "Tag Me In! or a sacrifice payoff"
       ],
       "watchpoints": [
-        "How often does the Leader's end-of-opponent-Turn Tag Out fire?",
-        "Are free same-or-lower-Cost replacements too efficient with On Play effects?",
+        "How often does Stash-scaled Tag Out put a Character directly into play versus put the revealed card into hand?",
+        "Does Tag Out create exciting Hothead replacement attacks without excessive free-board snowballing?",
         "Does recursion feel distinct from Salvage and self-damage distinct from Reckless?"
       ],
-      "status_note": "Revision 11 baseline; no card-list change from revision 10."
+      "status_note": "Revision 12 baseline; Stash-scaled Tag Out is the active Leader passive."
     }
   ]
 }
