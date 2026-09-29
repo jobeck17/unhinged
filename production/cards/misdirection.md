@@ -1,6 +1,6 @@
 # Misdirection / Funny Business — Production Pool v0.2
 
-> Donut revision 10 · 2026-09-28 · Working playtest text; balance is unverified.
+> Donut revision 11 · 2026-09-29 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -12,7 +12,7 @@
 | P064 | Character | 4 | **Volunteer From the Audience** | 3/5 | Magician | When this enters play, reveal the top card of an opponent's deck. If it is a Character, you may put it into play under your control. At the end of your Turn, put that Character into its owner's discard. Otherwise, put the revealed card on the bottom of its owner's deck. |
 | P065 | Character | 3 | **Escape Artist** | 4/2 | Magician | **Hothead**. When this enters play, you may Return another of your Characters to your hand. |
 | P066 | Character | 2 | **Off-Duty Clown** | 2/3 | Clown | Whenever another of your Characters is Returned from play to your hand, Draw a card, then Discard a card. |
-| P067 | Character | 3 | **School Bully** | 4/2 | Kid | **Sucker Punch**. **Chicken**. |
+| P067 | Character | 3 | **School Bully** | 4/2 | Kid | **Hothead**. **Sucker Punch**. **Chicken**. |
 | P068 | Character | 4 | **Social Media Grifter** | 4/3 | Criminal | When this enters play, Draw 2 cards, then Discard a card. |
 | P069 | Character | 4 | **Conspiracy Blogger** | 3/5 | — | At the start of your Turn, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise, put it on the bottom of your deck. |
 | P070 | Character | 3 | **Tech Bro** | 4/2 | — | When this Character Defeats another Character in combat, Draw a card. |
