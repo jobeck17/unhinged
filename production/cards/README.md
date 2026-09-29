@@ -1,8 +1,8 @@
 # Unhinged — Donut Card Workshop
 
-**Core 0.2 · Donut revision 5 · 28 September 2026**
+**Core 0.2 · Donut revision 11 · 29 September 2026**
 
-The current pool contains **180 deck cards: 109 Characters, 48 Actions, and 23 Items**. The six Leaders remain outside that count. This is the rebuilt playtest pool under the September 28 rules; balance is unverified.
+The current pool contains **180 deck cards: 109 Characters, 48 Actions, and 23 Items**. The six Leaders remain outside that count. This is the rebuilt playtest pool under the current production rules; balance remains under active testing.
 
 | Read or edit | Source |
 | --- | --- |
