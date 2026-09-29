@@ -165,6 +165,16 @@ The revision-9 Trapdoor Assistant / Poof! pressure experiment is rolled back aft
 
 Revision-8 Jerry-Rig tuning and the second-player temporary-Stash rule remain active.
 
+## Revision 10 telemetry correction
+
+A corrected 30,000-game full-telemetry round robin found and fixed a winner-index truthiness bug in the older heuristic harness. Earlier exact win-rate and first-player numbers should be treated as historical, not authoritative.
+
+Corrected revision-10 baseline:
+- **46.79% first-player wins** with the current second-player temporary-Stash rule.
+- **8.38 average Rounds**, **8 median**.
+- Magician: **32.20%** model win rate, **4.27 extra Draws/game**, **2.67 own Returns/game**, but only **0.08 opposing Returns/game** and **9.90 Leader damage/game**.
+- Full telemetry is in `production/playtests/six-deck-lab/snapshot-revision-10-full-telemetry.{md,json}`.
+
 ## Next validation work
 
 1. Build six 40-card mono-Style test decks from the rebuilt pool.
