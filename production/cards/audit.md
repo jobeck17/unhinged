@@ -1,4 +1,4 @@
-# Donut Revision 10 — Content Audit
+# Donut Revision 11 — Content Audit
 
 > Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.
 
@@ -40,11 +40,10 @@
 
 **4 Actions currently use Response timing:** P020 Send It!, P081 Look Over There!, P141 Absolutely Not, P169 Take One for the Team.
 
-## Revision 10 rollback baseline
+## Revision 11 tuning focus
 
-- The revision-9 Trapdoor Assistant and Poof! experiment is rolled back.
-- **P071 Coupon Scammer** returns as the 2-Cost 3/2 textless Misdirection Character.
-- **P090 Spoofed Keycard** returns as the 3-Cost Misdirection Item that prevents one opposing Character from Blocking this Turn.
-- The mono-Misdirection deck is restored exactly to its revision-8 list.
-- Revision-8 Jerry-Rig tuning remains in place.
-- The next Magician changes should be driven by full telemetry rather than win-rate-only simulation.
+- **School Bully (P067)** gains **Hothead** and is now `Hothead. Sucker Punch. Chicken.`
+- No other card text changes from revision 10.
+- The change targets Misdirection's midgame pressure problem: newly played or replayed bodies were frequently unable to Attack on the Turn they entered.
+- In the corrected 30,000-game paired simulation, Magician moved from **32.20% to 45.90%**, attacks from **6.96 to 8.85/game**, and Leader damage from **9.90 to 13.19/game**.
+- Aggregate win rates remain heuristic; the paired one-variable signal is the primary evidence.
