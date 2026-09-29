@@ -246,3 +246,14 @@ For active work, use this order:
 5. brainstorm/history material for rationale and future ideas
 
 Older checkpoints, Mongo/Fuel material, and archived experiments do not override the current production files.
+
+## Revision 12 baseline — Rock / HOA / Wrestler correction
+
+Revision 12 is the current production baseline. It keeps revision 11 School Bully Hothead and adds:
+
+- **Rock Star:** Comeback Tour now checks hand size at the start of the Turn before Ready. At 1 or fewer cards it refills to 2; at 3 or more it skips the normal Draw. Karaoke Champion is now 3-Cost 0/4 with +3 Power at 2 or fewer cards, One-Hit Wonder is 3-Cost 0/3 with +4 Power at zero cards, Guy Who Mows at 7 AM is 3 Cost, Reply All is symmetrical Draw 1, and Starter Kit loses its entry Draw.
+- **Cross-Style hand pressure:** Reckless, Misdirection, Salvage, Stonewall, and Expendable each retain or gain a Return-to-hand line that can push cards back into an opponent's hand. Momentum already has Carpool in its pool.
+- **HOA:** Absolutely Not is no longer a Response; it Returns all Rotated Characters and Items to their owners' hands. Failure to Respond remains the Round-8 Leader passive.
+- **Wrestler:** Tag Out now reveals the top card once during your Turn when one of your Characters is Defeated or Sacrificed. A Character with Cost no greater than your Stash count enters play and gains Hothead for the Turn; otherwise the revealed card goes to hand.
+
+Latest matchup-equivalent field: Trash 55.58%, Rock 53.34%, Magician 51.70%, HOA 50.76%, Florida 44.94%, Wrestler 43.70%. See `production/playtests/six-deck-lab/snapshot-revision-12-matchup-baseline.md`.
