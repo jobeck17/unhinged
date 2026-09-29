@@ -1,6 +1,6 @@
 # Six mono-Style 40-card baseline decks
 
-> **Revision 10 telemetry baseline.** Magician is restored to the pre-revision-9 list. First player skips their first Draw; second player may begin with temporary Stash.
+> **Revision 11 telemetry baseline.** School Bully gains Hothead. First player skips their first Draw; second player may begin with temporary Stash.
 
 ## Florida Man — Bad Decisions
 
