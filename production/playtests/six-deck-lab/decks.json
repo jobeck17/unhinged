@@ -1,8 +1,8 @@
 {
-  "version": "six-deck-lab-6",
+  "version": "six-deck-lab-7",
   "card_pool": "0.2-donut-rebuild",
   "date": "2026-09-28",
-  "status": "Mono-Style revision-9 baseline; second-player temporary Stash; Magician uses Ace Up My Sleeve plus new opposing-bounce and Poof pressure tools.",
+  "status": "Mono-Style revision-10 baseline; Magician restored to pre-revision-9 build; revision-8 Jerry-Rig tuning and second-player temporary Stash remain.",
   "rules": "September 28 production rules",
   "decks": [
     {
@@ -43,7 +43,7 @@
         "Is self-damage too easy to convert into upside?",
         "Does Damage Everywhere matter without simply becoming burn?"
       ],
-      "status_note": "Revision 8 baseline."
+      "status_note": "Revision 10 baseline; unchanged from revision 8."
     },
     {
       "name": "Comeback Tour",
@@ -84,7 +84,7 @@
         "Does Comeback Tour refill often enough to sustain Momentum without causing routine deck-out?",
         "Do acceleration cards help create explosive turns rather than simply emptying the hand?"
       ],
-      "status_note": "Revision 8 baseline."
+      "status_note": "Revision 10 baseline; unchanged from revision 8."
     },
     {
       "name": "Now You See Me",
@@ -103,15 +103,14 @@
         "P063": 4,
         "P065": 4,
         "P067": 3,
+        "P070": 3,
         "P089": 3,
         "P080": 4,
         "P081": 2,
         "P082": 2,
         "P079": 2,
         "P087": 2,
-        "P088": 1,
-        "P071": 3,
-        "P090": 2
+        "P088": 3
       },
       "mulligan_priority": [
         "Magician's Assistant, Rabbit, or Escape Artist",
@@ -119,12 +118,11 @@
         "An enter/Return payoff"
       ],
       "watchpoints": [
-        "Does Trapdoor Assistant meaningfully narrow opposing boards without creating oppressive replay loops?",
-        "Does Poof! let Misdirection convert tempo into actual Leader damage?",
-        "Does Ace Up My Sleeve make bounce chains feel clever rather than resource-positive by default?",
-        "Can damaged Characters attack, survive, Return, and be replayed often enough to make Bounce feel like healing plus tempo?"
+        "Does Ace Up My Sleeve turn Return effects into useful tempo without creating runaway resource loops?",
+        "Can damaged Characters attack, survive, Return, and be replayed often enough to make Bounce feel like healing plus tempo?",
+        "Can the deck convert Bounce into enough pressure to win before its card flow becomes deck-out risk?"
       ],
-      "status_note": "Revision 9 pressure-conversion baseline."
+      "status_note": "Revision 10 rollback baseline; same Magician list as revision 8."
     },
     {
       "name": "Curbside Empire",
@@ -166,7 +164,7 @@
         "Does Trash Baron create enough incentive to leave opposing Stash unspent?",
         "Can Salvage reach Big Hand through scavenging rather than generic Draw?"
       ],
-      "status_note": "Revision 8 Jerry-Rig economy tuning baseline."
+      "status_note": "Revision 10 baseline; revision-8 Jerry-Rig tuning retained."
     },
     {
       "name": "Violation Notice",
@@ -208,7 +206,7 @@
         "Can Stonewall survive long enough to threaten the deadline without simply stalling for its own sake?",
         "Is Absolutely Not worth holding 3 Stash open?"
       ],
-      "status_note": "Revision 8 baseline."
+      "status_note": "Revision 10 baseline; unchanged from revision 8."
     },
     {
       "name": "Tag Team Trashfire",
@@ -249,7 +247,7 @@
         "Are free same-or-lower-Cost replacements too efficient with On Play effects?",
         "Does recursion feel distinct from Salvage and self-damage distinct from Reckless?"
       ],
-      "status_note": "Revision 8 baseline."
+      "status_note": "Revision 10 baseline; unchanged from revision 8."
     }
   ]
 }
