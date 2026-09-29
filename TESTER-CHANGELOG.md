@@ -1,6 +1,6 @@
 # Unhinged Tester Changelog — Donut Duel → Revision 7
 
-**Current playtest baseline: September 29, 2026 · Revision 11**
+**Current playtest baseline: September 29, 2026 · Revision 12**
 
 If you previously tested **Donut Duel**, use this changelog as the quick guide to what has changed. Current production rules and card text override older playtest packets.
 
@@ -204,7 +204,7 @@ Your damaged Characters have **Hothead** and **Sucker Punch**.
 
 ### Washed-Up Rock Star — Momentum
 
-**Comeback Tour:** At the end of your Turn, if you have no cards in hand, **Draw 3 cards**.
+**Comeback Tour:** At the start of your Turn, before Ready, if you have 1 or fewer cards in hand, Draw until you have 2. If you have 3 or more cards in hand, skip your Draw step this Turn.
 
 ### Birthday Party Magician — Misdirection
 
@@ -222,9 +222,9 @@ This replaces the old Ready-step tax.
 
 ### Backyard Wrestler — Expendable
 
-**Tag Out:** At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may Play another Character from your hand with the same Cost or less without paying its Cost.
+**Tag Out:** Once during your Turn, when one of your Characters is Defeated or Sacrificed, reveal the top card of your deck. If it is a Character with Cost less than or equal to the number of cards in your Stash, put it into play. It gains Hothead this Turn. Otherwise, put it into your hand.
 
-The replacement is Played normally and its On Play abilities trigger.
+A Character put into play by Tag Out is not Played, so On Play abilities do not trigger.
 
 ## Style identities were rebuilt
 
@@ -422,3 +422,26 @@ No other production card text changed from revision 10.
 A corrected 30,000-game paired A/B moved Magician from **32.20% to 45.90%** in the heuristic model. Magician attacks rose from **6.96 to 8.85 per game** and Leader damage from **9.90 to 13.19**, while extra Draws and Ace triggers stayed effectively flat.
 
 The revision-11 full-field model now shows a pronounced matchup structure. Rock Star and Trash Baron are broadly strong, HOA is broadly weak, and Magician is strongly favored into HOA but heavily unfavored into Rock Star.
+
+## Revision 12 Rock / HOA / Wrestler balance pass
+
+### Momentum / Rock Star
+- Comeback Tour moves to the start of the Turn before Ready and becomes hand-gated.
+- Karaoke Champion becomes 3-Cost 0/4 and gets +3 Power at 2 or fewer cards in hand.
+- Mike becomes **One-Hit Wonder**, 3-Cost 0/3, with +4 Power while your hand is empty.
+- Guy Who Mows at 7 AM moves to Cost 3.
+- Reply All becomes symmetrical Draw 1.
+- Starter Kit loses its entry Draw.
+
+### Cross-Style Return counterplay
+- Fireworks Incident can Return the opposing survivor.
+- Misdirection retains Wrong Address and its other Bounce tools.
+- Good as New can Return an opponent's damaged Character; the mono Salvage list now includes one copy.
+- Absolutely Not Returns all Rotated Characters and Items to their owners' hands and is no longer a Response.
+- Worth It Returns its surviving opposing target after damage.
+- Momentum already has Carpool in the card pool.
+
+### Backyard Wrestler
+**Tag Out:** Once during your Turn, when one of your Characters is Defeated or Sacrificed, reveal the top card of your deck. If it is a Character with Cost less than or equal to the number of cards in your Stash, put it into play. It gains Hothead this Turn. Otherwise, put it into your hand.
+
+The corrected Wrestler rerun produced a 53.3% Tag Out hit rate, with 1.35 qualifying Characters entering play and 1.18 misses going to hand per game. The revision-12 matchup-equivalent field is recorded in `snapshot-revision-12-matchup-baseline.md`.
