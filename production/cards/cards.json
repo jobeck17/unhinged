@@ -1,7 +1,7 @@
 {
   "version": "0.2-donut-rebuild",
-  "date": "2026-09-28",
-  "status": "Revision 10 baseline: Magician rolled back to the pre-revision-9 build; revision-8 Jerry-Rig tuning and turn-order rules remain.",
+  "date": "2026-09-29",
+  "status": "Revision 11 baseline: School Bully gains Hothead; revision-8 Jerry-Rig tuning, Ace Up My Sleeve, Failure to Respond, Comeback Tour, and second-player temporary Stash remain.",
   "cards": [
     {
       "id": "P001",
@@ -1252,10 +1252,11 @@
       "traits": [
         "Kid"
       ],
-      "text": "Sucker Punch. Chicken.",
+      "text": "Hothead. Sucker Punch. Chicken.",
       "style": "Misdirection",
       "complexity": "keyword_only",
       "keywords": [
+        "Hothead",
         "Sucker Punch",
         "Chicken"
       ],
@@ -3370,5 +3371,5 @@
       "flavor": ""
     }
   ],
-  "revision": 10
+  "revision": 11
 }
