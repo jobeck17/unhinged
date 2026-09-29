@@ -1,6 +1,6 @@
 # Expendable / Red Shirts — Production Pool v0.2
 
-> Donut revision 11 · 2026-09-29 · Working playtest text; balance is unverified.
+> Donut revision 12 · 2026-09-29 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -25,7 +25,7 @@
 | P168 | Character | 5 | **Guy Who Took the Chair Shot** | 5/6 | Wrestler | Whenever this Character survives combat with damage, Draw a card. |
 | P169 | Action | 1 | **Take One for the Team** | — | — | Response — Before damage would be dealt to your Leader: Sacrifice one of your Characters. Prevent up to 3 of that damage. |
 | P170 | Action | 1 | **This Seemed Like a Good Idea** | — | — | Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Power and +2 Guard this Turn. |
-| P171 | Action | 2 | **Worth It** | — | — | Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character. |
+| P171 | Action | 2 | **Worth It** | — | — | Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character. If that Character survives, Return it to its owner's hand. |
 | P172 | Action | 3 | **Tag Me In!** | — | — | Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this Turn. |
 | P173 | Action | 2 | **Again!** | — | — | Return a Character costing 2 or less from your discard to your hand. If it is Undead and one of your Characters was Defeated this Turn, it costs 1 less the next time you Play it this Turn. |
 | P174 | Action | 1 | **Sign the Waiver** | — | — | Sacrifice one of your Characters. If you do, Draw 2 cards, then Discard a card. |
