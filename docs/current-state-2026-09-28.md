@@ -159,6 +159,12 @@ Misdirection receives two targeted pressure tools:
 
 The mono-Misdirection baseline replaces Tech Bro and two Marked Deck copies with these tools. The purpose is to test whether Magician's low win rate comes from failing to convert Bounce into Leader pressure rather than from insufficient card advantage.
 
+## Revision 10 Magician rollback
+
+The revision-9 Trapdoor Assistant / Poof! pressure experiment is rolled back after targeted simulations failed to improve Magician's results. Magician is restored exactly to its revision-8 card pool/list for a deeper telemetry pass.
+
+Revision-8 Jerry-Rig tuning and the second-player temporary-Stash rule remain active.
+
 ## Next validation work
 
 1. Build six 40-card mono-Style test decks from the rebuilt pool.
