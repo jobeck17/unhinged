@@ -1,4 +1,4 @@
-# Donut Revision 8 — Content Audit
+# Donut Revision 9 — Content Audit
 
 > Generated counts, not simulation results. No win rates or balance claims are inferred from this audit.
 
@@ -40,10 +40,10 @@
 
 **4 Actions currently use Response timing:** P020 Send It!, P081 Look Over There!, P141 Absolutely Not, P169 Take One for the Team.
 
-## Revision 8 tuning focus
+## Revision 9 tuning focus
 
-- Jerry-Rig is now printed on **two** Salvage Items instead of all four.
-- **Duct Tape** and **Mystery Drawer of Cables** retain Jerry-Rig.
-- **Zip Ties** and **Used Ham Sandwich** no longer become temporary Stash when they leave play.
-- The goal is to reduce Salvage's passive economy acceleration without changing Trash Baron's Leader ability.
-- Revision-7 Misdirection and Expendable changes remain in place.
+- **Trapdoor Assistant** replaces the textless Coupon Scammer slot as a 3-Cost 1/1 Magician that Returns an opposing Character costing 3 or less when it enters play.
+- **Poof!** replaces Spoofed Keycard as a 2-Cost Action that makes one Leader Attack unblockable, then Returns the attacker to hand after the Attack.
+- The mono-Misdirection baseline now runs 3 Trapdoor Assistants and 2 Poof! copies, replacing Tech Bro and two Marked Deck copies.
+- The goal is to let Misdirection narrow opposing boards and convert its tempo into Leader damage rather than merely accumulating bounce/card advantage.
+- Revision-8 Jerry-Rig tuning remains in place.
