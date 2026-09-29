@@ -1,6 +1,6 @@
 # Unhinged Leaders
 
-> **CURRENT LEADER CAST AND PASSIVES — 28 September 2026.**
+> **CURRENT LEADER CAST AND PASSIVES — 29 September 2026 · REVISION 12.**
 >
 > These six Leaders are the starting roster. Each currently has one visible automatic passive, 25 Health, and no activated ability, Charge system, Power, Guard, or orientation.
 
@@ -11,11 +11,11 @@ A Leader should preferably **bend a basic game rule**, change overall playstyle,
 | Leader | Style | Package lean | Current passive |
 | --- | --- | --- | --- |
 | **Florida Man** | **Reckless** | Self-Damage / Damaged Characters | Your damaged Characters have Hothead and Sucker Punch. |
-| **Washed-Up Rock Star** | **Momentum** | Low Hand / Refill | **Comeback Tour:** At the end of your Turn, if you have no cards in hand, Draw 3 cards. |
+| **Washed-Up Rock Star** | **Momentum** | Low Hand / Refill | **Comeback Tour:** At the start of your Turn, before Ready, if you have 1 or fewer cards in hand, Draw until you have 2. If you have 3 or more cards in hand, skip your Draw step this Turn. |
 | **Birthday Party Magician** | **Misdirection** | Bounce / Return | **Ace Up My Sleeve:** Once during your Turn, when one of your Characters is Returned from play to your hand, Ready 1 Stash. |
 | **Trash Baron** | **Salvage** | Repurpose / Stash | You may use opposing Ready Stash to pay your Costs as though it were your own. |
 | **HOA President** | **Stonewall** | Freeze / Stall | **Failure to Respond:** Beginning in Round 8, opposing Characters cannot Block your Attacks. |
-| **Backyard Wrestler** | **Expendable** | Sacrifice / Tag | At the end of your opponent's Turn, you may Return one damaged Character you control to your hand. If you do, you may play another Character from your hand with the same Cost or less without paying its Cost. |
+| **Backyard Wrestler** | **Expendable** | Sacrifice / Tag | **Tag Out:** Once during your Turn, when one of your Characters is Defeated or Sacrificed, reveal the top card of your deck. If it is a Character with Cost less than or equal to the number of cards in your Stash, put it into play. It gains Hothead this Turn. Otherwise, put it into your hand. |
 
 These are playtest passives, not final balance locks.
 
@@ -31,9 +31,9 @@ Opponent counterplay is visible: partial damage may empower Florida Man's board,
 
 **Character promise:** burn through the set list, then somehow book another season.
 
-**Comeback Tour:** At the end of your Turn, if you have no cards in hand, Draw 3 cards.
+**Comeback Tour:** At the start of your Turn, before Ready, if you have 1 or fewer cards in hand, Draw until you have 2. If you have 3 or more cards in hand, skip your Draw step this Turn.
 
-This makes the Rock Star the dedicated Low Hand Leader. The former Packed House discount remains useful design space for a future Momentum Leader or marquee card.
+This makes Rock Star's hand size interactable. Effects that Return cards or otherwise increase its hand can suppress the normal Draw, while low-hand cards become stronger as the hand empties.
 
 ## Birthday Party Magician — Misdirection / Funny Business
 
@@ -61,11 +61,11 @@ The old Ready-step tax is retired from the active Leader. Failure to Respond cre
 
 ## Backyard Wrestler — Expendable / Red Shirts
 
-**Character promise:** survive the hit, hit the corner, tag somebody else in.
+**Character promise:** somebody goes down, the next act comes flying in.
 
-At the end of the opponent's Turn, the Wrestler may Return one damaged Character. If so, another Character of the same Cost or less may be played from hand without paying its Cost.
+**Tag Out:** Once during your Turn, when one of your Characters is Defeated or Sacrificed, reveal the top card of your deck. If it is a Character with Cost less than or equal to the number of cards in your Stash, put it into play. It gains Hothead this Turn. Otherwise, put it into your hand.
 
-The returned Character cannot tag itself back in because the passive explicitly requires **another Character**. The replacement is genuinely Played, enters Ready, and triggers On Play abilities.
+Tag Out scales with the resource system already on the table. Early Stash keeps the free replacement small; later Stash allows larger surprise entrants. A miss still becomes card flow instead of a dead trigger.
 
 ## Style color palette
 
