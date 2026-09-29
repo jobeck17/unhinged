@@ -217,7 +217,7 @@ Each cell is the row deck's win rate against the column deck.
 ### Current matchup read
 
 - Rock Star is broadly strong across the field, not merely a Magician counter. Trash Baron is its one losing matchup.
-- Trash Baron is also broadly strong and currently has no losing matchup except Rock Star.
+- Trash Baron is currently favored into all five other mono-Style decks, including a narrow **52.8% to 47.2%** edge over Rock Star.
 - Magician now has a strong counter profile: strong into HOA, favored into Florida, near-even but unfavored into Wrestler, unfavored into Trash, and extremely weak into Rock Star.
 - HOA is broadly weak in the current heuristic field and needs diagnosis beyond its Magician matchup.
 - These are simulation signals, not final balance verdicts. Human testing should determine whether the matchup texture is fun and whether broad outliers need tuning.
