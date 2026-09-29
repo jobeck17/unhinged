@@ -1,6 +1,6 @@
 # Six mono-Style 40-card baseline decks
 
-> **Revision 11 telemetry baseline.** School Bully gains Hothead. First player skips their first Draw; second player may begin with temporary Stash.
+> **Revision 12 mono-Style baseline.** Rock Star uses the hand-gated Comeback Tour package, HOA uses the Rotated-board return, Wrestler uses Stash-scaled Tag Out, and School Bully retains Hothead. First player skips their first Draw; second player may begin with temporary Stash.
 
 ## Florida Man — Bad Decisions
 
@@ -41,19 +41,19 @@
 | 2 | 2 | Action | Encore! (P052) |
 | 2 | 2 | Action | Reset the Vibes (P054) |
 | 2 | 2 | Character | Cookie Scout (P047) |
-| 4 | 2 | Character | Guy Who Mows at 7 AM (P043) |
-| 4 | 2 | Character | Karaoke Champion (P033) |
 | 4 | 2 | Character | Wedding DJ (P032) |
 | 2 | 2 | Item | Portable Bluetooth Speaker (P059) |
 | 2 | 2 | Item | Starter Kit (P060) |
 | 4 | 3 | Character | Coupon Lady (P123) |
-| 2 | 3 | Character | Mike (P038) |
+| 4 | 3 | Character | Guy Who Mows at 7 AM (P043) |
+| 4 | 3 | Character | Karaoke Champion (P033) |
+| 2 | 3 | Character | One-Hit Wonder (P038) |
 | 1 | 3 | Character | Reunion Tour Drummer (P037) |
 | 2 | 6 | Character | Roadie Who Never Left (P048) |
 
 **Type mix:** 23 Characters / 13 Actions / 4 Items  
-**Curve:** 1: 8 · 2: 23 · 3: 7 · 6: 2  
-**Average Cost:** 2.17
+**Curve:** 1: 8 · 2: 15 · 3: 15 · 6: 2  
+**Average Cost:** 2.38
 
 ## Birthday Party Magician — Now You See Me
 
@@ -90,7 +90,8 @@
 | 2 | 1 | Item | Used Ham Sandwich (P120) |
 | 2 | 1 | Item | Zip Ties (P118) |
 | 3 | 2 | Action | Cash In the Clutter (P111) |
-| 3 | 2 | Action | Make It Work (P113) |
+| 2 | 2 | Action | Make It Work (P113) |
+| 1 | 2 | Action | Good as New (P116) |
 | 4 | 2 | Character | Dumpster Diver (P094) |
 | 2 | 2 | Character | Scout Troop Quartermaster (P091) |
 | 1 | 2 | Character | Shopping Cart Golem (P106) |
