@@ -376,3 +376,23 @@ Jerry-Rig is reduced from all four Salvage Items to two:
 - **Used Ham Sandwich** loses Jerry-Rig.
 
 The goal is to reduce Salvage's extra Stash generation while preserving Jerry-Rig as a signature mechanic.
+
+## Revision 9 Misdirection pressure pass
+
+### Trapdoor Assistant
+The former textless Coupon Scammer slot is now:
+
+**Trapdoor Assistant** — 3 Cost · 1/1 · Magician  
+When this enters play, you may Return an opposing Character costing 3 or less to its owner's hand.
+
+This gives Misdirection a replayable way to narrow an opposing board.
+
+### Poof!
+Spoofed Keycard is replaced by:
+
+**Poof!** — Action · Cost 2  
+Choose one of your Characters. The next time it attacks a Leader this Turn, that Attack cannot be Blocked. After that Attack, Return that Character to your hand.
+
+This gives the deck a direct way to convert tempo into Leader damage while also feeding its Return synergies.
+
+The mono-Misdirection baseline now runs 3 Trapdoor Assistants and 2 Poof!, replacing 3 Tech Bro and 2 Marked Deck copies.
