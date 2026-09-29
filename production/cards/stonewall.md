@@ -1,6 +1,6 @@
 # Stonewall / Find Out — Production Pool v0.2
 
-> Donut revision 11 · 2026-09-29 · Working playtest text; balance is unverified.
+> Donut revision 12 · 2026-09-29 · Working playtest text; balance is unverified.
 > Generated from [cards.json](cards.json).
 
 | ID | Type | Cost | Card | Power / Guard | Traits | Working text |
@@ -26,7 +26,7 @@
 | P138 | Character | 2 | **Neighborhood Lifeguard** | 2/3 | — | Opposing damaged Characters get -1 Power. |
 | P139 | Action | 1 | **File a Complaint** | — | — | An opposing Character gets -2 Power this Turn. |
 | P140 | Action | 2 | **Not in My Neighborhood** | — | — | Choose a Rotated opposing Character. Its owner may Discard a card. If they do not, it skips its next Ready step. |
-| P141 | Action | 3 | **Absolutely Not** | — | — | Response — When an opponent plays an Action: Cancel that Action. |
+| P141 | Action | 3 | **Absolutely Not** | — | — | Return all Rotated Characters and Items in play to their owners' hands. |
 | P143 | Action | 1 | **Read the Fine Print** | — | — | A Character gets -1 Power and -1 Guard this Turn. |
 | P144 | Action | 2 | **'Tis But a Scratch** | — | — | Heal 3 damage from your Leader. This costs 1 less if your Leader has less Health than the opposing Leader. |
 | P145 | Action | 2 | **Dig In** | — | — | Your Characters get +1 Guard this Turn. If you have fewer Characters in play than an opponent, Draw a card. |
