@@ -1,6 +1,6 @@
 # Six-deck lab
 
-This is the **revision 10 mono-Style baseline** for the rebuilt 0.2 Donut card pool.
+This is the **revision 11 mono-Style baseline** for the rebuilt 0.2 Donut card pool.
 
 - [All six 40-card lists](decks.md)
 - [Structured deck data](decks.json)
@@ -9,6 +9,8 @@ This is the **revision 10 mono-Style baseline** for the rebuilt 0.2 Donut card p
 - [Revision 7 turn-order / Ace Up My Sleeve snapshot](snapshot-revision-7-turn-order.md)
 - [Revision 10 full telemetry snapshot](snapshot-revision-10-full-telemetry.md)
 - [Revision 10 full telemetry JSON](snapshot-revision-10-full-telemetry.json)
+- [Revision 11 full telemetry baseline](snapshot-revision-11-full-telemetry.md)
+- [Revision 11 full telemetry JSON](snapshot-revision-11-full-telemetry.json)
 
 ## Current test conditions
 
@@ -16,9 +18,9 @@ This is the **revision 10 mono-Style baseline** for the rebuilt 0.2 Donut card p
 - After mulligans, the second player may put the top card of their deck face up and Rotated into Stash as optional temporary Stash.
 - Birthday Party Magician uses **Ace Up My Sleeve**: once during your Turn, when one of your Characters Returns from play to hand, Ready 1 Stash.
 - HOA President uses **Failure to Respond**: beginning in Round 8, opposing Characters cannot Block HOA's Attacks.
-- Revision 10 keeps the revision-8 economy changes and restores Magician to its pre-revision-9 list for full telemetry testing.
+- Revision 11 keeps the revision-8 economy changes and adds **Hothead** to School Bully after a corrected one-variable 30,000-game A/B.
 
-The revision-7 turn-order test moved first-player wins from **65.06% without the second-player bonus to 54.98% with the temporary Stash**, while average game length stayed effectively flat in the same harness. Treat exact deck win rates as directional; the simulator is strongest for relative A/B comparisons, pacing, economy, hand-size, and large package-engagement signals.
+The corrected revision-11 harness measures **47.11% first-player wins**, **8.49 average Rounds**, and an **8-Round median** with the temporary-Stash setup. Exact win rates remain heuristic; paired A/B changes, pacing, economy, hand-size, and matchup topology are the strongest simulation signals.
 
 ## Why mono-Style first
 
