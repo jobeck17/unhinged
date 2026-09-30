@@ -32,6 +32,6 @@ console.log('Carl smoke tests passed');
  g.turn=1;
  await g.endRound();
  assert.equal(g.round,2,'ending second turn should advance to Round 2');
- assert.equal(g.players[1].stash.length,0,'unused setup Stash must expire after Round 1');
- assert.equal(g.players[1].tempStashCard,null,'temporary marker must clear after Round 1');
+ assert.equal(g.players[1].stash.length,1,'unused setup Stash should persist until spent');
+ assert.ok(g.players[1].tempStashCard,'temporary marker should persist until spent');
 }
