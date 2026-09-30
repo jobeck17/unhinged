@@ -1,4 +1,4 @@
-import {Game,LEADERS,buildDeckField} from './engine.js?v=bath-salts-1';
+import {Game,LEADERS,buildDeckField} from './engine.js';
 import {aiAction,aiChoice} from './ai.js';
 const root=document.querySelector('#app');let pool,decks,playDecks=[],game,human=0,modal=null,busy=false,phase='setup',selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
