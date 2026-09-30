@@ -7,3 +7,15 @@
 
 .option small{display:block;margin-top:10px;font-size:.8rem;line-height:1.45;font-weight:400;color:#c2ccca}
 .passive-status.ready{color:#cfe79b;border-color:#718648}.passive-status.used{color:#93a09e}
+
+.deck-setup{max-width:720px}
+.deck-picker{margin:22px 0;padding:16px;border:1px solid #3f4e52;border-radius:14px;background:#182126}
+.deck-picker>label{display:block;margin-bottom:8px;color:#f3dd9f;font-size:.74rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.deck-select{width:100%;appearance:auto;border:1px solid #68777a;border-radius:10px;background:#f0eee1;color:#182025;padding:13px 12px;font:750 1rem/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.deck-select:focus{outline:3px solid #efaa62;outline-offset:2px}
+.deck-preview{margin-top:11px;padding:11px 12px;border-radius:9px;background:#10191d;border:1px solid #354449;display:grid;gap:4px}
+.deck-preview b{font-size:1.02rem;color:#f2f2e8}
+.deck-preview span{font-size:.75rem;color:#9fb2b0;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
+.deck-preview small{font-size:.78rem;line-height:1.4;color:#c7d2cf}
+.deck-preview strong{color:#efb271;font-size:.67rem;letter-spacing:.08em;margin-right:5px}
+.deck-start{width:100%;padding:14px 18px;font-size:1.05rem;margin-top:4px}
