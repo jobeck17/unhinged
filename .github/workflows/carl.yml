@@ -21,6 +21,7 @@ jobs:
       - run: node --check web/engine.js
       - run: node --check web/ai.js
       - run: node --check web/app.js
+      - run: node --check builder/app.js
       - name: Verify browser module imports
         run: |
           grep -q "from './engine.js'" web/app.js
@@ -41,9 +42,10 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Prepare static site
         run: |
-          mkdir -p _site/web
+          mkdir -p _site/web _site/builder
           cp index.html CARDS.json DECKS.json _site/
           cp web/index.html web/app.js web/engine.js web/ai.js web/style.css _site/web/
+          cp builder/index.html builder/app.js builder/style.css _site/builder/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
