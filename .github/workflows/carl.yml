@@ -1,0 +1,45 @@
+name: Carl CI and Pages
+on:
+  push:
+    branches: ["main","carl-build"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: carl-pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --check web/engine.js
+      - run: node --check web/ai.js
+      - run: node --check web/app.js
+      - run: node web/smoke.mjs
+      - run: GAMES_PER_MATCHUP=2 node sim/round-robin.js
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Prepare static site
+        run: |
+          mkdir -p _site/web
+          cp index.html CARDS.json DECKS.json _site/
+          cp web/index.html web/app.js web/engine.js web/ai.js web/style.css _site/web/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
