@@ -1,5 +1,5 @@
-import {Game,LEADERS} from './engine-lab.js';
-import {aiAction,aiChoice} from './ai-lab.js';
+import {Game,LEADERS} from './engine.js';
+import {aiAction,aiChoice} from './ai.js';
 const root=document.querySelector('#app');let pool,decks,game,human=0,modal=null,busy=false,phase='setup',selected=new Set(),chosenLeader=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const typeMark=type=>type==='Character'?'♟':type==='Action'?'⚡':'⬢';
