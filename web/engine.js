@@ -10,7 +10,20 @@ export const LEADERS={
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 export class Game{
  constructor(pool,decks,ask,update){this.cards=Object.fromEntries(pool.cards.map(c=>[c.id,c]));this.decks=decks.decks;this.ask=ask;this.update=update;this.log=[];this.nextUid=0;this.round=0;this.turn=0;this.first=0;this.passed=null;this.winner=null;this.pendingAttack=null;this.players=this.decks.map(d=>({deck:shuffle(Object.entries(d.cards).flatMap(([id,n])=>Array(n).fill(id))),hand:[],discard:[],board:[],hp:d.health,fuel:0,stash:[],tempStashCard:null,stashedThisTurn:false,played:[],leaderPassiveUsed:false,attacked:false,prevent:0,defeatedRound:false,skipDraw:false}));this.first=this.war();for(let p=0;p<2;p++)this.draw(p,7,false)}
- name(p){return this.decks[p].leader} card(x){return this.cards[typeof x==='string'?x:x.id]} obj(uid){return this.players.flatMap(s=>s.board).find(x=>x.uid===uid)} chars(p){return this.players[p].board.filter(x=>this.card(x).type==='Character')} items(x){return this.players.flatMap(s=>s.board).filter(y=>y.attached===x.uid)} power(x){return Math.max(0,(this.card(x).power||0)+x.power+this.items(x).filter(i=>i.id==='P027').length+(this.has(x,'P105')?x.cargo.length:0)+this.chars(x.owner).filter(y=>y.uid!==x.uid&&!y.cloaked&&((this.has(y,'P032')&&this.trait(x,'Musician'))||(this.has(y,'P102')&&this.trait(x,'Animal'))||(this.has(y,'P165')&&this.trait(x,'Wrestler')))).length)} guard(x){return (this.card(x).guard||0)+x.guard+this.items(x).reduce((sum,i)=>sum+(['P117','P179'].includes(i.id)?1:i.id==='P149'?(this.trait(x,'Parent')||this.trait(x,'Kid')?3:2):0),0)} layers(x){return x.lower?[x.lower,x.id]:[x.id]} has(x,id){return !!x&&this.layers(x).includes(id)} trait(x,t){return this.card(x).traits.includes(t)||x.extraTrait===t}
+ name(p){return this.decks[p].leader} card(x){return this.cards[typeof x==='string'?x:x.id]} obj(uid){return this.players.flatMap(s=>s.board).find(x=>x.uid===uid)} chars(p){return this.players[p].board.filter(x=>this.card(x).type==='Character')} items(x){return this.players.flatMap(s=>s.board).filter(y=>y.attached===x.uid)} power(x){let p=x.owner,c=this.card(x),v=Math.max(0,(c.power||0)+x.power+this.items(x).filter(i=>i.id==='P027').length);
+  if(this.has(x,'P005')&&x.damage)v+=2;
+  if(this.has(x,'P013')&&x.damage)v+=3;
+  if(this.has(x,'P033')&&this.players[p].hand.length<=2)v+=3;
+  if(this.has(x,'P038')&&this.players[p].hand.length===0)v+=4;
+  if(this.has(x,'P105'))v+=Math.min(3,this.players[p].discard.filter(id=>this.card(id).type==='Item').length);
+  if(this.has(x,'P106')&&this.players[p].tempStashCard)v+=2;
+  if(this.trait(x,'Musician')){
+   v+=this.players[p].board.filter(i=>this.card(i).type==='Item'&&i.id==='P059').length;
+   let total=this.players.flatMap(z=>z.board).filter(z=>['Character','Item'].includes(this.card(z).type)).length;
+   if(total>=6)v+=this.chars(p).filter(y=>y.uid!==x.uid&&this.has(y,'P037')).length;
+  }
+  return Math.max(0,v)}
+ guard(x){return (this.card(x).guard||0)+x.guard+this.items(x).reduce((sum,i)=>sum+(['P117','P179'].includes(i.id)?1:i.id==='P149'?(this.trait(x,'Parent')||this.trait(x,'Kid')?3:2):0),0)} layers(x){return x.lower?[x.lower,x.id]:[x.id]} has(x,id){return !!x&&this.layers(x).includes(id)} trait(x,t){return this.card(x).traits.includes(t)||x.extraTrait===t}
  say(msg){this.eventCount=(this.eventCount||0)+1;this.log.unshift(`R${this.round} · ${this.name(this.turn)}: ${msg}`);this.log.length=Math.min(100,this.log.length);this.update?.()}
  war(){let a=shuffle([...this.players[0].deck,...this.players[0].discard]),b=shuffle([...this.players[1].deck,...this.players[1].discard]);for(let i=0;i<Math.min(a.length,b.length);i++){let d=this.card(a[i]).cost-this.card(b[i]).cost;if(d)return d>0?0:1}return Math.floor(Math.random()*2)}
  draw(p,n=1,announce=true){let s=this.players[p];for(let i=0;i<n;i++){if(!s.deck.length){s.empty=true;this.checkEnd();return}s.hand.push(s.deck.pop())}if(announce)this.say(`${this.name(p)} draws ${n}`)}
