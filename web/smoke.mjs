@@ -21,3 +21,17 @@ function setup(a=0,b=2){const g=new Game(pool,{decks:[full.decks[a],full.decks[b
 let seed=20260930,old=Math.random;Math.random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
 try{for(let a=0;a<6;a++)for(let b=0;b<6;b++)if(a!==b){const g=new Game(pool,{decks:[full.decks[a],full.decks[b]]},r=>aiChoice(g,r),()=>{});g.begin();let limit=1200;while(g.winner===null&&g.round<25&&limit--){const m=aiAction(g,g.turn);if(m.type==='pass')await g.pass();else if(m.type==='stash')g.stash(m.index,g.turn);else if(m.type==='attack')await g.attack(m.uid);else if(m.type==='play')await g.play(m.index);else if(m.type==='activate')await g.activate(m.uid)}assert(limit>0)}}finally{Math.random=old}
 console.log('Carl smoke tests passed');
+
+{
+ const d={...full,decks:[full.decks[0],full.decks[1]]};
+ const g=new Game(pool,d,async()=>null,()=>{},{firstPlayer:0});
+ assert.equal(g.first,0,'forced first player should be honored');
+ g.begin();
+ assert.equal(g.players[1].stash.length,1,'second player should receive Round 1 setup Stash');
+ assert.ok(g.players[1].tempStashCard,'setup Stash should be marked temporary');
+ g.turn=1;
+ await g.endRound();
+ assert.equal(g.round,2,'ending second turn should advance to Round 2');
+ assert.equal(g.players[1].stash.length,0,'unused setup Stash must expire after Round 1');
+ assert.equal(g.players[1].tempStashCard,null,'temporary marker must clear after Round 1');
+}
