@@ -21,6 +21,12 @@ jobs:
       - run: node --check web/engine.js
       - run: node --check web/ai.js
       - run: node --check web/app.js
+      - name: Verify browser module imports
+        run: |
+          grep -q "from './engine.js'" web/app.js
+          grep -q "from './ai.js'" web/app.js
+          test -f web/engine.js
+          test -f web/ai.js
       - run: node web/smoke.mjs
       - run: GAMES_PER_MATCHUP=2 node sim/round-robin.js
   deploy:
