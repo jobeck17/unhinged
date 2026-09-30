@@ -7,6 +7,27 @@ export const LEADERS={
  'HOA President':{style:'Stonewall',passive:'Failure to Respond: Beginning in Round 8, opposing Characters cannot Block your Attacks.'},
  'Backyard Wrestler':{style:'Expendable',passive:'Tag Out: Once during your Turn after a friendly Defeat/Sacrifice, reveal the top card. A qualifying Expendable Character enters with Hothead; otherwise it goes to hand.'}
 };
+export function buildDeckField(doc){
+ const scale=(cards,target)=>{
+  const rows=Object.entries(cards).map(([id,n])=>({id,n,raw:n*target/40,count:Math.floor(n*target/40)}));
+  let total=rows.reduce((sum,x)=>sum+x.count,0);
+  rows.sort((a,b)=>(b.raw-b.count)-(a.raw-a.count)||b.n-a.n||a.id.localeCompare(b.id));
+  for(const row of rows){if(total>=target)break;if(row.count<row.n){row.count++;total++;}}
+  return Object.fromEntries(rows.filter(x=>x.count).map(x=>[x.id,x.count]));
+ };
+ const merge=(a,b)=>{const out={...a};for(const [id,n] of Object.entries(b))out[id]=(out[id]||0)+n;return out};
+ const field=[];
+ for(const primary of doc.decks){
+  const primaryStyle=primary.styles[0];
+  field.push({...primary,styles:[primaryStyle],cards:{...primary.cards},mono:true,generated:false,deckLabel:`${primary.leader} · Mono ${primaryStyle}`});
+  for(const secondary of doc.decks){
+   const secondaryStyle=secondary.styles[0];
+   if(secondaryStyle===primaryStyle)continue;
+   field.push({...primary,styles:[primaryStyle,secondaryStyle],cards:merge(scale(primary.cards,24),scale(secondary.cards,16)),mono:false,generated:true,secondaryStyle,deckLabel:`${primary.leader} · ${primaryStyle} + ${secondaryStyle}`});
+  }
+ }
+ return field;
+}
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 export class Game{
  constructor(pool,decks,ask,update){this.cards=Object.fromEntries(pool.cards.map(c=>[c.id,c]));this.decks=decks.decks;this.ask=ask;this.update=update;this.log=[];this.nextUid=0;this.round=0;this.turn=0;this.first=0;this.passed=null;this.winner=null;this.pendingAttack=null;this.players=this.decks.map(d=>({deck:shuffle(Object.entries(d.cards).flatMap(([id,n])=>Array(n).fill(id))),hand:[],discard:[],board:[],hp:d.health,fuel:0,stash:[],tempStashCard:null,stashedThisTurn:false,played:[],leaderPassiveUsed:false,attacked:false,prevent:0,defeatedRound:false,skipDraw:false}));this.first=this.war();for(let p=0;p<2;p++)this.draw(p,7,false)}
