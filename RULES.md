@@ -63,7 +63,7 @@ Ownership never changes. Control changes only when an effect explicitly says so.
 6. Shuffle decks and perform **War** to determine which player goes first.
 7. Draw seven cards.
 8. Each player may mulligan any number of cards from 0 to 7. Draw that many replacements, then shuffle the replaced cards into the deck.
-9. After mulligans are complete, the player going second may put the top card of their deck face up and Rotated into their Stash. This is setup temporary Stash and exists for Round 1 only.
+9. After mulligans are complete, the player going second may put the top card of their deck face up and Rotated into their Stash. This is temporary Stash.
 
 ### War
 
@@ -119,7 +119,7 @@ Some rules and effects put cards **face up** into Stash. A face-up Stash card is
 - Unless an effect says otherwise, when a face-up Stash card is used to pay a Cost, put it into its owner's discard instead of leaving it Rotated in Stash.
 - Face-up Stash may be affected by anything that affects Stash unless a rule or effect says otherwise.
 - The second player's setup Stash begins Rotated, then Readies normally during that player's first Ready step.
-- The setup temporary Stash exists only for Round 1. If it has not already been spent, put it into its owner's discard when Round 1 ends.
+- If the second player does not spend that temporary Stash and it is later Ready, it remains available until used. When used to pay a Cost, put it into its owner's discard instead of leaving it Rotated in Stash.
 
 Cost reductions may reduce a Cost to 0.
 
