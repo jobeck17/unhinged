@@ -1,11 +1,18 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game} from './engine.js';
+import {Game,buildDeckField} from './engine.js';
 import {aiAction,aiChoice} from './ai.js';
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url)));
 const full=JSON.parse(fs.readFileSync(new URL('../DECKS.json',import.meta.url)));
 assert.equal(pool.version,'0.2-carl'); assert.equal(pool.revision,13); assert.equal(full.card_pool,'0.2-carl');
 for(const d of full.decks){assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40)}
+const field=buildDeckField(full);
+assert.equal(field.length,36);
+assert.equal(field.filter(d=>d.mono).length,6);
+assert.equal(field.filter(d=>!d.mono).length,30);
+for(const d of field)assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40);
+assert.equal(field[0].deckLabel,'Florida Man · Mono Reckless');
+assert(field.some(d=>d.deckLabel==='Florida Man · Reckless + Salvage'));
 function setup(a=0,b=2){const g=new Game(pool,{decks:[full.decks[a],full.decks[b]]},async r=>r.multi?[]:r.options[0]?.value,()=>{});g.round=3;g.turn=0;g.first=0;for(const s of g.players){s.fuel=7;s.stash=Array(7).fill('P001');s.hand=[]}return g}
 {const g=setup(0,2),a=g.enter(0,'P013'),t=g.enter(1,'P067');a.damage=1;a.born=g.round;t.ready=true;assert(g.canAttack(a));g.ask=async r=>r.title.includes('Attack which')?t.uid:r.multi?[]:r.options[0]?.value;await g.attack(a.uid);assert(g.obj(a.uid)?.ready)}
 {const g=setup(2,0),x=g.enter(0,'P061');g.players[0].fuel=2;g.players[0].stash=Array(4).fill('P001');await g.remove(x,'hand');assert.equal(g.players[0].fuel,3)}
