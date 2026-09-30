@@ -41,7 +41,7 @@ export class Game{
  async defeatEffect(id,x,p,lower){let s=this.players[p],opp=1-p;if(id==='P152'||id==='P167')this.players[opp].hp--;if(id==='P164')for(let z of [...this.chars(opp)])await this.damage(z,1);if(id==='P104'){let i=s.discard.indexOf(id);if(i>=0)s.deck.unshift(...s.discard.splice(i,1))}if(id==='P106'&&lower){let i=s.discard.indexOf(lower);if(i>=0)s.hand.push(...s.discard.splice(i,1))}if(id==='P161'){/* delayed until end of turn in a later-card variant; not in these lists */}if(id==='P159'){let y=this.chars(p)[0];if(y){y.power+=2;if(this.trait(y,'Rat')||this.trait(y,'Undead'))y.guard++}}if(id==='P103'&&this.players[p].board.some(y=>this.card(y).type==='Item')){let item=this.players[p].board.find(y=>this.card(y).type==='Item');await this.dismiss(item);let i=s.discard.indexOf(id);if(i>=0)s.hand.push(...s.discard.splice(i,1))}}
  async checkDefeat(x){if(!x||!this.obj(x.uid)||x.cloaked||this.card(x).type!=='Character'||x.damage<this.guard(x))return false;this.say(`${this.card(x).name} is Defeated`);x.cargoRevealed=[...x.cargo];await this.remove(x,'discard',true);return true}
  async damage(x,n,defer=false){if(!x||!this.obj(x.uid)||n<=0||x.cloaked)return;let shield=this.items(x).find(i=>i.id==='P149');if(shield){let use=await this.choose(x.owner,'Dismiss Occupied Stroller to prevent 2 damage?',[{label:'Dismiss and prevent 2',value:true},{label:'Keep stroller',value:false}]);if(use){await this.dismiss(shield);n=Math.max(0,n-2)}}if(!n)return;x.damage+=n;this.say(`${this.card(x).name} takes ${n} damage`);if(!defer){if(await this.checkDefeat(x))return;await this.leaderPassive(x.owner,'survivedDamage',{character:x})}}
- async combatDamage(pairs){for(let [x,n,kind] of pairs){if(kind==='retaliation'&&n>0&&x&&this.obj(x.uid)&&this.layers(x).some(id=>this.card(id).keywords.includes('Cloak'))&&!x.cloaked){x.cloaked=true;this.say(`${this.card(x).name} Cloaks from retaliation`);continue}await this.damage(x,n,true)}let dead=pairs.map(([x])=>x).filter(x=>this.obj(x.uid)&&!x.cloaked&&x.damage>=this.guard(x)),survivors=pairs.filter(([,n])=>n>0).map(([x])=>x).filter(x=>this.obj(x.uid)&&!x.cloaked&&!dead.includes(x));for(let x of dead){x.cargoRevealed=[...x.cargo];this.say(`${this.card(x).name} is Defeated`);await this.remove(x,'discard',false)}for(let x of dead){let p=x.owner;this.players[p].defeatedRound=true;await this.leaderPassive(p,'friendlyDefeat');for(let id of this.layers(x))await this.defeatEffect(id,x,p,x.lower)}for(let x of survivors)await this.leaderPassive(x.owner,'survivedCombat',{character:x})}
+ async combatDamage(pairs){for(let [x,n,kind] of pairs){if(kind==='retaliation'&&n>0&&x&&this.obj(x.uid)&&this.layers(x).some(id=>this.card(id).keywords.includes('Cloak'))&&!x.cloaked){x.cloaked=true;this.say(`${this.card(x).name} Cloaks from retaliation`);continue}await this.damage(x,n,true)}let dead=pairs.map(([x])=>x).filter(x=>x&&this.obj(x.uid)&&!x.cloaked&&x.damage>=this.guard(x));for(let x of dead){x.cargoRevealed=[...x.cargo];this.say(`${this.card(x).name} is Defeated`);await this.remove(x,'discard',false)}for(let x of dead){let p=x.owner;this.players[p].defeatedRound=true;await this.leaderPassive(p,'friendlyDefeat');for(let id of this.layers(x))await this.defeatEffect(id,x,p,x.lower)}}
  heal(x,n){if(x&&this.obj(x.uid))x.damage=Math.max(0,x.damage-n)}
  hurtLeader(p,n){let s=this.players[p],blocked=Math.min(s.prevent,n);s.prevent-=blocked;s.hp-=n-blocked;if(n>blocked)this.say(`${this.name(p)} takes ${n-blocked} damage`)}
  async dismiss(x){if(!x||!this.obj(x.uid))return;let p=x.owner,isItem=this.card(x).type==='Item';await this.remove(x);if(isItem)await this.leaderPassive(p,'dismissedItem')}
@@ -181,6 +181,21 @@ export class Game{
  if(target===-1&&!(this.name(p)==='HOA President'&&this.round>=8)){let ready=this.chars(opp).filter(x=>x.ready&&!x.cloaked&&!x.noBlock);let bodyguards=ready.filter(x=>this.layers(x).some(id=>this.card(id).keywords.includes('Bodyguard')));if(bodyguards.length)ready=bodyguards;if(ready.length){let chosen=await this.ask({title:`Blockers: ${this.card(a).name} attacks your Leader (choose up to one)`,attackContext:{name:this.card(a).name,power:incoming,guard:this.guard(a),damage:a.damage,text:this.card(a).text},player:opp,multi:true,max:1,options:ready.map(x=>({label:`${this.card(x).name} · ${this.power(x)}/${this.guard(x)-x.damage}`,value:x.uid}))});blockers=(chosen||[]).slice(0,1).map(id=>this.obj(id)).filter(Boolean)}}
  for(let x of blockers){x.ready=false;if(this.has(x,'P121'))bonus--;for(let z of this.chars(opp))if(this.has(z,'P125')&&z.uid!==x.uid)z.power++}
  if(!this.obj(uid)||target!==-1&&!this.obj(target))return this.advance();let incomingDamage=Math.max(0,this.power(a)+bonus);
- if(target===-1){let blocker=blockers[0];if(blocker&&this.obj(blocker.uid)){let absorbed=Math.min(incomingDamage,Math.max(0,this.guard(blocker)-blocker.damage)),retal=this.power(blocker)+await this.leaderPassive(opp,'blocker');this.hurtLeader(opp,incomingDamage-absorbed);await this.combatDamage([[blocker,absorbed,'attack'],[a,retal,'retaliation']])}else this.hurtLeader(opp,incomingDamage)}else{let x=this.obj(target);await this.combatDamage([[x,incomingDamage,'attack'],[a,this.power(x),'retaliation']])}
+ if(target===-1){
+  let blocker=blockers[0];
+  if(blocker&&this.obj(blocker.uid)){
+   let absorbed=Math.min(incomingDamage,Math.max(0,this.guard(blocker)-blocker.damage));
+   let retal=this.power(blocker),defiant=this.layers(blocker).some(id=>this.card(id).keywords.includes('Defiant')),slow=this.layers(blocker).some(id=>this.card(id).keywords.includes('Slowpoke'));
+   this.hurtLeader(opp,incomingDamage-absorbed);
+   await this.combatDamage([[blocker,absorbed,'attack']]);
+   if(this.obj(a.uid)&&(this.obj(blocker.uid)||defiant)&&!slow)await this.combatDamage([[a,retal,'retaliation']]);
+   for(let z of [a,blocker])if(this.obj(z.uid)&&z.damage>0)await this.leaderPassive(z.owner,'survivedCombat',{character:z});
+  }else this.hurtLeader(opp,incomingDamage);
+ }else{
+  let x=this.obj(target),retal=this.power(x);
+  await this.combatDamage([[x,incomingDamage,'attack']]);
+  if(this.obj(x.uid)&&this.obj(a.uid))await this.combatDamage([[a,retal,'retaliation']]);
+  for(let z of [a,x])if(this.obj(z.uid)&&z.damage>0)await this.leaderPassive(z.owner,'survivedCombat',{character:z});
+ }
  this.advance()}
 }
