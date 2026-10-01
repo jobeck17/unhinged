@@ -1,0 +1,214 @@
+{
+  "version": "lab-mad-scientist-0.1",
+  "status": "lab-prototype",
+  "canonical": false,
+  "style": null,
+  "cards": [
+    {
+      "id": "LAB-SCI-001",
+      "type": "Character",
+      "cost": 1,
+      "name": "Lab Rat",
+      "traits": [
+        "Animal",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "Pure ingredient/body. Establishes the floor for cheap Parts."
+    },
+    {
+      "id": "LAB-SCI-002",
+      "type": "Character",
+      "cost": 1,
+      "name": "Intern Who Signed the Waiver",
+      "traits": [
+        "Human",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Cheap Part with slightly better blocking value."
+    },
+    {
+      "id": "LAB-SCI-003",
+      "type": "Character",
+      "cost": 1,
+      "name": "Questionably Acquired Cadaver",
+      "traits": [
+        "Undead",
+        "Part"
+      ],
+      "text": "Slowpoke.",
+      "keywords": [
+        "Slowpoke"
+      ],
+      "power": 0,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Defensive Part that is more useful as material than as an attacker."
+    },
+    {
+      "id": "LAB-SCI-004",
+      "type": "Character",
+      "cost": 2,
+      "name": "Two-Headed Chicken",
+      "traits": [
+        "Animal",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 3,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Efficient mid-grade ingredient that can also fight."
+    },
+    {
+      "id": "LAB-SCI-005",
+      "type": "Character",
+      "cost": 2,
+      "name": "Lab Assistant",
+      "traits": [
+        "Human",
+        "Scientist"
+      ],
+      "text": "When this enters play, look at the top 4 cards of your deck. You may reveal an Experiment Action and put it into your hand. Put the rest on the bottom in any order.",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Finds the fusion engine without directly generating resources."
+    },
+    {
+      "id": "LAB-SCI-006",
+      "type": "Character",
+      "cost": 2,
+      "name": "Spare Parts Dealer",
+      "traits": [
+        "Human",
+        "Part"
+      ],
+      "text": "When this enters play, you may Return a Character costing 1 from your discard to your hand.",
+      "keywords": [],
+      "power": 2,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Reclaims cheap ingredients after experiments or combat."
+    },
+    {
+      "id": "LAB-SCI-007",
+      "type": "Character",
+      "cost": 3,
+      "name": "Failed Clone",
+      "traits": [
+        "Part"
+      ],
+      "text": "When you Discard this from your hand to pay an additional Cost of an Experiment, Draw a card.",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Premium experiment material that reduces the hand-cost pain without making every ingredient replace itself."
+    },
+    {
+      "id": "LAB-SCI-008",
+      "type": "Character",
+      "cost": 3,
+      "name": "Escaped Prototype",
+      "traits": [
+        "Abomination",
+        "Part"
+      ],
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 4,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "A normal pressure card that can become material when the laboratory needs it."
+    },
+    {
+      "id": "LAB-SCI-009",
+      "type": "Action",
+      "cost": 3,
+      "name": "It's Alive!",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "As an additional Cost to play this, Discard two Character cards. Put an Abomination token into play.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Primary fusion spell. Trades three cards total plus Stash for a deliberately oversized body."
+    },
+    {
+      "id": "LAB-SCI-010",
+      "type": "Action",
+      "cost": 1,
+      "name": "Release the Specimen",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "Put an unused Specimen from your Specimen Rack into play. If you have no unused Specimens, put a generic Specimen token into play instead.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "The physical cross-TCG joke and an additional source of experiment material."
+    },
+    {
+      "id": "LAB-SCI-011",
+      "type": "Action",
+      "cost": 1,
+      "name": "Grave Robbing",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "Return a Character costing 2 or less from your discard to your hand.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Recovers bodies without restoring Stash."
+    },
+    {
+      "id": "LAB-SCI-012",
+      "type": "Action",
+      "cost": 0,
+      "name": "Flip the Breaker",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "As an additional Cost to play this, Discard a card. Ready up to 2 Stash.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Converts hand economy into a small emergency battery recharge."
+    },
+    {
+      "id": "LAB-SCI-013",
+      "type": "Item",
+      "cost": 1,
+      "name": "Car Battery in the Bathtub",
+      "traits": [
+        "Equipment"
+      ],
+      "text": "Dismiss this Item: Ready up to 2 Stash.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "One-shot recharge. Tests whether limited card-driven recovery makes Burnout decisions richer."
+    }
+  ]
+}
