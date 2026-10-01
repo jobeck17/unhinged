@@ -126,10 +126,77 @@ Change the design if:
 Change only one at a time:
 
 1. Threshold: 3 Cats → 4 Cats.
-2. Bonus Stash enters Rotated instead of Ready.
+2. Delay the bonus Stash for one Turn (for example, it enters Rotated after the Ready step or explicitly does not Ready this Turn). Simply making it enter Rotated before Ready would have no effect because the normal Ready step immediately follows.
 3. Trigger limited to every other Turn or once while crossing the threshold.
 4. Stray Cat count: 10 → 8 or 6.
 5. Stray Cat stats: 1/1 → 1/2 only if survival is too fragile.
 6. Remove support protection before weakening the Leader engine.
 
 The first human test should use the passive exactly as written before touching these knobs.
+
+
+## Simulation checkpoint — October 1, 2026
+
+### Matchup
+
+Crazy Cat Lady Lab 0.1 vs. canonical **Comeback Tour / Washed-Up Rock Star**.
+
+20,000 games were run with starting order split evenly. This was a dedicated lab matchup harness based on the current simulator, with two core interactions modeled more faithfully because they are unusually important to this experiment:
+
+- legal direct attacks on Rotated Characters, allowing Rock Star to actively thin the Cat colony;
+- deck-out loss, because Cat Distribution System consumes cards from the top of the deck.
+
+The lab harness also modeled the Cat package's relevant simple effects and the major current Rock Star package effects. Treat the result as an early same-matchup signal, not a canonical metagame result.
+
+### Lab 0.1 result — 3-Cat threshold
+
+- Cat Lady win rate: **56.05%**
+- Cat Lady when going first: **54.48%**
+- Cat Lady when going second: **57.61%**
+- Average game length: **8.52 Rounds**
+- Median game length: **8 Rounds**
+- Cat Distribution System triggered in **68.61%** of games.
+- When the passive triggered at least once, Cat Lady won **77.86%**.
+- When the passive never triggered, Cat Lady won only **8.38%**.
+- Average bonus Stash created: **2.37 per game**.
+- Among games where the engine activated, it created **3.46 bonus Stash** on average.
+- Median first activation: **Round 3**.
+- The Cat colony was knocked from the active threshold to below it in **56.47%** of games.
+- Average maximum colony size: **4.87 Cats**.
+- No Cat Lady deck-out losses occurred in this matchup sample.
+- Zero games were censored at the Round cap.
+
+### Interpretation
+
+The overall matchup is only moderately Cat-favored, but the internal result is highly polarized.
+
+The current prototype behaves very close to the intended **snowball** fantasy:
+
+- if Rock Star prevents the colony from establishing, Cat Lady is extremely weak;
+- if Cat Distribution System comes online, Cat Lady becomes heavily favored.
+
+That is a useful success signal for identity, but the 77.86% / 8.38% split is a warning that the threshold may currently act too much like an on/off switch rather than creating a recoverable advantage.
+
+### Threshold sensitivity — 4 Cats
+
+The same 20,000-game seed structure was rerun with only the activation threshold changed from 3 Cats to 4.
+
+- Cat Lady win rate: **52.16%**
+- First: **52.66%**
+- Second: **51.66%**
+- Average game length: **8.82 Rounds**
+- Passive triggered in **49.68%** of games.
+- When it triggered, Cat Lady won **87.09%**.
+- When it did not trigger, Cat Lady won **17.68%**.
+- Average bonus Stash: **1.28 per game**.
+- Median first activation: **Round 5**.
+
+Moving the threshold to 4 fixes the headline win rate but does **not** fix the binary behavior. It makes successful engine starts rarer, while the games that do establish the engine are even more strongly correlated with winning.
+
+### Current lab read
+
+Keep the 3-Cat threshold for the next human/prototype pass.
+
+The more interesting tuning question is not simply “3 or 4 Cats.” It is whether the reward for maintaining the colony should accumulate more gradually or give the opponent a larger recovery window after the first activation.
+
+Do not promote or rebalance from this one matchup alone.
