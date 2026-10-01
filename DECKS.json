@@ -21,7 +21,7 @@
         "P003": 3,
         "P005": 3,
         "P007": 2,
-        "P181": 3,
+        "P009": 3,
         "P013": 4,
         "P017": 3,
         "P011": 2,
@@ -43,7 +43,7 @@
         "Is self-damage too easy to convert into upside?",
         "Does Damage Everywhere matter without simply becoming burn?"
       ],
-      "status_note": "Pet Alligator test: replaces Pirate With No Exit Strategy 3-for-3; curve unchanged."
+      "status_note": "Pet Alligator test: P009 replaces Pirate With No Exit Strategy in the Reckless pool; curve and deck count unchanged."
     },
     {
       "name": "Comeback Tour",
