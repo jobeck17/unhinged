@@ -21,7 +21,7 @@ They are intentionally separate experiments.
 
 ## Experiment A — Crazy Cat Lady
 
-**State:** IDEA  
+**State:** PROTOTYPE  
 **Model:** Snowball  
 **Style:** Unassigned
 
@@ -52,9 +52,9 @@ No Style is assigned yet.
 ### Snowball engine candidate
 
 > **Cat Distribution System**  
-> At the start of your Turn, if you control 3 or more Cats, put the top card of your deck face down and Ready into your Stash.
+> At the start of your Turn, before Ready, if you control 3 or more Cats, put the top card of your deck face down and Ready into your Stash.
 
-This is provisional text, not a canonical Leader passive.
+This is provisional text, not a canonical Leader passive. The playable lab package lives in `crazy-cat-lady/`.
 
 ### Why this might work
 
