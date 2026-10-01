@@ -395,3 +395,66 @@ This produced a 54.51% overall win rate against the same strong control deck, wh
 A low roll makes the experiment an expensive failure. A high roll produces the payoff the Scientist was gambling for. The mechanic therefore puts genuine **scientific uncertainty** into the fusion rather than pretending every experiment succeeds perfectly.
 
 This is currently the strongest Mad Scientist direction from simulation, but it has not yet replaced the Lab 0.1 prototype rules.
+
+
+## Separate Power / Guard dice test — October 1, 2026
+
+The 5-Stash hard-cap resource model and 3-Cost It's Alive! were held fixed.
+
+Variant tested:
+
+> **It's Alive! — 3 Cost**  
+> As an additional Cost to play this, Discard two Character cards. Roll one six-sided die for Power and a second six-sided die for Guard. Put an Abomination token into play with those results.
+
+20,000 games were run against Comeback Tour / Washed-Up Rock Star.
+
+### Result
+
+- Scientist win rate: **54.96%**
+- Scientist going first: **54.23%**
+- Scientist going second: **55.69%**
+- Average game length: **7.15 Rounds**
+
+This is essentially the same overall strength as the previous single-die X/X version (**54.51%**, 7.13 Rounds), but the outcome curve is substantially smoother.
+
+### First Abomination — grouped by Power roll
+
+| Power | Scientist win rate |
+|---:|---:|
+| 1 | **14.23%** |
+| 2 | **23.16%** |
+| 3 | **48.97%** |
+| 4 | **63.79%** |
+| 5 | **89.82%** |
+| 6 | **95.37%** |
+
+The previous single-die X/X test jumped from **37.48% at 3/3** to **74.71% at 4/4**.
+
+With independent rolls, the analogous Power transition is much gentler: **48.97% at Power 3** to **63.79% at Power 4**, because Guard varies independently.
+
+### First Abomination — grouped by Guard roll
+
+| Guard | Scientist win rate |
+|---:|---:|
+| 1 | **45.72%** |
+| 2 | **48.87%** |
+| 3 | **49.89%** |
+| 4 | **59.29%** |
+| 5 | **63.31%** |
+| 6 | **64.03%** |
+
+Power matters more than Guard in this matchup, but high Guard still improves the monster's staying power.
+
+### Current lab read
+
+Separate Power and Guard rolls preserve the healthy overall balance signal while reducing the harsh single-number breakpoint.
+
+It also creates more thematic Abominations:
+
+- 6/1 glass-cannon success;
+- 1/6 nearly indestructible failure;
+- 3/5 awkward but useful;
+- 5/2 dangerous and unstable;
+- 6/6 jackpot.
+
+This is currently a stronger design candidate than the single-die X/X version because it creates more varied board states without materially increasing rules complexity.
