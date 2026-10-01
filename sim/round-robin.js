@@ -25,7 +25,7 @@ const HALF = GAMES_PER_MATCHUP / 2;
 const MAX_ROUNDS = 40;
 
 // Balance experiment switches. Keep experiments explicit.
-const EXPERIMENT = {build:"Carl 0.2 / Revision 13",tagOutNativeOnly:true,floridaSurvivalReady:true};
+const EXPERIMENT = {build:"Carl 0.3",tagOutNativeOnly:true,floridaSurvivalReady:true};
 
 function scaleList(cards, target) {
   const rows = Object.entries(cards).map(([id, n]) => ({
@@ -223,7 +223,7 @@ for(let i=0;i<decks.length;i++)for(let j=i+1;j<decks.length;j++){
   matrix[j][i]=100*jw/GAMES_PER_MATCHUP;
 }
 const ranking=decks.map((d,i)=>({...d,winRate:100*stats[i].wins/stats[i].games})).sort((a,b)=>b.winRate-a.winRate);
-const result={revision:cardsDoc.revision,experiment:EXPERIMENT,gamesPerMatchup:GAMES_PER_MATCHUP,totalGames:630*GAMES_PER_MATCHUP,decks:decks.map(d=>d.name),ranking:ranking.map(d=>({name:d.name,winRate:+d.winRate.toFixed(2)})),matrix};
+const result={build:cardsDoc.version,experiment:EXPERIMENT,gamesPerMatchup:GAMES_PER_MATCHUP,totalGames:630*GAMES_PER_MATCHUP,decks:decks.map(d=>d.name),ranking:ranking.map(d=>({name:d.name,winRate:+d.winRate.toFixed(2)})),matrix};
 const outPath=path.join(__dirname,"round-robin-results.json");
 fs.writeFileSync(outPath,JSON.stringify(result,null,2)+"\n");
 console.log("Wrote "+outPath);
