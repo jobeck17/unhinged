@@ -17,7 +17,7 @@ It also contains an optional physical-card experiment for using a few cards from
 
 ### Fully Charged, No Charger
 
-> After mulligans, put the top **5 cards** of your deck face down and Ready into your Stash. You do not receive setup temporary Stash and cannot use the normal once-per-Round Stash action. Your Stash cannot contain more than **5 cards** and does not Ready during your Ready step. At the start of your Turn, before Ready, Ready **1 Stash**.
+> After mulligans, put the top **5 cards** of your deck face down and Ready into your Stash. You do not receive setup temporary Stash and cannot use the normal once-per-Round Stash action. Your Stash cannot contain more than **5 cards**, **cannot be used by an opponent to pay Costs**, and does not Ready during your Ready step. At the start of your Turn, before Ready, Ready **1 Stash**.
 
 This deliberately violates normal Stash setup, growth, and recovery.
 
@@ -26,6 +26,10 @@ The first Turn begins with **5 Ready Stash**.
 Once those resources are Rotated, normal recovery is only **1 Stash per Turn**.
 
 The deck contains a few cards that can force extra recharge, but doing so consumes cards or Items. The question is whether that creates meaningful restraint or whether the correct answer is always "spend everything immediately."
+
+### Protected battery
+
+Mad Scientist's starting Stash represents the laboratory battery, not ordinary shared economic opportunity. It is **protected Stash**: opponents cannot spend it to pay their Costs. This specifically prevents Trash Baron from turning the Scientist's finite five-charge battery into the Baron's own opening economy while preserving Trash Baron's normal passive against ordinary Stash.
 
 ## The battery curve
 
@@ -480,3 +484,20 @@ It also creates more thematic Abominations:
 - 6/6 jackpot.
 
 This is currently a stronger design candidate than the single-die X/X version because it creates more varied board states without materially increasing rules complexity.
+
+
+## Physical Specimens — future development
+
+The preferred physical direction is now to make the surprise real:
+
+- up to **4 approved external TCG cards** may eventually be sleeved identically with the Unhinged deck and **shuffled into the 40-card deck**;
+- the opponent should not know whether any Specimens are present until one is revealed or Played;
+- opaque sleeves and a standard-size backing card may be required for smaller-format cards such as Yu-Gi-Oh!;
+- the external card's native rules text remains ignored unless a later experiment explicitly adds a tiny source-game graft rule;
+- the web playtest uses generic Specimen representations because it cannot reproduce arbitrary physical cards from a player's collection.
+
+This is saved for physical prototyping and does not yet replace the current lab data model.
+
+## Shared counterplay note
+
+A **board wipe** is an important natural counter to this deck. Mad Scientist converts scarce battery into persistent bodies; a wipe can erase that stored value and force the depleted laboratory to rebuild at only one Readied Stash per Turn. Future card-pool development should ensure board-wide answers exist without making them common enough to invalidate Character-first gameplay.
