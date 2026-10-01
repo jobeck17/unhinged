@@ -1,5 +1,5 @@
 {
-  "version": "lab-mad-scientist-0.1",
+  "version": "lab-mad-scientist-0.2",
   "status": "lab-prototype",
   "canonical": false,
   "style": null,
@@ -143,12 +143,12 @@
       "traits": [
         "Experiment"
       ],
-      "text": "As an additional Cost to play this, Discard two Character cards. Put an Abomination token into play.",
+      "text": "As an additional Cost to play this, Discard two Character cards. Roll for Power, then roll for Guard. Put an Abomination token into play with Power and Guard equal to those results.",
       "keywords": [],
       "power": null,
       "guard": null,
       "status": "lab-prototype",
-      "purpose": "Primary fusion spell. Trades three cards total plus Stash for a deliberately oversized body."
+      "purpose": "Primary fusion spell. Trades cards and limited battery charge for a randomly successful or failed experiment."
     },
     {
       "id": "LAB-SCI-010",
