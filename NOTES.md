@@ -1,11 +1,14 @@
 # Unhinged — Living Design Notes
 
-**Build:** Carl 0.2 · Revision 13  
-**Date:** September 30, 2026  
+**Build:** Carl 0.3 · Revision 13  
+**Date:** October 1, 2026  
 This replaces scattered checkpoints, brainstorm files, open-decision files, and idea banks.
 
 ## Legend
 ✅ locked for Carl · 🧪 testing · 🧠 banked · 🗑 retired
+
+## Development milestone
+✅ **0.3 Carl** is the current core-stabilization milestone. Meaningful compatible checkpoints within Carl use 0.3.x build numbers; ordinary commits do not require a version bump. Major pre-1.0 generations advance to the next 0.X number and receive a new Dungeon Crawler Carl character codename. The full versioning policy and road to 1.0 live in README.md.
 
 ## What we know for now
 ✅ Leader-centered, Character-first, synergy-forward game. 40-card deck, one Leader outside the deck, 25 Health, four-copy maximum.  
