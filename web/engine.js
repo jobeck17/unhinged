@@ -1,4 +1,4 @@
-// Carl 0.2 playtest engine. Current core rules + Revision 13 Leader package.
+// Carl 0.3 playtest engine. Current core rules and Leader package.
 export const LEADERS={
  'Florida Man':{style:'Reckless',passive:'Damaged Characters have Hothead and Sucker Punch. After a damaged Character survives combat with another Character, Ready it.'},
  'Washed-Up Rock Star':{style:'Momentum',passive:'Comeback Tour: Before Ready, refill to 2 cards at 1 or fewer; at 3 or more, skip the normal Draw.'},
