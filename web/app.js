@@ -1,15 +1,31 @@
-import {Game,LEADERS,buildDeckField} from './engine.js?v=pet-alligator-1';
+import {Game,LEADERS,buildDeckField} from './engine.js?v=rulebreakers-1';
 import {aiAction,aiChoice} from './ai.js';
 const root=document.querySelector('#app');let pool,decks,playDecks=[],game,human=0,modal=null,busy=false,phase='setup',selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const typeMark=type=>type==='Character'?'♟':type==='Action'?'⚡':'⬢';
-try{[pool,decks]=await Promise.all([fetch('../CARDS.json?v=pet-alligator-1').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=pet-alligator-1').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);if(pool.version!==decks.card_pool)throw Error('Deck and card pool versions differ');playDecks=buildDeckField(decks);if(playDecks.length!==36)throw Error('Expected 36 playable decks');render()}catch(e){root.innerHTML=`<div class="setup"><h1>Can’t load the game</h1><p>${esc(e.message)}. Open the app through GitHub Pages or a local web server.</p></div>`}
+try{let catPool,catDeck,sciPool,sciDeck,sciTokens;[pool,decks,catPool,catDeck,sciPool,sciDeck,sciTokens]=await Promise.all([
+ fetch('../CARDS.json?v=rulebreakers-1').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),
+ fetch('../DECKS.json?v=rulebreakers-1').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()}),
+ fetch('../lab/leader-rulebreakers/crazy-cat-lady/CARDS.json?v=rulebreakers-1').then(r=>r.json()),
+ fetch('../lab/leader-rulebreakers/crazy-cat-lady/DECK.json?v=rulebreakers-1').then(r=>r.json()),
+ fetch('../lab/leader-rulebreakers/mad-scientist/CARDS.json?v=rulebreakers-1').then(r=>r.json()),
+ fetch('../lab/leader-rulebreakers/mad-scientist/DECK.json?v=rulebreakers-1').then(r=>r.json()),
+ fetch('../lab/leader-rulebreakers/mad-scientist/TOKENS.json?v=rulebreakers-1').then(r=>r.json())
+]);if(pool.version!==decks.card_pool)throw Error('Deck and card pool versions differ');
+ const labCards=[...catPool.cards,...sciPool.cards].map(c=>({...c,style:c.style||'Lab',keywords:c.keywords||[]}));
+ const tokenCards=sciTokens.tokens.map(t=>({...t,type:'Character',cost:0,style:'Lab',keywords:t.keywords||[],power:typeof t.power==='number'?t.power:0,guard:typeof t.guard==='number'?t.guard:0,token:true}));
+ pool={...pool,cards:[...pool.cards,...labCards,...tokenCards]};
+ const labDecks=[
+  {...catDeck,leader:catDeck.leader.name,health:catDeck.leader.health,styles:['Lab'],lab:true,deckLabel:'LAB · Crazy Cat Lady · Snowball'},
+  {...sciDeck,leader:sciDeck.leader.name,health:sciDeck.leader.health,styles:['Lab'],lab:true,protectedStash:!!sciDeck.protected_stash,deckLabel:'LAB · Mad Scientist · Burnout'}
+ ];
+ playDecks=[...buildDeckField(decks),...labDecks];if(playDecks.length!==38)throw Error('Expected 38 playable decks including 2 lab decks');render()}catch(e){root.innerHTML=`<div class="setup"><h1>Can’t load the game</h1><p>${esc(e.message)}. Open the app through GitHub Pages or a local web server.</p></div>`}
 function render(){if(!pool)return;if(phase==='setup'){
  const options=playDecks.map((d,i)=>`<option value="${i}">${esc(d.deckLabel)}</option>`).join('');
  root.innerHTML=`<div class="setup deck-setup">
   <div class="small">Unhinged · Carl 0.3</div>
   <h1>Choose your<br>matchup.</h1>
-  <p>Pick any of the 36 current test decks for each side. Mixed decks use the same 24-card primary / 16-card secondary construction as the 36-deck simulator.</p>
+  <p>Pick any current Carl test deck, or jump into one of the two isolated Rulebreaker LAB prototypes. Mixed Carl decks use the same 24-card primary / 16-card secondary construction as the simulator.</p>
   <div class="deck-picker">
    <label for="your-deck">Your deck</label>
    <select id="your-deck" class="deck-select">${options}</select>
@@ -21,7 +37,7 @@ function render(){if(!pool)return;if(phase==='setup'){
    <div id="ai-preview" class="deck-preview"></div>
   </div>
   <button id="start-match" class="primary deck-start">Start match</button>
-  <p class="muted">6 mono decks + 30 two-Style test decks · single player · no account · tap any card to read it</p>
+  <p class="muted">36 Carl test decks + 2 LAB prototypes · single player · no account · tap any card to read it</p>
  </div>`;
  const your=root.querySelector('#your-deck'),ai=root.querySelector('#ai-deck'),preview=(id,index)=>{
   const d=playDecks[index],leader=LEADERS[d.leader];
@@ -43,7 +59,7 @@ function render(){if(!pool)return;if(phase==='setup'){
  wireCards();let pass=root.querySelector('#pass');if(pass)pass.onclick=()=>humanAction(()=>game.pass());let nw=root.querySelector('#new');if(nw)nw.onclick=()=>{phase='setup';game=null;render()};if(modal)showModal(modal)}
 function headHTML(p,you){let s=game.players[p],d=game.decks[p],leader=LEADERS[d.leader];return `<div class="head ${you?'you':''}"><article class="leader-card ${esc(leader.style.toLowerCase())}" aria-label="${esc(d.leader)} Leader, ${s.hp} Health"><div class="leader-line"><div><span class="leader-label">♛ ${you?'YOUR':'AI'} LEADER · ${esc(d.styles.join(' + '))}</span><h2>${esc(d.leader)}</h2></div><b class="leader-health">♥ ${s.hp}</b></div><p class="leader-passive"><strong>PASSIVE</strong> ${esc(leader.passive)}</p><div class="metrics"><span>Stash ${s.fuel}/${s.stash.length} ready</span><span>Deck ${s.deck.length}</span><span>Hand ${you?s.hand.length:'?'}</span></div></article></div>`}
 function itemsHTML(p){let items=game.players[p].board.filter(x=>game.card(x).type==='Item');return items.length?`<div class="sectionhead" style="margin-top:12px">Items</div><div class="lane" style="min-height:132px">${items.map(x=>cardHTML(x,'board',p)).join('')}</div>`:''}
-function cardHTML(x,zone,p,index,chosen=false){let c=game.card(x),onBoard=zone==='board',char=c.type==='Character',rot=onBoard&&!x.ready,stats=onBoard&&char?`${game.power(x)} ⚔ · ${Math.max(0,game.guard(x)-x.damage)} ⛨ left`:char?`${c.power} ⚔ · ${c.guard} ⛨`:c.type;return `<button type="button" class="card type-${c.type.toLowerCase()} ${c.style.toLowerCase()} ${rot?'rotated':''} ${x.cloaked?'cloaked':''} ${chosen?'mulligan-selected':''} ${game.pendingAttack?.attacker===x.uid?'attacking':''} ${game.pendingAttack?.target===x.uid?'targeted':''}" data-zone="${zone}" data-player="${p}" data-uid="${x.uid||''}" data-index="${index??''}" aria-pressed="${zone==='hand'&&phase==='mulligan'?chosen:'false'}" aria-label="${esc(c.type)} ${esc(c.name)}, ${esc(stats)}${chosen?', selected to replace':''}${rot?', Rotated':''}">${zone==='hand'&&phase==='mulligan'?`<span class="mulligan-marker" aria-hidden="true">${chosen?'✓ REPLACE':'KEEP'}</span>`:''}<span class="type-row"><span class="type-badge"><i aria-hidden="true">${typeMark(c.type)}</i> ${esc(c.type)}</span><span>${onBoard&&rot?'↷':'COST '+c.cost}</span></span><span class="style-name">${esc(c.style)}</span><b>${c.build_around?'★ ':''}${esc(c.name)}</b>${c.subtitle?`<span class="sub">${esc(c.subtitle)}</span>`:''}${onBoard&&(x.lower||x.cargo?.length||x.hidden||x.beside!==undefined)?`<span class="sub">${x.lower?'Stack: '+esc(game.card(x.lower).name):''}${x.cargo?.length?' · '+x.cargo.length+' tucked':''}${x.hidden?' · 1 hidden':''}${x.beside!==undefined?' · beside '+esc(game.decks[x.beside].leader):''}</span>`:''}<span class="summary">${esc(c.text||c.flavor||'Character')}</span><span class="numbers"><span>${esc(stats)}</span>${onBoard&&char&&x.damage?`<span class="damage">♥ −${x.damage}</span>`:''}</span></button>`}
+function cardHTML(x,zone,p,index,chosen=false){let c=game.card(x),onBoard=zone==='board',char=c.type==='Character',rot=onBoard&&!x.ready,stats=onBoard&&char?`${game.power(x)} ⚔ · ${Math.max(0,game.guard(x)-x.damage)} ⛨ left`:char?`${c.power} ⚔ · ${c.guard} ⛨`:c.type;return `<button type="button" class="card type-${c.type.toLowerCase()} ${c.style.toLowerCase()} ${rot?'rotated':''} ${x.cloaked?'cloaked':''} ${chosen?'mulligan-selected':''} ${game.pendingAttack?.attacker===x.uid?'attacking':''} ${game.pendingAttack?.target===x.uid?'targeted':''}" data-zone="${zone}" data-player="${p}" data-uid="${x.uid||''}" data-index="${index??''}" aria-pressed="${zone==='hand'&&phase==='mulligan'?chosen:'false'}" aria-label="${esc(c.type)} ${esc(c.name)}, ${esc(stats)}${chosen?', selected to replace':''}${rot?', Rotated':''}">${zone==='hand'&&phase==='mulligan'?`<span class="mulligan-marker" aria-hidden="true">${chosen?'✓ REPLACE':'KEEP'}</span>`:''}<span class="type-row"><span class="type-badge"><i aria-hidden="true">${typeMark(c.type)}</i> ${esc(c.type)}</span><span>${onBoard&&rot?'↷':'COST '+c.cost}</span></span><span class="style-name">${esc(c.style)}${game.decks[p]?.lab?' · LAB':''}</span><b>${c.build_around?'★ ':''}${esc(c.name)}</b>${c.subtitle?`<span class="sub">${esc(c.subtitle)}</span>`:''}${onBoard&&(x.lower||x.cargo?.length||x.hidden||x.beside!==undefined)?`<span class="sub">${x.lower?'Stack: '+esc(game.card(x.lower).name):''}${x.cargo?.length?' · '+x.cargo.length+' tucked':''}${x.hidden?' · 1 hidden':''}${x.beside!==undefined?' · beside '+esc(game.decks[x.beside].leader):''}</span>`:''}<span class="summary">${esc(c.text||c.flavor||'Character')}</span><span class="numbers"><span>${esc(stats)}</span>${onBoard&&char&&x.damage?`<span class="damage">♥ −${x.damage}</span>`:''}</span></button>`}
 function wireCards(){root.querySelectorAll('.card').forEach(b=>b.onclick=()=>{if(phase==='mulligan'){let i=+b.dataset.index;selected.has(i)?selected.delete(i):selected.add(i);render();return}let {zone,player,uid,index}=b.dataset;if(zone==='hand')showCard({id:game.players[human].hand[+index],handIndex:+index});else showCard({uid:+uid})})}
 function showCard(ref){if(!game)return;let x=ref.uid?game.obj(ref.uid):null,c=game.card(x||ref.id);if(!c)return;
  let effectiveTraits=[...(c.traits||[])];if(x?.extraTrait&&!effectiveTraits.includes(x.extraTrait))effectiveTraits.push(x.extraTrait);if(x&&game.trait(x,'Undead')&&!effectiveTraits.includes('Undead'))effectiveTraits.push('Undead');
