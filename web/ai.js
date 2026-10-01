@@ -20,10 +20,12 @@ export function aiChoice(g,r){let {player:p,options=[],multi=false,max=2,title='
  if(title.toLowerCase().includes('discard')&&title.includes('Choose a card')){let hand=g.players[p].hand;return options.map(o=>({o,c:g.card(hand[o.value])})).sort((a,b)=>b.c.cost-a.c.cost)[0].o.value}
  if(title.includes('Skip')||title.includes('Play')||title.includes('Return')||title.includes('Reveal'))return options.find(o=>o.value!==null)?.value??null;
  return options[0].value}
-export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p);if(!s.stashedThisTurn&&s.hand.length)return {type:'stash',index:0};
+export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p);let stashIndex=s.hand.findIndex((_,i)=>g.canStash(i,p));if(!s.stashedThisTurn&&stashIndex>=0)return {type:'stash',index:stashIndex};
  let legal=s.hand.map((id,index)=>({c:g.card(id),index})).filter(o=>g.canPlay(o.index,p));
  let attackers=own.filter(x=>g.canAttack(x)).sort((a,b)=>g.power(b)-g.power(a));
  const play=o=>({type:'play',index:o.index});
+ if(g.name(p)==='Mad Scientist'){let alive=legal.find(o=>o.c.id==='LAB-SCI-009');if(alive)return play(alive);let battery=s.board.find(x=>x.id==='LAB-SCI-013'&&g.canUse(x)&&s.fuel<s.stash.length);if(battery)return {type:'activate',uid:battery.uid};let lab=legal.find(o=>['LAB-SCI-005','LAB-SCI-010','LAB-SCI-012','LAB-SCI-013'].includes(o.c.id));if(lab)return play(lab)}
+ if(g.name(p)==='Crazy Cat Lady'&&own.filter(x=>g.trait(x,'Cat')).length<3){let cat=legal.filter(o=>o.c.type==='Character'&&o.c.traits.includes('Cat')).sort((a,b)=>a.c.cost-b.c.cost)[0];if(cat)return play(cat);let can=legal.find(o=>o.c.id==='LAB-CAT-010');if(can)return play(can)}
  // Establish an engine before spending its trigger cards.
  let engine=legal.find(o=>['P011','P048','P105'].includes(o.c.id)&&(!['P011'].includes(o.c.id)||own.length>=2));if(engine)return play(engine);
  // Spend buffs and attachments while there is still an attack to improve.
