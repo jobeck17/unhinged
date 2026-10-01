@@ -37,3 +37,48 @@ console.log('Carl smoke tests passed');
  assert.equal(g.players[1].stash.length,1,'unused setup Stash should persist until spent');
  assert.ok(g.players[1].tempStashCard,'temporary marker should persist until spent');
 }
+
+
+const catPool=JSON.parse(fs.readFileSync(new URL('../lab/leader-rulebreakers/crazy-cat-lady/CARDS.json',import.meta.url)));
+const catDeckDoc=JSON.parse(fs.readFileSync(new URL('../lab/leader-rulebreakers/crazy-cat-lady/DECK.json',import.meta.url)));
+const sciPool=JSON.parse(fs.readFileSync(new URL('../lab/leader-rulebreakers/mad-scientist/CARDS.json',import.meta.url)));
+const sciDeckDoc=JSON.parse(fs.readFileSync(new URL('../lab/leader-rulebreakers/mad-scientist/DECK.json',import.meta.url)));
+const sciTokens=JSON.parse(fs.readFileSync(new URL('../lab/leader-rulebreakers/mad-scientist/TOKENS.json',import.meta.url)));
+const labPool={...pool,cards:[
+ ...pool.cards,
+ ...catPool.cards.map(c=>({...c,style:c.style||'Lab',keywords:c.keywords||[]})),
+ ...sciPool.cards.map(c=>({...c,style:c.style||'Lab',keywords:c.keywords||[]})),
+ ...sciTokens.tokens.map(t=>({...t,type:'Character',cost:0,style:'Lab',keywords:t.keywords||[],power:typeof t.power==='number'?t.power:0,guard:typeof t.guard==='number'?t.guard:0,token:true}))
+]};
+const catDeck={...catDeckDoc,leader:catDeckDoc.leader.name,health:25,styles:['Lab'],lab:true};
+const sciDeck={...sciDeckDoc,leader:sciDeckDoc.leader.name,health:25,styles:['Lab'],lab:true,protectedStash:true};
+
+{
+ const g=new Game(labPool,{decks:[sciDeck,full.decks[3]]},async r=>r.multi?r.options.slice(0,r.max||2).map(o=>o.value):r.options[0]?.value,()=>{},{firstPlayer:0});
+ await g.mulligan(0,[]);await g.mulligan(1,[]);g.begin();
+ assert.equal(g.players[0].stash.length,5,'Mad Scientist should start with a five-card battery');
+ assert.equal(g.players[0].fuel,5,'Mad Scientist battery should start fully Ready');
+ assert.equal(g.canStash(0,0),false,'Mad Scientist cannot use normal Stash growth');
+ g.turn=1;
+ assert.equal(g.availableFuel(1),g.players[1].fuel,'Trash Baron must not spend protected Scientist battery Stash');
+}
+{
+ const g=new Game(labPool,{decks:[catDeck,full.decks[1]]},async r=>r.multi?[]:r.options[0]?.value,()=>{},{firstPlayer:0});
+ await g.mulligan(0,[]);await g.mulligan(1,[]);g.begin();
+ g.enter(0,'LAB-CAT-001');g.enter(0,'LAB-CAT-002');g.enter(0,'LAB-CAT-003');
+ const before=g.players[0].stash.length;g.round=2;g.turn=0;g.startTurn();
+ assert.equal(g.players[0].stash.length,before+1,'Cat Distribution System should add Ready Stash at three Cats');
+ assert.equal(g.players[0].fuel,g.players[0].stash.length,'Cat bonus Stash should be Ready');
+}
+{
+ const g=new Game(labPool,{decks:[sciDeck,full.decks[1]]},async r=>r.multi?r.options.slice(0,r.max||2).map(o=>o.value):r.options[0]?.value,()=>{},{firstPlayer:0});
+ await g.mulligan(0,[]);await g.mulligan(1,[]);g.begin();
+ g.turn=0;g.players[0].hand=['LAB-SCI-009','LAB-SCI-001','LAB-SCI-002'];g.players[0].fuel=5;
+ const oldRandom=Math.random,rolls=[0,0.999];Math.random=()=>rolls.shift()??0.5;
+ try{await g.play(0)}finally{Math.random=oldRandom}
+ const abom=g.chars(0).find(x=>x.id==='LAB-TOK-SCI-001');
+ assert(abom,'It\'s Alive should create an Abomination token');
+ assert.equal(g.power(abom),1,'first die is Power');
+ assert.equal(g.guard(abom),6,'second die is Guard');
+ assert.equal(g.players[0].hand.length,0,'It\'s Alive should consume the Action and two Character cards');
+}
