@@ -217,3 +217,69 @@ Change one at a time:
 7. Only after the core deck works, test source-game-specific Specimen grafts.
 
 Do not assign a Style until the Burnout play pattern has proven itself.
+
+
+## Simulation checkpoint — October 1, 2026
+
+### Matchup
+
+Mad Scientist Lab 0.1 vs. canonical **Comeback Tour / Washed-Up Rock Star**.
+
+20,000 games were run with starting order split evenly in a dedicated lab harness based on the current Carl simulator. The harness modeled the Scientist's battery rule, Abominations, Failed Clone replacement draw, Lab Assistant search, Specimens, Grave Robbing, Flip the Breaker, Car Battery in the Bathtub, normal combat/direct attacks, deck-out, and the major Rock Star package effects.
+
+This is a heuristic stress test, not proof of perfect-play balance.
+
+### Lab 0.1 result — 10 starting Ready Stash
+
+- Mad Scientist win rate: **99.885%**
+- Mad Scientist going first: **99.92%**
+- Mad Scientist going second: **99.85%**
+- Average game length: **3.24 Rounds**
+- Median game length: **3 Rounds**
+- 90% of games finished by **Round 4**
+- Average gross Stash spent on Scientist Turn 1: **9.72**
+- Scientist spent at least 7 Stash on Turn 1 in **98.67%** of games
+- Average Ready Stash remaining after Turn 1: **0.88**
+- Average Scientist board after Turn 1: **4.51 Characters**
+- Average hand after Turn 1: **1.11 cards**
+- At least one Abomination appeared during **85.59%** of games
+- Average Abominations created: **1.25 per game**
+- No Scientist deck-out losses occurred
+- Zero games were censored
+
+### Turn-1 Abominations
+
+- 0 Abominations on Turn 1: **15.80%** of games
+- 1 Abomination: **48.46%**
+- 2 Abominations: **35.07%**
+- 3 Abominations: **0.68%**
+
+Even games in which the Scientist created **no Abomination at all during the game** were won by the Scientist about **99.38%** of the time in this harness. That is a strong indication that the primary problem is the enormous Turn-1 economy and board deployment, not merely the 7/7 token.
+
+### Starting-Ready-Stash sanity sweep
+
+A smaller 6,000-game-per-setting sweep kept the same ten-card battery but changed how many began Ready. The Leader still Readied 1 Stash at the start of its Turn.
+
+| Starting Ready | Effective Turn-1 baseline after Leader recharge | Scientist win rate | Avg Rounds |
+|---:|---:|---:|---:|
+| 10 | 10 | 99.92% | 3.24 |
+| 8 | 9 | 99.63% | 3.35 |
+| 7 | 8 | 99.82% | 3.46 |
+| 6 | 7 | 99.45% | 3.80 |
+| 5 | 6 | 99.00% | 4.14 |
+| 4 | 5 | 98.02% | 4.67 |
+| 3 | 4 | 94.17% | 5.49 |
+| 2 | 3 | 91.12% | 6.09 |
+| 1 | 2 | 50.18% | 8.76 |
+
+The exact percentages are harness-specific, but the shape is clear: **the prototype crosses a huge power threshold as soon as it can routinely make a Turn-1 It's Alive! while still developing other material.**
+
+### Current lab read
+
+The Burnout fantasy is not yet occurring in Lab 0.1.
+
+The Scientist does empty the battery exactly as intended, but the opening advantage is so large that the opponent usually dies before the depleted battery matters. The current deck therefore behaves as **front-loaded overwhelming tempo**, not “power now, consequences later.”
+
+The physical Specimen experiment is not the balance problem. It functions as a modest 2/2 body and ingredient.
+
+Do not tune or promote from this checkpoint alone, but the next prototype should preserve the finite ten-card battery while sharply reducing **immediately Ready** access and/or preventing an immediate full-strength Abomination from being the default early conversion.
