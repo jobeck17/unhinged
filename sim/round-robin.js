@@ -177,6 +177,7 @@ function attack(p,o,round){
   for(let k=0;k<30;k++){
     const g=p.chars.find(x=>x.ready&&(x.entered<p.turn||(C[x.id].keywords||[]).includes("Hothead")||x.hot||(p.leader==="Florida Man"&&x.damage>0))&&bonusAttackWorthIt(p,o,x,round));
     if(!g)break;g.ready=false;g.hot=false;g.bonusReady=false;
+    if(g.id==='P181'&&Math.floor(Math.random()*6)===0){p.hp-=power(g,p);if(p.hp<=0)break;continue;}
     const t=suckerTarget(p,o,g,round);
     if(t){damage(o,p,t,power(g,p));if(o.chars.includes(t))damage(p,o,g,power(t,o));readyFlorida(p,g);readyFlorida(o,t);}
     else{const x=power(g,p),b=block(o,p,round,g);if(b){b.ready=false;const overflow=Math.max(0,x-remaining(b));damage(o,p,b,x);if(overflow)o.hp-=overflow;if(o.chars.includes(b))damage(p,o,g,power(b,o));readyFlorida(p,g);readyFlorida(o,b);}else o.hp-=x;}
