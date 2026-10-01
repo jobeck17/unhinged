@@ -1,0 +1,60 @@
+{
+  "version": "lab-mad-scientist-0.1",
+  "status": "lab-prototype",
+  "canonical": false,
+  "name": "Fully Charged, No Charger",
+  "leader": {
+    "id": "LAB-L002",
+    "name": "Mad Scientist",
+    "health": 25,
+    "style": null,
+    "passive_name": "Fully Charged, No Charger",
+    "passive": "After mulligans, put the top 10 cards of your deck face down and Ready into your Stash. You do not receive setup temporary Stash and cannot use the normal once-per-Round Stash action. Your Stash does not Ready during your Ready step. At the start of your Turn, before Ready, Ready 1 Stash.",
+    "note": "The ten-card battery is all the normal Stash this Leader begins with. Cards can Ready Stash, but normal Stash growth is disabled."
+  },
+  "cards": {
+    "LAB-SCI-001": 4,
+    "LAB-SCI-002": 4,
+    "LAB-SCI-003": 4,
+    "LAB-SCI-004": 4,
+    "LAB-SCI-005": 4,
+    "LAB-SCI-006": 3,
+    "LAB-SCI-007": 2,
+    "LAB-SCI-008": 2,
+    "LAB-SCI-009": 4,
+    "LAB-SCI-010": 3,
+    "LAB-SCI-011": 2,
+    "LAB-SCI-012": 2,
+    "LAB-SCI-013": 2
+  },
+  "total_cards": 40,
+  "composition": {
+    "Characters": 27,
+    "Actions": 11,
+    "Items": 2
+  },
+  "specimen_rack": {
+    "min": 0,
+    "max": 4,
+    "outside_deck": true,
+    "optional": true,
+    "mechanical_identity": "Each approved external card represents the same 2/2 Specimen Part Character token when released."
+  },
+  "mulligan_priority": [
+    "It's Alive! plus at least two Characters",
+    "Lab Assistant if It's Alive! is missing",
+    "Avoid hands with too many recharge cards before spending the initial battery"
+  ],
+  "test_watchpoints": [
+    "Ready Stash remaining after Turn 1",
+    "How often the optimal Turn 1 play spends 7 or more Stash",
+    "Abominations created by Round",
+    "Win rate after creating one versus two Abominations on Turn 1",
+    "Turns where the Scientist has cards to play but insufficient Ready Stash",
+    "Turns where the Scientist has Ready Stash but insufficient cards in hand",
+    "How often Flip the Breaker and Car Battery in the Bathtub extend the battery meaningfully",
+    "Whether the opponent can survive the opening without the game becoming predetermined",
+    "Whether holding back Stash is ever better than spending aggressively",
+    "Whether Specimens are fun physical theater without becoming rules overhead"
+  ]
+}
