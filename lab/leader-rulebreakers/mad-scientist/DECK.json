@@ -1,5 +1,5 @@
 {
-  "version": "lab-mad-scientist-0.1",
+  "version": "lab-mad-scientist-0.2",
   "status": "lab-prototype",
   "canonical": false,
   "name": "Fully Charged, No Charger",
@@ -9,8 +9,8 @@
     "health": 25,
     "style": null,
     "passive_name": "Fully Charged, No Charger",
-    "passive": "After mulligans, put the top 10 cards of your deck face down and Ready into your Stash. You do not receive setup temporary Stash and cannot use the normal once-per-Round Stash action. Your Stash does not Ready during your Ready step. At the start of your Turn, before Ready, Ready 1 Stash.",
-    "note": "The ten-card battery is all the normal Stash this Leader begins with. Cards can Ready Stash, but normal Stash growth is disabled."
+    "passive": "After mulligans, put the top 5 cards of your deck face down and Ready into your Stash. You do not receive setup temporary Stash and cannot use the normal once-per-Round Stash action. Your Stash cannot contain more than 5 cards and does not Ready during your Ready step. At the start of your Turn, before Ready, Ready 1 Stash.",
+    "note": "The five-card battery is a hard cap. All five begin Ready; spent charge recovers only one Stash per Turn unless a card explicitly Readies additional Stash."
   },
   "cards": {
     "LAB-SCI-001": 4,
@@ -46,15 +46,15 @@
     "Avoid hands with too many recharge cards before spending the initial battery"
   ],
   "test_watchpoints": [
-    "Ready Stash remaining after Turn 1",
-    "How often the optimal Turn 1 play spends 7 or more Stash",
+    "How much of the five-charge battery is spent on Turn 1",
+    "Whether holding charge for a later Turn is better than emptying the battery",
     "Abominations created by Round",
-    "Win rate after creating one versus two Abominations on Turn 1",
+    "Power/Guard roll distributions and how much each stat affects outcomes",
+    "Whether low-roll Abominations create funny setbacks without making games feel decided by one die",
+    "Whether high-roll Abominations feel like jackpots without creating non-games",
     "Turns where the Scientist has cards to play but insufficient Ready Stash",
-    "Turns where the Scientist has Ready Stash but insufficient cards in hand",
     "How often Flip the Breaker and Car Battery in the Bathtub extend the battery meaningfully",
-    "Whether the opponent can survive the opening without the game becoming predetermined",
-    "Whether holding back Stash is ever better than spending aggressively",
+    "Whether the opponent can survive an explosive opening and capitalize on Burnout",
     "Whether Specimens are fun physical theater without becoming rules overhead"
   ]
 }
