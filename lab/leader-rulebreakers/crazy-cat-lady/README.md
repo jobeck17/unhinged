@@ -200,3 +200,8 @@ Keep the 3-Cat threshold for the next human/prototype pass.
 The more interesting tuning question is not simply “3 or 4 Cats.” It is whether the reward for maintaining the colony should accumulate more gradually or give the opponent a larger recovery window after the first activation.
 
 Do not promote or rebalance from this one matchup alone.
+
+
+## Shared counterplay note
+
+A **board wipe** is an important natural counter to this deck. Cat Lady's snowball stores value in the number of Cats already established, so a wipe can reset both the board and the three-Cat economy threshold at once. Future card-pool development should preserve access to board-wide answers without making them so efficient or common that go-wide Character decks become nonviable.
