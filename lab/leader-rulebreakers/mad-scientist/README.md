@@ -348,3 +348,50 @@ The strongest signal from the A/B is:
 > **Hard-cap five looks like the right resource skeleton. The next variable to test should be the conversion package, not Stash growth.**
 
 No prototype rule has been changed from this checkpoint yet.
+
+
+## Abomination conversion A/B/C — October 1, 2026
+
+Resource rules were held fixed for all variants:
+
+- Start with **5 Ready Stash**.
+- Hard cap of 5; no normal Stash growth.
+- Stash does not Ready normally.
+- At the start of each Scientist Turn, Ready 1 Rotated Stash.
+
+Each variant was tested for **20,000 games** against Comeback Tour / Washed-Up Rock Star using the same deterministic seed schedule. Because this dedicated A/B harness models several effects differently from earlier lab harnesses, compare the variants primarily against one another rather than against exact percentages from prior checkpoints.
+
+| Variant | Scientist win rate | Avg game |
+|---|---:|---:|
+| Baseline — 3 Cost → 7/7 | **84.66%** | 5.39 Rounds |
+| A — 4 Cost → 7/7 | **80.48%** | 5.85 Rounds |
+| B — 3 Cost → 5/5 | **82.30%** | 6.14 Rounds |
+| C — 3 Cost → roll a d6; Abomination is X/X | **54.51%** | 7.13 Rounds |
+
+### Dice result by first Abomination roll
+
+For the 3-Cost d6/d6 version, the first Abomination's roll strongly affected the game:
+
+| First roll | Scientist win rate |
+|---:|---:|
+| 1 → 1/1 | **11.52%** |
+| 2 → 2/2 | **14.50%** |
+| 3 → 3/3 | **37.48%** |
+| 4 → 4/4 | **74.71%** |
+| 5 → 5/5 | **94.51%** |
+| 6 → 6/6 | **96.50%** |
+
+### Read
+
+The two static tuning approaches barely solve the underlying problem. Raising It's Alive! from 3 to 4 or lowering the token from 7/7 to 5/5 still leaves the Scientist around 80%+ in this same-matchup harness.
+
+The random-stat version changes the shape dramatically:
+
+> **It's Alive! — 3 Cost**  
+> As an additional Cost to play this, Discard two Character cards. Roll a six-sided die. Put an Abomination token into play with Power and Guard equal to the result.
+
+This produced a 54.51% overall win rate against the same strong control deck, while creating a large and thematically coherent range of outcomes.
+
+A low roll makes the experiment an expensive failure. A high roll produces the payoff the Scientist was gambling for. The mechanic therefore puts genuine **scientific uncertainty** into the fusion rather than pretending every experiment succeeds perfectly.
+
+This is currently the strongest Mad Scientist direction from simulation, but it has not yet replaced the Lab 0.1 prototype rules.
