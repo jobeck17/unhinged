@@ -1,6 +1,6 @@
-# Carl 0.2 Simulation Rules
+# Carl 0.3 Simulation Rules
 
-> Current simulation methodology for Unhinged / Carl 0.2 playtesting.
+> Current simulation methodology for Unhinged / Carl 0.3 playtesting.
 > Updated 2026-09-29.
 
 This document is the source of truth for how automated balance results should be interpreted. Simulations are heuristic playtests, not perfect-play solvers. Same-harness A/B comparisons are more trustworthy than comparing percentages produced by different harnesses.
@@ -149,11 +149,11 @@ If a fresh seed set is used, normal sampling movement can occur even for an unch
 
 ## 5. Locked Carl Tag Out rule
 
-Carl 0.2 commits the native-Style restriction used in the accepted 36-deck balance pass:
+Carl 0.3 commits the native-Style restriction used in the accepted 36-deck balance pass:
 
 > **Tag Out:** Once during your Turn, when one of your Characters is Defeated or Sacrificed, reveal the top card of your deck. If it is an **Expendable Character** with Cost less than or equal to the number of cards in your Stash, put it into play. It gains Hothead this Turn. Otherwise, put it into your hand.
 
-This is no longer an experiment switch in Carl 0.2.
+This is no longer an experiment switch in Carl 0.3.
 
 ## 6. Known simulator caution
 
@@ -173,7 +173,7 @@ Healthy balance may include:
 The warning signs are persistent global dominance, broad non-games, a Leader that universally improves unrelated Styles, or a deck/archetype that lacks reasonable favorable matchups.
 
 
-## 8. Carl 0.2 Florida Man A/B
+## 8. Carl 0.3 Florida Man A/B
 
 Accepted passive:
 
