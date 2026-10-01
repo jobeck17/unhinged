@@ -1,4 +1,4 @@
-# Unhinged Rules — Carl 0.2
+# Unhinged Rules — Carl 0.3
 
 **Working production rulebook • 27 September 2026**
 
@@ -363,7 +363,7 @@ Beginning in Round 8, opposing Characters cannot Block your Attacks.
 **Backyard Wrestler, Expendable — Tag Out**  
 Once during your Turn, when one of your Characters is Defeated or Sacrificed, reveal the top card of your deck. If it is an **Expendable Character** with Cost less than or equal to the number of cards in your Stash, put it into play. It gains **Hothead** this Turn. Otherwise, put the revealed card into your hand. A Character put into play this way is not Played, so On Play abilities do not trigger.
 
-These are the locked Carl 0.2 playtest passives. Balance remains subject to human playtesting.
+These are the locked Carl 0.3 playtest passives. Balance remains subject to human playtesting.
 
 ## 14. Game end and deck-out
 
