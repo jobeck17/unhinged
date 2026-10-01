@@ -7,7 +7,7 @@ try{[pool,decks]=await Promise.all([fetch('../CARDS.json?v=bath-salts-1').then(r
 function render(){if(!pool)return;if(phase==='setup'){
  const options=playDecks.map((d,i)=>`<option value="${i}">${esc(d.deckLabel)}</option>`).join('');
  root.innerHTML=`<div class="setup deck-setup">
-  <div class="small">Unhinged · Carl 0.2 · Revision 13</div>
+  <div class="small">Unhinged · Carl 0.3 · Revision 13</div>
   <h1>Choose your<br>matchup.</h1>
   <p>Pick any of the 36 current test decks for each side. Mixed decks use the same 24-card primary / 16-card secondary construction as the 36-deck simulator.</p>
   <div class="deck-picker">
