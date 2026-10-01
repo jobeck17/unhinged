@@ -84,7 +84,7 @@ Redesign if:
 
 ## Experiment B — Mad Scientist
 
-**State:** IDEA  
+**State:** PROTOTYPE  
 **Model:** Burnout  
 **Style:** Unassigned
 
@@ -98,17 +98,16 @@ Primary candidate: **starting Stash and Stash recovery**.
 
 This experiment should remain distinct from the Cat Lady deck-construction experiment.
 
-### Starting-resource candidates
+### Starting-resource prototype
 
-Initial concept to test:
+Lab 0.1 now tests the extreme version:
 
-- Begin the game with 10 cards in Stash.
-- Only a portion begins Ready.
-- Mad Scientist does not use the normal once-per-Round Stash action.
-- Stash does not all Ready during the normal Ready step.
-- A small fixed amount, potentially 1 Stash, Readies each Turn.
+- After mulligans, put the top 10 cards of the deck face down and **Ready** into Stash.
+- Mad Scientist does not receive setup temporary Stash and cannot use the normal once-per-Round Stash action.
+- Stash does not Ready during the normal Ready step.
+- At the start of each Turn, before Ready, Ready 1 Stash.
 
-Exact numbers are deliberately unset until the resource curve is modeled.
+The playable prototype lives in `mad-scientist/`.
 
 ### Abomination package
 
@@ -171,10 +170,10 @@ Only after that should we decide whether the package belongs in an existing Styl
 
 ## Next lab work
 
-Build the smallest playable prototype of each Leader with intentionally plain support cards.
+Both initial Rulebreaker Leaders now have playable lab prototypes.
 
-For Crazy Cat Lady, test the copy-limit exception and threshold snowball before adding fancy Cat payoffs.
+For Crazy Cat Lady, continue testing the copy-limit exception and threshold snowball before adding fancy Cat payoffs.
 
-For Mad Scientist, model the starting-Stash/recharge curve before tuning Abomination stats.
+For Mad Scientist, test the 10-Ready-Stash Burnout curve, Abomination conversion, and optional physical Specimen Rack before tuning numbers.
 
 Do not promote either concept into Carl until the lab has a clear counterplay loop and human playtest evidence.
