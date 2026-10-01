@@ -1,9 +1,9 @@
 {
-  "version": "carl-0.2-six",
-  "card_pool": "0.2-carl",
-  "date": "2026-09-30",
-  "status": "Carl 0.2 canonical six mono-Style baseline. Deck cards are unchanged from Revision 12; Leader rules are Revision 13.",
-  "rules": "Carl 0.2 / RULES.md",
+  "version": "carl-0.3-six",
+  "card_pool": "0.3-carl",
+  "date": "2026-10-01",
+  "status": "Carl 0.3 canonical six mono-Style baseline. Deck cards are unchanged from Revision 12; Leader rules are Revision 13.",
+  "rules": "Carl 0.3 / RULES.md",
   "decks": [
     {
       "name": "Bad Decisions",
