@@ -273,3 +273,10 @@ All pairings were split evenly by starting order, so overall matchup comparisons
 - **Mad Scientist:** overall below 50% across the six canonical decks, but the average is dragged down by severe Trash Baron and HOA counters. It is approximately even into Rock Star and Magician, favorable into Wrestler, and unfavorable into Florida Man.
 - **Lab vs lab:** 55.7 / 44.3 is a healthy enough first head-to-head signal to continue both concepts without tuning specifically around each other.
 - The next useful test is human play or targeted high-detail confirmation of the extreme matchups, especially Scientist vs Trash Baron and Scientist vs HOA.
+
+
+### Shared future-development notes
+
+- **Board wipes are a natural counter to both Rulebreaker prototypes.** Cat Lady loses the colony threshold; Mad Scientist loses the persistent bodies purchased with a finite battery. Future card development should include board-wide answers, but not at a rate that undermines Character-first gameplay.
+- **Mad Scientist's five-card starting battery is protected Stash.** Opponents cannot use it to pay their Costs. Trash Baron therefore keeps his normal passive against ordinary opposing Stash without uniquely deleting the Scientist's core Leader resource.
+- **Physical Specimens should eventually test true surprise construction:** up to four approved, identically sleeved external TCG cards shuffled into the 40-card deck. The web playtest will use generic Specimen representations.
