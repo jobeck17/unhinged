@@ -316,7 +316,7 @@ Sucker Punch is a working keyword name and may be renamed later.
 
 A Jerry-Rigged card in Stash is not mechanically an Item while there. Its face-up state exists only to show that it is temporary Stash and will be discarded when spent.
 
-The current production direction is to keep Jerry-Rig on selected Salvage Items rather than every Salvage Item. Revision 8 currently uses it on Duct Tape and Mystery Drawer of Cables.
+The current production direction is to keep Jerry-Rig on selected Salvage Items rather than every Salvage Item. The current card pool uses it on Duct Tape and Mystery Drawer of Cables.
 
 ### Approved keyword candidates for the card audit
 
