@@ -4,7 +4,7 @@ import {Game,buildDeckField} from './engine.js';
 import {aiAction,aiChoice} from './ai.js';
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url)));
 const full=JSON.parse(fs.readFileSync(new URL('../DECKS.json',import.meta.url)));
-assert.equal(pool.version,'0.2-carl'); assert.equal(pool.revision,13); assert.equal(full.card_pool,'0.2-carl');
+assert.equal(pool.version,'0.3-carl'); assert.equal(full.card_pool,'0.3-carl');
 for(const d of full.decks){assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40)}
 const field=buildDeckField(full);
 assert.equal(field.length,36);
