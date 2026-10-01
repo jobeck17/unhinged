@@ -81,12 +81,13 @@ Top signals: Trash + Reckless 60.97%, Rock + Stonewall 59.00%, Florida mono 58.0
 🧠 Magician's Assistant should lean into Return/removal/re-entry magic.  
 🧠 Cloak naturally belongs in Magician; memorable concept is a 1-Guard, high-Power threat built around tricky survival/retaliation.  
 🧠 Bath Salts grants Undead.  
+🧪 Pet Alligator — Probably Domesticated is the first live rare dice-chaos card: 3-Cost Reckless Animal, 4/3; on attack roll a d6, and on a 1 the Attack is canceled and it damages its own Leader for its Power.
 🧠 If Leader ultimates ever return, Florida's dice-damage “Hold My Entire Cooler” remains saved. Ultimates are not a Carl base rule.  
 🧠 Boss Babe/MLM, Travel Ball Mom, Unsupervised Toddler chaos, Cockroach recursion, Clown Car, Creepy Van/Free Puppies, bachelorette party, feral child, cat lady, Girl Scouts, zombie kid, mall walker, influencer, single dad, grumpy old guy, jam band, pirates, wedding cover band, Put It in Reverse Terry, gas-station food/energy-drink weirdness.  
 🧠 Tone compass: mythic stakes colliding with swamps, gas stations, junkyards, backyards, birthday parties, dive bars, and HOA meetings.
 
 ## Future, not Carl base
-🧠 PvE/co-op, Locations, hidden Leader defenses, rare card-specific dice chaos, alternate lane/simultaneous-planning formats.
+🧠 PvE/co-op, Locations, hidden Leader defenses, alternate lane/simultaneous-planning formats.
 
 ## Retired
 🗑 Command/Stamina, Fuel terminology, single-action turns, frontline/backline/lanes as base game, Guard discard, multiple default Blockers, vulnerable-Leader combat stats, current Leader Charge/ultimates.  
