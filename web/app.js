@@ -1,4 +1,4 @@
-import {Game,LEADERS,buildDeckField} from './engine.js';
+import {Game,LEADERS,buildDeckField} from './engine.js?v=pet-alligator-1';
 import {aiAction,aiChoice} from './ai.js';
 const root=document.querySelector('#app');let pool,decks,playDecks=[],game,human=0,modal=null,busy=false,phase='setup',selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
