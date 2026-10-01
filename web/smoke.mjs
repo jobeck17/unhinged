@@ -14,7 +14,7 @@ for(const d of field)assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40
 assert.equal(field[0].deckLabel,'Florida Man · Mono Reckless');
 assert(field.some(d=>d.deckLabel==='Florida Man · Reckless + Salvage'));
 function setup(a=0,b=2){const g=new Game(pool,{decks:[full.decks[a],full.decks[b]]},async r=>r.multi?[]:r.options[0]?.value,()=>{});g.round=3;g.turn=0;g.first=0;for(const s of g.players){s.fuel=7;s.stash=Array(7).fill('P001');s.hand=[]}return g}
-{const g=setup(0,2),a=g.enter(0,'P013'),t=g.enter(1,'P067');a.damage=1;a.born=g.round;t.ready=true;assert(g.canAttack(a));g.ask=async r=>r.title.includes('Attack which')?t.uid:r.multi?[]:r.options[0]?.value;await g.attack(a.uid);assert(g.obj(a.uid)?.ready)}
+{const g=setup(0,2),a=g.enter(0,'P013'),t=g.enter(1,'P067');a.damage=1;a.born=g.round;t.ready=true;assert(g.canAttack(a));g.ask=async r=>r.title.includes('Attack which')?t.uid:r.title.includes('Chicken:')?false:r.multi?[]:r.options[0]?.value;await g.attack(a.uid);assert(g.obj(a.uid)?.ready)}
 {const g=setup(2,0),x=g.enter(0,'P061');g.players[0].fuel=2;g.players[0].stash=Array(4).fill('P001');await g.remove(x,'hand');assert.equal(g.players[0].fuel,3)}
 {const g=setup(3,0);g.players[0].fuel=1;g.players[1].fuel=2;assert.equal(g.availableFuel(0),3)}
 {const g=setup(4,0),a=g.enter(0,'P134');g.enter(1,'P151');a.born=1;g.round=8;let asked=false;g.ask=async r=>{if(r.title.includes('Blockers'))asked=true;return r.title.includes('Attack which')?-1:r.multi?[]:r.options[0]?.value};await g.attack(a.uid);assert.equal(asked,false)}
