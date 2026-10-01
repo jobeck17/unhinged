@@ -1,4 +1,4 @@
-# Mad Scientist Prototype — Lab 0.1
+# Mad Scientist Prototype — Lab 0.2
 
 **State:** PROTOTYPE  
 **Model:** Burnout  
@@ -17,11 +17,11 @@ It also contains an optional physical-card experiment for using a few cards from
 
 ### Fully Charged, No Charger
 
-> After mulligans, put the top 10 cards of your deck face down and Ready into your Stash. You do not receive setup temporary Stash and cannot use the normal once-per-Round Stash action. Your Stash does not Ready during your Ready step. At the start of your Turn, before Ready, Ready 1 Stash.
+> After mulligans, put the top **5 cards** of your deck face down and Ready into your Stash. You do not receive setup temporary Stash and cannot use the normal once-per-Round Stash action. Your Stash cannot contain more than **5 cards** and does not Ready during your Ready step. At the start of your Turn, before Ready, Ready **1 Stash**.
 
 This deliberately violates normal Stash setup, growth, and recovery.
 
-The first Turn can begin with **10 Ready Stash**.
+The first Turn begins with **5 Ready Stash**.
 
 Once those resources are Rotated, normal recovery is only **1 Stash per Turn**.
 
@@ -29,39 +29,47 @@ The deck contains a few cards that can force extra recharge, but doing so consum
 
 ## The battery curve
 
-If the Scientist spends all 10 Stash on Turn 1 and uses no recharge effects:
+If the Scientist spends all 5 Stash on Turn 1 and uses no recharge effects:
 
-- Turn 1: 10 available
+- Turn 1: 5 available
 - Turn 2: 1 available
 - Turn 3: 2 available if Turn 2 spends nothing, or 1 if it does
-- Turn 4 onward: the player is living off whatever charge they managed not to consume plus one new Ready Stash each Turn
+- Turn 4 onward: the player is living off whatever charge they managed not to consume plus one newly Readied Stash each Turn
 
 Unlike normal Unhinged, there is no automatic growing economy. **Unused charge is future tempo.**
 
-Ten cards also leave the deck to become the starting battery, which means some important cards will randomly disappear into Stash. That is intentional in the first prototype.
+Five cards also leave the deck to become the starting battery, which means some important cards will randomly disappear into Stash. That is intentional in the first prototype.
 
 ## Abominations
 
 ### It's Alive! — 3 Cost Experiment
 
-> As an additional Cost to play this, Discard two Character cards. Put an Abomination token into play.
+> As an additional Cost to play this, Discard two Character cards. **Roll for Power, then roll for Guard.** Put an Abomination token into play with Power and Guard equal to those results.
 
 ### Abomination token
 
-**7 Power / 7 Guard**  
+**Power: d6 / Guard: d6**  
 **Slowpoke**
+
+Power and Guard are assigned **before** any dice are rolled.
+
+- With dedicated dice, roll the **Power die** and the **Guard die**.
+- With ordinary dice, roll one d6 for **Power first**, then roll one d6 for **Guard second**.
+- The Scientist player never chooses which result applies to which stat after seeing the rolls.
+
+For a packaged version, the preferred component treatment is two visually distinct dice with **Power and Guard symbols**, with color used as a secondary cue rather than the only identifier. This keeps the assignment obvious even for color-blind players.
 
 An Abomination entering play follows the normal Character entry rule, so it cannot Attack immediately unless another effect gives it Hothead.
 
-The body is intentionally alarming. The real cost is:
+The result can range from a disastrous 1/1 to a jackpot 6/6, including unstable combinations such as 6/1 or 1/6. The real cost is:
 
 - 3 Ready Stash;
 - the It's Alive! card itself;
 - two Character cards from hand.
 
-A hand capable of making two Abominations immediately can do something outrageous, but it also vaporizes most of its hand and a large chunk of the starting battery.
+The experiment is not guaranteed to work. The player commits the cards and battery before learning whether the result is a triumph, a failure, or something lopsided in between.
 
-That is exactly the Burnout question we want to test.
+That uncertainty is now part of the Burnout question.
 
 ## 40-card prototype
 
@@ -75,7 +83,7 @@ That is exactly the Burnout question we want to test.
 | 3 | Spare Parts Dealer | 2 | 2/2 | Recovers 1-cost Characters |
 | 2 | Failed Clone | 3 | 3/3 | Replaces itself when discarded to an Experiment |
 | 2 | Escaped Prototype | 3 | 4/3 | Hothead pressure / Part |
-| 4 | It's Alive! | 3 | — | Two Characters become a 7/7 Abomination |
+| 4 | It's Alive! | 3 | — | Discard two Characters; roll separate Power and Guard for an Abomination |
 | 3 | Release the Specimen | 1 | — | Deploy a 2/2 Specimen |
 | 2 | Grave Robbing | 1 | — | Recover a cheap Character |
 | 2 | Flip the Breaker | 0 | — | Discard a card to Ready up to 2 Stash |
@@ -158,7 +166,7 @@ First answer the simpler question:
 
 ### Turn 1: irresponsible power
 
-The Scientist looks at ten Ready Stash and a seven-card hand and realizes they can do things no normal Leader can do.
+The Scientist looks at five Ready Stash and a seven-card hand and realizes they can do things no normal Leader can do.
 
 The temptation to empty the battery should be enormous.
 
@@ -184,7 +192,7 @@ The Scientist should still be able to win, but no longer by casually buying the 
 The experiment is working if:
 
 - Turn 1 feels uniquely powerful;
-- spending 10 immediately is tempting but not always correct;
+- spending all 5 immediately is tempting but not always correct;
 - the opponent can survive an explosive opening with intelligent blocking and targeting;
 - the Scientist visibly loses flexibility as the battery drains;
 - Abominations feel worth sacrificing multiple cards for;
@@ -196,10 +204,10 @@ The experiment is working if:
 
 Redesign if:
 
-- two Turn-1 Abominations make games functionally unwinnable;
+- high-roll Turn-1 Abominations make games functionally unwinnable too often;
 - the correct play is always to empty the battery;
 - the Scientist has nothing meaningful to do after the initial burst;
-- ten cards disappearing into starting Stash makes the deck too random;
+- five cards disappearing into starting Stash makes the deck too random;
 - card-driven recharge simply recreates normal resource progression;
 - the opponent's decisions in the first two Rounds do not matter;
 - Specimen rules require anyone to understand the external game.
@@ -218,6 +226,20 @@ Change one at a time:
 
 Do not assign a Style until the Burnout play pattern has proven itself.
 
+
+
+## Lab 0.2 selected direction
+
+Following the October 1 A/B testing, the active prototype now uses:
+
+- **5 Ready Stash** at setup, hard-capped at 5;
+- no normal Stash growth;
+- only **1 Stash Readied per Turn** by the Leader;
+- **It's Alive! at Cost 3**;
+- independent d6 results for **Power** and **Guard**;
+- stat assignment fixed before rolling, never chosen afterward.
+
+The separate-dice version produced a **54.96%** win rate against Comeback Tour in the dedicated 20,000-game lab test, while smoothing the sharp 3/3-to-4/4 breakpoint seen in the single-die X/X test.
 
 ## Simulation checkpoint — October 1, 2026
 
