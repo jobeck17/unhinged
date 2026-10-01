@@ -1,6 +1,6 @@
 # Unhinged — Living Design Notes
 
-**Build:** Carl 0.3 · Revision 13  
+**Build:** Carl 0.3  
 **Date:** October 1, 2026  
 This replaces scattered checkpoints, brainstorm files, open-decision files, and idea banks.
 
