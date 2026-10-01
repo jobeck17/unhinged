@@ -21,7 +21,7 @@
         "P003": 3,
         "P005": 3,
         "P007": 2,
-        "P009": 3,
+        "P181": 3,
         "P013": 4,
         "P017": 3,
         "P011": 2,
@@ -43,7 +43,7 @@
         "Is self-damage too easy to convert into upside?",
         "Does Damage Everywhere matter without simply becoming burn?"
       ],
-      "status_note": "Revision 11 baseline; no card-list change from revision 10."
+      "status_note": "Pet Alligator test: replaces Pirate With No Exit Strategy 3-for-3; curve unchanged."
     },
     {
       "name": "Comeback Tour",
