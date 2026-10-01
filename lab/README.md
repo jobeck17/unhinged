@@ -18,6 +18,11 @@ The canonical game remains defined by the root files:
 
 Lab experiments may read or test against the canonical game, but they must not silently change it.
 
+## Lab index
+
+- `LEADER_PASSIVES.md` — alternate Leader passives organized by Leader for isolated testing.
+- `leader-rulebreakers/` — Leader packages that break construction, setup, resource, or other base expectations.
+
 ## Lab principles
 
 1. **No automatic promotion.** A successful lab concept becomes canonical only through a deliberate update to the appropriate root files.
