@@ -2,6 +2,27 @@
 
 Carl is the current working build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl**. Donut is complete and remains in Git history instead of the live tree.
 
+## Current creative direction
+
+Unhinged is not trying to win by being the safest balanced TCG skeleton. **The core game should be simple and stable enough that the decks themselves can be outrageous.**
+
+The current design filter is the **hell-yeah test**: when a player reads a Leader, build-around, or marquee card, do they immediately want to play it just to see what happens?
+
+Balance remains essential, but the preferred order is:
+
+**irresistible idea → preserve the outrageous part → add meaningful counterplay → tune numbers**
+
+This explicitly allows:
+- deck-specific rule breaking and unusual construction;
+- visible snowball engines that opponents can disrupt;
+- finite-resource burnout engines;
+- fragile multi-card “Rube Goldberg” machines whose completed payoff may be effectively game-winning;
+- occasional tactile mechanics such as dice, card tossing, flicking, balancing, stacking, or physical overlap when they are strongly thematic.
+
+A deck should still play a real game when its spectacular engine does not go off. The goal is not random chaos for its own sake. The goal is **distinct play patterns and memorable table stories**.
+
+The current LAB benchmarks are **Crazy Cat Lady** (snowball colony) and **Mad Scientist** (finite battery + randomized Abominations). They are not Carl 0.3 production rules, but they currently best demonstrate the desired emotional target. Backyard Wrestler's experimental **From the Top Rope!** physical toss, Paper Football concepts, and bottle-stack/Waterfall concepts are saved in NOTES.md for future development.
+
 ## Source of truth
 - RULES.md — current rules and Leaders.
 - CARDS.json — current 180-card pool.
