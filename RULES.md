@@ -40,6 +40,7 @@ There is no base limit on Characters in play, Items in play, Stash size, or hand
 | **Power** | Combat damage dealt by a Character. |
 | **Guard** | The amount of damage a Character can have before it is Defeated. |
 | **Health** | A Leader's survival total. |
+| **Roll a die** | Roll one standard six-sided die (d6) and use the result shown. |
 
 ### Card movement
 
