@@ -43,9 +43,12 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site/web _site/builder
+          mkdir -p _site/lab/leader-rulebreakers/crazy-cat-lady _site/lab/leader-rulebreakers/mad-scientist
           cp index.html CARDS.json DECKS.json _site/
           cp web/index.html web/app.js web/engine.js web/ai.js web/style.css _site/web/
           cp builder/index.html builder/app.js builder/style.css _site/builder/
+          cp lab/leader-rulebreakers/crazy-cat-lady/CARDS.json lab/leader-rulebreakers/crazy-cat-lady/DECK.json _site/lab/leader-rulebreakers/crazy-cat-lady/
+          cp lab/leader-rulebreakers/mad-scientist/CARDS.json lab/leader-rulebreakers/mad-scientist/DECK.json lab/leader-rulebreakers/mad-scientist/TOKENS.json _site/lab/leader-rulebreakers/mad-scientist/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
