@@ -3,7 +3,7 @@
 Carl is the current working build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl**. Donut is complete and remains in Git history instead of the live tree.
 
 ## Source of truth
-- RULES.md — current rules and Revision 13 Leaders.
+- RULES.md — current rules and Leaders.
 - CARDS.json — current 180-card pool.
 - DECKS.json — six canonical mono-Style decks.
 - NOTES.md — the one living notebook for decisions, questions, next work, and saved ideas.
@@ -27,6 +27,7 @@ Unhinged uses milestone versions during pre-1.0 development.
 - **0.X — milestone generation.** A meaningful new generation of the game gets a new minor number and a new **Dungeon Crawler Carl character codename**.
 - **0.X.Y — build update.** A meaningful but compatible update inside the current milestone increments the patch number and keeps the same codename.
 - **Commits are not versions.** Routine commits do not automatically change the build number.
+- **Revision numbers are retired as an active global version system.** Old Revision references may remain as historical context, but new current-state checkpoints use the build number only.
 
 Examples:
 - **0.1 Mongo**
