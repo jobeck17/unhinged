@@ -167,22 +167,22 @@
       "id": "P009",
       "type": "Character",
       "cost": 3,
-      "name": "Pirate With No Exit Strategy",
+      "name": "Pet Alligator",
+      "subtitle": "Probably Domesticated",
       "traits": [
-        "Pirate",
-        "Criminal"
+        "Animal"
       ],
-      "text": "When this Character Defeats another Character in combat, Draw a card.",
+      "text": "When this attacks, roll a six-sided die. On a 1, cancel the Attack and deal damage to your Leader equal to this Character's Power. Otherwise, continue the Attack normally.",
       "style": "Reckless",
-      "complexity": "ongoing",
+      "complexity": "attack_trigger",
       "keywords": [],
       "power": 4,
-      "guard": 2,
+      "guard": 3,
       "audit_identity": [
-        "Human"
+        "Animal"
       ],
       "status": "playtest",
-      "flavor": "The treasure map ends at the tow yard."
+      "flavor": ""
     },
     {
       "id": "P010",
@@ -3367,27 +3367,6 @@
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
-      "flavor": ""
-    },
-    {
-      "id": "P181",
-      "type": "Character",
-      "cost": 3,
-      "name": "Pet Alligator",
-      "subtitle": "Probably Domesticated",
-      "traits": [
-        "Animal"
-      ],
-      "text": "When this attacks, roll a six-sided die. On a 1, cancel the Attack and deal damage to your Leader equal to this Character's Power. Otherwise, continue the Attack normally.",
-      "style": "Reckless",
-      "complexity": "attack_trigger",
-      "keywords": [],
-      "power": 4,
-      "guard": 3,
-      "audit_identity": [
-        "Animal"
-      ],
       "status": "playtest",
       "flavor": ""
     }
