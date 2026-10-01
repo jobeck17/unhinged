@@ -283,3 +283,68 @@ The Scientist does empty the battery exactly as intended, but the opening advant
 The physical Specimen experiment is not the balance problem. It functions as a modest 2/2 body and ingredient.
 
 Do not tune or promote from this checkpoint alone, but the next prototype should preserve the finite ten-card battery while sharply reducing **immediately Ready** access and/or preventing an immediate full-strength Abomination from being the default early conversion.
+
+
+## A/B checkpoint — 5-Stash battery — October 1, 2026
+
+This test kept the existing Lab 0.1 card package and Abomination at 7/7 Slowpoke. It changed only the Leader's starting battery/growth model.
+
+Both variants began after mulligan with the top **5 cards of the deck** face down and **Ready** in Stash. Scientist Stash did not Ready normally. At the start of each Scientist Turn, **1 Rotated Stash Readied**.
+
+### Variant A — hard cap 5
+
+- No normal once-per-Round Stash action.
+- Stash can never grow beyond the starting five except through an explicit future effect that says otherwise.
+- 20,000 games vs Comeback Tour / Rock Star.
+- Mad Scientist win rate: **85.06%**
+- Going first: **83.57%**
+- Going second: **86.55%**
+- Average game length: **5.46 Rounds**
+- Median game length: **5 Rounds**
+- Average Turn-1 board: **2.62 Characters**
+- Average Turn-1 hand: **3.44 cards**
+- Average Turn-1 Ready Stash remaining: **0.16**
+- Average Abominations created: **0.94 per game**
+- Average Turn-1 Abominations: **0.82 per game**
+
+Turn-1 Abomination distribution in a same-size confirmation sample:
+
+- 0: **22.42%** of games; Scientist won **34.02%**
+- 1: **72.93%**; Scientist won **99.39%**
+- 2: **4.66%**; Scientist won **100%**
+
+The hard five-card battery produces an actual Burnout phase in games where the Scientist does not convert it into an immediate Abomination. The current 3-cost 7/7 conversion remains the dominant break point.
+
+### Variant B — five to start, normal Stash growth allowed
+
+- Begin with the same five Ready Stash.
+- Scientist may also use the normal once-per-Round Stash action, allowing total Stash to grow beyond five.
+- Only 1 Rotated Stash Readies automatically each Scientist Turn.
+- 20,000 games vs Comeback Tour / Rock Star.
+- Mad Scientist win rate: **92.92%**
+- Going first: **91.83%**
+- Going second: **94.01%**
+- Average game length: **4.79 Rounds**
+- Median game length: **4 Rounds**
+- Average added Stash: **3.34 per game**
+- Average Turn-1 board: **2.77 Characters**
+- Average Turn-1 hand: **2.52 cards**
+- Average Abominations created: **1.12 per game**
+
+Turn-1 Abomination confirmation sample:
+
+- 0: **23.06%** of games; Scientist won **68.38%**
+- 1: **60.45%**; Scientist won **99.92%**
+- 2: **16.50%**; Scientist won **100%**
+
+### A/B read
+
+Allowing Stash growth is substantially stronger and weakens the Burnout identity. The hard cap of five is the more promising model.
+
+However, hard-capping at five does not by itself balance Lab 0.1 because five immediately Ready resources still let the Scientist routinely create a 7/7 Abomination for 3 and spend the remaining battery on additional development/recharge.
+
+The strongest signal from the A/B is:
+
+> **Hard-cap five looks like the right resource skeleton. The next variable to test should be the conversion package, not Stash growth.**
+
+No prototype rule has been changed from this checkpoint yet.
