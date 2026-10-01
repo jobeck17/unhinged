@@ -100,9 +100,10 @@ This experiment should remain distinct from the Cat Lady deck-construction exper
 
 ### Starting-resource prototype
 
-Lab 0.1 now tests the extreme version:
+Lab 0.2 tests the selected battery version:
 
-- After mulligans, put the top 10 cards of the deck face down and **Ready** into Stash.
+- After mulligans, put the top **5 cards** of the deck face down and **Ready** into Stash.
+- Stash is hard-capped at 5 cards.
 - Mad Scientist does not receive setup temporary Stash and cannot use the normal once-per-Round Stash action.
 - Stash does not Ready during the normal Ready step.
 - At the start of each Turn, before Ready, Ready 1 Stash.
@@ -116,10 +117,10 @@ The Scientist's deck may contain effects that combine ordinary Characters from h
 First mechanical sketch:
 
 > **It's Alive!**  
-> Action — Cost TBD  
-> As an additional cost to play this, Discard two Character cards. Create an Abomination Character token.
+> Action — Cost 3  
+> As an additional Cost to play this, Discard two Character cards. Roll for Power, then roll for Guard. Put an Abomination token into play with Power and Guard equal to those results.
 
-The first prototype should use a fixed token rather than calculating statistics from the discarded Characters. The fantasy is combining bodies; the rules do not need to become arithmetic soup.
+Power and Guard are assigned before rolling. Dedicated Power/Guard dice are preferred; otherwise the first ordinary d6 roll is Power and the second is Guard.
 
 ### What the cost is doing
 
@@ -174,6 +175,6 @@ Both initial Rulebreaker Leaders now have playable lab prototypes.
 
 For Crazy Cat Lady, continue testing the copy-limit exception and threshold snowball before adding fancy Cat payoffs.
 
-For Mad Scientist, test the 10-Ready-Stash Burnout curve, Abomination conversion, and optional physical Specimen Rack before tuning numbers.
+For Mad Scientist, continue testing the selected 5-Stash hard-cap Burnout curve, independent Power/Guard Abominations, and the physical Specimen concept.
 
 Do not promote either concept into Carl until the lab has a clear counterplay loop and human playtest evidence.
