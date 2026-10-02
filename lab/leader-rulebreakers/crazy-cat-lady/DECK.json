@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-0.2",
+  "version": "lab-cat-lady-0.3",
   "status": "lab-prototype",
   "canonical": false,
   "name": "Cat Distribution System",
@@ -14,7 +14,7 @@
     "note": "Lab prototype. Snowball and Trojan Cat are being tested at four copies each."
   },
   "cards": {
-    "LAB-CAT-001": 6,
+    "LAB-CAT-001": 8,
     "LAB-CAT-002": 4,
     "LAB-CAT-003": 4,
     "LAB-CAT-004": 2,
@@ -23,21 +23,20 @@
     "LAB-CAT-007": 2,
     "LAB-CAT-008": 2,
     "LAB-CAT-009": 1,
-    "LAB-CAT-010": 2,
-    "LAB-CAT-011": 2,
-    "LAB-CAT-012": 1,
+    "LAB-CAT-010": 3,
     "LAB-CAT-013": 4,
-    "LAB-CAT-014": 4
+    "LAB-CAT-014": 4,
+    "LAB-CAT-015": 2
   },
   "total_cards": 40,
   "composition": {
     "Characters": 35,
-    "Actions": 4,
-    "Items": 1
+    "Actions": 5,
+    "Items": 0
   },
   "mulligan_priority": [
     "At least two cheap Cats",
-    "A third Cat or Open a Can",
+    "A third Cat or Here Kitty Kitty",
     "Snowball when protection is available",
     "Avoid keeping House Panther unless the rest of the hand already establishes the colony"
   ],
@@ -48,6 +47,7 @@
     "Whether Snowball creates meaningful protect-or-risk decisions",
     "Whether Trojan Cat creates interesting attack hesitation without stalling combat",
     "How often Trojan Cat friendly fire punishes the Cat player's own low-Guard colony",
-    "Whether four copies each of Snowball and Trojan Cat is too consistent"
+    "Whether four copies each of Snowball and Trojan Cat is too consistent",
+    "Whether three copies of Here Kitty Kitty make Snowball/Tuxedo access too consistent"
   ]
 }
