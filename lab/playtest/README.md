@@ -1,0 +1,1 @@
+LAB browser playtest assets live here. This directory is experimental and does not define current Unhinged. `card-back.jpg` is a resized/compressed copy of the supplied card-back artwork; it is not AI-generated. The browser copy uses it for the deck and draw-flip animation.
