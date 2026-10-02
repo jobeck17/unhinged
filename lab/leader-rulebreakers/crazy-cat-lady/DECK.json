@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-0.1",
+  "version": "lab-cat-lady-0.2",
   "status": "lab-prototype",
   "canonical": false,
   "name": "Cat Distribution System",
@@ -11,41 +11,43 @@
     "construction_rule": "Your deck may contain Cat Characters from any Style and up to 10 copies of Stray Cat.",
     "passive_name": "Cat Distribution System",
     "passive": "At the start of your Turn, before Ready, if you control 3 or more Cats, put the top card of your deck face down and Ready into your Stash.",
-    "note": "The any-Style clause is reserved for eventual integration testing. Lab 0.1 primarily tests the ten-copy exception and three-Cat snowball."
+    "note": "Lab prototype. Snowball and Trojan Cat are being tested at four copies each."
   },
   "cards": {
-    "LAB-CAT-001": 10,
+    "LAB-CAT-001": 6,
     "LAB-CAT-002": 4,
     "LAB-CAT-003": 4,
-    "LAB-CAT-004": 4,
-    "LAB-CAT-005": 3,
-    "LAB-CAT-006": 3,
-    "LAB-CAT-007": 3,
+    "LAB-CAT-004": 2,
+    "LAB-CAT-005": 2,
+    "LAB-CAT-006": 2,
+    "LAB-CAT-007": 2,
     "LAB-CAT-008": 2,
     "LAB-CAT-009": 1,
     "LAB-CAT-010": 2,
     "LAB-CAT-011": 2,
-    "LAB-CAT-012": 2
+    "LAB-CAT-012": 1,
+    "LAB-CAT-013": 4,
+    "LAB-CAT-014": 4
   },
   "total_cards": 40,
   "composition": {
-    "Characters": 34,
+    "Characters": 35,
     "Actions": 4,
-    "Items": 2
+    "Items": 1
   },
   "mulligan_priority": [
     "At least two cheap Cats",
     "A third Cat or Open a Can",
+    "Snowball when protection is available",
     "Avoid keeping House Panther unless the rest of the hand already establishes the colony"
   ],
   "test_watchpoints": [
     "Round when Cat Distribution System first triggers",
     "Total bonus Stash created",
     "How often the opponent can knock the Cat player below 3 Cats",
-    "Maximum Cats controlled at one time",
-    "Whether ten Stray Cats feels charming and reliable or repetitive",
-    "Whether bonus Stash causes runaway games",
-    "Whether the extra Stash accelerating deck depletion matters",
-    "Whether the Cat player still has meaningful decisions after establishing 3 Cats"
+    "Whether Snowball creates meaningful protect-or-risk decisions",
+    "Whether Trojan Cat creates interesting attack hesitation without stalling combat",
+    "How often Trojan Cat friendly fire punishes the Cat player's own low-Guard colony",
+    "Whether four copies each of Snowball and Trojan Cat is too consistent"
   ]
 }
