@@ -4,26 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#14191c">
-<title>Unhinged · Carl 0.3</title>
-<link rel="stylesheet" href="style.css?v=rulebreakers-1">
-<style>
-  #boot-status{padding:32px 20px;max-width:650px;margin:auto;color:#e9ece8;font:600 16px/1.5 system-ui,-apple-system,sans-serif}
-  #boot-status small{display:block;color:#9eafb0;margin-top:8px;font-weight:500}
-</style>
-</head>
-<body>
-<div id="app"><div id="boot-status">Loading Unhinged · Carl 0.3…<small>Core stabilization build</small></div></div>
-<script>
-window.addEventListener('error',function(e){
-  var a=document.getElementById('app');
-  if(a) a.innerHTML='<div id="boot-status"><b>Carl hit a browser error.</b><small>'+String(e.message||'Unknown error')+'</small></div>';
-});
-window.addEventListener('unhandledrejection',function(e){
-  var a=document.getElementById('app');
-  var m=e.reason&&e.reason.message?e.reason.message:String(e.reason||'Unknown module error');
-  if(a) a.innerHTML='<div id="boot-status"><b>Carl hit a module error.</b><small>'+m+'</small></div>';
-});
-</script>
-<script type="module" src="app.js?v=rulebreakers-1"></script>
-</body>
-</html>
+<title>Unhinged · LAB Playtest</title>
+<link rel="stylesheet" href="style.css?v=lab-flip-1">
+<style>#boot-status{padding:32px 20px;max-width:650px;margin:auto;color:#e9ece8;font:600 16px/1.5 system-ui,-apple-system,sans-serif}#boot-status small{display:block;color:#9eafb0;margin-top:8px;font-weight:500}#lab-deck-back{position:fixed;right:14px;bottom:72px;width:72px;aspect-ratio:874/1182;border-radius:8px;background:url('./card-back.jpg') center/cover no-repeat;box-shadow:0 7px 0 #070b0d,0 10px 24px #0009;border:1px solid #555;z-index:4;display:none;pointer-events:none}#lab-deck-back:before,#lab-deck-back:after{content:'';position:absolute;inset:0;border-radius:8px;background:inherit;border:1px solid #444;z-index:-1}#lab-deck-back:before{transform:translate(-3px,-3px)}#lab-deck-back:after{transform:translate(-6px,-6px)}.lab-draw-card{position:fixed;width:72px;aspect-ratio:874/1182;border-radius:8px;background:url('./card-back.jpg') center/cover no-repeat;box-shadow:0 8px 22px #000a;border:1px solid #777;z-index:20;pointer-events:none;transform-style:preserve-3d;will-change:transform,left,top,opacity}.lab-draw-card.flip{animation:labDrawFlip .72s cubic-bezier(.2,.8,.2,1) forwards}@keyframes labDrawFlip{0%{transform:perspective(700px) rotateY(0) scale(1);opacity:1}48%{transform:perspective(700px) rotateY(90deg) scale(1.08);opacity:1}55%{background:#eae7d8;transform:perspective(700px) rotateY(100deg) scale(1.08);opacity:1}100%{transform:perspective(700px) rotateY(180deg) scale(.72);opacity:0}}@media(min-width:800px){#lab-deck-back{bottom:24px;right:24px;width:86px}.lab-draw-card{width:86px}}@media(prefers-reduced-motion:reduce){.lab-draw-card.flip{animation-duration:.15s}}</style>
+</head><body><div id="app"><div id="boot-status">Loading Unhinged · LAB Playtest…<small>Experimental browser copy</small></div></div><div id="lab-deck-back" aria-hidden="true"></div>
+<script>window.addEventListener('error',function(e){var a=document.getElementById('app');if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a browser error.</b><small>'+String(e.message||'Unknown error')+'</small></div>'});window.addEventListener('unhandledrejection',function(e){var a=document.getElementById('app');var m=e.reason&&e.reason.message?e.reason.message:String(e.reason||'Unknown module error');if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a module error.</b><small>'+m+'</small></div>'});const nativeFetch=window.fetch.bind(window);window.fetch=(input,init)=>{if(typeof input==='string'){input=input.replace(/^\.\.\/CARDS\.json/,'../../CARDS.json').replace(/^\.\.\/DECKS\.json/,'../../DECKS.json').replace(/^\.\.\/lab\/leader-rulebreakers\//,'../leader-rulebreakers/')}return nativeFetch(input,init)};</script>
+<script type="module" src="app.js?v=lab-flip-1"></script>
+<script>(()=>{const deck=document.getElementById('lab-deck-back');let last=null,armed=false;function animateDraw(){const hand=document.querySelector('.hand .lane');if(!hand)return;const d=deck.getBoundingClientRect(),h=hand.getBoundingClientRect();const ghost=document.createElement('div');ghost.className='lab-draw-card';ghost.style.left=d.left+'px';ghost.style.top=d.top+'px';document.body.appendChild(ghost);requestAnimationFrame(()=>{ghost.style.transition='left .72s cubic-bezier(.2,.8,.2,1),top .72s cubic-bezier(.2,.8,.2,1)';ghost.style.left=Math.max(h.left+12,Math.min(h.right-84,h.left+h.width*.72))+'px';ghost.style.top=h.top+18+'px';ghost.classList.add('flip')});setTimeout(()=>ghost.remove(),850)}setInterval(()=>{const hand=document.querySelector('.hand .lane'),playing=!!document.querySelector('.controls');deck.style.display=playing?'block':'none';if(!playing||!hand){last=null;armed=false;return}const n=hand.querySelectorAll('.card').length;if(!armed){last=n;armed=true;return}if(last!==null&&n>last){for(let i=0;i<n-last;i++)setTimeout(animateDraw,i*130)}last=n},120)})();</script></body></html>
