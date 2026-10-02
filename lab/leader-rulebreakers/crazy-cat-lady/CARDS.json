@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-0.9",
+  "version": "lab-cat-lady-1.0",
   "status": "lab-prototype",
   "canonical": false,
   "style": null,
@@ -13,7 +13,7 @@
     {"id":"LAB-CAT-007","type":"Character","cost":4,"name":"Alley Matriarch","traits":["Animal","Cat"],"text":"When this enters play, if you control 3 or more Cats, Draw a card.","keywords":[],"power":4,"guard":5,"status":"lab-prototype","purpose":"Rewards reaching the colony threshold without directly adding more Stash."},
     {"id":"LAB-CAT-008","type":"Character","cost":5,"name":"Maine Coon","traits":["Animal","Cat"],"text":"While you control 5 or more Cats, this gets +2 Power.","keywords":[],"power":5,"guard":7,"status":"lab-prototype","purpose":"Visible five-Cat payoff that turns a wide colony into finishing pressure."},
     {"id":"LAB-CAT-009","type":"Character","cost":6,"name":"House Panther","traits":["Animal","Cat"],"text":"","keywords":[],"power":7,"guard":8,"status":"lab-prototype","purpose":"Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself."},
-    {"id":"LAB-CAT-010","type":"Action","cost":1,"name":"Here Kitty Kitty","traits":[],"text":"Look at the top 4 cards of your deck. You may reveal a Cat Character and put it into your hand. Put the rest on the bottom in any order.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Light Cat selection without generic Draw."},
+    {"id":"LAB-CAT-010","type":"Action","cost":1,"name":"Where's Mittens?","traits":[],"text":"Look at the top 4 cards of your deck. You may reveal a Cat Character and put it into your hand. Put the rest on the bottom in any order.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Light Cat selection without generic Draw."},
     {"id":"LAB-CAT-013","type":"Character","cost":3,"name":"Snowball","traits":["Animal","Cat"],"text":"At the start of your Turn, Snowball gets +1 Power.","keywords":[],"power":1,"guard":1,"status":"lab-prototype","purpose":"Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Power."},
     {"id":"LAB-CAT-014","type":"Character","cost":1,"name":"Trojan Cat","traits":["Cat"],"text":"When Trojan Cat is Defeated, deal 1 damage to every other Character.","keywords":[],"power":0,"guard":1,"status":"lab-prototype","purpose":"Cheap Cat-count body and visible blocking trap. Its global friendly-fire explosion can punish opposing boards but can also devastate the Cat Lady's own low-Guard colony."},
     {"id":"LAB-CAT-015","type":"Action","cost":3,"name":"Dead Mouse in a Mousetrap","traits":[],"text":"Heal each of your Characters 1.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Wide-board recovery tool. Rewards maintaining a colony and helps the Cat player recover from Trojan Cat friendly fire without directly adding more bodies."}
