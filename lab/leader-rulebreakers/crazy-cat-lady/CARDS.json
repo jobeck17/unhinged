@@ -1,201 +1,21 @@
 {
-  "version": "lab-cat-lady-0.1",
+  "version": "lab-cat-lady-0.2",
   "status": "lab-prototype",
   "canonical": false,
   "style": null,
   "cards": [
-    {
-      "id": "LAB-CAT-001",
-      "type": "Character",
-      "cost": 1,
-      "name": "Stray Cat",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "",
-      "keywords": [],
-      "power": 1,
-      "guard": 1,
-      "status": "lab-prototype",
-      "purpose": "Ten-copy swarm body. Intentionally weak so the copy-limit break creates quantity, not raw efficiency."
-    },
-    {
-      "id": "LAB-CAT-002",
-      "type": "Character",
-      "cost": 1,
-      "name": "Orange Menace",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "Hothead.",
-      "keywords": [
-        "Hothead"
-      ],
-      "power": 2,
-      "guard": 1,
-      "status": "lab-prototype",
-      "purpose": "Early pressure and a second cheap Cat so the deck is not merely ten copies of one body."
-    },
-    {
-      "id": "LAB-CAT-003",
-      "type": "Character",
-      "cost": 2,
-      "name": "Tuxedo Cat",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "Bodyguard.",
-      "keywords": [
-        "Bodyguard"
-      ],
-      "power": 2,
-      "guard": 3,
-      "status": "lab-prototype",
-      "purpose": "Protects the colony while giving the opponent a visible target to clear."
-    },
-    {
-      "id": "LAB-CAT-004",
-      "type": "Character",
-      "cost": 2,
-      "name": "Cat Under the Bed",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "Chicken.",
-      "keywords": [
-        "Chicken"
-      ],
-      "power": 2,
-      "guard": 2,
-      "status": "lab-prototype",
-      "purpose": "Lets the Cat player preserve a body at the cost of temporarily dropping board count."
-    },
-    {
-      "id": "LAB-CAT-005",
-      "type": "Character",
-      "cost": 3,
-      "name": "Feral Tom",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "Sucker Punch.",
-      "keywords": [
-        "Sucker Punch"
-      ],
-      "power": 4,
-      "guard": 2,
-      "status": "lab-prototype",
-      "purpose": "Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader."
-    },
-    {
-      "id": "LAB-CAT-006",
-      "type": "Character",
-      "cost": 3,
-      "name": "Three-Legged Cat",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "Stubborn.",
-      "keywords": [
-        "Stubborn"
-      ],
-      "power": 3,
-      "guard": 4,
-      "status": "lab-prototype",
-      "purpose": "Resilient colony member that specifically resists Return and Dismiss counterplay."
-    },
-    {
-      "id": "LAB-CAT-007",
-      "type": "Character",
-      "cost": 4,
-      "name": "Alley Matriarch",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "When this enters play, if you control 3 or more Cats, Draw a card.",
-      "keywords": [],
-      "power": 4,
-      "guard": 5,
-      "status": "lab-prototype",
-      "purpose": "Rewards reaching the colony threshold without directly adding more Stash."
-    },
-    {
-      "id": "LAB-CAT-008",
-      "type": "Character",
-      "cost": 5,
-      "name": "Maine Coon",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "While you control 5 or more Cats, this gets +2 Power.",
-      "keywords": [],
-      "power": 5,
-      "guard": 7,
-      "status": "lab-prototype",
-      "purpose": "Visible five-Cat payoff that turns a wide colony into finishing pressure."
-    },
-    {
-      "id": "LAB-CAT-009",
-      "type": "Character",
-      "cost": 6,
-      "name": "House Panther",
-      "traits": [
-        "Animal",
-        "Cat"
-      ],
-      "text": "",
-      "keywords": [],
-      "power": 7,
-      "guard": 8,
-      "status": "lab-prototype",
-      "purpose": "Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself."
-    },
-    {
-      "id": "LAB-CAT-010",
-      "type": "Action",
-      "cost": 1,
-      "name": "Open a Can",
-      "traits": [],
-      "text": "Look at the top 4 cards of your deck. You may reveal a Cat Character and put it into your hand. Put the rest on the bottom in any order.",
-      "keywords": [],
-      "power": null,
-      "guard": null,
-      "status": "lab-prototype",
-      "purpose": "Light Cat selection without generic Draw."
-    },
-    {
-      "id": "LAB-CAT-011",
-      "type": "Action",
-      "cost": 1,
-      "name": "Laser Pointer",
-      "traits": [],
-      "text": "Choose one of your Cats. It gets +2 Power this Turn.",
-      "keywords": [],
-      "power": null,
-      "guard": null,
-      "status": "lab-prototype",
-      "purpose": "Simple tactical payoff that makes even a Stray relevant in combat."
-    },
-    {
-      "id": "LAB-CAT-012",
-      "type": "Item",
-      "cost": 1,
-      "name": "Cardboard Box",
-      "traits": [],
-      "text": "When one of your Cats is attacked, you may Dismiss this Item. If you do, Return that Cat to your hand.",
-      "keywords": [],
-      "power": null,
-      "guard": null,
-      "status": "lab-prototype",
-      "purpose": "Protects a key Cat but lowers the colony count until it is replayed, preserving counterplay."
-    }
+    {"id":"LAB-CAT-001","type":"Character","cost":1,"name":"Stray Cat","traits":["Animal","Cat"],"text":"","keywords":[],"power":1,"guard":1,"status":"lab-prototype","purpose":"Ten-copy swarm body. Intentionally weak so the copy-limit break creates quantity, not raw efficiency."},
+    {"id":"LAB-CAT-002","type":"Character","cost":1,"name":"Orange Menace","traits":["Animal","Cat"],"text":"Hothead.","keywords":["Hothead"],"power":2,"guard":1,"status":"lab-prototype","purpose":"Early pressure and a second cheap Cat so the deck is not merely ten copies of one body."},
+    {"id":"LAB-CAT-003","type":"Character","cost":2,"name":"Tuxedo Cat","traits":["Animal","Cat"],"text":"Bodyguard.","keywords":["Bodyguard"],"power":2,"guard":3,"status":"lab-prototype","purpose":"Protects the colony while giving the opponent a visible target to clear."},
+    {"id":"LAB-CAT-004","type":"Character","cost":2,"name":"Cat Under the Bed","traits":["Animal","Cat"],"text":"Chicken.","keywords":["Chicken"],"power":2,"guard":2,"status":"lab-prototype","purpose":"Lets the Cat player preserve a body at the cost of temporarily dropping board count."},
+    {"id":"LAB-CAT-005","type":"Character","cost":3,"name":"Feral Tom","traits":["Animal","Cat"],"text":"Sucker Punch.","keywords":["Sucker Punch"],"power":4,"guard":2,"status":"lab-prototype","purpose":"Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader."},
+    {"id":"LAB-CAT-006","type":"Character","cost":3,"name":"Three-Legged Cat","traits":["Animal","Cat"],"text":"Stubborn.","keywords":["Stubborn"],"power":3,"guard":4,"status":"lab-prototype","purpose":"Resilient colony member that specifically resists Return and Dismiss counterplay."},
+    {"id":"LAB-CAT-007","type":"Character","cost":4,"name":"Alley Matriarch","traits":["Animal","Cat"],"text":"When this enters play, if you control 3 or more Cats, Draw a card.","keywords":[],"power":4,"guard":5,"status":"lab-prototype","purpose":"Rewards reaching the colony threshold without directly adding more Stash."},
+    {"id":"LAB-CAT-008","type":"Character","cost":5,"name":"Maine Coon","traits":["Animal","Cat"],"text":"While you control 5 or more Cats, this gets +2 Power.","keywords":[],"power":5,"guard":7,"status":"lab-prototype","purpose":"Visible five-Cat payoff that turns a wide colony into finishing pressure."},
+    {"id":"LAB-CAT-009","type":"Character","cost":6,"name":"House Panther","traits":["Animal","Cat"],"text":"","keywords":[],"power":7,"guard":8,"status":"lab-prototype","purpose":"Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself."},
+    {"id":"LAB-CAT-010","type":"Action","cost":1,"name":"Open a Can","traits":[],"text":"Look at the top 4 cards of your deck. You may reveal a Cat Character and put it into your hand. Put the rest on the bottom in any order.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Light Cat selection without generic Draw."},
+    {"id":"LAB-CAT-011","type":"Action","cost":1,"name":"Laser Pointer","traits":[],"text":"Choose one of your Cats. It gets +2 Power this Turn.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Simple tactical payoff that makes even a Stray relevant in combat."},
+    {"id":"LAB-CAT-012","type":"Item","cost":1,"name":"Cardboard Box","traits":[],"text":"When one of your Cats is attacked, you may Dismiss this Item. If you do, Return that Cat to your hand.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Protects a key Cat but lowers the colony count until it is replayed, preserving counterplay."},
+    {"id":"LAB-CAT-013","type":"Character","cost":2,"name":"Snowball","traits":["Animal","Cat"],"text":"At the start of your Turn, Snowball gets +1 Power.","keywords":[],"power":1,"guard":1,"status":"lab-prototype","purpose":"Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Power."}
   ]
 }
