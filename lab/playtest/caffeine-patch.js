@@ -75,7 +75,7 @@ window.fetch=async function(input,init){
   });
 };
 
-// Teach the LAB engine about the new card and a temporary virtual Sucker Punch layer.
+// Teach the LAB engine about the new cards and a temporary virtual Sucker Punch layer.
 const baseCard=Game.prototype.card;
 Game.prototype.card=function(x){
   const id=typeof x==='string'?x:x?.id;
@@ -92,6 +92,12 @@ Game.prototype.layers=function(x){
   return layers;
 };
 
+// Tetanus Guard loss is persistent even though ordinary temporary Guard modifiers clear each Turn.
+const baseGuard=Game.prototype.guard;
+Game.prototype.guard=function(x){
+  return Math.max(0,baseGuard.call(this,x)-(x?.tetanusGuardLoss||0));
+};
+
 // Rusty Needle and Caffeine both need a Character target.
 const baseCanPlay=Game.prototype.canPlay;
 Game.prototype.canPlay=function(index,p=this.turn){
@@ -101,8 +107,7 @@ Game.prototype.canPlay=function(index,p=this.turn){
   return baseCanPlay.call(this,index,p);
 };
 
-// Caffeine needs one of your Characters to exist.
-// Resolve the boost without dealing damage, so this card itself never triggers Adrenaline.
+// Resolve Caffeine without dealing damage, so this card itself never triggers Adrenaline.
 const baseActionEffect=Game.prototype.actionEffect;
 Game.prototype.actionEffect=async function(p,id,target,second,previous){
   if(id===RUSTY_NEEDLE_ID){
@@ -114,7 +119,11 @@ Game.prototype.actionEffect=async function(p,id,target,second,previous){
     if(!x) return;
     await this.damage(x,1);
     const survivor=this.obj(chosen);
-    if(survivor){ survivor.tetanus=true; this.say(`${this.card(survivor).name}: Congratulations, you have tetanus.`); }
+    if(survivor){
+      survivor.tetanus=true;
+      survivor.tetanusGuardLoss=survivor.tetanusGuardLoss||0;
+      this.say(`${this.card(survivor).name}: Congratulations, you have tetanus.`);
+    }
     return;
   }
   if(id!==CAFFEINE_ID) return baseActionEffect.call(this,p,id,target,second,previous);
@@ -149,7 +158,13 @@ Game.prototype.activate=async function(uid,mode=null){
       if(choice==='PRINTED') return baseActivate.call(this,uid,null);
       cure=choice==='LAB-TETANUS-CURE';
     } else if(!mode && !normal) cure=true;
-    if(cure){ x.ready=false; delete x.tetanus; this.say(`${this.card(x).name} Rotates to remove tetanus`); this.advance(); return; }
+    if(cure){
+      x.ready=false;
+      delete x.tetanus;
+      this.say(`${this.card(x).name} Rotates to remove tetanus`);
+      this.advance();
+      return;
+    }
   }
   return baseActivate.call(this,uid,mode);
 };
@@ -170,7 +185,9 @@ Game.prototype.attack=async function(uid){
   return result;
 };
 
-// If the Character never attacks, the temporary keywords expire with the Turn.
+// Caffeine expires at Turn end. After the next Turn starts, tetanus permanently removes 1 Guard from
+// each infected Character controlled by the new active player. If that reaches its current damage threshold,
+// the Character is Defeated before the player can take an action.
 const baseEndRound=Game.prototype.endRound;
 Game.prototype.endRound=async function(...args){
   for(const player of this.players){
@@ -179,5 +196,17 @@ Game.prototype.endRound=async function(...args){
       delete x.caffeineDoomed;
     }
   }
-  return baseEndRound.apply(this,args);
+  const previousTurn=this.turn;
+  const result=await baseEndRound.apply(this,args);
+  if(this.winner!==null || this.turn===previousTurn) return result;
+  const infected=[...this.chars(this.turn)].filter(x=>x.tetanus);
+  for(const x of infected){
+    if(!this.obj(x.uid)) continue;
+    x.tetanusGuardLoss=(x.tetanusGuardLoss||0)+1;
+    this.say(`${this.card(x).name} loses 1 Guard from tetanus`);
+    await this.checkDefeat(x);
+  }
+  this.checkEnd();
+  this.update?.();
+  return result;
 };
