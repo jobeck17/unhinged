@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#14191c">
 <title>Unhinged · LAB Playtest</title>
-<link rel="stylesheet" href="style.css?v=lab-26">
+<link rel="stylesheet" href="style.css?v=lab-27">
 <style>
 #boot-status{padding:32px 20px;max-width:650px;margin:auto;color:#e9ece8;font:600 16px/1.5 system-ui,-apple-system,sans-serif}#boot-status small{display:block;color:#9eafb0;margin-top:8px;font-weight:500}
 .card[data-uid].hairballed{filter:brightness(1.28) saturate(.35);box-shadow:0 0 0 3px rgba(255,255,255,.72),0 4px 0 #0b1114}
 .card[data-uid].hairballed::after{content:'HAIRBALL';position:absolute;right:5px;bottom:5px;padding:3px 5px;border-radius:999px;background:rgba(255,255,255,.9);color:#4d5755;font-size:.52rem;font-weight:950;letter-spacing:.06em;box-shadow:0 1px 4px #0004}
 </style>
-</head><body><div id="app"><div id="boot-status">Loading Unhinged · LAB Playtest…<small>Choose bot or local two-player · TEMP TEST: no universal retaliation · Wrestlers have Retaliate · Florida Man Adrenaline triggers once, then falls to 1 Power · Gas Station Daredevil is +1 for the self-damage attack · 3 Broken Lawnmowers · Hold My Beer tempo rewrite · 4× A MILLION KILOGRAMS OF CAFFEINE!!!!</small></div></div>
-<script>window.addEventListener('error',function(e){var a=document.getElementById('app');if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a browser error.</b><small>'+String(e.message||'Unknown error')+'</small></div>'});window.addEventListener('unhandledrejection',function(e){var a=document.getElementById('app');var m=e.reason&&e.reason.message?e.reason.message:String(e.reason||'Unknown module error');if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a module error.</b><small>'+m+'</small></div>'});const nativeFetch=window.fetch.bind(window);window.fetch=(input,init)=>{if(typeof input==='string'){input=input.replace(/^\.\.\/CARDS\.json/,'../../CARDS.json').replace(/^\.\.\/DECKS\.json/,'../../DECKS.json').replace(/^\.\.\/lab\/leader-rulebreakers\//,'../leader-rulebreakers/').replace(/v=rulebreakers-1/g,'v=lab-26')}return nativeFetch(input,init)};</script>
-<script type="module" src="bootstrap.js?v=lab-26"></script>
+</head><body><div id="app"><div id="boot-status">Loading Unhinged · LAB Playtest…<small>Choose bot or local two-player · TEMP TEST: no universal retaliation · Wrestlers have Retaliate · Florida Man Adrenaline triggers once, then falls to 1 Power · Gas Station Daredevil is +1 for the self-damage attack · 3 Broken Lawnmowers · Hold My Beer tempo rewrite · 2× A MILLION KILOGRAMS OF CAFFEINE!!!! · 2× Rusty Needle</small></div></div>
+<script>window.addEventListener('error',function(e){var a=document.getElementById('app');if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a browser error.</b><small>'+String(e.message||'Unknown error')+'</small></div>'});window.addEventListener('unhandledrejection',function(e){var a=document.getElementById('app');var m=e.reason&&e.reason.message?e.reason.message:String(e.reason||'Unknown module error');if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a module error.</b><small>'+m+'</small></div>'});const nativeFetch=window.fetch.bind(window);window.fetch=(input,init)=>{if(typeof input==='string'){input=input.replace(/^\.\.\/CARDS\.json/,'../../CARDS.json').replace(/^\.\.\/DECKS\.json/,'../../DECKS.json').replace(/^\.\.\/lab\/leader-rulebreakers\//,'../leader-rulebreakers/').replace(/v=rulebreakers-1/g,'v=lab-27')}return nativeFetch(input,init)};</script>
+<script type="module" src="bootstrap.js?v=lab-27"></script>
 <script type="module">
 const app=document.getElementById('app');
 function paintHairballs(){
