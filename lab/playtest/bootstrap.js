@@ -1,18 +1,18 @@
 // LAB browser bootstrap. Load experimental patches in a deterministic order,
 // then let the player choose bot play or local two-player.
-await import('./snowball-patch.js?v=lab-27');
-await import('./lab-patches.js?v=lab-27');
-await import('./trojan-cat-patch.js?v=lab-27');
-await import('./tuxedo-cat-patch.js?v=lab-27');
-await import('./no-retaliation-patch.js?v=lab-27');
-await import('./wrestler-retaliate-patch.js?v=lab-27');
-await import('./florida-adrenaline-patch.js?v=lab-27');
-await import('./broken-lawnmower-patch.js?v=lab-27');
-await import('./gas-station-daredevil-patch.js?v=lab-27');
-await import('./hold-my-beer-patch.js?v=lab-27');
-await import('./caffeine-patch.js?v=lab-27');
-await import('./stray-cat-patch.js?v=lab-27');
-await import('./hairy-cat-patch.js?v=lab-27');
+await import('./snowball-patch.js?v=lab-28');
+await import('./lab-patches.js?v=lab-28');
+await import('./trojan-cat-patch.js?v=lab-28');
+await import('./tuxedo-cat-patch.js?v=lab-28');
+await import('./no-retaliation-patch.js?v=lab-28');
+await import('./wrestler-retaliate-patch.js?v=lab-28');
+await import('./florida-adrenaline-patch.js?v=lab-28');
+await import('./broken-lawnmower-patch.js?v=lab-28');
+await import('./gas-station-daredevil-patch.js?v=lab-28');
+await import('./hold-my-beer-patch.js?v=lab-28');
+await import('./caffeine-patch.js?v=lab-28');
+await import('./stray-cat-patch.js?v=lab-28');
+await import('./hairy-cat-patch.js?v=lab-28');
 
 const root=document.getElementById('app');
 root.innerHTML=`<div class="setup deck-setup">
@@ -33,8 +33,8 @@ async function launch(mode){
   if(chosen)return;
   chosen=true;
   root.innerHTML='<div id="boot-status">Loading match…</div>';
-  if(mode==='bot') await import('./app.js?v=lab-27');
-  else await import('./app-two-player.js?v=lab-27');
+  if(mode==='bot') await import('./app.js?v=lab-28');
+  else await import('./app-two-player.js?v=lab-28');
 }
 
 document.getElementById('play-bot').onclick=()=>launch('bot');
