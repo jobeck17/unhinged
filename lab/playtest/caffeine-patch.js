@@ -1,5 +1,5 @@
-// LAB ONLY: Florida Man caffeine prototype.
-// Replaces the two Send It! and two No, I'm Fine slots with two Caffeine and two Rusty Needle LAB Actions.
+// LAB ONLY: Florida Man caffeine / Rusty Needle prototype.
+// TEMP TEST: replaces the two Send It! and two No, I'm Fine slots with four Rusty Needle LAB Actions.
 import { Game } from './engine.js?v=rulebreakers-1';
 
 const CAFFEINE_ID='LAB-FLM-002';
@@ -65,8 +65,8 @@ window.fetch=async function(input,init){
   const cards={...florida.cards};
   delete cards.P020;
   delete cards.P022;
-  cards[CAFFEINE_ID]=2;
-  cards[RUSTY_NEEDLE_ID]=2;
+  delete cards[CAFFEINE_ID];
+  cards[RUSTY_NEEDLE_ID]=4;
   florida.cards=cards;
   return new Response(JSON.stringify(doc),{
     status:response.status,
