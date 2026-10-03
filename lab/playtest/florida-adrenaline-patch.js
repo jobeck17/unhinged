@@ -4,7 +4,7 @@
 import {Game, LEADERS} from './engine.js?v=rulebreakers-1';
 
 LEADERS['Florida Man'].passive =
-  "Ooh, That's Gonna Leave a Mark!: When one of your Characters is dealt damage and survives, it gets +3 Power. At the start of your Turn, reduce that bonus by 1 until it reaches 0. When one of your Characters with no bonus from Ooh, That's Gonna Leave a Mark! is Defeated, Draw a card.";
+  "Ooh, That's Gonna Leave a Mark!: When one of your Characters is dealt damage and survives, it gets +2 Power, or +3 Power if it has the Daredevil Trait. At the start of your Turn, reduce that bonus by 1 until it reaches 0. When one of your Characters with no bonus from Ooh, That's Gonna Leave a Mark! is Defeated, Draw a card.";
 
 // The temporary Power bonus is persistent while the Character remains in play
 // and is tracked separately from x.power because the base engine clears x.power
@@ -60,8 +60,9 @@ Game.prototype.pick = function(title,p,targets,optional=false){
 function triggerBattleHigh(game,x,beforeDamage){
   if(!x || !game.obj(x.uid) || game.name(x.owner)!=='Florida Man') return;
   if(x.damage<=beforeDamage || x.damage>=game.guard(x)) return;
-  x.battleHigh=3;
-  game.say(`${game.card(x).name}: Ooh, That's Gonna Leave a Mark! +3 Power`);
+  const bonus=game.trait(x,'Daredevil')?3:2;
+  x.battleHigh=bonus;
+  game.say(`${game.card(x).name}: Ooh, That's Gonna Leave a Mark! +${bonus} Power`);
 }
 
 // Any damage can trigger the bonus, including combat damage and self-damage.
