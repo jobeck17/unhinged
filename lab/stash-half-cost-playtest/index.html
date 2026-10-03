@@ -49,12 +49,15 @@ function paintStashCapacity(){
     const p=players[i];
     if(p===undefined)return;
     const span=[...head.querySelectorAll('.metrics span')].find(x=>x.textContent.trim().startsWith('Stash '));
-    if(span)span.textContent=`Stash ${g.players[p].fuel}/${g.stashCapacity(p)} ready`;
+    if(!span)return;
+    const next=`Stash ${g.players[p].fuel}/${g.stashCapacity(p)} ready`;
+    // Avoid retriggering the MutationObserver forever when the text is already correct.
+    if(span.textContent!==next)span.textContent=next;
   });
 }
 new MutationObserver(paintStashCapacity).observe(document.getElementById('app'),{childList:true,subtree:true});
 setInterval(paintStashCapacity,250);
 </script>
-<script type="module" src="boot.js?v=stash-half-1"></script>
+<script type="module" src="boot.js?v=stash-half-2"></script>
 </body>
 </html>
