@@ -22,7 +22,6 @@ Game.prototype.dismiss = async function(x) {
 
   if (!use) return originalDismiss.call(this, x);
 
-  // If more than one Shoebox is in play, choose which physical pile gets it.
   let box = boxes[0];
   if (boxes.length > 1) {
     const chosen = await this.choose(
@@ -33,8 +32,6 @@ Game.prototype.dismiss = async function(x) {
     box = this.obj(chosen) || box;
   }
 
-  // Let the normal Dismiss resolution handle attached cards and board cleanup,
-  // then move the dismissed Cat from discard into the hidden Shoebox pile.
   const before = this.players[p].discard.length;
   await originalDismiss.call(this, x);
   const discard = this.players[p].discard;
@@ -67,28 +64,64 @@ Game.prototype.power = function(x) {
 // The Cat returns normally: full printed Guard, no Hothead, and normal enters-play effects.
 const originalActionEffect = Game.prototype.actionEffect;
 Game.prototype.actionEffect = async function(p, id, target, second, previous) {
-  if (id !== 'LAB-CAT-018') {
-    return originalActionEffect.call(this, p, id, target, second, previous);
-  }
-
-  const buried = [];
-  for (const box of this.players[p].board.filter(y => y.id === 'LAB-CAT-017')) {
-    for (let i = 0; i < (box.cargo?.length || 0); i++) {
-      buried.push({ boxUid: box.uid, index: i, cardId: box.cargo[i] });
+  if (id === 'LAB-CAT-018') {
+    const buried = [];
+    for (const box of this.players[p].board.filter(y => y.id === 'LAB-CAT-017')) {
+      for (let i = 0; i < (box.cargo?.length || 0); i++) {
+        buried.push({ boxUid: box.uid, index: i, cardId: box.cargo[i] });
+      }
     }
-  }
 
-  if (!buried.length) {
-    this.say('Shovel digs around but finds no buried Cats');
+    if (!buried.length) {
+      this.say('Shovel digs around but finds no buried Cats');
+      return;
+    }
+
+    const pick = buried[Math.floor(Math.random() * buried.length)];
+    const box = this.obj(pick.boxUid);
+    if (!box?.cargo?.length) return;
+
+    const [cardId] = box.cargo.splice(pick.index, 1);
+    const cat = this.enter(p, cardId);
+    this.say(`Shovel digs up ${this.card(cardId).name}`);
+    await this.enterEffect(cat, previous || []);
     return;
   }
 
-  const pick = buried[Math.floor(Math.random() * buried.length)];
-  const box = this.obj(pick.boxUid);
-  if (!box?.cargo?.length) return;
+  if (id === 'LAB-CAT-019') {
+    this.say('Nine Lives, Zero Survivors wipes the board');
 
-  const [cardId] = box.cargo.splice(pick.index, 1);
-  const cat = this.enter(p, cardId);
-  this.say(`Shovel digs up ${this.card(cardId).name}`);
-  await this.enterEffect(cat, previous || []);
+    // Defeat every Character that is still in play. Defeat triggers resolve normally.
+    const characterUids = this.players.flatMap(s => s.board)
+      .filter(x => this.card(x).type === 'Character')
+      .map(x => x.uid);
+    for (const uid of characterUids) {
+      const x = this.obj(uid);
+      if (x) {
+        this.say(`${this.card(x).name} is Defeated`);
+        await this.remove(x, 'discard', true);
+      }
+    }
+
+    // Dismiss every Item still in play. Shoebox cargo is discarded by normal removal.
+    const itemUids = this.players.flatMap(s => s.board)
+      .filter(x => this.card(x).type === 'Item')
+      .map(x => x.uid);
+    for (const uid of itemUids) {
+      const x = this.obj(uid);
+      if (x) await originalDismiss.call(this, x);
+    }
+
+    // Refill both hands to seven; players already at seven or more keep their hands.
+    for (let player = 0; player < 2; player++) {
+      while (this.players[player].hand.length < 7 && this.players[player].deck.length && this.winner === null) {
+        this.draw(player, 1, false);
+      }
+    }
+    this.say('Both players draw back to 7 cards');
+    this.checkEnd();
+    return;
+  }
+
+  return originalActionEffect.call(this, p, id, target, second, previous);
 };
