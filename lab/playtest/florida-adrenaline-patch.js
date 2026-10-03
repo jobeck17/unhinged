@@ -4,14 +4,16 @@
 import {Game, LEADERS} from './engine.js?v=rulebreakers-1';
 
 LEADERS['Florida Man'].passive =
-  "Ooh, That's Gonna Leave a Mark!: When one of your Characters is dealt damage and survives, it gets +2 Power, or +3 Power if it has the Daredevil Trait. At the start of your Turn, reduce that bonus by 1 until it reaches 0. When one of your Characters with no bonus from Ooh, That's Gonna Leave a Mark! is Defeated, Draw a card.";
+  "Ooh, That's Gonna Leave a Mark!: The first time each of your Characters is dealt damage and survives, it gets +2 Power, or +3 Power if it has the Daredevil Trait. At the start of your Turn, reduce that Character's Power by 1 until it has 1 Power. This ability can't trigger again for that Character.";
 
-// The temporary Power bonus is persistent while the Character remains in play
-// and is tracked separately from x.power because the base engine clears x.power
-// at the end of each Turn.
+// Adrenaline is a one-time arc for each Character. The modifier starts positive,
+// then can tick through 0 and into the negatives until that Character would have
+// 1 Power from its own card/effects. Other continuous bonuses, such as a running
+// Broken Lawnmower, are layered afterward and can still raise it above 1.
 const basePower = Game.prototype.power;
 Game.prototype.power = function(x){
-  return Math.max(0, basePower.call(this,x) + (x?.battleHigh || 0));
+  const value=basePower.call(this,x)+(x?.battleHigh||0);
+  return x?.battleHighTriggered ? Math.max(1,value) : Math.max(0,value);
 };
 
 // Remove the old Florida Man Ready-on-surviving-combat clause.
@@ -59,15 +61,16 @@ Game.prototype.pick = function(title,p,targets,optional=false){
 
 function triggerBattleHigh(game,x,beforeDamage){
   if(!x || !game.obj(x.uid) || game.name(x.owner)!=='Florida Man') return;
+  if(x.battleHighTriggered) return;
   if(x.damage<=beforeDamage || x.damage>=game.guard(x)) return;
   const bonus=game.trait(x,'Daredevil')?3:2;
+  x.battleHighTriggered=true;
   x.battleHigh=bonus;
   game.say(`${game.card(x).name}: Ooh, That's Gonna Leave a Mark! +${bonus} Power`);
 }
 
-// Any damage can trigger the bonus, including combat damage and self-damage.
-// For deferred combat damage, the survival check is based on remaining Guard
-// before combatDamage performs its defeat cleanup.
+// Any damage can trigger the one-time boost, including combat damage and self-damage.
+// Once a Character has triggered it, later damage never refreshes the bonus.
 const baseDamage = Game.prototype.damage;
 Game.prototype.damage = async function(x,n,defer=false){
   const before=x?.damage||0;
@@ -75,30 +78,16 @@ Game.prototype.damage = async function(x,n,defer=false){
   triggerBattleHigh(this,x,before);
 };
 
-// Draw only when a Florida Man Character is actually Defeated while its temporary
-// Power bonus is already 0. This includes normal defeat and Sacrifice, but not
-// ordinary Dismiss/Return effects.
-const baseRemove = Game.prototype.remove;
-Game.prototype.remove = async function(x,where='discard',defeated=false){
-  const wasCharacter=!!x && this.obj(x.uid) && this.card(x).type==='Character';
-  const owner=x?.owner;
-  const lethal=wasCharacter && x.damage>=this.guard(x);
-  const countsAsDefeat=wasCharacter && (defeated || (where==='discard' && lethal));
-  const drawCold=countsAsDefeat && this.name(owner)==='Florida Man' && (x.battleHigh||0)<=0;
-  const result=await baseRemove.call(this,x,where,defeated);
-  if(drawCold && !this.obj(x.uid) && this.winner===null){
-    this.draw(owner,1,false);
-    this.say("Ooh, That's Gonna Leave a Mark!: no bonus, so the Defeat draws a card");
-  }
-  return result;
-};
-
 async function decayBattleHigh(game,p){
   if(game.name(p)!=='Florida Man') return;
   for(const x of game.chars(p)){
-    if((x.battleHigh||0)>0){
-      x.battleHigh--;
-      game.say(`${game.card(x).name}'s bonus drops to +${x.battleHigh} Power`);
+    if(!x.battleHighTriggered) continue;
+    const ownPowerWithoutAdrenaline=basePower.call(game,x);
+    const current=ownPowerWithoutAdrenaline+(x.battleHigh||0);
+    if(current>1){
+      x.battleHigh=(x.battleHigh||0)-1;
+      const next=Math.max(1,ownPowerWithoutAdrenaline+x.battleHigh);
+      game.say(`${game.card(x).name}'s adrenaline drops it to ${next} Power`);
     }
   }
 }
