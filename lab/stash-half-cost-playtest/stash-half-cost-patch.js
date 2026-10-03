@@ -1,13 +1,13 @@
 // LAB ONLY: alternate Stash economy experiment.
-// A card you Stash provides Fuel equal to half its printed Cost, rounded down.
-// Example: Cost 5 -> 2 Fuel. Cost 1 -> 0 Fuel.
+// A card you Stash provides Fuel equal to its printed Cost.
+// Example: Cost 5 -> 5 Fuel. Cost 1 -> 1 Fuel.
 import { Game } from '../../web/engine.js?v=rulebreakers-1';
 
 const baseStartTurn=Game.prototype.startTurn;
 const baseSpendOwnStash=Game.prototype.spendOwnStash;
 
 Game.prototype.stashValue=function(id){
-  return Math.floor(Math.max(0,this.card(id)?.cost||0)/2);
+  return Math.max(0,this.card(id)?.cost||0);
 };
 
 Game.prototype.stashCapacity=function(p=this.turn){
