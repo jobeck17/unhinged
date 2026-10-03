@@ -4,7 +4,7 @@
 import {Game, LEADERS} from './engine.js?v=rulebreakers-1';
 
 LEADERS['Florida Man'].passive =
-  'Your Characters have Adrenaline. Adrenaline — After this Character attacks, it gets +1 Power and -2 Guard.';
+  'Your Characters have Adrenaline. Adrenaline — After this Character attacks, it gets +1 Power and -1 Guard.';
 
 // Adrenaline's Power/Guard changes persist for as long as the Character stays in play.
 // Keep them separate from x.power/x.guard because the base engine clears those
@@ -54,8 +54,8 @@ Game.prototype.attack = async function(uid){
     // trigger Adrenaline again if they attack again later in the Turn.
     if(wasReady && survivor && survivor.owner===owner && !survivor.ready && this.name(owner)==='Florida Man'){
       survivor.adrenalinePower=(survivor.adrenalinePower||0)+1;
-      survivor.adrenalineGuard=(survivor.adrenalineGuard||0)-2;
-      this.say(`${this.card(survivor).name} Adrenaline: +1 Power / -2 Guard`);
+      survivor.adrenalineGuard=(survivor.adrenalineGuard||0)-1;
+      this.say(`${this.card(survivor).name} Adrenaline: +1 Power / -1 Guard`);
       await this.checkDefeat(survivor);
       this.checkEnd();
       this.update?.();
