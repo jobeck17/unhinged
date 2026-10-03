@@ -1,13 +1,14 @@
 // LAB-ONLY Florida Man passive experiment for the no-retaliation test.
 // Replaces Florida Man's current damaged-Character Hothead / Sucker Punch /
-// combat-Ready package with Adrenaline. Canonical files are untouched.
+// combat-Ready package with attack-driven Adrenaline. Canonical files are untouched.
 import {Game, LEADERS} from './engine.js?v=rulebreakers-1';
 
 LEADERS['Florida Man'].passive =
-  'Adrenaline: When one of your Characters damages itself with its own ability, it gains Adrenaline. At the start of your Turn, each Character with Adrenaline gets +1 Power and -2 Guard.';
+  'Your Characters have Adrenaline. Adrenaline — After this Character attacks, it gets +1 Power and -2 Guard.';
 
-// Persistent Adrenaline modifiers live outside the engine's temporary x.power/x.guard
-// fields, because those temporary fields reset at the end of each Turn.
+// Adrenaline's Power/Guard changes persist for as long as the Character stays in play.
+// Keep them separate from x.power/x.guard because the base engine clears those
+// temporary fields at the end of each Turn.
 const basePower = Game.prototype.power;
 Game.prototype.power = function(x){
   return Math.max(0, basePower.call(this,x) + (x?.adrenalinePower || 0));
@@ -26,7 +27,7 @@ Game.prototype.leaderPassive = async function(p,event,context={}){
 };
 
 // Remove the old "damaged Characters have Hothead" part of Florida Man.
-// This mirrors the current engine canAttack logic, minus the Florida exception.
+// Printed Hothead and the Wrestler Hothead support still work normally.
 Game.prototype.canAttack = function(x){
   if(!x || x.cloaked || !x.ready || this.has(x,'P135')) return false;
   const wrestlerHot = this.chars(x.owner).some(y=>y.uid!==x.uid && this.has(y,'P165') && this.trait(x,'Wrestler'));
@@ -36,14 +37,30 @@ Game.prototype.canAttack = function(x){
 };
 
 // The base attack method still contains Florida Man's old damaged-Character
-// Sucker Punch exception. Track the current attacker and filter only that extra
-// target access back out; printed Sucker Punch and Bodyguard continue to work.
+// Sucker Punch exception. Track the attacker so the pick wrapper can remove only
+// that Leader-granted access while keeping printed Sucker Punch and Bodyguard.
 const baseAttack = Game.prototype.attack;
 Game.prototype.attack = async function(uid){
+  const attacker = this.obj(uid);
+  const owner = attacker?.owner;
+  const wasReady = !!attacker?.ready;
   const previous = this._labFloridaAttackUid;
   this._labFloridaAttackUid = uid;
   try{
-    return await baseAttack.call(this,uid);
+    const result = await baseAttack.call(this,uid);
+    const survivor = this.obj(uid);
+    // A legal attack Rotates the attacker. If target selection was cancelled,
+    // it remains Ready and Adrenaline does not fire. Re-Readied Characters can
+    // trigger Adrenaline again if they attack again later in the Turn.
+    if(wasReady && survivor && survivor.owner===owner && !survivor.ready && this.name(owner)==='Florida Man'){
+      survivor.adrenalinePower=(survivor.adrenalinePower||0)+1;
+      survivor.adrenalineGuard=(survivor.adrenalineGuard||0)-2;
+      this.say(`${this.card(survivor).name} Adrenaline: +1 Power / -2 Guard`);
+      await this.checkDefeat(survivor);
+      this.checkEnd();
+      this.update?.();
+    }
+    return result;
   }finally{
     this._labFloridaAttackUid = previous;
   }
@@ -61,79 +78,17 @@ Game.prototype.pick = function(title,p,targets,optional=false){
   return basePick.call(this,title,p,targets,optional);
 };
 
-// Arm Adrenaline only when Gas Station Daredevil actually chooses its own
-// self-damage ability. The damage wrapper below confirms damage was dealt.
-const baseChoose = Game.prototype.choose;
-Game.prototype.choose = async function(p,title,options,optional=false){
-  const result = await baseChoose.call(this,p,title,options,optional);
-  if(result===true && title==='Daredevil: take 1 damage for +2 Power?' && this._labFloridaAttackUid){
-    const a = this.obj(this._labFloridaAttackUid);
-    if(a && a.owner===p && this.name(p)==='Florida Man' && this.has(a,'P002')){
-      this._labAdrenalinePendingUid = a.uid;
-    }
-  }
-  return result;
-};
-
-function grantAdrenaline(game,x){
-  if(!x || !game.obj(x.uid) || x.adrenaline) return;
-  x.adrenaline = true;
-  x.adrenalinePower = x.adrenalinePower || 0;
-  x.adrenalineGuard = x.adrenalineGuard || 0;
-  game.say(`${game.card(x).name} gains Adrenaline`);
-}
-
-const baseDamage = Game.prototype.damage;
-Game.prototype.damage = async function(x,n,defer=false){
-  const pending = !!x && x.uid===this._labAdrenalinePendingUid;
-  const before = x?.damage || 0;
-  try{
-    await baseDamage.call(this,x,n,defer);
-    if(pending && x && this.obj(x.uid) && x.damage>before && this.name(x.owner)==='Florida Man'){
-      grantAdrenaline(this,x);
-    }
-  }finally{
-    if(pending) this._labAdrenalinePendingUid = null;
-  }
-};
-
-// The LAB engine had an older Vape Kid implementation that damaged the Leader,
-// while the current printed card damages itself. Match the current card here so
-// this self-damage Character can participate in the Adrenaline test.
+// Keep the LAB engine aligned with Vape Kid's current printed self-damage text.
 const baseEnterEffect = Game.prototype.enterEffect;
 Game.prototype.enterEffect = async function(x,previous){
   if(x?.id==='P017'){
     const p=x.owner;
     const yes=await this.choose(p,'Vape Kid: take 1 damage to rummage?',[{label:'Yes',value:true},{label:'No',value:false}]);
     if(yes){
-      if(this.name(p)==='Florida Man') this._labAdrenalinePendingUid=x.uid;
       await this.damage(x,1);
-      await this.rummage(p);
+      if(this.obj(x.uid)) await this.rummage(p);
     }
     return;
   }
   return baseEnterEffect.call(this,x,previous);
-};
-
-async function applyAdrenaline(game,p){
-  if(game.name(p)!=='Florida Man') return;
-  for(const x of [...game.chars(p)]){
-    if(!x.adrenaline || !game.obj(x.uid)) continue;
-    x.adrenalinePower=(x.adrenalinePower||0)+1;
-    x.adrenalineGuard=(x.adrenalineGuard||0)-2;
-    game.say(`${game.card(x).name} Adrenaline: +1 Power / -2 Guard`);
-    await game.checkDefeat(x);
-  }
-}
-
-// endRound is async and hands control to the next player only after the engine's
-// startTurn work has run. Apply Adrenaline immediately afterward, before that
-// player can take an action.
-const baseEndRound = Game.prototype.endRound;
-Game.prototype.endRound = async function(...args){
-  await baseEndRound.apply(this,args);
-  if(this.winner!==null) return;
-  await applyAdrenaline(this,this.turn);
-  this.checkEnd();
-  this.update?.();
 };
