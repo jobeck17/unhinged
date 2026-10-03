@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-0.6",
+  "version": "lab-cat-lady-0.7",
   "status": "lab-prototype",
   "canonical": false,
   "name": "Cat Distribution System",
@@ -11,7 +11,7 @@
     "construction_rule": "Your deck may contain Cat Characters from any Style and up to 10 copies of Stray Cat.",
     "passive_name": "Cat Distribution System",
     "passive": "At the start of your Turn, before Ready, if you control 3 or more Cats, put the top card of your deck face down and Ready into your Stash.",
-    "note": "Lab prototype. Shoebox of Dead Cats is being tested at three copies; Trojan Cat at two copies; Cat Under the Bed at one copy."
+    "note": "Lab prototype. Shoebox of Dead Cats is being tested at three copies; Shovel at two copies; Trojan Cat at two copies; Cat Under the Bed at one copy."
   },
   "cards": {
     "LAB-CAT-001": 6,
@@ -23,12 +23,12 @@
     "LAB-CAT-007": 2,
     "LAB-CAT-008": 2,
     "LAB-CAT-009": 1,
-    "LAB-CAT-010": 2,
     "LAB-CAT-013": 4,
     "LAB-CAT-014": 2,
     "LAB-CAT-015": 2,
     "LAB-CAT-016": 3,
-    "LAB-CAT-017": 3
+    "LAB-CAT-017": 3,
+    "LAB-CAT-018": 2
   },
   "total_cards": 40,
   "composition": {
@@ -38,8 +38,9 @@
   },
   "mulligan_priority": [
     "At least two cheap Cats",
-    "A third Cat or Where's Mittens?",
+    "A third Cat",
     "Shoebox of Dead Cats when the rest of the hand can establish Cats",
+    "Shovel when a Shoebox plan is already developing",
     "Snowball when protection is available",
     "Hairy Cat when the opposing deck relies on multiple small attackers",
     "Avoid keeping House Panther unless the rest of the hand already establishes the colony"
@@ -50,6 +51,8 @@
     "How often the opponent can knock the Cat player below 3 Cats",
     "How often Shoebox reaches three buried Cats",
     "Whether the +1 Power threshold makes Shoebox worthwhile even without drawing Shovel",
+    "Whether Shovel's random resurrection is exciting rather than too efficient",
+    "How often Shovel hits a cheap Cat versus a high-cost Cat",
     "Whether face-down Cats create meaningful tension about future recovery",
     "Whether Snowball creates meaningful protect-or-risk decisions",
     "Whether Trojan Cat creates interesting attack hesitation without stalling combat",
