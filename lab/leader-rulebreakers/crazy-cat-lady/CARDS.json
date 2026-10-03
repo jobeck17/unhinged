@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-1.1",
+  "version": "lab-cat-lady-1.2",
   "status": "lab-prototype",
   "canonical": false,
   "style": null,
@@ -17,6 +17,7 @@
     {"id":"LAB-CAT-013","type":"Character","cost":3,"name":"Snowball","traits":["Animal","Cat"],"text":"At the start of your Turn, Snowball gets +1 Power.","keywords":[],"power":1,"guard":1,"status":"lab-prototype","purpose":"Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Power."},
     {"id":"LAB-CAT-014","type":"Character","cost":1,"name":"Trojan Cat","traits":["Cat"],"text":"When Trojan Cat is Defeated, deal 1 damage to every other Character.","keywords":[],"power":0,"guard":1,"status":"lab-prototype","purpose":"Cheap Cat-count body and visible blocking trap. Its global friendly-fire explosion can punish opposing boards but can also devastate the Cat Lady's own low-Guard colony."},
     {"id":"LAB-CAT-015","type":"Action","cost":3,"name":"Dead Mouse in a Mousetrap","traits":[],"text":"Heal each of your Characters 1.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Wide-board recovery tool. Rewards maintaining a colony and helps the Cat player recover from Trojan Cat friendly fire without directly adding more bodies."},
-    {"id":"LAB-CAT-016","type":"Character","cost":4,"name":"Hairy Cat","traits":["Animal","Cat"],"text":"Whenever Hairy Cat takes damage from a Character and survives, put a Hairball on that Character. A Character with a Hairball doesn't Ready during its controller's next Ready step. Then remove the Hairball.","keywords":[],"power":1,"guard":5,"status":"lab-prototype","purpose":"Defensive Cat that punishes repeated small attacks without becoming a hard wall: attackers that fail to Defeat it lose their next Ready, while a sufficiently strong hit kills it cleanly with no Hairball."}
+    {"id":"LAB-CAT-016","type":"Character","cost":4,"name":"Hairy Cat","traits":["Animal","Cat"],"text":"Whenever Hairy Cat takes damage from a Character and survives, put a Hairball on that Character. A Character with a Hairball doesn't Ready during its controller's next Ready step. Then remove the Hairball.","keywords":[],"power":1,"guard":5,"status":"lab-prototype","purpose":"Defensive Cat that punishes repeated small attacks without becoming a hard wall: attackers that fail to Defeat it lose their next Ready, while a sufficiently strong hit kills it cleanly with no Hairball."},
+    {"id":"LAB-CAT-017","type":"Item","cost":4,"name":"Shoebox of Dead Cats","traits":[],"text":"Whenever one of your Cats is Dismissed, you may put it face down under a Shoebox of Dead Cats instead of into your discard. While you have 3 or more Cats face down under your Shoeboxes of Dead Cats, your Cats get +1 Power.","keywords":[],"power":null,"guard":null,"status":"lab-prototype","purpose":"Stores dismissed Cats as a hidden resource and rewards building a graveyard-like stockpile without releasing the whole pile for free."}
   ]
 }
