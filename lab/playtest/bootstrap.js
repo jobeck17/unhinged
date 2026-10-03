@@ -1,14 +1,14 @@
 // LAB browser bootstrap. Load experimental patches in a deterministic order,
 // then let the player choose bot play or local two-player.
-await import('./snowball-patch.js?v=lab-20');
-await import('./lab-patches.js?v=lab-20');
-await import('./trojan-cat-patch.js?v=lab-20');
-await import('./tuxedo-cat-patch.js?v=lab-20');
-await import('./no-retaliation-patch.js?v=lab-20');
-await import('./wrestler-retaliate-patch.js?v=lab-20');
-await import('./florida-adrenaline-patch.js?v=lab-20');
-await import('./stray-cat-patch.js?v=lab-20');
-await import('./hairy-cat-patch.js?v=lab-20');
+await import('./snowball-patch.js?v=lab-21');
+await import('./lab-patches.js?v=lab-21');
+await import('./trojan-cat-patch.js?v=lab-21');
+await import('./tuxedo-cat-patch.js?v=lab-21');
+await import('./no-retaliation-patch.js?v=lab-21');
+await import('./wrestler-retaliate-patch.js?v=lab-21');
+await import('./florida-adrenaline-patch.js?v=lab-21');
+await import('./stray-cat-patch.js?v=lab-21');
+await import('./hairy-cat-patch.js?v=lab-21');
 
 const root=document.getElementById('app');
 root.innerHTML=`<div class="setup deck-setup">
@@ -21,7 +21,7 @@ root.innerHTML=`<div class="setup deck-setup">
   <div class="deck-picker">
     <button id="play-two" class="primary deck-start">Local two-player</button>
   </div>
-  <p class="muted">TEMP TEST: no universal retaliation · Wrestlers have Retaliate · Florida Man: Ooh, That's Gonna Leave a Mark!</p>
+  <p class="muted">TEMP TEST: no universal retaliation · Wrestlers have Retaliate · Florida Man: Ooh, That's Gonna Leave a Mark! (+2, Daredevils +3)</p>
 </div>`;
 
 let chosen=false;
@@ -29,8 +29,8 @@ async function launch(mode){
   if(chosen)return;
   chosen=true;
   root.innerHTML='<div id="boot-status">Loading match…</div>';
-  if(mode==='bot') await import('./app.js?v=lab-20');
-  else await import('./app-two-player.js?v=lab-20');
+  if(mode==='bot') await import('./app.js?v=lab-21');
+  else await import('./app-two-player.js?v=lab-21');
 }
 
 document.getElementById('play-bot').onclick=()=>launch('bot');
