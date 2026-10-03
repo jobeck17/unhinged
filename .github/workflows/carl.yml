@@ -49,6 +49,7 @@ jobs:
           cp builder/index.html builder/app.js builder/style.css _site/builder/
           cp lab/leader-rulebreakers/crazy-cat-lady/CARDS.json lab/leader-rulebreakers/crazy-cat-lady/DECK.json _site/lab/leader-rulebreakers/crazy-cat-lady/
           cp lab/leader-rulebreakers/mad-scientist/CARDS.json lab/leader-rulebreakers/mad-scientist/DECK.json lab/leader-rulebreakers/mad-scientist/TOKENS.json _site/lab/leader-rulebreakers/mad-scientist/
+          cp -R lab/playtest _site/lab/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
