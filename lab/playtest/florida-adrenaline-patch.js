@@ -1,14 +1,14 @@
 // LAB-ONLY Florida Man passive experiment for the no-retaliation test.
 // Replaces Florida Man's current damaged-Character Hothead / Sucker Punch /
-// combat-Ready package with Battle High. Canonical files are untouched.
+// combat-Ready package with "Ooh, That's Gonna Leave a Mark!" Canonical files are untouched.
 import {Game, LEADERS} from './engine.js?v=rulebreakers-1';
 
 LEADERS['Florida Man'].passive =
-  'Battle High: When one of your Characters is dealt damage and survives, it gets +3 Power. At the start of your Turn, reduce each Battle High bonus by 1 until it reaches 0. When one of your Characters with no Battle High bonus is Defeated, Draw a card.';
+  "Ooh, That's Gonna Leave a Mark!: When one of your Characters is dealt damage and survives, it gets +3 Power. At the start of your Turn, reduce that bonus by 1 until it reaches 0. When one of your Characters with no bonus from Ooh, That's Gonna Leave a Mark! is Defeated, Draw a card.";
 
-// Battle High Power is persistent while the Character remains in play and is
-// tracked separately from x.power because the base engine clears x.power at the
-// end of each Turn.
+// The temporary Power bonus is persistent while the Character remains in play
+// and is tracked separately from x.power because the base engine clears x.power
+// at the end of each Turn.
 const basePower = Game.prototype.power;
 Game.prototype.power = function(x){
   return Math.max(0, basePower.call(this,x) + (x?.battleHigh || 0));
@@ -61,10 +61,10 @@ function triggerBattleHigh(game,x,beforeDamage){
   if(!x || !game.obj(x.uid) || game.name(x.owner)!=='Florida Man') return;
   if(x.damage<=beforeDamage || x.damage>=game.guard(x)) return;
   x.battleHigh=3;
-  game.say(`${game.card(x).name} gets Battle High: +3 Power`);
+  game.say(`${game.card(x).name}: Ooh, That's Gonna Leave a Mark! +3 Power`);
 }
 
-// Any damage can trigger Battle High, including combat damage and self-damage.
+// Any damage can trigger the bonus, including combat damage and self-damage.
 // For deferred combat damage, the survival check is based on remaining Guard
 // before combatDamage performs its defeat cleanup.
 const baseDamage = Game.prototype.damage;
@@ -74,8 +74,8 @@ Game.prototype.damage = async function(x,n,defer=false){
   triggerBattleHigh(this,x,before);
 };
 
-// Draw only when a Florida Man Character is actually Defeated while its Battle
-// High bonus is already 0. This includes normal defeat and Sacrifice, but not
+// Draw only when a Florida Man Character is actually Defeated while its temporary
+// Power bonus is already 0. This includes normal defeat and Sacrifice, but not
 // ordinary Dismiss/Return effects.
 const baseRemove = Game.prototype.remove;
 Game.prototype.remove = async function(x,where='discard',defeated=false){
@@ -87,7 +87,7 @@ Game.prototype.remove = async function(x,where='discard',defeated=false){
   const result=await baseRemove.call(this,x,where,defeated);
   if(drawCold && !this.obj(x.uid) && this.winner===null){
     this.draw(owner,1,false);
-    this.say('Battle High: cold Defeat draws a card');
+    this.say("Ooh, That's Gonna Leave a Mark!: no bonus, so the Defeat draws a card");
   }
   return result;
 };
@@ -97,7 +97,7 @@ async function decayBattleHigh(game,p){
   for(const x of game.chars(p)){
     if((x.battleHigh||0)>0){
       x.battleHigh--;
-      game.say(`${game.card(x).name} Battle High drops to +${x.battleHigh} Power`);
+      game.say(`${game.card(x).name}'s bonus drops to +${x.battleHigh} Power`);
     }
   }
 }
