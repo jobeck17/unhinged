@@ -1,22 +1,17 @@
 // LAB-ONLY Florida Man passive experiment for the no-retaliation test.
 // Replaces Florida Man's current damaged-Character Hothead / Sucker Punch /
-// combat-Ready package with attack-driven Adrenaline. Canonical files are untouched.
+// combat-Ready package with Battle High. Canonical files are untouched.
 import {Game, LEADERS} from './engine.js?v=rulebreakers-1';
 
 LEADERS['Florida Man'].passive =
-  'Your Characters have Adrenaline. Adrenaline — After this Character attacks, it gets +1 Power and -1 Guard.';
+  'Battle High: When one of your Characters is dealt damage and survives, it gets +3 Power. At the start of your Turn, reduce each Battle High bonus by 1 until it reaches 0. When one of your Characters with no Battle High bonus is Defeated, Draw a card.';
 
-// Adrenaline's Power/Guard changes persist for as long as the Character stays in play.
-// Keep them separate from x.power/x.guard because the base engine clears those
-// temporary fields at the end of each Turn.
+// Battle High Power is persistent while the Character remains in play and is
+// tracked separately from x.power because the base engine clears x.power at the
+// end of each Turn.
 const basePower = Game.prototype.power;
 Game.prototype.power = function(x){
-  return Math.max(0, basePower.call(this,x) + (x?.adrenalinePower || 0));
-};
-
-const baseGuard = Game.prototype.guard;
-Game.prototype.guard = function(x){
-  return baseGuard.call(this,x) + (x?.adrenalineGuard || 0);
+  return Math.max(0, basePower.call(this,x) + (x?.battleHigh || 0));
 };
 
 // Remove the old Florida Man Ready-on-surviving-combat clause.
@@ -41,26 +36,10 @@ Game.prototype.canAttack = function(x){
 // that Leader-granted access while keeping printed Sucker Punch and Bodyguard.
 const baseAttack = Game.prototype.attack;
 Game.prototype.attack = async function(uid){
-  const attacker = this.obj(uid);
-  const owner = attacker?.owner;
-  const wasReady = !!attacker?.ready;
   const previous = this._labFloridaAttackUid;
   this._labFloridaAttackUid = uid;
   try{
-    const result = await baseAttack.call(this,uid);
-    const survivor = this.obj(uid);
-    // A legal attack Rotates the attacker. If target selection was cancelled,
-    // it remains Ready and Adrenaline does not fire. Re-Readied Characters can
-    // trigger Adrenaline again if they attack again later in the Turn.
-    if(wasReady && survivor && survivor.owner===owner && !survivor.ready && this.name(owner)==='Florida Man'){
-      survivor.adrenalinePower=(survivor.adrenalinePower||0)+1;
-      survivor.adrenalineGuard=(survivor.adrenalineGuard||0)-1;
-      this.say(`${this.card(survivor).name} Adrenaline: +1 Power / -1 Guard`);
-      await this.checkDefeat(survivor);
-      this.checkEnd();
-      this.update?.();
-    }
-    return result;
+    return await baseAttack.call(this,uid);
   }finally{
     this._labFloridaAttackUid = previous;
   }
@@ -76,6 +55,62 @@ Game.prototype.pick = function(title,p,targets,optional=false){
     }
   }
   return basePick.call(this,title,p,targets,optional);
+};
+
+function triggerBattleHigh(game,x,beforeDamage){
+  if(!x || !game.obj(x.uid) || game.name(x.owner)!=='Florida Man') return;
+  if(x.damage<=beforeDamage || x.damage>=game.guard(x)) return;
+  x.battleHigh=3;
+  game.say(`${game.card(x).name} gets Battle High: +3 Power`);
+}
+
+// Any damage can trigger Battle High, including combat damage and self-damage.
+// For deferred combat damage, the survival check is based on remaining Guard
+// before combatDamage performs its defeat cleanup.
+const baseDamage = Game.prototype.damage;
+Game.prototype.damage = async function(x,n,defer=false){
+  const before=x?.damage||0;
+  await baseDamage.call(this,x,n,defer);
+  triggerBattleHigh(this,x,before);
+};
+
+// Draw only when a Florida Man Character is actually Defeated while its Battle
+// High bonus is already 0. This includes normal defeat and Sacrifice, but not
+// ordinary Dismiss/Return effects.
+const baseRemove = Game.prototype.remove;
+Game.prototype.remove = async function(x,where='discard',defeated=false){
+  const wasCharacter=!!x && this.obj(x.uid) && this.card(x).type==='Character';
+  const owner=x?.owner;
+  const lethal=wasCharacter && x.damage>=this.guard(x);
+  const countsAsDefeat=wasCharacter && (defeated || (where==='discard' && lethal));
+  const drawCold=countsAsDefeat && this.name(owner)==='Florida Man' && (x.battleHigh||0)<=0;
+  const result=await baseRemove.call(this,x,where,defeated);
+  if(drawCold && !this.obj(x.uid) && this.winner===null){
+    this.draw(owner,1,false);
+    this.say('Battle High: cold Defeat draws a card');
+  }
+  return result;
+};
+
+async function decayBattleHigh(game,p){
+  if(game.name(p)!=='Florida Man') return;
+  for(const x of game.chars(p)){
+    if((x.battleHigh||0)>0){
+      x.battleHigh--;
+      game.say(`${game.card(x).name} Battle High drops to +${x.battleHigh} Power`);
+    }
+  }
+}
+
+// endRound hands control to the next player only after startTurn has run. Decay
+// immediately afterward, before the new active player can take an action.
+const baseEndRound = Game.prototype.endRound;
+Game.prototype.endRound = async function(...args){
+  await baseEndRound.apply(this,args);
+  if(this.winner!==null) return;
+  await decayBattleHigh(this,this.turn);
+  this.checkEnd();
+  this.update?.();
 };
 
 // Keep the LAB engine aligned with Vape Kid's current printed self-damage text.
