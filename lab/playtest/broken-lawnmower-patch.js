@@ -1,5 +1,5 @@
 // LAB ONLY: Broken Lawnmower prototype for Florida Man.
-// Adds two copies to the LAB Florida Man deck, removes all Fireworks Incident copies,
+// Adds three copies to the LAB Florida Man deck, removes all Fireworks Incident copies,
 // and implements the mower's three-pull start-up / team Power bonus.
 import { Game } from './engine.js?v=rulebreakers-1';
 
@@ -31,7 +31,7 @@ window.fetch=async function(input,init){
   if(!florida) return response;
   const cards={...florida.cards};
   delete cards.P023;
-  cards[MOWER_ID]=2;
+  cards[MOWER_ID]=3;
   florida.cards=cards;
   return new Response(JSON.stringify(doc),{
     status:response.status,
@@ -56,7 +56,7 @@ Game.prototype.card=function(x){
 };
 
 // Each running mower gives its controller's Characters +1 Power.
-// Two running copies therefore stack to +2, like two separate continuous Item effects.
+// Multiple running copies stack, like separate continuous Item effects.
 const basePower=Game.prototype.power;
 Game.prototype.power=function(x){
   let value=basePower.call(this,x);
