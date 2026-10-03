@@ -62,3 +62,33 @@ Game.prototype.power = function(x) {
     .reduce((n, box) => n + (box.cargo?.length || 0), 0);
   return value + (buried >= 3 ? 1 : 0);
 };
+
+// Shovel randomly digs up one of all face-down Cats under your Shoeboxes.
+// The Cat returns normally: full printed Guard, no Hothead, and normal enters-play effects.
+const originalActionEffect = Game.prototype.actionEffect;
+Game.prototype.actionEffect = async function(p, id, target, second, previous) {
+  if (id !== 'LAB-CAT-018') {
+    return originalActionEffect.call(this, p, id, target, second, previous);
+  }
+
+  const buried = [];
+  for (const box of this.players[p].board.filter(y => y.id === 'LAB-CAT-017')) {
+    for (let i = 0; i < (box.cargo?.length || 0); i++) {
+      buried.push({ boxUid: box.uid, index: i, cardId: box.cargo[i] });
+    }
+  }
+
+  if (!buried.length) {
+    this.say('Shovel digs around but finds no buried Cats');
+    return;
+  }
+
+  const pick = buried[Math.floor(Math.random() * buried.length)];
+  const box = this.obj(pick.boxUid);
+  if (!box?.cargo?.length) return;
+
+  const [cardId] = box.cargo.splice(pick.index, 1);
+  const cat = this.enter(p, cardId);
+  this.say(`Shovel digs up ${this.card(cardId).name}`);
+  await this.enterEffect(cat, previous || []);
+};
