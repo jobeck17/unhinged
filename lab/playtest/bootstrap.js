@@ -1,16 +1,17 @@
 // LAB browser bootstrap. Load experimental patches in a deterministic order,
 // then let the player choose bot play or local two-player.
-await import('./snowball-patch.js?v=lab-24');
-await import('./lab-patches.js?v=lab-24');
-await import('./trojan-cat-patch.js?v=lab-24');
-await import('./tuxedo-cat-patch.js?v=lab-24');
-await import('./no-retaliation-patch.js?v=lab-24');
-await import('./wrestler-retaliate-patch.js?v=lab-24');
-await import('./florida-adrenaline-patch.js?v=lab-24');
-await import('./broken-lawnmower-patch.js?v=lab-24');
-await import('./hold-my-beer-patch.js?v=lab-24');
-await import('./stray-cat-patch.js?v=lab-24');
-await import('./hairy-cat-patch.js?v=lab-24');
+await import('./snowball-patch.js?v=lab-25');
+await import('./lab-patches.js?v=lab-25');
+await import('./trojan-cat-patch.js?v=lab-25');
+await import('./tuxedo-cat-patch.js?v=lab-25');
+await import('./no-retaliation-patch.js?v=lab-25');
+await import('./wrestler-retaliate-patch.js?v=lab-25');
+await import('./florida-adrenaline-patch.js?v=lab-25');
+await import('./broken-lawnmower-patch.js?v=lab-25');
+await import('./gas-station-daredevil-patch.js?v=lab-25');
+await import('./hold-my-beer-patch.js?v=lab-25');
+await import('./stray-cat-patch.js?v=lab-25');
+await import('./hairy-cat-patch.js?v=lab-25');
 
 const root=document.getElementById('app');
 root.innerHTML=`<div class="setup deck-setup">
@@ -23,7 +24,7 @@ root.innerHTML=`<div class="setup deck-setup">
   <div class="deck-picker">
     <button id="play-two" class="primary deck-start">Local two-player</button>
   </div>
-  <p class="muted">TEMP TEST: no universal retaliation · Wrestlers have Retaliate · Florida Man Adrenaline triggers once, then falls to 1 Power · 3 Broken Lawnmowers, no Fireworks Incident · Hold My Beer is a 2-cost tempo trick</p>
+  <p class="muted">TEMP TEST: no universal retaliation · Wrestlers have Retaliate · Florida Man Adrenaline triggers once, then falls to 1 Power · Gas Station Daredevil is +1 Power for 1 self-damage · 3 Broken Lawnmowers, no Fireworks Incident · Hold My Beer is a 2-cost tempo trick</p>
 </div>`;
 
 let chosen=false;
@@ -31,8 +32,8 @@ async function launch(mode){
   if(chosen)return;
   chosen=true;
   root.innerHTML='<div id="boot-status">Loading match…</div>';
-  if(mode==='bot') await import('./app.js?v=lab-24');
-  else await import('./app-two-player.js?v=lab-24');
+  if(mode==='bot') await import('./app.js?v=lab-25');
+  else await import('./app-two-player.js?v=lab-25');
 }
 
 document.getElementById('play-bot').onclick=()=>launch('bot');
