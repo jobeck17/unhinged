@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14191c">
+<title>Unhinged · Half-Cost Stash LAB</title>
+<link rel="stylesheet" href="../../web/style.css?v=rulebreakers-1">
+<style>
+#boot-status{padding:32px 20px;max-width:650px;margin:auto;color:#e9ece8;font:600 16px/1.5 system-ui,-apple-system,sans-serif}
+#boot-status small{display:block;color:#9eafb0;margin-top:8px;font-weight:500}
+.lab-banner{position:sticky;top:0;z-index:20;padding:8px 12px;background:#14191c;color:#e9ece8;border-bottom:1px solid #ffffff22;font:700 12px/1.35 system-ui,-apple-system,sans-serif;text-align:center}
+</style>
+</head>
+<body>
+<div class="lab-banner">LAB RULE: Stashing a card gives Fuel equal to half its Cost, rounded down. Cost 5 → 2 Fuel. Cost 1 → 0. Setup Stash stays worth 1.</div>
+<div id="app"><div id="boot-status">Loading Half-Cost Stash playtest…<small>This is a separate LAB experiment. Canon is unchanged.</small></div></div>
+<script>
+window.addEventListener('error',function(e){
+  var a=document.getElementById('app');
+  if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a browser error.</b><small>'+String(e.message||'Unknown error')+'</small></div>';
+});
+window.addEventListener('unhandledrejection',function(e){
+  var a=document.getElementById('app');
+  var m=e.reason&&e.reason.message?e.reason.message:String(e.reason||'Unknown module error');
+  if(a)a.innerHTML='<div id="boot-status"><b>LAB hit a module error.</b><small>'+m+'</small></div>';
+});
+
+// web/app.js fetches paths relative to /web/. Rewrite them for this nested LAB page.
+const nativeFetch=window.fetch.bind(window);
+window.fetch=(input,init)=>{
+  if(typeof input==='string'){
+    input=input
+      .replace(/^\.\.\/CARDS\.json/,'../../CARDS.json')
+      .replace(/^\.\.\/DECKS\.json/,'../../DECKS.json')
+      .replace(/^\.\.\/lab\//,'../');
+  }
+  return nativeFetch(input,init);
+};
+
+// The canonical UI shows Stash card count as capacity. This experiment can make one card worth
+// multiple Fuel, so repaint that denominator with the experimental capacity.
+function paintStashCapacity(){
+  const g=window.stashHalfCostGame;
+  if(!g)return;
+  const heads=[...document.querySelectorAll('.head')];
+  const players=heads.length>=2?[1,0]:[];
+  heads.forEach((head,i)=>{
+    const p=players[i];
+    if(p===undefined)return;
+    const span=[...head.querySelectorAll('.metrics span')].find(x=>x.textContent.trim().startsWith('Stash '));
+    if(span)span.textContent=`Stash ${g.players[p].fuel}/${g.stashCapacity(p)} ready`;
+  });
+}
+new MutationObserver(paintStashCapacity).observe(document.getElementById('app'),{childList:true,subtree:true});
+setInterval(paintStashCapacity,250);
+</script>
+<script type="module" src="boot.js?v=stash-half-1"></script>
+</body>
+</html>
