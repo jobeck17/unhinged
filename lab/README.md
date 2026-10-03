@@ -20,6 +20,8 @@ Lab experiments may read or test against the canonical game, but they must not s
 
 ## Lab index
 
+- `schemes/` — active next-core prototype: simultaneous damage, exposed workers, eight Leader Schemes, 71 supported cards, shared browser/simulation engine, and paired comparison results.
+
 - `LEADER_PASSIVES.md` — alternate Leader passives organized by Leader for isolated testing.
 - `leader-rulebreakers/` — Leader packages that break construction, setup, resource, or other base expectations.
 

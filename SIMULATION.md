@@ -180,3 +180,9 @@ Accepted passive:
 > Your damaged Characters have Hothead and Sucker Punch. After one of your damaged Characters survives combat with another Character, Ready it.
 
 The accepted 36-deck quick field put Florida-led configurations at a 51.03% family average. The signal was strongest against Backyard Wrestler and modest against Misdirection. Absolute quick-run percentages remain heuristic.
+
+## 9. Scheme Lab structural comparison — October 3, 2026
+
+The proposed next-core experiment lives in `lab/schemes/`. Its browser and automated runner import the same engine. `GAMES_PER_MATCHUP=100 node lab/schemes/simulate.mjs` compares four combat/Scheme variants across 28 pairings and both starting orders (11,200 games). All four use the same isolated 71-card pool and eight fixed decks; they are **not canonical Carl balance results**.
+
+`lab/schemes/results.json` records seeds, code/data hashes, matchup and Leader outcomes, first-player results, game length, censoring, deck-outs, work attempts, interruptions, completions, responses, and early board-lead correlations. Card conservation is checked after every action. The main verification run uses seeds separate from the exploratory tuning samples. Correlations between a Round-3 board lead and winning are confounded by deck identity and card quality. Human attack/protect/work decisions and replay desire remain the promotion gate.

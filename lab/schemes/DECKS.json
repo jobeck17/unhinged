@@ -1,0 +1,239 @@
+{
+  "version": "scheme-lab-0.1",
+  "leaders": [
+    {
+      "name": "Florida Man",
+      "style": "Reckless",
+      "passive": "Once during your Turn, when your own card or attack ability damages a friendly Character and it survives, it gets +1 Power this Turn.",
+      "scheme": "Hold My Entire Cooler",
+      "schemeText": "Deal 4 damage to the opposing Leader and 2 damage to each opposing Character.",
+      "schemeEffect": "fireworks"
+    },
+    {
+      "name": "Washed-Up Rock Star",
+      "style": "Momentum",
+      "passive": "After you play your second card during your Turn, if you have 2 or fewer cards in hand, draw a card.",
+      "scheme": "One Last Encore",
+      "schemeText": "Draw 3 cards and Ready up to 2 spent Stash.",
+      "schemeEffect": "encore"
+    },
+    {
+      "name": "Birthday Party Magician",
+      "style": "Misdirection",
+      "passive": "Once during your Turn, when a friendly Character Returns to hand, Ready 1 spent Stash.",
+      "scheme": "The Grand Disappearance",
+      "schemeText": "Return up to two opposing Characters to their owners\u2019 hands, then draw 2 cards.",
+      "schemeEffect": "vanish"
+    },
+    {
+      "name": "Trash Baron",
+      "style": "Salvage",
+      "passive": "The first Item you play during your Turn costs 1 less.",
+      "scheme": "It Actually Runs!",
+      "schemeText": "Put an Item from your discard into play, then draw 2 cards.",
+      "schemeEffect": "salvage"
+    },
+    {
+      "name": "HOA President",
+      "style": "Stonewall",
+      "passive": "The first time you Block each Turn, prevent 1 damage to that Blocker during that combat.",
+      "scheme": "Final Notice",
+      "schemeText": "Deal 8 damage to the opposing Leader.",
+      "schemeEffect": "notice"
+    },
+    {
+      "name": "Backyard Wrestler",
+      "style": "Expendable",
+      "passive": "Once during your Turn after a friendly Character is Defeated, reveal your top card. If it is an Expendable Character costing no more than your Stash count, put it into play with Hothead. Otherwise put it into your hand.",
+      "scheme": "From the Top Rope!",
+      "schemeText": "Put a Character costing 4 or less from your discard into play. It has Hothead this Turn.",
+      "schemeEffect": "tag"
+    },
+    {
+      "name": "Crazy Cat Lady",
+      "style": "Unassigned",
+      "passive": "Your deck may contain up to 10 Stray Cats. If you control at least 3 Cats, the first Cat you play during your Turn costs 1 less.",
+      "scheme": "You Live Here Now",
+      "schemeText": "Put three 1/1 Cat tokens into play, then draw 2 cards.",
+      "schemeEffect": "colony"
+    },
+    {
+      "name": "Mad Scientist",
+      "style": "Unassigned",
+      "passive": "After mulligans, put your top 5 cards into Ready Stash. You cannot Stash normally. At the start of your Turn, Ready up to 3 spent Stash. You get no temporary setup Stash.",
+      "scheme": "Peer Review Is for Cowards",
+      "schemeText": "Ready all your Stash. You may set one Abomination\u2019s Power or Guard to 6.",
+      "schemeEffect": "breakthrough"
+    }
+  ],
+  "decks": [
+    {
+      "name": "Hold My Entire Cooler",
+      "leader": "Florida Man",
+      "styles": [
+        "Reckless"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-F1": 4,
+        "LAB-SCH-F2": 4,
+        "LAB-SCH-F3": 4,
+        "LAB-SCH-F4": 4,
+        "LAB-SCH-F5": 4,
+        "LAB-SCH-F6": 4,
+        "LAB-SCH-F7": 4,
+        "LAB-SCH-F8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U2": 3,
+        "LAB-SCH-U4": 3
+      }
+    },
+    {
+      "name": "One Last Encore",
+      "leader": "Washed-Up Rock Star",
+      "styles": [
+        "Momentum"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-R1": 4,
+        "LAB-SCH-R2": 4,
+        "LAB-SCH-R3": 4,
+        "LAB-SCH-R4": 4,
+        "LAB-SCH-R5": 4,
+        "LAB-SCH-R6": 4,
+        "LAB-SCH-R7": 4,
+        "LAB-SCH-R8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U2": 3,
+        "LAB-SCH-U3": 3
+      }
+    },
+    {
+      "name": "The Grand Disappearance",
+      "leader": "Birthday Party Magician",
+      "styles": [
+        "Misdirection"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-M1": 4,
+        "LAB-SCH-M2": 4,
+        "LAB-SCH-M3": 4,
+        "LAB-SCH-M4": 4,
+        "LAB-SCH-M5": 4,
+        "LAB-SCH-M6": 4,
+        "LAB-SCH-M7": 4,
+        "LAB-SCH-M8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U2": 3,
+        "LAB-SCH-U3": 3
+      }
+    },
+    {
+      "name": "It Actually Runs!",
+      "leader": "Trash Baron",
+      "styles": [
+        "Salvage"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-T1": 4,
+        "LAB-SCH-T2": 4,
+        "LAB-SCH-T3": 4,
+        "LAB-SCH-T4": 4,
+        "LAB-SCH-T5": 4,
+        "LAB-SCH-T6": 4,
+        "LAB-SCH-T7": 4,
+        "LAB-SCH-T8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U5": 3,
+        "LAB-SCH-U4": 3
+      }
+    },
+    {
+      "name": "Final Notice",
+      "leader": "HOA President",
+      "styles": [
+        "Stonewall"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-H1": 4,
+        "LAB-SCH-H2": 4,
+        "LAB-SCH-H3": 4,
+        "LAB-SCH-H4": 4,
+        "LAB-SCH-H5": 4,
+        "LAB-SCH-H6": 4,
+        "LAB-SCH-H7": 4,
+        "LAB-SCH-H8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U2": 3,
+        "LAB-SCH-U3": 3
+      }
+    },
+    {
+      "name": "From the Top Rope!",
+      "leader": "Backyard Wrestler",
+      "styles": [
+        "Expendable"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-W1": 4,
+        "LAB-SCH-W2": 4,
+        "LAB-SCH-W3": 4,
+        "LAB-SCH-W4": 4,
+        "LAB-SCH-W5": 4,
+        "LAB-SCH-W6": 4,
+        "LAB-SCH-W7": 4,
+        "LAB-SCH-W8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U2": 3,
+        "LAB-SCH-U4": 3
+      }
+    },
+    {
+      "name": "You Live Here Now",
+      "leader": "Crazy Cat Lady",
+      "styles": [
+        "Unassigned"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-C1": 10,
+        "LAB-SCH-C2": 3,
+        "LAB-SCH-C3": 3,
+        "LAB-SCH-C4": 3,
+        "LAB-SCH-C5": 3,
+        "LAB-SCH-C6": 3,
+        "LAB-SCH-C7": 3,
+        "LAB-SCH-C8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U2": 3,
+        "LAB-SCH-U3": 3
+      }
+    },
+    {
+      "name": "Peer Review Is for Cowards",
+      "leader": "Mad Scientist",
+      "styles": [
+        "Unassigned"
+      ],
+      "health": 25,
+      "cards": {
+        "LAB-SCH-S1": 4,
+        "LAB-SCH-S2": 4,
+        "LAB-SCH-S3": 4,
+        "LAB-SCH-S4": 4,
+        "LAB-SCH-S5": 4,
+        "LAB-SCH-S6": 4,
+        "LAB-SCH-S7": 4,
+        "LAB-SCH-S8": 4,
+        "LAB-SCH-U1": 2,
+        "LAB-SCH-U2": 3,
+        "LAB-SCH-U4": 3
+      }
+    }
+  ]
+}

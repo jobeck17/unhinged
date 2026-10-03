@@ -1,7 +1,7 @@
 # Unhinged — Living Design Notes
 
 **Build:** Carl 0.3  
-**Date:** October 1, 2026  
+**Date:** October 3, 2026
 This replaces scattered checkpoints, brainstorm files, open-decision files, and idea banks.
 
 ## Legend
@@ -9,6 +9,17 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 ## Development milestone
 ✅ **0.3 Carl** is the current core-stabilization milestone. Meaningful compatible checkpoints within Carl use 0.3.x build numbers; ordinary commits do not require a version bump. Major pre-1.0 generations advance to the next 0.X number and receive a new Dungeon Crawler Carl character codename. The full versioning policy and road to 1.0 live in README.md.
+
+## Proposed next direction — Scheme Lab, October 3, 2026
+🧪 **Decision for the next prototype:** Character-first combat plus one exposed worker advancing a visible Leader Scheme. Simultaneous combat damage makes trading a credible answer to a superior board. One work opportunity per Turn prevents a wider board from multiplying Scheme progress. Earned progress survives a lost board; the current job does not survive removal of its worker.
+
+🧪 **Implemented:** `lab/schemes/` contains an independent playable test with eight 40-card decks, 71 fully supported card definitions, bot/local two-player play, one shared browser/simulation engine, regression tests, and controlled comparisons. Exact experimental rules and failure conditions live in its README. Recorded simulation results are heuristic evidence, not proof of fun or final balance.
+
+🧪 **Card/Leader direction:** conditional Cat economy rather than permanent free ramp; bounded Florida triggers; preserve opposing response resources by replacing Trash Baron's resource spending; HOA earns its closing payoff through work instead of waiting for automatic unblockability; Scientist adds one optional die reroll and uses a retuned battery. Passives, Schemes, and card text in this LAB are deliberate new versions, not descriptions of Carl.
+
+🧪 **Human gate:** ten swapped-start games, emphasizing smaller-board recovery, real attack/protect/work choices, Scheme disruption, and desire to play again. Promote only what succeeds; a structural promotion would be 0.4 with a new DCC character codename.
+
+🧠 **Hold until that gate:** expanding the 180-card pool, additional currencies, universal lanes, more response windows, board/attack caps, generic stat upgrades, and additional dexterity modules. Keep spectacle in Leader packages and a few marquee cards. This direction does not add an alternate automatic-win score.
 
 ## What we know for now
 ✅ Leader-centered, Character-first, synergy-forward game. 40-card deck, one Leader outside the deck, 25 Health, four-copy maximum.  

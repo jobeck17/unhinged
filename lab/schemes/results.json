@@ -1,0 +1,1115 @@
+{
+  "version": "scheme-lab-0.1",
+  "date": "2026-10-03T23:43:27.460Z",
+  "seedBase": 91003000,
+  "gamesPerMatchup": 100,
+  "method": "Same 71-card LAB pool and eight fixed decks; paired seed and starting player. Heuristic AI. These are structural ablations, not a comparison against canonical Carl.",
+  "fileHashes": {
+    "CARDS.json": "0e17c1898b87f93dd03c903b349e27c25b3684930c92373312f6be9e471fa9f4",
+    "DECKS.json": "51bc03cc6d1ea3791b90b14b7ff23eb6019542840cba880282ae0f755bf4290a",
+    "engine.mjs": "4e9fdf900252abd551f2794a83879f8d2a93f9c05ff7926c1d9a6c62b852cce6",
+    "ai.mjs": "ea42e8016e59525fa435bcb9b7746b1025b3280096cc52edefa95c3e3f936972"
+  },
+  "variants": {
+    "none": {
+      "games": 2800,
+      "censored": 0,
+      "firstWins": 1403,
+      "deckOut": 7,
+      "byDeck": [
+        {
+          "leader": "Florida Man",
+          "games": 700,
+          "wins": 271,
+          "winRate": 0.3871428571428571
+        },
+        {
+          "leader": "Washed-Up Rock Star",
+          "games": 700,
+          "wins": 423,
+          "winRate": 0.6042857142857143
+        },
+        {
+          "leader": "Birthday Party Magician",
+          "games": 700,
+          "wins": 394,
+          "winRate": 0.5628571428571428
+        },
+        {
+          "leader": "Trash Baron",
+          "games": 700,
+          "wins": 282,
+          "winRate": 0.40285714285714286
+        },
+        {
+          "leader": "HOA President",
+          "games": 700,
+          "wins": 276,
+          "winRate": 0.3942857142857143
+        },
+        {
+          "leader": "Backyard Wrestler",
+          "games": 700,
+          "wins": 226,
+          "winRate": 0.32285714285714284
+        },
+        {
+          "leader": "Crazy Cat Lady",
+          "games": 700,
+          "wins": 269,
+          "winRate": 0.3842857142857143
+        },
+        {
+          "leader": "Mad Scientist",
+          "games": 700,
+          "wins": 659,
+          "winRate": 0.9414285714285714
+        }
+      ],
+      "matchups": [
+        {
+          "a": "Florida Man",
+          "b": "Washed-Up Rock Star",
+          "games": 100,
+          "winsA": 22,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 38,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 43,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 56,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 60,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 48,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 4,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 50,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 67,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 71,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 75,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 73,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 9,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 67,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 61,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 69,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 72,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 13,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 47,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 50,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 59,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 3,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 59,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 45,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 7,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 36,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 3,
+          "censored": 0
+        },
+        {
+          "a": "Crazy Cat Lady",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 2,
+          "censored": 0
+        }
+      ],
+      "lead3": {
+        "games": 1511,
+        "wins": 1264,
+        "winRate": 0.8365320979483786
+      },
+      "materialLead3": {
+        "games": 1687,
+        "wins": 1392,
+        "winRate": 0.8251333728512151
+      },
+      "work": 0,
+      "progress": 0,
+      "interrupted": 0,
+      "schemes": 0,
+      "responses": 2474,
+      "attacks": 77545,
+      "blocks": 14227,
+      "bothWorked": 0,
+      "averageRounds": 9.252142857142857,
+      "medianRounds": 9,
+      "firstPlayerWinRate": 0.5010714285714286
+    },
+    "survivor": {
+      "games": 2800,
+      "censored": 0,
+      "firstWins": 1381,
+      "deckOut": 6,
+      "byDeck": [
+        {
+          "leader": "Florida Man",
+          "games": 700,
+          "wins": 450,
+          "winRate": 0.6428571428571429
+        },
+        {
+          "leader": "Washed-Up Rock Star",
+          "games": 700,
+          "wins": 440,
+          "winRate": 0.6285714285714286
+        },
+        {
+          "leader": "Birthday Party Magician",
+          "games": 700,
+          "wins": 285,
+          "winRate": 0.40714285714285714
+        },
+        {
+          "leader": "Trash Baron",
+          "games": 700,
+          "wins": 238,
+          "winRate": 0.34
+        },
+        {
+          "leader": "HOA President",
+          "games": 700,
+          "wins": 353,
+          "winRate": 0.5042857142857143
+        },
+        {
+          "leader": "Backyard Wrestler",
+          "games": 700,
+          "wins": 311,
+          "winRate": 0.4442857142857143
+        },
+        {
+          "leader": "Crazy Cat Lady",
+          "games": 700,
+          "wins": 326,
+          "winRate": 0.4657142857142857
+        },
+        {
+          "leader": "Mad Scientist",
+          "games": 700,
+          "wins": 397,
+          "winRate": 0.5671428571428572
+        }
+      ],
+      "matchups": [
+        {
+          "a": "Florida Man",
+          "b": "Washed-Up Rock Star",
+          "games": 100,
+          "winsA": 51,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 74,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 82,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 51,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 73,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 76,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 43,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 68,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 76,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 72,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 64,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 66,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 45,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 43,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 35,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 48,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 43,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 58,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 46,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 36,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 28,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 29,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 64,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 40,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 53,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 54,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 42,
+          "censored": 0
+        },
+        {
+          "a": "Crazy Cat Lady",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 33,
+          "censored": 0
+        }
+      ],
+      "lead3": {
+        "games": 937,
+        "wins": 494,
+        "winRate": 0.5272145144076841
+      },
+      "materialLead3": {
+        "games": 1171,
+        "wins": 663,
+        "winRate": 0.5661827497865073
+      },
+      "work": 0,
+      "progress": 0,
+      "interrupted": 0,
+      "schemes": 0,
+      "responses": 2486,
+      "attacks": 63379,
+      "blocks": 9833,
+      "bothWorked": 0,
+      "averageRounds": 10.839285714285714,
+      "medianRounds": 10,
+      "firstPlayerWinRate": 0.4932142857142857
+    },
+    "simultaneous": {
+      "games": 2800,
+      "censored": 0,
+      "firstWins": 1301,
+      "deckOut": 37,
+      "byDeck": [
+        {
+          "leader": "Florida Man",
+          "games": 700,
+          "wins": 367,
+          "winRate": 0.5242857142857142
+        },
+        {
+          "leader": "Washed-Up Rock Star",
+          "games": 700,
+          "wins": 430,
+          "winRate": 0.6142857142857143
+        },
+        {
+          "leader": "Birthday Party Magician",
+          "games": 700,
+          "wins": 264,
+          "winRate": 0.37714285714285717
+        },
+        {
+          "leader": "Trash Baron",
+          "games": 700,
+          "wins": 260,
+          "winRate": 0.37142857142857144
+        },
+        {
+          "leader": "HOA President",
+          "games": 700,
+          "wins": 388,
+          "winRate": 0.5542857142857143
+        },
+        {
+          "leader": "Backyard Wrestler",
+          "games": 700,
+          "wins": 381,
+          "winRate": 0.5442857142857143
+        },
+        {
+          "leader": "Crazy Cat Lady",
+          "games": 700,
+          "wins": 301,
+          "winRate": 0.43
+        },
+        {
+          "leader": "Mad Scientist",
+          "games": 700,
+          "wins": 409,
+          "winRate": 0.5842857142857143
+        }
+      ],
+      "matchups": [
+        {
+          "a": "Florida Man",
+          "b": "Washed-Up Rock Star",
+          "games": 100,
+          "winsA": 40,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 70,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 68,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 32,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 47,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 71,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 39,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 64,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 73,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 70,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 57,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 69,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 37,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 48,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 31,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 28,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 39,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 52,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 43,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 28,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 41,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 37,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 57,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 50,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 57,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 58,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 40,
+          "censored": 0
+        },
+        {
+          "a": "Crazy Cat Lady",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 29,
+          "censored": 0
+        }
+      ],
+      "lead3": {
+        "games": 901,
+        "wins": 508,
+        "winRate": 0.5638179800221975
+      },
+      "materialLead3": {
+        "games": 1040,
+        "wins": 618,
+        "winRate": 0.5942307692307692
+      },
+      "work": 0,
+      "progress": 0,
+      "interrupted": 0,
+      "schemes": 0,
+      "responses": 2004,
+      "attacks": 59527,
+      "blocks": 15672,
+      "bothWorked": 0,
+      "averageRounds": 11.640714285714285,
+      "medianRounds": 11,
+      "firstPlayerWinRate": 0.46464285714285714
+    },
+    "schemes": {
+      "games": 2800,
+      "censored": 0,
+      "firstWins": 1338,
+      "deckOut": 38,
+      "byDeck": [
+        {
+          "leader": "Florida Man",
+          "games": 700,
+          "wins": 396,
+          "winRate": 0.5657142857142857
+        },
+        {
+          "leader": "Washed-Up Rock Star",
+          "games": 700,
+          "wins": 432,
+          "winRate": 0.6171428571428571
+        },
+        {
+          "leader": "Birthday Party Magician",
+          "games": 700,
+          "wins": 309,
+          "winRate": 0.44142857142857145
+        },
+        {
+          "leader": "Trash Baron",
+          "games": 700,
+          "wins": 280,
+          "winRate": 0.4
+        },
+        {
+          "leader": "HOA President",
+          "games": 700,
+          "wins": 352,
+          "winRate": 0.5028571428571429
+        },
+        {
+          "leader": "Backyard Wrestler",
+          "games": 700,
+          "wins": 351,
+          "winRate": 0.5014285714285714
+        },
+        {
+          "leader": "Crazy Cat Lady",
+          "games": 700,
+          "wins": 309,
+          "winRate": 0.44142857142857145
+        },
+        {
+          "leader": "Mad Scientist",
+          "games": 700,
+          "wins": 371,
+          "winRate": 0.53
+        }
+      ],
+      "matchups": [
+        {
+          "a": "Florida Man",
+          "b": "Washed-Up Rock Star",
+          "games": 100,
+          "winsA": 42,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 72,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 67,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 42,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 49,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 72,
+          "censored": 0
+        },
+        {
+          "a": "Florida Man",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 52,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Birthday Party Magician",
+          "games": 100,
+          "winsA": 60,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 73,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 65,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 61,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 68,
+          "censored": 0
+        },
+        {
+          "a": "Washed-Up Rock Star",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 47,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Trash Baron",
+          "games": 100,
+          "winsA": 45,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 43,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 42,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 41,
+          "censored": 0
+        },
+        {
+          "a": "Birthday Party Magician",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 70,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "HOA President",
+          "games": 100,
+          "winsA": 56,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 40,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 37,
+          "censored": 0
+        },
+        {
+          "a": "Trash Baron",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 32,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Backyard Wrestler",
+          "games": 100,
+          "winsA": 53,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 39,
+          "censored": 0
+        },
+        {
+          "a": "HOA President",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 66,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Crazy Cat Lady",
+          "games": 100,
+          "winsA": 62,
+          "censored": 0
+        },
+        {
+          "a": "Backyard Wrestler",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 34,
+          "censored": 0
+        },
+        {
+          "a": "Crazy Cat Lady",
+          "b": "Mad Scientist",
+          "games": 100,
+          "winsA": 28,
+          "censored": 0
+        }
+      ],
+      "lead3": {
+        "games": 757,
+        "wins": 398,
+        "winRate": 0.5257595772787318
+      },
+      "materialLead3": {
+        "games": 1046,
+        "wins": 591,
+        "winRate": 0.5650095602294455
+      },
+      "work": 12428,
+      "progress": 7756,
+      "interrupted": 4375,
+      "schemes": 1951,
+      "responses": 1948,
+      "attacks": 58973,
+      "blocks": 13579,
+      "bothWorked": 1252,
+      "averageRounds": 11.808928571428572,
+      "medianRounds": 11,
+      "firstPlayerWinRate": 0.47785714285714287
+    }
+  }
+}

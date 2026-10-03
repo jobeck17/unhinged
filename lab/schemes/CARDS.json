@@ -1,0 +1,1004 @@
+{
+  "version": "scheme-lab-0.1",
+  "status": "TESTING; isolated from Carl 0.3",
+  "cards": [
+    {
+      "id": "LAB-SCH-U1",
+      "name": "Clear the Room",
+      "cost": 5,
+      "style": "Universal",
+      "type": "Action",
+      "text": "Deal 3 damage to every Character simultaneously.",
+      "keywords": [],
+      "traits": [],
+      "effect": "sweep",
+      "amount": 3
+    },
+    {
+      "id": "LAB-SCH-U2",
+      "name": "Cease and Desist",
+      "cost": 3,
+      "style": "Universal",
+      "type": "Action",
+      "text": "Return a chosen opposing Character to its owner\u2019s hand.",
+      "keywords": [],
+      "traits": [],
+      "effect": "bounce",
+      "target": "enemy"
+    },
+    {
+      "id": "LAB-SCH-U3",
+      "name": "Duck!",
+      "cost": 1,
+      "style": "Universal",
+      "type": "Action",
+      "text": "Prevent the next 3 damage to a chosen friendly Character this Turn. Response: before combat damage, you may play this on a friendly combatant.",
+      "keywords": [],
+      "traits": [],
+      "effect": "shield",
+      "amount": 3,
+      "target": "friendly",
+      "response": true
+    },
+    {
+      "id": "LAB-SCH-U4",
+      "name": "Cheap Shot",
+      "cost": 2,
+      "style": "Universal",
+      "type": "Action",
+      "text": "Deal 2 damage to a chosen Character. Response: before combat damage, you may play this on a combatant.",
+      "keywords": [],
+      "traits": [],
+      "effect": "damage",
+      "amount": 2,
+      "target": "any",
+      "response": true
+    },
+    {
+      "id": "LAB-SCH-U5",
+      "name": "Unplug It",
+      "cost": 2,
+      "style": "Universal",
+      "type": "Action",
+      "text": "Dismiss a chosen Item. Draw a card.",
+      "keywords": [],
+      "traits": [],
+      "effect": "itemkill",
+      "target": "item"
+    },
+    {
+      "id": "LAB-SCH-F1",
+      "name": "Vape Kid",
+      "cost": 1,
+      "style": "Reckless",
+      "type": "Character",
+      "text": "On Play: You may deal 1 damage to another friendly Character.",
+      "keywords": [],
+      "traits": [
+        "Daredevil"
+      ],
+      "power": 1,
+      "guard": 2,
+      "onPlay": "self_damage",
+      "target": "otherFriendly"
+    },
+    {
+      "id": "LAB-SCH-F2",
+      "name": "Gas Station Daredevil",
+      "cost": 2,
+      "style": "Reckless",
+      "type": "Character",
+      "text": "When this attacks, you may deal 1 damage to it to give it +2 Power this Turn.",
+      "keywords": [],
+      "traits": [
+        "Daredevil"
+      ],
+      "power": 2,
+      "guard": 3,
+      "onAttack": "risk"
+    },
+    {
+      "id": "LAB-SCH-F3",
+      "name": "Unsupervised Toddler",
+      "cost": 2,
+      "style": "Reckless",
+      "type": "Character",
+      "text": "While damaged, this has +2 Power.",
+      "keywords": [],
+      "traits": [
+        "Kid"
+      ],
+      "power": 1,
+      "guard": 3,
+      "damagedPower": 2
+    },
+    {
+      "id": "LAB-SCH-F4",
+      "name": "Firework Dad",
+      "cost": 3,
+      "style": "Reckless",
+      "type": "Character",
+      "text": "On Play: You may deal 1 damage to another friendly Character.",
+      "keywords": [],
+      "traits": [
+        "Daredevil"
+      ],
+      "power": 3,
+      "guard": 3,
+      "onPlay": "self_damage",
+      "target": "otherFriendly"
+    },
+    {
+      "id": "LAB-SCH-F5",
+      "name": "Pet Alligator",
+      "cost": 3,
+      "style": "Reckless",
+      "type": "Character",
+      "text": "When this attacks, roll a d6. On a 1, cancel the attack and deal 2 damage to your Leader.",
+      "keywords": [],
+      "traits": [
+        "Animal"
+      ],
+      "power": 4,
+      "guard": 4,
+      "onAttack": "alligator"
+    },
+    {
+      "id": "LAB-SCH-F6",
+      "name": "Parking Lot Legend",
+      "cost": 4,
+      "style": "Reckless",
+      "type": "Character",
+      "text": "Sucker Punch.",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "traits": [
+        "Daredevil"
+      ],
+      "power": 4,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-F7",
+      "name": "Fourth of July Showrunner",
+      "cost": 6,
+      "style": "Reckless",
+      "type": "Character",
+      "text": "On Play: Deal 2 damage to each other Character simultaneously.",
+      "keywords": [],
+      "traits": [
+        "Daredevil"
+      ],
+      "power": 5,
+      "guard": 5,
+      "onPlay": "sweep_others",
+      "amount": 2
+    },
+    {
+      "id": "LAB-SCH-F8",
+      "name": "Hold My Beer",
+      "cost": 1,
+      "style": "Reckless",
+      "type": "Action",
+      "text": "Deal 1 damage to a chosen friendly Character. If it survives, it gets +2 Power this Turn.",
+      "keywords": [],
+      "traits": [],
+      "effect": "risk_buff",
+      "target": "friendly"
+    },
+    {
+      "id": "LAB-SCH-R1",
+      "name": "Roadie",
+      "cost": 1,
+      "style": "Momentum",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Musician"
+      ],
+      "power": 1,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-R2",
+      "name": "Opening Act",
+      "cost": 2,
+      "style": "Momentum",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Musician"
+      ],
+      "power": 2,
+      "guard": 3
+    },
+    {
+      "id": "LAB-SCH-R3",
+      "name": "Hype Man",
+      "cost": 2,
+      "style": "Momentum",
+      "type": "Character",
+      "text": "After you play your second card during a Turn, this gets +1 Power this Turn.",
+      "keywords": [],
+      "traits": [
+        "Musician"
+      ],
+      "power": 2,
+      "guard": 2,
+      "secondPower": 1
+    },
+    {
+      "id": "LAB-SCH-R4",
+      "name": "Wedding Cover Band",
+      "cost": 3,
+      "style": "Momentum",
+      "type": "Character",
+      "text": "On Play: Draw a card, then discard a card.",
+      "keywords": [],
+      "traits": [
+        "Musician"
+      ],
+      "power": 3,
+      "guard": 3,
+      "onPlay": "rummage"
+    },
+    {
+      "id": "LAB-SCH-R5",
+      "name": "Stage Diver",
+      "cost": 3,
+      "style": "Momentum",
+      "type": "Character",
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "traits": [
+        "Musician"
+      ],
+      "power": 3,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-R6",
+      "name": "Washed-Up Guitar Hero",
+      "cost": 4,
+      "style": "Momentum",
+      "type": "Character",
+      "text": "When this attacks, if your hand has 2 or fewer cards, it gets +2 Power this Turn.",
+      "keywords": [],
+      "traits": [
+        "Musician"
+      ],
+      "power": 4,
+      "guard": 4,
+      "onAttack": "lowhand"
+    },
+    {
+      "id": "LAB-SCH-R7",
+      "name": "One-Hit Wonder",
+      "cost": 6,
+      "style": "Momentum",
+      "type": "Character",
+      "text": "On Play: Draw 2 cards.",
+      "keywords": [],
+      "traits": [
+        "Musician"
+      ],
+      "power": 6,
+      "guard": 5,
+      "onPlay": "draw",
+      "amount": 2
+    },
+    {
+      "id": "LAB-SCH-R8",
+      "name": "Sound Check",
+      "cost": 1,
+      "style": "Momentum",
+      "type": "Action",
+      "text": "Draw a card, then discard a card. Ready 1 spent Stash.",
+      "keywords": [],
+      "traits": [],
+      "effect": "cycle_ready"
+    },
+    {
+      "id": "LAB-SCH-M1",
+      "name": "Rabbit",
+      "cost": 1,
+      "style": "Misdirection",
+      "type": "Character",
+      "text": "When this Returns from play to your hand, draw a card. Only one Rabbit can draw this way each Turn.",
+      "keywords": [],
+      "traits": [
+        "Animal"
+      ],
+      "power": 1,
+      "guard": 2,
+      "onReturn": "draw"
+    },
+    {
+      "id": "LAB-SCH-M2",
+      "name": "Magician\u2019s Assistant",
+      "cost": 2,
+      "style": "Misdirection",
+      "type": "Character",
+      "text": "On Play: You may Return another friendly Character to hand.",
+      "keywords": [],
+      "traits": [],
+      "power": 2,
+      "guard": 3,
+      "onPlay": "friendly_bounce",
+      "target": "otherFriendly"
+    },
+    {
+      "id": "LAB-SCH-M3",
+      "name": "Suspicious Volunteer",
+      "cost": 2,
+      "style": "Misdirection",
+      "type": "Character",
+      "text": "On Play: Draw a card, then discard a card.",
+      "keywords": [],
+      "traits": [],
+      "power": 2,
+      "guard": 2,
+      "onPlay": "rummage"
+    },
+    {
+      "id": "LAB-SCH-M4",
+      "name": "Escape Artist",
+      "cost": 3,
+      "style": "Misdirection",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [],
+      "power": 3,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-M5",
+      "name": "Pickpocket",
+      "cost": 3,
+      "style": "Misdirection",
+      "type": "Character",
+      "text": "Sucker Punch.",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "traits": [],
+      "power": 3,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-M6",
+      "name": "Birthday Party Magician\u2019s Rival",
+      "cost": 4,
+      "style": "Misdirection",
+      "type": "Character",
+      "text": "On Play: You may Return an opposing Character costing 2 or less to hand.",
+      "keywords": [],
+      "traits": [],
+      "power": 3,
+      "guard": 4,
+      "onPlay": "small_bounce",
+      "target": "smallEnemy"
+    },
+    {
+      "id": "LAB-SCH-M7",
+      "name": "Impossible Assistant",
+      "cost": 6,
+      "style": "Misdirection",
+      "type": "Character",
+      "text": "On Play: You may Return an opposing Character to hand.",
+      "keywords": [],
+      "traits": [],
+      "power": 5,
+      "guard": 5,
+      "onPlay": "enemy_bounce",
+      "target": "enemy"
+    },
+    {
+      "id": "LAB-SCH-M8",
+      "name": "Now You See Me",
+      "cost": 1,
+      "style": "Misdirection",
+      "type": "Action",
+      "text": "Return a chosen friendly Character to hand. Draw a card.",
+      "keywords": [],
+      "traits": [],
+      "effect": "friendly_bounce_draw",
+      "target": "friendly"
+    },
+    {
+      "id": "LAB-SCH-T1",
+      "name": "Dumpster Diver",
+      "cost": 1,
+      "style": "Salvage",
+      "type": "Character",
+      "text": "On Play: Draw a card, then discard a card.",
+      "keywords": [],
+      "traits": [],
+      "power": 1,
+      "guard": 2,
+      "onPlay": "rummage"
+    },
+    {
+      "id": "LAB-SCH-T2",
+      "name": "Scrapyard Rat",
+      "cost": 2,
+      "style": "Salvage",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Animal"
+      ],
+      "power": 2,
+      "guard": 3
+    },
+    {
+      "id": "LAB-SCH-T3",
+      "name": "Junkyard Foreman",
+      "cost": 2,
+      "style": "Salvage",
+      "type": "Character",
+      "text": "While you control an Item, this has +1 Power and +1 Guard.",
+      "keywords": [],
+      "traits": [],
+      "power": 2,
+      "guard": 2,
+      "itemBoost": 1
+    },
+    {
+      "id": "LAB-SCH-T4",
+      "name": "Broken Robot",
+      "cost": 3,
+      "style": "Salvage",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [],
+      "power": 3,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-T5",
+      "name": "Jailbroken Robot Vacuum",
+      "cost": 3,
+      "style": "Salvage",
+      "type": "Character",
+      "text": "Once each Turn, after you play an Item, draw a card.",
+      "keywords": [],
+      "traits": [],
+      "power": 2,
+      "guard": 3,
+      "itemDraw": true
+    },
+    {
+      "id": "LAB-SCH-T6",
+      "name": "Shopping Cart Knight",
+      "cost": 4,
+      "style": "Salvage",
+      "type": "Character",
+      "text": "Bodyguard.",
+      "keywords": [
+        "Bodyguard"
+      ],
+      "traits": [],
+      "power": 4,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-T7",
+      "name": "The Entire Junkyard",
+      "cost": 6,
+      "style": "Salvage",
+      "type": "Character",
+      "text": "On Play: Return an Item from your discard to hand.",
+      "keywords": [],
+      "traits": [],
+      "power": 5,
+      "guard": 6,
+      "onPlay": "recover_item"
+    },
+    {
+      "id": "LAB-SCH-T8",
+      "name": "Duct-Tape Contraption",
+      "cost": 2,
+      "style": "Salvage",
+      "type": "Item",
+      "text": "Rotate: Heal up to 2 damage from a chosen friendly Character.",
+      "keywords": [],
+      "traits": [],
+      "activate": "heal",
+      "amount": 2,
+      "target": "damagedFriendly"
+    },
+    {
+      "id": "LAB-SCH-H1",
+      "name": "Neighborhood Watch",
+      "cost": 1,
+      "style": "Stonewall",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [],
+      "power": 1,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-H2",
+      "name": "Mall Walker",
+      "cost": 2,
+      "style": "Stonewall",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [],
+      "power": 1,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-H3",
+      "name": "Crossing Guard",
+      "cost": 2,
+      "style": "Stonewall",
+      "type": "Character",
+      "text": "Bodyguard.",
+      "keywords": [
+        "Bodyguard"
+      ],
+      "traits": [],
+      "power": 2,
+      "guard": 3
+    },
+    {
+      "id": "LAB-SCH-H4",
+      "name": "Clipboard Enforcer",
+      "cost": 3,
+      "style": "Stonewall",
+      "type": "Character",
+      "text": "Sucker Punch.",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "traits": [],
+      "power": 2,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-H5",
+      "name": "Neighborhood Lifeguard",
+      "cost": 3,
+      "style": "Stonewall",
+      "type": "Character",
+      "text": "On Play: You may heal 2 damage from a friendly Character.",
+      "keywords": [],
+      "traits": [],
+      "power": 3,
+      "guard": 3,
+      "onPlay": "heal",
+      "amount": 2,
+      "target": "damagedFriendly"
+    },
+    {
+      "id": "LAB-SCH-H6",
+      "name": "HOA Enforcement Committee",
+      "cost": 4,
+      "style": "Stonewall",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [],
+      "power": 3,
+      "guard": 5
+    },
+    {
+      "id": "LAB-SCH-H7",
+      "name": "Retired Police Chief",
+      "cost": 6,
+      "style": "Stonewall",
+      "type": "Character",
+      "text": "On Play: Deal 3 damage to a chosen opposing Character.",
+      "keywords": [],
+      "traits": [],
+      "power": 5,
+      "guard": 6,
+      "onPlay": "enemy_damage",
+      "amount": 3,
+      "target": "enemy"
+    },
+    {
+      "id": "LAB-SCH-H8",
+      "name": "Violation Notice",
+      "cost": 2,
+      "style": "Stonewall",
+      "type": "Action",
+      "text": "Rotate a chosen opposing Character. It does not Ready at the start of its controller\u2019s next Turn.",
+      "keywords": [],
+      "traits": [],
+      "effect": "freeze",
+      "target": "enemy"
+    },
+    {
+      "id": "LAB-SCH-W1",
+      "name": "Folding-Chair Enthusiast",
+      "cost": 1,
+      "style": "Expendable",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Wrestler"
+      ],
+      "power": 1,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-W2",
+      "name": "Jobber",
+      "cost": 2,
+      "style": "Expendable",
+      "type": "Character",
+      "text": "When Defeated, deal 1 damage to the opposing Leader.",
+      "keywords": [],
+      "traits": [
+        "Wrestler"
+      ],
+      "power": 2,
+      "guard": 2,
+      "onDefeat": "ping"
+    },
+    {
+      "id": "LAB-SCH-W3",
+      "name": "Training Dummy",
+      "cost": 2,
+      "style": "Expendable",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Wrestler"
+      ],
+      "power": 1,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-W4",
+      "name": "Backyard Wrestling Superfan",
+      "cost": 3,
+      "style": "Expendable",
+      "type": "Character",
+      "text": "On Play: Draw a card, then discard a card.",
+      "keywords": [],
+      "traits": [
+        "Wrestler"
+      ],
+      "power": 3,
+      "guard": 3,
+      "onPlay": "rummage"
+    },
+    {
+      "id": "LAB-SCH-W5",
+      "name": "Exploding Ring Announcer",
+      "cost": 3,
+      "style": "Expendable",
+      "type": "Character",
+      "text": "Explosive.",
+      "keywords": [
+        "Explosive"
+      ],
+      "traits": [
+        "Wrestler"
+      ],
+      "power": 2,
+      "guard": 3
+    },
+    {
+      "id": "LAB-SCH-W6",
+      "name": "Unreasonably Large Cousin",
+      "cost": 4,
+      "style": "Expendable",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Wrestler"
+      ],
+      "power": 4,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-W7",
+      "name": "Main Event Maniac",
+      "cost": 6,
+      "style": "Expendable",
+      "type": "Character",
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "traits": [
+        "Wrestler"
+      ],
+      "power": 5,
+      "guard": 5
+    },
+    {
+      "id": "LAB-SCH-W8",
+      "name": "Chair Shot",
+      "cost": 2,
+      "style": "Expendable",
+      "type": "Action",
+      "text": "Sacrifice a chosen friendly Character. Deal its Power as damage to a chosen opposing Character.",
+      "keywords": [],
+      "traits": [],
+      "effect": "sac_damage",
+      "target": "sacEnemy"
+    },
+    {
+      "id": "LAB-SCH-C1",
+      "name": "Stray Cat",
+      "cost": 1,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Cat"
+      ],
+      "power": 1,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-C2",
+      "name": "Orange Menace",
+      "cost": 2,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "traits": [
+        "Cat"
+      ],
+      "power": 2,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-C3",
+      "name": "Tuxedo Cat",
+      "cost": 2,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "Bodyguard.",
+      "keywords": [
+        "Bodyguard"
+      ],
+      "traits": [
+        "Cat"
+      ],
+      "power": 1,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-C4",
+      "name": "Feral Tom",
+      "cost": 3,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "Sucker Punch.",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "traits": [
+        "Cat"
+      ],
+      "power": 3,
+      "guard": 3
+    },
+    {
+      "id": "LAB-SCH-C5",
+      "name": "Three-Legged Cat",
+      "cost": 3,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "Stubborn.",
+      "keywords": [
+        "Stubborn"
+      ],
+      "traits": [
+        "Cat"
+      ],
+      "power": 2,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-C6",
+      "name": "Alley Matriarch",
+      "cost": 3,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "On Play: If you control at least 3 Cats, draw 2 cards.",
+      "keywords": [],
+      "traits": [
+        "Cat"
+      ],
+      "power": 3,
+      "guard": 4,
+      "onPlay": "cat_draw"
+    },
+    {
+      "id": "LAB-SCH-C7",
+      "name": "House Panther",
+      "cost": 6,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "On Play: Put up to two Stray Cat cards from your discard into play.",
+      "keywords": [],
+      "traits": [
+        "Cat"
+      ],
+      "power": 6,
+      "guard": 6,
+      "onPlay": "recover_strays"
+    },
+    {
+      "id": "LAB-SCH-C8",
+      "name": "Open a Can",
+      "cost": 1,
+      "style": "Unassigned",
+      "type": "Action",
+      "text": "Look at the top 4 cards of your deck. Put a Cat among them into your hand and the rest on the bottom.",
+      "keywords": [],
+      "traits": [],
+      "effect": "find_cat"
+    },
+    {
+      "id": "LAB-SCH-CT",
+      "name": "Unexpected Cat",
+      "cost": 0,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Cat"
+      ],
+      "power": 1,
+      "guard": 1,
+      "token": true
+    },
+    {
+      "id": "LAB-SCH-S1",
+      "name": "Lab Intern",
+      "cost": 1,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [
+        "Part"
+      ],
+      "power": 1,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-S2",
+      "name": "Unlabeled Jar",
+      "cost": 1,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "When Defeated, draw a card.",
+      "keywords": [],
+      "traits": [
+        "Part"
+      ],
+      "power": 1,
+      "guard": 1,
+      "onDefeat": "draw"
+    },
+    {
+      "id": "LAB-SCH-S3",
+      "name": "Questionable Specimen",
+      "cost": 2,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "On Play: Look at your top 4 cards. Put an It\u2019s Alive! among them into your hand and the rest on the bottom.",
+      "keywords": [],
+      "traits": [
+        "Part"
+      ],
+      "power": 2,
+      "guard": 3,
+      "onPlay": "find_experiment"
+    },
+    {
+      "id": "LAB-SCH-S4",
+      "name": "Safety Inspector",
+      "cost": 2,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "Bodyguard.",
+      "keywords": [
+        "Bodyguard"
+      ],
+      "traits": [],
+      "power": 1,
+      "guard": 4
+    },
+    {
+      "id": "LAB-SCH-S5",
+      "name": "Unpaid Research Assistant",
+      "cost": 3,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "On Play: Ready 1 spent Stash.",
+      "keywords": [],
+      "traits": [],
+      "power": 2,
+      "guard": 4,
+      "onPlay": "recharge"
+    },
+    {
+      "id": "LAB-SCH-S6",
+      "name": "Failed Experiment",
+      "cost": 2,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "Slowpoke.",
+      "keywords": [
+        "Slowpoke"
+      ],
+      "traits": [
+        "Part"
+      ],
+      "power": 3,
+      "guard": 2
+    },
+    {
+      "id": "LAB-SCH-S7",
+      "name": "Lab Security",
+      "cost": 4,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "",
+      "keywords": [],
+      "traits": [],
+      "power": 4,
+      "guard": 5
+    },
+    {
+      "id": "LAB-SCH-S8",
+      "name": "It\u2019s Alive!",
+      "cost": 2,
+      "style": "Unassigned",
+      "type": "Action",
+      "text": "As an additional Cost, discard two Character cards. Roll a d6 for Power, then a separate d6 for Guard. You may reroll one of them once. Put an Abomination with those stats and Slowpoke into play.",
+      "keywords": [],
+      "traits": [],
+      "effect": "fuse",
+      "target": "ingredients"
+    },
+    {
+      "id": "LAB-SCH-ST",
+      "name": "Abomination",
+      "cost": 0,
+      "style": "Unassigned",
+      "type": "Character",
+      "text": "Slowpoke. Its Power and Guard are the two separately rolled values.",
+      "keywords": [
+        "Slowpoke"
+      ],
+      "traits": [
+        "Abomination"
+      ],
+      "power": 0,
+      "guard": 0,
+      "token": true
+    }
+  ]
+}

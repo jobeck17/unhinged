@@ -2,6 +2,10 @@
 
 Carl is the current working build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl**. Donut is complete and remains in Git history instead of the live tree.
 
+## Active next-core prototype
+
+**[Play the Scheme Lab](https://jobeck17.github.io/unhinged/lab/schemes/)** — eight decks testing simultaneous combat and a third Character job: work toward an interruptible Leader Scheme. Includes bot and local two-player modes, exact supported card text, and reproducible comparisons. [Rules and evidence](lab/schemes/README.md). **TESTING; Carl 0.3 remains canonical.**
+
 ## Current creative direction
 
 Unhinged is not trying to win by being the safest balanced TCG skeleton. **The core game should be simple and stable enough that the decks themselves can be outrageous.**
