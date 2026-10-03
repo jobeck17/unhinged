@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#14191c">
-<title>Unhinged · Half-Cost Stash LAB</title>
+<title>Unhinged · Full-Cost Stash LAB</title>
 <link rel="stylesheet" href="../../web/style.css?v=rulebreakers-1">
 <style>
 #boot-status{padding:32px 20px;max-width:650px;margin:auto;color:#e9ece8;font:600 16px/1.5 system-ui,-apple-system,sans-serif}
@@ -13,8 +13,8 @@
 </style>
 </head>
 <body>
-<div class="lab-banner">LAB RULE: Stashing a card gives Fuel equal to half its Cost, rounded down. Cost 5 → 2 Fuel. Cost 1 → 0. Setup Stash stays worth 1.</div>
-<div id="app"><div id="boot-status">Loading Half-Cost Stash playtest…<small>This is a separate LAB experiment. Canon is unchanged.</small></div></div>
+<div class="lab-banner">LAB RULE: Stashing a card gives Fuel equal to its printed Cost. Cost 5 → 5 Fuel. Cost 1 → 1 Fuel. Setup Stash stays worth 1.</div>
+<div id="app"><div id="boot-status">Loading Full-Cost Stash playtest…<small>This is a separate LAB experiment. Canon is unchanged.</small></div></div>
 <script>
 window.addEventListener('error',function(e){
   var a=document.getElementById('app');
@@ -58,6 +58,6 @@ function paintStashCapacity(){
 new MutationObserver(paintStashCapacity).observe(document.getElementById('app'),{childList:true,subtree:true});
 setInterval(paintStashCapacity,250);
 </script>
-<script type="module" src="boot.js?v=stash-half-2"></script>
+<script type="module" src="boot.js?v=stash-full-1"></script>
 </body>
 </html>
