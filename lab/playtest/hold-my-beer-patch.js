@@ -12,6 +12,20 @@ Game.prototype.card=function(x){
   return {...card,cost:2,text:HOLD_TEXT,status:'lab'};
 };
 
+// The base engine allows some Ready effects to enable another Attack, so Hold My Beer
+// marks its readied Character as specifically unable to Attack again this Turn.
+const baseCanAttack=Game.prototype.canAttack;
+Game.prototype.canAttack=function(x){
+  if(x?.holdMyBeerNoAttack) return false;
+  return baseCanAttack.call(this,x);
+};
+
+const baseStartTurn=Game.prototype.startTurn;
+Game.prototype.startTurn=function(...args){
+  for(const x of this.chars(this.turn)) x.holdMyBeerNoAttack=false;
+  return baseStartTurn.apply(this,args);
+};
+
 // Replace the old +Power action effect with the new tempo effect.
 const baseActionEffect=Game.prototype.actionEffect;
 Game.prototype.actionEffect=async function(p,id,target,second,previous){
@@ -26,7 +40,7 @@ Game.prototype.actionEffect=async function(p,id,target,second,previous){
 
   if(x.attacked){
     x.ready=true;
-    // Keep attacked=true so the normal attack rules still prevent a second Attack this Turn.
+    x.holdMyBeerNoAttack=true;
     this.say(`${this.card(x).name} Readies, but cannot Attack again this Turn`);
   }
 
