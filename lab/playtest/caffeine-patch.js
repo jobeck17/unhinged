@@ -1,9 +1,10 @@
 // LAB ONLY: Florida Man caffeine prototype.
-// Replaces the two Send It! and two No, I'm Fine slots with four copies of one LAB Action.
+// Replaces the two Send It! and two No, I'm Fine slots with two Caffeine and two Rusty Needle LAB Actions.
 import { Game } from './engine.js?v=rulebreakers-1';
 
 const CAFFEINE_ID='LAB-FLM-002';
 const CAFFEINE_SNEAK_ID='LAB-FLM-002-SUCKER';
+const RUSTY_NEEDLE_ID='LAB-FLM-003';
 const CAFFEINE_CARD={
   id:CAFFEINE_ID,
   type:'Action',
@@ -19,6 +20,22 @@ const CAFFEINE_CARD={
   complexity:'mixed',
   status:'lab',
   flavor:'He can hear colors now.'
+};
+const RUSTY_NEEDLE_CARD={
+  id:RUSTY_NEEDLE_ID,
+  type:'Action',
+  cost:2,
+  name:'Rusty Needle',
+  subtitle:'',
+  traits:[],
+  text:'Deal 1 damage to a Character. Congratulations, you have tetanus. At the start of its controller\'s Turn, it gets -1 Guard. This can reduce its Guard to 0. That Character may Rotate to remove tetanus.',
+  style:'Reckless',
+  keywords:[],
+  power:null,
+  guard:null,
+  complexity:'mixed',
+  status:'lab',
+  flavor:''
 };
 const CAFFEINE_SNEAK_CARD={
   id:CAFFEINE_SNEAK_ID,
@@ -48,7 +65,8 @@ window.fetch=async function(input,init){
   const cards={...florida.cards};
   delete cards.P020;
   delete cards.P022;
-  cards[CAFFEINE_ID]=4;
+  cards[CAFFEINE_ID]=2;
+  cards[RUSTY_NEEDLE_ID]=2;
   florida.cards=cards;
   return new Response(JSON.stringify(doc),{
     status:response.status,
@@ -62,6 +80,7 @@ const baseCard=Game.prototype.card;
 Game.prototype.card=function(x){
   const id=typeof x==='string'?x:x?.id;
   if(id===CAFFEINE_ID) return CAFFEINE_CARD;
+  if(id===RUSTY_NEEDLE_ID) return RUSTY_NEEDLE_CARD;
   if(id===CAFFEINE_SNEAK_ID) return CAFFEINE_SNEAK_CARD;
   return baseCard.call(this,x);
 };
@@ -73,17 +92,31 @@ Game.prototype.layers=function(x){
   return layers;
 };
 
-// Caffeine needs one of your Characters to exist.
+// Rusty Needle and Caffeine both need a Character target.
 const baseCanPlay=Game.prototype.canPlay;
 Game.prototype.canPlay=function(index,p=this.turn){
   const id=this.players[p]?.hand?.[index];
+  if(id===RUSTY_NEEDLE_ID && ![...this.chars(p),...this.chars(1-p)].length) return false;
   if(id===CAFFEINE_ID && !this.chars(p).length) return false;
   return baseCanPlay.call(this,index,p);
 };
 
+// Caffeine needs one of your Characters to exist.
 // Resolve the boost without dealing damage, so this card itself never triggers Adrenaline.
 const baseActionEffect=Game.prototype.actionEffect;
 Game.prototype.actionEffect=async function(p,id,target,second,previous){
+  if(id===RUSTY_NEEDLE_ID){
+    const targets=[...this.chars(p),...this.chars(1-p)];
+    if(!targets.length) return;
+    const chosen=await this.pick('Rusty Needle: Choose a Character',p,targets);
+    if(chosen==null) return;
+    const x=this.obj(chosen);
+    if(!x) return;
+    await this.damage(x,1);
+    const survivor=this.obj(chosen);
+    if(survivor){ survivor.tetanus=true; this.say(`${this.card(survivor).name}: Congratulations, you have tetanus.`); }
+    return;
+  }
   if(id!==CAFFEINE_ID) return baseActionEffect.call(this,p,id,target,second,previous);
   const targets=this.chars(p);
   if(!targets.length) return;
@@ -96,6 +129,29 @@ Game.prototype.actionEffect=async function(p,id,target,second,previous){
   x.caffeineSucker=true;
   x.caffeineDoomed=true;
   this.say(`${this.card(x).name} drinks an impossible amount of caffeine: +5 Power, Hothead, Sucker Punch`);
+};
+
+// Tetanus is a Character status, not a keyword. A Ready Character may spend its activation by Rotating to remove it.
+const baseCanUse=Game.prototype.canUse;
+Game.prototype.canUse=function(x){
+  if(x?.tetanus && x.owner===this.turn && x.ready) return true;
+  return baseCanUse.call(this,x);
+};
+
+const baseActivate=Game.prototype.activate;
+Game.prototype.activate=async function(uid,mode=null){
+  const x=this.obj(uid);
+  if(x?.tetanus && x.owner===this.turn && x.ready){
+    const normal=baseCanUse.call(this,x);
+    let cure=mode==='LAB-TETANUS-CURE';
+    if(!mode && normal){
+      const choice=await this.choose(this.turn,'Choose an ability',[{label:'Remove tetanus',value:'LAB-TETANUS-CURE'},{label:'Use printed ability',value:'PRINTED'}]);
+      if(choice==='PRINTED') return baseActivate.call(this,uid,null);
+      cure=choice==='LAB-TETANUS-CURE';
+    } else if(!mode && !normal) cure=true;
+    if(cure){ x.ready=false; delete x.tetanus; this.say(`${this.card(x).name} Rotates to remove tetanus`); this.advance(); return; }
+  }
+  return baseActivate.call(this,uid,mode);
 };
 
 // Once the boosted Character actually attacks, it is Defeated after that attack resolves.
