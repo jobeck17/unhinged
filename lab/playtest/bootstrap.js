@@ -1,11 +1,36 @@
-// LAB browser bootstrap. Load experimental patches in a deterministic order
-// before the local two-player app renders Leader text or starts a game.
-await import('./snowball-patch.js?v=lab-14');
-await import('./lab-patches.js?v=lab-14');
-await import('./trojan-cat-patch.js?v=lab-14');
-await import('./tuxedo-cat-patch.js?v=lab-14');
-await import('./no-retaliation-patch.js?v=lab-14');
-await import('./wrestler-retaliate-patch.js?v=lab-14');
-await import('./stray-cat-patch.js?v=lab-14');
-await import('./hairy-cat-patch.js?v=lab-14');
-await import('./app-two-player.js?v=lab-14');
+// LAB browser bootstrap. Load experimental patches in a deterministic order,
+// then let the player choose bot play or local two-player.
+await import('./snowball-patch.js?v=lab-15');
+await import('./lab-patches.js?v=lab-15');
+await import('./trojan-cat-patch.js?v=lab-15');
+await import('./tuxedo-cat-patch.js?v=lab-15');
+await import('./no-retaliation-patch.js?v=lab-15');
+await import('./wrestler-retaliate-patch.js?v=lab-15');
+await import('./stray-cat-patch.js?v=lab-15');
+await import('./hairy-cat-patch.js?v=lab-15');
+
+const root=document.getElementById('app');
+root.innerHTML=`<div class="setup deck-setup">
+  <div class="small">Unhinged · LAB Playtest</div>
+  <h1>How do you want to play?</h1>
+  <p>Choose a bot match or local two-player on the same device. Both modes use the same LAB rules and experimental cards.</p>
+  <div class="deck-picker">
+    <button id="play-bot" class="primary deck-start">Play against a bot</button>
+  </div>
+  <div class="deck-picker">
+    <button id="play-two" class="primary deck-start">Local two-player</button>
+  </div>
+  <p class="muted">TEMP TEST: no universal retaliation · Backyard Wrestler Wrestlers have Retaliate</p>
+</div>`;
+
+let chosen=false;
+async function launch(mode){
+  if(chosen)return;
+  chosen=true;
+  root.innerHTML='<div id="boot-status">Loading match…</div>';
+  if(mode==='bot') await import('./app.js?v=lab-15');
+  else await import('./app-two-player.js?v=lab-15');
+}
+
+document.getElementById('play-bot').onclick=()=>launch('bot');
+document.getElementById('play-two').onclick=()=>launch('two');
