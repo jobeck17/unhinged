@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-1.2",
+  "version": "lab-cat-lady-1.3",
   "status": "lab-prototype",
   "canonical": false,
   "name": "Strength in Numbers............ Mostly Numbers........ Probably.",
@@ -11,7 +11,7 @@
     "construction_rule": "Your deck may contain Cat Characters from any Style and up to 10 copies of Stray Cat.",
     "passive_name": "Strength in Numbers............ Mostly Numbers........ Probably.",
     "passive": "At the start of your Turn, if you control fewer than 3 Cats, you may Stash one additional card this Turn. If you control 3 or more Cats, Draw an additional card.",
-    "note": "Lab prototype. The old Cat Distribution System auto-Stash is replaced in the personal LAB by a split passive: below 3 Cats, Crazy Cat Lady may Stash twice that Turn; at 3 or more Cats, she draws one additional card at the start of her Turn. Shoebox of Dead Cats is at three copies; Shovel at four copies; Nine Lives, Zero Survivors at two copies; Mittens III at three copies; Trojan Cat, House Panther, and Cat Under the Bed removed from the deck."
+    "note": "Lab prototype. The old Cat Distribution System auto-Stash is replaced in the personal LAB by a split passive: below 3 Cats, Crazy Cat Lady may Stash twice that Turn; at 3 or more Cats, she draws one additional card at the start of her Turn. Shoebox of Dead Cats is at three copies; Shovel at four copies; Nine Lives, Zero Survivors at two copies; Mittens III at four copies; Trojan Cat, House Panther, Cat Under the Bed, and Maine Coon removed from the deck."
   },
   "cards": {
     "LAB-CAT-001": 6,
@@ -20,13 +20,12 @@
     "LAB-CAT-005": 2,
     "LAB-CAT-006": 2,
     "LAB-CAT-007": 2,
-    "LAB-CAT-008": 1,
     "LAB-CAT-013": 4,
     "LAB-CAT-016": 3,
     "LAB-CAT-017": 3,
     "LAB-CAT-018": 4,
     "LAB-CAT-019": 2,
-    "LAB-CAT-020": 3
+    "LAB-CAT-020": 4
   },
   "total_cards": 40,
   "composition": {
@@ -58,7 +57,7 @@
     "Whether refilling both players to seven over-rewards the player who casts the wipe",
     "Whether Snowball creates meaningful protect-or-risk decisions",
     "Whether Hairy Cat creates interesting attack sequencing or simply discourages combat",
-    "Whether three Mittens III copies are enough to see the engine often without making every game revolve around it",
+    "Whether four Mittens III copies make the engine too central to the deck",
     "Whether Mittens III creates a real attack-versus-feed decision instead of always eating Stash",
     "How often Mittens III cashes in Shoebox Cats, and whether that payoff is exciting without making Shoebox automatic fuel"
   ]
