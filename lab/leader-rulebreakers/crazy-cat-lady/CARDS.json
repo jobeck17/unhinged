@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-2.1",
+  "version": "lab-cat-lady-2.2",
   "status": "lab-prototype",
   "canonical": false,
   "style": null,
@@ -9,7 +9,7 @@
     {"id":"LAB-CAT-003","type":"Character","cost":2,"name":"Tuxedo Cat","traits":["Animal","Cat"],"text":"Bodyguard.","keywords":["Bodyguard"],"power":1,"guard":4,"status":"lab-prototype","purpose":"Defensive colony protector: low Power, high Guard, and Bodyguard make it a durable shield instead of another efficient attacker."},
     {"id":"LAB-CAT-004","type":"Character","cost":2,"name":"Cat Under the Bed","traits":["Animal","Cat"],"text":"Chicken.","keywords":["Chicken"],"power":2,"guard":2,"status":"lab-prototype","purpose":"Lets the Cat player preserve a body at the cost of temporarily dropping board count."},
     {"id":"LAB-CAT-005","type":"Character","cost":3,"name":"Feral Tom","traits":["Animal","Cat"],"text":"Sucker Punch.","keywords":["Sucker Punch"],"power":4,"guard":2,"status":"lab-prototype","purpose":"Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader."},
-    {"id":"LAB-CAT-006","type":"Character","cost":3,"name":"Three-Legged Cat","traits":["Animal","Cat"],"text":"Stubborn.","keywords":["Stubborn"],"power":3,"guard":4,"status":"lab-prototype","purpose":"Resilient colony member that specifically resists Return and Dismiss counterplay."},
+    {"id":"LAB-CAT-006","type":"Character","cost":4,"name":"Three-Legged Cat","traits":["Animal","Cat"],"text":"I GOT 3 MORE ANYWAY — The first two times Three-Legged Cat is damaged by an Attack, it survives regardless of damage and remove all damage from it. The third Attack damages it normally.","keywords":[],"power":2,"guard":1,"status":"lab-prototype","purpose":"A ridiculous 2/1 that visibly refuses to die to the first two Attacks. Opponents can still use Return, Dismiss, non-Attack Defeat effects, or other removal normally."},
     {"id":"LAB-CAT-007","type":"Character","cost":4,"name":"Alley Matriarch","traits":["Animal","Cat"],"text":"When this enters play, if you control 3 or more Cats, Draw a card.","keywords":[],"power":4,"guard":5,"status":"lab-prototype","purpose":"Rewards reaching the colony threshold without directly adding more Stash."},
     {"id":"LAB-CAT-008","type":"Character","cost":5,"name":"Maine Coon","traits":["Animal","Cat"],"text":"While you control 5 or more Cats, this gets +2 Power.","keywords":[],"power":5,"guard":7,"status":"lab-prototype","purpose":"Visible five-Cat payoff that turns a wide colony into finishing pressure."},
     {"id":"LAB-CAT-009","type":"Character","cost":6,"name":"House Panther","traits":["Animal","Cat"],"text":"","keywords":[],"power":7,"guard":8,"status":"lab-prototype","purpose":"Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself."},
