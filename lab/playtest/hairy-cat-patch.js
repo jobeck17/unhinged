@@ -1,8 +1,13 @@
 // LAB-only Hairy Cat prototype behavior.
 // When Hairy Cat is damaged by an attacking Character and survives, the attacker
-// gets a Hairball. A Hairball makes that Character miss its controller's next
-// Ready step, then falls off. Multiple different attackers can each be Hairballed.
+// gets a Hairball and permanently loses 1 Guard. A Hairball makes that Character
+// miss its controller's next Ready step, then falls off. The Guard loss remains.
 import {Game} from './engine.js?v=rulebreakers-1';
+
+const baseGuard = Game.prototype.guard;
+Game.prototype.guard = function(x){
+  return Math.max(0, baseGuard.call(this,x) - (x?.hairballGuardLoss || 0));
+};
 
 const baseCombatDamage = Game.prototype.combatDamage;
 Game.prototype.combatDamage = async function(entries){
@@ -18,7 +23,9 @@ Game.prototype.combatDamage = async function(entries){
       const attacker = this.obj(this.pendingAttack.attacker);
       if(attacker){
         attacker.hairball = true;
-        this.say(`${this.card(attacker).name} gets a Hairball from Hairy Cat`);
+        attacker.hairballGuardLoss = (attacker.hairballGuardLoss || 0) + 1;
+        this.say(`${this.card(attacker).name} gets a Hairball and permanently loses 1 Guard`);
+        await this.checkDefeat(attacker);
       }
     }
   }
