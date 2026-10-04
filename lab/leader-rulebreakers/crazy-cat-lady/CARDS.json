@@ -1,11 +1,11 @@
 {
-  "version": "lab-cat-lady-1.7",
+  "version": "lab-cat-lady-1.8",
   "status": "lab-prototype",
   "canonical": false,
   "style": null,
   "cards": [
     {"id":"LAB-CAT-001","type":"Character","cost":1,"name":"Stray Cat","traits":["Animal","Cat"],"text":"","keywords":[],"power":1,"guard":2,"status":"lab-prototype","purpose":"Cheap swarm body that sticks around a little better so Cat Lady can establish a colony without adding more damage output."},
-    {"id":"LAB-CAT-002","type":"Character","cost":2,"name":"Orange Menace","traits":["Animal","Cat"],"text":"Hothead.","keywords":["Hothead"],"power":2,"guard":1,"status":"lab-prototype","purpose":"Aggressive Cat that trades cheap swarm efficiency for immediate pressure."},
+    {"id":"LAB-CAT-002","type":"Character","cost":1,"name":"Orange Menace","traits":["Animal","Cat"],"text":"Hothead.","keywords":["Hothead"],"power":2,"guard":1,"status":"lab-prototype","purpose":"One-cost aggressive Cat that helps Cat Lady establish the colony quickly while remaining fragile."},
     {"id":"LAB-CAT-003","type":"Character","cost":2,"name":"Tuxedo Cat","traits":["Animal","Cat"],"text":"Bodyguard.","keywords":["Bodyguard"],"power":2,"guard":3,"status":"lab-prototype","purpose":"Protects the colony while giving the opponent a visible target to clear."},
     {"id":"LAB-CAT-004","type":"Character","cost":2,"name":"Cat Under the Bed","traits":["Animal","Cat"],"text":"Chicken.","keywords":["Chicken"],"power":2,"guard":2,"status":"lab-prototype","purpose":"Lets the Cat player preserve a body at the cost of temporarily dropping board count."},
     {"id":"LAB-CAT-005","type":"Character","cost":3,"name":"Feral Tom","traits":["Animal","Cat"],"text":"Sucker Punch.","keywords":["Sucker Punch"],"power":4,"guard":2,"status":"lab-prototype","purpose":"Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader."},
