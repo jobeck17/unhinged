@@ -1,5 +1,5 @@
 // STANK INDUSTRIES LAB ONLY — Birthday Party Magician experiment.
-// Replaces the two Look Over There! slots with two copies of “This Kid Again?”.
+// Replaces the two Look Over There! slots with two copies of Very Enthusiastic Volunteer.
 import {Game} from './engine.js?v=rulebreakers-1';
 
 // The two physical deck copies use separate LAB ids so each copy can remember
@@ -9,9 +9,9 @@ const makeKid=id=>({
   id,
   type:'Character',
   cost:2,
-  name:'“This Kid Again?”',
+  name:'Very Enthusiastic Volunteer',
   traits:['Kid'],
-  text:'Whenever “This Kid Again?” enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently. The first time this card attacks this game, after that Attack, Return it to your hand.',
+  text:'Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently. The first time this card attacks this game, after that Attack, Return it to your hand.',
   style:'Misdirection',
   complexity:'mixed',
   keywords:[],
@@ -68,11 +68,11 @@ Game.prototype.power=function(x){
 async function givePermanentPower(game,p,excludeUid=null,reason='trick'){
   const targets=game.chars(p).filter(x=>x.uid!==excludeUid);
   if(!targets.length)return;
-  const uid=await game.pick(`“This Kid Again?” ${reason}: choose another Character to get +1 permanent Power`,p,targets);
+  const uid=await game.pick(`Very Enthusiastic Volunteer ${reason}: choose another Character to get +1 permanent Power`,p,targets);
   const target=uid==null?null:game.obj(uid);
   if(!target)return;
   target.kidAgainPower=(target.kidAgainPower||0)+1;
-  game.say(`“This Kid Again?” gives ${game.card(target).name} +1 permanent Power`);
+  game.say(`Very Enthusiastic Volunteer gives ${game.card(target).name} +1 permanent Power`);
 }
 
 const baseEnterEffect=Game.prototype.enterEffect;
@@ -106,7 +106,7 @@ Game.prototype.attack=async function(uid){
   s.kidAgainEscapesUsed=s.kidAgainEscapesUsed||{};
   if(!s.kidAgainEscapesUsed[kidId]){
     s.kidAgainEscapesUsed[kidId]=true;
-    this.say('“This Kid Again?” vanishes back into the crowd after his first Attack');
+    this.say('Very Enthusiastic Volunteer vanishes back into the crowd after his first Attack');
     await this.remove(after,'hand');
   }
   return result;
