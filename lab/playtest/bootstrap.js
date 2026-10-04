@@ -1,26 +1,26 @@
 // LAB browser bootstrap. Load experimental patches in a deterministic order,
 // then let the player choose bot play or local two-player.
-await import('./cat-lady-passive-patch.js?v=lab-47');
-await import('./snowball-patch.js?v=lab-47');
-await import('./lab-patches.js?v=lab-47');
-await import('./trojan-cat-patch.js?v=lab-47');
-await import('./tuxedo-cat-patch.js?v=lab-47');
-await import('./no-retaliation-patch.js?v=lab-47');
-await import('./wrestler-retaliate-patch.js?v=lab-47');
-await import('./florida-adrenaline-patch.js?v=lab-47');
-await import('./broken-lawnmower-patch.js?v=lab-47');
-await import('./gas-station-daredevil-patch.js?v=lab-47');
-await import('./hold-my-beer-patch.js?v=lab-47');
-await import('./caffeine-patch.js?v=lab-47');
-await import('./stray-cat-patch.js?v=lab-47');
-await import('./hairy-cat-patch.js?v=lab-47');
-await import('./three-legged-cat-patch.js?v=lab-47');
-await import('./shoebox-patch.js?v=lab-47');
-await import('./mittens-three-patch.js?v=lab-47');
+await import('./cat-lady-passive-patch.js?v=stank-industries-47');
+await import('./snowball-patch.js?v=stank-industries-47');
+await import('./lab-patches.js?v=stank-industries-47');
+await import('./trojan-cat-patch.js?v=stank-industries-47');
+await import('./tuxedo-cat-patch.js?v=stank-industries-47');
+await import('./no-retaliation-patch.js?v=stank-industries-47');
+await import('./wrestler-retaliate-patch.js?v=stank-industries-47');
+await import('./florida-adrenaline-patch.js?v=stank-industries-47');
+await import('./broken-lawnmower-patch.js?v=stank-industries-47');
+await import('./gas-station-daredevil-patch.js?v=stank-industries-47');
+await import('./hold-my-beer-patch.js?v=stank-industries-47');
+await import('./caffeine-patch.js?v=stank-industries-47');
+await import('./stray-cat-patch.js?v=stank-industries-47');
+await import('./hairy-cat-patch.js?v=stank-industries-47');
+await import('./three-legged-cat-patch.js?v=stank-industries-47');
+await import('./shoebox-patch.js?v=stank-industries-47');
+await import('./mittens-three-patch.js?v=stank-industries-47');
 
 const root=document.getElementById('app');
 root.innerHTML=`<div class="setup deck-setup">
-  <div class="small">Unhinged · LAB Playtest</div>
+  <div class="small">STANK INDUSTRIES-47</div>
   <h1>How do you want to play?</h1>
   <p>Choose a bot match or local two-player on the same device. Both modes use the same LAB rules and experimental cards.</p>
   <div class="deck-picker">
@@ -37,8 +37,8 @@ async function launch(mode){
   if(chosen)return;
   chosen=true;
   root.innerHTML='<div id="boot-status">Loading match…</div>';
-  if(mode==='bot') await import('./app.js?v=lab-47');
-  else await import('./app-two-player.js?v=lab-47');
+  if(mode==='bot') await import('./app.js?v=stank-industries-47');
+  else await import('./app-two-player.js?v=stank-industries-47');
 }
 
 document.getElementById('play-bot').onclick=()=>launch('bot');
