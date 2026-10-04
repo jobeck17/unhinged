@@ -1,17 +1,17 @@
 {
-  "version": "lab-cat-lady-0.9",
+  "version": "lab-cat-lady-1.0",
   "status": "lab-prototype",
   "canonical": false,
-  "name": "Cat Distribution System",
+  "name": "Strength in Numbers............ Mostly Numbers........ Probably.",
   "leader": {
     "id": "LAB-L001",
     "name": "Crazy Cat Lady",
     "health": 25,
     "style": null,
     "construction_rule": "Your deck may contain Cat Characters from any Style and up to 10 copies of Stray Cat.",
-    "passive_name": "Cat Distribution System",
-    "passive": "At the start of your Turn, before Ready, if you control 3 or more Cats, put the top card of your deck face down and Ready into your Stash.",
-    "note": "Lab prototype. Shoebox of Dead Cats is being tested at three copies; Shovel at four copies; Nine Lives, Zero Survivors at two copies; Trojan Cat removed; Cat Under the Bed at one copy."
+    "passive_name": "Strength in Numbers............ Mostly Numbers........ Probably.",
+    "passive": "At the start of your Turn, if you control fewer than 3 Cats, you may Stash one additional card this Turn. If you control 3 or more Cats, Draw an additional card.",
+    "note": "Lab prototype. The old Cat Distribution System auto-Stash is replaced in the personal LAB by a split passive: below 3 Cats, Crazy Cat Lady may Stash twice that Turn; at 3 or more Cats, she draws one additional card at the start of her Turn. Shoebox of Dead Cats is being tested at three copies; Shovel at four copies; Nine Lives, Zero Survivors at two copies; Trojan Cat removed; Cat Under the Bed at one copy."
   },
   "cards": {
     "LAB-CAT-001": 6,
@@ -46,16 +46,17 @@
     "Avoid keeping House Panther unless the rest of the hand already establishes the colony"
   ],
   "test_watchpoints": [
-    "Round when Cat Distribution System first triggers",
-    "Total bonus Stash created",
-    "How often the opponent can knock the Cat player below 3 Cats",
+    "How often the below-3-Cats mode allows a second Stash",
+    "Whether spending two cards on Stash helps rebuild or leaves the Cat player too low on hand size",
+    "How often the 3-or-more-Cats mode draws the additional card",
+    "Whether the extra Draw actually lets the Cat player sustain a second wave after trading Characters",
+    "Whether switching between the two passive modes feels like Momentum rather than a punishment for losing Cats",
     "How often Shoebox reaches three buried Cats",
     "Whether the +1 Power threshold makes Shoebox worthwhile even without drawing Shovel",
     "Whether four Shovels make random resurrection too consistent",
     "How often Shovel hits a cheap Cat versus a high-cost Cat",
     "Whether Nine Lives, Zero Survivors is a meaningful comeback instead of an automatic reset button",
     "Whether refilling both players to seven over-rewards the player who casts the wipe",
-    "Whether face-down Cats create meaningful tension about future recovery",
     "Whether Snowball creates meaningful protect-or-risk decisions",
     "Whether Hairy Cat creates interesting attack sequencing or simply discourages combat"
   ]
