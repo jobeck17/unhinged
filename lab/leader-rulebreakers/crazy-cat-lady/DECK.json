@@ -1,5 +1,5 @@
 {
-  "version": "lab-cat-lady-1.0",
+  "version": "lab-cat-lady-1.1",
   "status": "lab-prototype",
   "canonical": false,
   "name": "Strength in Numbers............ Mostly Numbers........ Probably.",
@@ -11,7 +11,7 @@
     "construction_rule": "Your deck may contain Cat Characters from any Style and up to 10 copies of Stray Cat.",
     "passive_name": "Strength in Numbers............ Mostly Numbers........ Probably.",
     "passive": "At the start of your Turn, if you control fewer than 3 Cats, you may Stash one additional card this Turn. If you control 3 or more Cats, Draw an additional card.",
-    "note": "Lab prototype. The old Cat Distribution System auto-Stash is replaced in the personal LAB by a split passive: below 3 Cats, Crazy Cat Lady may Stash twice that Turn; at 3 or more Cats, she draws one additional card at the start of her Turn. Shoebox of Dead Cats is being tested at three copies; Shovel at four copies; Nine Lives, Zero Survivors at two copies; Trojan Cat removed; Cat Under the Bed at one copy."
+    "note": "Lab prototype. The old Cat Distribution System auto-Stash is replaced in the personal LAB by a split passive: below 3 Cats, Crazy Cat Lady may Stash twice that Turn; at 3 or more Cats, she draws one additional card at the start of her Turn. Shoebox of Dead Cats is at three copies; Shovel at four copies; Nine Lives, Zero Survivors at two copies; Mittens III at two copies; Trojan Cat and House Panther removed from the deck."
   },
   "cards": {
     "LAB-CAT-001": 6,
@@ -21,13 +21,13 @@
     "LAB-CAT-005": 2,
     "LAB-CAT-006": 2,
     "LAB-CAT-007": 2,
-    "LAB-CAT-008": 2,
-    "LAB-CAT-009": 1,
+    "LAB-CAT-008": 1,
     "LAB-CAT-013": 4,
     "LAB-CAT-016": 3,
     "LAB-CAT-017": 3,
     "LAB-CAT-018": 4,
-    "LAB-CAT-019": 2
+    "LAB-CAT-019": 2,
+    "LAB-CAT-020": 2
   },
   "total_cards": 40,
   "composition": {
@@ -43,7 +43,7 @@
     "Snowball when protection is available",
     "Hairy Cat when the opposing deck relies on multiple small attackers",
     "Avoid keeping Nine Lives, Zero Survivors in an otherwise slow opening hand",
-    "Avoid keeping House Panther unless the rest of the hand already establishes the colony"
+    "Avoid keeping Mittens III unless the rest of the hand can establish the colony or Shoebox plan"
   ],
   "test_watchpoints": [
     "How often the below-3-Cats mode allows a second Stash",
@@ -58,6 +58,8 @@
     "Whether Nine Lives, Zero Survivors is a meaningful comeback instead of an automatic reset button",
     "Whether refilling both players to seven over-rewards the player who casts the wipe",
     "Whether Snowball creates meaningful protect-or-risk decisions",
-    "Whether Hairy Cat creates interesting attack sequencing or simply discourages combat"
+    "Whether Hairy Cat creates interesting attack sequencing or simply discourages combat",
+    "Whether Mittens III creates a real attack-versus-feed decision instead of always eating Stash",
+    "How often Mittens III cashes in Shoebox Cats, and whether that payoff is exciting without making Shoebox automatic fuel"
   ]
 }
