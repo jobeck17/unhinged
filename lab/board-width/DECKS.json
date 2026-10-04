@@ -1,0 +1,52 @@
+{
+  "leaders": [
+    {
+      "name": "Porch Committee",
+      "style": "Unassigned",
+      "passive": "No Leader passive in this control deck. Preserve Ready auras or commit them to attacks."
+    },
+    {
+      "name": "Trench Coat Convention",
+      "style": "Unassigned",
+      "passive": "No Leader passive in this control deck. Stack bodies to reopen slots and build a tall threat."
+    }
+  ],
+  "decks": [
+    {
+      "leader": "Porch Committee",
+      "cards": {
+        "LAB-BW-1": 4,
+        "LAB-BW-2": 4,
+        "LAB-BW-3": 4,
+        "LAB-BW-4": 4,
+        "LAB-BW-5": 4,
+        "LAB-BW-6": 4,
+        "LAB-BW-7": 4,
+        "LAB-BW-8": 2,
+        "LAB-BW-9": 2,
+        "LAB-BW-11": 2,
+        "LAB-BW-12": 2,
+        "LAB-BW-13": 2,
+        "LAB-BW-14": 2
+      }
+    },
+    {
+      "leader": "Trench Coat Convention",
+      "cards": {
+        "LAB-BW-1": 4,
+        "LAB-BW-2": 4,
+        "LAB-BW-3": 4,
+        "LAB-BW-4": 2,
+        "LAB-BW-5": 2,
+        "LAB-BW-6": 4,
+        "LAB-BW-7": 4,
+        "LAB-BW-8": 2,
+        "LAB-BW-9": 4,
+        "LAB-BW-10": 4,
+        "LAB-BW-11": 2,
+        "LAB-BW-12": 2,
+        "LAB-BW-13": 2
+      }
+    }
+  ]
+}

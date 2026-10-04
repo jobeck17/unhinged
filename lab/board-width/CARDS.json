@@ -1,0 +1,185 @@
+{
+  "status": "TESTING",
+  "cards": [
+    {
+      "id": "LAB-BW-1",
+      "name": "Gas Station Regular",
+      "cost": 1,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "No special ability.",
+      "power": 1,
+      "guard": 2
+    },
+    {
+      "id": "LAB-BW-2",
+      "name": "Shopping Cart Knight",
+      "cost": 2,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "No special ability.",
+      "power": 2,
+      "guard": 3
+    },
+    {
+      "id": "LAB-BW-3",
+      "name": "Caffeine Gremlin",
+      "cost": 2,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [
+        "Hothead"
+      ],
+      "text": "Hothead. May Attack on entry.",
+      "power": 2,
+      "guard": 1
+    },
+    {
+      "id": "LAB-BW-4",
+      "name": "Porch Philosopher",
+      "cost": 3,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "While Ready, your other Characters get +1 Power.",
+      "readyAura": true,
+      "power": 1,
+      "guard": 4
+    },
+    {
+      "id": "LAB-BW-5",
+      "name": "Crowded House Host",
+      "cost": 3,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "On Play: if your Character board is full, Draw 2.",
+      "fullDraw": 2,
+      "power": 2,
+      "guard": 3
+    },
+    {
+      "id": "LAB-BW-6",
+      "name": "Third Wheel",
+      "cost": 2,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "On Play: if you control exactly 3 Characters, Ready 1 Stash.",
+      "exactRecharge": 3,
+      "power": 2,
+      "guard": 2
+    },
+    {
+      "id": "LAB-BW-7",
+      "name": "Rube Goldberg Enthusiast",
+      "cost": 3,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "Whenever another Character enters your play area, Draw 1. Free automatic trigger; no once-per-Turn cap.",
+      "entryDraw": true,
+      "power": 1,
+      "guard": 3
+    },
+    {
+      "id": "LAB-BW-8",
+      "name": "Party Crasher",
+      "cost": 4,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "No special ability.",
+      "power": 4,
+      "guard": 3
+    },
+    {
+      "id": "LAB-BW-9",
+      "name": "Pocket Fireworks",
+      "cost": 2,
+      "type": "Character",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [
+        "Explosive"
+      ],
+      "text": "Explosive. When Defeated, deal 1 to each opposing Character.",
+      "power": 2,
+      "guard": 2
+    },
+    {
+      "id": "LAB-BW-10",
+      "name": "Trench Coat",
+      "cost": 1,
+      "type": "Action",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "Stack one friendly unstacked Character under a different friendly Character. Host gets +1 Power and +1 Guard per stored card. Stored cards have no abilities and take no slot; discard them whenever host leaves play. Not a Defeat.",
+      "effect": "stack",
+      "target": "friendly"
+    },
+    {
+      "id": "LAB-BW-11",
+      "name": "Take a Breather",
+      "cost": 2,
+      "type": "Action",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "Return an opposing Character to its owner\u2019s hand.",
+      "effect": "bounce",
+      "target": "enemy"
+    },
+    {
+      "id": "LAB-BW-12",
+      "name": "Cheap Shot",
+      "cost": 1,
+      "type": "Action",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "Deal 2 to any Character. Response: after an Attack is declared, target a combatant.",
+      "effect": "damage",
+      "target": "any",
+      "amount": 2,
+      "response": true
+    },
+    {
+      "id": "LAB-BW-13",
+      "name": "Hold Together",
+      "cost": 1,
+      "type": "Action",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "Prevent the next 2 damage to a friendly Character this Turn. Response: after an Attack is declared, target a combatant.",
+      "effect": "shield",
+      "target": "friendly",
+      "amount": 2,
+      "response": true
+    },
+    {
+      "id": "LAB-BW-14",
+      "name": "Clear the Room",
+      "cost": 5,
+      "type": "Action",
+      "style": "Universal",
+      "traits": [],
+      "keywords": [],
+      "text": "Deal 3 to every Character simultaneously.",
+      "effect": "sweep",
+      "amount": 3
+    }
+  ]
+}

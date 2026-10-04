@@ -1,7 +1,7 @@
 # Unhinged — Living Design Notes
 
 **Build:** Carl 0.3  
-**Date:** October 3, 2026
+**Date:** October 4, 2026
 This replaces scattered checkpoints, brainstorm files, open-decision files, and idea banks.
 
 ## Legend
@@ -9,6 +9,15 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 ## Development milestone
 ✅ **0.3 Carl** is the current core-stabilization milestone. Meaningful compatible checkpoints within Carl use 0.3.x build numbers; ordinary commits do not require a version bump. Major pre-1.0 generations advance to the next 0.X number and receive a new Dungeon Crawler Carl character codename. The full versioning policy and road to 1.0 live in README.md.
+
+## New parallel testing direction — Board Width Lab, October 4, 2026
+🧪 **Implemented independently:** `lab/board-width/` tests five Character slots, no universal blocking, attacks against opposing Leader or opposing **Rotated Characters only**, simultaneous Character combat, and free automatic trigger cascades. Ready Characters remain protected from normal attacks; removal Actions can target them. This corrects the earlier conversation suggestion to attack any Character. Carl 0.3 and Scheme Lab are unchanged.
+
+🧪 **Third option hypothesis:** preserve a Ready aura or automatic engine instead of attacking. Fourteen compact LAB cards and two 40-card control decks include full-board/exact-count On Play effects plus one Trench Coat stacking/storage example that reopens a slot; no broad expansion or fusion package. Browser has adjacent opposing/player battlefield rows, on-card Health/state, and direct board clicks for attacks, Actions, Responses, and stacking targets.
+
+🧪 **Cadence remains open:** full Turns are a provisional control baseline, not a decision against alternating actions. Define that cadence separately before implementing it; do not meter automatic combo triggers as actions. Width is configurable in engine tests, with five as browser default. The earlier hold on board caps is explicitly reopened for this isolated experiment only.
+
+🧪 **Status:** regression/simulation/browser verification, not balance certification or proof of fun. Human questions: protected-engine counterplay, race pressure without blocking, width frustration, meaningful preservation, and whether stacking supports memorable combos. Exact experimental rules, tests, and failure conditions live in the lab README. Neither experiment is promoted; Scheme Lab remains available for separate comparison.
 
 ## Proposed next direction — Scheme Lab, October 3, 2026
 🧪 **Decision for the next prototype:** Character-first combat plus one exposed worker advancing a visible Leader Scheme. Simultaneous combat damage makes trading a credible answer to a superior board. One work opportunity per Turn prevents a wider board from multiplying Scheme progress. Earned progress survives a lost board; the current job does not survive removal of its worker.

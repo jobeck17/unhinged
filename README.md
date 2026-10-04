@@ -2,9 +2,11 @@
 
 Carl is the current working build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl**. Donut is complete and remains in Git history instead of the live tree.
 
-## Active next-core prototype
+## Parallel core experiments
 
 **[Play the Scheme Lab](https://jobeck17.github.io/unhinged/lab/schemes/)** — eight decks testing simultaneous combat and a third Character job: work toward an interruptible Leader Scheme. Includes bot and local two-player modes, exact supported card text, and reproducible comparisons. [Rules and evidence](lab/schemes/README.md). **TESTING; Carl 0.3 remains canonical.**
+
+**[Play the Board Width Lab](https://jobeck17.github.io/unhinged/lab/board-width/)** — new isolated five-Character board, no blocking, Rotated-only Character attack targets, simultaneous trades, free triggers, Ready engines, and minimal stacking/storage. Adjacent battlefield rows with on-card state and direct board target selection. [Experimental rules](lab/board-width/README.md). **TESTING; full Turns are provisional, and neither lab changes Carl.**
 
 ## Current creative direction
 

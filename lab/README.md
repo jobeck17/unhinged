@@ -20,6 +20,8 @@ Lab experiments may read or test against the canonical game, but they must not s
 
 ## Lab index
 
+- `board-width/` — parallel isolated five-Character/no-blocking experiment with Rotated-only targets, Ready engines, free triggers, minimal stacking, and direct board targeting UI.
+
 - `schemes/` — active next-core prototype: simultaneous damage, exposed workers, eight Leader Schemes, 71 supported cards, shared browser/simulation engine, and paired comparison results.
 
 - `LEADER_PASSIVES.md` — alternate Leader passives organized by Leader for isolated testing.
