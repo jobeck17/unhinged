@@ -1,4 +1,4 @@
-# Crazy Cat Lady Prototype — Lab 1.2
+# Crazy Cat Lady Prototype — Lab 1.3
 
 **State:** PROTOTYPE  
 **Style:** Unassigned  
@@ -36,11 +36,11 @@ The current 40-card list is defined in `DECK.json`. Notable experimental package
 - 3× Shoebox of Dead Cats
 - 4× Shovel
 - 2× Nine Lives, Zero Survivors
-- 3× Mittens III
-- 1× Maine Coon
+- 4× Mittens III
 - Trojan Cat removed from the deck
 - House Panther removed from the deck
 - Cat Under the Bed removed from the deck
+- Maine Coon removed from the deck
 
 **Shoebox of Dead Cats** may bury Cats that are Dismissed or Defeated, including combat Defeats. **Shovel** randomly returns one buried Cat to play.
 
@@ -51,7 +51,7 @@ The current 40-card list is defined in `DECK.json`. Notable experimental package
 - **YUMMY!** — Activate: Put 1 Stash into your discard. Mittens III gets +1 Power permanently.
 - **WHERE DID YOU GET THAT?!** — Activate: Discard all Cats under your Shoeboxes. Mittens III gets +1 Power permanently for each.
 
-Both abilities Rotate Mittens III, so feeding it competes directly with attacking. The gained Power lasts while that copy of Mittens III remains in play and resets if it leaves play. Three copies are now being tested; the third replaces the final Cat Under the Bed.
+Both abilities Rotate Mittens III, so feeding it competes directly with attacking. The gained Power lasts while that copy of Mittens III remains in play and resets if it leaves play. Four copies are now being tested; the fourth replaces the final Maine Coon.
 
 ## Desired game arc
 
@@ -82,8 +82,8 @@ The opponent can still reduce the Cat count, attack the Shoebox plan, force inef
 - Does Mittens III create a real choice between attacking and feeding?
 - Is sacrificing permanent Stash for +1 Power attractive without becoming the default play every Turn?
 - Is cashing in an entire Shoebox stockpile exciting without making Shovel irrelevant?
-- Do three Mittens III copies make the engine show up often enough without making every game about it?
+- Do four Mittens III copies make the engine too central to the deck?
 
 ## Historical note
 
-Earlier lab versions used **Cat Distribution System**, which automatically put the top card of the deck into Ready Stash when the player began a Turn with three or more Cats. Historical simulation results for that retired passive remain available in Git history, but they do **not** describe the current Lab 1.2 passive and should not be used as current balance evidence.
+Earlier lab versions used **Cat Distribution System**, which automatically put the top card of the deck into Ready Stash when the player began a Turn with three or more Cats. Historical simulation results for that retired passive remain available in Git history, but they do **not** describe the current Lab 1.3 passive and should not be used as current balance evidence.
