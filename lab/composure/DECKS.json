@@ -1,5 +1,5 @@
 {
-  "version": "composure-stank60-0.1-eight",
+  "version": "composure-stank60-0.2-eight",
   "card_pool": "0.3-composure-stank60-0.1",
   "date": "2026-10-01",
   "status": "TESTING · Composure + STANK INDUSTRIES-60 · eight decks",
@@ -8,7 +8,7 @@
     {
       "name": "Bad Decisions",
       "leader": "Florida Man",
-      "health": 15,
+      "health": 25,
       "styles": [
         "Reckless"
       ],
@@ -44,12 +44,12 @@
         "Does Damage Everywhere matter without simply becoming burn?"
       ],
       "status_note": "STANK INDUSTRIES-60 Florida package merged into Composure: Adrenaline passive, Broken Lawnmower, revised Daredevil/Hold My Beer, Caffeine, and Rusty Needle.",
-      "composure": 15
+      "composure": 25
     },
     {
       "name": "Comeback Tour",
       "leader": "Washed-Up Rock Star",
-      "health": 15,
+      "health": 25,
       "styles": [
         "Momentum"
       ],
@@ -86,12 +86,12 @@
         "Do acceleration cards help create explosive turns rather than simply emptying the hand?"
       ],
       "status_note": "Revision 12 baseline; Comeback Tour uses the start-of-Turn hand gate and low-hand tiered bodies.",
-      "composure": 15
+      "composure": 25
     },
     {
       "name": "Now You See Me",
       "leader": "Birthday Party Magician",
-      "health": 15,
+      "health": 25,
       "styles": [
         "Misdirection"
       ],
@@ -128,12 +128,12 @@
         "Does Bounce remain a tempo engine rather than functioning as hard removal?"
       ],
       "status_note": "STANK INDUSTRIES-60 Magician package merged into Composure: Volunteer, fixed Rabbit, Ethan, Birthday Boy, reworked Moving Out, School Bully cleanup, and Magician's Hat.",
-      "composure": 15
+      "composure": 25
     },
     {
       "name": "Curbside Empire",
       "leader": "Trash Baron",
-      "health": 15,
+      "health": 25,
       "styles": [
         "Salvage"
       ],
@@ -172,12 +172,12 @@
         "Can Salvage reach Big Hand through scavenging rather than generic Draw?"
       ],
       "status_note": "Revision 12 baseline; one Good as New added as Salvage Return counterplay.",
-      "composure": 15
+      "composure": 25
     },
     {
       "name": "Violation Notice",
       "leader": "HOA President",
-      "health": 15,
+      "health": 25,
       "styles": [
         "Stonewall"
       ],
@@ -215,12 +215,12 @@
         "Is Absolutely Not worth holding 3 Stash open?"
       ],
       "status_note": "Revision 12 baseline; Absolutely Not is now a symmetric Rotated-board Return Action rather than a Response.",
-      "composure": 15
+      "composure": 25
     },
     {
       "name": "Tag Team Trashfire",
       "leader": "Backyard Wrestler",
-      "health": 15,
+      "health": 25,
       "styles": [
         "Expendable"
       ],
@@ -257,13 +257,13 @@
         "Does recursion feel distinct from Salvage and self-damage distinct from Reckless?"
       ],
       "status_note": "Revision 12 baseline; Stash-scaled Tag Out is the active Leader passive.",
-      "composure": 15
+      "composure": 25
     },
     {
       "name": "Strength in Numbers............ Mostly Numbers........ Probably.",
       "leader": "Crazy Cat Lady",
-      "health": 15,
-      "composure": 15,
+      "health": 25,
+      "composure": 25,
       "styles": [
         "Lab"
       ],
@@ -315,8 +315,8 @@
     {
       "name": "Fully Charged, No Charger",
       "leader": "Mad Scientist",
-      "health": 15,
-      "composure": 15,
+      "health": 25,
+      "composure": 25,
       "styles": [
         "Lab"
       ],
