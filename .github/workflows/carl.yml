@@ -32,6 +32,10 @@ jobs:
       - run: node --check lab/board-width/app.mjs
       - run: node lab/board-width/test.mjs
       - run: GAMES=40 node lab/board-width/simulate.mjs
+      - run: node --check lab/composure/engine.js
+      - run: node --check lab/composure/ai.js
+      - run: node --check lab/composure/app.js
+      - run: node lab/composure/smoke.mjs
       - run: node --check lab/schemes/app.mjs
       - run: node lab/schemes/test.mjs
       - run: GAMES_PER_MATCHUP=2 OUTPUT=ci-results.json node lab/schemes/simulate.mjs
@@ -56,6 +60,7 @@ jobs:
           cp lab/leader-rulebreakers/crazy-cat-lady/CARDS.json lab/leader-rulebreakers/crazy-cat-lady/DECK.json _site/lab/leader-rulebreakers/crazy-cat-lady/
           cp lab/leader-rulebreakers/mad-scientist/CARDS.json lab/leader-rulebreakers/mad-scientist/DECK.json lab/leader-rulebreakers/mad-scientist/TOKENS.json _site/lab/leader-rulebreakers/mad-scientist/
           cp -R lab/playtest _site/lab/
+          cp -R lab/composure _site/lab/
           mkdir -p _site/lab/board-width
           cp lab/board-width/index.html lab/board-width/style.css lab/board-width/app.mjs lab/board-width/engine.mjs lab/board-width/ai.mjs lab/board-width/selection.mjs lab/board-width/CARDS.json lab/board-width/DECKS.json _site/lab/board-width/
           mkdir -p _site/lab/schemes
