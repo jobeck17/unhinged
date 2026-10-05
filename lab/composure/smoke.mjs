@@ -2,9 +2,11 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {Game} from './engine.js';
 import {aiAction,aiChoice} from './ai.js';
+import './stank-merge.js';
 const pool=JSON.parse(fs.readFileSync(new URL('./CARDS.json',import.meta.url)));
 const doc=JSON.parse(fs.readFileSync(new URL('./DECKS.json',import.meta.url)));
 assert.equal(pool.version,doc.card_pool);
+assert.equal(doc.decks.length,8,'combined lab should expose eight decks');
 for(const d of doc.decks)assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40);
 for(const d of doc.decks)for(const id of Object.keys(d.cards)){const c=pool.cards.find(x=>x.id===id);if(c.type==='Character')assert(c.antics>=1&&c.antics<=3,id+' needs Antics')}
 let seed=20261004,old=Math.random;Math.random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
@@ -32,4 +34,4 @@ try{
   assert(limit>0,'AI loop');
  }
 }finally{Math.random=old}
-console.log('Composure Lab smoke passed');
+console.log('Composure + STANK 60 smoke passed');
