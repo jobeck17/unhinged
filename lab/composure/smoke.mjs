@@ -18,6 +18,7 @@ try{
  assert.equal(blockPrompted,false,'Cause Trouble must not open a Block choice');
  assert.equal(test.players[1].hp,before-test.antics(toddler),'Cause Trouble should immediately reduce Composure by Antics');
  assert.equal(toddler.ready,false,'Cause Trouble must Rotate and expose the Character');
+ const hot=test.enter(0,'P152');hot.born=test.round;assert.equal(test.canAttack(hot),true,'Hothead should still Attack on entry');assert.equal(test.canCauseTrouble(hot),false,'Hothead must not allow Trouble on entry');
 
  for(let a=0;a<doc.decks.length;a++)for(let b=0;b<doc.decks.length;b++)if(a!==b){
   const g=new Game(pool,{decks:[doc.decks[a],doc.decks[b]]},r=>aiChoice(g,r),()=>{},{firstPlayer:(a+b)%2});
