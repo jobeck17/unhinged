@@ -10,6 +10,15 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 ## Development milestone
 ✅ **0.3 Carl** is the current core-stabilization milestone. Meaningful compatible checkpoints within Carl use 0.3.x build numbers; ordinary commits do not require a version bump. Major pre-1.0 generations advance to the next 0.X number and receive a new Dungeon Crawler Carl character codename. The full versioning policy and road to 1.0 live in README.md.
 
+## New parallel testing direction — Composure Lab, October 4, 2026
+🧪 **Implemented independently:** `lab/composure/` tests a five-Character board and a replacement Leader win condition. Leaders begin at 15 **Composure**; Characters have a third stat, **Antics**. A Character may Attack an opposing Character using Power, **Cause Trouble** to reduce opposing Composure by its Antics, or remain Ready to Block Trouble.
+
+🧪 **Critical separation:** a Block completely prevents the Antics/Composure loss and starts normal Power/Guard combat. Power never overflows into Composure. This is intentional so fighting ability and win-condition pressure remain different jobs.
+
+🧪 **Controlled baseline:** Carl 0.3 remains canonical. The lab keeps Carl Stash, Costs, full Turns, readiness, damage, retaliation, Items, Actions, and the six mono-Style deck identities. Current Antics values are first-pass 1–3 thematic assignments and are not balance claims. Several Leader-facing effects are translated only enough to function in the lab.
+
+🧪 **Human gate:** determine whether **Fight / Cause Trouble / Hold Ready** creates a natural three-way Character decision, whether Composure feels native to the Unhinged fiction rather than renamed Lore, whether 15 is the right target, and whether high-Antics/low-Power Characters feel strategically distinct. Do not promote to Carl until human play says the win condition is substantially better.
+
 ## New parallel testing direction — Board Width Lab, October 4, 2026
 🧪 **Implemented independently:** `lab/board-width/` tests five Character slots, no universal blocking, attacks against opposing Leader or opposing **Rotated Characters only**, simultaneous Character combat, and free automatic trigger cascades. Ready Characters remain protected from normal attacks; removal Actions can target them. This corrects the earlier conversation suggestion to attack any Character. Carl 0.3 and Scheme Lab are unchanged.
 
