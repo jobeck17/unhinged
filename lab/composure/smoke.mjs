@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {Game} from './engine.js';
+import {aiAction,aiChoice} from './ai.js';
+const pool=JSON.parse(fs.readFileSync(new URL('./CARDS.json',import.meta.url)));
+const doc=JSON.parse(fs.readFileSync(new URL('./DECKS.json',import.meta.url)));
+assert.equal(pool.version,doc.card_pool);
+for(const d of doc.decks)assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40);
+for(const d of doc.decks)for(const id of Object.keys(d.cards)){const c=pool.cards.find(x=>x.id===id);if(c.type==='Character')assert(c.antics>=1&&c.antics<=3,id+' needs Antics')}
+let seed=20261004,old=Math.random;Math.random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
+try{
+ for(let a=0;a<doc.decks.length;a++)for(let b=0;b<doc.decks.length;b++)if(a!==b){
+  const g=new Game(pool,{decks:[doc.decks[a],doc.decks[b]]},r=>aiChoice(g,r),()=>{},{firstPlayer:(a+b)%2});
+  await g.mulligan(0,[]);await g.mulligan(1,[]);g.begin();
+  let limit=1600;
+  while(g.winner===null&&g.round<35&&limit--){
+   assert(g.chars(0).length<=5&&g.chars(1).length<=5,'five-wide cap broken');
+   const m=aiAction(g,g.turn);
+   if(m.type==='pass')await g.pass();else if(m.type==='stash')g.stash(m.index,g.turn);else if(m.type==='attack')await g.attack(m.uid);else if(m.type==='trouble')await g.causeTrouble(m.uid);else if(m.type==='play')await g.play(m.index);else if(m.type==='activate')await g.activate(m.uid);
+  }
+  assert(limit>0,'AI loop');
+ }
+}finally{Math.random=old}
+console.log('Composure Lab smoke passed');
