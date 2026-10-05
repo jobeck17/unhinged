@@ -4,7 +4,7 @@ export const LEADERS={
  'Washed-Up Rock Star':{style:'Momentum',passive:'Comeback Tour: Before Ready, refill to 2 cards at 1 or fewer; at 3 or more, skip the normal Draw.'},
  'Birthday Party Magician':{style:'Misdirection',passive:'Ace Up My Sleeve: Once during your Turn, when your Character is Returned to hand, Ready 1 Stash.'},
  'Trash Baron':{style:'Salvage',passive:'You may use opposing Ready Stash to pay your Costs as though it were your own.'},
- 'HOA President':{style:'Stonewall',passive:'Failure to Respond: Beginning in Round 8, opposing Characters cannot Block your Trouble.'},
+ 'HOA President':{style:'Stonewall',passive:'Failure to Respond: Beginning in Round 8, your Characters get +1 Antics.'},
  'Backyard Wrestler':{style:'Expendable',passive:'Tag Out: Once during your Turn after a friendly Defeat/Sacrifice, reveal the top card. A qualifying Expendable Character enters with Hothead; otherwise it goes to hand.'},
  'Crazy Cat Lady':{style:'Lab',passive:'Cat Distribution System: Before Ready, if you control 3+ Cats, put the top card of your deck face down and Ready into your Stash.'},
  'Mad Scientist':{style:'Lab',passive:'Fully Charged, No Charger: Start with a protected 5-card Ready battery. It never grows normally and only 1 spent Stash Readies each Turn.'}
@@ -47,7 +47,7 @@ export class Game{
   }
   if(this.has(x,'LAB-CAT-008')&&this.chars(p).filter(y=>this.trait(y,'Cat')).length>=5)v+=2;
   return Math.max(0,v)}
- guard(x){return (this.card(x).guard||0)+(x.rolledGuard||0)+x.guard+this.items(x).reduce((sum,i)=>sum+(['P117','P179'].includes(i.id)?1:i.id==='P149'?(this.trait(x,'Parent')||this.trait(x,'Kid')?3:2):0),0)} antics(x){return Math.max(0,this.card(x)?.antics||0)} layers(x){return x.lower?[x.lower,x.id]:[x.id]} has(x,id){return !!x&&this.layers(x).includes(id)} trait(x,t){return this.card(x).traits.includes(t)||x.extraTrait===t||(t==='Undead'&&this.items(x).some(i=>i.id==='P177'))}
+ guard(x){return (this.card(x).guard||0)+(x.rolledGuard||0)+x.guard+this.items(x).reduce((sum,i)=>sum+(['P117','P179'].includes(i.id)?1:i.id==='P149'?(this.trait(x,'Parent')||this.trait(x,'Kid')?3:2):0),0)} antics(x){let v=Math.max(0,this.card(x)?.antics||0);if(this.name(x.owner)==='HOA President'&&this.round>=8)v++;return v} layers(x){return x.lower?[x.lower,x.id]:[x.id]} has(x,id){return !!x&&this.layers(x).includes(id)} trait(x,t){return this.card(x).traits.includes(t)||x.extraTrait===t||(t==='Undead'&&this.items(x).some(i=>i.id==='P177'))}
  say(msg){this.eventCount=(this.eventCount||0)+1;this.log.unshift(`R${this.round} · ${this.name(this.turn)}: ${msg}`);this.log.length=Math.min(100,this.log.length);this.update?.()}
  war(){let a=shuffle([...this.players[0].deck,...this.players[0].discard]),b=shuffle([...this.players[1].deck,...this.players[1].discard]);for(let i=0;i<Math.min(a.length,b.length);i++){let d=this.card(a[i]).cost-this.card(b[i]).cost;if(d)return d>0?0:1}return Math.floor(Math.random()*2)}
  draw(p,n=1,announce=true){let s=this.players[p];for(let i=0;i<n;i++){if(!s.deck.length){s.empty=true;this.checkEnd();return}s.hand.push(s.deck.pop())}if(announce)this.say(`${this.name(p)} draws ${n}`)}
@@ -85,7 +85,7 @@ export class Game{
  async dismiss(x){if(!x||!this.obj(x.uid))return;let p=x.owner,isItem=this.card(x).type==='Item';await this.remove(x);if(isItem)await this.leaderPassive(p,'dismissedItem')}
  async search(p,n,condition,rest='bottom'){let s=this.players[p],top=[];for(let i=0;i<n&&s.deck.length;i++)top.push(s.deck.pop());let opts=top.map((id,i)=>({label:this.card(id).name,value:i})).filter(o=>condition(this.card(top[o.value])));let choice=await this.choose(p,`Look at top ${n}: take a card`,opts,true);if(choice!=null){s.hand.push(top.splice(choice,1)[0]);this.say(`${this.name(p)} finds a card`)}if(rest==='discard')s.discard.push(...top);else s.deck.unshift(...top.reverse());return choice!=null}
  canAttack(x){if(!x||x.cloaked||!x.ready||this.has(x,'P135'))return false;let florida=this.name(x.owner)==='Florida Man'&&x.damage>0;let wrestlerHot=this.chars(x.owner).some(y=>y.uid!==x.uid&&this.has(y,'P165')&&this.trait(x,'Wrestler'));let hot=this.layers(x).some(id=>this.card(id).keywords.includes('Hothead'))||x.hot||florida||wrestlerHot;let blocked=this.players.flatMap(s=>s.board).some(y=>y.uid!==x.uid&&y.ready&&!y.cloaked&&this.has(y,'P135'));return x.born<this.round||hot&&!blocked}
- canCauseTrouble(x){return this.canAttack(x)}
+ canCauseTrouble(x){return !!x&&!x.cloaked&&x.ready&&!this.has(x,'P135')&&x.born<this.round}
  canActivate(x){return !!x?.ready&&!x.cloaked&&(this.card(x).type==='Item'||x.born<this.round)}
  availableFuel(p=this.turn){let n=this.players[p].fuel;if(this.name(p)==='Trash Baron'&&!this.decks[1-p].protectedStash)n+=this.players[1-p].fuel;return n}
  spendOwnStash(p,n){let s=this.players[p],q=Math.min(n,s.fuel),normal=Math.max(0,s.fuel-(s.tempStashCard?1:0)),useNormal=Math.min(q,normal);s.fuel-=useNormal;q-=useNormal;if(q&&s.tempStashCard){s.fuel--;q--;let i=s.stash.lastIndexOf(s.tempStashCard);if(i>=0)s.stash.splice(i,1);s.discard.push(s.tempStashCard);s.tempStashCard=null}return n-q}
@@ -224,35 +224,17 @@ export class Game{
  this.advance()}
  async causeTrouble(uid){
   let p=this.turn,a=this.obj(uid),opp=1-p;if(!a||a.owner!==p||!this.canCauseTrouble(a))return;
-  a.ready=false;a.attacked=true;this.players[p].attacked=true;
-  this.pendingAttack={attacker:uid,target:-1,power:this.power(a),trouble:true};
+  a.ready=false;
   this.say(`${this.card(a).name} Causes Trouble · ${this.antics(a)} Antics`);
   if(this.has(a,'P009')){let roll=1+Math.floor(Math.random()*6);this.say(`Pet Alligator rolls ${roll}`);if(roll===1){let bite=this.power(a);this.hurtLeader(p,bite);this.say(`Pet Alligator ruins ${this.name(p)}'s day for ${bite} Composure`);return this.advance()}}
   for(let bell of this.players[opp].board.filter(x=>x.id==='P148')){if(this.obj(bell.uid))await this.rummage(opp)}
-  let blockers=[];
-  if(!(this.name(p)==='HOA President'&&this.round>=8)){
-   let ready=this.chars(opp).filter(x=>x.ready&&!x.cloaked&&!x.noBlock);
-   let bodyguards=ready.filter(x=>this.layers(x).some(id=>this.card(id).keywords.includes('Bodyguard')));if(bodyguards.length)ready=bodyguards;
-   if(ready.length){let chosen=await this.ask({title:`Block Trouble: ${this.card(a).name} · ${this.antics(a)} Antics (choose up to one)`,attackContext:{name:this.card(a).name,power:this.power(a),guard:this.guard(a),damage:a.damage,text:this.card(a).text},player:opp,multi:true,max:1,options:ready.map(x=>({label:`${this.card(x).name} · ${this.power(x)}/${this.guard(x)-x.damage}`,value:x.uid}))});blockers=(chosen||[]).slice(0,1).map(id=>this.obj(id)).filter(Boolean)}
-  }
-  let bonus=0;
-  for(let x of blockers){x.ready=false;if(this.has(x,'P121'))bonus--;for(let z of this.chars(opp))if(this.has(z,'P125')&&z.uid!==x.uid)z.power++}
   if(!this.obj(uid))return this.advance();
-  let blocker=blockers[0];
-  if(blocker&&this.obj(blocker.uid)){
-   let attack=Math.max(0,this.power(a)+bonus),retal=this.power(blocker),defiant=this.layers(blocker).some(id=>this.card(id).keywords.includes('Defiant')),slow=this.layers(blocker).some(id=>this.card(id).keywords.includes('Slowpoke'));
-   await this.combatDamage([[blocker,attack,'attack']]);
-   if(this.obj(a.uid)&&(this.obj(blocker.uid)||defiant)&&!slow)await this.combatDamage([[a,retal,'retaliation']]);
-   for(let z of [a,blocker])if(this.obj(z.uid)&&z.damage>0)await this.leaderPassive(z.owner,'survivedCombat',{character:z});
-   this.say('The Block stops the Trouble');
-  }else{
-   this.hurtLeader(opp,this.antics(a));
-  }
+  this.hurtLeader(opp,this.antics(a));
   this.advance()
  }
 
  async attack(uid){let p=this.turn,a=this.obj(uid),opp=1-p;if(!a||a.owner!==p||!this.canAttack(a))return;this.pendingAttackerPower=this.power(a);let sucker=this.layers(a).some(id=>this.card(id).keywords.includes('Sucker Punch'))||(this.name(p)==='Florida Man'&&a.damage>0);let possible=[...this.chars(opp).filter(x=>!x.ready||sucker||this.layers(x).some(id=>this.card(id).keywords.includes('Bodyguard')))],target=await this.pick('Attack which target?',p,possible);this.pendingAttackerPower=null;if(target==null)return;
- let askRisk=this.has(a,'P002')&&await this.choose(p,'Daredevil: take 1 damage for +2 Power?',[{label:'Yes',value:true},{label:'No',value:false}]);a.ready=false;a.attacked=true;this.players[p].attacked=true;this.pendingAttack={attacker:uid,target,power:this.power(a)};this.say(`${this.card(a).name} attacks ${target===-1?this.name(opp):this.card(this.obj(target)).name}`);if(target!==-1){let victim=this.obj(target);if(victim&&this.trait(victim,'Cat')){let box=this.players[opp].board.find(z=>z.id==='LAB-CAT-012');if(box){let use=await this.choose(opp,'Cardboard Box: Return the attacked Cat to hand?',[{label:'Use Cardboard Box',value:true},{label:'Keep it',value:false}]);if(use){await this.dismiss(box);await this.remove(victim,'hand');if(!this.obj(target))return this.advance()}}}victim=this.obj(target);if(victim&&this.layers(victim).some(id=>this.card(id).keywords.includes('Chicken'))){let run=await this.choose(opp,'Chicken: Return the attacked Character to hand?',[{label:'Run away',value:true},{label:'Stay',value:false}]);if(run){await this.remove(victim,'hand');if(!this.obj(target))return this.advance()}}}if(this.has(a,'P009')){let roll=1+Math.floor(Math.random()*6);this.say(`Pet Alligator rolls ${roll}`);if(roll===1){let bite=this.power(a);this.hurtLeader(p,bite);this.say(`Pet Alligator turns on ${this.name(p)} for ${bite} damage`);return this.advance()}}
+ let askRisk=this.has(a,'P002')&&await this.choose(p,'Daredevil: take 1 damage for +2 Power?',[{label:'Yes',value:true},{label:'No',value:false}]);a.ready=false;a.attacked=true;this.players[p].attacked=true;this.pendingAttack={attacker:uid,target,power:this.power(a)};this.say(`${this.card(a).name} attacks ${target===-1?this.name(opp):this.card(this.obj(target)).name}`);if(target!==-1){let victim=this.obj(target);if(victim&&this.trait(victim,'Cat')){let box=this.players[opp].board.find(z=>z.id==='LAB-CAT-012');if(box){let use=await this.choose(opp,'Cardboard Box: Return the attacked Cat to hand?',[{label:'Use Cardboard Box',value:true},{label:'Keep it',value:false}]);if(use){await this.dismiss(box);await this.remove(victim,'hand');if(!this.obj(target))return this.advance()}}}victim=this.obj(target);if(victim&&this.layers(victim).some(id=>this.card(id).keywords.includes('Chicken'))){let run=await this.choose(opp,'Chicken: Return the attacked Character to hand?',[{label:'Run away',value:true},{label:'Stay',value:false}]);if(run){await this.remove(victim,'hand');if(!this.obj(target))return this.advance()}}}if(this.has(a,'P009')){let roll=1+Math.floor(Math.random()*6);this.say(`Pet Alligator rolls ${roll}`);if(roll===1){let bite=this.power(a);this.hurtLeader(p,bite);this.say(`Pet Alligator wrecks ${this.name(p)} for ${bite} Composure`);return this.advance()}}
  let bonus=0;if(askRisk){await this.damage(a,1);bonus+=2}if(this.has(a,'P005')&&this.players[p].deck.length){let id=this.players[p].deck.pop();this.players[p].deck.unshift(id);if(this.card(id).cost>=3)bonus+=3}if(this.has(a,'P105')&&a.cargo.length){let n=a.cargo.length,v=await this.choose(p,`Vacuum: unload ${n} cargo for ${n} Leader damage?`,[{label:'Unload cargo',value:true},{label:'Keep the Power',value:false}]);if(v){this.players[p].discard.push(...a.cargo);a.cargo=[];this.hurtLeader(opp,n);this.say(`VACUUM UNLEASHED: ${n} direct damage`)}}if(this.has(a,'P011')){let n=this.chars(p).filter(x=>x.damage>0).length;this.hurtLeader(opp,n);this.say(`FIREWORKS FINALE: ${n} direct damage`)}if(a.lower&&this.has(a,'P037'))bonus+=2;if(this.has(a,'P100')&&target!==-1&&this.obj(target)?.ready)bonus++;if(this.has(a,'P001')&&target!==-1&&this.guard(this.obj(target))>=3)bonus+=2;
  if(this.has(a,'P075')){let r=await this.choose(opp,'Pirate Radio: choose one',[{label:'Pirate gets +2 Power',value:1},{label:'Attacker Draws and Discards',value:2}]);await this.opponentChoice(p);if(r===1)bonus+=2;else await this.rummage(p)}
  if(target===-1){for(let bush of this.players[opp].board.filter(x=>x.id==='P089'&&x.hidden)){let v=await this.choose(opp,'Reveal Character from Inconspicuous Bush?',[{label:'Reveal to defend',value:true},{label:'Leave hidden',value:false}]);if(v){let id=bush.hidden;bush.hidden=null;this.enter(opp,id)}}for(let x of this.chars(opp))if(this.has(x,'P122')&&!x.once){x.once=true;bonus--}}
@@ -271,9 +253,11 @@ export class Game{
    for(let z of [a,blocker])if(this.obj(z.uid)&&z.damage>0)await this.leaderPassive(z.owner,'survivedCombat',{character:z});
   }else this.hurtLeader(opp,incomingDamage);
  }else{
-  let x=this.obj(target),retal=this.power(x);
+  let x=this.obj(target),retal=this.power(x),defiant=this.layers(x).some(id=>this.card(id).keywords.includes('Defiant')),slow=this.layers(x).some(id=>this.card(id).keywords.includes('Slowpoke'));
+  if(this.has(x,'P121'))incomingDamage=Math.max(0,incomingDamage-1);
   await this.combatDamage([[x,incomingDamage,'attack']]);
-  if(this.obj(x.uid)&&this.obj(a.uid))await this.combatDamage([[a,retal,'retaliation']]);
+  if(this.obj(a.uid)&&(this.obj(x.uid)||defiant)&&!slow)await this.combatDamage([[a,retal,'retaliation']]);
+  if(this.obj(x.uid)&&this.has(x,'P131'))this.heal(x,1);
   for(let z of [a,x])if(this.obj(z.uid)&&z.damage>0)await this.leaderPassive(z.owner,'survivedCombat',{character:z});
  }
  this.advance()}
