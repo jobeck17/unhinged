@@ -14,6 +14,7 @@ Characters have **Power / Guard / Antics**.
 - After causing Trouble, that Character is Rotated and exposed to ordinary Attacks.
 - **Stay Ready:** score nothing now, but remain normally protected from Attack.
 - Maximum **five Characters** per player. Items do not count.
+- **Opening balance:** the first player skips their first Draw. The second player receives **no setup temporary Stash**.
 
 The core decision remains:
 
@@ -64,6 +65,6 @@ STANK's no-retaliation test is intentionally active here. That is a larger comba
 
 ### Current tuning note
 
-Simulation before the STANK merge strongly favored **25 Composure** over 15: it moved games toward the desired 8–10 round range and gave opponents more time to punish exposed scoring Characters. This lab now uses 25 as the human-play baseline.
+Simulation before the STANK merge strongly favored **25 Composure** over 15: it moved games toward the desired 8–10 round range and gave opponents more time to punish exposed scoring Characters. The same testing showed the old second-player temporary Stash overcompensated in this model, so the lab now keeps the first player's skipped opening Draw but gives the second player no free setup Stash.
 
 Do not promote any of this to Carl until human testing separates the successful pieces.
