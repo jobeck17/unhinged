@@ -1,78 +1,65 @@
-# Composure Lab 0.2
+# Composure × STANK INDUSTRIES-60 Lab 0.3
 
-**TESTING · October 5, 2026.** This is an isolated structural experiment. Carl 0.3 remains canonical.
+**TESTING · October 5, 2026.** Carl 0.3 remains canonical. This lab combines the Composure win-condition experiment with the last live **STANK INDUSTRIES-60** state from immediately before the Composure lab was created.
 
-## Question
+## Core win condition
 
-Can Unhinged replace Leader Health combat with a thematic, Character-first win condition that separates **fighting ability** from **winning pressure**?
+Each Leader begins with **15 Composure**. At 0 Composure that Leader becomes **Unhinged** and loses.
 
-Each Leader begins with **15 Composure**. Characters fight each other or cause enough chaos to push the opposing Leader over the edge. At 0 Composure, that Leader becomes **Unhinged** and loses.
+Characters have **Power / Guard / Antics**.
 
-## Core experimental rules
-
-- Use the six current Carl mono-Style decks and Carl card identities.
-- Each player has a maximum of **five Characters** in play. Items do not count.
-- Leaders begin at **15 Composure**. There is no separate Leader Health total.
-- Characters have **Power / Guard / Antics**.
-- **Attack Character:** Rotate the attacker and use Power against an opposing Character. Ordinary attacks may target opposing **Rotated Characters**. Sucker Punch and Bodyguard create explicit exceptions.
-- **Cause Trouble:** Rotate a Ready Character that began the Turn under your control. The opposing Leader immediately loses Composure equal to that Character's **Antics**.
+- **Attack Character:** Rotate the attacker and attack an opposing Rotated Character using Power. Sucker Punch and explicit card effects can reach Ready Characters.
+- **Cause Trouble:** Rotate a Ready Character that began the Turn under your control. The opposing Leader immediately loses Composure equal to that Character's Antics.
 - **Cause Trouble cannot be Blocked.** It is not an Attack and does not start combat.
-- After a Character Causes Trouble, it is Rotated and therefore exposed to ordinary Character Attacks on the opponent's Turn.
-- **Stay Ready:** A Ready Character is normally protected from ordinary Character Attacks. Keeping a Character Ready sacrifices its immediate progress but preserves it from normal attacks.
-- At 0 Composure, a Leader loses. Empty-deck loss and War fallback remain from Carl for this prototype.
+- After causing Trouble, that Character is Rotated and exposed to ordinary Attacks.
+- **Stay Ready:** score nothing now, but remain normally protected from Attack.
+- Maximum **five Characters** per player. Items do not count.
 
-The core Character decision is therefore:
+The core decision remains:
 
-**Fight a Rotated Character / Cause Trouble and expose yourself / Stay Ready and protected.**
+**Fight / Cause Trouble and expose yourself / Stay Ready and protected.**
 
-Power never determines Composure loss. Antics never determines Character combat damage.
+Power handles fighting. Antics handles the win condition.
 
-## Timing
+## STANK INDUSTRIES-60 merge
 
-A Character that enters play cannot Cause Trouble until its controller's next Turn. **Hothead only accelerates Attacking; it does not accelerate Cause Trouble.**
+The combined browser now contains **eight 40-card decks**: the six Carl mono-Style decks plus Landon's active **Crazy Cat Lady** and **Mad Scientist** rulebreaker decks.
 
-Cause Trouble is a win-condition action, not combat. Generic blocking does not exist in this lab.
+STANK 60 changes imported into this lab include:
 
-## Combat-keyword translations
+- **Florida Man:** Ooh, That's Gonna Leave a Mark! Adrenaline passive; Broken Lawnmower; revised Gas Station Daredevil; revised Hold My Beer; A MILLION KILOGRAMS OF CAFFEINE!!!!; Rusty Needle.
+- **Birthday Party Magician:** Very Enthusiastic Volunteer; corrected Rabbit enter/leave Draw behavior; Ethan’s JUST Being Dramatic; Birthday Boy Stash/hand swap; reworked Lady Who's Moving Out Again; School Bully legacy cleanup; Magician's Hat.
+- **Crazy Cat Lady:** Landon's 40-card STANK colony list with split low-Cat/high-Cat Leader passive, Stray Cat 1/2, Orange Menace at Cost 1, Tuxedo Cat 1/4, Three-Legged Cat's first-two-Attacks survival, Hairy Cat/Hairballs, Shoebox of Dead Cats, Shovel, Nine Lives Zero Survivors, four Mittens III, and the latest deck counts.
+- **Mad Scientist:** five-charge protected battery, Parts/Experiments, Abominations and Specimens.
+- **Combat experiment:** no universal retaliation. Backyard Wrestler's Wrestlers retain **Retaliate** when they survive an Attack.
+- **Playtest UX:** Attack target selection can be backed out of before the Attack commits.
 
-Because the Composure Lab has no universal Block step, Carl's Block-specific keywords are translated only for this experiment:
+## Composure translations
 
-- **Defiant:** This Character retaliates when attacked even if that Attack Defeats it.
-- **Slowpoke:** This Character does not retaliate when attacked.
-- **Bodyguard:** This Character may be attacked while Ready.
+STANK 60 was built around Carl's old Leader-attacking/blocking combat. Where that concept no longer exists, this lab translates the job instead of restoring the old rule.
 
-Block-trigger card text receives the same compatibility treatment. These are lab translations, not changes to canonical Carl.
+- **Tuxedo Cat:** remains the colony protector. It is attackable while Ready and opposing Characters cannot Attack your other Cats while a Tuxedo Cat remains in play.
+- **Bodyguard:** makes that Character attackable while Ready.
+- **Hothead:** permits immediate Attacking, but never immediate Cause Trouble.
+- Old Leader-facing damage becomes Composure loss where the existing compatibility engine already translates it.
+- Mad Scientist **Abominations have 2 Antics** and Specimens **1 Antics** for this first compatibility pass.
+- Imported STANK Characters received first-pass Antics values. Those numbers are scaffolding, not claims about Landon's balance.
 
-## Antics values
+## Important experimental collision
 
-Antics are first-pass **1–3** values assigned by theme rather than derived from Power. They are intentionally unbalanced. Examples:
+STANK's no-retaliation test is intentionally active here. That is a larger combat change than Composure alone and should be judged independently in human play. If Composure feels right but no-retaliation does not, Git history makes that piece easy to remove without undoing Landon's deck work.
 
-- Unsupervised Toddler: 1 Power / 3 Guard / **3 Antics**
-- Pet Alligator: 4 / 3 / **3**
-- Wedding DJ: 2 / 3 / **3**
-- Cookie Scout: 2 / 2 / **1**
-- HOA Enforcement Committee: 2 / 5 / **3**
-- Crossing Guard: 2 / 4 / **1**
+## Human test questions
 
-## Compatibility patches
+1. Is **Fight / Cause Trouble / Stay Ready** still the obvious core choice with the STANK decks present?
+2. Do Landon's synergy engines become more interesting when Antics and exposure matter?
+3. Does Crazy Cat Lady's width pressure remain fun under the five-slot cap?
+4. Does Tuxedo Cat actually protect a scoring colony without becoming mandatory?
+5. Does Florida's Adrenaline package avoid the old Ready → repeated Trouble exploit?
+6. Does Magician's Return engine interact cleanly with exposure?
+7. Does Mad Scientist's randomized body quality feel different now that Power and Antics are separate?
+8. Does no universal retaliation improve combat here, or should Composure keep its previous retaliation model?
+9. Is 15 Composure still obviously too short once these decks are added?
+10. Do players immediately want another game?
 
-Leader-facing damage becomes Composure loss where needed. Pet Alligator can wreck its own Leader's Composure, Florida Man's Stunt Double can reduce opposing Composure, and Video Doorbell watches Cause Trouble.
-
-HOA President's Carl passive depends on blocking Leader Attacks, so its temporary lab translation is: **Beginning in Round 8, your Characters get +1 Antics.** This is a test patch, not a proposed final passive.
-
-Everything else stays as close to Carl 0.3 as practical: Stash, Costs, full Turns, Ready/Draw, damage persistence, retaliation, Items, Actions, and the six deck identities.
-
-## Human gate
-
-Do not balance cards from bot win rates yet. Play for these questions:
-
-1. Does **fight / Trouble / stay Ready** create a real decision?
-2. Does causing Trouble feel satisfying even though it does not create combat?
-3. Does becoming Rotated create enough counterplay because the scorer is now attackable?
-4. Do high-Antics, low-Power Characters feel strategically distinct from bruisers?
-5. Does 15 Composure produce the right game length?
-6. Does Composure/Antics feel native to **Unhinged**, rather than like renamed Lore?
-7. Does a five-wide board create interesting slot pressure?
-8. Most importantly: do you immediately want another game?
-
-No promotion to Carl until the human playtest says yes.
+Do not promote any of this to Carl until human testing separates the successful pieces.
