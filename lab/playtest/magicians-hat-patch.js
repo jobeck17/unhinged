@@ -1,17 +1,18 @@
-// STANK INDUSTRIES LAB ONLY — Magician's Hat.
-// 2 copies replace 2x Now You See Me in the Birthday Party Magician deck.
+// STANK INDUSTRIES LAB ONLY — Magician's Hat + signature animal package.
+// 2 Hats + 2 extra Rabbits replace all 4x Now You See Me in the Birthday Party Magician deck.
 import {Game} from './engine.js?v=rulebreakers-1';
 
 const HAT_ID='LAB-MAG-005';
 const RABBIT_ID='P063';
+const DOVE_ID='LAB-MAG-006';
 const CARD={
   id:HAT_ID,
   type:'Item',
-  cost:5,
+  cost:4,
   name:"Magician's Hat",
   stats:'',
   traits:[],
-  text:'Activate — Return a Rabbit you control to your hand.',
+  text:'Activate — Return a Rabbit or Dove you control to your hand.',
   style:'Misdirection',
   keywords:[],
   power:null,
@@ -38,9 +39,14 @@ globalThis.fetch=async function(input,init){
       if(isDecks&&Array.isArray(data.decks)){
         const magician=data.decks.find(d=>d.leader==='Birthday Party Magician');
         if(magician?.cards){
-          magician.cards.P080=Math.max(0,(magician.cards.P080||0)-2);
-          if(!magician.cards.P080)delete magician.cards.P080;
+          // Signature-animal rulebreaker for this LAB: Magician may run 6 Rabbits.
+          const nysm=Math.min(4,magician.cards.P080||0);
+          if(nysm){
+            magician.cards.P080-=nysm;
+            if(magician.cards.P080<=0)delete magician.cards.P080;
+          }
           magician.cards[HAT_ID]=(magician.cards[HAT_ID]||0)+2;
+          magician.cards[RABBIT_ID]=(magician.cards[RABBIT_ID]||0)+2;
         }
       }
       return data;
@@ -48,10 +54,12 @@ globalThis.fetch=async function(input,init){
   };
 };
 
+const isHatAnimal=(game,x)=>!!x&&(game.has(x,RABBIT_ID)||game.has(x,DOVE_ID));
+
 const baseCanUse=Game.prototype.canUse;
 Game.prototype.canUse=function(x){
   if(x?.id===HAT_ID){
-    return !!this.canActivate(x)&&x.owner===this.turn&&this.chars(x.owner).some(y=>this.has(y,RABBIT_ID));
+    return !!this.canActivate(x)&&x.owner===this.turn&&this.chars(x.owner).some(y=>isHatAnimal(this,y));
   }
   return baseCanUse.call(this,x);
 };
@@ -62,12 +70,12 @@ Game.prototype.activate=async function(uid,mode=null){
   if(x?.id!==HAT_ID)return baseActivate.call(this,uid,mode);
   const p=this.turn;
   if(!this.canUse(x)||x.owner!==p)return;
-  const rabbits=this.chars(p).filter(y=>this.has(y,RABBIT_ID));
-  const target=await this.pick("Magician's Hat: Return a Rabbit to your hand",p,rabbits);
+  const animals=this.chars(p).filter(y=>isHatAnimal(this,y));
+  const target=await this.pick("Magician's Hat: Return a Rabbit or Dove to your hand",p,animals);
   if(target==null)return;
   x.ready=false;
-  const rabbit=this.obj(target);
-  if(rabbit)await this.remove(rabbit,'hand');
-  this.say("Magician's Hat returns a Rabbit to hand");
+  const animal=this.obj(target);
+  if(animal)await this.remove(animal,'hand');
+  this.say("Magician's Hat returns an animal to hand");
   this.update?.();
 };
