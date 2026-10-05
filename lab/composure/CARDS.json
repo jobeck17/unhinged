@@ -1739,7 +1739,7 @@
       "name": "Poof!",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters. The next time it attacks a Leader this Turn, that Attack cannot be Blocked. After that Attack, Return that Character to your hand.",
+      "text": "Choose one of your Characters. After it Causes Trouble this Turn, Return it to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -2338,7 +2338,7 @@
       "cost": 2,
       "name": "Grumpy Old Guy",
       "traits": [],
-      "text": "When this Blocks, the attacker gets -1 Power for this Attack.",
+      "text": "When this Character is attacked, the attacker gets -1 Power for this Attack.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2540,7 +2540,7 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this Blocks and survives, heal 1 damage from it.",
+      "text": "When this Character is attacked and survives, heal 1 damage from it.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
