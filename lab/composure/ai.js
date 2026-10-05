@@ -20,7 +20,7 @@ export function aiChoice(g,r){let {player:p,options=[],multi=false,max=2,title='
  if(title.toLowerCase().includes('discard')&&title.includes('Choose a card')){let hand=g.players[p].hand;return options.map(o=>({o,c:g.card(hand[o.value])})).sort((a,b)=>b.c.cost-a.c.cost)[0].o.value}
  if(title.includes('Skip')||title.includes('Play')||title.includes('Return')||title.includes('Reveal'))return options.find(o=>o.value!==null)?.value??null;
  return options[0].value}
-export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p);let stashIndex=s.hand.findIndex((_,i)=>g.canStash(i,p));if(!s.stashedThisTurn&&stashIndex>=0)return {type:'stash',index:stashIndex};
+export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p);let stashIndex=s.hand.findIndex((_,i)=>g.canStash(i,p));if(stashIndex>=0)return {type:'stash',index:stashIndex};
  let legal=s.hand.map((id,index)=>({c:g.card(id),index})).filter(o=>g.canPlay(o.index,p));
  let attackers=own.filter(x=>g.canAttack(x)).sort((a,b)=>g.power(b)-g.power(a));
  const play=o=>({type:'play',index:o.index});
@@ -34,9 +34,9 @@ export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p)
  // Item and Action engines should fire before combat, not afterward.
  let trigger=legal.find(o=>o.c.type==='Item'&&own.some(x=>g.has(x,'P105'))||o.c.type==='Action'&&['P049','P050','P052','P053','P022'].includes(o.c.id));if(trigger)return play(trigger);
  let discount=legal.find(o=>o.c.id==='P055'&&legal.some(v=>v.c.type==='Character'&&g.availableFuel(p)>=o.c.cost+Math.max(0,v.c.cost-2)));if(discount)return play(discount);
- let bodies=legal.filter(o=>o.c.type==='Character');if(bodies.length&&own.length<8){bodies.sort((a,b)=>b.c.cost-a.c.cost);return play(bodies[0])}
+ let bodies=legal.filter(o=>o.c.type==='Character');if(bodies.length&&own.length<5){bodies.sort((a,b)=>b.c.cost-a.c.cost);return play(bodies[0])}
  let removal=legal.find(o=>['P139','P141','P081'].includes(o.c.id));if(removal)return play(removal);
- if(attackers.length){let a=attackers[0],sucker=g.layers(a).some(id=>g.card(id).keywords.includes('Sucker Punch'))||(g.name(p)==='Florida Man'&&a.damage>0);let targets=opp.filter(x=>!x.ready||sucker||g.layers(x).some(id=>g.card(id).keywords.includes('Bodyguard')));let kill=targets.filter(x=>g.power(a)>=g.guard(x)-x.damage).sort((x,y)=>g.card(y).cost-g.card(x).cost)[0];if(g.canCauseTrouble(a)&&g.players[1-p].hp<=g.antics(a))return {type:'trouble',uid:a.uid};if(kill&&g.card(kill).cost>=3)return {type:'attack',uid:a.uid};if(g.canCauseTrouble(a))return {type:'trouble',uid:a.uid};if(targets.length)return {type:'attack',uid:a.uid}}
+ if(attackers.length){let a=attackers[0],sucker=g.layers(a).some(id=>g.card(id).keywords.includes('Sucker Punch'));let targets=opp.filter(x=>!x.ready||sucker||g.layers(x).some(id=>g.card(id).keywords.includes('Bodyguard')));let tuxedos=opp.filter(x=>x.id==='LAB-CAT-003'&&!x.cloaked);if(tuxedos.length)targets=targets.filter(x=>x.id==='LAB-CAT-003'||!g.trait(x,'Cat'));let kill=targets.filter(x=>g.power(a)>=g.guard(x)-x.damage).sort((x,y)=>(g.antics(y)-g.antics(x))||(g.card(y).cost-g.card(x).cost))[0];if(g.canCauseTrouble(a)&&g.players[1-p].hp<=g.antics(a))return {type:'trouble',uid:a.uid};if(kill&&g.antics(kill)>=2)return {type:'attack',uid:a.uid};if(kill&&g.card(kill).cost>=3)return {type:'attack',uid:a.uid};if(g.canCauseTrouble(a))return {type:'trouble',uid:a.uid};if(targets.length)return {type:'attack',uid:a.uid}}
  let readyAgain=legal.find(o=>o.c.id==='P025'&&own.some(x=>!x.ready&&g.guard(x)-x.damage>2));if(readyAgain)return play(readyAgain);
  let pills=s.board.find(x=>x.id==='P027'&&g.canUse(x)&&!g.obj(x.attached)?.ready&&g.guard(g.obj(x.attached))-g.obj(x.attached).damage>1);if(pills)return {type:'activate',uid:pills.uid};
  let rest=legal.find(o=>!['P019','P025','P055','P081','P170'].includes(o.c.id));if(rest)return play(rest);
