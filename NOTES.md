@@ -10,12 +10,14 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 ## Development milestone
 ✅ **0.3 Carl** is the current core-stabilization milestone. Meaningful compatible checkpoints within Carl use 0.3.x build numbers; ordinary commits do not require a version bump. Major pre-1.0 generations advance to the next 0.X number and receive a new Dungeon Crawler Carl character codename. The full versioning policy and road to 1.0 live in README.md.
 
-## New parallel testing direction — Composure Lab, October 4, 2026
-🧪 **Implemented independently:** `lab/composure/` tests a five-Character board and a replacement Leader win condition. Leaders begin at 15 **Composure**; Characters have a third stat, **Antics**. A Character may Attack a normally Rotated opposing Character using Power, **Cause Trouble** to reduce opposing Composure by its Antics, or remain Ready and protected from ordinary attacks.
+## New parallel testing direction — Composure × STANK INDUSTRIES-60 Lab, October 5, 2026
+🧪 **Merged experiment:** `lab/composure/` now combines the five-Character Composure/Antics win condition with the final pre-Composure **STANK INDUSTRIES-60** lab state. The browser exposes eight decks: the six Carl mono decks plus Landon's current Crazy Cat Lady and Mad Scientist rulebreakers. STANK's Florida Man and Birthday Party Magician revisions are applied inside this lab only. Leaders begin at 15 **Composure**; Characters have a third stat, **Antics**. A Character may Attack a normally Rotated opposing Character using Power, **Cause Trouble** to reduce opposing Composure by its Antics, or remain Ready and protected from ordinary attacks.
 
 🧪 **Critical separation:** Cause Trouble **cannot be Blocked** and is not combat. It Rotates the Character, immediately applies Antics to Composure, and leaves that Character exposed to ordinary attacks on the opponent's Turn. Power handles Character combat; Antics handles the win condition. A Character cannot Cause Trouble on the Turn it enters play, even if it has Hothead.
 
 🧪 **Lab combat cleanup:** because there is no universal Block step, Defiant means retaliate when attacked even if Defeated, Slowpoke means no retaliation when attacked, and Bodyguard means the Character may be attacked while Ready. Block-trigger cards receive equivalent attacked-character wording. HOA's Block-dependent Carl passive is temporarily translated to +1 Antics from Round 8.
+
+🧪 **STANK combat variable:** the merged lab also carries STANK 60's no-universal-retaliation experiment; Backyard Wrestler's Wrestlers retain Retaliate. This is deliberately separable from Composure and should not be treated as part of the win condition unless human play supports it.
 
 🧪 **Controlled baseline:** Carl 0.3 remains canonical. The lab keeps Carl Stash, Costs, full Turns, readiness, damage, retaliation, Items, Actions, and the six mono-Style deck identities. Current Antics values are first-pass 1–3 thematic assignments and are not balance claims.
 
