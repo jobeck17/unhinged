@@ -1,32 +1,51 @@
-# Composure Lab 0.1
+# Composure Lab 0.2
 
-**TESTING · October 4, 2026.** This is an isolated structural experiment. Carl 0.3 remains canonical.
+**TESTING · October 5, 2026.** This is an isolated structural experiment. Carl 0.3 remains canonical.
 
 ## Question
 
 Can Unhinged replace Leader Health combat with a thematic, Character-first win condition that separates **fighting ability** from **winning pressure**?
 
-The working fiction is simple: each Leader begins with **15 Composure**. Characters can fight each other or cause enough chaos to push the opposing Leader over the edge. At 0 Composure, that Leader becomes **Unhinged** and loses.
+Each Leader begins with **15 Composure**. Characters fight each other or cause enough chaos to push the opposing Leader over the edge. At 0 Composure, that Leader becomes **Unhinged** and loses.
 
-## Experimental rules
+## Core experimental rules
 
 - Use the six current Carl mono-Style decks and Carl card identities.
 - Each player has a maximum of **five Characters** in play. Items do not count.
-- Leaders begin at **15 Composure**. There is no separate Leader Health total in this lab.
+- Leaders begin at **15 Composure**. There is no separate Leader Health total.
 - Characters have **Power / Guard / Antics**.
-- **Attack Character:** Rotate the attacker and use normal Carl Character combat. Ordinary attacks may target opposing Rotated Characters; Sucker Punch and existing exceptions still apply.
-- **Cause Trouble:** Rotate a Character. If it is not Blocked, the opposing Leader loses Composure equal to that Character's **Antics**.
-- **Block Trouble:** The defender may Rotate one Ready Character to Block. If Blocked, no Antics are dealt. The troublemaker and blocker fight using normal Carl Power/Guard blocking combat. **Power never overflows into Composure.**
-- A Ready Character therefore represents a three-way choice: fight, Cause Trouble, or remain Ready to threaten a Block.
+- **Attack Character:** Rotate the attacker and use Power against an opposing Character. Ordinary attacks may target opposing **Rotated Characters**. Sucker Punch and Bodyguard create explicit exceptions.
+- **Cause Trouble:** Rotate a Ready Character that began the Turn under your control. The opposing Leader immediately loses Composure equal to that Character's **Antics**.
+- **Cause Trouble cannot be Blocked.** It is not an Attack and does not start combat.
+- After a Character Causes Trouble, it is Rotated and therefore exposed to ordinary Character Attacks on the opponent's Turn.
+- **Stay Ready:** A Ready Character is normally protected from ordinary Character Attacks. Keeping a Character Ready sacrifices its immediate progress but preserves it from normal attacks.
 - At 0 Composure, a Leader loses. Empty-deck loss and War fallback remain from Carl for this prototype.
 
-Everything not listed above stays as close to Carl 0.3 as practical: Stash, Costs, full Turns, Ready/Draw, attack delay, damage persistence, retaliation, Items, Actions, and Leader passives.
+The core Character decision is therefore:
+
+**Fight a Rotated Character / Cause Trouble and expose yourself / Stay Ready and protected.**
+
+Power never determines Composure loss. Antics never determines Character combat damage.
+
+## Timing
+
+A Character that enters play cannot Cause Trouble until its controller's next Turn. **Hothead only accelerates Attacking; it does not accelerate Cause Trouble.**
+
+Cause Trouble is a win-condition action, not combat. Generic blocking does not exist in this lab.
+
+## Combat-keyword translations
+
+Because the Composure Lab has no universal Block step, Carl's Block-specific keywords are translated only for this experiment:
+
+- **Defiant:** This Character retaliates when attacked even if that Attack Defeats it.
+- **Slowpoke:** This Character does not retaliate when attacked.
+- **Bodyguard:** This Character may be attacked while Ready.
+
+Block-trigger card text receives the same compatibility treatment. These are lab translations, not changes to canonical Carl.
 
 ## Antics values
 
-Antics are a first-pass **1–3** stat added to every Character. Current six-deck Characters were assigned manually by theme rather than derived from Power. These values are intentionally unbalanced. The first human test is about whether the third stat creates compelling decisions.
-
-Examples:
+Antics are first-pass **1–3** values assigned by theme rather than derived from Power. They are intentionally unbalanced. Examples:
 
 - Unsupervised Toddler: 1 Power / 3 Guard / **3 Antics**
 - Pet Alligator: 4 / 3 / **3**
@@ -35,22 +54,25 @@ Examples:
 - HOA Enforcement Committee: 2 / 5 / **3**
 - Crossing Guard: 2 / 4 / **1**
 
-## Converted Leader-facing effects
+## Compatibility patches
 
-This lab reinterprets existing Leader damage as Composure loss where needed. Pet Alligator can wreck its own Leader's Composure, Florida Man's Stunt Double can reduce opposing Composure, and Video Doorbell watches Cause Trouble. These are compatibility patches, not final wording.
+Leader-facing damage becomes Composure loss where needed. Pet Alligator can wreck its own Leader's Composure, Florida Man's Stunt Double can reduce opposing Composure, and Video Doorbell watches Cause Trouble.
 
-HOA President's deadline is also translated for the lab: beginning in Round 8, opposing Characters cannot Block HOA Trouble.
+HOA President's Carl passive depends on blocking Leader Attacks, so its temporary lab translation is: **Beginning in Round 8, your Characters get +1 Antics.** This is a test patch, not a proposed final passive.
+
+Everything else stays as close to Carl 0.3 as practical: Stash, Costs, full Turns, Ready/Draw, damage persistence, retaliation, Items, Actions, and the six deck identities.
 
 ## Human gate
 
 Do not balance cards from bot win rates yet. Play for these questions:
 
-1. When a Character is Ready, is **fight / Trouble / hold to Block** a real decision?
-2. Does a high-Antics, low-Power Character feel valuable in a different way from a bruiser?
-3. Does blocking Trouble feel like meaningful defense rather than mandatory tax?
-4. Does 15 Composure produce the right game length?
-5. Does the name and fiction feel native to **Unhinged**, rather than like renamed Lore?
-6. Does a five-wide board create interesting slot pressure?
-7. Most importantly: do you immediately want another game?
+1. Does **fight / Trouble / stay Ready** create a real decision?
+2. Does causing Trouble feel satisfying even though it does not create combat?
+3. Does becoming Rotated create enough counterplay because the scorer is now attackable?
+4. Do high-Antics, low-Power Characters feel strategically distinct from bruisers?
+5. Does 15 Composure produce the right game length?
+6. Does Composure/Antics feel native to **Unhinged**, rather than like renamed Lore?
+7. Does a five-wide board create interesting slot pressure?
+8. Most importantly: do you immediately want another game?
 
 No promotion to Carl until the human playtest says yes.
