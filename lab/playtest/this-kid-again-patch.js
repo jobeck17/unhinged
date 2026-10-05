@@ -2,8 +2,6 @@
 // Replaces the two Look Over There! slots with two copies of Very Enthusiastic Volunteer.
 import {Game} from './engine.js?v=rulebreakers-1';
 
-// The two physical deck copies use separate LAB ids so each copy can remember
-// whether its one automatic post-attack escape has already been spent.
 const KID_IDS=['LAB-MAG-001A','LAB-MAG-001B'];
 const makeKid=id=>({
   id,
@@ -11,7 +9,7 @@ const makeKid=id=>({
   cost:2,
   name:'Very Enthusiastic Volunteer',
   traits:['Kid'],
-  text:'Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently. The first time this card attacks this game, after that Attack, Return it to your hand.',
+  text:'Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently.',
   style:'Misdirection',
   complexity:'mixed',
   keywords:[],
@@ -89,25 +87,5 @@ Game.prototype.remove=async function(x,where='discard',defeated=false){
   const uid=x?.uid;
   const result=await baseRemove.call(this,x,where,defeated);
   if(wasKidReturn&&!this.obj(uid))await givePermanentPower(this,p,null,'returns to hand');
-  return result;
-};
-
-const baseAttack=Game.prototype.attack;
-Game.prototype.attack=async function(uid){
-  const before=this.obj(uid);
-  const kidId=isKid(before)?before.id:null;
-  const p=before?.owner;
-  const hadAttacked=!!before?.attacked;
-  const result=await baseAttack.call(this,uid);
-  const after=this.obj(uid);
-  if(!kidId||!after||after.owner!==p||hadAttacked||!after.attacked)return result;
-
-  const s=this.players[p];
-  s.kidAgainEscapesUsed=s.kidAgainEscapesUsed||{};
-  if(!s.kidAgainEscapesUsed[kidId]){
-    s.kidAgainEscapesUsed[kidId]=true;
-    this.say('Very Enthusiastic Volunteer vanishes back into the crowd after his first Attack');
-    await this.remove(after,'hand');
-  }
   return result;
 };
