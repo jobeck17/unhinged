@@ -1,10 +1,10 @@
-import {Game,LEADERS} from './engine.js?v=composure-stank-01';
+import {Game,LEADERS} from './engine.js?v=composure-stank-02';
 import {aiAction,aiChoice} from './ai.js?v=composure-stank-01';
 import './stank-merge.js?v=composure-stank-01';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='Five Character slots. Leaders have 15 Composure. Characters have Power / Guard / Antics. Attack Rotated opposing Characters using Power, or Cause Trouble to immediately reduce opposing Composure by Antics. Cause Trouble cannot be Blocked and is not combat. Causing Trouble Rotates the Character, exposing it to ordinary Attacks on the opponent’s Turn. Ready Characters are normally protected. STANK 60 rule: there is no universal retaliation; Backyard Wrestler’s Wrestlers retain Retaliate. Power fights; Antics wins.';
+const rules='Five Character slots. Leaders have 25 Composure. Characters have Power / Guard / Antics. Attack Rotated opposing Characters using Power, or Cause Trouble to immediately reduce opposing Composure by Antics. Cause Trouble cannot be Blocked and is not combat. Causing Trouble Rotates the Character, exposing it to ordinary Attacks on the opponent’s Turn. Ready Characters are normally protected. STANK 60 rule: there is no universal retaliation; Backyard Wrestler’s Wrestlers retain Retaliate. Power fights; Antics wins.';
 try{
  [pool,decks]=await Promise.all([fetch('./CARDS.json?v=composure-stank-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('./DECKS.json?v=composure-stank-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Lab card/deck versions do not match');
@@ -13,7 +13,7 @@ try{
 
 function setup(){
  const opts=decks.decks.map((d,i)=>'<option value="'+i+'">'+esc(d.leader)+' · '+esc(d.styles[0])+'</option>').join('');
- root.innerHTML='<section class="setup"><span class="eyebrow">UNHINGED / COMPOSURE × STANK 60</span><h1>Drive them<br>Unhinged.</h1><p class="intro">Fight their Characters. Cause Trouble. Landon brought the weird stuff.</p><div class="settings"><label>Your deck<select id="you">'+opts+'</select></label><label>Opponent deck<select id="them">'+opts+'</select></label></div><button id="start" class="primary">Cause a scene →</button><details><summary>Experimental rules</summary><p>'+rules+'</p></details><p class="muted">TESTING · 15 Composure · 5 slots · 8 decks · STANK INDUSTRIES-60 merged · Carl remains canonical</p><nav><a href="../../web/">Carl 0.3</a><a href="../board-width/">Board Width Lab</a><a href="https://github.com/jobeck17/unhinged/tree/main/lab/composure">Lab rules & source</a></nav></section>';
+ root.innerHTML='<section class="setup"><span class="eyebrow">UNHINGED / COMPOSURE × STANK 60</span><h1>Drive them<br>Unhinged.</h1><p class="intro">Fight their Characters. Cause Trouble. Landon brought the weird stuff.</p><div class="settings"><label>Your deck<select id="you">'+opts+'</select></label><label>Opponent deck<select id="them">'+opts+'</select></label></div><button id="start" class="primary">Cause a scene →</button><details><summary>Experimental rules</summary><p>'+rules+'</p></details><p class="muted">TESTING · 25 Composure · 5 slots · 8 decks · STANK INDUSTRIES-60 merged · Carl remains canonical</p><nav><a href="../../web/">Carl 0.3</a><a href="../board-width/">Board Width Lab</a><a href="https://github.com/jobeck17/unhinged/tree/main/lab/composure">Lab rules & source</a></nav></section>';
  root.querySelector('#you').value='0';root.querySelector('#them').value='4';
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
