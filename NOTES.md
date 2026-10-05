@@ -15,6 +15,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **25 Composure baseline:** simulation before the STANK merge showed 15 ending too quickly; 25 moved games into the desired ~8–10 round range and gave exposure-based counterplay more time to matter. The combined lab now uses 25 for human testing.
 
+🧪 **Opening balance update:** the second player no longer receives Carl's temporary setup Stash. The first player still skips their opening Draw. Simulation on the Composure model showed the old temporary Stash pushed the advantage too far toward the second player.
+
 🧪 **Critical separation:** Cause Trouble **cannot be Blocked** and is not combat. It Rotates the Character, immediately applies Antics to Composure, and leaves that Character exposed to ordinary attacks on the opponent's Turn. Power handles Character combat; Antics handles the win condition. A Character cannot Cause Trouble on the Turn it enters play, even if it has Hothead.
 
 🧪 **Lab combat cleanup:** because there is no universal Block step, Defiant means retaliate when attacked even if Defeated, Slowpoke means no retaliation when attacked, and Bodyguard means the Character may be attacked while Ready. Block-trigger cards receive equivalent attacked-character wording. HOA's Block-dependent Carl passive is temporarily translated to +1 Antics from Round 8.
