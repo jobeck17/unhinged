@@ -1,10 +1,10 @@
-import {Game,LEADERS} from './engine.js?v=composure-stank-02';
+import {Game,LEADERS} from './engine.js?v=composure-stank-03';
 import {aiAction,aiChoice} from './ai.js?v=composure-stank-01';
 import './stank-merge.js?v=composure-stank-01';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='Five Character slots. Leaders have 25 Composure. Characters have Power / Guard / Antics. Attack Rotated opposing Characters using Power, or Cause Trouble to immediately reduce opposing Composure by Antics. Cause Trouble cannot be Blocked and is not combat. Causing Trouble Rotates the Character, exposing it to ordinary Attacks on the opponent’s Turn. Ready Characters are normally protected. STANK 60 rule: there is no universal retaliation; Backyard Wrestler’s Wrestlers retain Retaliate. Power fights; Antics wins.';
+const rules='Five Character slots. Leaders have 25 Composure. Characters have Power / Guard / Antics. Attack Rotated opposing Characters using Power, or Cause Trouble to immediately reduce opposing Composure by Antics. Cause Trouble cannot be Blocked and is not combat. Causing Trouble Rotates the Character, exposing it to ordinary Attacks on the opponent’s Turn. Ready Characters are normally protected. Opening balance: first player skips their opening Draw; second player gets no free setup Stash. STANK 60 rule: there is no universal retaliation; Backyard Wrestler’s Wrestlers retain Retaliate. Power fights; Antics wins.';
 try{
  [pool,decks]=await Promise.all([fetch('./CARDS.json?v=composure-stank-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('./DECKS.json?v=composure-stank-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Lab card/deck versions do not match');
