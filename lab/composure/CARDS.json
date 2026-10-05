@@ -1,5 +1,5 @@
 {
-  "version": "0.3-carl-composure-lab-0.1",
+  "version": "0.3-composure-stank60-0.1",
   "date": "2026-10-01",
   "status": "Carl 0.3 card pool. Current playtest package includes Florida Man's damaged-Character survival Ready clause and Expendable-only Tag Out.",
   "cards": [
@@ -30,7 +30,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power for this Attack.",
+      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +1 Power for this Attack.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -39,7 +39,7 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "lab",
       "flavor": "",
       "antics": 2
     },
@@ -387,18 +387,18 @@
     {
       "id": "P019",
       "type": "Action",
-      "cost": 1,
+      "cost": 2,
       "name": "Hold My Beer",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters. Deal 1 damage to it. It gets +2 Power this Turn, or +3 Power if it is a Daredevil.",
+      "text": "Choose one of your Characters. If it entered play this Turn, it gains Hothead this Turn. If it attacked this Turn, Ready it. It can’t Attack again this Turn. If it has the Daredevil Trait, you may deal 1 damage to it.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
+      "status": "lab",
       "flavor": ""
     },
     {
@@ -3478,6 +3478,767 @@
       "complexity": null,
       "status": "playtest",
       "flavor": ""
+    },
+    {
+      "id": "LAB-FLM-001",
+      "type": "Item",
+      "cost": 1,
+      "name": "Broken Lawnmower",
+      "traits": [],
+      "text": "Pull the Cord — Activate: Rotate one of your Ready Characters. Put a Start counter on Broken Lawnmower. Once it has 3 Start counters, your Characters get +1 Power while it remains in play.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "ongoing",
+      "status": "lab",
+      "flavor": "Third pull’s the charm."
+    },
+    {
+      "id": "LAB-FLM-002",
+      "type": "Action",
+      "cost": 3,
+      "name": "A MILLION KILOGRAMS OF CAFFEINE!!!!",
+      "subtitle": "The Human Body Was Not Consulted",
+      "traits": [],
+      "text": "Choose one of your Characters. It gets +5 Power, Hothead, and Sucker Punch this Turn. After it attacks, Defeat it.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "mixed",
+      "status": "lab",
+      "flavor": "He can hear colors now."
+    },
+    {
+      "id": "LAB-FLM-003",
+      "type": "Action",
+      "cost": 2,
+      "name": "Rusty Needle",
+      "traits": [],
+      "text": "Deal 1 damage to a Character. Congratulations, you have tetanus. At the start of its controller’s Turn, it gets -1 Guard. This can reduce its Guard to 0. That Character may Rotate to remove tetanus.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "mixed",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-FLM-002-SUCKER",
+      "type": "Effect",
+      "cost": 0,
+      "name": "Caffeine Sucker Punch",
+      "traits": [],
+      "text": "",
+      "style": "Reckless",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "power": null,
+      "guard": null,
+      "complexity": "ongoing",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-MAG-003",
+      "type": "Character",
+      "cost": 2,
+      "name": "Birthday Boy",
+      "traits": [
+        "Kid"
+      ],
+      "text": "When this enters play, you may exchange a card in your Stash with a card in your hand.",
+      "style": "Misdirection",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "",
+      "antics": 2
+    },
+    {
+      "id": "LAB-MAG-001A",
+      "type": "Character",
+      "cost": 2,
+      "name": "Very Enthusiastic Volunteer",
+      "traits": [
+        "Kid"
+      ],
+      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently. The first time this card attacks this game, after that Attack, Return it to your hand.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "antics": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "Somebody in the back row is starting to notice a pattern."
+    },
+    {
+      "id": "LAB-MAG-001B",
+      "type": "Character",
+      "cost": 2,
+      "name": "Very Enthusiastic Volunteer",
+      "traits": [
+        "Kid"
+      ],
+      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently. The first time this card attacks this game, after that Attack, Return it to your hand.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "antics": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "Somebody in the back row is starting to notice a pattern."
+    },
+    {
+      "id": "LAB-MAG-002",
+      "type": "Action",
+      "cost": 1,
+      "name": "Ethan’s JUST Being Dramatic",
+      "traits": [],
+      "text": "Return one of your Characters to your hand.",
+      "style": "Misdirection",
+      "complexity": "simple",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "He does this all the time."
+    },
+    {
+      "id": "LAB-MAG-004",
+      "type": "Character",
+      "cost": 3,
+      "name": "Lady Who's Moving Out Again",
+      "traits": [],
+      "text": "Hothead. When this enters play, it gets +2 Power this Turn. When this is Returned from play to your hand, you may Return an opposing Character that costs 2 or less to its owner’s hand.",
+      "style": "Misdirection",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 3,
+      "guard": 5,
+      "antics": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "complexity": "mixed",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-MAG-005",
+      "type": "Item",
+      "cost": 5,
+      "name": "Magician's Hat",
+      "traits": [],
+      "text": "Activate — Return a Rabbit you control to your hand.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": "activated",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-CAT-001",
+      "type": "Character",
+      "cost": 1,
+      "name": "Stray Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Cheap swarm body that sticks around a little better so Cat Lady can establish a colony without adding more damage output.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-002",
+      "type": "Character",
+      "cost": 1,
+      "name": "Orange Menace",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 2,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "One-cost aggressive Cat that helps Cat Lady establish the colony quickly while remaining fragile.",
+      "style": "Lab",
+      "antics": 3
+    },
+    {
+      "id": "LAB-CAT-003",
+      "type": "Character",
+      "cost": 2,
+      "name": "Tuxedo Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Bodyguard. While this is in play, opposing Characters cannot Attack your other Cats.",
+      "keywords": [
+        "Bodyguard"
+      ],
+      "power": 1,
+      "guard": 4,
+      "status": "lab-prototype",
+      "purpose": "Defensive colony protector: low Power, high Guard, and Bodyguard make it a durable shield instead of another efficient attacker.",
+      "style": "Lab",
+      "antics": 1
+    },
+    {
+      "id": "LAB-CAT-004",
+      "type": "Character",
+      "cost": 2,
+      "name": "Cat Under the Bed",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Chicken.",
+      "keywords": [
+        "Chicken"
+      ],
+      "power": 2,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Lets the Cat player preserve a body at the cost of temporarily dropping board count.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-005",
+      "type": "Character",
+      "cost": 3,
+      "name": "Feral Tom",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Sucker Punch.",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "power": 4,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader.",
+      "style": "Lab",
+      "antics": 1
+    },
+    {
+      "id": "LAB-CAT-006",
+      "type": "Character",
+      "cost": 4,
+      "name": "Three-Legged Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "I GOT 3 MORE ANYWAY — The first two times Three-Legged Cat is damaged by an Attack, it survives regardless of damage and remove all damage from it. The third Attack damages it normally.",
+      "keywords": [],
+      "power": 2,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "A ridiculous 2/1 that visibly refuses to die to the first two Attacks. Opponents can still use Return, Dismiss, non-Attack Defeat effects, or other removal normally.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-007",
+      "type": "Character",
+      "cost": 4,
+      "name": "Alley Matriarch",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "When this enters play, if you control 3 or more Cats, Draw a card.",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "status": "lab-prototype",
+      "purpose": "Rewards reaching the colony threshold without directly adding more Stash.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-008",
+      "type": "Character",
+      "cost": 5,
+      "name": "Maine Coon",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "While you control 5 or more Cats, this gets +2 Power.",
+      "keywords": [],
+      "power": 5,
+      "guard": 7,
+      "status": "lab-prototype",
+      "purpose": "Visible five-Cat payoff that turns a wide colony into finishing pressure.",
+      "style": "Lab",
+      "antics": 1
+    },
+    {
+      "id": "LAB-CAT-009",
+      "type": "Character",
+      "cost": 6,
+      "name": "House Panther",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 7,
+      "guard": 8,
+      "status": "lab-prototype",
+      "purpose": "Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-010",
+      "type": "Action",
+      "cost": 1,
+      "name": "Where's Mittens?",
+      "traits": [],
+      "text": "Look at the top 4 cards of your deck. You may reveal a Cat Character and put it into your hand. Put the rest on the bottom in any order.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Light Cat selection without generic Draw.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-013",
+      "type": "Character",
+      "cost": 3,
+      "name": "Snowball",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "At the start of your Turn, Snowball gets +1 Power.",
+      "keywords": [],
+      "power": 1,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Power.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-014",
+      "type": "Character",
+      "cost": 1,
+      "name": "Trojan Cat",
+      "traits": [
+        "Cat"
+      ],
+      "text": "When Trojan Cat is Defeated, deal 1 damage to every other Character.",
+      "keywords": [],
+      "power": 0,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "Cheap Cat-count body and visible blocking trap. Its global friendly-fire explosion can punish opposing boards but can also devastate the Cat Lady's own low-Guard colony.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-015",
+      "type": "Action",
+      "cost": 3,
+      "name": "Dead Mouse in a Mousetrap",
+      "traits": [],
+      "text": "Heal each of your Characters 1.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Wide-board recovery tool. Rewards maintaining a colony and helps the Cat player recover from Trojan Cat friendly fire without directly adding more bodies.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-016",
+      "type": "Character",
+      "cost": 4,
+      "name": "Hairy Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Whenever Hairy Cat takes damage from a Character and survives, put a Hairball on that Character and it permanently gets -1 Guard. A Character with a Hairball doesn't Ready during its controller's next Ready step. Then remove the Hairball.",
+      "keywords": [],
+      "power": 1,
+      "guard": 6,
+      "status": "lab-prototype",
+      "purpose": "Defensive Cat that punishes attackers twice: surviving damage applies a one-turn Ready lock and a permanent -1 Guard scar. Repeated Hairballs can keep lowering the same Character's Guard.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-CAT-017",
+      "type": "Item",
+      "cost": 4,
+      "name": "Shoebox of Dead Cats",
+      "traits": [],
+      "text": "Whenever one of your Cats is Dismissed or Defeated, you may put it face down under a Shoebox of Dead Cats instead of into your discard. While you have 3 or more Cats face down under your Shoeboxes of Dead Cats, your Cats get +1 Power.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Stores dismissed or defeated Cats as a hidden resource, including Cats that die while blocking for the Leader, and rewards building a graveyard-like stockpile without releasing the whole pile for free.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-018",
+      "type": "Action",
+      "cost": 1,
+      "name": "Shovel",
+      "traits": [],
+      "text": "Randomly choose a face-down Cat under your Shoeboxes of Dead Cats and put it into play.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Turns the Shoebox stockpile into unpredictable recovery. The Cat returns normally rather than with Hothead or reduced Guard.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-019",
+      "type": "Action",
+      "cost": 7,
+      "name": "Nine Lives, Zero Survivors",
+      "traits": [],
+      "text": "Defeat all Characters. Dismiss all Items. Then each player draws until they have 7 cards in hand.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Cat Lady's emergency reset: wipes both boards and refills both players, trading away the colony and Shoebox setup for a full restart.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-020",
+      "type": "Character",
+      "cost": 4,
+      "name": "Mittens III",
+      "subtitle": "“Third time’s the charm.”",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "YUMMY! — Activate: Put 1 Stash into your discard. Mittens III gets +1 Power permanently.\nWHERE DID YOU GET THAT?! — Activate: Discard all Cats under your Shoeboxes. Mittens III gets +1 Power permanently for each.",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Deliberately weak four-cost body that converts permanent economy or buried Cats into permanent Power. Both modes Rotate Mittens III, forcing a choice between feeding it and attacking.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-SCI-001",
+      "type": "Character",
+      "cost": 1,
+      "name": "Lab Rat",
+      "traits": [
+        "Animal",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "Pure ingredient/body. Establishes the floor for cheap Parts.",
+      "style": "Lab",
+      "antics": 1
+    },
+    {
+      "id": "LAB-SCI-002",
+      "type": "Character",
+      "cost": 1,
+      "name": "Intern Who Signed the Waiver",
+      "traits": [
+        "Human",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Cheap Part with slightly better blocking value.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-SCI-003",
+      "type": "Character",
+      "cost": 1,
+      "name": "Questionably Acquired Cadaver",
+      "traits": [
+        "Undead",
+        "Part"
+      ],
+      "text": "Slowpoke.",
+      "keywords": [
+        "Slowpoke"
+      ],
+      "power": 0,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Defensive Part that is more useful as material than as an attacker.",
+      "style": "Lab",
+      "antics": 3
+    },
+    {
+      "id": "LAB-SCI-004",
+      "type": "Character",
+      "cost": 2,
+      "name": "Two-Headed Chicken",
+      "traits": [
+        "Animal",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 3,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Efficient mid-grade ingredient that can also fight.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-SCI-005",
+      "type": "Character",
+      "cost": 2,
+      "name": "Lab Assistant",
+      "traits": [
+        "Human",
+        "Scientist"
+      ],
+      "text": "When this enters play, look at the top 4 cards of your deck. You may reveal an Experiment Action and put it into your hand. Put the rest on the bottom in any order.",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Finds the fusion engine without directly generating resources.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-SCI-006",
+      "type": "Character",
+      "cost": 2,
+      "name": "Spare Parts Dealer",
+      "traits": [
+        "Human",
+        "Part"
+      ],
+      "text": "When this enters play, you may Return a Character costing 1 from your discard to your hand.",
+      "keywords": [],
+      "power": 2,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Reclaims cheap ingredients after experiments or combat.",
+      "style": "Lab",
+      "antics": 2
+    },
+    {
+      "id": "LAB-SCI-007",
+      "type": "Character",
+      "cost": 3,
+      "name": "Failed Clone",
+      "traits": [
+        "Part"
+      ],
+      "text": "When you Discard this from your hand to pay an additional Cost of an Experiment, Draw a card.",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Premium experiment material that reduces the hand-cost pain without making every ingredient replace itself.",
+      "style": "Lab",
+      "antics": 3
+    },
+    {
+      "id": "LAB-SCI-008",
+      "type": "Character",
+      "cost": 3,
+      "name": "Escaped Prototype",
+      "traits": [
+        "Abomination",
+        "Part"
+      ],
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 4,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "A normal pressure card that can become material when the laboratory needs it.",
+      "style": "Lab",
+      "antics": 3
+    },
+    {
+      "id": "LAB-SCI-009",
+      "type": "Action",
+      "cost": 3,
+      "name": "It's Alive!",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "As an additional Cost to play this, Discard two Character cards. Roll for Power, then roll for Guard. Put an Abomination token into play with Power and Guard equal to those results.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Primary fusion spell. Trades cards and limited battery charge for a randomly successful or failed experiment.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-010",
+      "type": "Action",
+      "cost": 1,
+      "name": "Release the Specimen",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "Put an unused Specimen from your Specimen Rack into play. If you have no unused Specimens, put a generic Specimen token into play instead.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "The physical cross-TCG joke and an additional source of experiment material.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-011",
+      "type": "Action",
+      "cost": 1,
+      "name": "Grave Robbing",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "Return a Character costing 2 or less from your discard to your hand.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Recovers bodies without restoring Stash.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-012",
+      "type": "Action",
+      "cost": 0,
+      "name": "Flip the Breaker",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "As an additional Cost to play this, Discard a card. Ready up to 2 Stash.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Converts hand economy into a small emergency battery recharge.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-013",
+      "type": "Item",
+      "cost": 1,
+      "name": "Car Battery in the Bathtub",
+      "traits": [
+        "Equipment"
+      ],
+      "text": "Dismiss this Item: Ready up to 2 Stash.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "One-shot recharge. Tests whether limited card-driven recovery makes Burnout decisions richer.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-TOK-SCI-001",
+      "name": "Abomination",
+      "type": "Character",
+      "traits": [
+        "Abomination"
+      ],
+      "power": 0,
+      "guard": 0,
+      "keywords": [
+        "Slowpoke"
+      ],
+      "text": "Slowpoke. Its Power and Guard are determined separately when it is created.",
+      "rule": "When an Abomination is created, roll the designated Power die, then the designated Guard die. Its Power equals the Power result and its Guard equals the Guard result. If dedicated dice are unavailable, roll one d6 twice: the first roll is Power and the second roll is Guard. The player never chooses which result applies to which stat. An Abomination entering play follows normal Character entry rules and cannot Attack that Turn unless another effect grants Hothead.",
+      "purpose": "An unstable experiment whose offensive and defensive results are independently randomized.",
+      "cost": 0,
+      "style": "Lab",
+      "antics": 2,
+      "token": true,
+      "status": "lab-prototype"
+    },
+    {
+      "id": "LAB-TOK-SCI-002",
+      "name": "Specimen",
+      "type": "Character",
+      "traits": [
+        "Specimen",
+        "Part"
+      ],
+      "power": 2,
+      "guard": 2,
+      "keywords": [],
+      "text": "",
+      "rule": "A Specimen may be represented by an approved external TCG card. Its original game's text, stats, cost, color, rarity, abilities, and rules have no effect in Unhinged. If a physical external card representing a Specimen leaves play, set it aside as used instead of putting it in an Unhinged zone.",
+      "purpose": "Preserves the visual gag of cross-TCG cards without importing another game's rules engine.",
+      "cost": 0,
+      "style": "Lab",
+      "antics": 1,
+      "token": true,
+      "status": "lab-prototype"
     }
   ]
 }
