@@ -1,18 +1,18 @@
-import {Game,LEADERS} from './engine.js?v=composure-02';
-import {aiAction,aiChoice} from './ai.js?v=composure-02';
+import {Game,LEADERS} from './engine.js?v=composure-03';
+import {aiAction,aiChoice} from './ai.js?v=composure-03';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='Five Character slots. Leaders have 15 Composure. Characters have Power / Guard / Antics. Attack opposing Characters using Power, or Cause Trouble to reduce opposing Composure by Antics. Ready Characters may Block Trouble; a Block stops all Antics and starts normal Power/Guard combat. Power never overflows into Composure. Carl Stash, Costs, full Turns, attack delay, persistent damage, retaliation, Items and Actions remain the control baseline.';
+const rules='Five Character slots. Leaders have 15 Composure. Characters have Power / Guard / Antics. Attack Rotated opposing Characters using Power, or Cause Trouble to immediately reduce opposing Composure by Antics. Cause Trouble cannot be Blocked and is not combat. Causing Trouble Rotates the Character, exposing it to ordinary Attacks on the opponent’s Turn. Ready Characters are normally protected. Power fights; Antics wins. Carl Stash, Costs, full Turns, persistent damage, retaliation, Items and Actions remain the control baseline.';
 try{
- [pool,decks]=await Promise.all([fetch('./CARDS.json?v=composure-02').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('./DECKS.json?v=composure-02').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
+ [pool,decks]=await Promise.all([fetch('./CARDS.json?v=composure-03').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('./DECKS.json?v=composure-03').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Lab card/deck versions do not match');
  setup();
 }catch(e){root.innerHTML='<section class="setup"><h1>Lab failed to load.</h1><p>'+esc(e.message)+'</p></section>'}
 
 function setup(){
  const opts=decks.decks.map((d,i)=>'<option value="'+i+'">'+esc(d.leader)+' · '+esc(d.styles[0])+'</option>').join('');
- root.innerHTML='<section class="setup"><span class="eyebrow">UNHINGED / EXPERIMENT 03</span><h1>Drive them<br>Unhinged.</h1><p class="intro">Fight their Characters. Cause Trouble. Keep someone Ready when the other side gets ideas.</p><div class="settings"><label>Your deck<select id="you">'+opts+'</select></label><label>Opponent deck<select id="them">'+opts+'</select></label></div><button id="start" class="primary">Cause a scene →</button><details><summary>Experimental rules</summary><p>'+rules+'</p></details><p class="muted">TESTING · 15 Composure · five Character slots · Carl 0.3 remains canonical</p><nav><a href="../../web/">Carl 0.3</a><a href="../board-width/">Board Width Lab</a><a href="https://github.com/jobeck17/unhinged/tree/main/lab/composure">Lab rules & source</a></nav></section>';
+ root.innerHTML='<section class="setup"><span class="eyebrow">UNHINGED / EXPERIMENT 03</span><h1>Drive them<br>Unhinged.</h1><p class="intro">Fight their Characters. Cause Trouble. Decide who you’re willing to expose.</p><div class="settings"><label>Your deck<select id="you">'+opts+'</select></label><label>Opponent deck<select id="them">'+opts+'</select></label></div><button id="start" class="primary">Cause a scene →</button><details><summary>Experimental rules</summary><p>'+rules+'</p></details><p class="muted">TESTING · 15 Composure · five Character slots · Carl 0.3 remains canonical</p><nav><a href="../../web/">Carl 0.3</a><a href="../board-width/">Board Width Lab</a><a href="https://github.com/jobeck17/unhinged/tree/main/lab/composure">Lab rules & source</a></nav></section>';
  root.querySelector('#you').value='0';root.querySelector('#them').value='4';
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
@@ -29,7 +29,7 @@ function render(){
  '<section class="controls"><div><span class="eyebrow">'+esc(game.decks[game.turn].leader)+' · '+(active?'YOUR TURN':'ACTIVE')+'</span><p>'+esc(instruction)+'</p></div><div class="actions">'+(active?'<button id="end" class="primary">End Turn</button>':'')+'</div></section>'+
  '<p class="scroll-hint">Swipe the battlefield sideways to see all five Character slots.</p><div class="battlefield">'+row(1-human)+row(human)+'</div>'+
  '<section class="hand"><div class="section-head"><h2>Your hand <small>'+game.players[human].hand.length+' cards</small></h2><span>Stash '+game.players[human].fuel+'/'+game.players[human].stash.length+' Ready</span></div><div class="hand-cards">'+game.players[human].hand.map((id,i)=>cardHTML({id},'hand',human,i)).join('')+'</div></section>'+
- '<div class="lower"><details open><summary>What this lab is testing</summary><p>A Ready Character can fight, Cause Trouble, or stay Ready to Block Trouble. A successful Block prevents all Antics, so Power and Antics remain separate jobs.</p></details><details open><summary>Recent events</summary>'+game.log.slice(0,10).map(x=>'<p>'+esc(x)+'</p>').join('')+'</details></div>';
+ '<div class="lower"><details open><summary>What this lab is testing</summary><p>A Ready Character can fight, Cause Trouble, or stay Ready and protected. Trouble resolves immediately, then leaves that Character Rotated and exposed to attack. Power fights; Antics wins.</p></details><details open><summary>Recent events</summary>'+game.log.slice(0,10).map(x=>'<p>'+esc(x)+'</p>').join('')+'</details></div>';
  wireCards();root.querySelector('#end')?.addEventListener('click',()=>humanAction(()=>game.pass()));root.querySelector('#new').onclick=()=>{game=null;phase='setup';modal=null;selected.clear();setup()};if(modal)showModal(modal);
 }
 function row(p){
@@ -41,7 +41,7 @@ function row(p){
 function cardHTML(x,zone,p,index,chosen=false){
  const c=game.card(x),b=zone==='board',char=c.type==='Character',rot=b&&!x.ready,selected=zone==='hand'&&chosen;
  let stats='';
- if(char)stats='<span class="stats"><span><small>POWER</small>'+(b?game.power(x):c.power)+'</span><span><small>'+(b?'GUARD LEFT':'GUARD')+'</small>'+(b?Math.max(0,game.guard(x)-x.damage):c.guard)+'</span><span class="stat-antics"><small>ANTICS</small>'+c.antics+'</span></span>';
+ if(char)stats='<span class="stats"><span><small>POWER</small>'+(b?game.power(x):c.power)+'</span><span><small>'+(b?'GUARD LEFT':'GUARD')+'</small>'+(b?Math.max(0,game.guard(x)-x.damage):c.guard)+'</span><span class="stat-antics"><small>ANTICS</small>'+(b?game.antics(x):c.antics)+'</span></span>';
  const foot=selected?'✓ REPLACE':b?(rot?'ROTATED':char&&x.born>=game.round?'NEW THIS TURN':x.damage?x.damage+' DAMAGE':'READY'):'TAP FOR ACTIONS';
  return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'"><span class="card-top"><span>'+esc(c.type)+' · '+esc(c.style)+'</span><b>'+(b?(rot?'ROTATED':'READY'):'COST '+c.cost)+'</b></span><strong>'+esc(c.name)+'</strong><span class="card-text">'+esc(c.text||c.flavor||'')+'</span>'+stats+'<span class="card-foot '+(x.damage?'damage':'')+'">'+esc(foot)+'</span></button>';
 }
@@ -50,8 +50,8 @@ function detail(ref){
  const x=ref.uid?game.obj(ref.uid):null,c=game.card(x||ref.id);if(!c)return;
  const me=game.turn===human&&!busy&&game.winner===null,own=x?.owner===human;
  const play=ref.handIndex!==undefined&&me&&game.canPlay(ref.handIndex,human),stash=ref.handIndex!==undefined&&me&&game.canStash(ref.handIndex,human),attack=x&&own&&c.type==='Character'&&me&&game.canAttack(x),trouble=x&&own&&c.type==='Character'&&me&&game.canCauseTrouble(x),act=x&&me&&game.canUse(x);
- let buttons='<button id="close">Close</button>'+(stash?'<button id="stash">Stash</button>':'')+(play?'<button id="play" class="primary">Play</button>':'')+(attack?'<button id="attack" class="primary">Attack Character</button>':'')+(trouble?'<button id="trouble" class="trouble-button">Cause Trouble · '+c.antics+'</button>':'')+(act?'<button id="activate" class="primary">Activate</button>':'');
- let stats='<span>Cost '+c.cost+'</span>'+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Guard '+(x?game.guard(x):c.guard)+'</span><span>Antics '+c.antics+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
+ let buttons='<button id="close">Close</button>'+(stash?'<button id="stash">Stash</button>':'')+(play?'<button id="play" class="primary">Play</button>':'')+(attack?'<button id="attack" class="primary">Attack Character</button>':'')+(trouble?'<button id="trouble" class="trouble-button">Cause Trouble · '+game.antics(x)+'</button>':'')+(act?'<button id="activate" class="primary">Activate</button>':'');
+ let stats='<span>Cost '+c.cost+'</span>'+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Guard '+(x?game.guard(x):c.guard)+'</span><span>Antics '+(x?game.antics(x):c.antics)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
  modal={kind:'detail',html:'<div class="overlay"><article class="sheet"><div class="type">'+esc(c.type)+' · '+esc(c.style)+' · '+esc(c.id)+'</div><h2>'+esc(c.name)+'</h2><div class="stats">'+stats+'</div><p class="rule">'+esc(c.text||c.flavor||'No special ability.')+'</p><div class="buttons">'+buttons+'</div></article></div>'};showModal(modal);
  document.querySelector('#close')?.addEventListener('click',close);document.querySelector('#stash')?.addEventListener('click',()=>{const i=ref.handIndex;close();humanAction(async()=>game.stash(i))});document.querySelector('#play')?.addEventListener('click',()=>{close();humanAction(()=>game.play(ref.handIndex))});document.querySelector('#attack')?.addEventListener('click',()=>{close();humanAction(()=>game.attack(x.uid))});document.querySelector('#trouble')?.addEventListener('click',()=>{close();humanAction(()=>game.causeTrouble(x.uid))});document.querySelector('#activate')?.addEventListener('click',()=>{close();humanAction(()=>game.activate(x.uid))});
 }
