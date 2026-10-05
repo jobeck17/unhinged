@@ -34,6 +34,7 @@ jobs:
       - run: GAMES=40 node lab/board-width/simulate.mjs
       - run: node --check lab/composure/engine.js
       - run: node --check lab/composure/ai.js
+      - run: node --check lab/composure/stank-merge.js
       - run: node --check lab/composure/app.js
       - run: node lab/composure/smoke.mjs
       - run: node --check lab/schemes/app.mjs
