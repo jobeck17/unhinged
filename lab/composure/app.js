@@ -1,11 +1,11 @@
-import {Game,LEADERS} from './engine.js?v=composure-03';
-import {aiAction,aiChoice} from './ai.js?v=composure-03';
+import {Game,LEADERS} from './engine.js?v=composure-04';
+import {aiAction,aiChoice} from './ai.js?v=composure-04';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rules='Five Character slots. Leaders have 15 Composure. Characters have Power / Guard / Antics. Attack Rotated opposing Characters using Power, or Cause Trouble to immediately reduce opposing Composure by Antics. Cause Trouble cannot be Blocked and is not combat. Causing Trouble Rotates the Character, exposing it to ordinary Attacks on the opponent’s Turn. Ready Characters are normally protected. Power fights; Antics wins. Carl Stash, Costs, full Turns, persistent damage, retaliation, Items and Actions remain the control baseline.';
 try{
- [pool,decks]=await Promise.all([fetch('./CARDS.json?v=composure-03').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('./DECKS.json?v=composure-03').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
+ [pool,decks]=await Promise.all([fetch('./CARDS.json?v=composure-04').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('./DECKS.json?v=composure-04').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Lab card/deck versions do not match');
  setup();
 }catch(e){root.innerHTML='<section class="setup"><h1>Lab failed to load.</h1><p>'+esc(e.message)+'</p></section>'}
