@@ -1,5 +1,5 @@
 // STANK INDUSTRIES LAB ONLY — clean out stale Misdirection code paths.
-// P067 is School Bully now, so it should not run the old Kid with an iPad entry effect.
+// P067 is School Bully now, so none of the old Kid with an iPad targeting/effect code should run.
 // P089 is no longer used in the STANK Magician deck; remove the old Bush card object entirely
 // so its legacy hidden-card behavior cannot leak back into this playtest.
 import {Game} from './engine.js?v=rulebreakers-1';
@@ -36,4 +36,54 @@ Game.prototype.enterEffect=async function(x,previous){
     return;
   }
   return baseEnterEffect.call(this,x,previous);
+};
+
+// The base LAB engine still treats P067 as though it needs an opposing target before it can be played.
+// School Bully no longer has that ability, so remove that stale play restriction.
+const baseCanPlay=Game.prototype.canPlay;
+Game.prototype.canPlay=function(index,p=this.turn){
+  const id=this.players[p]?.hand?.[index];
+  if(id!=='P067')return baseCanPlay.call(this,index,p);
+  const c=this.card(id);
+  if(!c)return false;
+  const s=this.players[p];
+  const cost=Math.max(0,c.cost-(s.nextCharDiscount||0));
+  return cost<=this.availableFuel(p);
+};
+
+// Bypass the old P067 target-selection branch entirely so playing School Bully never opens
+// the obsolete "choose opposing Character" question tab.
+const basePlayCard=Game.prototype.playCard;
+Game.prototype.playCard=async function(p,id,source='hand',cost=0,{index=null,bonusHot=false,stack=false}={}){
+  if(id!=='P067')return basePlayCard.call(this,p,id,source,cost,{index,bonusHot,stack});
+
+  const s=this.players[p],c=this.card(id);
+  if(source==='hand'&&(index===null||s.hand[index]!==id))index=s.hand.indexOf(id);
+  if(source==='hand'&&index<0)return false;
+  if(source==='discard'&&!s.discard.includes(id))return false;
+  if(this.availableFuel(p)<cost)return false;
+  if(!this.payCost(p,cost))return false;
+
+  if(source==='hand')s.hand.splice(index,1);
+  else s.discard.splice(s.discard.indexOf(id),1);
+
+  const previous=[...s.played];
+  s.played.push({id,type:c.type});
+  this.say(`Plays ${c.name}${cost?` (Cost ${cost})`:' for free'}`);
+
+  const x=this.enter(p,id);
+  x.hot=bonusHot;
+  await this.enterEffect(x,previous);
+
+  if(s.friendPower&&this.obj(x.uid)){
+    const choices=this.chars(p).filter(y=>y.uid!==x.uid);
+    if(choices.length){
+      const t=await this.pick('Bring a Friend: give +1 Power',p,choices,true);
+      if(t!=null)this.obj(t).power++;
+    }
+    s.friendPower=false;
+  }
+  if(s.nextCharDiscount)s.nextCharDiscount=0;
+  if(s.discountUndead===id)s.discountUndead=null;
+  return true;
 };
