@@ -1,10 +1,10 @@
-# Composure × STANK INDUSTRIES-60 Lab 0.3
+# Composure × STANK INDUSTRIES-60 Lab 0.4
 
 **TESTING · October 5, 2026.** Carl 0.3 remains canonical. This lab combines the Composure win-condition experiment with the last live **STANK INDUSTRIES-60** state from immediately before the Composure lab was created.
 
 ## Core win condition
 
-Each Leader begins with **15 Composure**. At 0 Composure that Leader becomes **Unhinged** and loses.
+Each Leader begins with **25 Composure**. At 0 Composure that Leader becomes **Unhinged** and loses.
 
 Characters have **Power / Guard / Antics**.
 
@@ -59,7 +59,11 @@ STANK's no-retaliation test is intentionally active here. That is a larger comba
 6. Does Magician's Return engine interact cleanly with exposure?
 7. Does Mad Scientist's randomized body quality feel different now that Power and Antics are separate?
 8. Does no universal retaliation improve combat here, or should Composure keep its previous retaliation model?
-9. Is 15 Composure still obviously too short once these decks are added?
+9. Does 25 Composure produce enough time for exposed scorers to be punished without making games drag?
 10. Do players immediately want another game?
+
+### Current tuning note
+
+Simulation before the STANK merge strongly favored **25 Composure** over 15: it moved games toward the desired 8–10 round range and gave opponents more time to punish exposed scoring Characters. This lab now uses 25 as the human-play baseline.
 
 Do not promote any of this to Carl until human testing separates the successful pieces.
