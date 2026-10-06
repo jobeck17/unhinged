@@ -1,4 +1,4 @@
-# CURRENT — Mordecai 0.4 promoted 6 October 2026
+🐈🎸 **Landon deck sync · 6 October 2026:** Crazy Cat Lady Lab 1.3 / STANK-66 behavior is promoted into Mordecai, including Strength in Numbers, Shoebox/Shovel, Snowball, Hairy Cat, Three-Legged Cat, and Mittens III. Washed-Up Rock Star’s dedicated Carl-era lab is promoted as a Mordecai TESTING translation: Bad Publicity Is Still Publicity now triggers on actual Composure lost rather than Leader damage. Its decklist is unchanged and requires fresh Mordecai playtest evidence before balance conclusions.\n\n# CURRENT — Mordecai 0.4 promoted 6 October 2026
 
 🔒 **Production promotion:** Composure 2.0 is now **Mordecai 0.4**, the canonical Unhinged build. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative. The 40-question core-rules interview is complete and the core is feature-complete for this playtest.
 

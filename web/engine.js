@@ -1,12 +1,12 @@
 // Mordecai 0.4 production playtest engine. Internal power/guard field names remain during the data-schema migration.
 export const LEADERS={
  'Florida Man':{style:'Reckless',passive:'Damaged Characters have Hothead and Sucker Punch. After a damaged Character survives combat with another Character, Ready it.'},
- 'Washed-Up Rock Star':{style:'Momentum',passive:'Comeback Tour: Before Ready, refill to 2 cards at 1 or fewer; at 3 or more, skip the normal Draw.'},
+ 'Washed-Up Rock Star':{style:'Momentum',passive:'Bad Publicity Is Still Publicity: Whenever your Leader loses Composure, Draw that many cards.'},
  'Birthday Party Magician':{style:'Misdirection',passive:'Ace Up My Sleeve: Once during your Turn, when your Character is Returned to hand, Ready 1 Stash.'},
  'Trash Baron':{style:'Salvage',passive:'You may use opposing Ready Stash to pay your Costs as though it were your own.'},
  'HOA President':{style:'Stonewall',passive:'Failure to Respond: Beginning in Round 8, your Characters get +1 Trouble.'},
  'Backyard Wrestler':{style:'Expendable',passive:'Tag Out: Once during your Turn after a friendly Defeat/Sacrifice, reveal the top card. A qualifying Expendable Character enters with Hothead; otherwise it goes to hand.'},
- 'Crazy Cat Lady':{style:'Lab',passive:'Cat Distribution System: Before Ready, if you control 3+ Cats, put the top card of your deck face down and Ready into your Stash.'},
+ 'Crazy Cat Lady':{style:'Lab',passive:'Strength in Numbers............ Mostly Numbers........ Probably.: At the start of your Turn, if you control fewer than 3 Cats, you may Stash one additional card this Turn. If you control 3 or more Cats, Draw an additional card.'},
  'Mad Scientist':{style:'Lab',passive:'Fully Charged, No Charger: Start with a protected 5-card Ready battery. It never grows normally and only 1 spent Stash Readies each Turn.'}
 };
 export function buildDeckField(doc){
@@ -68,8 +68,6 @@ export class Game{
  begin(){for(let p=0;p<2;p++)if(this.name(p)==='Mad Scientist'){let s=this.players[p];while(s.stash.length<5&&s.deck.length)s.stash.push(s.deck.pop());s.fuel=s.stash.length;this.say('Mad Scientist charges the 5-card laboratory battery')}this.round=1;this.turn=this.first;this.startRound()}
  startRound(){this.say(`Round ${this.round} begins`);this.startTurn()}
  startTurn(){for(let s of this.players){Object.assign(s,{played:[],leaderPassiveUsed:false,attacked:false,prevent:0,defeatedRound:false,nextCharDiscount:0,nextItemDiscount:0,friendPower:false,discountUndead:null,skipDraw:false});for(let x of s.board){x.once=false;x.roundUsed=false;x.noBlock=false}}let p=this.turn,s=this.players[p];s.stashedThisTurn=false;
- if(this.name(p)==='Washed-Up Rock Star'){if(s.hand.length<=1){while(s.hand.length<2&&s.deck.length)this.draw(p,1,false)}else if(s.hand.length>=3)s.skipDraw=true}
- if(this.name(p)==='Crazy Cat Lady'&&this.chars(p).filter(x=>this.trait(x,'Cat')).length>=3&&s.deck.length){s.stash.push(s.deck.pop());this.say('Cat Distribution System adds 1 Ready Stash')}
  if(this.name(p)==='Mad Scientist')s.fuel=Math.min(s.stash.length,s.fuel+1);else s.fuel=s.stash.length;for(let x of s.board){x.ready=true;x.attacked=false}let skip=p===this.first&&this.round===1;if(!skip&&!s.skipDraw)this.draw(p,1,false);this.checkEnd();this.update?.()}
  async endRound(){let nextRound=this.turn!==this.first;for(let p=0;p<2;p++)for(let x of [...this.players[p].board]){if(!this.obj(x.uid))continue;if(x.id==='P029'){this.hurtLeader(x.beside,1);this.say(`Hot Potato hits ${this.name(x.beside)}`);await this.remove(x,'hand')}if(x.id==='P089'&&x.hidden){this.players[p].hand.push(x.hidden);x.hidden=null}if(x.cloaked&&nextRound)x.cloaked=false;if(this.card(x).type==='Character'){x.power=0;x.guard=0;x.hot=false;await this.checkDefeat(x)}}this.checkEnd();if(this.winner!==null)return;if(this.pendingLastStraw!=null)this.pendingLastStraw=null;this.turn=1-this.turn;if(nextRound){this.round++;this.startRound()}else this.startTurn()}
  async pass(){this.say('End turn');await this.endRound()}

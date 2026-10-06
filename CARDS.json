@@ -3707,14 +3707,12 @@
         "Animal",
         "Cat"
       ],
-      "text": "Bodyguard. While this is in play, opposing Characters cannot Attack your other Cats.",
-      "keywords": [
-        "Bodyguard"
-      ],
+      "text": "While this is in play, opposing Characters cannot Attack your other Cats.",
+      "keywords": [],
       "power": 1,
       "guard": 4,
       "status": "lab-prototype",
-      "purpose": "Defensive colony protector: low Attack, high Health, and Bodyguard make it a durable shield instead of another efficient attacker.",
+      "purpose": "Defensive colony protector: low Attack, high Health, and its protection ability make it a durable shield instead of another efficient attacker.",
       "style": "Lab",
       "trouble": 1
     },

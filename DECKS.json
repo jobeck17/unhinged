@@ -83,7 +83,7 @@
         "Does Comeback Tour refill often enough to sustain Momentum without causing routine deck-out?",
         "Do acceleration cards help create explosive turns rather than simply emptying the hand?"
       ],
-      "status_note": "Revision 12 baseline; Comeback Tour uses the start-of-Turn hand gate and low-hand tiered bodies.",
+      "status_note": "Landon Rock Star lab promoted to Mordecai as a TESTING translation. Bad Publicity Is Still Publicity: whenever this Leader loses Composure, Draw that many cards. The 40-card Comeback Tour list is unchanged; balance evidence is pending under Mordecai.",
       "composure": 20
     },
     {
@@ -302,8 +302,8 @@
         "Whether Mittens III creates a real attack-versus-feed decision instead of always eating Stash",
         "How often Mittens III cashes in Shoebox Cats, and whether that payoff is exciting without making Shoebox automatic fuel"
       ],
-      "lab": true,
-      "status_note": "STANK INDUSTRIES-60 Crazy Cat Lady deck. Composure compatibility: Tuxedo Cat protects the colony from Character Attacks instead of blocking Leader attacks.",
+      "lab": false,
+      "status_note": "Landon Lab 1.3 / STANK-66 Cat Lady promoted to Mordecai. Strength in Numbers split passive: below 3 Cats, may Stash twice that Turn; at 3+ Cats, Draw one additional card at start of Turn. Shoebox/Shovel, Snowball, Hairy Cat, Three-Legged Cat, and Mittens III behaviors are production playtest mechanics.",
       "deckbuilding_exception": "May include Cat Characters from any Style and up to 10 copies of Stray Cat."
     },
     {

@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game} from './engine.js';
+import {Game,LEADERS} from './engine.js';
+await import('./cat-lady.js');
+await import('./rockstar.js');
 
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url)));
 const doc=JSON.parse(fs.readFileSync(new URL('../DECKS.json',import.meta.url)));
@@ -56,3 +58,16 @@ assert.equal(pc('LAB-MAG-005').cost,4); assert.equal(pc('LAB-MAG-006').trouble,0
 assert.equal(pc('P088').name,'Beer-Stained Cards');
 assert(!pc('LAB-MAG-001A').text.includes('first time this card attacks'),'Volunteer auto-Return removed');
 console.log('STANK-66 Magician promotion smoke passed');
+
+const cd=doc.decks.find(d=>d.leader==='Crazy Cat Lady');
+assert.equal(Object.values(cd.cards).reduce((a,b)=>a+b,0),40);
+assert.equal(cd.cards['LAB-CAT-001'],6); assert.equal(cd.cards['LAB-CAT-017'],3); assert.equal(cd.cards['LAB-CAT-018'],4); assert.equal(cd.cards['LAB-CAT-020'],4);
+assert.match(LEADERS['Crazy Cat Lady'].passive,/fewer than 3 Cats/);
+const cg=new Game(pool,{decks:[cd,doc.decks[4]]},ask,()=>{},{firstPlayer:0});
+cg.players[0].deck=Array(20).fill('LAB-CAT-001');cg.players[0].hand=['LAB-CAT-001','LAB-CAT-001','LAB-CAT-001'];cg.round=2;cg.turn=0;cg.startTurn();
+assert(cg.canStash(0,0));cg.stash(0,0);assert(cg.canStash(0,0),'Cat Lady can Stash twice below three Cats');
+const rd=doc.decks.find(d=>d.leader==='Washed-Up Rock Star');
+assert.match(LEADERS['Washed-Up Rock Star'].passive,/loses Composure/);
+const rg=new Game(pool,{decks:[rd,doc.decks[4]]},ask,()=>{},{firstPlayer:0});
+const rh=rg.players[0].hand.length;rg.hurtLeader(0,2);assert.equal(rg.players[0].hand.length,rh+2,'Rock Star draws equal actual Composure lost');
+console.log('Landon Cat Lady and Rock Star promotion smoke passed');
