@@ -21,6 +21,7 @@ jobs:
       - run: node --check web/engine.js
       - run: node --check web/ai.js
       - run: node --check web/app.js
+          node --check web/magician.js
       - run: node --check builder/app.js
       - run: node --check poll/app.js
       - run: node --check poll/questions.js

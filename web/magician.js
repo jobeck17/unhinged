@@ -1,5 +1,5 @@
 // Mordecai 0.4 production implementation of Landon's STANK INDUSTRIES-66 Magician package.
-import {Game} from './engine.js?v=mordecai-04';
+import {Game} from './engine.js?v=mordecai-04-mag66';
 
 const RABBIT='P063', HAT='LAB-MAG-005', DOVE='LAB-MAG-006', DRAMA='LAB-MAG-002', BOY='LAB-MAG-003', LADY='LAB-MAG-004', HAT_ACTION='LAB-MAG-007';
 const VOLUNTEERS=new Set(['LAB-MAG-001A','LAB-MAG-001B']);
