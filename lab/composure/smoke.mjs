@@ -8,7 +8,7 @@ const doc=JSON.parse(fs.readFileSync(new URL('./DECKS.json',import.meta.url)));
 assert.equal(pool.version,doc.card_pool);
 assert.equal(doc.decks.length,8,'combined lab should expose eight decks');
 for(const d of doc.decks)assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40);
-for(const d of doc.decks)for(const id of Object.keys(d.cards)){const c=pool.cards.find(x=>x.id===id);if(c.type==='Character')assert(c.trouble>=1&&c.trouble<=3,id+' needs Trouble')}
+for(const d of doc.decks)for(const id of Object.keys(d.cards)){const c=pool.cards.find(x=>x.id===id);if(c.type==='Character')assert(c.trouble>=0&&c.trouble<=3,id+' needs Trouble')}
 let seed=20261004,old=Math.random;Math.random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
 try{
  // Cause Trouble is an unblockable win-condition action that exposes its Character.
@@ -31,10 +31,24 @@ try{
  assert.equal(test.turn,1,'Last Straw should end the current Turn');
  assert.equal(toddler.ready,false,'the aggressor should remain Rotated after the handoff');
  assert.equal(defender.ready,true,'the endangered side should Ready normally for its comeback Turn');
+ const desperate=test.enter(1,'P124');desperate.born=test.round;
+ assert.equal(test.canAttack(desperate),true,'Characters should have Hothead while their Leader is at Last Straw');
+ const readyThreat=test.enter(0,'P124');readyThreat.born=1;readyThreat.ready=true;
+ let attackedReady=false;
+ const oldAsk=test.ask;
+ test.ask=r=>{if(String(r.title||'').includes('Attack which target?')){const hit=r.options?.find(o=>o.value===readyThreat.uid);if(hit){attackedReady=true;return hit.value}}return r.multi?[]:r.options?.[0]?.value};
+ await test.attack(desperate.uid);
+ test.ask=oldAsk;
+ assert.equal(attackedReady,true,'Last Straw Characters should be able to Attack opposing Ready Characters');
 
  // Once at Last Straw, one later successful Cause Trouble makes that Leader Unhinged.
  test.players[0].hp=0;test.players[0].lastStraw=true;
  const finisher=test.enter(1,'P124');finisher.born=1;finisher.ready=true;
+ const finisherCard=test.card(finisher),printedTrouble=finisherCard.trouble;
+ finisherCard.trouble=0;
+ await test.causeTrouble(finisher.uid);
+ assert.equal(test.players[0].unhinged,false,'0 Trouble must not make a Last Straw Leader Unhinged');
+ finisherCard.trouble=printedTrouble;finisher.ready=true;
  await test.causeTrouble(finisher.uid);
  assert.equal(test.players[0].unhinged,true,'final Trouble should make a Last Straw Leader Unhinged');
  assert.equal(test.winner,1,'final Trouble should win the game');
