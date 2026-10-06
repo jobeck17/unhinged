@@ -13,7 +13,7 @@ Each Leader begins with **20 Composure**. Characters have **Power / Guard / Trou
 - **Cause Trouble cannot be Blocked.** It is not an Attack and does not start combat.
 - After causing Trouble, that Character is Rotated and exposed to ordinary Attacks.
 - **Stay Ready:** make no victory progress now, but remain normally protected from Attack.
-- Maximum **five Characters** per player. Items do not count.
+- **No Character battlefield cap** in the current human-playtest build.
 - **Opening rule:** the first player skips their first Draw. The second player receives **no setup temporary Stash** and Draws normally on their first Turn. This is the current lab rule.
 
 The core Character decision is:
@@ -110,9 +110,7 @@ Once a Leader is at Last Straw, a successful Cause Trouble does **not** cause or
 
 A Last Straw ability may explicitly **ignore or exceed the normal Character limit**. Characters put into play this way remain in play even while their controller is above the normal limit. Being above the limit does not force Characters to be removed; it only prevents ordinary additions that do not themselves override the limit.
 
-For the current test, the normal battlefield limit remains **5 Characters**. This is being retained provisionally as a battlefield-space and slot-management mechanic, **not** as an anti-snowball fix. If a player controls 5 Characters, ordinary play cannot add another unless an effect explicitly overrides the limit. The five-Character rule remains TESTING and may be removed if human play does not justify the added spatial constraint.
-
-The underlying **five-Character limit itself remains TESTING**, not locked. Its value is being judged primarily as a battlefield-scarcity and strategic-slot rule, not as an anti-snowball mechanism.
+**Character cap removed for the current test.** Players may control any number of Characters. Earlier five-wide testing did not meaningfully solve snowballing, so the cap is being removed to let human play reveal whether unrestricted boards create an actual readability, space, or gameplay problem. Do not reintroduce a cap without human-playtest evidence that one is useful.
 
 ### Composure recovery
 
