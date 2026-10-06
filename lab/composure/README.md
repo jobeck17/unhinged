@@ -90,13 +90,13 @@ The first time a Leader reaches 0 Composure:
 3. Trigger that Leader's **Last Straw** hook. Entering Last Straw does **not** universally Rotate Characters or otherwise change the battlefield; any such change comes from the Leader's unique Last Straw ability.
 4. **Force the current Turn to its normal end-of-Turn sequence.** Scheduled end-of-Turn effects still resolve and normal cleanup still occurs.
 5. After Last Straw has fully resolved and the forced end-of-Turn sequence finishes, **turn order continues normally to the other player**. Last Straw never grants an extra Turn. If Characters put into play by the Last Straw effect remain under their controller's control when that controller's next Turn begins, they are **fully cooled down** for that Turn: they enter Ready unless the effect says otherwise and may take their normal Character action, including Attack or Cause Trouble.
-6. A later successful **Cause Trouble** against a Leader already at Last Straw makes that Leader **Unhinged**. That player loses.
+6. A later successful **Cause Trouble** by a Character with **1 or more Trouble** against a Leader already at Last Straw makes that Leader **Unhinged**. That player loses.
 
-The amount of Trouble on the final Cause Trouble does not matter.
+A Character with **0 Trouble** may still Cause Trouble and resolve any relevant triggers, but it cannot make a Leader at Last Straw Unhinged.
 
 ### Final Trouble and prevention
 
-Once a Leader is at Last Straw, the final successful Cause Trouble does **not** cause ordinary Composure loss. It makes that Leader **Unhinged**. Effects that only prevent or reduce Composure loss cannot stop this final hit. An effect can stop it only if it explicitly cancels or prevents the Cause Trouble action, or explicitly prevents the Leader from becoming Unhinged.
+Once a Leader is at Last Straw, a successful Cause Trouble by a Character with **1 or more Trouble** does **not** cause ordinary Composure loss. It makes that Leader **Unhinged**. Reducing that Character's Trouble to **0** before the action resolves prevents the Unhinged finish. Effects that only prevent or reduce Composure loss do not stop a final Cause Trouble that still has at least 1 Trouble. An effect may also stop the finish by explicitly canceling or preventing Cause Trouble, or explicitly preventing the Leader from becoming Unhinged.
 
 ### Character limit exception
 
