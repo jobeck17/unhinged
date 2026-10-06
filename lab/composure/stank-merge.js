@@ -153,7 +153,7 @@ const baseCanAttack=Game.prototype.canAttack;
 Game.prototype.canAttack=function(x){
   if(!x||x.cloaked||!x.ready||this.has(x,'P135')||x.holdMyBeerNoAttack)return false;
   const wrestlerHot=this.chars(x.owner).some(y=>y.uid!==x.uid&&this.has(y,'P165')&&this.trait(x,'Wrestler'));
-  const hot=this.layers(x).some(id=>this.card(id).keywords.includes('Hothead'))||x.hot||wrestlerHot;
+  const hot=this.players[x.owner].lastStraw||this.layers(x).some(id=>this.card(id).keywords.includes('Hothead'))||x.hot||wrestlerHot;
   const blocked=this.players.flatMap(s=>s.board).some(y=>y.uid!==x.uid&&y.ready&&!y.cloaked&&this.has(y,'P135'));
   return x.born<this.round||hot&&!blocked;
 };
@@ -191,7 +191,7 @@ Game.prototype.pick=function(title,p,targets,optional=false){
   if(title==='Attack which target?'&&this._stankAttackUid){
     const a=this.obj(this._stankAttackUid);
     const printedSucker=a&&this.layers(a).some(id=>this.card(id).keywords.includes('Sucker Punch'));
-    if(a&&this.name(p)==='Florida Man'&&a.damage>0&&!printedSucker){
+    if(a&&this.name(p)==='Florida Man'&&a.damage>0&&!printedSucker&&!this.players[p].lastStraw){
       targets=targets.filter(t=>t&&(!t.ready||this.layers(t).some(id=>this.card(id).keywords.includes('Bodyguard'))));
     }
     const defender=1-p;
