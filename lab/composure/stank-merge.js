@@ -387,7 +387,7 @@ Game.prototype.canPlay=function(index,p=this.turn){
   const id=this.players[p]?.hand?.[index],own=this.chars(p),opp=this.chars(1-p);
   if(id==='P067'){
     const c=this.card(id),s=this.players[p];
-    if(!c||own.length>=this.maxCharacters)return false;
+    if(!c)return false;
     return Math.max(0,c.cost-(s.nextCharDiscount||0))<=this.availableFuel(p);
   }
   if(id===CAFFEINE&&!own.length)return false;
@@ -416,7 +416,7 @@ Game.prototype.playCard=async function(p,id,source='hand',cost=0,{index=null,bon
   if(id==='P067'){
     const s=this.players[p],c=this.card(id);
     if(source==='hand'&&(index===null||s.hand[index]!==id))index=s.hand.indexOf(id);
-    if(source==='hand'&&index<0||source==='discard'&&!s.discard.includes(id)||this.availableFuel(p)<cost||this.chars(p).length>=this.maxCharacters)return false;
+    if(source==='hand'&&index<0||source==='discard'&&!s.discard.includes(id)||this.availableFuel(p)<cost)return false;
     if(!this.payCost(p,cost))return false;
     if(source==='hand')s.hand.splice(index,1);else s.discard.splice(s.discard.indexOf(id),1);
     const previous=[...s.played];s.played.push({id,type:c.type});
