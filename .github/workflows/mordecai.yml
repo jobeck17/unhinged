@@ -22,6 +22,9 @@ jobs:
       - run: node --check web/ai.js
       - run: node --check web/app.js
       - run: node --check builder/app.js
+      - run: node --check poll/app.js
+      - run: node --check poll/questions.js
+      - run: node poll/test.mjs
       - name: Verify browser module imports
         run: |
           grep -q "from './engine.js" web/app.js
@@ -43,7 +46,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Prepare static site
         run: |
-          mkdir -p _site/web _site/builder
+          mkdir -p _site/web _site/builder _site/poll
+          cp poll/index.html poll/app.js poll/questions.js poll/config.js poll/style.css _site/poll/
           mkdir -p _site/lab/leader-rulebreakers/crazy-cat-lady _site/lab/leader-rulebreakers/mad-scientist
           cp index.html CARDS.json DECKS.json _site/
           cp web/index.html web/app.js web/engine.js web/ai.js web/style.css _site/web/

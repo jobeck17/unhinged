@@ -183,3 +183,16 @@ Post-1.0 development can then use normal release thinking: **1.0.x** for fixes a
 ## Deck builder
 
 The deck builder lives at `/builder/` and reads the same `CARDS.json` and `DECKS.json` as the playtest. It currently supports Leader/secondary-Style legality, search and filters, 40-card and four-copy limits, local autosave, deck curve/counts, and text import/export.
+
+## Vocabulary poll
+
+[Open the vocabulary poll](https://jobeck17.github.io/unhinged/poll/). The mobile-friendly survey has 18 optional questions: Stash, the Styles category name, all six Style names with baseline deck identity summaries, table vocabulary, and Leader/endgame vocabulary. Every question offers multiple choices, a write-in, and an optional reason. Alternatives are proposals; responses do not change canonical rules.
+
+- `poll/questions.js` owns the versioned survey content. Its examples follow current `RULES.md`; Style identities summarize the six baseline packages in `DECKS.json`.
+- `poll/index.html`, `app.js`, `style.css`, and `config.js` form the static GitHub Pages page. Browser storage is only a draft and submission receipt.
+- GitHub Pages cannot store POST responses itself. Anonymous submissions go to the public collection endpoint in `poll/config.js`, backed by a persistent Sites D1 database. No GitHub login, emails, or names are collected. Individual responses are not publicly readable.
+- `poll/service/` is the canonical collector logic and schema. Its manifest identifies the existing collector Site; do not register a replacement. The hosted source checkout supplies the Vinext runtime. After opening that existing Site, run `node poll/service/sync.mjs /absolute/path/to/collector-checkout`, generate/inspect Drizzle migrations if the schema changed, then build/save/publish through Sites. Synchronize survey changes to the collector before publishing the GitHub page. Existing applied migrations are immutable.
+- Read submissions privately using Sites database tools for that project, table `responses`. Each row contains a submission UUID, poll version, answer JSON, and creation timestamp. No public results endpoint is exposed. Keep raw submissions out of this public repository.
+- `node poll/test.mjs` validates questions and server-side response handling. The Pages workflow syntax-checks and tests the survey, then copies only its five public assets into `_site/poll/`.
+
+One browser receipt discourages repeat submissions, and the server deduplicates retries by submission UUID. This anonymous poll does not enforce one vote per person.
