@@ -15,7 +15,7 @@ export async function POST(request:Request) {
   let body;
   try {
     const raw=await request.text();
-    if(raw.length>24000)return json(request,{error:'Response is too large.'},413);
+    if(raw.length>64000)return json(request,{error:'Response is too large.'},413);
     body=validateResponse(JSON.parse(raw));
   }catch(err){return json(request,{error:err instanceof SyntaxError?'Invalid response format.':err instanceof Error?err.message:'Invalid response.'},400);}
   try {
@@ -24,3 +24,4 @@ export async function POST(request:Request) {
   }catch(err){console.error('Poll save failed',err);return json(request,{error:'Response collection is temporarily unavailable. Please try again.'},503);}
 }
 export function GET(request:Request){return json(request,{error:'Responses are private. Submission endpoint only.'},405);}
+

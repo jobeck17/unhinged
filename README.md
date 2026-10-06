@@ -186,7 +186,7 @@ The deck builder lives at `/builder/` and reads the same `CARDS.json` and `DECKS
 
 ## Vocabulary poll
 
-[Open the vocabulary poll](https://jobeck17.github.io/unhinged/poll/). The mobile-friendly survey has 18 optional questions: Stash, the Styles category name, all six Style names with baseline deck identity summaries, table vocabulary, and Leader/endgame vocabulary. Every question offers multiple choices, a write-in, and an optional reason. Alternatives are proposals; responses do not change canonical rules.
+[Open the vocabulary poll](https://jobeck17.github.io/unhinged/poll/). The mobile-friendly survey has 18 optional naming questions plus six optional gameplay feedback prompts. Naming questions cover Stash, the Styles category name, all six Style names with baseline deck identity summaries, table vocabulary, and Leader/endgame vocabulary. Naming questions offer multiple choices, a write-in, and an optional reason. Gameplay prompts collect what was played/reviewed, fun moments, frustrations, confusing rules, suggestions, and other comments. Submit is available from every section; gameplay-only submissions are supported. Prior respondents can use “Add gameplay feedback” from their saved receipt without resubmitting their naming votes. Alternatives are proposals; responses do not change canonical rules.
 
 - `poll/questions.js` owns the versioned survey content. Its examples follow current `RULES.md`; Style identities summarize the six baseline packages in `DECKS.json`.
 - `poll/index.html`, `app.js`, `style.css`, and `config.js` form the static GitHub Pages page. Browser storage is only a draft and submission receipt.

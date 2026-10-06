@@ -4,8 +4,10 @@ export const sections = [
   {title:'The big labels',short:'01 · Foundations',intro:'Start with the resource pool and the word for the six card families.'},
   {title:'Six identities. Six names.',short:'02 · Styles',intro:'These identity summaries come from the current baseline decks. Vote on the names, not a change to how the decks work. Alternatives are suggestions.'},
   {title:'Words at the table',short:'03 · Table talk',intro:'Choose the words that feel clear when someone explains a turn out loud.'},
-  {title:'Leaders & the final straw',short:'04 · Endgame',intro:'The current Leader track is 20 Composure, Breaking Point at 10, Last Straw at 0, then a later successful Cause Trouble makes the Leader Unhinged.'}
+  {title:'Leaders & the final straw',short:'04 · Endgame',intro:'The current Leader track is 20 Composure, Breaking Point at 10, Last Straw at 0, then a later successful Cause Trouble makes the Leader Unhinged.'},
+  {title:'How does it actually play?',short:'05 · Gameplay',intro:'Share your experience, impressions, and ideas. You can submit gameplay feedback on its own, and every prompt is optional. If you have not played yet, tell us that so we can understand your perspective.'}
 ];
+
 export const questions = [
  {id:'resource',section:0,title:'Should the resource pool be called “Stash”?',current:'Stash',context:'Once per Round on your Turn, you may put a card from hand face-down into this row. Each Ready card pays 1 toward a Cost when Rotated. All Styles use the same resource system.',examples:['“Put a card from your hand into your Stash.”','“Rotate 3 Stash to play this Character.”'],choices:['Stash','Resources','Supply','Fuel']},
  {id:'family',section:0,title:'Should the six card pools be called “Styles”?',current:'Styles',context:'Reckless, Momentum, Misdirection, Salvage, Stonewall, and Expendable are card families with different play identities. A standard deck can use its Leader’s family plus up to one additional family. These are card pools, separate from the Stash resource pool.',examples:['“Florida Man’s Style is Reckless.”','“Choose up to one secondary Style for your deck.”'],choices:['Styles','Approaches','Attitudes','Factions']},
@@ -26,3 +28,12 @@ export const questions = [
  {id:'last-straw',section:3,title:'Should the hidden comeback card be “Last Straw”?',current:'Last Straw',context:'Choose one outside-deck card from a shared pool and hide it under your Leader. Normally it reveals at 0 Composure and gives one final comeback before a later successful opposing Cause Trouble makes your Leader Unhinged.',examples:['“Reveal and resolve your Last Straw.”','“I’m at Last Straw. One more successful Cause Trouble and I lose.”'],choices:['Last Straw','Final Nerve','Snap','Last Chance']},
  {id:'character',section:3,title:'Should the people and creatures you play be “Characters”?',current:'Characters',context:'These are the main cards on the battlefield: people, animals, weirdos, and other troublemakers with Attack, Health, and Trouble.',examples:['“Play a Character from your hand.”','“Choose a Ready Character you control.”'],choices:['Characters','Troublemakers','Units','Misfits']}
 ];
+
+questions.push(
+ {id:'gameplay-context',section:4,kind:'text',maxLength:1800,title:'What did you play or review?',context:'Physical cards, the browser playtest, a particular lab, or just the rules? Tell us the version, decks, and roughly how many games, if you know.',placeholder:'For example: browser playtest, Florida Man vs. HOA, two games…'},
+ {id:'gameplay-fun',section:4,kind:'text',maxLength:1800,title:'What was the most fun?',context:'Which decisions, combos, Characters, or moments made you want to play again?',placeholder:'The moment or mechanic I enjoyed most was…'},
+ {id:'gameplay-frustration',section:4,kind:'text',maxLength:1800,title:'What felt frustrating or fell flat?',context:'Think about pacing, downtime, repetitive turns, matchups, comebacks, or moments where you felt you had no meaningful choice.',placeholder:'The part that did not work for me was…'},
+ {id:'gameplay-clarity',section:4,kind:'text',maxLength:1800,title:'What was confusing or hard to learn?',context:'Tell us about rules, card wording, targeting, timing, or anything the playtest interface made difficult.',placeholder:'I was unsure what to do when…'},
+ {id:'gameplay-suggestions',section:4,kind:'text',maxLength:1800,title:'What would you change or add?',context:'Pitch a gameplay improvement, a rule adjustment, a card or deck idea, or one thing that would make the game more fun. Explain what it would improve.',placeholder:'My suggestion is…'},
+ {id:'gameplay-other',section:4,kind:'text',maxLength:1800,title:'Anything else we should know?',context:'Overall impressions, memorable stories, or feedback that did not fit the other prompts.',placeholder:'One more thing…'}
+);

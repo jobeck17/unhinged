@@ -8,6 +8,12 @@ export function validateResponse(body) {
   for(const [id,a] of Object.entries(body.answers)) {
     const q=questions.find(q=>q.id===id);
     if(!q || !a || typeof a !== 'object' || Array.isArray(a))throw new Error('Invalid question response.');
+    if(q.kind==='text') {
+      const value=a.writeIn??'';
+      if(typeof value!=='string'||value.length>q.maxLength)throw new Error('Gameplay feedback is too long or has an invalid format.');
+      if(value.trim())answers[id]={choice:'',writeIn:value.trim(),reason:''};
+      continue;
+    }
     const clean={};
     for(const [field,max] of [['choice',100],['writeIn',120],['reason',600]]) {
       const value=a[field]??'';
