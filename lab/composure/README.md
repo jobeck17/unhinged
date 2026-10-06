@@ -1,6 +1,6 @@
-# Composure 2.0
+# Composure 2.0 — Promoted
 
-**TESTING · October 2026.** Carl 0.3 remains canonical. **Composure 2.0** is the current core-gameplay experiment combining the STANK INDUSTRIES-60 deck state with Attack / Health / Trouble, Breaking Point, and Last Straw.
+**PROMOTED · 6 October 2026.** Composure 2.0 graduated into **Mordecai 0.4**. This folder is a development/implementation record, not a competing source of truth. Current production rules/data are `/RULES.md`, `/CARDS.json`, and `/DECKS.json`.
 
 **Collaborators / fresh ChatGPT sessions:** start with [START_HERE.md](START_HERE.md). Last Straw brainstorming belongs in [LAST_STRAW_IDEAS.md](LAST_STRAW_IDEAS.md).
 
@@ -172,7 +172,7 @@ STANK 60 changes carried into this lab include:
 
 The no-universal-retaliation direction is locked for this lab. Retaliation exists only when a keyword or effect explicitly grants it.
 
-Carl 0.3 remains canonical. Do not promote this lab until the rules interview, card/deck audit, simulations, and human testing have resolved the affected systems.
+Mordecai 0.4 is canonical. Promotion occurred after the 40-question core-rules interview. Remaining card/deck/simulator/browser work moved into the Mordecai 0.4 production audit.
 
 
 ## Core-design gate

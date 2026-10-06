@@ -1,4 +1,11 @@
-# Composure 2.0 — Start Here
+# Composure 2.0 handoff — PROMOTED
+
+**Composure 2.0 was promoted to Mordecai 0.4 on 6 October 2026.** Do not treat this folder as current canon. Start with root `RULES.md`, `CARDS.json`, `DECKS.json`, `NOTES.md`, and `README.md`.
+
+This file remains as historical lab handoff material.
+
+---
+
 
 This file is the handoff for a collaborator or a fresh ChatGPT session working specifically on the **Composure 2.0** lab.
 
