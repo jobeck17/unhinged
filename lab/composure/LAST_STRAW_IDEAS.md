@@ -15,6 +15,8 @@ Last Straws are intentionally being explored wide before they are balanced. Add 
 - Hothead remains Attack-only and does not grant early Cause Trouble.
 - A later successful Cause Trouble from a Character with **1+ Trouble** makes the Leader Unhinged.
 - Last Straw effects may explicitly exceed the normal five-Character limit.
+- Last Straw cards are normally **protected game-state cards**. Ordinary card effects cannot discard, bounce, steal, Dismiss, copy, or otherwise affect them unless the effect explicitly refers to a **Last Straw**.
+- Explicit Last Straw interaction is valid design space. A Last Straw may affect another player's Last Straw.
 - Leader passives and Breaking Points remain Leader-specific.
 - **For now, the Last Straw pool is universal:** any Leader may choose any Last Straw. Natural deck/Leader synergies can create informal groupings without formal restrictions. A future hybrid model with some Style-specific Last Straws remains available if testing gives us a concrete reason to use it.
 
@@ -47,6 +49,7 @@ These are concepts, not balanced cards.
 23. Shuffle/reveal from your discard until you find five Characters; put those Characters into play and return/discard the rest as the final design specifies.
 24. Deal 2 damage to every Character. Characters Defeated this way trigger their Defeat effects twice.
 25. Until the end of your next Turn, whenever one of your Characters Causes Trouble, double its Trouble for that action.
+26. **Cut the Safety Net:** Discard the opponent's Last Straw. If it had not already triggered, that player no longer has a Last Straw to trigger at 0 Composure and reaching 0 causes them to lose/become Unhinged normally. If it already triggered, discarding the rotated card does not undo its resolved effect or any game state already created by it. Exact wording/timing pending rules cleanup.
 
 ## Useful design buckets
 
