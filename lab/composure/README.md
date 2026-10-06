@@ -101,6 +101,12 @@ The underlying **five-Character limit itself remains TESTING**, not locked. Its 
 
 **Leader-specific Last Straw effects are intentionally pending design.** The engine currently announces the hook but gives no generic payoff. One candidate discussed for a future Leader is an extreme comeback effect that draws cards equal to the opponent's remaining Composure and puts Characters drawn that way into play. It is an idea, not a universal rule and not yet assigned to a Leader.
 
+### Deck exhaustion and Last Straw
+
+There is **no deck-out loss** in this lab. If a player would Draw from an empty deck and their Leader has not entered Last Straw, that failed Draw **triggers Last Straw directly**. Set that Leader's Composure to 0 and resolve Last Straw using the normal Last Straw timing. This does not count as Composure loss and does not retroactively trigger Breaking Point.
+
+If a player would Draw from an empty deck while their Leader is already at Last Straw, that Draw simply does nothing. Do not reshuffle the discard pile. Emptying a deck can therefore force Last Straw, but only a later successful **Cause Trouble** can make that Leader Unhinged and lose the game.
+
 ### Open Last Straw rules
 
 The interview must decide, among other things:
