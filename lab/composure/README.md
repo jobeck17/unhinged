@@ -32,6 +32,10 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
 
+## Persistent Character damage
+
+Damage on Characters is **persistent**. Damage remains on a Character until an effect removes/heals it or the Character leaves play. A Character is Defeated immediately when its accumulated damage equals or exceeds its Guard.
+
 ## Attack eligibility
 
 By default, a Character may Attack only an opposing **Rotated Character**. Ready Characters are protected from ordinary Attacks. Card text may explicitly override this restriction and allow a Ready Character to be attacked or otherwise change attack eligibility.
