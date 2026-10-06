@@ -20,6 +20,10 @@ The core Character decision is:
 
 Power handles fighting. Trouble pressures the win condition.
 
+## Leader durability terminology
+
+Leaders do **not** have Health and do not take or heal damage. A Leader's measurable durability / victory track is **Composure**. Effects make Leaders **lose Composure** or **recover Composure**. Damage and healing remain Character concepts tied to Guard.
+
 ## Breaking Point
 
 A Leader's first current test threshold is **10 Composure**.
