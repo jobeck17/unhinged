@@ -4212,7 +4212,7 @@
         "Slowpoke"
       ],
       "text": "Slowpoke. Its Attack and Health are determined separately when it is created.",
-      "rule": "When an Abomination is created, roll the designated Power die, then the designated Guard die. Its Power equals the Power result and its Guard equals the Guard result. If dedicated dice are unavailable, roll one d6 twice: the first roll is Power and the second roll is Guard. The player never chooses which result applies to which stat. An Abomination entering play follows normal Character entry rules and cannot Attack that Turn unless another effect grants Hothead.",
+      "rule": "When an Abomination is created, roll the designated Attack die, then the designated Health die. Its Attack equals the Attack result and its Health equals the Health result. If dedicated dice are unavailable, roll one d6 twice: the first roll is Attack and the second roll is Health. The player never chooses which result applies to which stat. An Abomination entering play follows normal Character entry rules and cannot Attack that Turn unless another effect grants Hothead.",
       "purpose": "An unstable experiment whose offensive and defensive results are independently randomized.",
       "cost": 0,
       "style": "Lab",
