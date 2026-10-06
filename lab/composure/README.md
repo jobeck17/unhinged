@@ -1,6 +1,8 @@
-# Trouble / Last Straw × STANK INDUSTRIES-60 Lab 0.5
+# Composure 2.0
 
-**TESTING · October 5, 2026.** Carl 0.3 remains canonical. This lab combines the STANK INDUSTRIES-60 deck state with the new Trouble / Composure / Breaking Point / Last Straw win-condition experiment.
+**TESTING · October 2026.** Carl 0.3 remains canonical. **Composure 2.0** is the current core-gameplay experiment combining the STANK INDUSTRIES-60 deck state with Power / Guard / Trouble, Breaking Point, and Last Straw.
+
+**Collaborators / fresh ChatGPT sessions:** start with [START_HERE.md](START_HERE.md). Last Straw brainstorming belongs in [LAST_STRAW_IDEAS.md](LAST_STRAW_IDEAS.md).
 
 ## Core win condition
 
@@ -121,7 +123,7 @@ This universal combat permission is separate from the player's chosen Last Straw
 
 ### Shared Last Straw pool
 
-🧪 **TESTING:** Last Straws are being explored as a shared pool chosen during deckbuilding and revealed face-up at setup. Leader passives and Breaking Points remain Leader-specific. Build an oversized pool first, then cut and balance it. Exact Last Straw cards are pending design.
+🧪 **TESTING:** Last Straws are being explored as a shared pool chosen during deckbuilding. Leader passives and Breaking Points remain Leader-specific. Build an oversized pool first, then cut and balance it. The dedicated working repository for concepts, candidates, cuts, and status is **[LAST_STRAW_IDEAS.md](LAST_STRAW_IDEAS.md)**. Visibility at setup is still being finalized in the rules interview.
 
 ### Deck exhaustion and Last Straw
 
