@@ -123,6 +123,12 @@ This universal combat permission is separate from the player's chosen Last Straw
 
 ### Shared Last Straw pool
 
+### Breaking Point design
+
+🧪 **TESTING:** Each Leader's **Breaking Point is printed directly on that Leader card** and is part of the Leader's mechanical identity. Breaking Points are not currently a separate deckbuilding choice.
+
+Breaking Point is a one-time threshold trigger, but its effect follows its own card text and may be immediate, delayed, lingering, transformational, or otherwise modify normal rules. Persistent effects are allowed, but should be used carefully when they create ongoing bookkeeping or memory burden through the rest of the match.
+
 🧪 **TESTING:** Last Straws are being explored as a shared pool chosen during deckbuilding. The chosen Last Straw begins **face-down under the Leader**. When that Leader reaches **Breaking Point**, reveal the Last Straw and keep it face-up. When that Leader reaches **0 Composure**, trigger it. This visibility/timing model is specifically pending human-playtest confirmation. Leader passives and Breaking Points remain Leader-specific. Build an oversized pool first, then cut and balance it. The dedicated working repository for concepts, candidates, cuts, and status is **[LAST_STRAW_IDEAS.md](LAST_STRAW_IDEAS.md)**.
 
 ### Deck exhaustion and Last Straw
