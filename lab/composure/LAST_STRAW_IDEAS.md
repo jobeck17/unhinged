@@ -18,6 +18,7 @@ Last Straws are intentionally being explored wide before they are balanced. Add 
 - Last Straw effects may explicitly exceed the normal five-Character limit.
 - Last Straw cards are normally **protected game-state cards**. Ordinary card effects cannot discard, bounce, steal, Dismiss, copy, or otherwise affect them unless the effect explicitly refers to a **Last Straw**.
 - Explicit Last Straw interaction is valid design space. A Last Straw may affect another player's Last Straw.
+- **A triggered Last Straw resolves protected.** Normal effects cannot cancel, prevent, or interrupt it once it has triggered. Design counterplay before the trigger or against the resulting board/game state. A future effect could break this only by explicitly saying so.
 - Leader passives and Breaking Points remain Leader-specific.
 - **For now, the Last Straw pool is universal:** any Leader may choose any Last Straw. Natural deck/Leader synergies can create informal groupings without formal restrictions. A future hybrid model with some Style-specific Last Straws remains available if testing gives us a concrete reason to use it.
 
