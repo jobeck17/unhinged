@@ -32,6 +32,12 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
 
+## Ready effects and repeated actions
+
+There is **no universal once-per-Turn Attack-or-Cause-Trouble cap**. Readiness remains literal: a Ready Character may take a legal action. When an effect Readies a Character outside the normal Ready step, that effect's own text determines what the Character may or may not do afterward. Example: **“Ready a Character. It cannot Cause Trouble for the rest of this Round.”** This allows Ready effects to be tuned individually rather than imposing a hidden global restriction.
+
+Existing Ready effects must be audited under Trouble. In particular, effects such as **Hold My Beer**, **Glory Days**, **Floor It!**, and **Gas Station Pills** may need explicit Attack / Cause Trouble restrictions to match their intended role.
+
 ## Responses removed
 
 The **Response system is removed from this lab direction**. Cause Trouble and other events do not open Response windows. Interaction should come from board state, proactive Actions/Items, triggered effects, and explicitly designed mechanics rather than a universal off-turn Response framework.
