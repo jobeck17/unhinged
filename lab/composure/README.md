@@ -46,6 +46,10 @@ The first time a Leader reaches 0 Composure:
 
 The amount of Trouble on the final Cause Trouble does not matter.
 
+### Final Trouble and prevention
+
+Once a Leader is at Last Straw, the final successful Cause Trouble does **not** cause ordinary Composure loss. It makes that Leader **Unhinged**. Effects that only prevent or reduce Composure loss cannot stop this final hit. An effect can stop it only if it explicitly cancels or prevents the Cause Trouble action, or explicitly prevents the Leader from becoming Unhinged.
+
 ### Character limit exception
 
 A Last Straw ability may explicitly **ignore or exceed the normal Character limit**. Characters put into play this way remain in play even while their controller is above the normal limit. Being above the limit does not force Characters to be removed; it only prevents ordinary additions that do not themselves override the limit.
