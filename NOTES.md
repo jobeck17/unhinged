@@ -29,7 +29,7 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🔒 **Lab ruling — Last Straw limit override:** a Last Straw ability may explicitly exceed the normal Character limit. Excess Characters remain in play; no forced cleanup occurs merely for being over the limit.
 
-🧪 **Five-Character limit remains TESTING:** simulation did not show the cap materially fixing snowballing. Its stronger case is battlefield scarcity and the decisions/triggers created by limited slots. Do not treat the five-Character cap itself as locked merely because Last Straw now has an override rule.
+🧪 **Five-Character limit remains TESTING, retained for now:** simulation did not show the cap materially fixing snowballing, so it is not justified as an anti-snowball rule. Keep the five-Character maximum in the current test as a battlefield-space / slot-management mechanic and judge it in human play. At five Characters, ordinary additions are prevented unless an effect explicitly overrides the limit. Last Straw may explicitly exceed it. Remove the cap later if the spatial decisions do not justify the rules baggage.
 
 🔒 **Lab ruling — Last Straw deployment:** Characters put into play by a Last Straw effect are fully cooled down for the ensuing comeback Turn. They enter Ready unless the effect explicitly says otherwise and may take their normal Character action, including Attack or Cause Trouble.
 
