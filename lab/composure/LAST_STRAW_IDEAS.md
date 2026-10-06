@@ -15,7 +15,8 @@ Last Straws are intentionally being explored wide before they are balanced. Add 
 - Hothead remains Attack-only and does not grant early Cause Trouble.
 - A later successful Cause Trouble from a Character with **1+ Trouble** makes the Leader Unhinged.
 - Last Straw effects may explicitly exceed the normal five-Character limit.
-- Leader passives and Breaking Points remain Leader-specific. Last Straws are currently being explored as a shared pool.
+- Leader passives and Breaking Points remain Leader-specific.
+- **For now, the Last Straw pool is universal:** any Leader may choose any Last Straw. Natural deck/Leader synergies can create informal groupings without formal restrictions. A future hybrid model with some Style-specific Last Straws remains available if testing gives us a concrete reason to use it.
 
 ## Raw idea wall
 
