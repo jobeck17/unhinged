@@ -8,7 +8,7 @@ Last Straws are intentionally being explored wide before they are balanced. Add 
 ## Current architecture being tested
 
 - A player chooses **one Last Straw** during deckbuilding, outside the normal 40-card deck.
-- Current proposal: the chosen Last Straw is face-up beside the Leader from setup. This visibility rule is still being finalized in the rules interview.
+- **Current human-test model:** the chosen Last Straw begins face-down under the Leader. Reveal it when that Leader reaches Breaking Point (10 Composure), then leave it face-up. Trigger it when the Leader reaches 0 Composure. This is TESTING, not locked, and should be confirmed through human play.
 - Reaching 0 Composure triggers the chosen Last Straw once.
 - Last Straw is a comeback event, not the victory condition itself.
 - While at Last Straw, that player's Characters have **Hothead** and may **Attack opposing Ready Characters**.
