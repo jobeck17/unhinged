@@ -8,17 +8,17 @@ const doc=JSON.parse(fs.readFileSync(new URL('./DECKS.json',import.meta.url)));
 assert.equal(pool.version,doc.card_pool);
 assert.equal(doc.decks.length,8,'combined lab should expose eight decks');
 for(const d of doc.decks)assert.equal(Object.values(d.cards).reduce((a,b)=>a+b,0),40);
-for(const d of doc.decks)for(const id of Object.keys(d.cards)){const c=pool.cards.find(x=>x.id===id);if(c.type==='Character')assert(c.antics>=1&&c.antics<=3,id+' needs Antics')}
+for(const d of doc.decks)for(const id of Object.keys(d.cards)){const c=pool.cards.find(x=>x.id===id);if(c.type==='Character')assert(c.trouble>=1&&c.trouble<=3,id+' needs Trouble')}
 let seed=20261004,old=Math.random;Math.random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
 try{
  // Cause Trouble is an unblockable win-condition action that exposes its Character.
  let blockPrompted=false,test;
  test=new Game(pool,{decks:[doc.decks[0],doc.decks[4]]},r=>{if(String(r.title||'').includes('Block Trouble'))blockPrompted=true;return r.multi?[]:r.options?.[0]?.value},()=>{},{firstPlayer:0});
- test.round=2;test.turn=0;test.first=0;test.players[0].hp=test.players[1].hp=15;
+ test.round=2;test.turn=0;test.first=0;test.players[0].hp=test.players[1].hp=20;
  const toddler=test.enter(0,'P005');toddler.born=1;
  const before=test.players[1].hp;await test.causeTrouble(toddler.uid);
  assert.equal(blockPrompted,false,'Cause Trouble must not open a Block choice');
- assert.equal(test.players[1].hp,before-test.antics(toddler),'Cause Trouble should immediately reduce Composure by Antics');
+ assert.equal(test.players[1].hp,before-test.trouble(toddler),'Cause Trouble should immediately reduce Composure by Trouble');
  assert.equal(toddler.ready,false,'Cause Trouble must Rotate and expose the Character');
  const hot=test.enter(0,'P152');hot.born=test.round;assert.equal(test.canAttack(hot),true,'Hothead should still Attack on entry');assert.equal(test.canCauseTrouble(hot),false,'Hothead must not allow Trouble on entry');
 
@@ -34,4 +34,4 @@ try{
   assert(limit>0,'AI loop');
  }
 }finally{Math.random=old}
-console.log('Composure + STANK 60 smoke passed');
+console.log('Trouble + Last Straw + STANK 60 smoke passed');
