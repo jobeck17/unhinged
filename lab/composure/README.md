@@ -50,6 +50,8 @@ Every Character has a printed **Trouble** value, including **0**. Trouble is a c
 
 There is no ordinary Leader-blocking combat step in this model because Leaders are not Attack targets. Defensive Characters protect a Leader indirectly through board control, effects, and pressure on opposing Characters.
 
+**Ready protects a Character from ordinary Attacks only.** Ready Characters may still be targeted and affected by Actions, Items, abilities, damage, damage counters, Rotate effects, Return, Dismiss, Defeat, attachments, and other card effects unless specific text says otherwise. An effect that deals damage or places damage on a Character does not care whether that Character is Ready or Rotated.
+
 ## Cause Trouble is not combat
 
 **Cause Trouble cannot be blocked and is not combat.** An eligible Ready Character Rotates to Cause Trouble, and the opposing Leader loses Composure equal to that Character's Trouble. Defensive play must affect the Character, its eligibility, its Trouble, or the resulting Composure loss through other legal effects rather than assigning a combat blocker. Afterward, the Rotated troublemaker is exposed to ordinary Attacks.
