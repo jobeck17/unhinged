@@ -1,3 +1,36 @@
+## Last Straw open pool — raw wall throw, October 6, 2026
+
+🧪 **Architecture being explored:** keep Leader passive and Breaking Point Leader-specific, while choosing one face-up Last Straw from a shared pool during deckbuilding. Build a deliberately oversized pool before cutting/balancing. Nothing in this section is locked or balanced yet.
+
+Raw concepts currently on the wall:
+- Reduce the opposing Leader to 5 Composure if above 5.
+- Put your hand into the Stash/resource zone; put your discard into your hand.
+- Put all opposing Characters into their discard.
+- Leave the opponent only one Stash card.
+- Roll a die; all Characters in play gain that much Trouble.
+- Draw equal to opposing Composure and deploy Characters drawn.
+- Mass-return cheap Characters from discard.
+- Return one Character from discard with enormous stat bonuses.
+- Dismiss all Items for a payoff.
+- Discard/reload to a large hand.
+- Swap hands.
+- Return all Characters to hand.
+- Return Characters Defeated this Round.
+- Collapse your board into one giant Character.
+- Reveal a large deck slice and deploy qualifying Characters.
+- Free-play Items from hand.
+- Recover several different card types from discard.
+- Temporary mass Trouble boost.
+- Ready Characters for a telegraphed next-Turn Trouble wave.
+- Steal an opposing Character.
+- Each player keeps one Character; clear the rest.
+- Temporary protection from Defeat.
+- Randomized mass Character recursion from discard.
+- Damage every Character with amplified Defeat payoffs.
+- Double Trouble for the next Turn.
+
+🧪 **Naming note:** “Stash” may need a fresh naming pass now that the resource zone and its interactions are better defined.
+
 # Unhinged — Living Design Notes
 
 **Build:** Carl 0.3  
