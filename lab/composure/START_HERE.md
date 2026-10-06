@@ -35,9 +35,9 @@ The lab is not trying to prove that every current card or deck is balanced. It i
 Prioritize work in roughly this order:
 
 ### 1. Breaking Points
-Every Leader needs a unique one-time Breaking Point ability at 10 Composure.
+Every Leader needs a unique Breaking Point ability at 10 Composure. **Breaking Point is printed on the Leader card and is part of choosing that Leader, not a separate deckbuilding selection.**
 
-Look for abilities that express the Leader's identity and change decisions. Avoid eight variations of "Draw cards" or generic stat bonuses.
+The threshold triggers once, but the ability itself can do whatever its text says: immediate effect, delayed effect, lingering rule change, transformation, etc. Look for abilities that express the Leader's identity and change decisions. Avoid eight variations of "Draw cards" or generic stat bonuses, and be cautious with lingering effects that create excessive bookkeeping.
 
 ### 2. Last Straws
 Generate bold comeback ideas in `LAST_STRAW_IDEAS.md`.
