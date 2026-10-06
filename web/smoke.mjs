@@ -30,7 +30,7 @@ assert(g.chars(0).length>5,'Mordecai has no Character cap');
 
 g.players[1].hp=1; tr.ready=true; tr.born=0; await g.causeTrouble(tr.uid);
 assert(g.players[1].lastStraw,'0 Composure triggers Last Straw');
-g.players[1].lastStraw=true; g.players[1].hp=0; tr.ready=true; await g.causeTrouble(tr.uid);
+g.players[1].lastStraw=true; g.players[1].hp=0; g.turn=0; tr.ready=true; await g.causeTrouble(tr.uid);
 assert(g.players[1].unhinged,'later legal Trouble makes Last Straw Leader Unhinged');
 
 const e=new Game(pool,{decks:[doc.decks[0],doc.decks[1]]},ask,()=>{},{firstPlayer:0});
