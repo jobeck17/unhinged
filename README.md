@@ -31,16 +31,16 @@ This explicitly allows:
 
 A deck should still play a real game when its spectacular engine does not go off. The goal is not random chaos for its own sake. The goal is **distinct play patterns and memorable table stories**.
 
-The current LAB benchmarks are **Crazy Cat Lady** (snowball colony) and **Mad Scientist** (finite battery + randomized Abominations). They are not Mordecai 0.4 production rules, but they currently best demonstrate the desired emotional target. Backyard Wrestler's experimental **From the Top Rope!** physical toss, Paper Football concepts, and bottle-stack/Waterfall concepts are saved in NOTES.md for future development.
+**Crazy Cat Lady** (snowball colony) and **Mad Scientist** (finite battery + randomized Abominations) are now promoted rulebreaker decks in the Mordecai production baseline. Their exact construction and balance remain under audit, but they continue to demonstrate the desired emotional target. Backyard Wrestler's experimental **From the Top Rope!** physical toss, Paper Football concepts, and bottle-stack/Waterfall concepts are saved in NOTES.md for future development.
 
 ## Source of truth
 - RULES.md — current rules and Leaders.
-- CARDS.json — current 180-card pool.
-- DECKS.json — six canonical mono-Style decks.
+- CARDS.json — current 223-card production pool.
+- DECKS.json — current eight-deck production baseline (six core mono-Style decks plus two rulebreakers).
 - NOTES.md — the one living notebook for decisions, questions, next work, and saved ideas.
-- SIMULATION.md — simulation methodology.
+- SIMULATION.md — current simulation status and historical methodology; Mordecai balance runs are on hold until engine parity.
 - sim/round-robin.js — 36-configuration anomaly detector.
-- web/ — current browser playtest.
+- web/ — browser playtest; Mordecai engine migration currently pending.
 - builder/ — Dreamborn-inspired deck builder using the same canonical card pool.
 
 Mordecai locks the new core architecture, not final card balance. The next production pass is consistency and content: terminology, Leaders, Breaking Points, Last Straws, decks, cards, abilities, simulator, browser, and builder.

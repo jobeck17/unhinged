@@ -14,19 +14,19 @@
 
 ## Composure 2.0 Last Straw work
 
-🧪 The dedicated working repository for shared Last Straw concepts is `lab/composure/LAST_STRAW_IDEAS.md`. Add, refine, test, cut, and bank Last Straw concepts there rather than duplicating the live idea list in NOTES. The shared-pool architecture remains a Composure 2.0 experiment.
+🧠 The existing Last Straw concept bank remains in `lab/composure/LAST_STRAW_IDEAS.md` as promotion-era design history. The **shared hidden Last Straw architecture itself is now production**, not an experiment. During the upcoming cleanup, active candidates should be reconciled into the current production design record rather than treating the old lab file as rules canon.
 
 # Unhinged — Living Design Notes
 
-**Build:** Carl 0.3  
+**Build:** Mordecai 0.4  
 **Date:** October 4, 2026
 This replaces scattered checkpoints, brainstorm files, open-decision files, and idea banks.
 
 ## Legend
-✅ locked for Carl · 🧪 testing · 🧠 banked · 🗑 retired
+✅ current/locked · 🧪 testing · 🧠 banked · 🗑 retired
 
 ## Development milestone
-✅ **0.3 Carl** is the current core-stabilization milestone. Meaningful compatible checkpoints within Carl use 0.3.x build numbers; ordinary commits do not require a version bump. Major pre-1.0 generations advance to the next 0.X number and receive a new Dungeon Crawler Carl character codename. The full versioning policy and road to 1.0 live in README.md.
+✅ **0.4 Mordecai** is the current core-systems-lock milestone. Composure 2.0 has been promoted; the next work is production consistency, content tuning, and implementation parity. The full versioning policy and road to 1.0 live in README.md.
 
 ## Current parallel testing direction — Composure 2.0, October 2026
 🧪 **Merged experiment:** `lab/composure/` now tests the STANK INDUSTRIES-60 deck state against a **20 Composure** win-condition model. Characters use **Power / Guard / Trouble**. A Character may Attack a normally Rotated opposing Character using Power, **Cause Trouble** to reduce opposing Composure by its Trouble, or remain Ready and protected from ordinary attacks.

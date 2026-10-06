@@ -16,12 +16,12 @@
 <script>
 window.addEventListener('error',function(e){
   var a=document.getElementById('app');
-  if(a) a.innerHTML='<div id="boot-status"><b>Carl hit a browser error.</b><small>'+String(e.message||'Unknown error')+'</small></div>';
+  if(a) a.innerHTML='<div id="boot-status"><b>The legacy browser hit an error.</b><small>'+String(e.message||'Unknown error')+'</small></div>';
 });
 window.addEventListener('unhandledrejection',function(e){
   var a=document.getElementById('app');
   var m=e.reason&&e.reason.message?e.reason.message:String(e.reason||'Unknown module error');
-  if(a) a.innerHTML='<div id="boot-status"><b>Carl hit a module error.</b><small>'+m+'</small></div>';
+  if(a) a.innerHTML='<div id="boot-status"><b>The legacy browser hit a module error.</b><small>'+m+'</small></div>';
 });
 </script>
 <script type="module" src="app.js?v=rulebreakers-1"></script>
