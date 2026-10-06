@@ -72,7 +72,7 @@ Watch for:
 - Did Breaking Point change the game?
 - Did Last Straw create a real comeback fight?
 - Was the final Cause Trouble tense or automatic?
-- Did the five-Character limit create interesting slot decisions or merely frustration?
+- Do unrestricted Character boards create an actual readability, space, or gameplay problem?
 - Which card made you want to play the deck again?
 - Which turns felt obvious, boring, or hopeless?
 
@@ -82,7 +82,7 @@ Do not add a new foundational subsystem merely because a card idea needs one.
 
 Do not restore universal Responses or universal retaliation without explicitly reopening those decisions.
 
-Do not assume the five-Character cap fixes snowballing. It is being tested for battlefield scarcity and readability.
+The five-Character cap has been removed for the current human test. Do not assume a cap is needed unless human play reveals a concrete battlefield-space, readability, or gameplay problem.
 
 Do not optimize only for simulation win rate. Fun, deck identity, reversibility, meaningful choices, and memorable plays matter.
 
