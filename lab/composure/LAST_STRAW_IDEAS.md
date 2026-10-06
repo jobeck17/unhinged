@@ -51,7 +51,7 @@ These are concepts, not balanced cards.
 24. Deal 2 damage to every Character. Characters Defeated this way trigger their Defeat effects twice.
 25. Until the end of your next Turn, whenever one of your Characters Causes Trouble, double its Trouble for that action.
 26. **Cut the Safety Net:** Discard the opponent's Last Straw. If it had not already triggered, that player no longer has a Last Straw to trigger at 0 Composure and reaching 0 causes them to lose/become Unhinged normally. If it already triggered, discarding the rotated card does not undo its resolved effect, end the Last Straw phase, or cause its Leader to lose. Exact wording/timing pending rules cleanup.
-27. **Match their Composure:** Set your Leader's Composure equal to the opposing Leader's current Composure. This explicitly overrides the normal post-Last-Straw 0-Composure lock. Your Last Straw remains spent. If the opposing Leader is already at Last Straw/0, this leaves both Leaders at 0 and the next qualifying Trouble can decide the game. Exact post-recovery loss timing when the copied value is above 0 is pending the rules interview.
+27. **Match their Composure:** Set your Leader's Composure equal to the opposing Leader's current Composure. This explicitly overrides the normal post-Last-Straw 0-Composure lock. Your Last Straw remains spent. If this puts you above 0, play continues, but if you later reach 0 again you immediately become Unhinged and lose because your Last Straw is already spent. If the opposing Leader is already at Last Straw/0, this leaves both Leaders at 0 and the normal Last Straw endgame applies.
 
 ## Useful design buckets
 
