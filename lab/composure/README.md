@@ -32,6 +32,12 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
 
+## Leaders are not attack targets
+
+**Characters cannot Attack Leaders.** An Attack is Character-vs-Character combat and must target an eligible opposing Character. **Cause Trouble** is the normal Character action used to pressure the opposing Leader's Composure. Power therefore governs Character combat, Guard governs Character durability, and Trouble governs Leader pressure.
+
+There is no ordinary Leader-blocking combat step in this model because Leaders are not Attack targets. Defensive Characters protect a Leader indirectly through board control, effects, and pressure on opposing Characters.
+
 ## Cause Trouble is not combat
 
 **Cause Trouble cannot be blocked and is not combat.** An eligible Ready Character Rotates to Cause Trouble, and the opposing Leader loses Composure equal to that Character's Trouble. Defensive play must affect the Character, its eligibility, its Trouble, or the resulting Composure loss through other legal effects rather than assigning a combat blocker. Afterward, the Rotated troublemaker is exposed to ordinary Attacks.
