@@ -110,11 +110,11 @@ STANK 60 changes carried into this lab include:
 - **Birthday Party Magician:** Very Enthusiastic Volunteer; corrected Rabbit enter/leave Draw behavior; Ethan’s JUST Being Dramatic; Birthday Boy Stash/hand swap; reworked Lady Who's Moving Out Again; School Bully cleanup; Magician's Hat.
 - **Crazy Cat Lady:** Landon's current colony list and Cat package.
 - **Mad Scientist:** five-charge protected battery, Parts/Experiments, Abominations and Specimens.
-- **Combat experiment:** no universal retaliation. Backyard Wrestler's Wrestlers retain **Retaliate** when they survive an Attack.
+- **Combat rule:** there is **no universal retaliation**. **Retaliate** is a dedicated keyword: *When this Character survives an Attack, it deals its Power as damage to the attacking Character.* A Character Defeated by the Attack does not Retaliate unless an effect explicitly says otherwise. Backyard Wrestler's Wrestlers currently use this keyword as part of their identity.
 - **Playtest UX:** Attack target selection can be backed out of before the Attack commits.
 
 ## Important experimental collision
 
-STANK's no-retaliation test remains active. That is separable from Trouble / Last Straw and should be judged independently.
+The no-universal-retaliation direction is locked for this lab. Retaliation exists only when a keyword or effect explicitly grants it.
 
 Carl 0.3 remains canonical. Do not promote this lab until the rules interview, card/deck audit, simulations, and human testing have resolved the affected systems.
