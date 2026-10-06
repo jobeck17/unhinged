@@ -33,7 +33,7 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🔒 **Lab ruling — forced Turn end:** after Last Straw resolves, the current Turn is forced into its normal end-of-Turn sequence. Scheduled end-of-Turn effects still resolve and normal cleanup occurs. Composure loss from those effects cannot make a Last Straw Leader Unhinged; only a later successful Cause Trouble can do that.
 
-🔒 **Lab ruling — threshold timing:** finish the current effect completely before resolving a crossed Breaking Point or Last Straw threshold. Breaking Point and Last Straw abilities are protected Leader game events and do not open a Response window. Normal interaction resumes after the threshold event resolves.
+🔒 **Lab ruling — threshold timing:** finish the current effect completely before resolving a crossed Breaking Point or Last Straw threshold. Breaking Point and Last Straw abilities are protected Leader game events and cannot be interrupted.
 
 🔒 **Lab ruling — Breaking Point:** every Leader starts at 20 Composure and has the same universal Breaking Point threshold at **10 Composure**. Breaking Point triggers once per game. Every Leader gets a unique Breaking Point ability and a unique Last Straw ability; the abilities themselves remain to be designed and audited.
 
@@ -48,6 +48,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 🧪 **STANK combat variable:** STANK 60's no-universal-retaliation experiment remains active; Backyard Wrestler's Wrestlers retain Retaliate. This is separable from the win-condition experiment.
 
 🧪 **Controlled baseline:** Carl 0.3 remains canonical. Five Character slots remain a lab architecture constraint, not an anti-snowball claim.
+
+🔒 **Lab ruling — Responses removed:** the Trouble / Last Straw direction removes the universal Response system. Cause Trouble therefore has no Response window. Three legacy lab cards still carry Response wording and require deliberate redesign during the card audit rather than automatic conversion. Canonical Carl remains unchanged until promotion.
 
 🧪 **Open audit:** the new win condition touches old Leader-damage cards, Leader healing/recovery, Responses, end-of-Turn timing, Ready effects, direct Composure loss, threshold effects, the five-slot rule, AI priorities, every Leader, and deck/card valuation. Resolve these deliberately through the next rules/card/deck interview before promotion.
 
