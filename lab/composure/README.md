@@ -30,7 +30,7 @@ A Leader's first current test threshold is **10 Composure**.
 
 The first time a Leader reaches **10 or less Composure**, that Leader's **Breaking Point** triggers. **10 is universal for every Leader.** Breaking Point triggers only once per game. Every Leader will have a **unique Breaking Point ability**; those individual abilities are intentionally not assigned yet.
 
-If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
+If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve the Breaking Points in their actual trigger order. If they were genuinely simultaneous, resolve **the non-active (defending) player's Breaking Point first, followed by the active player's**. After both resolve, the current Turn continues normally.
 
 ## Trouble is a universal Character stat
 
@@ -78,7 +78,7 @@ Reaching **0 Composure does not lose the game**.
 
 **Any Composure loss can trigger Breaking Point or Last Straw**, including loss from Cause Trouble, Actions, Items, Defeat triggers, and a Leader's own effects. Only a later successful Cause Trouble can make a Leader at Last Straw Unhinged.
 
-Threshold timing is universal: **finish resolving the current effect completely before resolving Breaking Point or Last Straw.** If one effect causes both Leaders to enter Last Straw, **resolve both Last Straws before the Turn can pass**. Resolve the active player's Last Straw first, then the other player's, then continue through the normal forced end-of-Turn sequence and pass play normally. Breaking Point and Last Straw abilities resolve as protected Leader game events after the triggering effect finishes. They cannot be interrupted.
+Threshold timing is universal: **finish resolving the current effect completely before resolving Breaking Point or Last Straw.** If one effect causes both Leaders to enter Last Straw, **resolve both Last Straws before the Turn can pass**. Resolve Last Straws in their actual trigger order. If they were genuinely simultaneous, resolve the non-active (defending) player's Last Straw first, then the active player's, then continue through the normal forced end-of-Turn sequence and pass play normally. Breaking Point and Last Straw abilities resolve as protected Leader game events after the triggering effect finishes. They cannot be interrupted.
 
 If one resolved Composure-loss effect crosses both Breaking Point and Last Straw for the same Leader, resolve that Leader's **Breaking Point first, then Last Straw**. Both occur after the triggering effect has completely resolved. The deck-exhaustion rule is an explicit exception: a failed Draw from an empty deck triggers Last Straw directly and does not retroactively trigger Breaking Point.
 
