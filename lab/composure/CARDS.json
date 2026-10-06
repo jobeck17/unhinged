@@ -1,5 +1,5 @@
 {
-  "version": "0.3-composure-stank60-0.1",
+  "version": "0.3-last-straw-stank60-0.1",
   "date": "2026-10-01",
   "status": "Carl 0.3 card pool. Current playtest package includes Florida Man's damaged-Character survival Ready clause and Expendable-only Tag Out.",
   "cards": [
@@ -20,7 +20,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P002",
@@ -41,7 +41,7 @@
       ],
       "status": "lab",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P003",
@@ -63,7 +63,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P004",
@@ -82,7 +82,7 @@
       ],
       "status": "playtest",
       "flavor": "Matching shirts. Conflicting alibis.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P005",
@@ -105,7 +105,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P006",
@@ -124,7 +124,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P007",
@@ -147,7 +147,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P008",
@@ -169,7 +169,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P009",
@@ -191,7 +191,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P010",
@@ -212,7 +212,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P011",
@@ -233,7 +233,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P012",
@@ -252,7 +252,7 @@
       ],
       "status": "playtest",
       "flavor": "Even his warm-up has a warm-up.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P013",
@@ -273,7 +273,7 @@
       ],
       "status": "playtest",
       "flavor": "He watched most of a tutorial.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P014",
@@ -294,7 +294,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P015",
@@ -315,7 +315,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P016",
@@ -338,7 +338,7 @@
       ],
       "status": "playtest",
       "flavor": "Free shipping. For him.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P017",
@@ -359,7 +359,7 @@
       ],
       "status": "playtest",
       "flavor": "The cloud has entered the group chat.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P018",
@@ -382,7 +382,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P019",
@@ -607,7 +607,7 @@
       ],
       "status": "playtest",
       "flavor": "We take requests. Mostly to turn it down.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P032",
@@ -628,7 +628,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P033",
@@ -649,7 +649,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P034",
@@ -670,7 +670,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P035",
@@ -691,7 +691,7 @@
       ],
       "status": "playtest",
       "flavor": "Three chords. Forty-seven announcements.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P036",
@@ -712,7 +712,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P037",
@@ -734,7 +734,7 @@
       ],
       "status": "playtest",
       "flavor": "The band said they were getting everybody back together.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P038",
@@ -753,7 +753,7 @@
       ],
       "status": "playtest",
       "flavor": "Still waiting on the second hit.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P039",
@@ -772,7 +772,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P040",
@@ -791,7 +791,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P041",
@@ -812,7 +812,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P042",
@@ -831,7 +831,7 @@
       ],
       "status": "playtest",
       "flavor": "He still calls the principal “Coach.”",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P043",
@@ -850,7 +850,7 @@
       ],
       "status": "playtest",
       "flavor": "Everybody is awake now.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P044",
@@ -871,7 +871,7 @@
       ],
       "status": "playtest",
       "flavor": "The invitation said “bring something for the grill.”",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P045",
@@ -890,7 +890,7 @@
       ],
       "status": "playtest",
       "flavor": "The itinerary is mostly iced coffee.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P046",
@@ -911,7 +911,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P047",
@@ -933,7 +933,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P048",
@@ -952,7 +952,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P049",
@@ -1177,7 +1177,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P062",
@@ -1198,7 +1198,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P063",
@@ -1219,7 +1219,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P064",
@@ -1240,7 +1240,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P065",
@@ -1263,7 +1263,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P066",
@@ -1284,7 +1284,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P067",
@@ -1309,7 +1309,7 @@
       ],
       "status": "playtest",
       "flavor": "Toughest kid on the playground until somebody swings back.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P068",
@@ -1330,7 +1330,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P069",
@@ -1349,7 +1349,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P070",
@@ -1368,7 +1368,7 @@
       ],
       "status": "playtest",
       "flavor": "It’s a normal doorbell, but the subscription is mandatory.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P071",
@@ -1389,7 +1389,7 @@
       ],
       "status": "playtest",
       "flavor": "Nobody saw where the floor went.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P072",
@@ -1410,7 +1410,7 @@
       ],
       "status": "playtest",
       "flavor": "Thirty-seven missed alerts. One unfamiliar sedan.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P073",
@@ -1431,7 +1431,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P074",
@@ -1452,7 +1452,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P075",
@@ -1474,7 +1474,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P076",
@@ -1496,7 +1496,7 @@
       ],
       "status": "playtest",
       "flavor": "Your password is his password.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P077",
@@ -1518,7 +1518,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P078",
@@ -1540,7 +1540,7 @@
       "status": "playtest",
       "flavor": "Every trick is fully licensed, bonded, and questionably insured.",
       "build_around": true,
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P079",
@@ -1730,7 +1730,7 @@
       "complexity": "mixed",
       "status": "playtest",
       "flavor": "The truck is still warm from last time.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P090",
@@ -1769,7 +1769,7 @@
       ],
       "status": "playtest",
       "flavor": "Prepared for everything except the inspection.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P092",
@@ -1791,7 +1791,7 @@
       ],
       "status": "playtest",
       "flavor": "It has been almost running for three summers.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P093",
@@ -1812,7 +1812,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P094",
@@ -1833,7 +1833,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P095",
@@ -1855,7 +1855,7 @@
       "status": "playtest",
       "flavor": "It is not clutter if there is a system.",
       "art_note": "A backyard bunker stocked from curbside giveaways and salvaged supplies.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P096",
@@ -1878,7 +1878,7 @@
       ],
       "status": "playtest",
       "flavor": "Sir Carts-a-Lot yields to no curb.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P097",
@@ -1898,7 +1898,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "Beware of dog. Also tetanus.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P098",
@@ -1918,7 +1918,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P099",
@@ -1937,7 +1937,7 @@
       ],
       "status": "playtest",
       "flavor": "Every cat has a name. The neighbors have numbers.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P100",
@@ -1958,7 +1958,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "No batteries required. No brakes included.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P101",
@@ -1979,7 +1979,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P102",
@@ -1999,7 +1999,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P103",
@@ -2019,7 +2019,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P104",
@@ -2039,7 +2039,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P105",
@@ -2059,7 +2059,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "The knife attachment voided the warranty.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P106",
@@ -2079,7 +2079,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "One wheel squeaks. One wheel seeks revenge.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P107",
@@ -2101,7 +2101,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P108",
@@ -2122,7 +2122,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P109",
@@ -2349,7 +2349,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P122",
@@ -2370,7 +2370,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P123",
@@ -2389,7 +2389,7 @@
       ],
       "status": "playtest",
       "flavor": "She has a binder. You have a problem.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P124",
@@ -2408,7 +2408,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P125",
@@ -2427,7 +2427,7 @@
       ],
       "status": "playtest",
       "flavor": "Brave enough to hit send.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P126",
@@ -2448,7 +2448,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P127",
@@ -2469,7 +2469,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P128",
@@ -2490,7 +2490,7 @@
       ],
       "status": "playtest",
       "flavor": "Quiet neighborhood. Strict perimeter.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P129",
@@ -2511,7 +2511,7 @@
       ],
       "status": "playtest",
       "flavor": "Vice is not silent.",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P130",
@@ -2530,7 +2530,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P131",
@@ -2549,7 +2549,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P132",
@@ -2570,7 +2570,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P133",
@@ -2591,7 +2591,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "The association has approved its use of force.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P134",
@@ -2610,7 +2610,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P135",
@@ -2629,7 +2629,7 @@
       ],
       "status": "playtest",
       "flavor": "No running.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P136",
@@ -2648,7 +2648,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P137",
@@ -2669,7 +2669,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P138",
@@ -2688,7 +2688,7 @@
       ],
       "status": "playtest",
       "flavor": "NO RUNNING includes whatever this is.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P139",
@@ -2913,7 +2913,7 @@
       ],
       "status": "playtest",
       "flavor": "Signed the waiver in crayon.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P152",
@@ -2936,7 +2936,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P153",
@@ -2958,7 +2958,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P154",
@@ -2980,7 +2980,7 @@
       ],
       "status": "playtest",
       "flavor": "Taking “eat out of the trash” in a concerning direction.",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P155",
@@ -3000,7 +3000,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P156",
@@ -3019,7 +3019,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "Seven counties. Six warrants. Zero witnesses.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P157",
@@ -3040,7 +3040,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P158",
@@ -3062,7 +3062,7 @@
       ],
       "status": "playtest",
       "flavor": "The patio set was still under warranty.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P159",
@@ -3082,7 +3082,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P160",
@@ -3104,7 +3104,7 @@
       "aliases": [
         "Gym Bro"
       ],
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P161",
@@ -3125,7 +3125,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P162",
@@ -3146,7 +3146,7 @@
       ],
       "status": "playtest",
       "flavor": "He remembers it as more of a group decision.",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P163",
@@ -3167,7 +3167,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P164",
@@ -3192,7 +3192,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P165",
@@ -3211,7 +3211,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "P166",
@@ -3232,7 +3232,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P167",
@@ -3252,7 +3252,7 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "P168",
@@ -3273,7 +3273,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "P169",
@@ -3561,7 +3561,7 @@
       ],
       "status": "lab",
       "flavor": "",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-MAG-001A",
@@ -3577,7 +3577,7 @@
       "keywords": [],
       "power": 1,
       "guard": 2,
-      "antics": 3,
+      "trouble": 3,
       "audit_identity": [
         "Human"
       ],
@@ -3598,7 +3598,7 @@
       "keywords": [],
       "power": 1,
       "guard": 2,
-      "antics": 3,
+      "trouble": 3,
       "audit_identity": [
         "Human"
       ],
@@ -3636,7 +3636,7 @@
       ],
       "power": 3,
       "guard": 5,
-      "antics": 2,
+      "trouble": 2,
       "audit_identity": [
         "Human"
       ],
@@ -3676,7 +3676,7 @@
       "status": "lab-prototype",
       "purpose": "Cheap swarm body that sticks around a little better so Cat Lady can establish a colony without adding more damage output.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-002",
@@ -3696,7 +3696,7 @@
       "status": "lab-prototype",
       "purpose": "One-cost aggressive Cat that helps Cat Lady establish the colony quickly while remaining fragile.",
       "style": "Lab",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "LAB-CAT-003",
@@ -3716,7 +3716,7 @@
       "status": "lab-prototype",
       "purpose": "Defensive colony protector: low Power, high Guard, and Bodyguard make it a durable shield instead of another efficient attacker.",
       "style": "Lab",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "LAB-CAT-004",
@@ -3736,7 +3736,7 @@
       "status": "lab-prototype",
       "purpose": "Lets the Cat player preserve a body at the cost of temporarily dropping board count.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-005",
@@ -3756,7 +3756,7 @@
       "status": "lab-prototype",
       "purpose": "Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader.",
       "style": "Lab",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "LAB-CAT-006",
@@ -3774,7 +3774,7 @@
       "status": "lab-prototype",
       "purpose": "A ridiculous 2/1 that visibly refuses to die to the first two Attacks. Opponents can still use Return, Dismiss, non-Attack Defeat effects, or other removal normally.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-007",
@@ -3792,7 +3792,7 @@
       "status": "lab-prototype",
       "purpose": "Rewards reaching the colony threshold without directly adding more Stash.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-008",
@@ -3810,7 +3810,7 @@
       "status": "lab-prototype",
       "purpose": "Visible five-Cat payoff that turns a wide colony into finishing pressure.",
       "style": "Lab",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "LAB-CAT-009",
@@ -3828,7 +3828,7 @@
       "status": "lab-prototype",
       "purpose": "Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-010",
@@ -3860,7 +3860,7 @@
       "status": "lab-prototype",
       "purpose": "Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Power.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-014",
@@ -3877,7 +3877,7 @@
       "status": "lab-prototype",
       "purpose": "Cheap Cat-count body and visible blocking trap. Its global friendly-fire explosion can punish opposing boards but can also devastate the Cat Lady's own low-Guard colony.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-015",
@@ -3909,7 +3909,7 @@
       "status": "lab-prototype",
       "purpose": "Defensive Cat that punishes attackers twice: surviving damage applies a one-turn Ready lock and a permanent -1 Guard scar. Repeated Hairballs can keep lowering the same Character's Guard.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-CAT-017",
@@ -3970,7 +3970,7 @@
       "status": "lab-prototype",
       "purpose": "Deliberately weak four-cost body that converts permanent economy or buried Cats into permanent Power. Both modes Rotate Mittens III, forcing a choice between feeding it and attacking.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-SCI-001",
@@ -3988,7 +3988,7 @@
       "status": "lab-prototype",
       "purpose": "Pure ingredient/body. Establishes the floor for cheap Parts.",
       "style": "Lab",
-      "antics": 1
+      "trouble": 1
     },
     {
       "id": "LAB-SCI-002",
@@ -4006,7 +4006,7 @@
       "status": "lab-prototype",
       "purpose": "Cheap Part with slightly better blocking value.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-SCI-003",
@@ -4026,7 +4026,7 @@
       "status": "lab-prototype",
       "purpose": "Defensive Part that is more useful as material than as an attacker.",
       "style": "Lab",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "LAB-SCI-004",
@@ -4044,7 +4044,7 @@
       "status": "lab-prototype",
       "purpose": "Efficient mid-grade ingredient that can also fight.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-SCI-005",
@@ -4062,7 +4062,7 @@
       "status": "lab-prototype",
       "purpose": "Finds the fusion engine without directly generating resources.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-SCI-006",
@@ -4080,7 +4080,7 @@
       "status": "lab-prototype",
       "purpose": "Reclaims cheap ingredients after experiments or combat.",
       "style": "Lab",
-      "antics": 2
+      "trouble": 2
     },
     {
       "id": "LAB-SCI-007",
@@ -4097,7 +4097,7 @@
       "status": "lab-prototype",
       "purpose": "Premium experiment material that reduces the hand-cost pain without making every ingredient replace itself.",
       "style": "Lab",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "LAB-SCI-008",
@@ -4117,7 +4117,7 @@
       "status": "lab-prototype",
       "purpose": "A normal pressure card that can become material when the laboratory needs it.",
       "style": "Lab",
-      "antics": 3
+      "trouble": 3
     },
     {
       "id": "LAB-SCI-009",
@@ -4216,7 +4216,7 @@
       "purpose": "An unstable experiment whose offensive and defensive results are independently randomized.",
       "cost": 0,
       "style": "Lab",
-      "antics": 2,
+      "trouble": 2,
       "token": true,
       "status": "lab-prototype"
     },
@@ -4236,7 +4236,7 @@
       "purpose": "Preserves the visual gag of cross-TCG cards without importing another game's rules engine.",
       "cost": 0,
       "style": "Lab",
-      "antics": 1,
+      "trouble": 1,
       "token": true,
       "status": "lab-prototype"
     }
