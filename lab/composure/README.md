@@ -42,6 +42,13 @@ The first time a Leader reaches 0 Composure:
 
 The amount of Trouble on the final Cause Trouble does not matter.
 
+### Composure recovery
+
+- Before Last Straw, a Leader may recover Composure up to the **20 Composure** maximum.
+- Breaking Point triggers **only once per game**, even if that Leader later recovers above 10.
+- Once Last Straw has triggered, that Leader remains permanently at **0 Composure** for the rest of the game and cannot recover Composure.
+- Last Straw triggers only once.
+
 **Leader-specific Last Straw effects are intentionally pending design.** The engine currently announces the hook but gives no generic payoff. One candidate discussed for a future Leader is an extreme comeback effect that draws cards equal to the opponent's remaining Composure and puts Characters drawn that way into play. It is an idea, not a universal rule and not yet assigned to a Leader.
 
 ### Open Last Straw rules
@@ -49,7 +56,6 @@ The amount of Trouble on the final Cause Trouble does not matter.
 The interview must decide, among other things:
 
 - whether non-Trouble Composure loss can trigger Last Straw and how self-inflicted Composure loss behaves;
-- whether Composure can be recovered after Last Straw has triggered;
 - exact ordering for Responses, triggers, simultaneous effects, and end-of-Turn effects around Last Straw;
 - whether newly created Characters from a Last Straw effect may Cause Trouble on the granted comeback Turn;
 - whether Last Straw effects may exceed the five-Character limit when their text says so;
