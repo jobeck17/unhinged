@@ -1,37 +1,8 @@
 🔒 **Lab ruling — universal Last Straw combat state:** while a Leader is at Last Straw, that player's Characters have Hothead and may Attack opposing Ready Characters. Hothead remains Attack-only and does not grant early Cause Trouble. This is the baseline comeback agency; the chosen Last Straw supplies the one-time comeback event. There is no universal mass-Rotate/reset on entering Last Straw.
 
-## Last Straw open pool — raw wall throw, October 6, 2026
+## Composure 2.0 Last Straw work
 
-🧪 **Architecture being tested:** keep Leader passive and Breaking Point Leader-specific, while choosing one face-up Last Straw from a shared pool during deckbuilding. Build a deliberately oversized pool before cutting/balancing. Nothing in this section is locked or balanced yet.
-
-Raw concepts currently on the wall:
-- Reduce the opposing Leader to 5 Composure if above 5.
-- Put your hand into the Stash/resource zone; put your discard into your hand.
-- Put all opposing Characters into their discard.
-- Leave the opponent only one Stash card.
-- Roll a die; all Characters in play gain that much Trouble.
-- Draw equal to opposing Composure and deploy Characters drawn.
-- Mass-return cheap Characters from discard.
-- Return one Character from discard with enormous stat bonuses.
-- Dismiss all Items for a payoff.
-- Discard/reload to a large hand.
-- Swap hands.
-- Return all Characters to hand.
-- Return Characters Defeated this Round.
-- Collapse your board into one giant Character.
-- Reveal a large deck slice and deploy qualifying Characters.
-- Free-play Items from hand.
-- Recover several different card types from discard.
-- Temporary mass Trouble boost.
-- Ready Characters for a telegraphed next-Turn Trouble wave.
-- Steal an opposing Character.
-- Each player keeps one Character; clear the rest.
-- Temporary protection from Defeat.
-- Randomized mass Character recursion from discard.
-- Damage every Character with amplified Defeat payoffs.
-- Double Trouble for the next Turn.
-
-🧪 **Naming note:** “Stash” may need a fresh naming pass now that the resource zone and its interactions are better defined.
+🧪 The dedicated working repository for shared Last Straw concepts is `lab/composure/LAST_STRAW_IDEAS.md`. Add, refine, test, cut, and bank Last Straw concepts there rather than duplicating the live idea list in NOTES. The shared-pool architecture remains a Composure 2.0 experiment.
 
 # Unhinged — Living Design Notes
 
@@ -45,7 +16,7 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 ## Development milestone
 ✅ **0.3 Carl** is the current core-stabilization milestone. Meaningful compatible checkpoints within Carl use 0.3.x build numbers; ordinary commits do not require a version bump. Major pre-1.0 generations advance to the next 0.X number and receive a new Dungeon Crawler Carl character codename. The full versioning policy and road to 1.0 live in README.md.
 
-## New parallel testing direction — Trouble / Last Straw × STANK INDUSTRIES-60 Lab, October 5, 2026
+## Current parallel testing direction — Composure 2.0, October 2026
 🧪 **Merged experiment:** `lab/composure/` now tests the STANK INDUSTRIES-60 deck state against a **20 Composure** win-condition model. Characters use **Power / Guard / Trouble**. A Character may Attack a normally Rotated opposing Character using Power, **Cause Trouble** to reduce opposing Composure by its Trouble, or remain Ready and protected from ordinary attacks.
 
 🧪 **Breaking Point / Last Straw:** 10 Composure is the first test **Breaking Point**. At 0 Composure the Leader does **not** lose. They hit **Last Straw**: the Leader-specific Last Straw hook triggers, then the current Turn proceeds to its normal end-of-Turn sequence. Last Straw does not universally Rotate Characters; battlefield changes come from the unique Last Straw ability. A later successful Cause Trouble by a Character with at least 1 Trouble against a Leader already at Last Straw makes that Leader **Unhinged** and loses the game. Leader-specific Breaking Point and Last Straw effects are intentionally pending the rules/card interview.
