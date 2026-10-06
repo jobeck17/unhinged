@@ -13,7 +13,7 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 ## New parallel testing direction — Trouble / Last Straw × STANK INDUSTRIES-60 Lab, October 5, 2026
 🧪 **Merged experiment:** `lab/composure/` now tests the STANK INDUSTRIES-60 deck state against a **20 Composure** win-condition model. Characters use **Power / Guard / Trouble**. A Character may Attack a normally Rotated opposing Character using Power, **Cause Trouble** to reduce opposing Composure by its Trouble, or remain Ready and protected from ordinary attacks.
 
-🧪 **Breaking Point / Last Straw:** 10 Composure is the first test **Breaking Point**. At 0 Composure the Leader does **not** lose. They hit **Last Straw**: all Characters Rotate, the Leader-specific Last Straw hook triggers, and the current Turn ends. A later successful Cause Trouble against a Leader already at Last Straw makes that Leader **Unhinged** and loses the game. Leader-specific Breaking Point and Last Straw effects are intentionally pending the rules/card interview.
+🧪 **Breaking Point / Last Straw:** 10 Composure is the first test **Breaking Point**. At 0 Composure the Leader does **not** lose. They hit **Last Straw**: the Leader-specific Last Straw hook triggers, then the current Turn proceeds to its normal end-of-Turn sequence. Last Straw does not universally Rotate Characters; battlefield changes come from the unique Last Straw ability. A later successful Cause Trouble against a Leader already at Last Straw makes that Leader **Unhinged** and loses the game. Leader-specific Breaking Point and Last Straw effects are intentionally pending the rules/card interview.
 
 🔒 **Lab ruling — Leader durability:** Leaders do not have Health. Composure is the sole measurable Leader durability / victory track. Leader effects use lose/recover Composure; damage and healing remain Character concepts tied to Guard. Existing lab cards that still reference Leader Health, Leader damage, or Leader healing require terminology conversion during the card audit.
 
@@ -30,6 +30,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 🔒 **Lab ruling — Last Straw limit override:** a Last Straw ability may explicitly exceed the normal Character limit. Excess Characters remain in play; no forced cleanup occurs merely for being over the limit.
 
 🧪 **Five-Character limit remains TESTING, retained for now:** simulation did not show the cap materially fixing snowballing, so it is not justified as an anti-snowball rule. Keep the five-Character maximum in the current test as a battlefield-space / slot-management mechanic and judge it in human play. At five Characters, ordinary additions are prevented unless an effect explicitly overrides the limit. Last Straw may explicitly exceed it. Remove the cap later if the spatial decisions do not justify the rules baggage.
+
+🔒 **Lab ruling — Last Straw board state:** entering Last Straw does not universally Rotate Characters or otherwise alter either battlefield. Board changes come from that Leader's unique Last Straw ability.
 
 🔒 **Lab ruling — Last Straw deployment:** Characters put into play by a Last Straw effect are fully cooled down for the ensuing comeback Turn. They enter Ready unless the effect explicitly says otherwise and may take their normal Character action, including Attack or Cause Trouble.
 
