@@ -42,7 +42,7 @@ The threshold triggers once, but the ability itself can do whatever its text say
 ### 2. Last Straws
 Generate bold comeback ideas in `LAST_STRAW_IDEAS.md`.
 
-Do not balance too early. Build an oversized pool, then cut it down. Last Straws should create memorable game states and counterplay, not merely prolong a lost game.
+Do not balance too early. Build an oversized pool, then cut it down. Last Straws should create memorable game states and counterplay, not merely prolong a lost game. The selected Last Straw currently stays hidden under the Leader until that Leader reaches 0 Composure, when it is revealed, triggered, and Rotated beside the Leader.
 
 ### 3. Character and deck identity
 Ask whether each deck has a reason somebody would specifically want to play it.
