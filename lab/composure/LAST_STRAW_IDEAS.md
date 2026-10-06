@@ -8,7 +8,7 @@ Last Straws are intentionally being explored wide before they are balanced. Add 
 ## Current architecture being tested
 
 - A player chooses **one Last Straw** during deckbuilding, outside the normal 40-card deck.
-- **Current human-test model:** the chosen Last Straw begins face-down under the Leader. Reveal it when that Leader reaches Breaking Point (10 Composure), then place it face-up beside the Leader. When the Leader reaches 0 Composure, trigger the Last Straw and **Rotate the Last Straw card 90°** to mark that it has triggered. It remains face-up beside the Leader for the rest of the game, including as a reminder for any lingering text. This model remains subject to human-playtest confirmation.
+- **Current human-test model:** the chosen Last Straw begins face-down under the Leader and **remains hidden through Breaking Point**. When the Leader reaches 0 Composure, reveal and trigger the Last Straw, then **Rotate the Last Straw card 90°** to mark that it has triggered. It remains face-up beside the Leader for the rest of the game, including as a reminder for any lingering text. This model remains subject to human-playtest confirmation.
 - Reaching 0 Composure triggers the chosen Last Straw once.
 - Last Straw is a comeback event, not the victory condition itself.
 - While at Last Straw, that player's Characters have **Hothead** and may **Attack opposing Ready Characters**.
@@ -84,3 +84,10 @@ When an idea becomes a serious test candidate, add:
 ## Naming note
 
 The resource zone is still called **Stash** in current files, but that name is under review. Do not independently rename it in card text until the naming pass is complete.
+
+
+## Organized-play concept — banked for later testing
+
+💡 **BANKED / NOT A CORE LAB RULE YET:** For organized play, a registered decklist may include a **Last Straw roster of 3**. The player chooses which registered Last Straw is used for a game/match while the selected card remains hidden under the Leader until it triggers. The roster creates bounded hidden information: an opponent can know the three possible Last Straws without knowing which one was selected.
+
+The current proposal allows the selected Last Straw to change **between tournament rounds**. Exact tournament procedure, including whether decklists/Last Straw rosters are open information and whether selection can change between games of a multi-game match, should be decided when organized-play rules are designed.
