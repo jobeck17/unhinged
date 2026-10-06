@@ -1,12 +1,12 @@
 # Composure 2.0
 
-**TESTING · October 2026.** Carl 0.3 remains canonical. **Composure 2.0** is the current core-gameplay experiment combining the STANK INDUSTRIES-60 deck state with Power / Guard / Trouble, Breaking Point, and Last Straw.
+**TESTING · October 2026.** Carl 0.3 remains canonical. **Composure 2.0** is the current core-gameplay experiment combining the STANK INDUSTRIES-60 deck state with Power / Health / Trouble, Breaking Point, and Last Straw.
 
 **Collaborators / fresh ChatGPT sessions:** start with [START_HERE.md](START_HERE.md). Last Straw brainstorming belongs in [LAST_STRAW_IDEAS.md](LAST_STRAW_IDEAS.md).
 
 ## Core win condition
 
-Each Leader begins with **20 Composure**. Characters have **Power / Guard / Trouble**.
+Each Leader begins with **20 Composure**. Characters have **Power / Health / Trouble**.
 
 - **Attack Character:** Rotate the attacker and attack an opposing Rotated Character using Power. Sucker Punch and explicit card effects can reach Ready Characters.
 - **Cause Trouble:** Rotate a Ready Character that began the Turn under your control. The opposing Leader loses Composure equal to that Character's Trouble.
@@ -28,7 +28,7 @@ Power handles fighting. Trouble pressures the win condition.
 
 ## Leader durability terminology
 
-Leaders do **not** have Health and do not take or heal damage. A Leader's measurable durability / victory track is **Composure**. Effects make Leaders **lose Composure** or **recover Composure**. Damage and healing remain Character concepts tied to Guard.
+Leaders do **not** have Health and do not take or heal damage. A Leader's measurable durability / victory track is **Composure**. Effects make Leaders **lose Composure** or **recover Composure**. Damage and healing remain Character concepts tied to Health.
 
 ## Breaking Point
 
@@ -42,11 +42,11 @@ If one effect causes both Leaders to reach Breaking Point, finish that effect fi
 
 ## Trouble is a universal Character stat
 
-Every Character has a printed **Trouble** value, including **0**. Trouble is a core Character stat alongside Power and Guard. **A Character with 0 Trouble cannot Cause Trouble.** If an effect raises that Character's Trouble to 1 or more, it becomes eligible to Cause Trouble normally. **Trouble is fully modifiable game state:** effects may increase it, reduce it, set it to a value, or grant persistent/temporary modifiers just as card text can modify other Character stats. Positive Trouble modification should be costed carefully because it directly accelerates Leader pressure. **Effective Trouble can never be less than 0.** Reductions that would take Trouble below 0 stop at 0; negative Trouble does not exist.
+Every Character has a printed **Trouble** value, including **0**. Trouble is a core Character stat alongside Power and Health. **A Character with 0 Trouble cannot Cause Trouble.** If an effect raises that Character's Trouble to 1 or more, it becomes eligible to Cause Trouble normally. **Trouble is fully modifiable game state:** effects may increase it, reduce it, set it to a value, or grant persistent/temporary modifiers just as card text can modify other Character stats. Positive Trouble modification should be costed carefully because it directly accelerates Leader pressure. **Effective Trouble can never be less than 0.** Reductions that would take Trouble below 0 stop at 0; negative Trouble does not exist.
 
 ## Leaders are not attack targets
 
-**Characters cannot Attack Leaders.** An Attack is Character-vs-Character combat and must target an eligible opposing Character. **Cause Trouble** is the normal Character action used to pressure the opposing Leader's Composure. Power therefore governs Character combat, Guard governs Character durability, and Trouble governs Leader pressure.
+**Characters cannot Attack Leaders.** An Attack is Character-vs-Character combat and must target an eligible opposing Character. **Cause Trouble** is the normal Character action used to pressure the opposing Leader's Composure. Power therefore governs Character combat, Health governs Character durability, and Trouble governs Leader pressure.
 
 There is no ordinary Leader-blocking combat step in this model because Leaders are not Attack targets. Defensive Characters protect a Leader indirectly through board control, effects, and pressure on opposing Characters.
 
@@ -58,7 +58,7 @@ There is no ordinary Leader-blocking combat step in this model because Leaders a
 
 ## Persistent Character damage
 
-Damage on Characters is **persistent**. Damage remains on a Character until an effect removes/heals it or the Character leaves play. A Character is Defeated immediately when its accumulated damage equals or exceeds its Guard. **All damage follows this same rule regardless of source, including Attacks, Actions, Items, abilities, and effects that place damage counters.** If a Character's Guard is reduced so that its accumulated damage equals or exceeds its current Guard, it is immediately Defeated. Damage that causes a Defeat produces a normal Defeat event.
+Damage on Characters is **persistent**. Damage remains on a Character until an effect removes/heals it or the Character leaves play. A Character is Defeated immediately when its accumulated damage equals or exceeds its Health. **All damage follows this same rule regardless of source, including Attacks, Actions, Items, abilities, and effects that place damage counters.** If a Character's Health is reduced so that its accumulated damage equals or exceeds its current Health, it is immediately Defeated. Damage that causes a Defeat produces a normal Defeat event. **Effective Health can never be less than 0.** Health reductions that would take it below 0 stop at 0.
 
 ## Attack eligibility
 
