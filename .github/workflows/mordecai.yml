@@ -29,17 +29,7 @@ jobs:
           test -f web/engine.js
           test -f web/ai.js
       - run: node web/smoke.mjs
-      - run: node --check lab/board-width/app.mjs
-      - run: node lab/board-width/test.mjs
-      - run: GAMES=40 node lab/board-width/simulate.mjs
-      - run: node --check lab/composure/engine.js
-      - run: node --check lab/composure/ai.js
-      - run: node --check lab/composure/stank-merge.js
-      - run: node --check lab/composure/app.js
-      - run: node lab/composure/smoke.mjs
-      - run: node --check lab/schemes/app.mjs
-      - run: node lab/schemes/test.mjs
-      - run: GAMES_PER_MATCHUP=2 OUTPUT=ci-results.json node lab/schemes/simulate.mjs
+      # Historical labs remain runnable research fixtures but do not gate Mordecai production.
       # Mordecai production simulation is intentionally held until engine parity.
   deploy:
     if: github.ref == 'refs/heads/main'
