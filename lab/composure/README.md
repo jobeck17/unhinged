@@ -81,6 +81,7 @@ Reaching **0 Composure does not lose the game**.
 Threshold timing is universal: **finish resolving the current effect completely before resolving Breaking Point or Last Straw.** If one effect causes both Leaders to enter Last Straw, **resolve both Last Straws before the Turn can pass**. Resolve Last Straws in their actual trigger order. If they were genuinely simultaneous, resolve the non-active (defending) player's Last Straw first, then the active player's, then continue through the normal forced end-of-Turn sequence and pass play normally. Breaking Point and Last Straw abilities resolve as protected Leader game events after the triggering effect finishes. They cannot be interrupted.
 
 If one resolved Composure-loss effect crosses both Breaking Point and Last Straw for the same Leader, resolve that Leader's **Breaking Point first, then Last Straw**. Both occur after the triggering effect has completely resolved. The deck-exhaustion rule is an explicit exception: a failed Draw from an empty deck triggers Last Straw directly and does not retroactively trigger Breaking Point.
+If one effect causes multiple Leaders to cross **both** thresholds, resolve **all crossed Breaking Points before any Last Straws**. Within each threshold layer, use actual trigger order when distinguishable; if genuinely simultaneous, the non-active (defending) player resolves first.
 
 The first time a Leader reaches 0 Composure:
 
