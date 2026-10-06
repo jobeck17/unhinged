@@ -30,6 +30,8 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 Reaching **0 Composure does not lose the game**.
 
+**Any Composure loss can trigger Breaking Point or Last Straw**, including loss from Cause Trouble, Actions, Items, Defeat triggers, and a Leader's own effects. Only a later successful Cause Trouble can make a Leader at Last Straw Unhinged.
+
 Threshold timing is universal: **finish resolving the current effect completely before resolving Breaking Point or Last Straw.** Breaking Point and Last Straw abilities are protected Leader game events and **do not open a Response window**. Normal interaction resumes after the threshold event finishes.
 
 The first time a Leader reaches 0 Composure:
@@ -57,7 +59,6 @@ The amount of Trouble on the final Cause Trouble does not matter.
 
 The interview must decide, among other things:
 
-- whether non-Trouble Composure loss can trigger Last Straw and how self-inflicted Composure loss behaves;
 - whether Last Straw effects may exceed the five-Character limit when their text says so;
 
 The current engine uses the simplest provisional behavior where necessary so the state machine can be exercised. These open points are **not locked rules**.
