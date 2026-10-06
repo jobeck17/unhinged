@@ -551,7 +551,7 @@ Game.prototype.activate=async function(uid,mode=null){
     c.ready=false;x.startCounters=Math.min(3,(x.startCounters||0)+1);
     this.say(this.card(c).name+' pulls the cord ('+x.startCounters+'/3)');
     if(x.startCounters>=3)this.say('Broken Lawnmower starts! Your Characters get +1 Power');
-    this.advance();return;
+    await this.advance();return;
   }
   if(x.id===MITTENS){
     if(!this.canUse(x)||x.owner!==p)return;
@@ -581,7 +581,7 @@ Game.prototype.activate=async function(uid,mode=null){
       if(choice==='PRINTED')return baseActivate.call(this,uid,null);
       cure=choice==='LAB-TETANUS-CURE';
     }else if(!mode&&!normal)cure=true;
-    if(cure){x.ready=false;delete x.tetanus;this.say(this.card(x).name+' Rotates to remove tetanus');this.advance();return}
+    if(cure){x.ready=false;delete x.tetanus;this.say(this.card(x).name+' Rotates to remove tetanus');await this.advance();return}
   }
   return baseActivate.call(this,uid,mode);
 };
@@ -601,7 +601,7 @@ Game.prototype.attack=async function(uid){
     if(doomed&&!hadAttacked&&after?.attacked){
       this.say(this.card(after).name+' crashes after the caffeine Attack');
       await this.remove(after,'discard',true);
-      this.advance();
+      await this.advance();
       after=this.obj(uid);
     }
     if(kidId&&after&&after.owner===p&&!hadAttacked&&after.attacked){
