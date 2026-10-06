@@ -42,7 +42,7 @@ If one effect causes both Leaders to reach Breaking Point, finish that effect fi
 
 ## Trouble is a universal Character stat
 
-Every Character has a printed **Trouble** value, including **0**. Trouble is a core Character stat alongside Power and Guard. **A Character with 0 Trouble cannot Cause Trouble.** If an effect raises that Character's Trouble to 1 or more, it becomes eligible to Cause Trouble normally. **Trouble is fully modifiable game state:** effects may increase it, reduce it, set it to a value, or grant persistent/temporary modifiers just as card text can modify other Character stats. Positive Trouble modification should be costed carefully because it directly accelerates Leader pressure.
+Every Character has a printed **Trouble** value, including **0**. Trouble is a core Character stat alongside Power and Guard. **A Character with 0 Trouble cannot Cause Trouble.** If an effect raises that Character's Trouble to 1 or more, it becomes eligible to Cause Trouble normally. **Trouble is fully modifiable game state:** effects may increase it, reduce it, set it to a value, or grant persistent/temporary modifiers just as card text can modify other Character stats. Positive Trouble modification should be costed carefully because it directly accelerates Leader pressure. **Effective Trouble can never be less than 0.** Reductions that would take Trouble below 0 stop at 0; negative Trouble does not exist.
 
 ## Leaders are not attack targets
 
