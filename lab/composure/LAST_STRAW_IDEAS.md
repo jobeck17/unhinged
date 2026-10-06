@@ -10,7 +10,7 @@ Last Straws are intentionally being explored wide before they are balanced. Add 
 - A player chooses **one Last Straw** during deckbuilding, outside the normal 40-card deck.
 - **Current human-test model:** the chosen Last Straw begins face-down under the Leader and **remains hidden through Breaking Point**. When the Leader reaches 0 Composure, reveal and trigger the Last Straw, then **Rotate the Last Straw card 90°** to mark that it has triggered. It remains face-up beside the Leader for the rest of the game, including as a reminder for any lingering text. This model remains subject to human-playtest confirmation.
 - Reaching 0 Composure triggers the chosen Last Straw once.
-- **Reaching 0 Composure with no untriggered Last Straw means immediate defeat:** the Leader becomes Unhinged. This applies if the Last Straw was discarded before triggering or has already been spent.
+- **Reaching 0 Composure after your Last Straw was removed before it triggered means immediate defeat:** the Leader becomes Unhinged. A Last Straw that already triggered has already moved its Leader into the normal Last Straw phase; removing that spent/Rotated card later does not retroactively defeat the Leader.
 - Last Straw is a comeback event, not the victory condition itself.
 - While at Last Straw, that player's Characters have **Hothead** and may **Attack opposing Ready Characters**.
 - Hothead remains Attack-only and does not grant early Cause Trouble.
@@ -50,7 +50,7 @@ These are concepts, not balanced cards.
 23. Shuffle/reveal from your discard until you find five Characters; put those Characters into play and return/discard the rest as the final design specifies.
 24. Deal 2 damage to every Character. Characters Defeated this way trigger their Defeat effects twice.
 25. Until the end of your next Turn, whenever one of your Characters Causes Trouble, double its Trouble for that action.
-26. **Cut the Safety Net:** Discard the opponent's Last Straw. If it had not already triggered, that player no longer has a Last Straw to trigger at 0 Composure and reaching 0 causes them to lose/become Unhinged normally. If it already triggered, discarding the rotated card does not undo its resolved effect or any game state already created by it. Exact wording/timing pending rules cleanup.
+26. **Cut the Safety Net:** Discard the opponent's Last Straw. If it had not already triggered, that player no longer has a Last Straw to trigger at 0 Composure and reaching 0 causes them to lose/become Unhinged normally. If it already triggered, discarding the rotated card does not undo its resolved effect, end the Last Straw phase, or cause its Leader to lose. Exact wording/timing pending rules cleanup.
 
 ## Useful design buckets
 
