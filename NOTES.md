@@ -1,6 +1,8 @@
+🔒 **Lab ruling — universal Last Straw combat state:** while a Leader is at Last Straw, that player's Characters have Hothead and may Attack opposing Ready Characters. Hothead remains Attack-only and does not grant early Cause Trouble. This is the baseline comeback agency; the chosen Last Straw supplies the one-time comeback event. There is no universal mass-Rotate/reset on entering Last Straw.
+
 ## Last Straw open pool — raw wall throw, October 6, 2026
 
-🧪 **Architecture being explored:** keep Leader passive and Breaking Point Leader-specific, while choosing one face-up Last Straw from a shared pool during deckbuilding. Build a deliberately oversized pool before cutting/balancing. Nothing in this section is locked or balanced yet.
+🧪 **Architecture being tested:** keep Leader passive and Breaking Point Leader-specific, while choosing one face-up Last Straw from a shared pool during deckbuilding. Build a deliberately oversized pool before cutting/balancing. Nothing in this section is locked or balanced yet.
 
 Raw concepts currently on the wall:
 - Reduce the opposing Leader to 5 Composure if above 5.
