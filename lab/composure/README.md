@@ -12,7 +12,7 @@ Each Leader begins with **20 Composure**. Characters have **Power / Guard / Trou
 - After causing Trouble, that Character is Rotated and exposed to ordinary Attacks.
 - **Stay Ready:** make no victory progress now, but remain normally protected from Attack.
 - Maximum **five Characters** per player. Items do not count.
-- **Opening balance:** the first player skips their first Draw. The second player receives **no setup temporary Stash**.
+- **Opening rule:** the first player skips their first Draw. The second player receives **no setup temporary Stash** and Draws normally on their first Turn. This is the current lab rule.
 
 The core Character decision is:
 
