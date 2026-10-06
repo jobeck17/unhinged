@@ -49,6 +49,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **Controlled baseline:** Carl 0.3 remains canonical. Five Character slots remain a lab architecture constraint, not an anti-snowball claim.
 
+🔒 **Lab ruling — Ready effects:** there is no universal once-per-Turn Attack-or-Cause-Trouble cap. If an effect Readies a Character outside the normal Ready step, that effect dictates any restriction on what the Character can do afterward. Example: “Ready a Character. It cannot Cause Trouble for the rest of this Round.” Existing Ready cards require individual audit so they do not accidentally enable unintended Attack/Trouble double-dips.
+
 🔒 **Lab ruling — Responses removed:** the Trouble / Last Straw direction removes the universal Response system. Cause Trouble therefore has no Response window. Three legacy lab cards still carry Response wording and require deliberate redesign during the card audit rather than automatic conversion. Canonical Carl remains unchanged until promotion.
 
 🧪 **Open audit:** the new win condition touches old Leader-damage cards, Leader healing/recovery, Responses, end-of-Turn timing, Ready effects, direct Composure loss, threshold effects, the five-slot rule, AI priorities, every Leader, and deck/card valuation. Resolve these deliberately through the next rules/card/deck interview before promotion.
