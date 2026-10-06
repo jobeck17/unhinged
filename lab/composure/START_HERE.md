@@ -18,7 +18,7 @@ If chat history, memory, an old brainstorm, and the current GitHub files disagre
 
 ## What this lab is trying to prove
 
-The central test is whether **Power / Guard / Trouble** creates a better Character-first game.
+The central test is whether **Attack / Health / Trouble** creates a better Character-first game.
 
 A Ready Character should create a meaningful choice:
 
@@ -108,3 +108,8 @@ When experimenting with them:
 **Find the fun first. Then balance the fun.**
 
 The goal of Composure 2.0 is not to accumulate rules. It is to discover whether this version makes people immediately want another game.
+
+
+## Current design gate
+
+The **40-question Composure 2.0 core-rules interview is complete**. Treat the core rules as feature-complete for the current playtest. Do not reopen foundational design by default. Next: clean rules and terminology, audit cards, finish Leader / Breaking Point / Last Straw content, bring the engine and browser playtest into parity, then human playtest. Playtest evidence can reopen decisions.
