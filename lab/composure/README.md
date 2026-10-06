@@ -26,6 +26,8 @@ A Leader's first current test threshold is **10 Composure**.
 
 The first time a Leader reaches **10 or less Composure**, that Leader's **Breaking Point** triggers. **10 is universal for every Leader.** Breaking Point triggers only once per game. Every Leader will have a **unique Breaking Point ability**; those individual abilities are intentionally not assigned yet.
 
+If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
+
 ## Last Straw
 
 Reaching **0 Composure does not lose the game**.
