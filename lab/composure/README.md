@@ -46,6 +46,12 @@ The first time a Leader reaches 0 Composure:
 
 The amount of Trouble on the final Cause Trouble does not matter.
 
+### Character limit exception
+
+A Last Straw ability may explicitly **ignore or exceed the normal Character limit**. Characters put into play this way remain in play even while their controller is above the normal limit. Being above the limit does not force Characters to be removed; it only prevents ordinary additions that do not themselves override the limit.
+
+The underlying **five-Character limit itself remains TESTING**, not locked. Its value is being judged primarily as a battlefield-scarcity and strategic-slot rule, not as an anti-snowball mechanism.
+
 ### Composure recovery
 
 - Before Last Straw, a Leader may recover Composure up to the **20 Composure** maximum.
@@ -59,7 +65,6 @@ The amount of Trouble on the final Cause Trouble does not matter.
 
 The interview must decide, among other things:
 
-- whether Last Straw effects may exceed the five-Character limit when their text says so;
 
 The current engine uses the simplest provisional behavior where necessary so the state machine can be exercised. These open points are **not locked rules**.
 
