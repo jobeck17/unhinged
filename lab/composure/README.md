@@ -1,70 +1,78 @@
-# Composure × STANK INDUSTRIES-60 Lab 0.4
+# Trouble / Last Straw × STANK INDUSTRIES-60 Lab 0.5
 
-**TESTING · October 5, 2026.** Carl 0.3 remains canonical. This lab combines the Composure win-condition experiment with the last live **STANK INDUSTRIES-60** state from immediately before the Composure lab was created.
+**TESTING · October 5, 2026.** Carl 0.3 remains canonical. This lab combines the STANK INDUSTRIES-60 deck state with the new Trouble / Composure / Breaking Point / Last Straw win-condition experiment.
 
 ## Core win condition
 
-Each Leader begins with **25 Composure**. At 0 Composure that Leader becomes **Unhinged** and loses.
-
-Characters have **Power / Guard / Antics**.
+Each Leader begins with **20 Composure**. Characters have **Power / Guard / Trouble**.
 
 - **Attack Character:** Rotate the attacker and attack an opposing Rotated Character using Power. Sucker Punch and explicit card effects can reach Ready Characters.
-- **Cause Trouble:** Rotate a Ready Character that began the Turn under your control. The opposing Leader immediately loses Composure equal to that Character's Antics.
+- **Cause Trouble:** Rotate a Ready Character that began the Turn under your control. The opposing Leader loses Composure equal to that Character's Trouble.
 - **Cause Trouble cannot be Blocked.** It is not an Attack and does not start combat.
 - After causing Trouble, that Character is Rotated and exposed to ordinary Attacks.
-- **Stay Ready:** score nothing now, but remain normally protected from Attack.
+- **Stay Ready:** make no victory progress now, but remain normally protected from Attack.
 - Maximum **five Characters** per player. Items do not count.
 - **Opening balance:** the first player skips their first Draw. The second player receives **no setup temporary Stash**.
 
-The core decision remains:
+The core Character decision is:
 
 **Fight / Cause Trouble and expose yourself / Stay Ready and protected.**
 
-Power handles fighting. Antics handles the win condition.
+Power handles fighting. Trouble pressures the win condition.
+
+## Breaking Point
+
+A Leader's first current test threshold is **10 Composure**.
+
+Crossing 10 marks that Leader's **Breaking Point**. The engine records and announces the event, but **Leader-specific Breaking Point effects are intentionally not assigned yet**. Those effects are part of the next design interview and should not be inferred from placeholder behavior.
+
+## Last Straw
+
+Reaching **0 Composure does not lose the game**.
+
+The first time a Leader reaches 0 Composure:
+
+1. Finish resolving the effect that caused the Composure loss.
+2. That Leader enters **Last Straw** permanently for the current test.
+3. **Rotate every Character in play.**
+4. Trigger that Leader's **Last Straw** hook.
+5. **End the current Turn.**
+6. The endangered player receives the next normal Turn.
+7. A later successful **Cause Trouble** against a Leader already at Last Straw makes that Leader **Unhinged**. That player loses.
+
+The amount of Trouble on the final Cause Trouble does not matter.
+
+**Leader-specific Last Straw effects are intentionally pending design.** The engine currently announces the hook but gives no generic payoff. One candidate discussed for a future Leader is an extreme comeback effect that draws cards equal to the opponent's remaining Composure and puts Characters drawn that way into play. It is an idea, not a universal rule and not yet assigned to a Leader.
+
+### Open Last Straw rules
+
+The interview must decide, among other things:
+
+- whether non-Trouble Composure loss can trigger Last Straw and how self-inflicted Composure loss behaves;
+- whether Composure can be recovered after Last Straw has triggered;
+- exact ordering for Responses, triggers, simultaneous effects, and end-of-Turn effects around Last Straw;
+- whether newly created Characters from a Last Straw effect may Cause Trouble on the granted comeback Turn;
+- whether Last Straw effects may exceed the five-Character limit when their text says so;
+- whether Breaking Point is always 10 or can vary by Leader;
+- whether every Leader gets both a Breaking Point effect and a Last Straw effect.
+
+The current engine uses the simplest provisional behavior where necessary so the state machine can be exercised. These open points are **not locked rules**.
 
 ## STANK INDUSTRIES-60 merge
 
-The combined browser now contains **eight 40-card decks**: the six Carl mono-Style decks plus Landon's active **Crazy Cat Lady** and **Mad Scientist** rulebreaker decks.
+The browser contains **eight 40-card decks**: the six Carl mono-Style decks plus Landon's active **Crazy Cat Lady** and **Mad Scientist** rulebreaker decks.
 
-STANK 60 changes imported into this lab include:
+STANK 60 changes carried into this lab include:
 
 - **Florida Man:** Ooh, That's Gonna Leave a Mark! Adrenaline passive; Broken Lawnmower; revised Gas Station Daredevil; revised Hold My Beer; A MILLION KILOGRAMS OF CAFFEINE!!!!; Rusty Needle.
-- **Birthday Party Magician:** Very Enthusiastic Volunteer; corrected Rabbit enter/leave Draw behavior; Ethan’s JUST Being Dramatic; Birthday Boy Stash/hand swap; reworked Lady Who's Moving Out Again; School Bully legacy cleanup; Magician's Hat.
-- **Crazy Cat Lady:** Landon's 40-card STANK colony list with split low-Cat/high-Cat Leader passive, Stray Cat 1/2, Orange Menace at Cost 1, Tuxedo Cat 1/4, Three-Legged Cat's first-two-Attacks survival, Hairy Cat/Hairballs, Shoebox of Dead Cats, Shovel, Nine Lives Zero Survivors, four Mittens III, and the latest deck counts.
+- **Birthday Party Magician:** Very Enthusiastic Volunteer; corrected Rabbit enter/leave Draw behavior; Ethan’s JUST Being Dramatic; Birthday Boy Stash/hand swap; reworked Lady Who's Moving Out Again; School Bully cleanup; Magician's Hat.
+- **Crazy Cat Lady:** Landon's current colony list and Cat package.
 - **Mad Scientist:** five-charge protected battery, Parts/Experiments, Abominations and Specimens.
 - **Combat experiment:** no universal retaliation. Backyard Wrestler's Wrestlers retain **Retaliate** when they survive an Attack.
 - **Playtest UX:** Attack target selection can be backed out of before the Attack commits.
 
-## Composure translations
-
-STANK 60 was built around Carl's old Leader-attacking/blocking combat. Where that concept no longer exists, this lab translates the job instead of restoring the old rule.
-
-- **Tuxedo Cat:** remains the colony protector. It is attackable while Ready and opposing Characters cannot Attack your other Cats while a Tuxedo Cat remains in play.
-- **Bodyguard:** makes that Character attackable while Ready.
-- **Hothead:** permits immediate Attacking, but never immediate Cause Trouble.
-- Old Leader-facing damage becomes Composure loss where the existing compatibility engine already translates it.
-- Mad Scientist **Abominations have 2 Antics** and Specimens **1 Antics** for this first compatibility pass.
-- Imported STANK Characters received first-pass Antics values. Those numbers are scaffolding, not claims about Landon's balance.
-
 ## Important experimental collision
 
-STANK's no-retaliation test is intentionally active here. That is a larger combat change than Composure alone and should be judged independently in human play. If Composure feels right but no-retaliation does not, Git history makes that piece easy to remove without undoing Landon's deck work.
+STANK's no-retaliation test remains active. That is separable from Trouble / Last Straw and should be judged independently.
 
-## Human test questions
-
-1. Is **Fight / Cause Trouble / Stay Ready** still the obvious core choice with the STANK decks present?
-2. Do Landon's synergy engines become more interesting when Antics and exposure matter?
-3. Does Crazy Cat Lady's width pressure remain fun under the five-slot cap?
-4. Does Tuxedo Cat actually protect a scoring colony without becoming mandatory?
-5. Does Florida's Adrenaline package avoid the old Ready → repeated Trouble exploit?
-6. Does Magician's Return engine interact cleanly with exposure?
-7. Does Mad Scientist's randomized body quality feel different now that Power and Antics are separate?
-8. Does no universal retaliation improve combat here, or should Composure keep its previous retaliation model?
-9. Does 25 Composure produce enough time for exposed scorers to be punished without making games drag?
-10. Do players immediately want another game?
-
-### Current tuning note
-
-Simulation before the STANK merge strongly favored **25 Composure** over 15: it moved games toward the desired 8–10 round range and gave opponents more time to punish exposed scoring Characters. The same testing showed the old second-player temporary Stash overcompensated in this model, so the lab now keeps the first player's skipped opening Draw but gives the second player no free setup Stash.
-
-Do not promote any of this to Carl until human testing separates the successful pieces.
+Carl 0.3 remains canonical. Do not promote this lab until the rules interview, card/deck audit, simulations, and human testing have resolved the affected systems.
