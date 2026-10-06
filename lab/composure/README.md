@@ -32,6 +32,10 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
 
+## Trouble is a universal Character stat
+
+Every Character has a printed **Trouble** value, including **0**. Trouble is a core Character stat alongside Power and Guard. A Character with 0 Trouble may still take the Cause Trouble action; absent another effect or modifier, it causes 0 Composure loss. This preserves Cause Trouble triggers and effects without creating a hidden eligibility rule for 0-Trouble Characters.
+
 ## Leaders are not attack targets
 
 **Characters cannot Attack Leaders.** An Attack is Character-vs-Character combat and must target an eligible opposing Character. **Cause Trouble** is the normal Character action used to pressure the opposing Leader's Composure. Power therefore governs Character combat, Guard governs Character durability, and Trouble governs Leader pressure.
