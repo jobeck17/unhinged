@@ -15,6 +15,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **Breaking Point / Last Straw:** 10 Composure is the first test **Breaking Point**. At 0 Composure the Leader does **not** lose. They hit **Last Straw**: all Characters Rotate, the Leader-specific Last Straw hook triggers, and the current Turn ends. A later successful Cause Trouble against a Leader already at Last Straw makes that Leader **Unhinged** and loses the game. Leader-specific Breaking Point and Last Straw effects are intentionally pending the rules/card interview.
 
+🔒 **Lab ruling — final Trouble prevention:** once a Leader is at Last Straw, the final successful Cause Trouble makes that Leader Unhinged rather than causing ordinary Composure loss. Ordinary Composure prevention does not stop it. Only an effect that explicitly cancels/prevents the Cause Trouble action or explicitly prevents becoming Unhinged can stop the final hit.
+
 🔒 **Lab ruling — Last Straw limit override:** a Last Straw ability may explicitly exceed the normal Character limit. Excess Characters remain in play; no forced cleanup occurs merely for being over the limit.
 
 🧪 **Five-Character limit remains TESTING:** simulation did not show the cap materially fixing snowballing. Its stronger case is battlefield scarcity and the decisions/triggers created by limited slots. Do not treat the five-Character cap itself as locked merely because Last Straw now has an override rule.
