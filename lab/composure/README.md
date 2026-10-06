@@ -96,7 +96,7 @@ A Character with **0 Trouble** may still Cause Trouble and resolve any relevant 
 
 ### Final Trouble and prevention
 
-Once a Leader is at Last Straw, a successful Cause Trouble by a Character with **1 or more Trouble** does **not** cause ordinary Composure loss. It makes that Leader **Unhinged**. Reducing that Character's Trouble to **0** before the action resolves prevents the Unhinged finish. Effects that only prevent or reduce Composure loss do not stop a final Cause Trouble that still has at least 1 Trouble. An effect may also stop the finish by explicitly canceling or preventing Cause Trouble, or explicitly preventing the Leader from becoming Unhinged.
+Once a Leader is at Last Straw, a successful Cause Trouble by a Character with **1 or more Trouble** does **not** cause ordinary Composure loss. It makes that Leader **Unhinged**. If that Character has been reduced to **0 Trouble** when it Causes Trouble, it cannot deliver the Unhinged finish. Because this lab has no universal Response window, Trouble reduction is normally established before the Cause Trouble action is taken unless a card explicitly creates an interrupting effect. Effects that only prevent or reduce Composure loss do not stop a final Cause Trouble that still has at least 1 Trouble. An effect may also stop the finish by explicitly canceling or preventing Cause Trouble, or explicitly preventing the Leader from becoming Unhinged.
 
 ### Character limit exception
 
