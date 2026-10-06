@@ -22,6 +22,23 @@ try{
  assert.equal(toddler.ready,false,'Cause Trouble must Rotate and expose the Character');
  const hot=test.enter(0,'P152');hot.born=test.round;assert.equal(test.canAttack(hot),true,'Hothead should still Attack on entry');assert.equal(test.canCauseTrouble(hot),false,'Hothead must not allow Trouble on entry');
 
+ // 0 Composure is Last Straw, not defeat. The endangered player gets the next Turn.
+ test.players[1].hp=test.trouble(toddler);toddler.ready=true;
+ const defender=test.enter(1,'P124');defender.born=1;
+ await test.causeTrouble(toddler.uid);
+ assert.equal(test.players[1].lastStraw,true,'0 Composure should trigger Last Straw');
+ assert.equal(test.winner,null,'Last Straw should prevent immediate loss at 0');
+ assert.equal(test.turn,1,'Last Straw should end the current Turn');
+ assert.equal(toddler.ready,false,'the aggressor should remain Rotated after the handoff');
+ assert.equal(defender.ready,true,'the endangered side should Ready normally for its comeback Turn');
+
+ // Once at Last Straw, one later successful Cause Trouble makes that Leader Unhinged.
+ test.players[0].hp=0;test.players[0].lastStraw=true;
+ const finisher=test.enter(1,'P124');finisher.born=1;finisher.ready=true;
+ await test.causeTrouble(finisher.uid);
+ assert.equal(test.players[0].unhinged,true,'final Trouble should make a Last Straw Leader Unhinged');
+ assert.equal(test.winner,1,'final Trouble should win the game');
+
  for(let a=0;a<doc.decks.length;a++)for(let b=0;b<doc.decks.length;b++)if(a!==b){
   const g=new Game(pool,{decks:[doc.decks[a],doc.decks[b]]},r=>aiChoice(g,r),()=>{},{firstPlayer:(a+b)%2});
   await g.mulligan(0,[]);await g.mulligan(1,[]);g.begin();
