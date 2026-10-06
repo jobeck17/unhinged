@@ -49,6 +49,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **Controlled baseline:** Carl 0.3 remains canonical. Five Character slots remain a lab architecture constraint, not an anti-snowball claim.
 
+🔒 **Lab ruling — attack eligibility:** ordinary Attacks may target only opposing Rotated Characters. Ready Characters are protected from ordinary Attacks unless card text explicitly overrides that rule. Attack and Cause Trouble therefore both normally expose the acting Character by Rotating it, while staying Ready preserves ordinary attack protection.
+
 🔒 **Lab ruling — Hothead:** Hothead allows a Character to Attack the Turn it enters play. It does not allow that Character to Cause Trouble early. Cause Trouble normally requires the Character to have begun the Turn under its controller's control unless an effect explicitly overrides that requirement.
 
 🔒 **Lab ruling — Ready effects:** there is no universal once-per-Turn Attack-or-Cause-Trouble cap. If an effect Readies a Character outside the normal Ready step, that effect dictates any restriction on what the Character can do afterward. Example: “Ready a Character. It cannot Cause Trouble for the rest of this Round.” Existing Ready cards require individual audit so they do not accidentally enable unintended Attack/Trouble double-dips.
