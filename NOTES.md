@@ -49,6 +49,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **Controlled baseline:** Carl 0.3 remains canonical. Five Character slots remain a lab architecture constraint, not an anti-snowball claim.
 
+🔒 **Lab ruling — Cause Trouble:** Cause Trouble is not combat and cannot be blocked. An eligible Ready Character Rotates to Cause Trouble and applies its Trouble to the opposing Leader's Composure. The resulting Rotated Character is then exposed to ordinary Attacks.
+
 🔒 **Lab ruling — persistent damage:** damage remains on Characters until an effect removes/heals it or the Character leaves play. A Character is Defeated immediately when its accumulated damage equals or exceeds its Guard.
 
 🔒 **Lab ruling — Retaliate:** universal retaliation is removed. **Retaliate** is a dedicated keyword: “When this Character survives an Attack, it deals its Power as damage to the attacking Character.” A Character Defeated by the Attack does not Retaliate unless an effect explicitly says otherwise. Retaliation occurs only when a keyword or effect grants it.
