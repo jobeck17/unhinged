@@ -32,13 +32,19 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
 
+## Responses removed
+
+The **Response system is removed from this lab direction**. Cause Trouble and other events do not open Response windows. Interaction should come from board state, proactive Actions/Items, triggered effects, and explicitly designed mechanics rather than a universal off-turn Response framework.
+
+Three legacy lab cards still contain Response text and are **pending redesign during the card audit** rather than receiving placeholder replacements: the combat trick at P019, the attacked-Character return effect at P081, and **Take One for the Team (P169)**. Their current Response wording is not part of the intended ruleset.
+
 ## Last Straw
 
 Reaching **0 Composure does not lose the game**.
 
 **Any Composure loss can trigger Breaking Point or Last Straw**, including loss from Cause Trouble, Actions, Items, Defeat triggers, and a Leader's own effects. Only a later successful Cause Trouble can make a Leader at Last Straw Unhinged.
 
-Threshold timing is universal: **finish resolving the current effect completely before resolving Breaking Point or Last Straw.** If one effect causes both Leaders to enter Last Straw, **resolve both Last Straws before the Turn can pass**. Resolve the active player's Last Straw first, then the other player's, then continue through the normal forced end-of-Turn sequence and pass play normally. Breaking Point and Last Straw abilities are protected Leader game events and **do not open a Response window**. Normal interaction resumes after the threshold event finishes.
+Threshold timing is universal: **finish resolving the current effect completely before resolving Breaking Point or Last Straw.** If one effect causes both Leaders to enter Last Straw, **resolve both Last Straws before the Turn can pass**. Resolve the active player's Last Straw first, then the other player's, then continue through the normal forced end-of-Turn sequence and pass play normally. Breaking Point and Last Straw abilities resolve as protected Leader game events after the triggering effect finishes. They cannot be interrupted.
 
 The first time a Leader reaches 0 Composure:
 
