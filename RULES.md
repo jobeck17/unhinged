@@ -1,411 +1,269 @@
-# Unhinged Rules — Carl 0.3
+# Unhinged Rules — Mordecai 0.4
 
-**Working production rulebook • 27 September 2026**
+**Working production rulebook • 6 October 2026**
 
-This rulebook reflects the September 27 architecture interview and supersedes the older single-action-turn baseline. The 180-card pool was rebuilt against these rules on September 28, 2026. Balance remains unverified and is now the focus of testing.
+Mordecai 0.4 promotes the tested Composure 2.0 core into production and replaces Carl 0.3 as the canonical rules generation. The core-rules design gate is closed for this playtest. Card, deck, Leader, simulator, browser, and terminology audits follow this promotion. Where current card data still contains legacy wording, **this rulebook wins**.
 
-## 1. Core principle
+## 1. Core game
 
-Base rules apply to every player. Printed card text may add to, change, or override a base rule.
+Each Leader begins with **20 Composure**. Characters have **Attack / Health / Trouble**.
 
-A Trait has no inherent rules meaning unless a card refers to it. A keyword has only the meaning defined by the rules.
+The core Character decision is:
 
-The normal win condition is reducing the opposing Leader to 0 Health. A game has no draw. **War** resolves a tied game-ending state.
+**Attack a Character / Cause Trouble / Stay Ready.**
 
-## 2. Game objects and zones
+Attack governs Character combat. Health governs Character durability. Trouble pressures the opposing Leader.
 
-Each player has a Deck, Hand, Discard, Play Area, and Stash.
+Base rules apply to every player. Printed card text may add to, change, or override a base rule. Traits have no inherent rules meaning unless referenced. Keywords mean only what the rules or card text define.
 
-- A **Leader** stays outside the deck and play area. It provides deck identity, 25 Health, and one visible automatic passive.
-- A **Character** has Power and Guard.
-- An **Action** resolves once, then goes to its owner's discard.
-- An **Item** enters play and remains there until an effect moves it. Most Items are standalone; an Item attaches only when its text says so.
-- A **Stash** is the resource row used to pay Costs. Normal Stash is face down; some rules and effects create face-up temporary Stash.
+## 2. Objects and zones
 
-Only Characters and Items are **in play**. Leaders, Actions, Stash cards, cards in hand, cards in decks, and cards in discard are not in play.
+Each player has a Deck, Hand, Discard, Play Area, and Stash, plus one **Leader** and one **Last Straw** outside the 40-card deck.
 
-There is no base limit on Characters in play, Items in play, Stash size, or hand size.
+- **Leader:** visible outside the deck and play area; provides deck identity, a passive, a printed Breaking Point ability, and Composure.
+- **Last Straw:** begins face-down under its Leader and is not part of the deck.
+- **Character:** has Attack, Health, and Trouble.
+- **Action:** resolves once, then goes to its owner's discard.
+- **Item:** enters play and remains until moved; may be standalone or attached.
+- **Stash:** resource row used to pay Costs.
 
-## 3. Core vocabulary
+Only Characters and Items are normally **in play**. There is no base limit on Characters in play, Items in play, Stash size, hand size, or Items attached to one Character.
+
+## 3. Vocabulary and movement
 
 | Term | Meaning |
 | --- | --- |
 | **Ready** | Upright and available. |
 | **Rotate** | Turn a Ready card 90 degrees sideways. |
-| **Rotated** | A card that is sideways. |
-| **Play** | Play a card from a zone where a rule or effect allows it. |
-| **Enters play** | A Character or Item arrives in the Play Area. |
-| **Activate** | Voluntarily use an activated ability and pay its listed cost. |
-| **Cost** | The amount paid by Rotating Ready Stash unless a card says otherwise. |
-| **Power** | Combat damage dealt by a Character. |
-| **Guard** | The amount of damage a Character can have before it is Defeated. |
-| **Health** | A Leader's survival total. |
-| **Roll a die** | Roll one standard six-sided die (d6) and use the result shown. |
+| **Rotated** | Sideways. |
+| **Play** | Play a card from a zone where a rule/effect permits it. |
+| **Activate** | Voluntarily use an activated ability and pay its cost. |
+| **Attack** | A Character's combat stat, and the action of attacking another Character. |
+| **Health** | A Character's durability. |
+| **Trouble** | A Character's Leader-pressure stat. |
+| **Composure** | A Leader's victory-pressure track. |
+| **Breaking Point** | Protected one-time Leader threshold at 10 or less Composure. |
+| **Last Straw** | Hidden outside-deck card revealed at 0, and the endangered state that normally follows. |
+| **Unhinged** | The game-losing Leader state. |
 
-### Card movement
+- **Draw:** top of deck to hand.
+- **Discard:** hand to owner's discard.
+- **Return:** another zone to owner's hand.
+- **Defeat:** Character from play to owner's discard.
+- **Sacrifice:** Defeat one of your own Characters as a cost/effect; also a Defeat. Terminology remains subject to the 0.4 card audit.
+- **Dismiss:** card from play to owner's discard without Defeating it.
+- **Put:** neutral movement to the stated destination; not automatically Draw, Discard, Return, Defeat, Sacrifice, or Dismiss.
 
-- **Draw:** move the top card of your deck to your hand.
-- **Discard:** move a card from a hand to its owner's discard.
-- **Return:** move a card from another zone to its owner's hand.
-- **Defeat:** move a Character from play to its owner's discard.
-- **Sacrifice:** Defeat one of your own Characters as a cost or effect. A Sacrifice is also a Defeat.
-- **Dismiss:** move a card from play to its owner's discard without Defeating it.
-- **Put:** neutral movement to the stated destination. It is not automatically a Draw, Discard, Return, Defeat, Sacrifice, or Dismiss.
-
-Ownership never changes. Control changes only when an effect explicitly says so. A card that changes control remains owned by its original owner; if it leaves play, it goes to its owner's appropriate zone unless the effect says otherwise. A temporary control effect ends when its stated duration ends or when the card leaves play.
+There is no free voluntary self-Dismiss action. **Ownership never changes.** Cards sent to a discard pile always go to their owner's discard.
 
 ## 4. Setup and War
 
-1. Each player brings a 40-card deck and one Leader.
-2. A deck may contain cards from the Leader's Style and **up to one additional Style**. Mono-Style decks are legal.
-3. A deck may contain up to **four copies** of a card.
-4. There is no required Character, Action, or Item ratio.
-5. Set each Leader to 25 Health.
-6. Shuffle decks and perform **War** to determine which player goes first.
+1. Bring a 40-card deck, one Leader, and one Last Straw.
+2. A standard deck may use the Leader's Style plus up to one additional Style. Mono-Style is legal.
+3. Standard maximum is four copies of a card unless explicit deck-construction text overrides it. Current rulebreakers may create exceptions, such as Crazy Cat Lady allowing up to 10 Stray Cats.
+4. Put the chosen Last Straw face-down under the Leader.
+5. Set each Leader to **20 Composure**.
+6. Shuffle and perform War to determine first player.
 7. Draw seven cards.
-8. Each player may mulligan any number of cards from 0 to 7. Draw that many replacements, then shuffle the replaced cards into the deck.
-9. After mulligans are complete, the player going second may put the top card of their deck face up and Rotated into their Stash. This is temporary Stash.
+8. Mulligan any number from 0–7: draw replacements, then shuffle replaced cards into the deck.
+9. The second player receives **no setup temporary Stash**.
 
-### War
-
-Each player reveals the top card of their deck and compares printed Cost. Higher Cost wins. On a tie, reveal again until the tie breaks. Return all revealed cards to their decks and shuffle.
-
-War also resolves simultaneous Leader defeat and simultaneous empty-deck losses.
+**War:** each player reveals the top card and compares printed Cost. Higher wins. Repeat ties. Return revealed cards and shuffle. War may resolve a genuinely simultaneous game-ending tie when no more specific rule does.
 
 ## 5. Rounds and Turns
 
-A Round consists of one full Turn from each player.
+A Round is one full Turn from each player. The War winner takes the first Turn of every Round unless an effect changes this.
 
-The player who won War takes the first Turn of every Round. The same player therefore goes first each Round unless a future card explicitly changes that rule.
+Start of Turn:
+1. Ready eligible Characters, Items, and Stash.
+2. Draw one card.
+3. Begin the main Turn.
 
-### Start of Turn
+The first player skips the Draw step of their first Turn. The second player Draws normally.
 
-At the start of your Turn:
+During your Turn, you may Play cards, Stash when eligible, Activate abilities, Attack, and Cause Trouble in any legal order as often as Ready cards/resources and text permit.
 
-1. **Ready step:** Ready your eligible Characters, Items, and Stash.
-2. **Draw step:** Draw one card.
-3. Proceed to the main part of your Turn.
+There is **no universal once-per-Turn Attack-or-Cause-Trouble cap**. Readiness is literal. If an effect Readies a Character, that effect is responsible for any restriction such as “It cannot Cause Trouble this Turn.”
 
-The player who won War **skips the Draw step of their first Turn**. Beginning with their second Turn, they Draw normally.
-
-### Main Turn
-
-During your Turn, you may Play cards, Activate abilities, and Attack in any order and as many times as the rules and available Ready cards/resources allow.
-
-End your Turn when you are finished.
-
-Effects that say "this Turn" expire at the end of that Turn. Effects that say "this Round" expire after the second player's Turn and all end-of-Round effects have resolved.
+“This Turn” expires at end of that Turn. “This Round” expires after the second Turn and end-of-Round effects.
 
 ## 6. Stash
 
-There is no automatic resource progression.
+There is no automatic resource progression. Once per Round during your Turn, you may put one card from hand face-down into Stash. This is not a separate action.
 
-Once per Round, during your own Turn, you may put one card from your hand face down into your Stash. You may do this at any legal point during your Turn. Stashing does not consume a separate action.
+Normal Stash enters Ready, pays 1 toward a Cost when Rotated, has no printed identity/stats/text while there, and cannot leave unless a rule/effect moves it. Its identity is unknowable even to its owner unless an effect permits looking. Stash count and Ready/Rotated state are public.
 
-A normally Stashed card:
+Effects may create face-up temporary Stash or otherwise break these rules. Unless text says otherwise, face-up temporary Stash is discarded when spent. Costs may be reduced to 0.
 
-- enters Ready;
-- pays 1 toward a Cost when Rotated;
-- has no name, type, Style, Traits, Cost, text, Power, or Guard while in Stash;
-- is unknowable even to its owner unless a card explicitly allows a player to look at it;
-- may leave Stash only when a rule or effect explicitly moves it.
+## 7. Playing, attachments, and control
 
-The number of Stash cards and whether each is Ready or Rotated are public information.
+Actions resolve and go to discard. The universal **Response** system is removed.
 
-### Temporary Stash
+Characters and Items enter Ready unless text says otherwise.
 
-Some rules and effects put cards **face up** into Stash. A face-up Stash card is temporary Stash.
+A Character that enters play normally cannot Attack until its controller's next Turn unless it has Hothead, cannot Cause Trouble because it did not begin the Turn under that controller's control, and cannot use one of its own Rotate abilities until that controller's next Turn unless text says otherwise. Items may normally use their own abilities the Turn they enter.
 
-- A face-up Stash card is still Stash, not its printed card type, while it remains there.
-- Unless an effect says otherwise, when a face-up Stash card is used to pay a Cost, put it into its owner's discard instead of leaving it Rotated in Stash.
-- Face-up Stash may be affected by anything that affects Stash unless a rule or effect says otherwise.
-- The second player's setup Stash begins Rotated, then Readies normally during that player's first Ready step.
-- If the second player does not spend that temporary Stash and it is later Ready, it remains available until used. When used to pay a Cost, put it into its owner's discard instead of leaving it Rotated in Stash.
+By default, an attaching Item attaches only to a Character you control. Explicit text may attach to an opposing Character. Any number of Items may attach to a Character unless text limits it.
 
-Cost reductions may reduce a Cost to 0.
+When a Character leaves play, attached Items go to their owners' discards unless text says otherwise. This is cleanup, **not Dismiss**.
 
-### Stash design space
+If a Character changes control, attached Items stay attached. Effects they grant to, modify on, or trigger from that Character continue with the Character under its new controller. Item ownership and independent Ready/Rotated state do not change. Controlling the Character does not grant control of a separate activated Item ability unless text says so.
 
-Cards may explicitly break normal Stash rules. Current approved directions include:
+Changing control does not Ready/Rotate, heal, remove attachments, or reset state. If a control effect gives no duration, it lasts until end of the current Turn unless text says otherwise. When temporary control ends, the Character returns to its previous controller in its **current state**.
 
-- Momentum may Stash additional cards or Ready some Rotated Stash.
-- Misdirection may inspect, retrieve, or exchange Stash cards.
-- Salvage may repurpose Items into temporary Stash and may exploit unused opposing Stash.
-- Stonewall may temporarily Rotate opposing Stash.
-- Expendable may convert Characters into temporary purchasing power or Cost reduction.
-- Reckless may test borrowing future economy, but bookkeeping must remain manageable.
+## 8. Attack
 
-Permanent theft or permanent destruction of opposing Stash is not part of the current base design.
+**Leaders cannot be Attacked.** Attacks are Character-versus-Character.
 
-## 7. Playing cards
+Choose an eligible Ready attacker and eligible opposing Character, then Rotate the attacker. By default only opposing **Rotated Characters** may be Attacked. Ready Characters are protected from ordinary Attacks; Sucker Punch and explicit text may override this.
 
-Actions resolve immediately and then go to their owner's discard. They do not enter play.
+Ready protects from ordinary Attacks **only**. Ready Characters may still be targeted/affected by Actions, Items, abilities, damage, placed damage, Rotate effects, Return, Dismiss, Defeat, attachments, and other effects unless text says otherwise.
 
-Characters and Items enter play Ready unless an effect says otherwise.
+The attacker deals damage equal to its Attack. There is **no blocking step and no universal retaliation**. If the target leaves before combat damage, the Attack ends and the attacker remains Rotated.
 
-A Character that enters play:
+**Retaliate:** When this Character survives an Attack, it deals its Attack as damage to the attacking Character. A Character Defeated by the Attack does not Retaliate unless text says otherwise.
 
-- may Block immediately;
-- cannot Attack until its controller's next Turn unless it has Hothead or another effect says otherwise;
-- cannot use one of its own Rotate abilities until its controller's next Turn unless an effect says otherwise.
+## 9. Damage and Health
 
-Items may use their abilities in the Turn they enter play unless card text says otherwise.
+Damage persists until healed/removed or the Character leaves play. A Character is Defeated immediately when accumulated damage equals or exceeds current Health.
 
-Most Character abilities should be static, triggered, or On Play. Rotate abilities are intentionally uncommon and should exist when giving up attacking or blocking is the meaningful cost.
+All damage uses the same durability system regardless of source. If Health is reduced so existing damage equals/exceeds it, Defeat immediately. **Effective Health cannot be below 0. A Character at 0 Health is Defeated.**
 
-Some Characters may have an On Play ability plus a persistent board-presence ability. Higher-impact marquee Characters may combine multiple complementary abilities.
+**Deal damage** creates a damage-dealt event. **Put damage** adds damage without dealing it, so it does not trigger “dealt/took damage” effects unless text says otherwise. Both contribute to the same Defeat check and neither cares whether the Character is Ready.
 
-### Attached Items
+Healing removes Character damage. Leaders recover Composure instead.
 
-An Item attaches only when its text says to Attach it.
+## 10. Cause Trouble
 
-If a Character with attached Items leaves play, put its attached Items into their owners' discards unless a card says otherwise. This cleanup is not Dismiss.
+Cause Trouble is **not combat and cannot be Blocked**.
 
-## 8. Attacking and Blocking
+To Cause Trouble, choose a Ready Character you control that began the Turn under your control and has at least 1 effective Trouble. Rotate it. The opposing Leader loses Composure equal to its effective Trouble.
 
-Declaring an Attack Rotates the attacker.
+Afterward that Character is Rotated and exposed to ordinary Attacks.
 
-A Character may normally Attack:
+Trouble is fully modifiable. Effects may increase, reduce, or set it. **Effective Trouble cannot be below 0. A 0-Trouble Character cannot Cause Trouble.** If raised to 1+, it becomes eligible normally.
 
-- the opposing Leader; or
-- an opposing **Rotated Character**.
+Cause Trouble through Characters is the primary victory-pressure engine. Direct Composure loss from other effects is valid spice/synergy/payoff/reach, but should normally carry meaningful condition, inefficiency, risk, setup, or deckbuilding cost.
 
-Ready opposing Characters cannot normally be attacked directly. **Sucker Punch** and specific card text may create exceptions.
+## 11. Breaking Point
 
-A direct Attack against a Character cannot be Blocked. If the direct target leaves play before combat damage, the Attack ends; the attacker remains Rotated.
+The first time a Leader moves from above 10 Composure to **10 or less**, its Breaking Point triggers.
 
-### Leader attacks
+Breaking Point is universal at 10, triggers only once, uses the unique ability printed on that Leader, and cares about actual Composure movement rather than whether an effect says “lose,” “set,” or something else.
 
-When a Character attacks a Leader, the defending player may choose **one Ready Character** to Block. Blocking Rotates that Character.
+Breaking Point is a **protected Leader event**. Normal effects cannot cancel, prevent, or interrupt it.
 
-A Character that entered play this Turn may Block.
+**Threshold crossings are latched.** Record the crossing when it occurs, finish the current effect, then resolve the threshold. Recovery above 10 during that same effect does not erase the trigger.
 
-If no Character Blocks, the attacker deals its Power to the Leader.
+A Leader may later recover above 10 up to 20, but Breaking Point never retriggers. Persistent BP text may explicitly check current Composure and toggle without retriggering.
 
-If a Character Blocks:
+If both Leaders cross BP in one effect, finish the effect, then use actual trigger order. Genuine ties resolve non-active player first.
 
-1. The attacker deals its Power to the Blocker.
-2. Determine how much damage was needed to Defeat that Blocker based on its remaining Guard.
-3. Any excess attack damage overflows to the Leader.
-4. Check whether the Blocker is Defeated.
-5. If the Blocker survives, it retaliates with its Power.
-6. A Blocker with **Defiant** retaliates even if the Attack Defeats it.
-7. A Blocker with **Slowpoke** does not retaliate.
+## 12. Last Straw
 
-There is no defensive discard-for-Guard rule.
+Reaching 0 Composure does **not** normally lose if the Leader still has an unused Last Straw.
 
-### Direct Character attacks
+The chosen Last Straw begins **face-down under the Leader** and remains hidden through Breaking Point. When that Leader first reaches 0:
 
-When a Character directly attacks another Character:
+1. Finish the current effect.
+2. Resolve any Breaking Point crossed by that effect before Last Straw.
+3. Reveal the Last Straw.
+4. Rotate it 90 degrees and leave it face-up beside the Leader as a spent marker.
+5. Resolve it.
+6. Force the current Turn into its normal end-of-Turn sequence, including scheduled effects/cleanup.
+7. Pass normally. Last Straw never grants an extra Turn.
 
-1. The attacker deals its Power to the target.
-2. Check Defeat.
-3. If the target survives, it retaliates with its Power.
-4. Excess damage does not overflow anywhere.
+Once triggered, Last Straw is a protected Leader event and normal effects cannot cancel/prevent/interrupt its resolution. Ordinary effects cannot interact with a Last Straw unless they explicitly refer to **Last Straw**.
 
-A Ready Character attacked through Sucker Punch follows the same direct-attack procedure.
+If a Leader reaches 0 and its Last Straw was removed before it triggered, that Leader immediately becomes **Unhinged** and loses.
 
-## 9. Damage, put damage, healing, and Defeat
+### Last Straw state
 
-Damage on Characters persists until healed or the Character leaves play.
+Normally the Leader remains at **0 Composure** after its Last Straw resolves.
 
-A Character is Defeated immediately when the amount of damage on it equals or exceeds its Guard.
+While your Leader is at Last Straw:
+- your Characters have **Hothead**;
+- your Characters may Attack opposing Ready Characters;
+- the next opposing Character that successfully **Causes Trouble** makes your Leader **Unhinged** and you lose.
 
-### Deal damage
+The final Cause Trouble is not ordinary Composure loss. Preventing/reducing Composure loss does not stop it; an effect must prevent/cancel Cause Trouble or explicitly prevent Unhinged.
 
-An effect that says **deal damage** creates a damage-dealt event.
+A 0-Trouble Character cannot Cause Trouble, including for the final hit.
 
-It can trigger effects that care about a Character being dealt damage, taking damage, or surviving damage, and it can interact with effects that prevent or modify dealt damage.
+### Recovery override and spent Last Straw
 
-### Put damage
+A Last Straw may explicitly set/recover its Leader above 0. If so, that Leader is not at Last Straw and loses the universal Last Straw combat benefits unless text says otherwise. The Last Straw remains spent. If that Leader later reaches 0 again, it immediately becomes Unhinged and loses.
 
-An effect that says **put damage on** a Character adds that amount of damage without dealing it.
+Removing a spent Last Straw after it triggered does not retroactively defeat a Leader that remains in normal Last Straw state.
 
-Putting damage:
+### Multiple thresholds
 
-- does not count as damage being dealt;
-- does not trigger effects that require damage to be dealt or taken;
-- is not prevented by effects that prevent dealt damage unless they explicitly mention put damage;
-- still causes the normal Defeat check immediately.
+After a single effect, resolve **all crossed Breaking Points before any Last Straws**. Within a threshold layer use actual order; genuine ties resolve non-active player first.
 
-This distinction is intentional design space.
+## 13. Composure recovery
 
-### Healing
+Before Last Straw, a Leader may recover Composure up to **20**. Recovery is valid but should be rare and carry meaningful cost, condition, or tempo sacrifice.
 
-Healing removes existing damage. A Character cannot be healed below 0 damage.
+Leaders do not have Health, take Character damage, or heal. Their survival track is Composure.
 
-Leader healing is intended to be rare. A Leader normally cannot be healed above 25 Health unless an effect explicitly raises or changes its maximum Health.
+## 14. Deck exhaustion
 
-## 10. Responses
+There is **no deck-out loss**.
 
-A **Response** is an Action with a specific off-turn timing condition printed on the card. It is not a separate card type.
+If a player would Draw from an empty deck and their Last Straw has not triggered, the failed Draw triggers Last Straw directly: set that Leader to 0 and resolve Last Straw normally. This special trigger does **not** retroactively trigger Breaking Point.
 
-A Response may be played only when its printed timing condition is satisfied.
+If that Last Straw has already triggered, a failed Draw simply does nothing. Do not reshuffle the discard.
 
-Each qualifying event opens **at most one Response opportunity total**:
+## 15. Triggers and timing
 
-1. The non-active player gets the first opportunity.
-2. If the non-active player plays a Response, the window closes.
-3. If the non-active player passes, the active player may play one Response.
-4. If both pass, the window closes.
-5. A Response cannot be answered by another Response.
+Triggered abilities happen automatically. Unless text says otherwise, abilities function only while their source is in play.
 
-Responses use their normal Cost, paid with Ready Stash, unless the card says otherwise.
+One player's simultaneous triggers are ordered by that player. Genuine simultaneous ordinary triggers from both players resolve active player's triggers first, then non-active player's, unless a protected threshold rule above gives a different order.
 
-Valid printed windows may include moments such as:
+A triggered/Activated ability resolves independently of its source remaining in play unless it requires the source. A card that leaves and re-enters is a new instance with no old damage, temporary bonuses, or use history. “If you do” requires the immediately preceding optional instruction to have happened.
 
-- when a Character is attacked;
-- when a Character Blocks;
-- before combat damage is dealt;
-- when an opponent plays an Action;
-- when an ability is Activated;
-- when another specifically named event occurs.
+## 16. Current keywords
 
-Resolve the Response completely, including triggers it creates, before the interrupted event continues.
+**Hothead:** This Character may Attack on the Turn it enters play. Attack permission only; it does not allow early Cause Trouble.
 
-If an Action is **canceled**, none of its effect resolves. Put that Action into its owner's discard, then continue with any triggers created by the Response that canceled it.
+**Retaliate:** When this Character survives an Attack, it deals its Attack as damage to the attacking Character.
 
-Hard cancellation is allowed design space but should be rare, expensive, or conditional.
+**Sucker Punch:** This Character may Attack Ready opposing Characters.
 
-## 11. Triggers and timing
+**Explosive:** When this Character is Defeated, deal 1 damage to each opposing Character.
 
-A triggered ability happens automatically when its condition occurs.
+**Stubborn:** The first time each Round this Character would be Returned or Dismissed, it remains in play instead.
 
-Unless a card says otherwise, abilities function only while their source is in play.
+**Jerry-Rig:** If this Item would go to your discard, you may put it face-up and Rotated into your Stash instead. When used to pay a Cost, discard it.
 
-If several triggers controlled by one player happen simultaneously, that player chooses their order.
+Legacy keywords/text depending on Carl blocking, universal retaliation, Leader Health, Power/Guard, or Responses are pending the Mordecai card audit and are not base rules merely because stale text remains.
 
-If both players create simultaneous triggers, resolve the active player's triggers first, then the non-active player's triggers, preserving each player's chosen order.
+## 17. Leader model
 
-An ability that has triggered or been Activated resolves independently of its source remaining in play unless the effect specifically requires that source to remain.
+A Leader stays visible outside the deck, begins at 20 Composure, has one automatic passive and one unique printed Breaking Point, does not Attack or have Health, and uses one hidden shared-pool Last Straw chosen during deckbuilding.
 
-A card that leaves play and later re-enters is a new instance. It has no old damage, temporary bonuses, or use history.
+Breaking Point belongs to Leader identity. Last Straw is currently a universal shared pool unless text restricts it.
 
-"If you do" requires the immediately preceding optional instruction to have actually happened.
+The Mordecai content audit must assign/finalize each Leader's Breaking Point and production Last Straw pool before balance results are authoritative.
 
-## 12. Current keyword rules
+## 18. Game end
 
-### Hothead
+A player loses when their Leader becomes **Unhinged**.
 
-**This Character may Attack on the Turn it enters play.**
+Normal route:
 
-Hothead does not Ready the Character, grant an extra Attack, or let it use its own Rotate ability early.
+**20 Composure → Breaking Point at 10 → Last Straw at 0 → one later successful opposing Cause Trouble → Unhinged.**
 
-### Defiant
+Do not end in the middle of resolving an Action, ability, protected threshold, combat sequence, or mandatory resulting triggers unless a rule explicitly makes Unhinged immediate. A genuinely simultaneous game-ending state with no more specific resolution uses War. There is no draw.
 
-**This Character retaliates when it Blocks even if the incoming Attack Defeats it.**
+## 19. Production direction
 
-### Explosive
+Core Styles remain Reckless, Momentum, Misdirection, Salvage, Stonewall, and Expendable.
 
-**When this Character is Defeated, deal 1 damage to each opposing Character.**
+Mordecai 0.4 promotes the eight-deck Composure/STANK environment as current baseline data: six core mono-Style decks plus Crazy Cat Lady and Mad Scientist rulebreaker decks. Their exact construction, cards, Leaders, abilities, and balance are **production content under immediate audit**, not frozen balance claims.
 
-Explosive does not damage Leaders, Items, or friendly Characters.
+Design order remains:
 
-### Slowpoke
+**irresistible idea → preserve the outrageous part → add meaningful counterplay → tune numbers**
 
-**This Character does not retaliate when it Blocks.**
-
-### Sucker Punch
-
-**This Character may Attack Ready opposing Characters.**
-
-Sucker Punch is a working keyword name and may be renamed later.
-
-### Jerry-Rig
-
-**If this Item would go to your discard, you may put it face up and Rotated into your Stash instead. When this card is used to pay a Cost, discard it.**
-
-A Jerry-Rigged card in Stash is not mechanically an Item while there. Its face-up state exists only to show that it is temporary Stash and will be discarded when spent.
-
-The current production direction is to keep Jerry-Rig on selected Salvage Items rather than every Salvage Item. The current card pool uses it on Duct Tape and Mystery Drawer of Cables.
-
-### Approved keyword candidates for the card audit
-
-These mechanics are approved for testing but do not yet need to appear in the current 180 until the audit assigns them homes.
-
-- **Chicken:** When this Character is attacked, you may Return it to your hand.
-- **Stubborn:** The first time each Round this Character would be Returned or Dismissed, it remains in play instead.
-- **Bodyguard:** Working name. This Character may be attacked while Ready. While Ready, it must Block an Attack against your Leader if able.
-
-### Shelved mechanics
-
-Sneaky, Cloak, Stack, and Step Aside are shelved for the starting rebuild. Preserve them in design history, but do not treat them as active starting-set mechanics.
-
-## 13. Current Leader model
-
-Leaders:
-
-- stay visible outside the deck;
-- have 25 Health;
-- have one automatic passive;
-- do not Attack, Block, Rotate, have Power/Guard, or use activated abilities in the current test;
-- should preferably bend a basic rule of the game rather than merely grant a stat bonus;
-- should create visible counterplay that can change how the opponent plays.
-
-Trait references on Leaders are not part of the current starting design.
-
-### Current six Leader directions
-
-**Florida Man, Reckless**  
-Your damaged Characters have **Hothead** and **Sucker Punch**. After one of your damaged Characters survives combat with another Character, **Ready it**. If all damage is healed from a Character, it immediately loses the granted keywords.
-
-**Washed-Up Rock Star, Momentum — Comeback Tour**  
-At the start of your Turn, before Ready, if you have 1 or fewer cards in hand, Draw until you have 2. If you have 3 or more cards in hand, skip your Draw step this Turn. At exactly 2 cards, take the normal Draw.
-
-**Birthday Party Magician, Misdirection — Ace Up My Sleeve**  
-Once during your Turn, when one of your Characters is Returned from play to your hand, **Ready 1 Stash**.
-
-**Trash Baron, Salvage**  
-You may use opposing Ready Stash to pay your Costs as though it were your own. You may combine opposing Stash with your own Stash in one payment.
-
-**HOA President, Stonewall — Failure to Respond**  
-Beginning in Round 8, opposing Characters cannot Block your Attacks.
-
-**Backyard Wrestler, Expendable — Tag Out**  
-Once during your Turn, when one of your Characters is Defeated or Sacrificed, reveal the top card of your deck. If it is an **Expendable Character** with Cost less than or equal to the number of cards in your Stash, put it into play. It gains **Hothead** this Turn. Otherwise, put the revealed card into your hand. A Character put into play this way is not Played, so On Play abilities do not trigger.
-
-These are the locked Carl 0.3 playtest passives. Balance remains subject to human playtesting.
-
-## 14. Game end and deck-out
-
-Do not end the game in the middle of resolving an Action, ability, combat sequence, or its resulting triggers. Finish the current resolution, then check game-ending conditions.
-
-If only one Leader is at 0 or less Health, that player loses.
-
-If both Leaders are at 0 or less after the same resolution, use War.
-
-If a player must Draw from an empty deck, that player loses. Deck-out should not be a common primary strategy in the starting environment.
-
-If both players would lose to empty-deck Draws at the same time, use War.
-
-## 15. Production design rules
-
-The starting card pool remains 180 cards, 30 per Style.
-
-The six current Styles are:
-
-- Reckless: damage + risk
-- Momentum: growth + chaining + economy acceleration
-- Misdirection: movement + deception
-- Salvage: reuse + scavenging + repurposing
-- Stonewall: denial + stall + reaction
-- Expendable: sacrifice + death value + recursion
-
-The starting package targets are:
-
-- Reckless: Damage Everywhere; Self-Damage / Damaged Characters
-- Momentum: Chain / Acceleration; Low Hand
-- Misdirection: Bounce / Return; Manipulation / Deception
-- Salvage: Items / Jerry-Rig / Repurpose; Scrounge / Big Hand
-- Stonewall: Freeze / Stall; Reaction / Denial
-- Expendable: Sacrifice / Defeat Value; Recursion / Refuse to Stay Dead
-
-Each package must function inside its own Style. A secondary Style should create interesting combinations, not complete an otherwise nonfunctional package.
-
-Use **2 Best / 4 Better / 6 Good / 18 Simple-support** as an internal per-Style design target, not a printed rarity system. Simpler cards may still have keywords, basic abilities, useful stats, or package relevance.
-
-Traits are inert until referenced. Trait-support cards should still be playable on their own, and Trait payoff should usually be upside rather than a hard gate.
-
-Actions should generally create an immediate effect and then go to discard. Persistent engines should usually live on Characters or Items.
-
-The September 28 rebuild applied the **Keep / Rehome / Rewrite / Replace** audit to all 180 cards. Future changes should be driven by package playtests, rules clarity, and balance evidence rather than preserving the pre-rebuild text.
+The core is feature-complete for this playtest. Next work is consistency, terminology, cards/decks/abilities, Leader Breaking Points, Last Straws, engine/browser/builder parity, and human playtesting.

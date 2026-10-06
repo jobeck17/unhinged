@@ -1,7 +1,7 @@
 {
-  "version": "0.3-carl",
-  "date": "2026-10-01",
-  "status": "Carl 0.3 card pool. Current playtest package includes Florida Man's damaged-Character survival Ready clause and Expendable-only Tag Out.",
+  "version": "0.4-mordecai",
+  "date": "2026-10-06",
+  "status": "Mordecai 0.4 production card pool promoted from Composure 2.0 / STANK. Content and terminology audit pending.",
   "cards": [
     {
       "id": "P001",
@@ -19,7 +19,8 @@
       "guard": 1,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P002",
@@ -29,7 +30,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +2 Power for this Attack.",
+      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +1 Attack for this Attack.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -38,8 +39,9 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
-      "flavor": ""
+      "status": "lab",
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P003",
@@ -60,7 +62,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P004",
@@ -78,7 +81,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Matching shirts. Conflicting alibis."
+      "flavor": "Matching shirts. Conflicting alibis.",
+      "trouble": 1
     },
     {
       "id": "P005",
@@ -88,7 +92,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "Defiant. While this Character has damage, it gets +2 Power.",
+      "text": "Defiant. While this Character has damage, it gets +2 Attack.",
       "style": "Reckless",
       "complexity": "mixed",
       "keywords": [
@@ -100,7 +104,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P006",
@@ -108,7 +113,7 @@
       "cost": 4,
       "name": "Road Rage Ron",
       "traits": [],
-      "text": "While attacking a damaged Character, this gets +2 Power for that Attack.",
+      "text": "While attacking a damaged Character, this gets +2 Attack for that Attack.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -118,7 +123,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P007",
@@ -130,7 +136,7 @@
         "Scout",
         "Daredevil"
       ],
-      "text": "When this enters play, deal 1 damage to a Character. If you dealt that damage to one of your Characters, it gets +1 Power this Turn.",
+      "text": "When this enters play, deal 1 damage to a Character. If you dealt that damage to one of your Characters, it gets +1 Attack this Turn.",
       "style": "Reckless",
       "complexity": "on_play",
       "keywords": [],
@@ -140,7 +146,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P008",
@@ -161,7 +168,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P009",
@@ -172,7 +180,7 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this attacks, roll a six-sided die. On a 1, cancel the Attack and deal damage to your Leader equal to this Character's Power. Otherwise, continue the Attack normally.",
+      "text": "When this attacks or Causes Trouble, roll a six-sided die. On a 1, cancel it and your Leader loses Composure equal to this Character's Attack. Otherwise, continue normally.",
       "style": "Reckless",
       "complexity": "attack_trigger",
       "keywords": [],
@@ -182,7 +190,8 @@
         "Animal"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P010",
@@ -202,7 +211,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P011",
@@ -222,7 +232,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P012",
@@ -240,7 +251,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Even his warm-up has a warm-up."
+      "flavor": "Even his warm-up has a warm-up.",
+      "trouble": 1
     },
     {
       "id": "P013",
@@ -250,7 +262,7 @@
       "traits": [
         "Builder"
       ],
-      "text": "While this Character has damage, it gets +3 Power.",
+      "text": "While this Character has damage, it gets +3 Attack.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -260,7 +272,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "He watched most of a tutorial."
+      "flavor": "He watched most of a tutorial.",
+      "trouble": 2
     },
     {
       "id": "P014",
@@ -270,7 +283,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "When this attacks, it gets +1 Power for this Attack for each other damaged Character you control.",
+      "text": "When this attacks, it gets +1 Attack for this Attack for each other damaged Character you control.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -280,7 +293,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P015",
@@ -300,7 +314,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P016",
@@ -322,7 +337,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Free shipping. For him."
+      "flavor": "Free shipping. For him.",
+      "trouble": 1
     },
     {
       "id": "P017",
@@ -342,7 +358,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The cloud has entered the group chat."
+      "flavor": "The cloud has entered the group chat.",
+      "trouble": 2
     },
     {
       "id": "P018",
@@ -352,7 +369,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "Hothead. When this attacks, you may deal 1 damage to each of your other Characters. This gets +1 Power for this Attack for each Character damaged this way.",
+      "text": "Hothead. When this attacks, you may deal 1 damage to each of your other Characters. This gets +1 Attack for this Attack for each Character damaged this way.",
       "style": "Reckless",
       "complexity": "mixed",
       "keywords": [
@@ -364,23 +381,24 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P019",
       "type": "Action",
-      "cost": 1,
+      "cost": 2,
       "name": "Hold My Beer",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters. Deal 1 damage to it. It gets +2 Power this Turn, or +3 Power if it is a Daredevil.",
+      "text": "Choose one of your Characters. If it entered play this Turn, it gains Hothead this Turn. If it attacked this Turn, Ready it. It can’t Attack again this Turn. If it has the Daredevil Trait, you may deal 1 damage to it.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
+      "status": "lab",
       "flavor": ""
     },
     {
@@ -390,7 +408,7 @@
       "name": "Send It!",
       "stats": "",
       "traits": [],
-      "text": "Response — Before combat damage is dealt: One of your Characters gets +3 Power and -1 Guard for this combat.",
+      "text": "Response — Before combat damage is dealt: One of your Characters gets +3 Attack and -1 Health for this combat.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -407,7 +425,7 @@
       "name": "Glory Days",
       "stats": "",
       "traits": [],
-      "text": "Ready one of your Rotated Characters that attacked this Turn. It gets +2 Power this Turn and cannot Attack again this Turn.",
+      "text": "Ready one of your Rotated Characters that attacked this Turn. It gets +2 Attack this Turn and cannot Attack again this Turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -458,7 +476,7 @@
       "name": "Commit to the Bit",
       "stats": "",
       "traits": [],
-      "text": "One of your Ready Characters gets +4 Power this Turn and skips its next Ready step.",
+      "text": "One of your Ready Characters gets +4 Attack this Turn and skips its next Ready step.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -509,7 +527,7 @@
       "name": "Gas Station Pills",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +1 Power. Dismiss this: Ready the attached Character and deal 1 damage to it.",
+      "text": "Attach to one of your Characters. It gets +1 Attack. Dismiss this: Ready the attached Character and deal 1 damage to it.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -560,7 +578,7 @@
       "name": "Homemade Launch Ramp",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. When it attacks, you may Dismiss this. If you do, it gets +3 Power for this Attack. After the Attack, deal 1 damage to it.",
+      "text": "Attach to one of your Characters. When it attacks, you may Dismiss this. If you do, it gets +3 Attack for this Attack. After the Attack, deal 1 damage to it.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -588,7 +606,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "We take requests. Mostly to turn it down."
+      "flavor": "We take requests. Mostly to turn it down.",
+      "trouble": 1
     },
     {
       "id": "P032",
@@ -608,7 +627,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P033",
@@ -618,7 +638,7 @@
       "traits": [
         "Musician"
       ],
-      "text": "While you have 2 or fewer cards in hand, this gets +3 Power.",
+      "text": "While you have 2 or fewer cards in hand, this gets +3 Attack.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -628,7 +648,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P034",
@@ -648,7 +669,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P035",
@@ -668,7 +690,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Three chords. Forty-seven announcements."
+      "flavor": "Three chords. Forty-seven announcements.",
+      "trouble": 1
     },
     {
       "id": "P036",
@@ -678,7 +701,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, another of your Characters gets +1 Power this Turn. Your other Parent and Kid Characters get +1 Guard.",
+      "text": "When this enters play, another of your Characters gets +1 Attack this Turn. Your other Parent and Kid Characters get +1 Health.",
       "style": "Momentum",
       "complexity": "mixed",
       "keywords": [],
@@ -688,7 +711,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P037",
@@ -699,7 +723,7 @@
         "Undead",
         "Musician"
       ],
-      "text": "While there are 6 or more Characters and Items in play, your other Musicians get +1 Power.",
+      "text": "While there are 6 or more Characters and Items in play, your other Musicians get +1 Attack.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -709,7 +733,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The band said they were getting everybody back together."
+      "flavor": "The band said they were getting everybody back together.",
+      "trouble": 2
     },
     {
       "id": "P038",
@@ -717,7 +742,7 @@
       "cost": 3,
       "name": "One-Hit Wonder",
       "traits": [],
-      "text": "While you have no cards in hand, this gets +4 Power.",
+      "text": "While you have no cards in hand, this gets +4 Attack.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -727,7 +752,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Still waiting on the second hit."
+      "flavor": "Still waiting on the second hit.",
+      "trouble": 3
     },
     {
       "id": "P039",
@@ -745,7 +771,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P040",
@@ -763,7 +790,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P041",
@@ -773,7 +801,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, heal 2 damage from a Character. Your other Kid Characters get +1 Guard.",
+      "text": "When this enters play, heal 2 damage from a Character. Your other Kid Characters get +1 Health.",
       "style": "Momentum",
       "complexity": "mixed",
       "keywords": [],
@@ -783,7 +811,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P042",
@@ -791,7 +820,7 @@
       "cost": 5,
       "name": "Peaked in High School",
       "traits": [],
-      "text": "While you have fewer cards in hand than an opponent, your other Characters get +1 Power.",
+      "text": "While you have fewer cards in hand than an opponent, your other Characters get +1 Attack.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -801,7 +830,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "He still calls the principal “Coach.”"
+      "flavor": "He still calls the principal “Coach.”",
+      "trouble": 2
     },
     {
       "id": "P043",
@@ -819,7 +849,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Everybody is awake now."
+      "flavor": "Everybody is awake now.",
+      "trouble": 3
     },
     {
       "id": "P044",
@@ -839,7 +870,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The invitation said “bring something for the grill.”"
+      "flavor": "The invitation said “bring something for the grill.”",
+      "trouble": 1
     },
     {
       "id": "P045",
@@ -857,7 +889,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The itinerary is mostly iced coffee."
+      "flavor": "The itinerary is mostly iced coffee.",
+      "trouble": 1
     },
     {
       "id": "P046",
@@ -867,7 +900,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, another of your Characters gets +2 Guard this Turn. If that Character is a Kid, heal 1 damage from it.",
+      "text": "When this enters play, another of your Characters gets +2 Health this Turn. If that Character is a Kid, heal 1 damage from it.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -877,7 +910,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P047",
@@ -898,7 +932,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P048",
@@ -916,7 +951,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P049",
@@ -1027,7 +1063,7 @@
       "name": "Bring a Friend",
       "stats": "",
       "traits": [],
-      "text": "The next Character you Play this Turn costs 1 less. When it enters play, you may give another of your Characters +1 Power this Turn.",
+      "text": "The next Character you Play this Turn costs 1 less. When it enters play, you may give another of your Characters +1 Attack this Turn.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1044,7 +1080,7 @@
       "name": "Parking Lot Pep Talk",
       "stats": "",
       "traits": [],
-      "text": "A Character gets +1 Power and +2 Guard this Turn. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card.",
+      "text": "A Character gets +1 Attack and +2 Health this Turn. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1061,7 +1097,7 @@
       "name": "Participation Trophy",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. While you have fewer cards in hand than an opponent, the attached Character gets +2 Power.",
+      "text": "Attach to one of your Characters. While you have fewer cards in hand than an opponent, the attached Character gets +2 Attack.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1095,7 +1131,7 @@
       "name": "Portable Bluetooth Speaker",
       "stats": "",
       "traits": [],
-      "text": "Your Musician Characters get +1 Power.",
+      "text": "Your Musician Characters get +1 Attack.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1140,7 +1176,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P062",
@@ -1160,7 +1197,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P063",
@@ -1180,7 +1218,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P064",
@@ -1200,7 +1239,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P065",
@@ -1222,7 +1262,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P066",
@@ -1242,7 +1283,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P067",
@@ -1266,7 +1308,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Toughest kid on the playground until somebody swings back."
+      "flavor": "Toughest kid on the playground until somebody swings back.",
+      "trouble": 3
     },
     {
       "id": "P068",
@@ -1286,7 +1329,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P069",
@@ -1304,7 +1348,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P070",
@@ -1322,7 +1367,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "It’s a normal doorbell, but the subscription is mandatory."
+      "flavor": "It’s a normal doorbell, but the subscription is mandatory.",
+      "trouble": 2
     },
     {
       "id": "P071",
@@ -1342,7 +1388,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Nobody saw where the floor went."
+      "flavor": "Nobody saw where the floor went.",
+      "trouble": 2
     },
     {
       "id": "P072",
@@ -1362,7 +1409,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Thirty-seven missed alerts. One unfamiliar sedan."
+      "flavor": "Thirty-seven missed alerts. One unfamiliar sedan.",
+      "trouble": 2
     },
     {
       "id": "P073",
@@ -1382,7 +1430,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P074",
@@ -1402,7 +1451,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P075",
@@ -1413,7 +1463,7 @@
         "Criminal",
         "Musician"
       ],
-      "text": "When this attacks, an opponent chooses one: this gets +2 Power for this Attack; or you Draw a card, then Discard a card.",
+      "text": "When this attacks, an opponent chooses one: this gets +2 Attack for this Attack; or you Draw a card, then Discard a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
@@ -1423,7 +1473,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P076",
@@ -1444,7 +1495,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Your password is his password."
+      "flavor": "Your password is his password.",
+      "trouble": 1
     },
     {
       "id": "P077",
@@ -1465,7 +1517,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P078",
@@ -1486,7 +1539,8 @@
       ],
       "status": "playtest",
       "flavor": "Every trick is fully licensed, bonded, and questionably insured.",
-      "build_around": true
+      "build_around": true,
+      "trouble": 2
     },
     {
       "id": "P079",
@@ -1665,7 +1719,7 @@
       "name": "Lady Who's Moving Out Again",
       "stats": "",
       "traits": [],
-      "text": "When this enters play and when this Character is Returned from play to your hand, another of your Characters gets +2 Power this Turn.",
+      "text": "When this enters play and when this Character is Returned from play to your hand, another of your Characters gets +2 Attack this Turn.",
       "style": "Misdirection",
       "keywords": [],
       "power": 3,
@@ -1675,7 +1729,8 @@
       ],
       "complexity": "mixed",
       "status": "playtest",
-      "flavor": "The truck is still warm from last time."
+      "flavor": "The truck is still warm from last time.",
+      "trouble": 3
     },
     {
       "id": "P090",
@@ -1684,7 +1739,7 @@
       "name": "Poof!",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters. The next time it attacks a Leader this Turn, that Attack cannot be Blocked. After that Attack, Return that Character to your hand.",
+      "text": "Choose one of your Characters. After it Causes Trouble this Turn, Return it to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1713,7 +1768,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Prepared for everything except the inspection."
+      "flavor": "Prepared for everything except the inspection.",
+      "trouble": 1
     },
     {
       "id": "P092",
@@ -1734,7 +1790,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "It has been almost running for three summers."
+      "flavor": "It has been almost running for three summers.",
+      "trouble": 3
     },
     {
       "id": "P093",
@@ -1754,7 +1811,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P094",
@@ -1774,7 +1832,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P095",
@@ -1795,7 +1854,8 @@
       ],
       "status": "playtest",
       "flavor": "It is not clutter if there is a system.",
-      "art_note": "A backyard bunker stocked from curbside giveaways and salvaged supplies."
+      "art_note": "A backyard bunker stocked from curbside giveaways and salvaged supplies.",
+      "trouble": 3
     },
     {
       "id": "P096",
@@ -1817,7 +1877,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Sir Carts-a-Lot yields to no curb."
+      "flavor": "Sir Carts-a-Lot yields to no curb.",
+      "trouble": 1
     },
     {
       "id": "P097",
@@ -1836,7 +1897,8 @@
       "guard": 3,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": "Beware of dog. Also tetanus."
+      "flavor": "Beware of dog. Also tetanus.",
+      "trouble": 1
     },
     {
       "id": "P098",
@@ -1847,7 +1909,7 @@
         "Animal",
         "Scavenger"
       ],
-      "text": "When this enters play, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack.",
+      "text": "When this enters play, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Attack for this Attack.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
@@ -1855,7 +1917,8 @@
       "guard": 5,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P099",
@@ -1873,7 +1936,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Every cat has a name. The neighbors have numbers."
+      "flavor": "Every cat has a name. The neighbors have numbers.",
+      "trouble": 2
     },
     {
       "id": "P100",
@@ -1883,7 +1947,7 @@
       "traits": [
         "Construct"
       ],
-      "text": "Sucker Punch. When this attacks a Ready Character, this gets +1 Power for that Attack.",
+      "text": "Sucker Punch. When this attacks a Ready Character, this gets +1 Attack for that Attack.",
       "style": "Salvage",
       "complexity": "ongoing",
       "keywords": [
@@ -1893,7 +1957,8 @@
       "guard": 4,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": "No batteries required. No brakes included."
+      "flavor": "No batteries required. No brakes included.",
+      "trouble": 2
     },
     {
       "id": "P101",
@@ -1913,7 +1978,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P102",
@@ -1924,7 +1990,7 @@
         "Animal",
         "Rat"
       ],
-      "text": "When this enters play, you may Return an Animal from your discard to your hand. Your other Rat Characters get +1 Power.",
+      "text": "When this enters play, you may Return an Animal from your discard to your hand. Your other Rat Characters get +1 Attack.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
@@ -1932,7 +1998,8 @@
       "guard": 6,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P103",
@@ -1951,7 +2018,8 @@
       "guard": 3,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P104",
@@ -1970,7 +2038,8 @@
       "guard": 2,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P105",
@@ -1981,7 +2050,7 @@
         "Construct",
         "Scavenger"
       ],
-      "text": "Whenever you play an Item, put the top card of your deck into your discard. This gets +1 Power for each Item in your discard, up to +3 Power.",
+      "text": "Whenever you play an Item, put the top card of your deck into your discard. This gets +1 Attack for each Item in your discard, up to +3 Attack.",
       "style": "Salvage",
       "complexity": "ongoing",
       "keywords": [],
@@ -1989,7 +2058,8 @@
       "guard": 5,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": "The knife attachment voided the warranty."
+      "flavor": "The knife attachment voided the warranty.",
+      "trouble": 3
     },
     {
       "id": "P106",
@@ -2000,7 +2070,7 @@
         "Construct",
         "Scavenger"
       ],
-      "text": "While you have a face-up card in your Stash, this gets +2 Power.",
+      "text": "While you have a face-up card in your Stash, this gets +2 Attack.",
       "style": "Salvage",
       "complexity": "ongoing",
       "keywords": [],
@@ -2008,7 +2078,8 @@
       "guard": 4,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": "One wheel squeaks. One wheel seeks revenge."
+      "flavor": "One wheel squeaks. One wheel seeks revenge.",
+      "trouble": 2
     },
     {
       "id": "P107",
@@ -2029,7 +2100,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P108",
@@ -2049,7 +2121,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P109",
@@ -2194,7 +2267,7 @@
       "name": "Duct Tape",
       "stats": "",
       "traits": [],
-      "text": "Jerry-Rig. Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct.",
+      "text": "Jerry-Rig. Attach to one of your Characters. It gets +1 Health. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct.",
       "style": "Salvage",
       "keywords": [
         "Jerry-Rig"
@@ -2213,7 +2286,7 @@
       "name": "Zip Ties",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. Dismiss this: The attached Character gets +2 Guard this Turn, or +3 Guard if it is a Builder.",
+      "text": "Attach to one of your Characters. Dismiss this: The attached Character gets +2 Health this Turn, or +3 Health if it is a Builder.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2265,7 +2338,7 @@
       "cost": 2,
       "name": "Grumpy Old Guy",
       "traits": [],
-      "text": "When this Blocks, the attacker gets -1 Power for this Attack.",
+      "text": "When this Character is attacked, the attacker gets -1 Attack for this Attack.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2275,7 +2348,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P122",
@@ -2295,7 +2369,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P123",
@@ -2313,7 +2388,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "She has a binder. You have a problem."
+      "flavor": "She has a binder. You have a problem.",
+      "trouble": 3
     },
     {
       "id": "P124",
@@ -2331,7 +2407,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P125",
@@ -2339,7 +2416,7 @@
       "cost": 4,
       "name": "Keyboard Warrior",
       "traits": [],
-      "text": "Whenever an opponent plays an Action, this gets +1 Power and +1 Guard this Turn.",
+      "text": "Whenever an opponent plays an Action, this gets +1 Attack and +1 Health this Turn.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2349,7 +2426,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Brave enough to hit send."
+      "flavor": "Brave enough to hit send.",
+      "trouble": 2
     },
     {
       "id": "P126",
@@ -2369,7 +2447,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P127",
@@ -2379,7 +2458,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, heal 1 damage from a Character. Your other Parent and Kid Characters get +1 Guard.",
+      "text": "When this enters play, heal 1 damage from a Character. Your other Parent and Kid Characters get +1 Health.",
       "style": "Stonewall",
       "complexity": "mixed",
       "keywords": [],
@@ -2389,7 +2468,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P128",
@@ -2409,7 +2489,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Quiet neighborhood. Strict perimeter."
+      "flavor": "Quiet neighborhood. Strict perimeter.",
+      "trouble": 1
     },
     {
       "id": "P129",
@@ -2429,7 +2510,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Vice is not silent."
+      "flavor": "Vice is not silent.",
+      "trouble": 3
     },
     {
       "id": "P130",
@@ -2447,7 +2529,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P131",
@@ -2457,7 +2540,7 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this Blocks and survives, heal 1 damage from it.",
+      "text": "When this Character is attacked and survives, heal 1 damage from it.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2465,7 +2548,8 @@
       "guard": 5,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P132",
@@ -2485,7 +2569,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P133",
@@ -2505,7 +2590,8 @@
       "guard": 10,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": "The association has approved its use of force."
+      "flavor": "The association has approved its use of force.",
+      "trouble": 2
     },
     {
       "id": "P134",
@@ -2523,7 +2609,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P135",
@@ -2541,7 +2628,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "No running."
+      "flavor": "No running.",
+      "trouble": 2
     },
     {
       "id": "P136",
@@ -2559,7 +2647,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P137",
@@ -2579,7 +2668,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P138",
@@ -2587,7 +2677,7 @@
       "cost": 2,
       "name": "Neighborhood Lifeguard",
       "traits": [],
-      "text": "Opposing damaged Characters get -1 Power.",
+      "text": "Opposing damaged Characters get -1 Attack.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2597,7 +2687,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "NO RUNNING includes whatever this is."
+      "flavor": "NO RUNNING includes whatever this is.",
+      "trouble": 1
     },
     {
       "id": "P139",
@@ -2606,7 +2697,7 @@
       "name": "File a Complaint",
       "stats": "",
       "traits": [],
-      "text": "An opposing Character gets -2 Power this Turn.",
+      "text": "An opposing Character gets -2 Attack this Turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2674,7 +2765,7 @@
       "name": "Read the Fine Print",
       "stats": "",
       "traits": [],
-      "text": "A Character gets -1 Power and -1 Guard this Turn.",
+      "text": "A Character gets -1 Attack and -1 Health this Turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2708,7 +2799,7 @@
       "name": "Dig In",
       "stats": "",
       "traits": [],
-      "text": "Your Characters get +1 Guard this Turn. If you have fewer Characters in play than an opponent, Draw a card.",
+      "text": "Your Characters get +1 Health this Turn. If you have fewer Characters in play than an opponent, Draw a card.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2759,7 +2850,7 @@
       "name": "Video Doorbell",
       "stats": "",
       "traits": [],
-      "text": "Whenever an opposing Character Attacks your Leader, Draw a card, then Discard a card.",
+      "text": "Whenever an opposing Character Causes Trouble, Draw a card, then Discard a card.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2776,7 +2867,7 @@
       "name": "Occupied Stroller",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +2 Guard, or +3 Guard if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage.",
+      "text": "Attach to one of your Characters. It gets +2 Health, or +3 Health if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2821,7 +2912,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Signed the waiver in crayon."
+      "flavor": "Signed the waiver in crayon.",
+      "trouble": 2
     },
     {
       "id": "P152",
@@ -2831,7 +2923,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "Hothead. When this is Defeated during an Attack, deal 1 damage to the opposing Leader.",
+      "text": "Hothead. When this is Defeated during an Attack, the opposing Leader loses 1 Composure.",
       "style": "Expendable",
       "complexity": "mixed",
       "keywords": [
@@ -2843,7 +2935,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P153",
@@ -2864,7 +2957,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P154",
@@ -2885,7 +2979,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Taking “eat out of the trash” in a concerning direction."
+      "flavor": "Taking “eat out of the trash” in a concerning direction.",
+      "trouble": 1
     },
     {
       "id": "P155",
@@ -2904,7 +2999,8 @@
       "guard": 6,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P156",
@@ -2922,7 +3018,8 @@
       "guard": 9,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": "Seven counties. Six warrants. Zero witnesses."
+      "flavor": "Seven counties. Six warrants. Zero witnesses.",
+      "trouble": 2
     },
     {
       "id": "P157",
@@ -2942,7 +3039,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P158",
@@ -2963,7 +3061,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "The patio set was still under warranty."
+      "flavor": "The patio set was still under warranty.",
+      "trouble": 2
     },
     {
       "id": "P159",
@@ -2974,7 +3073,7 @@
         "Animal",
         "Rat"
       ],
-      "text": "When this is Defeated, another of your Characters gets +2 Power this Turn. If it is a Rat or Undead, it also gets +1 Guard this Turn.",
+      "text": "When this is Defeated, another of your Characters gets +2 Attack this Turn. If it is a Rat or Undead, it also gets +1 Health this Turn.",
       "style": "Expendable",
       "complexity": "ongoing",
       "keywords": [],
@@ -2982,7 +3081,8 @@
       "guard": 2,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P160",
@@ -3003,7 +3103,8 @@
       "flavor": "Three sets. Forty-seven takes.",
       "aliases": [
         "Gym Bro"
-      ]
+      ],
+      "trouble": 2
     },
     {
       "id": "P161",
@@ -3023,7 +3124,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P162",
@@ -3043,7 +3145,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "He remembers it as more of a group decision."
+      "flavor": "He remembers it as more of a group decision.",
+      "trouble": 2
     },
     {
       "id": "P163",
@@ -3063,7 +3166,8 @@
       "guard": 6,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P164",
@@ -3087,7 +3191,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P165",
@@ -3095,7 +3200,7 @@
       "cost": 2,
       "name": "Backyard Wrestling Superfan",
       "traits": [],
-      "text": "When this enters play, another of your Characters gets +1 Power this Turn. Your other Wrestler Characters have Hothead.",
+      "text": "When this enters play, another of your Characters gets +1 Attack this Turn. Your other Wrestler Characters have Hothead.",
       "style": "Expendable",
       "complexity": "mixed",
       "keywords": [],
@@ -3105,7 +3210,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 3
     },
     {
       "id": "P166",
@@ -3125,7 +3231,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P167",
@@ -3144,7 +3251,8 @@
       "guard": 1,
       "audit_identity": [],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 1
     },
     {
       "id": "P168",
@@ -3164,7 +3272,8 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P169",
@@ -3173,7 +3282,7 @@
       "name": "Take One for the Team",
       "stats": "",
       "traits": [],
-      "text": "Response — Before damage would be dealt to your Leader: Sacrifice one of your Characters. Prevent up to 3 of that damage.",
+      "text": "Response — Before your Leader would lose Composure: Sacrifice one of your Characters. Prevent up to 3 of that Composure loss.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3190,7 +3299,7 @@
       "name": "This Seemed Like a Good Idea",
       "stats": "",
       "traits": [],
-      "text": "Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Power and +2 Guard this Turn.",
+      "text": "Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Attack and +2 Health this Turn.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3207,7 +3316,7 @@
       "name": "Worth It",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Power to the other chosen Character. If that Character survives, Return it to its owner's hand.",
+      "text": "Choose one of your Characters and another Character. Sacrifice your chosen Character. If you do, deal damage equal to its last Attack to the other chosen Character. If that Character survives, Return it to its owner's hand.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3309,7 +3418,7 @@
       "name": "Bath Salts",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gains Undead. Dismiss this: The Character this was attached to gets +2 Power this Turn.",
+      "text": "Attach to one of your Characters. It gains Undead. Dismiss this: The Character this was attached to gets +2 Attack this Turn.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3326,7 +3435,7 @@
       "name": "Folding Chair",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. Dismiss this: The Character this was attached to gets +2 Power this Turn, or +3 Power if it is a Wrestler.",
+      "text": "Attach to one of your Characters. Dismiss this: The Character this was attached to gets +2 Attack this Turn, or +3 Attack if it is a Wrestler.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3343,7 +3452,7 @@
       "name": "Definitely Safe Helmet",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +1 Guard. Rotate: Heal 1 damage from the attached Character.",
+      "text": "Attach to one of your Characters. It gets +1 Health. Rotate: Heal 1 damage from the attached Character.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3369,6 +3478,767 @@
       "complexity": null,
       "status": "playtest",
       "flavor": ""
+    },
+    {
+      "id": "LAB-FLM-001",
+      "type": "Item",
+      "cost": 1,
+      "name": "Broken Lawnmower",
+      "traits": [],
+      "text": "Pull the Cord — Activate: Rotate one of your Ready Characters. Put a Start counter on Broken Lawnmower. Once it has 3 Start counters, your Characters get +1 Attack while it remains in play.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "ongoing",
+      "status": "lab",
+      "flavor": "Third pull’s the charm."
+    },
+    {
+      "id": "LAB-FLM-002",
+      "type": "Action",
+      "cost": 3,
+      "name": "A MILLION KILOGRAMS OF CAFFEINE!!!!",
+      "subtitle": "The Human Body Was Not Consulted",
+      "traits": [],
+      "text": "Choose one of your Characters. It gets +5 Attack, Hothead, and Sucker Punch this Turn. After it attacks, Defeat it.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "mixed",
+      "status": "lab",
+      "flavor": "He can hear colors now."
+    },
+    {
+      "id": "LAB-FLM-003",
+      "type": "Action",
+      "cost": 2,
+      "name": "Rusty Needle",
+      "traits": [],
+      "text": "Deal 1 damage to a Character. Congratulations, you have tetanus. At the start of its controller’s Turn, it gets -1 Health. This can reduce its Health to 0. That Character may Rotate to remove tetanus.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "mixed",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-FLM-002-SUCKER",
+      "type": "Effect",
+      "cost": 0,
+      "name": "Caffeine Sucker Punch",
+      "traits": [],
+      "text": "",
+      "style": "Reckless",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "power": null,
+      "guard": null,
+      "complexity": "ongoing",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-MAG-003",
+      "type": "Character",
+      "cost": 2,
+      "name": "Birthday Boy",
+      "traits": [
+        "Kid"
+      ],
+      "text": "When this enters play, you may exchange a card in your Stash with a card in your hand.",
+      "style": "Misdirection",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-MAG-001A",
+      "type": "Character",
+      "cost": 2,
+      "name": "Very Enthusiastic Volunteer",
+      "traits": [
+        "Kid"
+      ],
+      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Attack permanently. The first time this card attacks this game, after that Attack, Return it to your hand.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "trouble": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "Somebody in the back row is starting to notice a pattern."
+    },
+    {
+      "id": "LAB-MAG-001B",
+      "type": "Character",
+      "cost": 2,
+      "name": "Very Enthusiastic Volunteer",
+      "traits": [
+        "Kid"
+      ],
+      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Attack permanently. The first time this card attacks this game, after that Attack, Return it to your hand.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "trouble": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "Somebody in the back row is starting to notice a pattern."
+    },
+    {
+      "id": "LAB-MAG-002",
+      "type": "Action",
+      "cost": 1,
+      "name": "Ethan’s JUST Being Dramatic",
+      "traits": [],
+      "text": "Return one of your Characters to your hand.",
+      "style": "Misdirection",
+      "complexity": "simple",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "lab",
+      "flavor": "He does this all the time."
+    },
+    {
+      "id": "LAB-MAG-004",
+      "type": "Character",
+      "cost": 3,
+      "name": "Lady Who's Moving Out Again",
+      "traits": [],
+      "text": "Hothead. When this enters play, it gets +2 Attack this Turn. When this is Returned from play to your hand, you may Return an opposing Character that costs 2 or less to its owner’s hand.",
+      "style": "Misdirection",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 3,
+      "guard": 5,
+      "trouble": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "complexity": "mixed",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-MAG-005",
+      "type": "Item",
+      "cost": 5,
+      "name": "Magician's Hat",
+      "traits": [],
+      "text": "Activate — Return a Rabbit you control to your hand.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": "activated",
+      "status": "lab",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-CAT-001",
+      "type": "Character",
+      "cost": 1,
+      "name": "Stray Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Cheap swarm body that sticks around a little better so Cat Lady can establish a colony without adding more damage output.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-002",
+      "type": "Character",
+      "cost": 1,
+      "name": "Orange Menace",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 2,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "One-cost aggressive Cat that helps Cat Lady establish the colony quickly while remaining fragile.",
+      "style": "Lab",
+      "trouble": 3
+    },
+    {
+      "id": "LAB-CAT-003",
+      "type": "Character",
+      "cost": 2,
+      "name": "Tuxedo Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Bodyguard. While this is in play, opposing Characters cannot Attack your other Cats.",
+      "keywords": [
+        "Bodyguard"
+      ],
+      "power": 1,
+      "guard": 4,
+      "status": "lab-prototype",
+      "purpose": "Defensive colony protector: low Attack, high Health, and Bodyguard make it a durable shield instead of another efficient attacker.",
+      "style": "Lab",
+      "trouble": 1
+    },
+    {
+      "id": "LAB-CAT-004",
+      "type": "Character",
+      "cost": 2,
+      "name": "Cat Under the Bed",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Chicken.",
+      "keywords": [
+        "Chicken"
+      ],
+      "power": 2,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Lets the Cat player preserve a body at the cost of temporarily dropping board count.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-005",
+      "type": "Character",
+      "cost": 3,
+      "name": "Feral Tom",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Sucker Punch.",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "power": 4,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader.",
+      "style": "Lab",
+      "trouble": 1
+    },
+    {
+      "id": "LAB-CAT-006",
+      "type": "Character",
+      "cost": 4,
+      "name": "Three-Legged Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "I GOT 3 MORE ANYWAY — The first two times Three-Legged Cat is damaged by an Attack, it survives regardless of damage and remove all damage from it. The third Attack damages it normally.",
+      "keywords": [],
+      "power": 2,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "A ridiculous 2/1 that visibly refuses to die to the first two Attacks. Opponents can still use Return, Dismiss, non-Attack Defeat effects, or other removal normally.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-007",
+      "type": "Character",
+      "cost": 4,
+      "name": "Alley Matriarch",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "When this enters play, if you control 3 or more Cats, Draw a card.",
+      "keywords": [],
+      "power": 4,
+      "guard": 5,
+      "status": "lab-prototype",
+      "purpose": "Rewards reaching the colony threshold without directly adding more Stash.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-008",
+      "type": "Character",
+      "cost": 5,
+      "name": "Maine Coon",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "While you control 5 or more Cats, this gets +2 Attack.",
+      "keywords": [],
+      "power": 5,
+      "guard": 7,
+      "status": "lab-prototype",
+      "purpose": "Visible five-Cat payoff that turns a wide colony into finishing pressure.",
+      "style": "Lab",
+      "trouble": 1
+    },
+    {
+      "id": "LAB-CAT-009",
+      "type": "Character",
+      "cost": 6,
+      "name": "House Panther",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 7,
+      "guard": 8,
+      "status": "lab-prototype",
+      "purpose": "Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-010",
+      "type": "Action",
+      "cost": 1,
+      "name": "Where's Mittens?",
+      "traits": [],
+      "text": "Look at the top 4 cards of your deck. You may reveal a Cat Character and put it into your hand. Put the rest on the bottom in any order.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Light Cat selection without generic Draw.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-013",
+      "type": "Character",
+      "cost": 3,
+      "name": "Snowball",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "At the start of your Turn, Snowball gets +1 Attack.",
+      "keywords": [],
+      "power": 1,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Attack.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-014",
+      "type": "Character",
+      "cost": 1,
+      "name": "Trojan Cat",
+      "traits": [
+        "Cat"
+      ],
+      "text": "When Trojan Cat is Defeated, deal 1 damage to every other Character.",
+      "keywords": [],
+      "power": 0,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "Cheap Cat-count body and visible blocking trap. Its global friendly-fire explosion can punish opposing boards but can also devastate the Cat Lady's own low-Health colony.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-015",
+      "type": "Action",
+      "cost": 3,
+      "name": "Dead Mouse in a Mousetrap",
+      "traits": [],
+      "text": "Heal each of your Characters 1.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Wide-board recovery tool. Rewards maintaining a colony and helps the Cat player recover from Trojan Cat friendly fire without directly adding more bodies.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-016",
+      "type": "Character",
+      "cost": 4,
+      "name": "Hairy Cat",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "Whenever Hairy Cat takes damage from a Character and survives, put a Hairball on that Character and it permanently gets -1 Health. A Character with a Hairball doesn't Ready during its controller's next Ready step. Then remove the Hairball.",
+      "keywords": [],
+      "power": 1,
+      "guard": 6,
+      "status": "lab-prototype",
+      "purpose": "Defensive Cat that punishes attackers twice: surviving damage applies a one-turn Ready lock and a permanent -1 Health scar. Repeated Hairballs can keep lowering the same Character's Health.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-CAT-017",
+      "type": "Item",
+      "cost": 4,
+      "name": "Shoebox of Dead Cats",
+      "traits": [],
+      "text": "Whenever one of your Cats is Dismissed or Defeated, you may put it face down under a Shoebox of Dead Cats instead of into your discard. While you have 3 or more Cats face down under your Shoeboxes of Dead Cats, your Cats get +1 Attack.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Stores dismissed or defeated Cats as a hidden resource, including Cats that die while blocking for the Leader, and rewards building a graveyard-like stockpile without releasing the whole pile for free.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-018",
+      "type": "Action",
+      "cost": 1,
+      "name": "Shovel",
+      "traits": [],
+      "text": "Randomly choose a face-down Cat under your Shoeboxes of Dead Cats and put it into play.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Turns the Shoebox stockpile into unpredictable recovery. The Cat returns normally rather than with Hothead or reduced Health.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-019",
+      "type": "Action",
+      "cost": 7,
+      "name": "Nine Lives, Zero Survivors",
+      "traits": [],
+      "text": "Defeat all Characters. Dismiss all Items. Then each player draws until they have 7 cards in hand.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Cat Lady's emergency reset: wipes both boards and refills both players, trading away the colony and Shoebox setup for a full restart.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-CAT-020",
+      "type": "Character",
+      "cost": 4,
+      "name": "Mittens III",
+      "subtitle": "“Third time’s the charm.”",
+      "traits": [
+        "Animal",
+        "Cat"
+      ],
+      "text": "YUMMY! — Activate: Put 1 Stash into your discard. Mittens III gets +1 Attack permanently.\nWHERE DID YOU GET THAT?! — Activate: Discard all Cats under your Shoeboxes. Mittens III gets +1 Attack permanently for each.",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Deliberately weak four-cost body that converts permanent economy or buried Cats into permanent Attack. Both modes Rotate Mittens III, forcing a choice between feeding it and attacking.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-SCI-001",
+      "type": "Character",
+      "cost": 1,
+      "name": "Lab Rat",
+      "traits": [
+        "Animal",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 1,
+      "status": "lab-prototype",
+      "purpose": "Pure ingredient/body. Establishes the floor for cheap Parts.",
+      "style": "Lab",
+      "trouble": 1
+    },
+    {
+      "id": "LAB-SCI-002",
+      "type": "Character",
+      "cost": 1,
+      "name": "Intern Who Signed the Waiver",
+      "traits": [
+        "Human",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Cheap Part with slightly better blocking value.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-SCI-003",
+      "type": "Character",
+      "cost": 1,
+      "name": "Questionably Acquired Cadaver",
+      "traits": [
+        "Undead",
+        "Part"
+      ],
+      "text": "Slowpoke.",
+      "keywords": [
+        "Slowpoke"
+      ],
+      "power": 0,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Defensive Part that is more useful as material than as an attacker.",
+      "style": "Lab",
+      "trouble": 3
+    },
+    {
+      "id": "LAB-SCI-004",
+      "type": "Character",
+      "cost": 2,
+      "name": "Two-Headed Chicken",
+      "traits": [
+        "Animal",
+        "Part"
+      ],
+      "text": "",
+      "keywords": [],
+      "power": 3,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Efficient mid-grade ingredient that can also fight.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-SCI-005",
+      "type": "Character",
+      "cost": 2,
+      "name": "Lab Assistant",
+      "traits": [
+        "Human",
+        "Scientist"
+      ],
+      "text": "When this enters play, look at the top 4 cards of your deck. You may reveal an Experiment Action and put it into your hand. Put the rest on the bottom in any order.",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Finds the fusion engine without directly generating resources.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-SCI-006",
+      "type": "Character",
+      "cost": 2,
+      "name": "Spare Parts Dealer",
+      "traits": [
+        "Human",
+        "Part"
+      ],
+      "text": "When this enters play, you may Return a Character costing 1 from your discard to your hand.",
+      "keywords": [],
+      "power": 2,
+      "guard": 2,
+      "status": "lab-prototype",
+      "purpose": "Reclaims cheap ingredients after experiments or combat.",
+      "style": "Lab",
+      "trouble": 2
+    },
+    {
+      "id": "LAB-SCI-007",
+      "type": "Character",
+      "cost": 3,
+      "name": "Failed Clone",
+      "traits": [
+        "Part"
+      ],
+      "text": "When you Discard this from your hand to pay an additional Cost of an Experiment, Draw a card.",
+      "keywords": [],
+      "power": 3,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "Premium experiment material that reduces the hand-cost pain without making every ingredient replace itself.",
+      "style": "Lab",
+      "trouble": 3
+    },
+    {
+      "id": "LAB-SCI-008",
+      "type": "Character",
+      "cost": 3,
+      "name": "Escaped Prototype",
+      "traits": [
+        "Abomination",
+        "Part"
+      ],
+      "text": "Hothead.",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 4,
+      "guard": 3,
+      "status": "lab-prototype",
+      "purpose": "A normal pressure card that can become material when the laboratory needs it.",
+      "style": "Lab",
+      "trouble": 3
+    },
+    {
+      "id": "LAB-SCI-009",
+      "type": "Action",
+      "cost": 3,
+      "name": "It's Alive!",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "As an additional Cost to play this, Discard two Character cards. Roll for Attack, then roll for Health. Put an Abomination token into play with Attack and Health equal to those results.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Primary fusion spell. Trades cards and limited battery charge for a randomly successful or failed experiment.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-010",
+      "type": "Action",
+      "cost": 1,
+      "name": "Release the Specimen",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "Put an unused Specimen from your Specimen Rack into play. If you have no unused Specimens, put a generic Specimen token into play instead.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "The physical cross-TCG joke and an additional source of experiment material.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-011",
+      "type": "Action",
+      "cost": 1,
+      "name": "Grave Robbing",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "Return a Character costing 2 or less from your discard to your hand.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Recovers bodies without restoring Stash.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-012",
+      "type": "Action",
+      "cost": 0,
+      "name": "Flip the Breaker",
+      "traits": [
+        "Experiment"
+      ],
+      "text": "As an additional Cost to play this, Discard a card. Ready up to 2 Stash.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "Converts hand economy into a small emergency battery recharge.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-SCI-013",
+      "type": "Item",
+      "cost": 1,
+      "name": "Car Battery in the Bathtub",
+      "traits": [
+        "Equipment"
+      ],
+      "text": "Dismiss this Item: Ready up to 2 Stash.",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "status": "lab-prototype",
+      "purpose": "One-shot recharge. Tests whether limited card-driven recovery makes Burnout decisions richer.",
+      "style": "Lab"
+    },
+    {
+      "id": "LAB-TOK-SCI-001",
+      "name": "Abomination",
+      "type": "Character",
+      "traits": [
+        "Abomination"
+      ],
+      "power": 0,
+      "guard": 0,
+      "keywords": [
+        "Slowpoke"
+      ],
+      "text": "Slowpoke. Its Attack and Health are determined separately when it is created.",
+      "rule": "When an Abomination is created, roll the designated Power die, then the designated Guard die. Its Power equals the Power result and its Guard equals the Guard result. If dedicated dice are unavailable, roll one d6 twice: the first roll is Power and the second roll is Guard. The player never chooses which result applies to which stat. An Abomination entering play follows normal Character entry rules and cannot Attack that Turn unless another effect grants Hothead.",
+      "purpose": "An unstable experiment whose offensive and defensive results are independently randomized.",
+      "cost": 0,
+      "style": "Lab",
+      "trouble": 2,
+      "token": true,
+      "status": "lab-prototype"
+    },
+    {
+      "id": "LAB-TOK-SCI-002",
+      "name": "Specimen",
+      "type": "Character",
+      "traits": [
+        "Specimen",
+        "Part"
+      ],
+      "power": 2,
+      "guard": 2,
+      "keywords": [],
+      "text": "",
+      "rule": "A Specimen may be represented by an approved external TCG card. Its original game's text, stats, cost, color, rarity, abilities, and rules have no effect in Unhinged. If a physical external card representing a Specimen leaves play, set it aside as used instead of putting it in an Unhinged zone.",
+      "purpose": "Preserves the visual gag of cross-TCG cards without importing another game's rules engine.",
+      "cost": 0,
+      "style": "Lab",
+      "trouble": 1,
+      "token": true,
+      "status": "lab-prototype"
     }
   ]
 }
