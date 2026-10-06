@@ -37,6 +37,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🔒 **Lab ruling — forced Turn end:** after Last Straw resolves, the current Turn is forced into its normal end-of-Turn sequence. Scheduled end-of-Turn effects still resolve and normal cleanup occurs. Composure loss from those effects cannot make a Last Straw Leader Unhinged; only a later successful Cause Trouble can do that.
 
+🔒 **Lab ruling — simultaneous multi-threshold order:** when one effect causes multiple Leaders to cross both thresholds, resolve all crossed Breaking Points before any Last Straws. Within each threshold layer, actual trigger order applies when distinguishable; if genuinely simultaneous, the non-active (defending) player resolves first.
+
 🔒 **Lab ruling — crossing both thresholds:** if one Composure-loss effect crosses both Breaking Point and Last Straw for the same Leader, finish that effect, then resolve Breaking Point first and Last Straw second. Deck exhaustion remains the explicit exception: a failed Draw from an empty deck triggers Last Straw directly and does not trigger Breaking Point.
 
 🔒 **Lab ruling — threshold timing:** finish the current effect completely before resolving a crossed Breaking Point or Last Straw threshold. Breaking Point and Last Straw abilities are protected Leader game events and cannot be interrupted.
