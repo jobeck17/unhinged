@@ -40,7 +40,7 @@ If one effect causes both Leaders to reach Breaking Point, finish that effect fi
 
 ## Trouble is a universal Character stat
 
-Every Character has a printed **Trouble** value, including **0**. Trouble is a core Character stat alongside Power and Guard. A Character with 0 Trouble may still take the Cause Trouble action; absent another effect or modifier, it causes 0 Composure loss. This preserves Cause Trouble triggers and effects without creating a hidden eligibility rule for 0-Trouble Characters.
+Every Character has a printed **Trouble** value, including **0**. Trouble is a core Character stat alongside Power and Guard. **A Character with 0 Trouble cannot Cause Trouble.** If an effect raises that Character's Trouble to 1 or more, it becomes eligible to Cause Trouble normally.
 
 ## Leaders are not attack targets
 
@@ -96,13 +96,13 @@ The first time a Leader reaches 0 Composure:
 3. Resolve that player's chosen **Last Straw** effect. Last Straws are currently being tested as a **shared, face-up deckbuilding choice** rather than a Leader-specific ability. Entering Last Straw does **not** universally Rotate Characters or otherwise reset the battlefield unless the chosen Last Straw says so.
 4. **Force the current Turn to its normal end-of-Turn sequence.** Scheduled end-of-Turn effects still resolve and normal cleanup still occurs.
 5. After Last Straw has fully resolved and the forced end-of-Turn sequence finishes, **turn order continues normally to the other player**. Last Straw never grants an extra Turn. If Characters put into play by the Last Straw effect remain under their controller's control when that controller's next Turn begins, they are **fully cooled down** for that Turn: they enter Ready unless the effect says otherwise and may take their normal Character action, including Attack or Cause Trouble.
-6. A later successful **Cause Trouble** by a Character with **1 or more Trouble** against a Leader already at Last Straw makes that Leader **Unhinged**. That player loses.
+6. While a Leader is at Last Straw, the next opposing Character that successfully **Causes Trouble** makes that Leader **Unhinged**. That player loses.
 
-A Character with **0 Trouble** may still Cause Trouble and resolve any relevant triggers, but it cannot make a Leader at Last Straw Unhinged.
+Because Characters with **0 Trouble cannot Cause Trouble**, there is no separate minimum-Trouble exception to teach for the final hit.
 
 ### Final Trouble and prevention
 
-Once a Leader is at Last Straw, a successful Cause Trouble by a Character with **1 or more Trouble** does **not** cause ordinary Composure loss. It makes that Leader **Unhinged**. If that Character has been reduced to **0 Trouble** when it Causes Trouble, it cannot deliver the Unhinged finish. Because this lab has no universal Response window, Trouble reduction is normally established before the Cause Trouble action is taken unless a card explicitly creates an interrupting effect. Effects that only prevent or reduce Composure loss do not stop a final Cause Trouble that still has at least 1 Trouble. An effect may also stop the finish by explicitly canceling or preventing Cause Trouble, or explicitly preventing the Leader from becoming Unhinged.
+Once a Leader is at Last Straw, a successful Cause Trouble does **not** cause ordinary Composure loss. It makes that Leader **Unhinged**. A Character reduced to **0 Trouble** is not eligible to take the Cause Trouble action at all. Because this lab has no universal Response window, Trouble reduction is normally established before the action is taken unless a card explicitly creates an interrupting effect. Effects that only prevent or reduce Composure loss do not stop this final Cause Trouble; an effect must prevent/cancel Cause Trouble itself or explicitly prevent the Leader from becoming Unhinged.
 
 ### Character limit exception
 
