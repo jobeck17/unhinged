@@ -173,3 +173,8 @@ STANK 60 changes carried into this lab include:
 The no-universal-retaliation direction is locked for this lab. Retaliation exists only when a keyword or effect explicitly grants it.
 
 Carl 0.3 remains canonical. Do not promote this lab until the rules interview, card/deck audit, simulations, and human testing have resolved the affected systems.
+
+
+## Core-design gate
+
+**Composure 2.0 is feature-complete for the current playtest.** The 40-question core-rules interview is complete. Do not add new foundational mechanics before playtesting unless a blocking implementation contradiction requires resolution. The next phase is rules cleanup, terminology migration, card audit, Leader / Breaking Point / Last Straw design, engine implementation, browser playtest integration, and human playtesting. Playtest evidence may reopen rules.
