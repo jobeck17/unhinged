@@ -24,7 +24,7 @@ Power handles fighting. Trouble pressures the win condition.
 
 A Leader's first current test threshold is **10 Composure**.
 
-Crossing 10 marks that Leader's **Breaking Point**. The engine records and announces the event, but **Leader-specific Breaking Point effects are intentionally not assigned yet**. Those effects are part of the next design interview and should not be inferred from placeholder behavior.
+The first time a Leader reaches **10 or less Composure**, that Leader's **Breaking Point** triggers. **10 is universal for every Leader.** Breaking Point triggers only once per game. Every Leader will have a **unique Breaking Point ability**; those individual abilities are intentionally not assigned yet.
 
 ## Last Straw
 
@@ -59,8 +59,6 @@ The interview must decide, among other things:
 - exact ordering for Responses, triggers, simultaneous effects, and end-of-Turn effects around Last Straw;
 - whether newly created Characters from a Last Straw effect may Cause Trouble on the granted comeback Turn;
 - whether Last Straw effects may exceed the five-Character limit when their text says so;
-- whether Breaking Point is always 10 or can vary by Leader;
-- whether every Leader gets both a Breaking Point effect and a Last Straw effect.
 
 The current engine uses the simplest provisional behavior where necessary so the state machine can be exercised. These open points are **not locked rules**.
 
