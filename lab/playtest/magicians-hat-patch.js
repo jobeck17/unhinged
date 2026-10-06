@@ -1,5 +1,5 @@
 // STANK INDUSTRIES LAB ONLY — Magician's Hat + signature animal package.
-// 2 Hats + 2 extra Rabbits replace all 4x Now You See Me in the Birthday Party Magician deck.
+// 3 Hats + 2 extra Rabbits replace all 4x Now You See Me, with 1 Tech Bro cut to keep the deck at 40.
 import {Game} from './engine.js?v=rulebreakers-1';
 
 const HAT_ID='LAB-MAG-005';
@@ -45,8 +45,12 @@ globalThis.fetch=async function(input,init){
             magician.cards.P080-=nysm;
             if(magician.cards.P080<=0)delete magician.cards.P080;
           }
-          magician.cards[HAT_ID]=(magician.cards[HAT_ID]||0)+2;
+          magician.cards[HAT_ID]=(magician.cards[HAT_ID]||0)+3;
           magician.cards[RABBIT_ID]=(magician.cards[RABBIT_ID]||0)+2;
+          if(magician.cards.P070){
+            magician.cards.P070=Math.max(0,magician.cards.P070-1);
+            if(!magician.cards.P070)delete magician.cards.P070;
+          }
         }
       }
       return data;
