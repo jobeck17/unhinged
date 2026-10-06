@@ -17,9 +17,9 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🔒 **Lab ruling — Leader durability:** Leaders do not have Health. Composure is the sole measurable Leader durability / victory track. Leader effects use lose/recover Composure; damage and healing remain Character concepts tied to Guard. Existing lab cards that still reference Leader Health, Leader damage, or Leader healing require terminology conversion during the card audit.
 
-🔒 **Lab ruling — simultaneous Breaking Points:** if one effect causes both Leaders to cross 10 Composure, finish that effect, resolve the active player's Breaking Point first and the other player's second, then resume the current Turn normally.
+🔒 **Lab ruling — simultaneous Breaking Points:** if one effect causes both Leaders to cross 10 Composure, finish that effect, resolve them in their actual trigger order; if genuinely simultaneous, resolve the non-active (defending) player's Breaking Point first and the active player's second, then resume the current Turn normally.
 
-🔒 **Lab ruling — simultaneous Last Straws:** if the same effect causes both Leaders to enter Last Straw, both Last Straw events resolve before play passes. Resolve the active player's Last Straw first, then the other player's, then complete the normal forced end-of-Turn sequence and pass to the next player in normal turn order.
+🔒 **Lab ruling — simultaneous Last Straws:** if the same effect causes both Leaders to enter Last Straw, both Last Straw events resolve before play passes. Resolve Last Straws in their actual trigger order. If they were genuinely simultaneous, resolve the non-active (defending) player's Last Straw first, then the active player's, then complete the normal forced end-of-Turn sequence and pass to the next player in normal turn order.
 
 🔒 **Lab ruling — deck exhaustion:** there is no deck-out loss. If a player would Draw from an empty deck before Last Straw, the failed Draw triggers Last Straw directly: set that Leader's Composure to 0 and resolve Last Straw normally. This is not Composure loss and does not retroactively trigger Breaking Point. Once already at Last Straw, attempts to Draw from an empty deck simply do nothing; do not reshuffle the discard. Only a later successful Cause Trouble can make the Leader Unhinged.
 
