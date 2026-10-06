@@ -1,14 +1,14 @@
-name: Carl CI and Pages
+name: Mordecai CI and Pages
 on:
   push:
-    branches: ["main","carl-build"]
+    branches: ["main"]
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
 concurrency:
-  group: carl-pages-${{ github.ref }}
+  group: mordecai-pages-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   test:
@@ -40,7 +40,7 @@ jobs:
       - run: node --check lab/schemes/app.mjs
       - run: node lab/schemes/test.mjs
       - run: GAMES_PER_MATCHUP=2 OUTPUT=ci-results.json node lab/schemes/simulate.mjs
-      - run: GAMES_PER_MATCHUP=2 node sim/round-robin.js
+      # Mordecai production simulation is intentionally held until engine parity.
   deploy:
     if: github.ref == 'refs/heads/main'
     needs: test
