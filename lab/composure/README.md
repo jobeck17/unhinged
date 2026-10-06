@@ -39,7 +39,7 @@ The first time a Leader reaches 0 Composure:
 3. **Rotate every Character in play.**
 4. Trigger that Leader's **Last Straw** hook.
 5. **Force the current Turn to its normal end-of-Turn sequence.** Scheduled end-of-Turn effects still resolve and normal cleanup still occurs.
-6. The endangered player receives the next normal Turn.
+6. The endangered player receives the next normal Turn. Characters put into play by the Last Straw effect are **fully cooled down** for that Turn: they enter Ready unless the effect says otherwise and may take their normal Character action, including Attack or Cause Trouble.
 7. A later successful **Cause Trouble** against a Leader already at Last Straw makes that Leader **Unhinged**. That player loses.
 
 The amount of Trouble on the final Cause Trouble does not matter.
@@ -58,7 +58,6 @@ The amount of Trouble on the final Cause Trouble does not matter.
 The interview must decide, among other things:
 
 - whether non-Trouble Composure loss can trigger Last Straw and how self-inflicted Composure loss behaves;
-- whether newly created Characters from a Last Straw effect may Cause Trouble on the granted comeback Turn;
 - whether Last Straw effects may exceed the five-Character limit when their text says so;
 
 The current engine uses the simplest provisional behavior where necessary so the state machine can be exercised. These open points are **not locked rules**.
