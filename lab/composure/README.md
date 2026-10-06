@@ -22,6 +22,10 @@ The core Character decision is:
 
 Power handles fighting. Trouble pressures the win condition.
 
+### Direct Composure loss design guidance
+
+**Cause Trouble through Characters is the primary victory-pressure engine.** Direct Composure loss from Actions, Items, Defeat effects, Leader text, or other sources remains valid design space and can trigger normal Composure thresholds, but it should generally function as **spice, synergy, conditional payoff, or reach**, not as an efficient replacement for engaging with Characters. Direct-loss effects should usually carry a condition, inefficiency, risk, setup requirement, or meaningful deckbuilding cost.
+
 ## Leader durability terminology
 
 Leaders do **not** have Health and do not take or heal damage. A Leader's measurable durability / victory track is **Composure**. Effects make Leaders **lose Composure** or **recover Composure**. Damage and healing remain Character concepts tied to Guard.
