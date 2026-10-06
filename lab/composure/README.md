@@ -36,6 +36,8 @@ A Leader's first current test threshold is **10 Composure**.
 
 The first time a Leader reaches **10 or less Composure**, that Leader's **Breaking Point** triggers. **10 is universal for every Leader.** Breaking Point triggers only once per game. Every Leader will have a **unique Breaking Point ability**; those individual abilities are intentionally not assigned yet.
 
+**The Breaking Point trigger and its resolution are protected:** normal effects cannot cancel, prevent, or interrupt the Breaking Point itself. Any ordinary cards, Characters, Items, or other game pieces created by the effect become interactable normally after the Breaking Point finishes resolving unless its text says otherwise.
+
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve the Breaking Points in their actual trigger order. If they were genuinely simultaneous, resolve **the non-active (defending) player's Breaking Point first, followed by the active player's**. After both resolve, the current Turn continues normally.
 
 ## Trouble is a universal Character stat
