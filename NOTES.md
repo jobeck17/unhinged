@@ -51,6 +51,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **Controlled baseline:** Carl 0.3 remains canonical. Five Character slots remain a lab architecture constraint, not an anti-snowball claim.
 
+🔒 **Lab ruling — Trouble stat:** every Character has a printed Trouble value, and 0 is valid. A 0-Trouble Character may still take the Cause Trouble action; without a modifier or other effect it causes 0 Composure loss. This keeps Trouble a universal Character stat and preserves Cause Trouble triggers without a special eligibility exception.
+
 🔒 **Lab ruling — Leader targeting:** Leaders cannot be Attacked. Attacks are Character-versus-Character combat only. Cause Trouble is the Character action used against the opposing Leader's Composure. Power governs Character combat, Guard governs Character durability, and Trouble governs Composure progress. The old Leader-blocking combat step does not apply in this model.
 
 🔒 **Lab ruling — Cause Trouble:** Cause Trouble is not combat and cannot be blocked. An eligible Ready Character Rotates to Cause Trouble and applies its Trouble to the opposing Leader's Composure. The resulting Rotated Character is then exposed to ordinary Attacks.
