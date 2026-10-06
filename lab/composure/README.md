@@ -32,7 +32,7 @@ Leaders do **not** have Health and do not take or heal damage. A Leader's measur
 
 ## Breaking Point
 
-**Threshold rule:** Whenever a Leader moves from above 10 Composure to 10 or less for the first time, its Breaking Point triggers regardless of whether Composure was lost, set, or otherwise changed. If one change crosses both Breaking Point and Last Straw, Breaking Point resolves before Last Straw.
+**Threshold rule:** Whenever a Leader moves from above 10 Composure to 10 or less for the first time, its Breaking Point triggers regardless of whether Composure was lost, set, or otherwise changed. If one change crosses both Breaking Point and Last Straw, Breaking Point resolves before Last Straw. **Threshold crossings are latched when they occur.** If a Leader crosses Breaking Point or reaches Last Straw during an effect, that threshold event is recorded immediately but waits until the current effect finishes before resolving. A later Composure change within that same resolving effect, including recovery back above the threshold, does not erase the recorded event.
 
 A Leader's first current test threshold is **10 Composure**.
 
