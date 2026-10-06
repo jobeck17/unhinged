@@ -112,7 +112,7 @@ The underlying **five-Character limit itself remains TESTING**, not locked. Its 
 
 - Before Last Straw, a Leader may recover Composure up to the **20 Composure** maximum.
 - Breaking Point triggers **only once per game**, even if that Leader later recovers above 10.
-- Once Last Straw has triggered, that Leader normally remains at **0 Composure** and cannot recover Composure. **Explicit Last Straw text may override this rule**, including by setting that Leader's Composure to a new value. The Last Straw still counts as triggered and does not become available again.
+- Once Last Straw has triggered, that Leader normally remains at **0 Composure** and cannot recover Composure. **Explicit Last Straw text may override this rule**, including by setting that Leader's Composure to a new value. The Last Straw remains spent/Rotated and never becomes available again. **If that effect puts the Leader above 0 and the Leader later reaches 0 again, that Leader immediately becomes Unhinged and loses.**
 - Last Straw triggers only once.
 
 ### Universal Last Straw state
