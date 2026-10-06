@@ -10,6 +10,7 @@ Last Straws are intentionally being explored wide before they are balanced. Add 
 - A player chooses **one Last Straw** during deckbuilding, outside the normal 40-card deck.
 - **Current human-test model:** the chosen Last Straw begins face-down under the Leader and **remains hidden through Breaking Point**. When the Leader reaches 0 Composure, reveal and trigger the Last Straw, then **Rotate the Last Straw card 90°** to mark that it has triggered. It remains face-up beside the Leader for the rest of the game, including as a reminder for any lingering text. This model remains subject to human-playtest confirmation.
 - Reaching 0 Composure triggers the chosen Last Straw once.
+- **Reaching 0 Composure with no untriggered Last Straw means immediate defeat:** the Leader becomes Unhinged. This applies if the Last Straw was discarded before triggering or has already been spent.
 - Last Straw is a comeback event, not the victory condition itself.
 - While at Last Straw, that player's Characters have **Hothead** and may **Attack opposing Ready Characters**.
 - Hothead remains Attack-only and does not grant early Cause Trouble.
