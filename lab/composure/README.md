@@ -87,7 +87,7 @@ The first time a Leader reaches 0 Composure:
 
 1. Finish resolving the effect that caused the Composure loss.
 2. That Leader enters **Last Straw** permanently for the current test.
-3. Trigger that Leader's **Last Straw** hook. Entering Last Straw does **not** universally Rotate Characters or otherwise change the battlefield; any such change comes from the Leader's unique Last Straw ability.
+3. Resolve that player's chosen **Last Straw** effect. Last Straws are currently being tested as a **shared, face-up deckbuilding choice** rather than a Leader-specific ability. Entering Last Straw does **not** universally Rotate Characters or otherwise reset the battlefield unless the chosen Last Straw says so.
 4. **Force the current Turn to its normal end-of-Turn sequence.** Scheduled end-of-Turn effects still resolve and normal cleanup still occurs.
 5. After Last Straw has fully resolved and the forced end-of-Turn sequence finishes, **turn order continues normally to the other player**. Last Straw never grants an extra Turn. If Characters put into play by the Last Straw effect remain under their controller's control when that controller's next Turn begins, they are **fully cooled down** for that Turn: they enter Ready unless the effect says otherwise and may take their normal Character action, including Attack or Cause Trouble.
 6. A later successful **Cause Trouble** by a Character with **1 or more Trouble** against a Leader already at Last Straw makes that Leader **Unhinged**. That player loses.
@@ -113,7 +113,15 @@ The underlying **five-Character limit itself remains TESTING**, not locked. Its 
 - Once Last Straw has triggered, that Leader remains permanently at **0 Composure** for the rest of the game and cannot recover Composure.
 - Last Straw triggers only once.
 
-**Leader-specific Last Straw effects are intentionally pending design.** The engine currently announces the hook but gives no generic payoff. One candidate discussed for a future Leader is an extreme comeback effect that draws cards equal to the opponent's remaining Composure and puts Characters drawn that way into play. It is an idea, not a universal rule and not yet assigned to a Leader.
+### Universal Last Straw state
+
+While a player's Leader is at Last Straw, **their Characters have Hothead and may Attack opposing Ready Characters**. Hothead remains Attack permission only and does not let a newly entered Character Cause Trouble early. This gives the endangered player immediate tools to fight incoming Trouble threats without accelerating their own win condition.
+
+This universal combat permission is separate from the player's chosen Last Straw effect. The chosen Last Straw provides the one-time comeback event; the universal Last Straw state persists for the rest of the game.
+
+### Shared Last Straw pool
+
+🧪 **TESTING:** Last Straws are being explored as a shared pool chosen during deckbuilding and revealed face-up at setup. Leader passives and Breaking Points remain Leader-specific. Build an oversized pool first, then cut and balance it. Exact Last Straw cards are pending design.
 
 ### Deck exhaustion and Last Straw
 
