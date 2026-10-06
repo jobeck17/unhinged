@@ -21,6 +21,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🔒 **Lab ruling — simultaneous Last Straws:** if the same effect causes both Leaders to enter Last Straw, both Last Straw events resolve before play passes. Resolve the active player's Last Straw first, then the other player's, then complete the normal forced end-of-Turn sequence and pass to the next player in normal turn order.
 
+🔒 **Lab ruling — deck exhaustion:** there is no deck-out loss. If a player would Draw from an empty deck before Last Straw, the failed Draw triggers Last Straw directly: set that Leader's Composure to 0 and resolve Last Straw normally. This is not Composure loss and does not retroactively trigger Breaking Point. Once already at Last Straw, attempts to Draw from an empty deck simply do nothing; do not reshuffle the discard. Only a later successful Cause Trouble can make the Leader Unhinged.
+
 🔒 **Lab ruling — Last Straw turn order:** after the current effect finishes, resolve the entire Last Straw event first, including the Leader-specific Last Straw ability. Then force the current Turn through its normal end-of-Turn sequence and pass to the other player normally. Last Straw never grants an extra Turn, including when a player triggers their own Last Straw.
 
 🔒 **Lab ruling — final Trouble prevention:** once a Leader is at Last Straw, the final successful Cause Trouble makes that Leader Unhinged rather than causing ordinary Composure loss. Ordinary Composure prevention does not stop it. Only an effect that explicitly cancels/prevents the Cause Trouble action or explicitly prevents becoming Unhinged can stop the final hit.
