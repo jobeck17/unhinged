@@ -70,7 +70,7 @@ This creates the core battlefield choice: **Attack, Cause Trouble, or stay Ready
 
 ## Ready effects and repeated actions
 
-There is **no universal once-per-Turn Attack-or-Cause-Trouble cap**. Readiness remains literal: a Ready Character may take a legal action. When an effect Readies a Character outside the normal Ready step, that effect's own text determines what the Character may or may not do afterward. Example: **“Ready a Character. It cannot Cause Trouble for the rest of this Round.”** This allows Ready effects to be tuned individually rather than imposing a hidden global restriction.
+There is **no universal once-per-Turn Attack-or-Cause-Trouble cap, and no universal once-per-Turn Cause Trouble limit per Character**. Readiness remains literal: a Ready Character may take a legal action. **Ready effects are responsible for restricting Cause Trouble when repeated Leader pressure is not intended.** When an effect Readies a Character outside the normal Ready step, that effect's own text determines what the Character may or may not do afterward. Example: **“Ready a Character. It cannot Cause Trouble for the rest of this Round.”** This allows Ready effects to be tuned individually rather than imposing a hidden global restriction.
 
 Existing Ready effects must be audited under Trouble. In particular, effects such as **Hold My Beer**, **Glory Days**, **Floor It!**, and **Gas Station Pills** may need explicit Attack / Cause Trouble restrictions to match their intended role.
 
