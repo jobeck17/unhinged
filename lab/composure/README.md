@@ -32,6 +32,10 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
 
+## Hothead and Trouble timing
+
+**Hothead is Attack permission only.** A Character with Hothead may Attack the Turn it enters play, but Hothead does not let it Cause Trouble early. A Character normally must have begun the Turn under its controller's control to Cause Trouble unless an effect explicitly grants permission otherwise.
+
 ## Ready effects and repeated actions
 
 There is **no universal once-per-Turn Attack-or-Cause-Trouble cap**. Readiness remains literal: a Ready Character may take a legal action. When an effect Readies a Character outside the normal Ready step, that effect's own text determines what the Character may or may not do afterward. Example: **“Ready a Character. It cannot Cause Trouble for the rest of this Round.”** This allows Ready effects to be tuned individually rather than imposing a hidden global restriction.
