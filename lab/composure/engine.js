@@ -215,7 +215,7 @@ export class Game{
  case 'P120':this.heal(z,2);if(this.trait(z,'Scavenger'))await this.rummage(p);break;
  case 'P124':this.heal(z,2);break;
  case 'P126':z.guard+=this.trait(z,'Kid')?3:2;break;
- case 'P132':if(target===-1)this.players[p].hp=Math.min(20,this.players[p].hp+2);else this.heal(z,2);break;
+ case 'P132':if(target===-1)this.recoverComposure(p,2);else this.heal(z,2);break;
  case 'P138':z.power-=this.power(z)>this.power(x)?3:2;break;
  case 'P147':z.power--;break;
  case 'P165':z.power+=this.trait(z,'Wrestler')||this.trait(z,'Daredevil')?3:2;break;
