@@ -98,20 +98,19 @@
       ],
       "cards": {
         "P061": 4,
-        "P063": 4,
+        "P063": 6,
         "P065": 4,
         "P067": 3,
-        "P070": 3,
-        "P080": 2,
         "P079": 2,
-        "P087": 2,
         "P088": 3,
         "LAB-MAG-003": 4,
         "LAB-MAG-001A": 1,
         "LAB-MAG-001B": 1,
         "LAB-MAG-002": 2,
         "LAB-MAG-004": 3,
-        "LAB-MAG-005": 2
+        "LAB-MAG-005": 3,
+        "LAB-MAG-006": 2,
+        "LAB-MAG-007": 2
       },
       "mulligan_priority": [
         "Magician's Assistant, Rabbit, or Escape Artist",
@@ -119,12 +118,13 @@
         "An enter/Return payoff"
       ],
       "watchpoints": [
-        "Does School Bully's Hothead let Misdirection convert replayed bodies into pressure without becoming oppressive?",
-        "Can Magician preserve its strong HOA matchup while remaining meaningfully weak into Rock Star and unfavored into Trash Baron?",
-        "Does Ace Up My Sleeve continue to feel useful without becoming the primary source of power?",
-        "Does Bounce remain a tempo engine rather than functioning as hard removal?"
+        "Does the Rabbit / Dove / Hat loop create satisfying Misdirection decisions without becoming deterministic?",
+        "Does permanent Attack growth from Very Enthusiastic Volunteer reward looping without snowballing too quickly?",
+        "Does Dove's permanent Health reduction create enough interaction at 0 Trouble?",
+        "Does Do Not Look in the Hat make a Rotated Hat feel like setup rather than dead tempo?",
+        "Does the lower raw Attack keep the deck dependent on tricks rather than generic bodies?"
       ],
-      "status_note": "STANK INDUSTRIES-60 Magician package merged into Composure: Volunteer, fixed Rabbit, Ethan, Birthday Boy, reworked Moving Out, School Bully cleanup, and Magician's Hat.",
+      "status_note": "STANK INDUSTRIES-66 Magician promoted to Mordecai: 6 Rabbits; 3 Hats; Dove + Do Not Look in the Hat package; Beer-Stained Cards rename; lower raw Attack; Volunteer no longer auto-Returns after attacking.",
       "composure": 20
     },
     {

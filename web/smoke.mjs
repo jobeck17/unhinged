@@ -39,3 +39,20 @@ assert(e.players[0].lastStraw,'failed Draw from empty deck triggers Last Straw')
 assert.equal(e.winner,null,'deck exhaustion is not a direct loss');
 
 console.log('Mordecai 0.4 browser smoke passed');
+
+const md=doc.decks.find(d=>d.leader==='Birthday Party Magician');
+assert.equal(Object.values(md.cards).reduce((a,b)=>a+b,0),40,'Magician deck stays at 40');
+assert.equal(md.cards.P063,6,'Magician runs six Rabbits');
+assert.equal(md.cards['LAB-MAG-005'],3,'Magician runs three Hats');
+assert.equal(md.cards['LAB-MAG-006'],2,'Magician runs two Doves');
+assert.equal(md.cards['LAB-MAG-007'],2,'Magician runs two Do Not Look in the Hat');
+assert.equal(md.cards.P080??0,0,'Now You See Me removed from STANK-66 Magician');
+assert.equal(md.cards.P070??0,0,'Tech Bro removed from STANK-66 Magician');
+assert.equal(md.cards.P087??0,0,'Burner Phone removed from STANK-66 Magician');
+const pc=id=>pool.cards.find(c=>c.id===id);
+assert.deepEqual([pc('P063').cost,pc('P063').power,pc('P063').guard],[2,1,3]);
+assert.equal(pc('P065').power,3); assert.equal(pc('P067').power,3);
+assert.equal(pc('LAB-MAG-005').cost,4); assert.equal(pc('LAB-MAG-006').trouble,0);
+assert.equal(pc('P088').name,'Beer-Stained Cards');
+assert(!pc('LAB-MAG-001A').text.includes('first time this card attacks'),'Volunteer auto-Return removed');
+console.log('STANK-66 Magician promotion smoke passed');

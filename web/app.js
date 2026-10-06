@@ -1,5 +1,6 @@
 import {Game,LEADERS} from './engine.js?v=mordecai-04';
 import {aiAction,aiChoice} from './ai.js?v=mordecai-04';
+import './magician.js?v=stank-66-mordecai';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

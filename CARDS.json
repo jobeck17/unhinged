@@ -1203,7 +1203,7 @@
     {
       "id": "P063",
       "type": "Character",
-      "cost": 3,
+      "cost": 2,
       "name": "Rabbit",
       "traits": [
         "Animal"
@@ -1212,8 +1212,8 @@
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
-      "power": 2,
-      "guard": 4,
+      "power": 1,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
@@ -1256,7 +1256,7 @@
       "keywords": [
         "Hothead"
       ],
-      "power": 4,
+      "power": 3,
       "guard": 2,
       "audit_identity": [
         "Human"
@@ -1302,7 +1302,7 @@
         "Sucker Punch",
         "Chicken"
       ],
-      "power": 4,
+      "power": 3,
       "guard": 2,
       "audit_identity": [
         "Human"
@@ -1361,7 +1361,7 @@
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
+      "power": 3,
       "guard": 2,
       "audit_identity": [
         "Human"
@@ -1699,7 +1699,7 @@
       "id": "P088",
       "type": "Item",
       "cost": 2,
-      "name": "Marked Deck",
+      "name": "Beer-Stained Cards",
       "stats": "",
       "traits": [],
       "text": "Once during your Turn, Rotate this and Rotate 1 Ready Stash: Draw a card.",
@@ -3559,7 +3559,7 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "lab",
+      "status": "playtest",
       "flavor": "",
       "trouble": 2
     },
@@ -3571,7 +3571,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Attack permanently. The first time this card attacks this game, after that Attack, Return it to your hand.",
+      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Attack permanently.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -3581,7 +3581,7 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "lab",
+      "status": "playtest",
       "flavor": "Somebody in the back row is starting to notice a pattern."
     },
     {
@@ -3592,7 +3592,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Attack permanently. The first time this card attacks this game, after that Attack, Return it to your hand.",
+      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Attack permanently.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -3602,7 +3602,7 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "lab",
+      "status": "playtest",
       "flavor": "Somebody in the back row is starting to notice a pattern."
     },
     {
@@ -3620,7 +3620,7 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "lab",
+      "status": "playtest",
       "flavor": "He does this all the time."
     },
     {
@@ -3641,23 +3641,23 @@
         "Human"
       ],
       "complexity": "mixed",
-      "status": "lab",
+      "status": "playtest",
       "flavor": ""
     },
     {
       "id": "LAB-MAG-005",
       "type": "Item",
-      "cost": 5,
+      "cost": 4,
       "name": "Magician's Hat",
       "traits": [],
-      "text": "Activate — Return a Rabbit you control to your hand.",
+      "text": "Activate — Return a Rabbit or Dove you control to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
       "complexity": "activated",
-      "status": "lab",
+      "status": "playtest",
       "flavor": ""
     },
     {
@@ -4239,6 +4239,43 @@
       "trouble": 1,
       "token": true,
       "status": "lab-prototype"
+    },
+    {
+      "id": "LAB-MAG-006",
+      "type": "Character",
+      "cost": 2,
+      "name": "Dove",
+      "traits": [
+        "Animal"
+      ],
+      "text": "When this enters or leaves play, you may choose an opposing Character. It gets -1 Health permanently.",
+      "style": "Misdirection",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 2,
+      "guard": 1,
+      "trouble": 0,
+      "audit_identity": [
+        "Animal"
+      ],
+      "status": "playtest",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-MAG-007",
+      "type": "Action",
+      "cost": 1,
+      "name": "Do Not Look in the Hat",
+      "traits": [],
+      "text": "Play a Rabbit or Dove from your hand for free. You may play this only if you control a Rotated Magician's Hat.",
+      "style": "Misdirection",
+      "complexity": "conditional",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "status": "playtest",
+      "flavor": "No, seriously. Don’t."
     }
   ]
 }

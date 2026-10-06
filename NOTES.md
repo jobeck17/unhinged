@@ -6,7 +6,7 @@
 
 ⚠️ **Audit boundary:** older notes below contain Carl rules, superseded lab rulings, and historical experiments. They remain temporarily as design history. **If anything below conflicts with RULES.md, RULES.md wins.** Do not restore an older ruling merely because it remains below.
 
-🧹 **Next production pass:** reconcile terminology/rules references; audit all eight decks, all cards and abilities, Leader passives, Breaking Points, Last Straw pool, Ready effects, legacy Responses, Leader-damage/healing text, Retaliate, deck exhaustion, simulator parity, browser parity, and builder compatibility.
+🎩 **Magician sync · 6 October 2026:** Landon’s STANK INDUSTRIES-66 Birthday Party Magician package is promoted into Mordecai 0.4. Production now uses 6× Rabbit (2-cost 1/3), 3× Magician’s Hat (cost 4; returns Rabbit/Dove), 2× Dove (2/1, 0 Trouble; enter/leave -1 permanent Health), 2× Do Not Look in the Hat, Beer-Stained Cards, 3-Attack Escape Artist/School Bully, and the Volunteer without its old automatic post-Attack Return. Now You See Me, Tech Bro, and Burner Phone are out of the baseline Magician deck.\n\n🧹 **Next production pass:** reconcile terminology/rules references; audit all eight decks, all cards and abilities, Leader passives, Breaking Points, Last Straw pool, Ready effects, legacy Responses, Leader-damage/healing text, Retaliate, deck exhaustion, simulator parity, browser parity, and builder compatibility.
 
 ---
 
