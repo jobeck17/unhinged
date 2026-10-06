@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-catrock';
 await import('./cat-lady.js');
 await import('./rockstar.js');
 
