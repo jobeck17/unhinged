@@ -45,7 +45,7 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **20 Composure baseline:** the earlier 25-Composure target was chosen before Last Straw existed. Because Last Straw is expected to add roughly 1–2 rounds of final-act gameplay, 20 is now the working test baseline. This is a hypothesis to simulate and human-test, not a balance claim.
 
-🧪 **Opening balance:** the second player receives no Carl temporary setup Stash. The first player still skips their opening Draw.
+🔒 **Lab ruling — opening:** the first player skips their first Draw. The second player receives no temporary setup Stash and Draws normally on their first Turn.
 
 🧪 **Critical separation:** Cause Trouble cannot be Blocked and is not combat. It Rotates the Character, immediately applies Trouble to Composure, and leaves that Character exposed to ordinary attacks on the opponent's Turn. A Character cannot Cause Trouble on the Turn it enters play, even if it has Hothead.
 
