@@ -15,6 +15,8 @@ This replaces scattered checkpoints, brainstorm files, open-decision files, and 
 
 🧪 **Breaking Point / Last Straw:** 10 Composure is the first test **Breaking Point**. At 0 Composure the Leader does **not** lose. They hit **Last Straw**: all Characters Rotate, the Leader-specific Last Straw hook triggers, and the current Turn ends. A later successful Cause Trouble against a Leader already at Last Straw makes that Leader **Unhinged** and loses the game. Leader-specific Breaking Point and Last Straw effects are intentionally pending the rules/card interview.
 
+🔒 **Lab ruling — threshold timing:** finish the current effect completely before resolving a crossed Breaking Point or Last Straw threshold. Breaking Point and Last Straw abilities are protected Leader game events and do not open a Response window. Normal interaction resumes after the threshold event resolves.
+
 🔒 **Lab ruling — Breaking Point:** every Leader starts at 20 Composure and has the same universal Breaking Point threshold at **10 Composure**. Breaking Point triggers once per game. Every Leader gets a unique Breaking Point ability and a unique Last Straw ability; the abilities themselves remain to be designed and audited.
 
 🔒 **Lab ruling — recovery:** before Last Straw, Composure may be recovered up to 20. Breaking Point triggers only once even if the Leader later recovers above 10. After Last Straw triggers, that Leader remains permanently at 0 Composure and cannot recover it; Last Straw cannot retrigger.
