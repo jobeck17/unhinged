@@ -103,7 +103,7 @@ Game.prototype.remove=async function(x,where='discard',defeated=false){
  const p=x.owner,cardId=x.id,name=this.card(x).name;
  const use=await this.choose(p,`Shoebox of Dead Cats: put ${defeated?'defeated ':''}${name} face down under a Shoebox instead?`,[{label:'Put it in the Shoebox',value:true},{label:'Send it to discard',value:false}]);
  if(!use)return baseRemove.call(this,x,where,defeated);
- const boxes=boxesFor(this,p),chosen=boxes.length===1?boxes[0]:this.obj(await this.choose(p,'Choose a Shoebox',boxes.map((b,i)=>({label:`Shoebox ${i+1} · ${b.cargo?.length||0} buried`,value:b.uid})));
+ const boxes=boxesFor(this,p),chosen=boxes.length===1?boxes[0]:this.obj(await this.choose(p,'Choose a Shoebox',boxes.map((b,i)=>({label:`Shoebox ${i+1} · ${b.cargo?.length||0} buried`,value:b.uid}))));
  const before=this.players[p].discard.length;
  const result=await baseRemove.call(this,x,where,defeated);
  const box=chosen&&this.obj(chosen.uid);
