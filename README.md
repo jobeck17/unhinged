@@ -1,12 +1,16 @@
-# Unhinged — Carl 0.3
+# Unhinged — Mordecai 0.4
 
-Carl is the current working build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl**. Donut is complete and remains in Git history instead of the live tree.
+Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl → 0.4 Mordecai**. Mordecai promotes the Composure 2.0 core after its 40-question rules interview.
 
-## Parallel core experiments
+## Current production state
 
-**[Play the Scheme Lab](https://jobeck17.github.io/unhinged/lab/schemes/)** — eight decks testing simultaneous combat and a third Character job: work toward an interruptible Leader Scheme. Includes bot and local two-player modes, exact supported card text, and reproducible comparisons. [Rules and evidence](lab/schemes/README.md). **TESTING; Carl 0.3 remains canonical.**
+**Mordecai 0.4 is canonical.** Composure 2.0 has graduated from the lab. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative.
 
-**[Play the Board Width Lab](https://jobeck17.github.io/unhinged/lab/board-width/)** — new isolated five-Character board, no blocking, Rotated-only Character attack targets, simultaneous trades, free triggers, Ready engines, and minimal stacking/storage. Adjacent battlefield rows with on-card state and direct board target selection. [Experimental rules](lab/board-width/README.md). **TESTING; full Turns are provisional, and neither lab changes Carl.**
+The production baseline now contains **223 cards and eight decks**: the six core mono-Style decks plus Crazy Cat Lady and Mad Scientist rulebreaker decks. Their content is under immediate consistency and balance audit.
+
+The browser playtest, simulator, and builder still require a Mordecai parity pass. Until that work is complete, do not treat Carl-era automated results or the provisional Composure lab engine as authoritative Mordecai evidence.
+
+The Scheme, Board Width, and old Composure folders remain development history unless explicitly reopened.
 
 ## Current creative direction
 
@@ -27,7 +31,7 @@ This explicitly allows:
 
 A deck should still play a real game when its spectacular engine does not go off. The goal is not random chaos for its own sake. The goal is **distinct play patterns and memorable table stories**.
 
-The current LAB benchmarks are **Crazy Cat Lady** (snowball colony) and **Mad Scientist** (finite battery + randomized Abominations). They are not Carl 0.3 production rules, but they currently best demonstrate the desired emotional target. Backyard Wrestler's experimental **From the Top Rope!** physical toss, Paper Football concepts, and bottle-stack/Waterfall concepts are saved in NOTES.md for future development.
+The current LAB benchmarks are **Crazy Cat Lady** (snowball colony) and **Mad Scientist** (finite battery + randomized Abominations). They are not Mordecai 0.4 production rules, but they currently best demonstrate the desired emotional target. Backyard Wrestler's experimental **From the Top Rope!** physical toss, Paper Football concepts, and bottle-stack/Waterfall concepts are saved in NOTES.md for future development.
 
 ## Source of truth
 - RULES.md — current rules and Leaders.
@@ -39,11 +43,9 @@ The current LAB benchmarks are **Crazy Cat Lady** (snowball colony) and **Mad Sc
 - web/ — current browser playtest.
 - builder/ — Dreamborn-inspired deck builder using the same canonical card pool.
 
-Carl locks Florida Man's damaged-Character Hothead/Sucker Punch plus survival-Ready passive, and Expendable-only Tag Out for Backyard Wrestler.
+Mordecai locks the new core architecture, not final card balance. The next production pass is consistency and content: terminology, Leaders, Breaking Points, Last Straws, decks, cards, abilities, simulator, browser, and builder.
 
-The browser is a playtest aid, not a perfect rules oracle. Core rules and Leader mechanics are current; especially contextual card timing still needs human validation.
-
-Older docs, prototypes, Mongo files, Donut snapshots, and brainstorm material were removed from the working tree, not erased. Git history is the archive.
+Older builds and labs remain design history. Git history is the archive.
 
 ## Build naming and versioning
 
@@ -62,7 +64,7 @@ Examples:
 - **0.3 Carl**
 - **0.3.1 Carl**
 - **0.3.2 Carl**
-- eventual **0.4 [new DCC codename]**
+- **0.4 Mordecai**
 
 ### When to increment 0.X
 
@@ -96,8 +98,7 @@ When a build number changes, update the relevant current-facing version labels t
 
 **1.0 is the first complete release baseline for Unhinged.** It does not mean the game is permanently finished. It means the foundational game, first card environment, documentation, and playtest tooling are coherent enough that future work can build on them without reopening the basic identity of the game.
 
-### 0.3 Carl — Core stabilization
-Current phase.
+### 0.3 Carl — Core stabilization — COMPLETE
 
 - Human-test the full-turn, Stash, combat, retaliation, Response, and Leader systems.
 - Confirm that the six Leaders create distinct play patterns without excessive rules baggage.
@@ -107,8 +108,8 @@ Current phase.
 
 **Exit condition:** the core game loop is fun and understandable enough that we are no longer routinely questioning its basic architecture.
 
-### 0.4 — Core systems lock
-Codename chosen when the milestone begins.
+### 0.4 Mordecai — Core systems lock
+**Current phase.**
 
 - Resolve remaining structural rules questions.
 - Lock the normal turn/combat/resource/deckbuilding framework.
@@ -181,4 +182,4 @@ Post-1.0 development can then use normal release thinking: **1.0.x** for fixes a
 
 ## Deck builder
 
-Carl's deck builder lives at `/builder/` and reads the same `CARDS.json` and `DECKS.json` as the playtest. It currently supports Leader/secondary-Style legality, search and filters, 40-card and four-copy limits, local autosave, deck curve/counts, and text import/export.
+The deck builder lives at `/builder/` and reads the same `CARDS.json` and `DECKS.json` as the playtest. It currently supports Leader/secondary-Style legality, search and filters, 40-card and four-copy limits, local autosave, deck curve/counts, and text import/export.

@@ -1,3 +1,15 @@
+# CURRENT — Mordecai 0.4 promoted 6 October 2026
+
+🔒 **Production promotion:** Composure 2.0 is now **Mordecai 0.4**, the canonical Unhinged build. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative. The 40-question core-rules interview is complete and the core is feature-complete for this playtest.
+
+🔒 **Current core:** Characters use **Attack / Health / Trouble**. Leaders use **20 Composure**, unique printed **Breaking Point** at 10, and one hidden shared-pool **Last Straw** revealed at 0. Leaders cannot be Attacked. Characters choose **Attack / Cause Trouble / Stay Ready**. Ordinary Attacks target Rotated Characters; Ready protects from ordinary Attacks only. Cause Trouble is not combat and cannot be Blocked. There is no universal retaliation and no universal Response system.
+
+⚠️ **Audit boundary:** older notes below contain Carl rules, superseded lab rulings, and historical experiments. They remain temporarily as design history. **If anything below conflicts with RULES.md, RULES.md wins.** Do not restore an older ruling merely because it remains below.
+
+🧹 **Next production pass:** reconcile terminology/rules references; audit all eight decks, all cards and abilities, Leader passives, Breaking Points, Last Straw pool, Ready effects, legacy Responses, Leader-damage/healing text, Retaliate, deck exhaustion, simulator parity, browser parity, and builder compatibility.
+
+---
+
 🔒 **Lab ruling — universal Last Straw combat state:** while a Leader is at Last Straw, that player's Characters have Hothead and may Attack opposing Ready Characters. Hothead remains Attack-only and does not grant early Cause Trouble. This is the baseline comeback agency; the chosen Last Straw supplies the one-time comeback event. There is no universal mass-Rotate/reset on entering Last Straw.
 
 ## Composure 2.0 Last Straw work

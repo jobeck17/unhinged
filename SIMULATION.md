@@ -1,4 +1,16 @@
-# Carl 0.3 Simulation Rules
+# Mordecai 0.4 Simulation Status
+
+> **HOLD FOR ENGINE PARITY · 6 October 2026**
+
+Mordecai 0.4 is canonical, but the production simulator has **not yet been migrated to the new rules**. Do not treat Carl 0.3 results or the provisional Composure lab engine as authoritative Mordecai balance evidence.
+
+Before new balance simulation, implement and validate Attack / Health / Trouble; Cause Trouble; no Leader attacks/blocking; no universal retaliation; Retaliate-only counter-damage; Breaking Point threshold queue; hidden/spent Last Straw lifecycle; deck-exhaustion-to-Last-Straw; no Character cap; no universal Responses; current control/attachment rules; and audited 0.4 card/Leader text.
+
+The Carl methodology below is retained as historical reference until the Mordecai harness replaces it.
+
+---
+
+## Historical Carl 0.3 Simulation Rules
 
 > Current simulation methodology for Unhinged / Carl 0.3 playtesting.
 > Updated 2026-09-29.
