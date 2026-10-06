@@ -1,4 +1,4 @@
-import {Game,LEADERS} from './engine.js?v=mordecai-04-mag66';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-catrock';
 import {aiAction,aiChoice} from './ai.js?v=mordecai-04';
 import './magician.js?v=stank-66-mordecai';
 import './cat-lady.js?v=stank-66-mordecai';
