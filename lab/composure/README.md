@@ -123,7 +123,7 @@ This universal combat permission is separate from the player's chosen Last Straw
 
 ### Shared Last Straw pool
 
-🧪 **TESTING:** Last Straws are being explored as a shared pool chosen during deckbuilding. Leader passives and Breaking Points remain Leader-specific. Build an oversized pool first, then cut and balance it. The dedicated working repository for concepts, candidates, cuts, and status is **[LAST_STRAW_IDEAS.md](LAST_STRAW_IDEAS.md)**. Visibility at setup is still being finalized in the rules interview.
+🧪 **TESTING:** Last Straws are being explored as a shared pool chosen during deckbuilding. The chosen Last Straw begins **face-down under the Leader**. When that Leader reaches **Breaking Point**, reveal the Last Straw and keep it face-up. When that Leader reaches **0 Composure**, trigger it. This visibility/timing model is specifically pending human-playtest confirmation. Leader passives and Breaking Points remain Leader-specific. Build an oversized pool first, then cut and balance it. The dedicated working repository for concepts, candidates, cuts, and status is **[LAST_STRAW_IDEAS.md](LAST_STRAW_IDEAS.md)**.
 
 ### Deck exhaustion and Last Straw
 
