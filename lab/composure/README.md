@@ -58,7 +58,7 @@ There is no ordinary Leader-blocking combat step in this model because Leaders a
 
 ## Persistent Character damage
 
-Damage on Characters is **persistent**. Damage remains on a Character until an effect removes/heals it or the Character leaves play. A Character is Defeated immediately when its accumulated damage equals or exceeds its Guard.
+Damage on Characters is **persistent**. Damage remains on a Character until an effect removes/heals it or the Character leaves play. A Character is Defeated immediately when its accumulated damage equals or exceeds its Guard. **All damage follows this same rule regardless of source, including Attacks, Actions, Items, abilities, and effects that place damage counters.** If a Character's Guard is reduced so that its accumulated damage equals or exceeds its current Guard, it is immediately Defeated. Damage that causes a Defeat produces a normal Defeat event.
 
 ## Attack eligibility
 
