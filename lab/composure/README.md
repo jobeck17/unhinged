@@ -8,7 +8,7 @@
 
 Each Leader begins with **20 Composure**. Characters have **Attack / Health / Trouble**. The Character combat stat formerly called **Power** is called **Attack** in Composure 2.0; the durability stat formerly called **Guard** is called **Health**.
 
-- **Attack Character:** Rotate the attacker and attack an opposing Rotated Character using Power. Sucker Punch and explicit card effects can reach Ready Characters.
+- **Attack Character:** Rotate the attacker and attack an opposing Rotated Character using Attack. Sucker Punch and explicit card effects can reach Ready Characters.
 - **Cause Trouble:** Rotate a Ready Character that began the Turn under your control. The opposing Leader loses Composure equal to that Character's Trouble.
 - **Cause Trouble cannot be Blocked.** It is not an Attack and does not start combat.
 - After causing Trouble, that Character is Rotated and exposed to ordinary Attacks.
@@ -31,6 +31,8 @@ Power handles fighting. Trouble pressures the win condition.
 Leaders do **not** have Health and do not take or heal damage. A Leader's measurable durability / victory track is **Composure**. Effects make Leaders **lose Composure** or **recover Composure**. Damage and healing remain Character concepts tied to Health.
 
 ## Breaking Point
+
+**Threshold rule:** Whenever a Leader moves from above 10 Composure to 10 or less for the first time, its Breaking Point triggers regardless of whether Composure was lost, set, or otherwise changed. If one change crosses both Breaking Point and Last Straw, Breaking Point resolves before Last Straw.
 
 A Leader's first current test threshold is **10 Composure**.
 
