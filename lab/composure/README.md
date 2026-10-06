@@ -32,6 +32,12 @@ The first time a Leader reaches **10 or less Composure**, that Leader's **Breaki
 
 If one effect causes both Leaders to reach Breaking Point, finish that effect first, then resolve **the active player's Breaking Point followed by the other player's Breaking Point**. After both resolve, the current Turn continues normally.
 
+## Attack eligibility
+
+By default, a Character may Attack only an opposing **Rotated Character**. Ready Characters are protected from ordinary Attacks. Card text may explicitly override this restriction and allow a Ready Character to be attacked or otherwise change attack eligibility.
+
+This creates the core battlefield choice: **Attack, Cause Trouble, or stay Ready.** Both Attack and Cause Trouble normally Rotate the acting Character, exposing it to ordinary Attacks on the opponent's Turn.
+
 ## Hothead and Trouble timing
 
 **Hothead is Attack permission only.** A Character with Hothead may Attack the Turn it enters play, but Hothead does not let it Cause Trouble early. A Character normally must have begun the Turn under its controller's control to Cause Trouble unless an effect explicitly grants permission otherwise.
