@@ -22,7 +22,7 @@ function setup(){
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
 function pile(label,count,sub='',kind='back'){
- const visual=kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
+ const visual=kind==='back'?'<img class="mini-card card-back-image" src="./assets/landon-card-back.jpg?v=cardback-05" alt="">':'<span class="mini-card discard-face">↩</span>';
  return '<div class="zone-pile"><span class="zone-label">'+esc(label)+'</span>'+visual+'<b>'+count+'</b>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</div>';
 }
 function zoneBar(p){
