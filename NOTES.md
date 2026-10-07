@@ -25,6 +25,8 @@
 This ledger governs this review. Earlier entries below are dated design history where they conflict with it. Do not turn proposals into current rules. Preserve prior candidates as BANKED/RETIRED rather than silently overwriting them. Do not add a new card proposal until the current decision is settled, except to explain concrete alternatives the user requests.
 
 ### CURRENT — explicitly confirmed and saved
+- **Pet Alligator update:** P009 remains Cost 3, now 4/3/1. On Attack or Cause Trouble, roll d6; 1 cancels that action and own Leader loses a fixed 2 Composure, otherwise proceed. Attack modifiers do not increase the penalty. Approved for this pass; balance testing remains later.
+- **Chainsaw Hothead:** P007 now has Hothead alongside Just Gotta Rev It, Cost 3, 2/3/1. The formerly failed save is completed. Frat Bro retains Hothead.
 - Florida Man passive: Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure. No once-per-Turn cap; ordinary removal effects do not qualify.
 - **Deck-design workflow:** work on each deck/Style in complete isolation during this creative/content pass. Build coherent roles, scaling, combos, and readable timing without claiming matchup balance or tuning against the other decks. Simulations (after engine parity) and human testing are the later stage for actual balance. Flag internal contradictions or nonfunctional combinations now; provisional numbers may remain until evidence supports tuning.
 - Style: voluntary risk/reward, press-your-luck choices, dangerous stunts; recognizable Florida stereotypes rather than forced joke sentences. Self-damage is optional supporting space, not mandatory Style identity. Reliable plain Characters remain important.
@@ -38,7 +40,7 @@ This ledger governs this review. Earlier entries below are dated design history 
 
 ### TESTING — saved candidates, not proven balance
 - P005 Toddler: Cost 2, 1/2/1. On entry d6: 1 own Leader loses 2 Composure; 2 opposing Leader loses 2 Composure; 3 nothing; 4 Draw; 5 +2 Attack and Hothead this Turn; 6 +3 Attack and Hothead this Turn, Dismiss after his next Attack this Turn. No reroll. The roll-6 attack is optional; temporary bonuses/Dismiss condition expire this Turn.
-- P007 Shirtless Guy With a Chainsaw: replaces Scout With a Flare Gun; Cost 3, 2/3/1. Once per own Turn while Ready and eligible to Attack, optional d6: 1 Rotate; 2–6 +2 Attack this Turn, optional second roll; second 1 Rotate/remove this ability's bonus, otherwise bonus becomes +4. No Hothead. Base/single/double Attack is 2/4/6.
+- P007 Shirtless Guy With a Chainsaw: replaces Scout With a Flare Gun; Cost 3, 2/3/1. Once per own Turn while Ready and eligible to Attack, optional d6: 1 Rotate; 2–6 +2 Attack this Turn, optional second roll; second 1 Rotate/remove this ability's bonus, otherwise bonus becomes +4. Hothead added. Base/single/double Attack is 2/4/6.
 - P024 Hey Y’all, Watch This!: replaces Commit to the Bit; Cost 1. Choose Ready friendly Character; d6 final 1 Rotate; 2–5 choose +4 Attack or +2 Trouble this Turn; 6 both. Optional one reroll on initial 2–5, only final result resolves.
 - Audit concern: Frat Bro's guaranteed immediate 4 Attack competes with Chainsaw Guy's delayed risky 4/6. Preserve their identities; relative stats/rewards remain reviewable.
 - All new behavior awaits digital parity; a saved card is not an implemented or balance-tested card.
