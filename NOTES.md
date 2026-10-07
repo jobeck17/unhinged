@@ -10,6 +10,8 @@
 
 ## Reckless pool review · 6 October 2026
 
+🔒 **One-cost Characters locked for this pass:** Feral Chihuahua (P001) is Cost 1, 2 Attack / 2 Health / 1 Trouble; Vape Kid (P017) is Cost 1, 1 Attack / 3 Health / 1 Trouble. Both have no abilities or keywords. Their former leave-play Composure pressure and self-damage/filtering abilities are removed. May revisit later; deck quantities are unchanged.
+
 ✅ **Style direction:** voluntary risk/reward, dangerous stunts, and press-your-luck choices. Self-damage may be a supporting consequence; it is not the required identity of Reckless. Rewards may affect Attack, Trouble, or other effects depending on the card.
 
 ✅ **Renames:** P002 Gas Station Daredevil → Designated Driver; P020 Send It! → SPRING BREAK!!!; P024 Commit to the Bit → Hey Y’all, Watch This! Card IDs, Costs, and deck quantities are unchanged. P002 and P020 retain their existing abilities pending individual review; SPRING BREAK!!! still requires conversion of its legacy Response wording.
