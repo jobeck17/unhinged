@@ -128,24 +128,22 @@
       "id": "P007",
       "type": "Character",
       "cost": 3,
-      "name": "Scout With a Flare Gun",
+      "name": "Shirtless Guy With a Chainsaw",
       "traits": [
-        "Kid",
-        "Scout",
         "Daredevil"
       ],
-      "text": "When this enters play, deal 1 damage to a Character. If you dealt that damage to one of your Characters, it gets +1 Attack this Turn.",
+      "text": "Just Gotta Rev It — Once during your Turn, if this Character is Ready and eligible to Attack, you may roll a six-sided die. On a 1, Rotate it. Otherwise, it gets +2 Attack this Turn and you may roll once more. If the second roll is a 1, Rotate it and remove the Attack bonus granted by this ability. Otherwise, increase that bonus to +4 Attack this Turn.",
       "style": "Reckless",
-      "complexity": "on_play",
+      "complexity": "mixed",
       "keywords": [],
       "power": 2,
-      "guard": 4,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 1
     },
     {
       "id": "P008",
