@@ -597,15 +597,16 @@
       "name": "Homemade Launch Ramp",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. When it attacks, you may Dismiss this. If you do, it gets +3 Power for this Attack. After the Attack, deal 1 damage to it.",
+      "text": "Choose one of your Ready Characters. Rotate this Item and roll a six-sided die. On a 1, Rotate that Character. On a 2–3, its next Attack this Turn gets +2 Power. On a 4–5, deal 2 damage to it. On a 6, its next Attack this Turn gets +2 Power, and when it makes that Attack, it also Causes Trouble without Rotating. This extra Cause Trouble does not require it to be Ready or survive the Attack; all other Cause Trouble requirements apply.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "activated",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Standalone reusable Item locked for testing on 2026-10-07. Six is an actual Cause Trouble event at Attack declaration, using current effective Trouble; no survival condition. Normal entry-Turn, positive Trouble and printed restrictions remain. Once activated, next-Attack bonus/rider lasts this Turn independently of Ramp. Power bonus is for one Attack, not whole Turn. Digital parity pending."
     },
     {
       "id": "P031",
