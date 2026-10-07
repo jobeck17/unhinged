@@ -10,6 +10,12 @@
 
 ## Reckless pool review · 6 October 2026
 
+🔒 **Character locks · 7 October 2026:** Designated Driver (P002), Cost 2, 2/2/2, no ability; Amateur Storm Chaser replaces Porch Pirate (P016), Cost 2, 2/2/1, Hothead; Hurricane Holdout replaces Firework Dad (P003), Cost 3, 1/5/0, gets +1 Trouble per damage currently on it; Spring Break Frat Bro replaces Giga Chad (P012), Cost 3, 4/2/2, Hothead. Stats are Attack/Health/Trouble. IDs, Costs, and deck quantities are unchanged. Holdout's bonus is continuous, not cumulative across healed damage; 0 damage means 0 Trouble. Card text/identity locks are not balance evidence; digital parity remains pending.
+
+🧪 **Bachelorette Party pending:** discussed Cost 2, 2/1/1, Draw when Dismissed or Defeated. User is reconsidering theme fit; current canonical card remains unchanged until settled.
+
+🧠 **Reckless additions to design:** Bath Salts belongs in Reckless; Unlicensed Pool Guy fits the Florida identity; move/rework the Stunt Double concept with a new name; explore Button Marked DO NOT PRESS as risk/reward. Cross-Style transfers and replacement mechanics are not yet applied. Seek recognizable Florida stereotypes (snowbirds, spring breakers, distracted lifeguards, questionable animal owners) rather than forced joke names.
+
 ✅ **Three-cost Character rename · 7 October 2026:** Scout With a Flare Gun (P007) is replaced by Shirtless Guy With a Chainsaw. Remove Kid/Scout Traits; retain Daredevil. The same ID preserves existing deck quantities.
 
 🧪 **Just Gotta Rev It:** Cost 3, 2 Attack / 3 Health / 1 Trouble. Once during your Turn, while Ready and eligible to Attack, optionally roll a d6 before declaring an Attack: 1 Rotates him; 2–6 grants +2 Attack this Turn. May roll once more: 1 Rotates him and removes only the bonus granted by this ability; 2–6 increases that bonus to +4 Attack this Turn. Base Attack therefore remains 2, or becomes 4/6 without other modifiers. No Hothead or early Cause Trouble permission is granted. Stats and effect are testing candidates. Digital implementation remains pending Mordecai parity.
