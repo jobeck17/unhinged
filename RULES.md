@@ -268,6 +268,7 @@ Do not end in the middle of resolving an Action, ability, protected threshold, c
 ## 19. Production direction
 
 Core Styles remain Reckless, Momentum, Misdirection, Salvage, Stonewall, and Expendable.
+Crazy Cat Lady is classified as Momentum. Mad Scientist uses the non-core Gambler classification.
 
 Mordecai 0.4 promotes the eight-deck Composure/STANK environment as current baseline data: six core mono-Style decks plus Crazy Cat Lady and Mad Scientist rulebreaker decks. Their exact construction, cards, Leaders, abilities, and balance are **production content under immediate audit**, not frozen balance claims.
 
