@@ -11,12 +11,12 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this leaves play, deal 1 damage to the opposing Leader.",
+      "text": "",
       "style": "Reckless",
-      "complexity": "ongoing",
+      "complexity": "textless",
       "keywords": [],
       "power": 2,
-      "guard": 1,
+      "guard": 2,
       "audit_identity": [],
       "status": "playtest",
       "flavor": "",
@@ -348,18 +348,18 @@
       "traits": [
         "Kid"
       ],
-      "text": "When this enters play, you may deal 1 damage to this Character. If you do, Draw a card, then Discard a card.",
+      "text": "",
       "style": "Reckless",
-      "complexity": "on_play",
+      "complexity": "textless",
       "keywords": [],
       "power": 1,
-      "guard": 2,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "The cloud has entered the group chat.",
-      "trouble": 2
+      "trouble": 1
     },
     {
       "id": "P018",
