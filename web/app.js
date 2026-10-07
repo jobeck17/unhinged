@@ -3,6 +3,7 @@ import {aiAction,aiChoice} from './ai.js?v=mordecai-04';
 import './magician.js?v=stank-66-mordecai';
 import './cat-lady.js?v=stank-66-mordecai';
 import './rockstar.js?v=landon-mordecai-01';
+import {applyLandonLab} from './landon-lab.js?v=mordecai-04-mag67';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -10,6 +11,7 @@ const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Attack 
 try{
  [pool,decks]=await Promise.all([fetch('../CARDS.json?v=mordecai-04').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=mordecai-04').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
+ ({pool,decks}=applyLandonLab(pool,decks));
  setup();
 }catch(e){root.innerHTML='<section class="setup"><h1>Lab failed to load.</h1><p>'+esc(e.message)+'</p></section>'}
 
