@@ -6,7 +6,7 @@ Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo →
 
 **Mordecai 0.4 is canonical.** Composure 2.0 has graduated from the lab. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative.
 
-The production baseline now contains **223 cards and eight decks**: the six core mono-Style decks plus Crazy Cat Lady and Mad Scientist rulebreaker decks. Their content is under immediate consistency and balance audit.
+The production baseline now contains **223 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
 
 The browser playtest, simulator, and builder still require a Mordecai parity pass. Until that work is complete, do not treat Carl-era automated results or the provisional Composure lab engine as authoritative Mordecai evidence.
 
@@ -36,7 +36,7 @@ A deck should still play a real game when its spectacular engine does not go off
 ## Source of truth
 - RULES.md — current rules and Leaders.
 - CARDS.json — current 223-card production pool.
-- DECKS.json — current eight-deck production baseline (six core mono-Style decks plus two rulebreakers).
+- DECKS.json — current eight-deck production baseline across seven core Styles.
 - NOTES.md — the one living notebook for decisions, questions, next work, and saved ideas.
 - SIMULATION.md — current simulation status and historical methodology; Mordecai balance runs are on hold until engine parity.
 - sim/round-robin.js — 36-configuration anomaly detector.
@@ -120,8 +120,8 @@ When a build number changes, update the relevant current-facing version labels t
 
 ### 0.5 — Card identity and archetypes
 
-- Make all six Styles feel mechanically distinct.
-- Make all six Leaders produce recognizable deck identities.
+- Make all seven Styles feel mechanically distinct.
+- Make all eight Leaders produce recognizable deck identities.
 - Audit the 180-card starting pool for redundancy, dead cards, unclear wording, and missing support.
 - Establish marquee “hell yeah” cards and memorable build-arounds.
 - Confirm secondary-Style deckbuilding creates interesting combinations without erasing Style identity.
@@ -170,7 +170,7 @@ When a build number changes, update the relevant current-facing version labels t
 1.0 should have:
 
 - a stable, teachable core ruleset;
-- six coherent Styles and Leaders with distinct identities;
+- seven coherent Styles and eight Leaders with distinct identities;
 - a complete, templated, internally consistent initial card environment;
 - canonical decks that demonstrate the intended play patterns;
 - acceptable human-tested pacing and matchup health, with no known dominant systemic exploit;
@@ -188,7 +188,7 @@ The deck builder lives at `/builder/` and reads the same `CARDS.json` and `DECKS
 
 [Open the vocabulary poll](https://jobeck17.github.io/unhinged/poll/). The mobile-friendly survey has 18 optional naming questions plus six optional gameplay feedback prompts. Naming questions cover Stash, the Styles category name, all six Style names with baseline deck identity summaries, table vocabulary, and Leader/endgame vocabulary. Naming questions offer multiple choices, a write-in, and an optional reason. Gameplay prompts collect what was played/reviewed, fun moments, frustrations, confusing rules, suggestions, and other comments. Submit is available from every section; gameplay-only submissions are supported. Prior respondents can use “Add gameplay feedback” from their saved receipt without resubmitting their naming votes. Alternatives are proposals; responses do not change canonical rules.
 
-- `poll/questions.js` owns the versioned survey content. Its examples follow current `RULES.md`; Style identities summarize the six baseline packages in `DECKS.json`.
+- `poll/questions.js` owns the versioned survey content. Its examples follow current `RULES.md`; Style identities currently need a poll refresh to include Gambler as the seventh core Style.
 - `poll/index.html`, `app.js`, `style.css`, and `config.js` form the static GitHub Pages page. Browser storage is only a draft and submission receipt.
 - GitHub Pages cannot store POST responses itself. Anonymous submissions go to the public collection endpoint in `poll/config.js`, backed by a persistent Sites D1 database. No GitHub login, emails, or names are collected. Individual responses are not publicly readable.
 - `poll/service/` is the canonical collector logic and schema. Its manifest identifies the existing collector Site; do not register a replacement. The hosted source checkout supplies the Vinext runtime. After opening that existing Site, run `node poll/service/sync.mjs /absolute/path/to/collector-checkout`, generate/inspect Drizzle migrations if the schema changed, then build/save/publish through Sites. Synchronize survey changes to the collector before publishing the GitHub page. Existing applied migrations are immutable.
