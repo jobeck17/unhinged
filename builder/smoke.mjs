@@ -10,7 +10,7 @@ assert.match(app,/Deck Builder · Mordecai 0\.4/);
 assert.match(app,/TROUBLE/);
 assert.match(app,/HEALTH/);
 assert.doesNotMatch(app,/Deck Builder · Carl 0\.3/);
-assert.doesNotMatch(app,/>Power</);
+assert.match(app,/>Power</);
 assert.doesNotMatch(app,/>Guard</);
 assert.match(app,/LAB-CAT-001'\?10:4/);
 assert.match(app,/\[A-Z0-9-\]\+/);

@@ -6,13 +6,13 @@ Mordecai 0.4 promotes the tested Composure 2.0 core into production and replaces
 
 ## 1. Core game
 
-Each Leader begins with **20 Composure**. Characters have **Attack / Health / Trouble**.
+Each Leader begins with **20 Composure**. Characters have **Power / Health / Trouble**.
 
 The core Character decision is:
 
 **Attack a Character / Cause Trouble / Stay Ready.**
 
-Attack governs Character combat. Health governs Character durability. Trouble pressures the opposing Leader.
+Power governs Character combat. Health governs Character durability. Trouble pressures the opposing Leader.
 
 Base rules apply to every player. Printed card text may add to, change, or override a base rule. Traits have no inherent rules meaning unless referenced. Keywords mean only what the rules or card text define.
 
@@ -22,7 +22,7 @@ Each player has a Deck, Hand, Discard, Play Area, and Stash, plus one **Leader**
 
 - **Leader:** visible outside the deck and play area; provides deck identity, a passive, a printed Breaking Point ability, and Composure.
 - **Last Straw:** begins face-down under its Leader and is not part of the deck.
-- **Character:** has Attack, Health, and Trouble.
+- **Character:** has Power, Health, and Trouble.
 - **Action:** resolves once, then goes to its owner's discard.
 - **Item:** enters play and remains until moved; may be standalone or attached.
 - **Stash:** resource row used to pay Costs.
@@ -38,7 +38,8 @@ Only Characters and Items are normally **in play**. There is no base limit on Ch
 | **Rotated** | Sideways. |
 | **Play** | Play a card from a zone where a rule/effect permits it. |
 | **Activate** | Voluntarily use an activated ability and pay its cost. |
-| **Attack** | A Character's combat stat, and the action of attacking another Character. |
+| **Power** | A Character’s combat damage stat. |
+| **Attack** | The action of attacking another Character. |
 | **Health** | A Character's durability. |
 | **Trouble** | A Character's Leader-pressure stat. |
 | **Composure** | A Leader's victory-pressure track. |
@@ -119,9 +120,9 @@ Choose an eligible Ready attacker and eligible opposing Character, then Rotate t
 
 Ready protects from ordinary Attacks **only**. Ready Characters may still be targeted/affected by Actions, Items, abilities, damage, placed damage, Rotate effects, Return, Dismiss, Defeat, attachments, and other effects unless text says otherwise.
 
-The attacker deals damage equal to its Attack. There is **no blocking step and no universal retaliation**. If the target leaves before combat damage, the Attack ends and the attacker remains Rotated.
+The attacker deals damage equal to its Power. There is **no blocking step and no universal retaliation**. If the target leaves before combat damage, the Attack ends and the attacker remains Rotated.
 
-**Retaliate:** When this Character survives an Attack, it deals its Attack as damage to the attacking Character. A Character Defeated by the Attack does not Retaliate unless text says otherwise.
+**Retaliate:** When this Character survives an Attack, it deals its Power as damage to the attacking Character. A Character Defeated by the Attack does not Retaliate unless text says otherwise.
 
 ## 9. Damage and Health
 
@@ -224,9 +225,11 @@ A triggered/Activated ability resolves independently of its source remaining in 
 
 ## 16. Current keywords
 
+**Absorb X:** Damage dealt to this Character is reduced by X, to a minimum of 0. Apply this to each damage event; it is not consumed. If multiple sources grant Absorb, use only the highest value. Absorb does not remove existing damage and does not reduce **Put damage**, Health reduction, or Composure loss. If damage is reduced to 0, no damage is dealt and damage-dealt/taken triggers do not fire. Losing Absorb does not add previously prevented damage.
+
 **Hothead:** This Character may Attack on the Turn it enters play. Attack permission only; it does not allow early Cause Trouble.
 
-**Retaliate:** When this Character survives an Attack, it deals its Attack as damage to the attacking Character.
+**Retaliate:** When this Character survives an Attack, it deals its Power as damage to the attacking Character.
 
 **Sucker Punch:** This Character may Attack Ready opposing Characters.
 

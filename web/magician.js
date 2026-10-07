@@ -15,11 +15,11 @@ Game.prototype.guard=function(x){return Math.max(0,baseGuard.call(this,x)-(x?.do
 async function volunteerBuff(g,p,excludeUid=null,reason='trick'){
  const choices=g.chars(p).filter(x=>x.uid!==excludeUid);
  if(!choices.length)return;
- const uid=await g.pick(`Very Enthusiastic Volunteer ${reason}: choose another Character to get +1 permanent Attack`,p,choices);
+ const uid=await g.pick(`Very Enthusiastic Volunteer ${reason}: choose another Character to get +1 permanent Power`,p,choices);
  const target=uid==null?null:g.obj(uid);
  if(!target)return;
  target.volunteerAttack=(target.volunteerAttack||0)+1;
- g.say(`Very Enthusiastic Volunteer gives ${g.card(target).name} +1 permanent Attack`);
+ g.say(`Very Enthusiastic Volunteer gives ${g.card(target).name} +1 permanent Power`);
 }
 
 async function doveTrick(g,p,reason){
@@ -40,7 +40,7 @@ Game.prototype.enterEffect=async function(x,previous){
  if(x.id===RABBIT){this.draw(x.owner);this.say('Rabbit enters play and Draws a card')}
  if(isVolunteer(x))await volunteerBuff(this,x.owner,x.uid,'enters play');
  if(x.id===DOVE)await doveTrick(this,x.owner,'enters play');
- if(x.id===LADY){x.power+=2;this.say("Lady Who's Moving Out Again gets +2 Attack this Turn")}
+ if(x.id===LADY){x.power+=2;this.say("Lady Who's Moving Out Again gets +2 Power this Turn")}
  return result;
 };
 

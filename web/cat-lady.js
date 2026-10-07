@@ -12,7 +12,7 @@ Game.prototype.startTurn=function(){
  const p=this.turn,isCat=this.name(p)===CAT,catCount=isCat?this.chars(p).filter(x=>this.trait(x,'Cat')).length:0;
  const snowballs=this.chars(p).filter(x=>x.id===SNOWBALL).map(x=>x.uid);
  const result=baseStartTurn.call(this);
- for(const uid of snowballs){const x=this.obj(uid);if(x){x.snowballGrowth=(x.snowballGrowth||0)+1;this.say(`Snowball gets +1 permanent Attack while it remains in play`)}}
+ for(const uid of snowballs){const x=this.obj(uid);if(x){x.snowballGrowth=(x.snowballGrowth||0)+1;this.say(`Snowball gets +1 permanent Power while it remains in play`)}}
  if(isCat){
    const s=this.players[p];s._catLadyStashLimit=catCount<3?2:1;s._catLadyStashCount=0;
    if(catCount>=3&&this.winner===null){this.draw(p,1);this.say('Strength in Numbers draws an additional card')}
@@ -125,17 +125,17 @@ Game.prototype.activate=async function(uid,mode=null){
  const x=this.obj(uid);if(x?.id!==MITTENS)return baseActivate.call(this,uid,mode);
  const p=this.turn;if(!this.canUse(x))return;
  const buried=buriedCount(this,p),options=[];
- if(this.players[p].stash.length)options.push({label:'YUMMY! — discard 1 Stash for +1 permanent Attack',value:'stash'});
- if(buried)options.push({label:`WHERE DID YOU GET THAT?! — discard ${buried} buried Cats for +${buried} permanent Attack`,value:'shoebox'});
+ if(this.players[p].stash.length)options.push({label:'YUMMY! — discard 1 Stash for +1 permanent Power',value:'stash'});
+ if(buried)options.push({label:`WHERE DID YOU GET THAT?! — discard ${buried} buried Cats for +${buried} permanent Power`,value:'shoebox'});
  const choice=mode||(options.length===1?options[0].value:await this.choose(p,'Mittens III: choose an ability',options));if(!choice)return;
  if(choice==='stash'){
    const s=this.players[p],ready=s.fuel>0,index=s.stash.length-1,id=s.stash.splice(index,1)[0];s.discard.push(id);if(ready)s.fuel=Math.max(0,s.fuel-1);s.fuel=Math.min(s.fuel,s.stash.length);
-   x.ready=false;x.mittensPermanentAttack=(x.mittensPermanentAttack||0)+1;this.say('Mittens III says YUMMY! and permanently gets +1 Attack');return;
+   x.ready=false;x.mittensPermanentAttack=(x.mittensPermanentAttack||0)+1;this.say('Mittens III says YUMMY! and permanently gets +1 Power');return;
  }
  if(choice==='shoebox'){
    const count=buriedCount(this,p);if(!count)return;x.ready=false;
    for(const box of boxesFor(this,p)){if(box.cargo?.length){this.players[p].discard.push(...box.cargo);box.cargo=[]}}
-   x.mittensPermanentAttack=(x.mittensPermanentAttack||0)+count;this.say(`WHERE DID YOU GET THAT?! Mittens III eats ${count} buried Cat${count===1?'':'s'} and permanently gets +${count} Attack`);
+   x.mittensPermanentAttack=(x.mittensPermanentAttack||0)+count;this.say(`WHERE DID YOU GET THAT?! Mittens III eats ${count} buried Cat${count===1?'':'s'} and permanently gets +${count} Power`);
  }
 };
 

@@ -119,12 +119,12 @@
       ],
       "watchpoints": [
         "Does the Rabbit / Dove / Hat loop create satisfying Misdirection decisions without becoming deterministic?",
-        "Does permanent Attack growth from Very Enthusiastic Volunteer reward looping without snowballing too quickly?",
+        "Does permanent Power growth from Very Enthusiastic Volunteer reward looping without snowballing too quickly?",
         "Does Dove's permanent Health reduction create enough interaction at 0 Trouble?",
         "Does Do Not Look in the Hat make a Rotated Hat feel like setup rather than dead tempo?",
-        "Does the lower raw Attack keep the deck dependent on tricks rather than generic bodies?"
+        "Does the lower raw Power keep the deck dependent on tricks rather than generic bodies?"
       ],
-      "status_note": "STANK INDUSTRIES-66 Magician promoted to Mordecai: 6 Rabbits; 3 Hats; Dove + Do Not Look in the Hat package; Beer-Stained Cards rename; lower raw Attack; Volunteer no longer auto-Returns after attacking.",
+      "status_note": "STANK INDUSTRIES-66 Magician promoted to Mordecai: 6 Rabbits; 3 Hats; Dove + Do Not Look in the Hat package; Beer-Stained Cards rename; lower raw Power; Volunteer no longer auto-Returns after attacking.",
       "composure": 20
     },
     {
@@ -291,7 +291,7 @@
         "Whether the extra Draw actually lets the Cat player sustain a second wave after trading Characters",
         "Whether switching between the two passive modes feels like Momentum rather than a punishment for losing Cats",
         "How often Shoebox reaches three buried Cats",
-        "Whether the +1 Attack threshold makes Shoebox worthwhile even without drawing Shovel",
+        "Whether the +1 Power threshold makes Shoebox worthwhile even without drawing Shovel",
         "Whether four Shovels make random resurrection too consistent",
         "How often Shovel hits a cheap Cat versus a high-cost Cat",
         "Whether Nine Lives, Zero Survivors is a meaningful comeback instead of an automatic reset button",
@@ -337,7 +337,7 @@
         "How much of the five-charge battery is spent on Turn 1",
         "Whether holding charge for a later Turn is better than emptying the battery",
         "Abominations created by Round",
-        "Attack/Health roll distributions and how much each stat affects outcomes",
+        "Power/Health roll distributions and how much each stat affects outcomes",
         "Whether low-roll Abominations create funny setbacks without making games feel decided by one die",
         "Whether high-roll Abominations feel like jackpots without creating non-games",
         "Turns where the Scientist has cards to play but insufficient Ready Stash",
