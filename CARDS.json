@@ -92,7 +92,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "Where Did He Come From? — When this enters play, roll a six-sided die. 1 — Tantrum: Your Leader loses 2 Composure. 2 — He Broke Something: Deal 1 damage to another random Character you control. If you control no other Characters, nothing happens. 3 — Snack Break: Nothing happens. 4 — Found Something: Draw a card. 5 — Sugar Rush: This gets +2 Attack and Hothead this Turn. 6 — Where Are His Parents?!: This gets +3 Attack and Hothead this Turn. After its next Attack this Turn, Dismiss it.",
+      "text": "Where Did He Come From? — When this enters play, roll a six-sided die. 1 — Tantrum: Your Leader loses 2 Composure. 2 — He Broke Something: The opposing Leader loses 2 Composure. 3 — Snack Break: Nothing happens. 4 — Found Something: Draw a card. 5 — Sugar Rush: This gets +2 Attack and Hothead this Turn. 6 — Where Are His Parents?!: This gets +3 Attack and Hothead this Turn. After its next Attack this Turn, Dismiss it.",
       "style": "Reckless",
       "complexity": "on_play",
       "keywords": [],
