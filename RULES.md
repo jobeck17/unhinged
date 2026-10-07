@@ -98,7 +98,7 @@ Effects may create face-up temporary Stash or otherwise break these rules. Unles
 
 ## 7. Playing, attachments, and control
 
-Actions resolve and go to discard. The universal **Response** system is removed.
+Actions may be played only during your own main Turn, resolve once, and go to discard. **Responses are retired game-wide:** there are no Response cards or voluntary Response windows during another player's Turn or during resolution of an Attack/effect. Automatic triggered abilities still resolve normally. Former Response cards are marked pending redesign and excluded from playtests until they receive a legal effect.
 
 Characters and Items enter Ready unless text says otherwise.
 

@@ -100,7 +100,7 @@ When a build number changes, update the relevant current-facing version labels t
 
 ### 0.3 Carl — Core stabilization — COMPLETE
 
-- Human-test the full-turn, Stash, combat, retaliation, Response, and Leader systems.
+- Human-test the current Mordecai Turn, Stash, combat, Composure, and Leader systems. Responses are retired; former Response cards await redesign.
 - Confirm that the six Leaders create distinct play patterns without excessive rules baggage.
 - Separate feel problems from balance problems.
 - Fix major rules friction before investing heavily in final card polish.
