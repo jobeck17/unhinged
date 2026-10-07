@@ -4012,7 +4012,7 @@
       "guard": 1,
       "status": "lab-prototype",
       "purpose": "Pure ingredient/body. Establishes the floor for cheap Parts.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 1
     },
     {
@@ -4030,7 +4030,7 @@
       "guard": 2,
       "status": "lab-prototype",
       "purpose": "Cheap Part with slightly better blocking value.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 2
     },
     {
@@ -4050,7 +4050,7 @@
       "guard": 3,
       "status": "lab-prototype",
       "purpose": "Defensive Part that is more useful as material than as an attacker.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 3
     },
     {
@@ -4068,7 +4068,7 @@
       "guard": 2,
       "status": "lab-prototype",
       "purpose": "Efficient mid-grade ingredient that can also fight.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 2
     },
     {
@@ -4086,7 +4086,7 @@
       "guard": 3,
       "status": "lab-prototype",
       "purpose": "Finds the fusion engine without directly generating resources.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 2
     },
     {
@@ -4104,7 +4104,7 @@
       "guard": 2,
       "status": "lab-prototype",
       "purpose": "Reclaims cheap ingredients after experiments or combat.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 2
     },
     {
@@ -4121,7 +4121,7 @@
       "guard": 3,
       "status": "lab-prototype",
       "purpose": "Premium experiment material that reduces the hand-cost pain without making every ingredient replace itself.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 3
     },
     {
@@ -4141,7 +4141,7 @@
       "guard": 3,
       "status": "lab-prototype",
       "purpose": "A normal pressure card that can become material when the laboratory needs it.",
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 3
     },
     {
@@ -4158,7 +4158,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Primary fusion spell. Trades cards and limited battery charge for a randomly successful or failed experiment.",
-      "style": "Lab"
+      "style": "Gambler"
     },
     {
       "id": "LAB-SCI-010",
@@ -4174,7 +4174,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "The physical cross-TCG joke and an additional source of experiment material.",
-      "style": "Lab"
+      "style": "Gambler"
     },
     {
       "id": "LAB-SCI-011",
@@ -4190,7 +4190,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Recovers bodies without restoring Stash.",
-      "style": "Lab"
+      "style": "Gambler"
     },
     {
       "id": "LAB-SCI-012",
@@ -4206,7 +4206,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Converts hand economy into a small emergency battery recharge.",
-      "style": "Lab"
+      "style": "Gambler"
     },
     {
       "id": "LAB-SCI-013",
@@ -4222,7 +4222,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "One-shot recharge. Tests whether limited card-driven recovery makes Burnout decisions richer.",
-      "style": "Lab"
+      "style": "Gambler"
     },
     {
       "id": "LAB-TOK-SCI-001",
@@ -4240,7 +4240,7 @@
       "rule": "When an Abomination is created, roll the designated Power die, then the designated Health die. Its Power equals the Power result and its Health equals the Health result. If dedicated dice are unavailable, roll one d6 twice: the first roll is Power and the second roll is Health. The player never chooses which result applies to which stat. An Abomination entering play follows normal Character entry rules and cannot Attack that Turn unless another effect grants Hothead.",
       "purpose": "An unstable experiment whose offensive and defensive results are independently randomized.",
       "cost": 0,
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 2,
       "token": true,
       "status": "lab-prototype"
@@ -4260,7 +4260,7 @@
       "rule": "A Specimen may be represented by an approved external TCG card. Its original game's text, stats, cost, color, rarity, abilities, and rules have no effect in Unhinged. If a physical external card representing a Specimen leaves play, set it aside as used instead of putting it in an Unhinged zone.",
       "purpose": "Preserves the visual gag of cross-TCG cards without importing another game's rules engine.",
       "cost": 0,
-      "style": "Lab",
+      "style": "Gambler",
       "trouble": 1,
       "token": true,
       "status": "lab-prototype"
