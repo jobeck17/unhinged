@@ -18,7 +18,7 @@
 
 🧪 **Hey Y’all, Watch This! — provisional risk/reward:** choose a Ready friendly Character and roll a d6. A final 1 Rotates it; 2–5 grants either +4 Attack or +2 Trouble this Turn; 6 grants both. After an initial 2–5, optionally reroll once, replacing the first result. Resolve only the final result. Revisit the effect and numbers during the Reckless card pass. Digital implementation is pending the existing Mordecai engine parity work; do not treat this as implemented or balance-tested.
 
-🧪 **Unsupervised Toddler:** intended to use a dice effect. The previously proposed optional roll-and-push ability remains a candidate; no exact effect or numbers are finalized. Its canonical card text still needs replacement during its review.
+🧪 **Unsupervised Toddler — original concept adapted 7 October 2026:** P005 remains Cost 2; testing stats are 1 Attack / 2 Health / 1 Trouble, preserving the early concept’s 1 Attack / 2 Health and adding Mordecai Trouble. Where Did He Come From? rolls a d6 on entry: 1 lose 2 Composure; 2 deal 1 damage to another random friendly Character (no other friendly Character means no effect); 3 nothing; 4 Draw a card; 5 +2 Attack and Hothead this Turn; 6 +3 Attack and Hothead this Turn, then Dismiss after its next Attack this Turn. The 6 bonuses and delayed Dismiss condition expire at end of Turn; declining the Attack keeps the Toddler without those bonuses. No early Cause Trouble permission. Defiant and the damaged-state bonus are removed. Preserve the six-outcome mixed bag; the earlier escalating-stat optional reroll proposal is superseded for this card. No reroll added. Digital behavior remains pending the Mordecai parity pass; no balance claim.
 
 ---
 
