@@ -1,3 +1,11 @@
+## Watch This and Item diversification — locked 7 October 2026
+
+- **LOCKED FOR TESTING — Hey Y’all, Watch This! (P024), Cost 1:** choose friendly Ready Character, roll d6. 1 Rotate it; 2–5 choose +3 Power OR +1 Trouble this Turn; 6 both. Optional one reroll after 2–5, replacing first result; final result only. Supersedes +4/+2 numbers. All nine current-set Actions now locked; Fireworks remains banked next set, Floor It retired.
+- **LOCKED FOR TESTING — Roman Candle (P028), Cost 2 Item:** “Attach to one of your Characters. It gets +1 Trouble.” Deletes damage activation and Scout exception. No table/removal of this card. Normal attachment stacking applies; Trouble grant does not override ordinary eligibility or printed restrictions.
+- **LOCKED FOR TESTING — Truck Nuts (LAB-FLM-004), Cost 1 Item:** “Attach to one of your Characters. It has Sucker Punch. If it has Driver, it gets +1 Power.” Sucker Punch granted to any wearer, +1 Power only for Driver. Supersedes +1 universal / +2 Driver boost. Three existing Driver assignments remain unchanged.
+- **TABLE DECISIONS OPEN:** user unsure what to table. No additional removals approved. Dirty Needle remains unresolved, and previous suggestion to table for Scientist is not a lock. Six Items now locked; Dirty Needle seventh remains pending effect. Consider reserving Dirty Needle for Scientist's later audit while retaining the six distinct locked Items for Florida pool/deckbuilding flexibility. No fixed Item quota and no need all six appear in a 40-card deck.
+- **COUNTS:** current-set pool excluding banked Fireworks and retired Floor It: 34 entries (18 Characters, 9 Actions, 7 Items), including pending Dirty Needle. Locked baseline pool if excluding pending Dirty Needle: 33 entries (18 / 9 / 6). Historical/banked Reckless entries not current-set baseline. Digital parity and actual balance tests remain pending.
+
 ## Action completion pass — 7 October 2026
 
 - **LOCKED FOR TESTING — A MILLION KILOGRAMS OF CAFFEINE!!!! (LAB-FLM-002), Cost 3:** “Choose one of your Characters. It gets +5 Power, Hothead, and Sucker Punch this Turn. After its next Attack this Turn, Defeat it.” Explicit next-Attack timing clarifies disposable missile. Digital parity pending.
