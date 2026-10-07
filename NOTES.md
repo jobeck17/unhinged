@@ -10,6 +10,61 @@
 
 ## Reckless pool review · 6 October 2026
 
+## Reckless decision ledger · reconciled 7 October 2026
+
+This ledger governs this review. Earlier entries below are dated design history where they conflict with it. Do not turn proposals into current rules. Preserve prior candidates as BANKED/RETIRED rather than silently overwriting them. Do not add a new card proposal until the current decision is settled, except to explain concrete alternatives the user requests.
+
+### CURRENT — explicitly confirmed and saved
+- Style: voluntary risk/reward, press-your-luck choices, dangerous stunts; recognizable Florida stereotypes rather than forced joke sentences. Self-damage is optional supporting space, not mandatory Style identity. Reliable plain Characters remain important.
+- P001 Feral Chihuahua: Cost 1, 2/2/1, no abilities/keywords.
+- P017 Vape Kid: Cost 1, 1/3/1, no abilities/keywords.
+- P002 Designated Driver: Cost 2, 2/2/2, no abilities/keywords.
+- P016 Amateur Storm Chaser: replaces Porch Pirate, Cost 2, 2/2/1, Hothead.
+- P003 Hurricane Holdout: replaces Firework Dad, Cost 3, **1/5/1**, +1 Attack per damage currently on him. At 4 damage: 5 Attack, 1 remaining Health, 1 Trouble without other modifiers. His earlier 0 printed Trouble and damage-to-Trouble scaling are superseded.
+- P012 Spring Break Frat Bro: replaces Giga Chad, Cost 3, 4/2/2, Hothead.
+- P020 Send It! renamed SPRING BREAK!!!; effect still legacy Response text and needs separate audit.
+
+### TESTING — saved candidates, not proven balance
+- P005 Toddler: Cost 2, 1/2/1. On entry d6: 1 own Leader loses 2 Composure; 2 opposing Leader loses 2 Composure; 3 nothing; 4 Draw; 5 +2 Attack and Hothead this Turn; 6 +3 Attack and Hothead this Turn, Dismiss after his next Attack this Turn. No reroll. The roll-6 attack is optional; temporary bonuses/Dismiss condition expire this Turn.
+- P007 Shirtless Guy With a Chainsaw: replaces Scout With a Flare Gun; Cost 3, 2/3/1. Once per own Turn while Ready and eligible to Attack, optional d6: 1 Rotate; 2–6 +2 Attack this Turn, optional second roll; second 1 Rotate/remove this ability's bonus, otherwise bonus becomes +4. No Hothead. Base/single/double Attack is 2/4/6.
+- P024 Hey Y’all, Watch This!: replaces Commit to the Bit; Cost 1. Choose Ready friendly Character; d6 final 1 Rotate; 2–5 choose +4 Attack or +2 Trouble this Turn; 6 both. Optional one reroll on initial 2–5, only final result resolves.
+- Audit concern: Frat Bro's guaranteed immediate 4 Attack competes with Chainsaw Guy's delayed risky 4/6. Preserve their identities; relative stats/rewards remain reviewable.
+- All new behavior awaits digital parity; a saved card is not an implemented or balance-tested card.
+
+### OPEN — do not apply without settlement
+1. **Florida Man passive:** user proposes attack-first identity and turning opposing defeats into Composure loss. Latest proposed wording: whenever a friendly Character Defeats an opposing Character with an Attack, opposing Leader loses 1 Composure. Earlier alternative caps it once during own Turn. Decide per-Defeat vs cap, own Turn only vs any Attack, and source scope. Not finalized. Do not reinstate old passive implicitly.
+2. **Trouble curve:** user suggests lower Character Trouble with boosts from support. This is a proposal, not permission to reduce every Character. Preserve reliable baseline pressure and a way to finish Last Straw against an empty opposing board.
+3. **Bachelorette Party:** proposed Cost 2, 2/1/1, Draw when Dismissed or Defeated. Theme fit still under discussion; canonical P004 remains 3/3/1, no ability. Explicit Dismiss/Defeat avoids repeated Return draw; user initially said leaves play.
+4. **Electrician replacement/support role:** Airboat Captain, Rollerblade Guy, Beach Fisherman, Snowbird in a Convertible. Captain proposal was Cost 3, 2/3/1, +1 Trouble to other Cost ≤2 Characters; NOT adopted, flagged for generic board-width snowballing. Alternative role: conditional Trouble payoff after an Attack Defeat.
+5. **Board reset:** user wants BOTH players' cards removed from the table, **not Defeated**. Clarify destination (discard via Dismiss, hand via Return, or other), and scope (Characters/Items only vs Stash too). Leaders/Last Straws need an explicit decision; generic play-area clearing does not touch them under current rules. Cost, name, timing, triggers/replacements, and any prevention exceptions remain open. Earlier damage-based Category 5 suggestion does not implement user intent.
+6. **Item removal:** combat-triggered Dismiss of an opposing Item Cost ≤2 proposed; decide card/source and limitations.
+7. **Finish damaged enemies:** damage-based attacks and conditional removal of damaged opposing Characters. Avoid a cheap ping removing any large Character without a Health/Cost/setup restriction.
+8. **Attack-to-Trouble payoffs:** +2 Trouble on a specific Character after a friendly Attack Defeat this Turn; unusually powerful Character that can Cause Trouble only after combat victory; mandatory Attack drawback used sparingly. None adopted.
+9. **Deck integration:** Bad Decisions still uses old self-damage package labels, mulligan priorities, partial card selection, and Florida Adrenaline references. Rebuild/validate the 40-card shell after the package/Leader is settled; do not claim current list is the new engine.
+
+### BANKED — names, transfers, and mechanics to revisit
+- User wants Bath Salts in Reckless; current Item remains Expendable. Dangerous aggression suggested; Undead identity not decided.
+- User likes Unlicensed Pool Guy for Florida. Still Salvage; decide move and ability/deck replacement deliberately.
+- User wants Stunt Double concept in Reckless but rejects its name. Backyard Daredevil candidate; still Expendable until decided.
+- Button Marked DO NOT PRESS: user likes risk/reward but exact mechanic open. Candidate Rotate/d6: 1 own Leader loses 2 Composure, otherwise deal 2 to a Character. Still Expendable with sacrifice effect.
+- Other cross-Style candidates: Definitely Safe Helmet (support), Guy Who Cut the Wrong Wire (mixed-bag gamble), Conspiracy Blogger (top-card guess). No transfers.
+- Theme bank: Roadside Tiger Keeper (Joe Exotic energy), distracted lifeguard, drunk jet skier, snowbird in convertible, beach bar regular, airboat captain, rollerblade guy, beach fisherman, drunk teenagers, unlicensed contractor, lifted-truck tailgater, swamp people (regional distinction noted), reckless tourists.
+- Possible replacements: Pool Pirate → Distracted Lifeguard; Jet Ski Mechanic → Drunk Jet Skier; Road Rage Ron → Lifted Truck Tailgater; Fourth of July Showrunner → Roadside Tiger Keeper; Own Ramp → Backyard Daredevil. None confirmed.
+- Older candidate mechanics: Driver redirects damage once per Round (1/4/1), Driver Returns another Character after Trouble (2/3/1); optional fireworks roll (1 damages own board, 2–5 enemy board for 1, 6 enemy board for 2); stunts skip next Ready, collateral damage, burn-bright Caffeine, temporary boosts to Attack or Trouble. Preserve as alternatives, not current text.
+- Removed one-drop alternatives: Chihuahua Hothead or Draw/Composure on Defeat; 1/3/1 entering with 2 damage; 0/2/1 Draw on Defeat; temporary Attack then Defeat after Attack. User currently chose plain pair.
+- Superseded Toddler alternatives: escalating stat bonus with optional reroll; second negative outcome dealing damage to random friendly Character. Original six-outcome concept is active instead.
+- Earlier proposed damage wipe Category 5: deal 4 damage to every Character, designed to leave Holdout alive. BANKED alternative, does not match latest complete-removal request.
+
+### Historical Florida Man passives — references, not current locks
+- **Most recent STANK/Composure candidate, Adrenaline:** “Ooh, That's Gonna Leave a Mark!” First time each friendly Character is dealt damage and survives, +2 Power (+3 if Daredevil). At each start of own Turn, reduce that Character's Power by 1 until it reaches 1. Cannot trigger again for that Character. Source: lab/composure/stank-merge.js; Power was the lab's Attack term.
+- **Earlier Carl passive:** damaged Characters have Hothead and Sucker Punch; after a damaged Character survives combat with another Character, Ready it. Source: historical “Locked Carl Leaders” below.
+- Root Mordecai Leader text remains under audit. These two historical versions must not be conflated.
+
+### Working sequence
+Settle Florida Man passive → settle which kind of board reset and its scope → settle conditional Trouble support → finish 3-Cost Characters → review higher curve and Actions/Items → rebuild baseline deck → digital parity and testing. Review one decision per step. Save confirmed changes immediately; report every candidate as CURRENT, TESTING, BANKED, or OPEN.
+
+### Earlier review entries — historical where superseded
+
 ## Card-audit guardrails · 7 October 2026
 
 ✅ **Holdout update:** his damage bonus now increases Attack, not Trouble. Previous Holdout/Pills Trouble examples below are superseded by this change. At 4 damage and no other modifiers he has 5 Attack, one remaining Health, and 0 Trouble.
