@@ -298,22 +298,24 @@
       "id": "P015",
       "type": "Character",
       "cost": 4,
-      "name": "Jet Ski Mechanic",
+      "name": "Drunk Jet Skier",
       "traits": [
-        "Builder"
+        "Daredevil"
       ],
-      "text": "Damage dealt by your Items to opposing Characters is increased by 1.",
+      "text": "Hothead. No-Wake Zone? — When this Attacks, you may deal 1 damage to an opposing Character other than the target of this Attack. If you do, deal 1 damage to another Character you control.",
       "style": "Reckless",
-      "complexity": "ongoing",
-      "keywords": [],
-      "power": 3,
-      "guard": 5,
+      "complexity": "attack_trigger",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 4,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 1
     },
     {
       "id": "P016",
