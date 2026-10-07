@@ -193,7 +193,7 @@
       "id": "P010",
       "type": "Character",
       "cost": 5,
-      "name": "Roadside Tiger Keeper",
+      "name": "Unlicensed Zookeeper",
       "traits": [
         "Human"
       ],
@@ -280,17 +280,17 @@
       "id": "P014",
       "type": "Character",
       "cost": 5,
-      "name": "Backyard Daredevil",
+      "name": "Wannabe Vigilante",
       "traits": [
         "Daredevil"
       ],
-      "text": "Hothead. When this Attacks, you may give it +3 Power for this Attack. If you do, Dismiss it after this Attack.",
+      "text": "Hothead. When this Attacks, you may give it +4 Power for this Attack. If you do, Dismiss it after this Attack.",
       "style": "Reckless",
       "complexity": "attack_trigger",
       "keywords": [
         "Hothead"
       ],
-      "power": 6,
+      "power": 4,
       "guard": 3,
       "audit_identity": [
         "Human"
