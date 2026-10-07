@@ -416,21 +416,21 @@
     {
       "id": "P020",
       "type": "Action",
-      "cost": 1,
+      "cost": 2,
       "name": "SPRING BREAK!!!",
       "stats": "",
       "traits": [],
-      "text": "",
+      "text": "Ready one of your Rotated Characters that attacked this Turn. It gets +2 Power and cannot Cause Trouble this Turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "pending-redesign",
+      "complexity": "one_shot",
+      "status": "testing",
       "flavor": "",
       "retired_text": "Response — Before combat damage is dealt: One of your Characters gets +3 Power and -1 Health for this combat.",
-      "audit_note": "Response mechanics retired game-wide on 2026-10-07. Effect unassigned pending deliberate Action redesign; exclude from playtests until redesigned."
+      "audit_note": "Locked for testing 2026-10-07. Receives proposed Floor It! second-Attack effect; no self-damage. Previous conditional team Trouble proposal superseded. Digital parity pending."
     },
     {
       "id": "P021",
@@ -509,15 +509,17 @@
       "name": "Floor It!",
       "stats": "",
       "traits": [],
-      "text": "Ready one of your Rotated Characters. Deal 2 damage to it.",
-      "style": "Reckless",
+      "text": "",
+      "style": "Unassigned",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "status": "retired",
+      "flavor": "",
+      "retired_text": "Ready one of your Rotated Characters. Deal 2 damage to it.",
+      "audit_note": "Floor It! retired 2026-10-07; proposed Ready/+2 Power/no Trouble effect moved to SPRING BREAK!!! (P020). Not part of active pool."
     },
     {
       "id": "P026",
@@ -4349,6 +4351,22 @@
       "status": "testing",
       "flavor": "",
       "audit_note": "Locked for isolated-deck testing on 2026-10-07. Grants wearer Absorb 1 under highest-only Absorb rule, does not stack with Lifeguard Absorb 1. No other protection/health bonus. Digital effect parity pending."
+    },
+    {
+      "id": "LAB-FLM-007",
+      "type": "Action",
+      "cost": 2,
+      "name": "Spoils of the Brawl",
+      "traits": [],
+      "text": "Play only if one of your Characters Defeated an opposing Character with an Attack this Turn. Draw 2 cards.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "conditional",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Combat-conditioned Draw 2 approved 2026-10-07. Working Florida/bar-fight name adapts user's Spoils of Battle suggestion. Digital parity pending."
     }
   ]
 }
