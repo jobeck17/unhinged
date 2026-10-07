@@ -25,6 +25,8 @@
 This ledger governs this review. Earlier entries below are dated design history where they conflict with it. Do not turn proposals into current rules. Preserve prior candidates as BANKED/RETIRED rather than silently overwriting them. Do not add a new card proposal until the current decision is settled, except to explain concrete alternatives the user requests.
 
 ### CURRENT — explicitly confirmed and saved
+- **Drunk Jet Skier:** replaces Jet Ski Mechanic (P015), Cost 4, 4/3/1, Hothead. No-Wake Zone? — on Attack, may deal 1 damage to an opposing Character other than that Attack's target; if so, deal 1 damage to another friendly Character. Removes Builder/Item damage aura; Daredevil now fits the stunt role. Same ID preserves decks. Exact collateral targeting/Absorb interactions to verify in implementation/testing.
+- **Style constraint:** no dedicated Item-synergy engine for Reckless. Items may enable stunts/support but should not require an Item-centric package; former Jet Ski Mechanic multiplier removed.
 - **Terms locked:** Power is the Character combat stat; Attack remains the action. Power/Health/Trouble is the printed stat order. Absorb X reduces each dealt-damage event by X (minimum 0), is not consumed, and uses the highest value if granted multiple times. Put damage bypasses it. Shield/Deflect are banked naming alternatives. Canonical RULES/CARDS and active tool stat labels use Power; older review wording and historical labs retain their original labels.
 - **Distracted Lifeguard:** replaces Pool Pirate (P008), Cost 4, 2 Power / 4 Health / 2 Trouble. While Ready, other friendly Characters have Absorb 1. Lose protection when he Rotates/leaves without adding past prevented damage. Existing damage is unchanged. Removes Pirate/Criminal Traits and old damaged-target effect. Saved for testing; engine behavior remains pending Mordecai parity.
 - **Road Rage Ron:** P006 keeps his name and Cost 4; now 5/3/2. When he Defeats an opposing Character with an Attack, may Dismiss an opposing Item costing 2 or less. Replaces damaged-target +2 Attack. No Hothead added. Selected for this pass; balance evidence later.
@@ -81,6 +83,7 @@ This ledger governs this review. Earlier entries below are dated design history 
 - Root Mordecai Leader text remains under audit. These two historical versions must not be conflated.
 
 ### Working sequence
+Four-cost Character pass is complete: Road Rage Ron, Distracted Lifeguard, Drunk Jet Skier. Next review the three five-cost Characters, then Minibike Menace and the Actions/Items.
 Florida Man passive settled → resume 3-Cost Characters, settling printed Trouble support/Hothead as needed → review higher curve and Actions/Items (including competing wipe candidates) → rebuild baseline deck → digital parity and testing. Review one decision per step. Save confirmed changes immediately; report every candidate as CURRENT, TESTING, BANKED, or OPEN.
 
 ### Earlier review entries — historical where superseded
