@@ -110,18 +110,18 @@
       "cost": 4,
       "name": "Road Rage Ron",
       "traits": [],
-      "text": "While attacking a damaged Character, this gets +2 Attack for that Attack.",
+      "text": "When this Character Defeats an opposing Character with an Attack, you may Dismiss an opposing Item costing 2 or less.",
       "style": "Reckless",
-      "complexity": "ongoing",
+      "complexity": "attack_trigger",
       "keywords": [],
       "power": 5,
-      "guard": 4,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 1
+      "trouble": 2
     },
     {
       "id": "P007",
