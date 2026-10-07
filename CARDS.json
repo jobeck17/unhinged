@@ -4333,6 +4333,22 @@
       "status": "testing",
       "flavor": "",
       "audit_note": "Added for testing on 2026-10-07. Character damage only; does not trigger Florida Man's Attack-only passive. Digital effect parity pending."
+    },
+    {
+      "id": "LAB-FLM-006",
+      "type": "Item",
+      "cost": 2,
+      "name": "Life Jacket",
+      "traits": [],
+      "text": "Attach to one of your Characters. It has Absorb 1.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Grants wearer Absorb 1 under highest-only Absorb rule, does not stack with Lifeguard Absorb 1. No other protection/health bonus. Digital effect parity pending."
     }
   ]
 }
