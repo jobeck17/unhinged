@@ -193,43 +193,46 @@
       "id": "P010",
       "type": "Character",
       "cost": 5,
-      "name": "Guy Who Definitely Read the Instructions",
+      "name": "Roadside Tiger Keeper",
       "traits": [
-        "Daredevil"
+        "Human"
       ],
-      "text": "When this enters play, deal 2 damage to another of your Characters or to your Leader.",
+      "text": "Hothead. Sucker Punch. When this Character Defeats an opposing Character with an Attack, Draw a card.",
       "style": "Reckless",
-      "complexity": "on_play",
-      "keywords": [],
-      "power": 7,
-      "guard": 5,
+      "complexity": "mixed",
+      "keywords": [
+        "Hothead",
+        "Sucker Punch"
+      ],
+      "power": 5,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 1
     },
     {
       "id": "P011",
       "type": "Character",
       "cost": 5,
-      "name": "Fourth of July Showrunner",
+      "name": "Sandbar Party Captain",
       "traits": [
-        "Daredevil"
+        "Human"
       ],
-      "text": "When this enters play, deal 1 damage to each other Character. Whenever another of your Characters is dealt damage and survives, deal 1 damage to an opposing Character.",
+      "text": "Once during your Turn, when another of your Characters Defeats an opposing Character with an Attack, you may Ready this Character.",
       "style": "Reckless",
-      "complexity": "mixed",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 6,
+      "power": 3,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 3
+      "trouble": 2
     },
     {
       "id": "P012",
@@ -277,22 +280,24 @@
       "id": "P014",
       "type": "Character",
       "cost": 5,
-      "name": "Guy Who Brought His Own Ramp",
+      "name": "Backyard Daredevil",
       "traits": [
         "Daredevil"
       ],
-      "text": "When this attacks, it gets +1 Power for this Attack for each other damaged Character you control.",
+      "text": "Hothead. When this Attacks, you may give it +3 Power for this Attack. If you do, Dismiss it after this Attack.",
       "style": "Reckless",
-      "complexity": "ongoing",
-      "keywords": [],
-      "power": 5,
-      "guard": 5,
+      "complexity": "attack_trigger",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 6,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 1
     },
     {
       "id": "P015",
