@@ -1,3 +1,13 @@
+## Life Jacket lock and proposed final cuts — 7 October 2026
+
+- **LOCKED FOR TESTING — Life Jacket (LAB-FLM-006):** Cost 2 Reckless Item. “Attach to one of your Characters. It has Absorb 1.” Highest-only Absorb applies, including Lifeguard overlap; digital parity pending.
+- **CURRENT COUNT:** 35 unique Character/Action/Item entries: 18 Characters, 10 Actions, 7 Items. Eighteen Characters and 10 Actions/Items explicitly locked in this pass; 7 other Actions/Items await decisions. No suggested cuts below applied.
+- **RECOMMENDATIONS ONLY:** keep proposed SPRING BREAK!!! (Cost 3; after friendly Attack Defeat this Turn, team +1 Trouble this Turn), Floor It! (Cost 2; Ready friendly Character that attacked this Turn, +2 Power, cannot Cause Trouble this Turn), and existing Caffeine (Cost 3; +5 Power, Hothead, Sucker Punch, Defeat after next Attack this Turn). Revisit Hey Y'all, Watch This! with +3 Power OR +1 Trouble for 2–5 and both on 6, same Rotate on 1 and optional reroll; smaller proposed numbers not applied.
+- **RECOMMENDATIONS ONLY — TABLE:** Dirty Needle recurring disease damage, Roman Candle repeat chip damage. Preserve for later; prioritize simpler Bottle Rockets and current protection/stunt Items in first baseline.
+- **RECOMMENDATIONS ONLY — CUT FROM RECKLESS:** Fireworks Incident, redundant with Bottle Rockets and combat setup, friendly damage not required as deck engine. Bank its name/idea rather than delete. Previously proposed simplification remains 2 opposing / 1 friendly damage at Cost 2, not applied.
+- If these three removals are approved later: 32 total, 18 Characters / 9 Actions / 5 Items. Five retained Items would be Truck Nuts, Gas Station Pills, Bolt Cutters, Homemade Launch Ramp, Life Jacket.
+- Cross-Style additions Bath Salts, Button Marked DO NOT PRESS, Pool Guy and Stunt Double remain banked/open, not added automatically. No fixed Style quota chosen.
+
 ## Latest Reckless Action / Item decisions — 7 October 2026
 
 This section supersedes older Reckless entries below. Numbers are isolated-deck testing baselines; digital parity and simulation/human balance remain pending.
