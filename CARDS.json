@@ -4356,9 +4356,9 @@
       "id": "LAB-FLM-007",
       "type": "Action",
       "cost": 2,
-      "name": "Spoils of the Brawl",
+      "name": "Did You See That?!",
       "traits": [],
-      "text": "Play only if one of your Characters Defeated an opposing Character with an Attack this Turn. Draw 2 cards.",
+      "text": "Draw a card. If one of your Characters Defeated an opposing Character with an Attack this Turn, Draw another.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -4366,7 +4366,7 @@
       "complexity": "conditional",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Combat-conditioned Draw 2 approved 2026-10-07. Working Florida/bar-fight name adapts user's Spoils of Battle suggestion. Digital parity pending."
+      "audit_note": "Name and tiered draw locked for testing on 2026-10-07. Playable during normal own main Turn regardless of combat result: Draw 1 baseline, Draw 2 total after qualifying friendly Attack Defeat. Does not scale per Defeat. Replaces Spoils of the Brawl name and play-only condition. Digital parity pending."
     }
   ]
 }
