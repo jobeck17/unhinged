@@ -370,24 +370,24 @@
       "id": "P018",
       "type": "Character",
       "cost": 6,
-      "name": "Minibike Menace",
+      "name": "Gator Wrangler",
       "traits": [
         "Daredevil"
       ],
-      "text": "Hothead. When this attacks, you may deal 1 damage to each of your other Characters. This gets +1 Power for this Attack for each Character damaged this way.",
+      "text": "Hothead. Once during your Turn, when this Character Defeats an opposing Character with an Attack, you may Ready it. If you do, it cannot Cause Trouble this Turn.",
       "style": "Reckless",
-      "complexity": "mixed",
+      "complexity": "attack_trigger",
       "keywords": [
         "Hothead"
       ],
       "power": 6,
-      "guard": 5,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 3
+      "trouble": 1
     },
     {
       "id": "P019",
