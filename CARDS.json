@@ -30,16 +30,16 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "When this attacks, you may deal 1 damage to it. If you do, it gets +1 Attack for this Attack.",
+      "text": "",
       "style": "Reckless",
-      "complexity": "ongoing",
+      "complexity": "textless",
       "keywords": [],
-      "power": 3,
+      "power": 2,
       "guard": 2,
       "audit_identity": [
         "Human"
       ],
-      "status": "lab",
+      "status": "playtest",
       "flavor": "",
       "trouble": 2
     },
@@ -47,23 +47,22 @@
       "id": "P003",
       "type": "Character",
       "cost": 3,
-      "name": "Firework Dad",
+      "name": "Hurricane Holdout",
       "traits": [
-        "Parent",
         "Daredevil"
       ],
-      "text": "When this enters play, you may deal 1 damage to one of your Characters.",
+      "text": "This Character gets +1 Trouble for each damage on it.",
       "style": "Reckless",
-      "complexity": "on_play",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 3,
-      "guard": 4,
+      "power": 1,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
+      "trouble": 0
     },
     {
       "id": "P004",
@@ -235,20 +234,22 @@
       "id": "P012",
       "type": "Character",
       "cost": 3,
-      "name": "Giga Chad",
+      "name": "Spring Break Frat Bro",
       "traits": [],
-      "text": "",
+      "text": "Hothead.",
       "style": "Reckless",
-      "complexity": "textless",
-      "keywords": [],
+      "complexity": "keyword_only",
+      "keywords": [
+        "Hothead"
+      ],
       "power": 4,
-      "guard": 4,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Even his warm-up has a warm-up.",
-      "trouble": 1
+      "flavor": "",
+      "trouble": 2
     },
     {
       "id": "P013",
@@ -317,9 +318,9 @@
       "id": "P016",
       "type": "Character",
       "cost": 2,
-      "name": "Porch Pirate",
+      "name": "Amateur Storm Chaser",
       "traits": [
-        "Criminal"
+        "Daredevil"
       ],
       "text": "Hothead.",
       "style": "Reckless",
@@ -328,12 +329,12 @@
         "Hothead"
       ],
       "power": 2,
-      "guard": 1,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Free shipping. For him.",
+      "flavor": "",
       "trouble": 1
     },
     {
