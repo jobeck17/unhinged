@@ -482,8 +482,10 @@
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "status": "banked",
+      "flavor": "",
+      "audit_note": "Tabled by user for next set on 2026-10-07; excluded from current-set Reckless baseline. Retain Style and effect as future redesign reference. Scientist package is a possibility, not a confirmed transfer.",
+      "set_plan": "next-set"
     },
     {
       "id": "P024",
@@ -3528,14 +3530,15 @@
       "name": "A MILLION KILOGRAMS OF CAFFEINE!!!!",
       "subtitle": "The Human Body Was Not Consulted",
       "traits": [],
-      "text": "Choose one of your Characters. It gets +5 Power, Hothead, and Sucker Punch this Turn. After it attacks, Defeat it.",
+      "text": "Choose one of your Characters. It gets +5 Power, Hothead, and Sucker Punch this Turn. After its next Attack this Turn, Defeat it.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "complexity": "mixed",
-      "status": "lab",
-      "flavor": "He can hear colors now."
+      "status": "testing",
+      "flavor": "He can hear colors now.",
+      "audit_note": "Locked for testing on 2026-10-07 at Cost 3. Disposable Attack boost. Digital parity pending."
     },
     {
       "id": "LAB-FLM-003",
