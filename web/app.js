@@ -7,7 +7,7 @@ import {applyLandonLab} from './landon-lab.js?v=mordecai-04-mag67';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
+const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Attack / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
 try{
  [pool,decks]=await Promise.all([fetch('../CARDS.json?v=mordecai-04').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=mordecai-04').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
@@ -22,7 +22,7 @@ function setup(){
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
 function pile(label,count,sub='',kind='back'){
- const visual=kind==='back'?'<img class="mini-card card-back-image" src="./assets/landon-card-back.jpg?v=cardback-05" alt="">':'<span class="mini-card discard-face">↩</span>';
+ const visual=kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
  return '<div class="zone-pile"><span class="zone-label">'+esc(label)+'</span>'+visual+'<b>'+count+'</b>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</div>';
 }
 function zoneBar(p){
@@ -70,7 +70,7 @@ function detail(ref){
  const me=game.turn===human&&!busy&&game.winner===null,own=x?.owner===human;
  const play=ref.handIndex!==undefined&&me&&game.canPlay(ref.handIndex,human),stash=ref.handIndex!==undefined&&me&&game.canStash(ref.handIndex,human),attack=x&&own&&c.type==='Character'&&me&&game.canAttack(x),trouble=x&&own&&c.type==='Character'&&me&&game.canCauseTrouble(x),act=x&&me&&game.canUse(x);
  let buttons='<button id="close">Close</button>'+(stash?'<button id="stash">Stash</button>':'')+(play?'<button id="play" class="primary">Play</button>':'')+(attack?'<button id="attack" class="primary">Attack Character</button>':'')+(trouble?'<button id="trouble" class="trouble-button">Cause Trouble · '+game.trouble(x)+'</button>':'')+(act?'<button id="activate" class="primary">Activate</button>':'');
- let stats='<span>Cost '+c.cost+'</span>'+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
+ let stats='<span>Cost '+c.cost+'</span>'+(c.type==='Character'?'<span>Attack '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
  const modalArt=c.art?'<img class="detail-art" src="'+esc(c.art)+'" alt="">':'';modal={kind:'detail',html:'<div class="overlay"><article class="sheet">'+modalArt+'<div class="type">'+esc(c.type)+' · '+esc(c.style)+' · '+esc(c.id)+'</div><h2>'+esc(c.name)+'</h2><div class="stats">'+stats+'</div><p class="rule">'+esc(c.text||c.flavor||'No special ability.')+'</p><div class="buttons">'+buttons+'</div></article></div>'};showModal(modal);
  document.querySelector('#close')?.addEventListener('click',close);document.querySelector('#stash')?.addEventListener('click',()=>{const i=ref.handIndex;close();humanAction(async()=>game.stash(i))});document.querySelector('#play')?.addEventListener('click',()=>{close();humanAction(()=>game.play(ref.handIndex))});document.querySelector('#attack')?.addEventListener('click',()=>{close();humanAction(()=>game.attack(x.uid))});document.querySelector('#trouble')?.addEventListener('click',()=>{close();humanAction(()=>game.causeTrouble(x.uid))});document.querySelector('#activate')?.addEventListener('click',()=>{close();humanAction(()=>game.activate(x.uid))});
 }
