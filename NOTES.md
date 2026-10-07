@@ -1,3 +1,37 @@
+## Latest Reckless Action / Item decisions — 7 October 2026
+
+This section supersedes older Reckless entries below. Numbers are isolated-deck testing baselines; digital parity and simulation/human balance remain pending.
+
+**LOCKED FOR TESTING:**
+- P019 Hold My Beer, Cost 2: +3 Power and Hothead to a friendly Character this Turn; no Ready/self-damage. Consider +2 only with testing evidence.
+- P021 Glory Days renamed **Victory Lap**, Cost 1: Ready a Rotated friendly Character that Defeated an opposing Character with an Attack this Turn; cannot Attack again this Turn.
+- P026 Walk It Off, Cost 2: heal up to 2 from a friendly Character; Draw a card.
+- P022 No, I'm Fine replaced by **Category 5**, Cost 8: deal 4 damage to every Character. Both boards; no Items. Damage Defeats do not trigger Florida Man's Attack-only passive. Full Dismiss and damaged-only wipe alternatives are banked.
+- LAB-FLM-005 **Bottle Rockets**, Cost 1 Action: deal 2 damage to an opposing Character.
+- LAB-FLM-001 Broken Lawnmower replaced by **Bolt Cutters**, Cost 2 Item: Dismiss this Item to Dismiss an opposing Item costing 2 or less. Three Start counter team-buff concept retired/banked.
+- LAB-FLM-004 **Truck Nuts**, Cost 1 attachment: wearer gets +1 Power, or +2 total instead with Driver. Driver added to P002 Designated Driver, P006 Road Rage Ron, P015 Drunk Jet Skier; preserve other traits. No other Driver assignments locked. Attachment stacking applies normally.
+- P027 **Gas Station Pills**, Cost 1 attachment: Rotate Item and roll d6; 1 Rotate wearer, 2–5 +1 Power this Turn, 6 +2 Power this Turn. Replaces former passive/Ready/self-damage mechanics.
+- P030 **Homemade Launch Ramp**, Cost 2 standalone Item: choose friendly Ready Character; Rotate Item and roll d6. 1 Rotate Character; 2–3 next Attack this Turn +2 Power; 4–5 deal 2 damage to it; 6 next Attack this Turn +2 Power and actual Cause Trouble at Attack declaration using effective Trouble, without another Rotate. No survival condition. Other entry-Turn, positive Trouble and printed Trouble requirements remain. Does not grant Attack permission. Reusable Item; next-Attack riders expire this Turn. Overrides earlier attached/consumable/survival-gated proposals.
+
+**LOCKED SCOPE / OPEN EFFECT:**
+- Responses retired game-wide. Normal Actions own main Turn only, no voluntary Response windows. Automatic triggers remain. P020 SPRING BREAK!!!, P081 Look Over There!, P169 Take One for the Team are pending redesign; retired text is reference only and these are excluded from intended playtests until redesigned.
+- LAB-FLM-003 **Dirty Needle**, Item (formerly Rusty Needle Action): disease replaces tetanus. User likes recurring damage/bleed but dislikes bookkeeping. Effect blank/pending redesign; Cost 2 is placeholder. Candidate attachment to opposing Character, deal 1 at start of controller's Turn, uses attachment as reminder; not locked.
+- P029 **Hot Potato** removed from Reckless, preserved Unassigned/banked; destination and Composure-era redesign TBD. No baseline deck references it.
+
+**UNLOCKED PROPOSALS / REQUESTS:**
+- User wants attached Absorb protection; proposed **Life Jacket**, Cost 2, attachment grants Absorb 1. Name/cost/effect not locked. Highest-only Absorb rule means no stacking with Lifeguard Absorb 1.
+- User wants Item variety (heal, boost, protect), potentially only a few Items. No quota or further removals locked. Healing currently supported by Walk It Off.
+- Proposed P020 SPRING BREAK!!! Cost 3: after friendly Attack Defeat this Turn, team +1 Trouble this Turn. Not approved; active effect remains blank.
+- Proposed P025 Floor It! Cost 2: Ready friendly Character that attacked this Turn, +2 Power, cannot Cause Trouble this Turn. Not approved; legacy Ready/deal 2 text remains active.
+- Proposed P023 Fireworks Incident Cost 2: deal 2 opposing / 1 friendly, remove survivor branches. Not approved; old text remains.
+- Proposed P028 Roman Candle: remove Scout exception/friendly damage, keep Rotate Item for 1 opposing damage. Not approved; old text remains and requires audit.
+- Caffeine remains existing lab effect (+5 Power, Hothead, Sucker Punch; after Attack Defeat); not newly locked during this pass.
+- Bath Salts requested for Reckless but still Expendable, redesign/transfer open; Undead direction undecided.
+- Button Marked DO NOT PRESS risk/reward candidate remains Expendable, transfer/mechanic open; assess overlap with new Pills/Ramp.
+- Unlicensed Pool Guy Florida theme and Stunt Double with new name remain cross-Style ideas, not transferred. Character pass otherwise complete; revisit only deliberately.
+
+Current Reckless pool: 34 unique Character/Action/Item entries, 18 Characters / 10 Actions / 6 Items; includes pending-redesign SPRING BREAK!!! and Dirty Needle. Baseline 40-card deck reconstruction remains pending.
+
 🐈🎸 **Landon deck sync · 6 October 2026:** Crazy Cat Lady Lab 1.3 / STANK-66 behavior is promoted into Mordecai, including Strength in Numbers, Shoebox/Shovel, Snowball, Hairy Cat, Three-Legged Cat, and Mittens III. Washed-Up Rock Star’s dedicated Carl-era lab is promoted as a Mordecai TESTING translation: Bad Publicity Is Still Publicity now triggers on actual Composure lost rather than Leader damage. Its decklist is unchanged and requires fresh Mordecai playtest evidence before balance conclusions.\n\n# CURRENT — Mordecai 0.4 promoted 6 October 2026
 
 🔒 **Production promotion:** Composure 2.0 is now **Mordecai 0.4**, the canonical Unhinged build. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative. The 40-question core-rules interview is complete and the core is feature-complete for this playtest.
