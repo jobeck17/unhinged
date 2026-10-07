@@ -1,7 +1,7 @@
 import {Game,LEADERS} from './engine.js?v=mordecai-04-catrock';
 import {aiAction,aiChoice} from './ai.js?v=mordecai-04';
 import './magician.js?v=stank-66-mordecai';
-import './cat-lady.js?v=stank-66-mordecai';
+import './cat-lady.js?v=mordecai-04-catfix-01';
 import './rockstar.js?v=landon-mordecai-01';
 import {applyLandonLab} from './landon-lab.js?v=mordecai-04-mag67';
 const root=document.querySelector('#app');
