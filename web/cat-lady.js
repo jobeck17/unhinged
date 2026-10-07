@@ -70,15 +70,22 @@ Game.prototype.pick=function(title,p,targets,optional=false){
 const baseCombatDamage=Game.prototype.combatDamage;
 Game.prototype.combatDamage=async function(entries){
  const hairy=(entries||[]).filter(([x,,kind])=>x?.id===HAIRY&&kind==='attack').map(([x])=>x.uid);
- const protectedCats=[];
- for(const [x,,kind] of entries||[]){
+ const normal=[];
+ for(const [x,n,kind] of entries||[]){
    if(kind==='attack'&&x?.id===THREE&&this.obj(x.uid)){
      x.threeLeggedAttackHits=(x.threeLeggedAttackHits||0)+1;
-     if(x.threeLeggedAttackHits<=2){x._threeLeggedProtected=true;protectedCats.push(x.uid)}
+     if(x.threeLeggedAttackHits<=2){
+       await this.damage(x,n,true);
+       if(this.obj(x.uid)){
+         x.damage=0;
+         this.say(`I GOT 3 MORE ANYWAY — Three-Legged Cat survives Attack ${x.threeLeggedAttackHits} of 2 and removes all damage`);
+       }
+       continue;
+     }
    }
+   normal.push([x,n,kind]);
  }
- const result=await baseCombatDamage.call(this,entries);
- for(const uid of protectedCats){const x=this.obj(uid);if(x){x.damage=0;x._threeLeggedProtected=false;this.say(`I GOT 3 MORE ANYWAY — Three-Legged Cat survives Attack ${x.threeLeggedAttackHits} of 2 protected hits`)}}
+ const result=normal.length?await baseCombatDamage.call(this,normal):undefined;
  if(hairy.length&&this.pendingAttack?.attacker){
    for(const uid of hairy){
      if(!this.obj(uid))continue;
