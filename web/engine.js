@@ -6,8 +6,8 @@ export const LEADERS={
  'Trash Baron':{style:'Salvage',passive:'You may use opposing Ready Stash to pay your Costs as though it were your own.'},
  'HOA President':{style:'Stonewall',passive:'Failure to Respond: Beginning in Round 8, your Characters get +1 Trouble.'},
  'Backyard Wrestler':{style:'Expendable',passive:'Tag Out: Once during your Turn after a friendly Defeat/Sacrifice, reveal the top card. A qualifying Expendable Character enters with Hothead; otherwise it goes to hand.'},
- 'Crazy Cat Lady':{style:'Lab',passive:'Strength in Numbers............ Mostly Numbers........ Probably.: At the start of your Turn, if you control fewer than 3 Cats, you may Stash one additional card this Turn. If you control 3 or more Cats, Draw an additional card.'},
- 'Mad Scientist':{style:'Lab',passive:'Fully Charged, No Charger: Start with a protected 5-card Ready battery. It never grows normally and only 1 spent Stash Readies each Turn.'}
+ 'Crazy Cat Lady':{style:'Momentum',passive:'Strength in Numbers............ Mostly Numbers........ Probably.: At the start of your Turn, if you control fewer than 3 Cats, you may Stash one additional card this Turn. If you control 3 or more Cats, Draw an additional card.'},
+ 'Mad Scientist':{style:'Gambler',passive:'Fully Charged, No Charger: Start with a protected 5-card Ready battery. It never grows normally and only 1 spent Stash Readies each Turn.'}
 };
 export function buildDeckField(doc){
  const scale=(cards,target)=>{
