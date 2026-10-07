@@ -20,11 +20,14 @@ jobs:
           node-version: 22
       - run: node --check web/engine.js
       - run: node --check web/ai.js
-      - run: node --check web/app.js
+      - run: |
+          node --check web/app.js
           node --check web/magician.js
           node --check web/cat-lady.js
           node --check web/rockstar.js
-      - run: node --check builder/app.js
+      - run: |
+          node --check web/reckless.js
+          node --check builder/app.js
           node builder/smoke.mjs
       - run: node --check poll/app.js
       - run: node --check poll/questions.js
@@ -36,6 +39,7 @@ jobs:
           test -f web/engine.js
           test -f web/ai.js
       - run: node web/smoke.mjs
+      - run: node web/reckless.test.mjs
       # Historical labs remain runnable research fixtures but do not gate Mordecai production.
       # Mordecai production simulation is intentionally held until engine parity.
   deploy:
@@ -54,7 +58,7 @@ jobs:
           cp poll/index.html poll/app.js poll/questions.js poll/config.js poll/style.css _site/poll/
           mkdir -p _site/lab/leader-rulebreakers/crazy-cat-lady _site/lab/leader-rulebreakers/mad-scientist
           cp index.html CARDS.json DECKS.json _site/
-          cp web/index.html web/app.js web/engine.js web/ai.js web/style.css _site/web/
+          cp web/index.html web/*.js web/style.css _site/web/
           cp builder/index.html builder/app.js builder/style.css builder/smoke.mjs _site/builder/
           cp lab/leader-rulebreakers/crazy-cat-lady/CARDS.json lab/leader-rulebreakers/crazy-cat-lady/DECK.json _site/lab/leader-rulebreakers/crazy-cat-lady/
           cp lab/leader-rulebreakers/mad-scientist/CARDS.json lab/leader-rulebreakers/mad-scientist/DECK.json lab/leader-rulebreakers/mad-scientist/TOKENS.json _site/lab/leader-rulebreakers/mad-scientist/

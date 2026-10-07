@@ -8,9 +8,15 @@ Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo →
 
 The production baseline now contains **223 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
 
-The browser playtest, simulator, and builder still require a Mordecai parity pass. Until that work is complete, do not treat Carl-era automated results or the provisional Composure lab engine as authoritative Mordecai evidence.
+The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. The other Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
 
 The Scheme, Board Width, and old Composure folders remain development history unless explicitly reopened.
+
+## Reckless coverage playtest — 7 October 2026
+
+[Play the current deck](https://jobeck17.github.io/unhinged/web/). Select Florida Man. The 40-card list contains all 32 locked Reckless cards once, plus one extra copy each of Feral Chihuahua, Vape Kid, Boogie Boarder, Unsupervised Toddler, Amateur Storm Chaser, Spring Break Frat Bro, Victory Lap, and Did You See That?!. This is a broad verification deck rather than a tuned competitive list. The 33rd Style slot is reserved. Safety Goggles (formerly Life Jacket) and Fireworks Incident are banked for the next set; Dirty Needle remains pending.
+
+Every die result is shown in a persistent result panel, history, and event log. Checks: `node web/reckless.test.mjs`, `node web/smoke.mjs`, `node builder/smoke.mjs`, and `node poll/test.mjs`. The Reckless tests cover every card, every die face, reroll/expiry behavior, combat-only rewards, attachments, Absorb, Last Straw interactions, and full-deck card conservation. These verify implementation, not balance. Unique Breaking Point and Last Straw card effects remain the existing unfinished content pass.
 
 ## Current creative direction
 
@@ -40,7 +46,7 @@ A deck should still play a real game when its spectacular engine does not go off
 - NOTES.md — the one living notebook for decisions, questions, next work, and saved ideas.
 - SIMULATION.md — current simulation status and historical methodology; Mordecai balance runs are on hold until engine parity.
 - sim/round-robin.js — 36-configuration anomaly detector.
-- web/ — browser playtest; Mordecai engine migration currently pending.
+- web/ — browser playtest; Reckless card audit implemented, remaining Style audits pending.
 - builder/ — Dreamborn-inspired deck builder using the same canonical card pool.
 
 Mordecai locks the new core architecture, not final card balance. The next production pass is consistency and content: terminology, Leaders, Breaking Points, Last Straws, decks, cards, abilities, simulator, browser, and builder.

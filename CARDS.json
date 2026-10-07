@@ -18,9 +18,10 @@
       "power": 2,
       "guard": 2,
       "audit_identity": [],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P002",
@@ -40,9 +41,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P003",
@@ -61,9 +63,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P004",
@@ -82,9 +85,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P005",
@@ -105,7 +109,8 @@
       ],
       "status": "testing",
       "flavor": "Look what I did!",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P006",
@@ -124,9 +129,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P007",
@@ -149,7 +155,8 @@
       ],
       "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P008",
@@ -170,7 +177,8 @@
       ],
       "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P009",
@@ -190,9 +198,10 @@
       "audit_identity": [
         "Animal"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P010",
@@ -216,7 +225,8 @@
       ],
       "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P011",
@@ -237,7 +247,8 @@
       ],
       "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P012",
@@ -256,9 +267,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P013",
@@ -277,9 +289,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 3
+      "trouble": 3,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P014",
@@ -302,7 +315,8 @@
       ],
       "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P015",
@@ -326,7 +340,8 @@
       ],
       "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P016",
@@ -347,9 +362,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P017",
@@ -368,9 +384,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "The cloud has entered the group chat.",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P018",
@@ -393,7 +410,8 @@
       ],
       "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P019",
@@ -411,7 +429,8 @@
       "complexity": "one_shot",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P020",
@@ -430,7 +449,8 @@
       "status": "testing",
       "flavor": "",
       "retired_text": "Response — Before combat damage is dealt: One of your Characters gets +3 Power and -1 Health for this combat.",
-      "audit_note": "Locked for testing 2026-10-07. Receives proposed Floor It! second-Attack effect; no self-damage. Previous conditional team Trouble proposal superseded. Digital parity pending."
+      "audit_note": "Locked for testing 2026-10-07. Receives proposed Floor It! second-Attack effect; no self-damage. Previous conditional team Trouble proposal superseded. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P021",
@@ -448,7 +468,8 @@
       "complexity": "one_shot",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P022",
@@ -466,7 +487,8 @@
       "complexity": "one_shot",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Replaces No, I'm Fine. Symmetric damage wipe; cost 8 is an isolated-deck testing baseline. Does not Dismiss Items or trigger Florida Man's Attack-only passive."
+      "audit_note": "Replaces No, I'm Fine. Symmetric damage wipe; cost 8 is an isolated-deck testing baseline. Does not Dismiss Items or trigger Florida Man's Attack-only passive.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P023",
@@ -503,7 +525,8 @@
       "complexity": "mixed",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Reduced +3 Power/+1 Trouble dice rewards locked for testing on 2026-10-07. Digital parity pending."
+      "audit_note": "Reduced +3 Power/+1 Trouble dice rewards locked for testing on 2026-10-07. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P025",
@@ -540,7 +563,8 @@
       "complexity": "one_shot",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P027",
@@ -558,7 +582,8 @@
       "complexity": "activated",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Repeatable dice Item with +1/+2 Power results locked for testing on 2026-10-07. Replaces passive Power and Dismiss/Ready/self-damage effect. Digital parity pending."
+      "audit_note": "Repeatable dice Item with +1/+2 Power results locked for testing on 2026-10-07. Replaces passive Power and Dismiss/Ready/self-damage effect. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P028",
@@ -576,7 +601,8 @@
       "complexity": "ongoing",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Attachment +1 Trouble locked for testing on 2026-10-07. Replaces damage activation and Scout exception. Normal attachment stacking and Cause Trouble requirements remain. Digital parity pending."
+      "audit_note": "Attachment +1 Trouble locked for testing on 2026-10-07. Replaces damage activation and Scout exception. Normal attachment stacking and Cause Trouble requirements remain. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P029",
@@ -612,7 +638,8 @@
       "complexity": "activated",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Standalone reusable Item locked for testing on 2026-10-07. Six is an actual Cause Trouble event at Attack declaration, using current effective Trouble; no survival condition. Normal entry-Turn, positive Trouble and printed restrictions remain. Once activated, next-Attack bonus/rider lasts this Turn independently of Ramp. Power bonus is for one Attack, not whole Turn. Digital parity pending."
+      "audit_note": "Standalone reusable Item locked for testing on 2026-10-07. Six is an actual Cause Trouble event at Attack declaration, using current effective Trouble; no survival condition. Normal entry-Turn, positive Trouble and printed restrictions remain. Once activated, next-Attack bonus/rider lasts this Turn independently of Ramp. Power bonus is for one Attack, not whole Turn. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "P031",
@@ -3523,7 +3550,8 @@
       "complexity": "activated",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "LAB-FLM-002",
@@ -3540,7 +3568,8 @@
       "complexity": "mixed",
       "status": "testing",
       "flavor": "He can hear colors now.",
-      "audit_note": "Locked for testing on 2026-10-07 at Cost 3. Disposable Attack boost. Digital parity pending."
+      "audit_note": "Locked for testing on 2026-10-07 at Cost 3. Disposable Attack boost. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "LAB-FLM-003",
@@ -4323,7 +4352,8 @@
       "complexity": "ongoing",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Reworked for testing on 2026-10-07: grants all wearers Sucker Punch, +1 Power only to Drivers. Replaces universal +1/Driver +2 Power. Existing three Driver assignments retained. Digital parity pending."
+      "audit_note": "Reworked for testing on 2026-10-07: grants all wearers Sucker Punch, +1 Power only to Drivers. Replaces universal +1/Driver +2 Power. Existing three Driver assignments retained. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "LAB-FLM-005",
@@ -4339,13 +4369,14 @@
       "complexity": "one_shot",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Added for testing on 2026-10-07. Character damage only; does not trigger Florida Man's Attack-only passive. Digital effect parity pending."
+      "audit_note": "Added for testing on 2026-10-07. Character damage only; does not trigger Florida Man's Attack-only passive. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     },
     {
       "id": "LAB-FLM-006",
       "type": "Item",
       "cost": 2,
-      "name": "Life Jacket",
+      "name": "Safety Goggles",
       "traits": [],
       "text": "Attach to one of your Characters. It has Absorb 1.",
       "style": "Reckless",
@@ -4353,9 +4384,10 @@
       "power": null,
       "guard": null,
       "complexity": "ongoing",
-      "status": "testing",
+      "status": "banked",
       "flavor": "",
-      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Grants wearer Absorb 1 under highest-only Absorb rule, does not stack with Lifeguard Absorb 1. No other protection/health bonus. Digital effect parity pending."
+      "audit_note": "Life Jacket tabled as Safety Goggles for next set / possible Scientist package on 2026-10-07. Cost 2 attachment granting Absorb 1 retained as banked baseline. Excluded current Reckless set.",
+      "set_plan": "next-set"
     },
     {
       "id": "LAB-FLM-007",
@@ -4371,7 +4403,8 @@
       "complexity": "conditional",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Name and tiered draw locked for testing on 2026-10-07. Playable during normal own main Turn regardless of combat result: Draw 1 baseline, Draw 2 total after qualifying friendly Attack Defeat. Does not scale per Defeat. Replaces Spoils of the Brawl name and play-only condition. Digital parity pending."
+      "audit_note": "Name and tiered draw locked for testing on 2026-10-07. Playable during normal own main Turn regardless of combat result: Draw 1 baseline, Draw 2 total after qualifying friendly Attack Defeat. Does not scale per Defeat. Replaces Spoils of the Brawl name and play-only condition. Browser implementation verified 2026-10-07.",
+      "digital_status": "implemented-reckless-2026-10-07"
     }
   ]
 }

@@ -15,7 +15,7 @@ function isRulebreaker(){return RULEBREAKERS.has(state.leader)}
 function legalStyles(){return isRulebreaker()?[]:[nativeStyle()].concat(state.secondary?[state.secondary]:[])}
 function isCat(c){return c&&c.type==='Character'&&(c.traits||[]).includes('Cat')}
 function isToken(c){return !!c&&(/^LAB-TOK-/.test(c.id)||(c.traits||[]).includes('Token'))}
-function isLegal(c){
+function isLegal(c){if(['banked','retired','pending-redesign'].includes(c.status))return false;
  if(!c||isToken(c))return false;
  if(state.leader==='Crazy Cat Lady')return /^LAB-CAT-/.test(c.id)||isCat(c);
  if(state.leader==='Mad Scientist')return /^LAB-SCI-/.test(c.id);

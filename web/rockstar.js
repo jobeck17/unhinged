@@ -1,5 +1,5 @@
 // Mordecai translation of Landon's Washed-Up Rock Star damage-for-cards lab.
-import {Game,LEADERS} from './engine.js?v=mordecai-04-catrock';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-reckless-01';
 LEADERS['Washed-Up Rock Star'].passive='Bad Publicity Is Still Publicity: Whenever your Leader loses Composure, Draw that many cards.';
 
 const baseHurtLeader=Game.prototype.hurtLeader;

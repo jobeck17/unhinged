@@ -1,15 +1,16 @@
-import {Game,LEADERS} from './engine.js?v=mordecai-04-catrock';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-reckless-01';
 import {aiAction,aiChoice} from './ai.js?v=mordecai-04';
-import './magician.js?v=stank-66-mordecai';
-import './cat-lady.js?v=mordecai-04-catfix-01';
-import './rockstar.js?v=landon-mordecai-01';
-import {applyLandonLab} from './landon-lab.js?v=mordecai-04-mag67';
+import './magician.js?v=reckless-01';
+import './cat-lady.js?v=reckless-01';
+import './rockstar.js?v=reckless-01';
+import './reckless.js?v=reckless-01';
+import {applyLandonLab} from './landon-lab.js?v=reckless-01';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Attack / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
+const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
 try{
- [pool,decks]=await Promise.all([fetch('../CARDS.json?v=mordecai-04').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=mordecai-04').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
+ [pool,decks]=await Promise.all([fetch('../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
  ({pool,decks}=applyLandonLab(pool,decks));
  setup();
@@ -42,10 +43,10 @@ function render(){
   wireCards();root.querySelector('#keep').onclick=async()=>{await game.mulligan(human,[...selected]);selected.clear();game.begin();phase='playing';render();await aiTurn()};return;
  }
  const active=game.turn===human&&!busy&&game.winner===null;
- const instruction=game.winner!==null?game.decks[game.winner].leader+' wins':busy?'Opponent is thinking…':active?'Fight, Cause Trouble, build, or End Turn.':'Opponent is thinking…';
+ const instruction=game.winner!==null?game.decks[game.winner].leader+' wins':busy?(game.turn===human?'Resolving your action…':'Opponent is thinking…'):active?'Fight, Cause Trouble, build, or End Turn.':'Opponent is thinking…';
  root.innerHTML='<header><div><b class="brand">UNHINGED.</b><span class="eyebrow">MORDECAI 0.4 · ROUND '+game.round+'</span></div><button id="new">New match</button></header>'+
  '<section class="controls"><div><span class="eyebrow">'+esc(game.decks[game.turn].leader)+' · '+(active?'YOUR TURN':'ACTIVE')+'</span><p>'+esc(instruction)+'</p></div><div class="actions">'+(active?'<button id="end" class="primary">End Turn</button>':'')+'</div></section>'+
- '<p class="scroll-hint">Swipe the table sideways when the board gets crowded.</p><div class="tabletop">'+zoneBar(1-human)+'<div class="battlefield">'+row(1-human)+row(human)+'</div>'+zoneBar(human)+'</div>'+
+ dicePanel()+'<p class="scroll-hint">Swipe the table sideways when the board gets crowded.</p><div class="tabletop">'+zoneBar(1-human)+'<div class="battlefield">'+row(1-human)+row(human)+'</div>'+zoneBar(human)+'</div>'+
  '<section class="hand"><div class="section-head"><h2>Your hand <small>'+game.players[human].hand.length+' cards</small></h2><span>Stash '+game.players[human].fuel+'/'+game.players[human].stash.length+' Ready</span></div><div class="hand-cards">'+game.players[human].hand.map((id,i)=>cardHTML({id},'hand',human,i)).join('')+'</div></section>'+
  '<div class="lower"><details open><summary>What this lab is testing</summary><p>A Ready Character can Attack, Cause Trouble, or stay Ready and protected from ordinary Attacks. At 10 Composure the Leader hits Breaking Point. At 0 the hidden Last Straw is revealed and the Turn ends after it resolves. While at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes the Leader Unhinged. Unique Breaking Point and Last Straw card effects are the next content pass.</p></details><details open><summary>Recent events</summary>'+game.log.slice(0,10).map(x=>'<p>'+esc(x)+'</p>').join('')+'</details></div>';
  wireCards();root.querySelector('#end')?.addEventListener('click',()=>humanAction(()=>game.pass()));root.querySelector('#new').onclick=()=>{game=null;phase='setup';modal=null;selected.clear();setup()};if(modal)showModal(modal);
@@ -59,10 +60,10 @@ function row(p){
 function cardHTML(x,zone,p,index,chosen=false){
  const c=game.card(x),b=zone==='board',char=c.type==='Character',rot=b&&!x.ready,selected=zone==='hand'&&chosen;
  let stats='';
- if(char)stats='<span class="stats"><span><small>ATTACK</small>'+(b?game.power(x):c.power)+'</span><span><small>'+(b?'HEALTH LEFT':'HEALTH')+'</small>'+(b?Math.max(0,game.guard(x)-x.damage):c.guard)+'</span><span class="stat-trouble"><small>TROUBLE</small>'+(b?game.trouble(x):c.trouble)+'</span></span>';
+ if(char)stats='<span class="stats"><span><small>POWER</small>'+(b?game.power(x):c.power)+'</span><span><small>'+(b?'HEALTH LEFT':'HEALTH')+'</small>'+(b?Math.max(0,game.guard(x)-x.damage):c.guard)+'</span><span class="stat-trouble"><small>TROUBLE</small>'+(b?game.trouble(x):c.trouble)+'</span></span>';
  const foot=selected?'✓ REPLACE':b?(rot?'ROTATED':char&&x.born>=game.round?'NEW THIS TURN':x.damage?x.damage+' DAMAGE':'READY'):'TAP FOR ACTIONS';
  const art=c.art?'<span class="card-art"><img src="'+esc(c.art)+'" alt="" loading="lazy"></span>':'<span class="card-art art-placeholder style-'+esc((c.style||'neutral').toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'"><span>'+esc(c.style||c.type)+'</span></span>';
- return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'"><span class="card-top"><span>'+esc(c.type)+' · '+esc(c.style)+'</span><b>'+(b?(rot?'ROTATED':'READY'):'COST '+c.cost)+'</b></span>'+art+'<strong>'+esc(c.name)+'</strong><span class="card-text">'+esc(c.text||c.flavor||'')+'</span>'+stats+'<span class="card-foot '+(x.damage?'damage':'')+'">'+esc(foot)+'</span></button>';
+ return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'"><span class="card-top"><span>'+esc(c.type)+' · '+esc(c.style)+'</span><b>'+(b?(rot?'ROTATED':'READY'):'COST '+c.cost)+'</b></span>'+art+'<strong>'+esc(c.name)+'</strong><span class="card-text">'+esc(c.text||c.flavor||'')+(b&&x.nextAttackPower?'<br><b>Next Attack: +'+x.nextAttackPower+' Power'+(x.rampTrouble?' + Trouble':'')+'</b>':'')+'</span>'+stats+'<span class="card-foot '+(x.damage?'damage':'')+'">'+esc(foot)+'</span></button>';
 }
 function wireCards(){root.querySelectorAll('.card').forEach(b=>b.onclick=()=>{if(phase==='mulligan'){const i=+b.dataset.index;selected.has(i)?selected.delete(i):selected.add(i);render();return}if(+b.dataset.p!==human&&b.dataset.zone==='board')return detail({uid:+b.dataset.uid});if(b.dataset.zone==='hand')detail({id:game.players[human].hand[+b.dataset.index],handIndex:+b.dataset.index});else detail({uid:+b.dataset.uid})})}
 function detail(ref){
@@ -70,7 +71,7 @@ function detail(ref){
  const me=game.turn===human&&!busy&&game.winner===null,own=x?.owner===human;
  const play=ref.handIndex!==undefined&&me&&game.canPlay(ref.handIndex,human),stash=ref.handIndex!==undefined&&me&&game.canStash(ref.handIndex,human),attack=x&&own&&c.type==='Character'&&me&&game.canAttack(x),trouble=x&&own&&c.type==='Character'&&me&&game.canCauseTrouble(x),act=x&&own&&me&&game.canUse(x);
  let buttons='<button id="close">Close</button>'+(stash?'<button id="stash">Stash</button>':'')+(play?'<button id="play" class="primary">Play</button>':'')+(attack?'<button id="attack" class="primary">Attack Character</button>':'')+(trouble?'<button id="trouble" class="trouble-button">Cause Trouble · '+game.trouble(x)+'</button>':'')+(act?'<button id="activate" class="primary">Activate Ability</button>':'');
- let stats='<span>Cost '+c.cost+'</span>'+(c.type==='Character'?'<span>Attack '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
+ let stats='<span>Cost '+c.cost+'</span>'+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
  const modalArt=c.art?'<img class="detail-art" src="'+esc(c.art)+'" alt="">':'';modal={kind:'detail',html:'<div class="overlay"><article class="sheet">'+modalArt+'<div class="type">'+esc(c.type)+' · '+esc(c.style)+' · '+esc(c.id)+'</div><h2>'+esc(c.name)+'</h2><div class="stats">'+stats+'</div><p class="rule">'+esc(c.text||c.flavor||'No special ability.')+'</p><div class="buttons">'+buttons+'</div></article></div>'};showModal(modal);
  document.querySelector('#close')?.addEventListener('click',close);document.querySelector('#stash')?.addEventListener('click',()=>{const i=ref.handIndex;close();humanAction(async()=>game.stash(i))});document.querySelector('#play')?.addEventListener('click',()=>{close();humanAction(()=>game.play(ref.handIndex))});document.querySelector('#attack')?.addEventListener('click',()=>{close();humanAction(()=>game.attack(x.uid))});document.querySelector('#trouble')?.addEventListener('click',()=>{close();humanAction(()=>game.causeTrouble(x.uid))});document.querySelector('#activate')?.addEventListener('click',()=>{close();humanAction(()=>game.activate(x.uid))});
 }
@@ -80,3 +81,9 @@ async function ask(r){if(r.player!==human)return aiChoice(game,r);return new Pro
 function start(a,b){human=0;game=new Game(pool,{...decks,decks:[decks.decks[a],decks.decks[b]]},ask,()=>{if(phase==='playing'&&!modal)render()},{firstPlayer:human});game.mulligan(1,[]);phase='mulligan';render()}
 async function humanAction(fn){if(busy||game.turn!==human)return;busy=true;render();try{await fn()}catch(e){console.error(e);alert(e.message)}finally{busy=false;render();await aiTurn()}}
 async function aiTurn(){if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;busy=true;render();let n=0;try{while(game.turn!==human&&game.winner===null&&n++<70){await new Promise(r=>setTimeout(r,170));const m=aiAction(game,game.turn);if(m.type==='pass')await game.pass();else if(m.type==='stash')game.stash(m.index,game.turn);else if(m.type==='attack')await game.attack(m.uid);else if(m.type==='trouble')await game.causeTrouble(m.uid);else if(m.type==='play')await game.play(m.index);else if(m.type==='activate')await game.activate(m.uid);render()}if(n>=70)throw Error('AI action limit reached')}finally{busy=false;render()}}
+
+function dicePanel(){
+ const rolls=game.diceRolls||[];if(!rolls.length)return '';
+ const r=rolls[0];
+ return '<section class="dice-result" role="status" aria-live="polite"><span class="die-face" aria-label="Die rolled '+r.value+'">'+['','⚀','⚁','⚂','⚃','⚄','⚅'][r.value]+'</span><div><strong>'+esc(r.label)+' · rolled '+r.value+'</strong><p>'+esc(r.outcome)+'</p><details><summary>Dice history</summary>'+rolls.map(d=>'<p>'+esc(d.label)+' — '+d.value+' · '+esc(d.outcome)+'</p>').join('')+'</details></div></section>';
+}
