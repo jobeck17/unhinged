@@ -15,6 +15,8 @@
 This ledger governs this review. Earlier entries below are dated design history where they conflict with it. Do not turn proposals into current rules. Preserve prior candidates as BANKED/RETIRED rather than silently overwriting them. Do not add a new card proposal until the current decision is settled, except to explain concrete alternatives the user requests.
 
 ### CURRENT — explicitly confirmed and saved
+- Florida Man passive: Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure. No once-per-Turn cap; ordinary removal effects do not qualify.
+- **Deck-design workflow:** work on each deck/Style in complete isolation during this creative/content pass. Build coherent roles, scaling, combos, and readable timing without claiming matchup balance or tuning against the other decks. Simulations (after engine parity) and human testing are the later stage for actual balance. Flag internal contradictions or nonfunctional combinations now; provisional numbers may remain until evidence supports tuning.
 - Style: voluntary risk/reward, press-your-luck choices, dangerous stunts; recognizable Florida stereotypes rather than forced joke sentences. Self-damage is optional supporting space, not mandatory Style identity. Reliable plain Characters remain important.
 - P001 Feral Chihuahua: Cost 1, 2/2/1, no abilities/keywords.
 - P017 Vape Kid: Cost 1, 1/3/1, no abilities/keywords.
@@ -32,7 +34,7 @@ This ledger governs this review. Earlier entries below are dated design history 
 - All new behavior awaits digital parity; a saved card is not an implemented or balance-tested card.
 
 ### OPEN — do not apply without settlement
-1. **Florida Man passive:** user proposes attack-first identity and turning opposing defeats into Composure loss. Latest proposed wording: whenever a friendly Character Defeats an opposing Character with an Attack, opposing Leader loses 1 Composure. Earlier alternative caps it once during own Turn. Decide per-Defeat vs cap, own Turn only vs any Attack, and source scope. Not finalized. Do not reinstate old passive implicitly.
+1. **Florida Man passive — RESOLVED:** Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure. Each qualifying Attack Defeat triggers; no once-per-Turn cap. RULES.md now contains the canonical passive. This replaces both historical damage-based passives; Breaking Point is still open. Earlier once-per-Turn alternatives remain banked.
 2. **Trouble curve:** user suggests lower Character Trouble with boosts from support. This is a proposal, not permission to reduce every Character. Preserve reliable baseline pressure and a way to finish Last Straw against an empty opposing board.
 3. **Bachelorette Party:** proposed Cost 2, 2/1/1, Draw when Dismissed or Defeated. Theme fit still under discussion; canonical P004 remains 3/3/1, no ability. Explicit Dismiss/Defeat avoids repeated Return draw; user initially said leaves play.
 4. **Electrician replacement/support role:** Airboat Captain, Rollerblade Guy, Beach Fisherman, Snowbird in a Convertible. Captain proposal was Cost 3, 2/3/1, +1 Trouble to other Cost ≤2 Characters; NOT adopted, flagged for generic board-width snowballing. Alternative role: conditional Trouble payoff after an Attack Defeat.
@@ -61,7 +63,7 @@ This ledger governs this review. Earlier entries below are dated design history 
 - Root Mordecai Leader text remains under audit. These two historical versions must not be conflated.
 
 ### Working sequence
-Settle Florida Man passive → settle which kind of board reset and its scope → settle conditional Trouble support → finish 3-Cost Characters → review higher curve and Actions/Items → rebuild baseline deck → digital parity and testing. Review one decision per step. Save confirmed changes immediately; report every candidate as CURRENT, TESTING, BANKED, or OPEN.
+Florida Man passive settled → settle which kind of board reset and its scope → settle conditional Trouble support → finish 3-Cost Characters → review higher curve and Actions/Items → rebuild baseline deck → digital parity and testing. Review one decision per step. Save confirmed changes immediately; report every candidate as CURRENT, TESTING, BANKED, or OPEN.
 
 ### Earlier review entries — historical where superseded
 
