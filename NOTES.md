@@ -1,3 +1,10 @@
+## Spring Break and combat draw locks — 7 October 2026
+
+- **LOCKED FOR TESTING — SPRING BREAK!!! (P020), Cost 2:** “Ready one of your Rotated Characters that attacked this Turn. It gets +2 Power and cannot Cause Trouble this Turn.” User moves the proposed Floor It! effect here. Retires earlier proposed Cost 3 / team Trouble boost and legacy Response concept. Allows another Attack, not Trouble conversion.
+- **RETIRED — Floor It! (P025):** removed from active Reckless pool, blank active effect, status retired and Style Unassigned. Previous legacy Ready/deal 2 text preserved only as retired reference. Proposed effect now belongs to P020. No current deck references P025.
+- **LOCKED DRAW EFFECT FOR TESTING — Spoils of the Brawl (LAB-FLM-007), Cost 2 Action:** “Play only if one of your Characters Defeated an opposing Character with an Attack this Turn. Draw 2 cards.” User approved combat-conditioned draw and requested a less clunky Florida-flavored Spoils of Battle name; Spoils of the Brawl is working name, can revisit. Attack Defeat condition deliberately explicit because “win a fight” is not a defined rule. Single Draw 2 per Action, not per defeated Character. Existing Boogie Boarder, Zookeeper and Walk It Off provide complementary draw.
+- **COUNTS:** remains 35 active Reckless Character/Action/Item entries: 18 Characters / 10 Actions / 7 Items. Added one Action and retired one. Digital parity, deck reconstruction and actual balance testing still pending.
+
 ## Forward planning — Mad Scientist as possible Reckless Leader, 7 October 2026
 
 - **USER DIRECTION / NOT YET LOCKED:** consider Mad Scientist as the next Reckless Leader; plan shared pool with Scientist in mind and give some tabled cards a possible future home. Current RULES still classify Scientist as Gambler; no Leader/Style/card transfers or Gambler retirement applied.
