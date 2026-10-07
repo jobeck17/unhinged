@@ -8,6 +8,16 @@
 
 🎩 **Magician sync · 6 October 2026:** Landon’s STANK INDUSTRIES-66 Birthday Party Magician package is promoted into Mordecai 0.4. Production now uses 6× Rabbit (2-cost 1/3), 3× Magician’s Hat (cost 4; returns Rabbit/Dove), 2× Dove (2/1, 0 Trouble; enter/leave -1 permanent Health), 2× Do Not Look in the Hat, Beer-Stained Cards, 3-Attack Escape Artist/School Bully, and the Volunteer without its old automatic post-Attack Return. Now You See Me, Tech Bro, and Burner Phone are out of the baseline Magician deck.\n\n🧹 **Next production pass:** reconcile terminology/rules references; audit all eight decks, all cards and abilities, Leader passives, Breaking Points, Last Straw pool, Ready effects, legacy Responses, Leader-damage/healing text, Retaliate, deck exhaustion, simulator parity, browser parity, and builder compatibility.
 
+## Reckless pool review · 6 October 2026
+
+✅ **Style direction:** voluntary risk/reward, dangerous stunts, and press-your-luck choices. Self-damage may be a supporting consequence; it is not the required identity of Reckless. Rewards may affect Attack, Trouble, or other effects depending on the card.
+
+✅ **Renames:** P002 Gas Station Daredevil → Designated Driver; P020 Send It! → SPRING BREAK!!!; P024 Commit to the Bit → Hey Y’all, Watch This! Card IDs, Costs, and deck quantities are unchanged. P002 and P020 retain their existing abilities pending individual review; SPRING BREAK!!! still requires conversion of its legacy Response wording.
+
+🧪 **Hey Y’all, Watch This! — provisional risk/reward:** choose a Ready friendly Character and roll a d6. A final 1 Rotates it; 2–5 grants either +4 Attack or +2 Trouble this Turn; 6 grants both. After an initial 2–5, optionally reroll once, replacing the first result. Resolve only the final result. Revisit the effect and numbers during the Reckless card pass. Digital implementation is pending the existing Mordecai engine parity work; do not treat this as implemented or balance-tested.
+
+🧪 **Unsupervised Toddler:** intended to use a dice effect. The previously proposed optional roll-and-push ability remains a candidate; no exact effect or numbers are finalized. Its canonical card text still needs replacement during its review.
+
 ---
 
 🔒 **Lab ruling — universal Last Straw combat state:** while a Leader is at Last Straw, that player's Characters have Hothead and may Attack opposing Ready Characters. Hothead remains Attack-only and does not grant early Cause Trouble. This is the baseline comeback agency; the chosen Last Straw supplies the one-time comeback event. There is no universal mass-Rotate/reset on entering Last Straw.
