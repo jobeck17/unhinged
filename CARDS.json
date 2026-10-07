@@ -436,7 +436,7 @@
       "id": "P021",
       "type": "Action",
       "cost": 1,
-      "name": "Glory Days",
+      "name": "Victory Lap",
       "stats": "",
       "traits": [],
       "text": "Ready one of your Rotated Characters that Defeated an opposing Character with an Attack this Turn. It cannot Attack again this Turn.",
@@ -447,7 +447,7 @@
       "audit_identity": [],
       "complexity": "one_shot",
       "status": "testing",
-      "flavor": "The story gets faster every year.",
+      "flavor": "",
       "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
     },
     {
