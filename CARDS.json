@@ -68,19 +68,21 @@
       "id": "P004",
       "type": "Character",
       "cost": 2,
-      "name": "Bachelorette Party",
-      "traits": [],
-      "text": "",
+      "name": "Boogie Boarder",
+      "traits": [
+        "Human"
+      ],
+      "text": "When this Character is Dismissed or Defeated, Draw a card.",
       "style": "Reckless",
-      "complexity": "textless",
+      "complexity": "leaves_play",
       "keywords": [],
-      "power": 3,
-      "guard": 3,
+      "power": 2,
+      "guard": 1,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Matching shirts. Conflicting alibis.",
+      "flavor": "",
       "trouble": 1
     },
     {
