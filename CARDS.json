@@ -131,10 +131,12 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "Just Gotta Rev It — Once during your Turn, if this Character is Ready and eligible to Attack, you may roll a six-sided die. On a 1, Rotate it. Otherwise, it gets +2 Attack this Turn and you may roll once more. If the second roll is a 1, Rotate it and remove the Attack bonus granted by this ability. Otherwise, increase that bonus to +4 Attack this Turn.",
+      "text": "Hothead. Just Gotta Rev It — Once during your Turn, if this Character is Ready and eligible to Attack, you may roll a six-sided die. On a 1, Rotate it. Otherwise, it gets +2 Attack this Turn and you may roll once more. If the second roll is a 1, Rotate it and remove the Attack bonus granted by this ability. Otherwise, increase that bonus to +4 Attack this Turn.",
       "style": "Reckless",
       "complexity": "mixed",
-      "keywords": [],
+      "keywords": [
+        "Hothead"
+      ],
       "power": 2,
       "guard": 3,
       "audit_identity": [
@@ -175,7 +177,7 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this attacks or Causes Trouble, roll a six-sided die. On a 1, cancel it and your Leader loses Composure equal to this Character's Attack. Otherwise, continue normally.",
+      "text": "When this attacks or Causes Trouble, roll a six-sided die. On a 1, cancel it and your Leader loses 2 Composure. Otherwise, continue normally.",
       "style": "Reckless",
       "complexity": "attack_trigger",
       "keywords": [],
@@ -186,7 +188,7 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 3
+      "trouble": 1
     },
     {
       "id": "P010",
