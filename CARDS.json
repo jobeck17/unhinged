@@ -544,15 +544,16 @@
       "name": "Gas Station Pills",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +1 Power. Dismiss this: Ready the attached Character and deal 1 damage to it.",
+      "text": "Attach to one of your Characters. Rotate this Item and roll a six-sided die. On a 1, Rotate the attached Character. On a 2–5, it gets +1 Power this Turn. On a 6, it gets +2 Power this Turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "activated",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Repeatable dice Item with +1/+2 Power results locked for testing on 2026-10-07. Replaces passive Power and Dismiss/Ready/self-damage effect. Digital parity pending."
     },
     {
       "id": "P028",
