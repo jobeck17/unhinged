@@ -10,6 +10,10 @@
 
 ## Reckless pool review · 6 October 2026
 
+✅ **Three-cost Character rename · 7 October 2026:** Scout With a Flare Gun (P007) is replaced by Shirtless Guy With a Chainsaw. Remove Kid/Scout Traits; retain Daredevil. The same ID preserves existing deck quantities.
+
+🧪 **Just Gotta Rev It:** Cost 3, 2 Attack / 3 Health / 1 Trouble. Once during your Turn, while Ready and eligible to Attack, optionally roll a d6 before declaring an Attack: 1 Rotates him; 2–6 grants +2 Attack this Turn. May roll once more: 1 Rotates him and removes only the bonus granted by this ability; 2–6 increases that bonus to +4 Attack this Turn. Base Attack therefore remains 2, or becomes 4/6 without other modifiers. No Hothead or early Cause Trouble permission is granted. Stats and effect are testing candidates. Digital implementation remains pending Mordecai parity.
+
 🔒 **One-cost Characters locked for this pass:** Feral Chihuahua (P001) is Cost 1, 2 Attack / 2 Health / 1 Trouble; Vape Kid (P017) is Cost 1, 1 Attack / 3 Health / 1 Trouble. Both have no abilities or keywords. Their former leave-play Composure pressure and self-damage/filtering abilities are removed. May revisit later; deck quantities are unchanged.
 
 ✅ **Style direction:** voluntary risk/reward, dangerous stunts, and press-your-luck choices. Self-damage may be a supporting consequence; it is not the required identity of Reckless. Rewards may affect Attack, Trouble, or other effects depending on the card.
