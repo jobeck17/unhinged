@@ -494,7 +494,7 @@
       "name": "Hey Y’all, Watch This!",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Ready Characters and roll a six-sided die. On a 1, Rotate it. On a 2–5, choose one: it gets +4 Power or +2 Trouble this Turn. On a 6, it gets both this Turn. After rolling a 2–5, you may roll once more; the new result replaces the first. Resolve only the final result.",
+      "text": "Choose one of your Ready Characters and roll a six-sided die. On a 1, Rotate it. On a 2–5, choose one: it gets +3 Power or +1 Trouble this Turn. On a 6, it gets both this Turn. After rolling a 2–5, you may roll once more; the new result replaces the first. Resolve only the final result.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -502,7 +502,8 @@
       "audit_identity": [],
       "complexity": "mixed",
       "status": "testing",
-      "flavor": ""
+      "flavor": "",
+      "audit_note": "Reduced +3 Power/+1 Trouble dice rewards locked for testing on 2026-10-07. Digital parity pending."
     },
     {
       "id": "P025",
@@ -566,15 +567,16 @@
       "name": "Roman Candle",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. Rotate: Deal 1 damage to an opposing Character. If the attached Character is not a Scout, deal 1 damage to it too.",
+      "text": "Attach to one of your Characters. It gets +1 Trouble.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Attachment +1 Trouble locked for testing on 2026-10-07. Replaces damage activation and Scout exception. Normal attachment stacking and Cause Trouble requirements remain. Digital parity pending."
     },
     {
       "id": "P029",
@@ -4313,7 +4315,7 @@
       "cost": 1,
       "name": "Truck Nuts",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +1 Power. If it has Driver, it gets +2 Power instead.",
+      "text": "Attach to one of your Characters. It has Sucker Punch. If it has Driver, it gets +1 Power.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -4321,7 +4323,7 @@
       "complexity": "ongoing",
       "status": "testing",
       "flavor": "",
-      "audit_note": "Cost 1 and +2 total Power for Driver locked for isolated-deck testing on 2026-10-07. Driver assigned to Designated Driver, Road Rage Ron, and Drunk Jet Skier. Multiple copies stack under normal attachment rules; digital effect parity pending."
+      "audit_note": "Reworked for testing on 2026-10-07: grants all wearers Sucker Punch, +1 Power only to Drivers. Replaces universal +1/Driver +2 Power. Existing three Driver assignments retained. Digital parity pending."
     },
     {
       "id": "LAB-FLM-005",
