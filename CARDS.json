@@ -28,7 +28,8 @@
       "cost": 2,
       "name": "Designated Driver",
       "traits": [
-        "Daredevil"
+        "Daredevil",
+        "Driver"
       ],
       "text": "",
       "style": "Reckless",
@@ -111,7 +112,9 @@
       "type": "Character",
       "cost": 4,
       "name": "Road Rage Ron",
-      "traits": [],
+      "traits": [
+        "Driver"
+      ],
       "text": "When this Character Defeats an opposing Character with an Attack, you may Dismiss an opposing Item costing 2 or less.",
       "style": "Reckless",
       "complexity": "attack_trigger",
@@ -307,7 +310,8 @@
       "cost": 4,
       "name": "Drunk Jet Skier",
       "traits": [
-        "Daredevil"
+        "Daredevil",
+        "Driver"
       ],
       "text": "Hothead. No-Wake Zone? — When this Attacks, you may deal 1 damage to an opposing Character other than the target of this Attack. If you do, deal 1 damage to another Character you control.",
       "style": "Reckless",
@@ -4291,6 +4295,22 @@
       "audit_identity": [],
       "status": "playtest",
       "flavor": "No, seriously. Don’t."
+    },
+    {
+      "id": "LAB-FLM-004",
+      "type": "Item",
+      "cost": 1,
+      "name": "Truck Nuts",
+      "traits": [],
+      "text": "Attach to one of your Characters. It gets +1 Power. If it has Driver, it gets +2 Power instead.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Cost 1 and +2 total Power for Driver locked for isolated-deck testing on 2026-10-07. Driver assigned to Designated Driver, Road Rage Ron, and Drunk Jet Skier. Multiple copies stack under normal attachment rules; digital effect parity pending."
     }
   ]
 }
