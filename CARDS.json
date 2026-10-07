@@ -92,20 +92,18 @@
       "traits": [
         "Kid"
       ],
-      "text": "Defiant. While this Character has damage, it gets +2 Attack.",
+      "text": "Where Did He Come From? — When this enters play, roll a six-sided die. 1 — Tantrum: Your Leader loses 2 Composure. 2 — He Broke Something: Deal 1 damage to another random Character you control. If you control no other Characters, nothing happens. 3 — Snack Break: Nothing happens. 4 — Found Something: Draw a card. 5 — Sugar Rush: This gets +2 Attack and Hothead this Turn. 6 — Where Are His Parents?!: This gets +3 Attack and Hothead this Turn. After its next Attack this Turn, Dismiss it.",
       "style": "Reckless",
-      "complexity": "mixed",
-      "keywords": [
-        "Defiant"
-      ],
+      "complexity": "on_play",
+      "keywords": [],
       "power": 1,
-      "guard": 3,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
-      "flavor": "",
-      "trouble": 3
+      "status": "testing",
+      "flavor": "Look what I did!",
+      "trouble": 1
     },
     {
       "id": "P006",
