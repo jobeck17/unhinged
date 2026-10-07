@@ -3707,7 +3707,7 @@
       "guard": 2,
       "status": "lab-prototype",
       "purpose": "Cheap swarm body that sticks around a little better so Cat Lady can establish a colony without adding more damage output.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3727,7 +3727,7 @@
       "guard": 1,
       "status": "lab-prototype",
       "purpose": "One-cost aggressive Cat that helps Cat Lady establish the colony quickly while remaining fragile.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 3
     },
     {
@@ -3745,7 +3745,7 @@
       "guard": 4,
       "status": "lab-prototype",
       "purpose": "Defensive colony protector: low Power, high Health, and its protection ability make it a durable shield instead of another efficient attacker.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 1
     },
     {
@@ -3765,7 +3765,7 @@
       "guard": 2,
       "status": "lab-prototype",
       "purpose": "Lets the Cat player preserve a body at the cost of temporarily dropping board count.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3785,7 +3785,7 @@
       "guard": 2,
       "status": "lab-prototype",
       "purpose": "Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 1
     },
     {
@@ -3803,7 +3803,7 @@
       "guard": 1,
       "status": "lab-prototype",
       "purpose": "A ridiculous 2/1 that visibly refuses to die to the first two Attacks. Opponents can still use Return, Dismiss, non-Attack Defeat effects, or other removal normally.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3821,7 +3821,7 @@
       "guard": 5,
       "status": "lab-prototype",
       "purpose": "Rewards reaching the colony threshold without directly adding more Stash.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3839,7 +3839,7 @@
       "guard": 7,
       "status": "lab-prototype",
       "purpose": "Visible five-Cat payoff that turns a wide colony into finishing pressure.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 1
     },
     {
@@ -3857,7 +3857,7 @@
       "guard": 8,
       "status": "lab-prototype",
       "purpose": "Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3872,7 +3872,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Light Cat selection without generic Draw.",
-      "style": "Lab"
+      "style": "Momentum"
     },
     {
       "id": "LAB-CAT-013",
@@ -3889,7 +3889,7 @@
       "guard": 1,
       "status": "lab-prototype",
       "purpose": "Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Power.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3906,7 +3906,7 @@
       "guard": 1,
       "status": "lab-prototype",
       "purpose": "Cheap Cat-count body and visible blocking trap. Its global friendly-fire explosion can punish opposing boards but can also devastate the Cat Lady's own low-Health colony.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3921,7 +3921,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Wide-board recovery tool. Rewards maintaining a colony and helps the Cat player recover from Trojan Cat friendly fire without directly adding more bodies.",
-      "style": "Lab"
+      "style": "Momentum"
     },
     {
       "id": "LAB-CAT-016",
@@ -3938,7 +3938,7 @@
       "guard": 6,
       "status": "lab-prototype",
       "purpose": "Defensive Cat that punishes attackers twice: surviving damage applies a one-turn Ready lock and a permanent -1 Health scar. Repeated Hairballs can keep lowering the same Character's Health.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
@@ -3953,7 +3953,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Stores dismissed or defeated Cats as a hidden resource, including Cats that die while blocking for the Leader, and rewards building a graveyard-like stockpile without releasing the whole pile for free.",
-      "style": "Lab"
+      "style": "Momentum"
     },
     {
       "id": "LAB-CAT-018",
@@ -3967,7 +3967,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Turns the Shoebox stockpile into unpredictable recovery. The Cat returns normally rather than with Hothead or reduced Health.",
-      "style": "Lab"
+      "style": "Momentum"
     },
     {
       "id": "LAB-CAT-019",
@@ -3981,7 +3981,7 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Cat Lady's emergency reset: wipes both boards and refills both players, trading away the colony and Shoebox setup for a full restart.",
-      "style": "Lab"
+      "style": "Momentum"
     },
     {
       "id": "LAB-CAT-020",
@@ -3999,7 +3999,7 @@
       "guard": 3,
       "status": "lab-prototype",
       "purpose": "Deliberately weak four-cost body that converts permanent economy or buried Cats into permanent Power. Both modes Rotate Mittens III, forcing a choice between feeding it and attacking.",
-      "style": "Lab",
+      "style": "Momentum",
       "trouble": 2
     },
     {
