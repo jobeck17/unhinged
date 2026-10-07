@@ -12,6 +12,16 @@
 
 ## Reckless decision ledger · reconciled 7 October 2026
 
+### Latest steering · 7 October 2026, 12:48 ET
+- Return to card-by-card review; do not hold the whole pass for every remaining identity question.
+- Working body profile proposed by user: moderately high Attack, lower Health, low Trouble; disposable punch-first threats, with exceptions and card-based support. Not a universal stat formula or permission for blanket edits. No universal retaliation means attacking does not itself consume/kill the body.
+- Hothead additions to previously selected Characters are under review, not applied. Assistant recommends prioritizing Chainsaw Guy's eligibility/in-play timing when reviewing him; retain plain one-drops and Driver for now.
+- Lock battle rewards on actual opposing Defeat by a friendly Attack; do not equate nonlethal combat survival with 'winning'. Allow base Trouble and conditional Trouble specialists to coexist so empty opposing boards do not make the deck nonfunctional.
+- Broad damaged-Character execution theme is RETIRED. Item removal desired but bounded. Wipe is OPEN again, with full Dismiss, damaged-only removal, and costly Category 5 damage as competing candidates.
+- Trouble modifiers/permission live on printed Character/Item/Action text, not a new universal rule.
+- Isolated-deck creative pass continues; actual numerical balance follows simulations/human tests after parity. Review obvious role conflicts now without making untested win-rate claims.
+
+
 This ledger governs this review. Earlier entries below are dated design history where they conflict with it. Do not turn proposals into current rules. Preserve prior candidates as BANKED/RETIRED rather than silently overwriting them. Do not add a new card proposal until the current decision is settled, except to explain concrete alternatives the user requests.
 
 ### CURRENT — explicitly confirmed and saved
@@ -38,10 +48,10 @@ This ledger governs this review. Earlier entries below are dated design history 
 2. **Trouble curve:** user suggests lower Character Trouble with boosts from support. This is a proposal, not permission to reduce every Character. Preserve reliable baseline pressure and a way to finish Last Straw against an empty opposing board.
 3. **Bachelorette Party:** proposed Cost 2, 2/1/1, Draw when Dismissed or Defeated. Theme fit still under discussion; canonical P004 remains 3/3/1, no ability. Explicit Dismiss/Defeat avoids repeated Return draw; user initially said leaves play.
 4. **Electrician replacement/support role:** Airboat Captain, Rollerblade Guy, Beach Fisherman, Snowbird in a Convertible. Captain proposal was Cost 3, 2/3/1, +1 Trouble to other Cost ≤2 Characters; NOT adopted, flagged for generic board-width snowballing. Alternative role: conditional Trouble payoff after an Attack Defeat.
-5. **Board reset — SCOPE/DESTINATION RESOLVED:** Dismiss all Characters and Items controlled by both players. Send affected cards to their owners' discards; this is Dismiss, not Defeat. Stash, Leaders, Last Straws, hands, and decks are unaffected. This does not trigger Florida Man's Attack-Defeat passive. Ordinary Dismiss/leave-play triggers and applicable replacements (including Stubborn/Jerry-Rig) remain in force unless future card text explicitly overrides them. No suppression/bypass exception has been approved. Cost, card name, and any additional text remain OPEN. The earlier damage-based Category 5 suggestion is banked and does not implement this reset.
-6. **Item removal:** combat-triggered Dismiss of an opposing Item Cost ≤2 proposed; decide card/source and limitations.
-7. **Finish damaged enemies:** damage-based attacks and conditional removal of damaged opposing Characters. Avoid a cheap ping removing any large Character without a Health/Cost/setup restriction.
-8. **Attack-to-Trouble payoffs:** +2 Trouble on a specific Character after a friendly Attack Defeat this Turn; unusually powerful Character that can Cause Trouble only after combat victory; mandatory Attack drawback used sparingly. None adopted.
+5. **Board wipe — REOPENED / UNDECIDED:** Earlier candidate: Dismiss all Characters and Items controlled by both players to their owners' discards, with Stash/Leaders/Last Straws untouched; name and Cost TBD. User now reopens the whole wipe and suggests removing all damaged Characters as an alternative. Do not treat complete clearing as final. User likes Category 5 as a Florida Action and suggests very high Cost, around 8; earlier proposed effect was deal 4 damage to every Character. These are separate candidates, no new card/effect/cost has been finalized. Damage-vs-Dismiss/Defeat and trigger consequences must be settled with the card. Wipe casualties do not qualify for Florida Man's Attack-only passive.
+6. **Item removal — WANTED / IMPLEMENTATION OPEN:** include some bounded Item interaction. Candidates: on-entry Dismiss an opposing Item under a specified Cost; separate Action with Cost-limited Item removal; trigger when this Character is Defeated; earlier Attack-Defeat trigger to Dismiss opposing Item Cost ≤2. Threshold, source, and exact trigger not settled.
+7. **Defeat damaged opposing Character — RETIRED:** user explicitly scraps this proposed removal theme. Ordinary attacks on damaged Characters still function normally; existing cards will be reviewed individually, not bulk-deleted.
+8. **Attack-to-Trouble payoffs — CARD TEXT ONLY:** User wants conditional Trouble boosts/permission on Characters, Items, or Actions, no blanket core rule. Candidate: some higher-base-Trouble Characters can Cause Trouble only after a friendly Attack Defeats an opposing Character this Turn. Define 'win a fight' as such a Defeat for proposed templating, not just survive/deal damage. Mandatory Attack remains a proposed drawback, not a universal rule. Needs timing that preserves player choice of action order and legal-target handling.
 9. **Deck integration:** Bad Decisions still uses old self-damage package labels, mulligan priorities, partial card selection, and Florida Adrenaline references. Rebuild/validate the 40-card shell after the package/Leader is settled; do not claim current list is the new engine.
 
 ### BANKED — names, transfers, and mechanics to revisit
@@ -63,7 +73,7 @@ This ledger governs this review. Earlier entries below are dated design history 
 - Root Mordecai Leader text remains under audit. These two historical versions must not be conflated.
 
 ### Working sequence
-Florida Man passive settled → settle which kind of board reset and its scope → settle conditional Trouble support → finish 3-Cost Characters → review higher curve and Actions/Items → rebuild baseline deck → digital parity and testing. Review one decision per step. Save confirmed changes immediately; report every candidate as CURRENT, TESTING, BANKED, or OPEN.
+Florida Man passive settled → resume 3-Cost Characters, settling printed Trouble support/Hothead as needed → review higher curve and Actions/Items (including competing wipe candidates) → rebuild baseline deck → digital parity and testing. Review one decision per step. Save confirmed changes immediately; report every candidate as CURRENT, TESTING, BANKED, or OPEN.
 
 ### Earlier review entries — historical where superseded
 
