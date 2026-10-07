@@ -572,14 +572,15 @@
       "stats": "",
       "traits": [],
       "text": "When this enters play, place it beside the opposing Leader. At the end of each Turn, deal 1 damage to the Leader this is beside. Then that player may Rotate one of their Ready Characters. If they do, move this beside the other Leader.",
-      "style": "Reckless",
+      "style": "Unassigned",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "status": "banked",
+      "flavor": "",
+      "audit_note": "Removed from Reckless on 2026-10-07. Preserve for a future Style assignment; destination and Composure-era effect redesign remain open."
     },
     {
       "id": "P030",
