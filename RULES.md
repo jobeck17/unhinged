@@ -246,6 +246,12 @@ Breaking Point belongs to Leader identity. Last Straw is currently a universal s
 
 The Mordecai content audit must assign/finalize each Leader's Breaking Point and production Last Straw pool before balance results are authoritative.
 
+### Florida Man — current passive
+
+**Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure.**
+
+This triggers for each qualifying Defeat, with no once-per-Turn limit. A Defeat caused by an Action, Item, or other non-Attack effect does not qualify. This replaces Florida Man’s historical Adrenaline and damaged-Character Hothead/Sucker Punch/Ready passives. It is ordinary Composure loss and cannot substitute for the final successful Cause Trouble at Last Straw. His Breaking Point remains under content audit. Digital implementation remains pending Mordecai parity.
+
 ## 18. Game end
 
 A player loses when their Leader becomes **Unhinged**.
