@@ -402,15 +402,16 @@
       "name": "Hold My Beer",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters. If it entered play this Turn, it gains Hothead this Turn. If it attacked this Turn, Ready it. It can’t Attack again this Turn. If it has the Daredevil Trait, you may deal 1 damage to it.",
+      "text": "One of your Characters gets +3 Power and Hothead this Turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "lab",
-      "flavor": ""
+      "complexity": "one_shot",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
     },
     {
       "id": "P020",
@@ -438,15 +439,16 @@
       "name": "Glory Days",
       "stats": "",
       "traits": [],
-      "text": "Ready one of your Rotated Characters that attacked this Turn. It gets +2 Power this Turn and cannot Attack again this Turn.",
+      "text": "Ready one of your Rotated Characters that Defeated an opposing Character with an Attack this Turn. It cannot Attack again this Turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": "The story gets faster every year."
+      "complexity": "one_shot",
+      "status": "testing",
+      "flavor": "The story gets faster every year.",
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
     },
     {
       "id": "P022",
@@ -524,15 +526,16 @@
       "name": "Walk It Off",
       "stats": "",
       "traits": [],
-      "text": "Heal up to 2 damage from a Character. Draw a card for each damage healed this way. Then deal 1 damage to that Character.",
+      "text": "Heal up to 2 damage from one of your Characters. Draw a card.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "one_shot",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
     },
     {
       "id": "P027",
@@ -3501,17 +3504,18 @@
     {
       "id": "LAB-FLM-001",
       "type": "Item",
-      "cost": 1,
-      "name": "Broken Lawnmower",
+      "cost": 2,
+      "name": "Bolt Cutters",
       "traits": [],
-      "text": "Pull the Cord — Activate: Rotate one of your Ready Characters. Put a Start counter on Broken Lawnmower. Once it has 3 Start counters, your Characters get +1 Power while it remains in play.",
+      "text": "Dismiss this Item: Dismiss an opposing Item costing 2 or less.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
       "guard": null,
-      "complexity": "ongoing",
-      "status": "lab",
-      "flavor": "Third pull’s the charm."
+      "complexity": "activated",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Locked for isolated-deck testing on 2026-10-07. Digital effect parity pending."
     },
     {
       "id": "LAB-FLM-002",
@@ -4311,6 +4315,22 @@
       "status": "testing",
       "flavor": "",
       "audit_note": "Cost 1 and +2 total Power for Driver locked for isolated-deck testing on 2026-10-07. Driver assigned to Designated Driver, Road Rage Ron, and Drunk Jet Skier. Multiple copies stack under normal attachment rules; digital effect parity pending."
+    },
+    {
+      "id": "LAB-FLM-005",
+      "type": "Action",
+      "cost": 1,
+      "name": "Bottle Rockets",
+      "traits": [],
+      "text": "Deal 2 damage to an opposing Character.",
+      "style": "Reckless",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "complexity": "one_shot",
+      "status": "testing",
+      "flavor": "",
+      "audit_note": "Added for testing on 2026-10-07. Character damage only; does not trigger Florida Man's Attack-only passive. Digital effect parity pending."
     }
   ]
 }
