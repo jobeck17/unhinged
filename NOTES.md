@@ -1,3 +1,11 @@
+## Action completion pass — 7 October 2026
+
+- **LOCKED FOR TESTING — A MILLION KILOGRAMS OF CAFFEINE!!!! (LAB-FLM-002), Cost 3:** “Choose one of your Characters. It gets +5 Power, Hothead, and Sucker Punch this Turn. After its next Attack this Turn, Defeat it.” Explicit next-Attack timing clarifies disposable missile. Digital parity pending.
+- **LOCK RECONFIRMED — SPRING BREAK!!! (P020), Cost 2:** Ready friendly Rotated Character that attacked this Turn, +2 Power and cannot Cause Trouble this Turn.
+- **TABLED FOR NEXT SET — Fireworks Incident (P023):** preserve as Reckless / banked, excluded current-set baseline. Future Scientist package remains potential, not a transfer. No baseline deck references it.
+- **ONE ACTION DECISION REMAINS:** Hey Y'all, Watch This! currently +4 Power OR +2 Trouble on 2–5 and both on 6, with optional reroll. Assistant suggested +3/+1, not approved or applied. Do not call all Actions locked. Nine current-set Actions excluding Fireworks: eight locked, one open.
+- **ITEM STATUS:** seven Reckless Items; five locked (Truck Nuts, Pills, Ramp, Bolt Cutters, Life Jacket), two unresolved (Roman Candle legacy Scout text, Dirty Needle pending effect). No table decision for either has been approved. All locks are isolated-deck testing baselines.
+
 ## Did You See That?! — locked 7 October 2026
 
 - **LOCKED FOR TESTING — LAB-FLM-007, Did You See That?!, Cost 2 Action:** “Draw a card. If one of your Characters Defeated an opposing Character with an Attack this Turn, Draw another.” User locks the name following the tiered proposal. Always playable during normal own main Turn; Draw 1 baseline, Draw 2 total after qualifying Attack Defeat, no scaling per Defeat. Supersedes Spoils of the Brawl name and play-only-if restriction. Digital parity and balance testing remain pending.
