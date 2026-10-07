@@ -258,7 +258,7 @@
       "leader": "Crazy Cat Lady",
       "composure": 20,
       "styles": [
-        "Lab"
+        "Momentum"
       ],
       "cards": {
         "LAB-CAT-001": 6,
@@ -311,7 +311,7 @@
       "leader": "Mad Scientist",
       "composure": 20,
       "styles": [
-        "Lab"
+        "Gambler"
       ],
       "cards": {
         "LAB-SCI-001": 4,
