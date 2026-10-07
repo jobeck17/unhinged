@@ -1,3 +1,7 @@
+## Did You See That?! — locked 7 October 2026
+
+- **LOCKED FOR TESTING — LAB-FLM-007, Did You See That?!, Cost 2 Action:** “Draw a card. If one of your Characters Defeated an opposing Character with an Attack this Turn, Draw another.” User locks the name following the tiered proposal. Always playable during normal own main Turn; Draw 1 baseline, Draw 2 total after qualifying Attack Defeat, no scaling per Defeat. Supersedes Spoils of the Brawl name and play-only-if restriction. Digital parity and balance testing remain pending.
+
 ## Spring Break and combat draw locks — 7 October 2026
 
 - **LOCKED FOR TESTING — SPRING BREAK!!! (P020), Cost 2:** “Ready one of your Rotated Characters that attacked this Turn. It gets +2 Power and cannot Cause Trouble this Turn.” User moves the proposed Floor It! effect here. Retires earlier proposed Cost 3 / team Trouble boost and legacy Response concept. Allows another Attack, not Trouble conversion.
