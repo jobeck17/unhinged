@@ -1,3 +1,22 @@
+## Misdirection working-name replacements — approved 8 October 2026
+
+Joseph approved all ten suggested replacements as current working names, explicitly open to later refinement. Mechanics, IDs, costs and stats unchanged. These supersede earlier tentative Invisible String? / Magic Wand / Transform suggestions. Former ★ names have a replacement now; ○ indicates the new name remains reviewable, not a required re-rename.
+
+| ID | Previous working name | Current working name |
+|---|---|---|
+| P088 | Beer-Stained Cards | Marked Deck ○ |
+| P142 | I Want to Speak to Your Manager | Vanishing Act ○ |
+| P076 | Wi-Fi Bandit | Overeager Apprentice ○ |
+| P077 | Script Kiddie | Opening Act ○ |
+| P066 | Off-Duty Clown | Stagehand ○ |
+| LAB-MAG-003 | Birthday Boy | Disappearing Assistant ○ |
+| P039 | Social Media Influencer | Sleight-of-Hand Artist ○ |
+| P068 | Social Media Grifter | Card Shark ○ |
+| P075 | Pirate Radio Operator | Street Magician ○ |
+| P073 | IT Guy Who Quit Six Months Ago | Quick-Change Artist ○ |
+
+Beer-Stained Cards remains BANKED as a future Florida Man/Reckless name/concept; P088's current Misdirection draw-engine ability stays on Marked Deck. No style transfer. Previously approved Presto Chango, Ace Up My Sleeve, The Headliner, Heckler, The Mentalist and Now You Don't remain unchanged. Other name flags (including School Bully ★, Lady ○ and Enthusiastic Volunteer ○) remain intact. Pool stays 32 active designs; production/playtest implementation remains pending.
+
 ## Conspiracy Blogger table — approved 8 October 2026
 
 - **P069 Conspiracy Blogger ○: TABLED** by Joseph. Preserve approved Cost 4, 2/4/2, start-of-turn name Character/Action/Item and reveal top deck card; correct to hand, wrong to bottom. No automatic migration or replacement; preserve ○.
