@@ -107,10 +107,11 @@ export function installGamblingDad(Game, LEADERS) {
   };
   Game.prototype.canPoker=function(p=this.turn) {
     return this.winner===null && this.turn===p && this.name(p)===DAD &&
-       !this.players[p].pokerUsed && this.players.every(s=>s.deck.length>=4);
+       !this.players[p].pokerUsed && this.players[p].fuel>=1 && this.players.every(s=>s.deck.length>=4);
   };
   Game.prototype.dadPoker=async function(p=this.turn) {
     if(!this.canPoker(p))return false;
+    if(!this.payCost(p,1))return false;
     this.players[p].pokerUsed=true;
     const pokerMode=Math.random()<0.5?"HIGH":"LOW";
     this.pokerMode=pokerMode;
