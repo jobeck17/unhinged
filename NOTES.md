@@ -1,3 +1,15 @@
+## Misdirection curve batch — locked 8 October 2026
+
+Joseph approved all three proposals:
+- **P076 Wi-Fi Bandit ★:** Cost **1**, **1/1/1**, Hothead.
+- **LAB-MAG-001A/B Very Enthusiastic Volunteer ○:** Cost **1**, **1/1/1**, unchanged optional +1 Power this Turn to another friendly Character on entrance or return from play to your hand. Consolidate duplicate IDs later.
+- **P066 Off-Duty Clown ★:** Cost **3**, **2/4/1**, unchanged draw 1/discard 1 whenever another friendly Character returns from play to your hand.
+
+These explicitly supersede the earlier curve/stat locks. Approved pool remains 35 designs: 22 Characters, 10 Actions, 3 Items.
+Cost/type counts (unique designs, not deck copies): Cost 1 = 3 Characters/3 Actions/0 Items (6); Cost 2 = 5/5/1 (11); Cost 3 = 6/2/2 (10); Cost 4 = 5/0/0 (5); Cost 5 = 2/0/0 (2); Cost 6 = 1/0/0 (1).
+
+Next review support gaps without silently altering locks: Trap Door currently only catches friendly Dismiss from Now You Don't; Sucker Punch only innate School Bully plus Identity Thief copying; immediate Trouble only Script Kiddie. Existing draw/filter and entrance effects are well represented. Additional proposals remain unapproved. All Misdirection revisions still await playtest implementation and testing.
+
 ## Misdirection — three-card Trap Door machine locked — 8 October 2026
 
 - **APPROVED DESIGN REVISION — P086:** rename Switcheroo to **Now You Don't**. Keep its current cost-2/equal-or-lower opposing-character selection framework unless subsequently revised, but move both selected Characters from play to their owners' discard piles instead of returning them to hand. Use **Dismiss**, not Defeat: this preserves leave-play triggers without automatically firing Defeated abilities. This changes the prior bounce lock by Joseph's explicit instruction; no production implementation yet. Balance remains open because this is stronger opposing removal.
