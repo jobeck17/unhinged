@@ -15,4 +15,4 @@ button.card{padding:0;background:none;border:0;border-radius:10px;height:auto;wi
 .demo-page>header{display:block}.demo-page>header .eyebrow{display:block}.demo-page>header .intro{font-size:17px;line-height:1.6}
 
 /* Wordy cards reserve more room for rules rather than clipping them. */
-.face-long .face-art{height:24cqw}.face-long .face-rules{font-size:3.9cqw;line-height:1.25}.face-dense .face-art{height:14cqw}.face-dense .face-rules{font-size:3.5cqw;line-height:1.2}.face-dense .face-flavor{font-size:3cqw}
+.face-long .face-art{height:24cqw}.face-long .face-rules{font-size:3.9cqw;line-height:1.25}.face-dense .face-art{height:3cqw}.face-dense .face-rules{font-size:4.4cqw;line-height:1.25}.face-dense .face-flavor{font-size:3.6cqw}

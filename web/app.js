@@ -1,4 +1,4 @@
-import {cardFace} from './card-face.js?v=face-01';
+import {cardFace} from './card-face.js?v=face-02';
 import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 import {aiAction,aiChoice} from './ai.js?v=meatshield-01';
 import './cat-lady.js?v=meatshield-01';
