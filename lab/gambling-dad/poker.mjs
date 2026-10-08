@@ -96,7 +96,7 @@ export function installGamblingDad(Game, LEADERS) {
       possibilities.sort((a,b)=>compareScores(b.score,a.score,pokerMode));
       const indices=await this.ask({
         player:who,title:"Rock Bottom Poker: choose TWO of your FOUR cards",
-        mandatory:true,pokerCards:true,multi:true,min:2,max:2,
+        mandatory:true,pokerCards:true,pokerMode,multi:true,min:2,max:2,
         options:hands[who].map((id,i)=>({
           value:i,cardId:id,
           label:this.card(id).name+" · Cost "+this.card(id).cost+" · Power "+(this.card(id).type==="Character"?(this.card(id).power||0):0)
