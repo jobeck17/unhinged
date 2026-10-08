@@ -122,7 +122,7 @@ Ready protects from ordinary Attacks **only**. Ready Characters may still be tar
 
 The attacker deals damage equal to its Power. There is **no blocking step and no universal retaliation**. If the target leaves before combat damage, the Attack ends and the attacker remains Rotated.
 
-**Retaliate:** When this Character survives an Attack, it deals its Power as damage to the attacking Character. A Character Defeated by the Attack does not Retaliate unless text says otherwise.
+**Retaliate:** When this Character is Attacked, it deals its Power as damage to the attacking Character after the Attack damage resolves, even if it was Defeated by that Attack. Capture its Power before damage resolves. If it leaves play before Attack damage is dealt (for example by Return), it does not Retaliate.
 
 ## 9. Damage and Health
 
@@ -229,7 +229,7 @@ A triggered/Activated ability resolves independently of its source remaining in 
 
 **Hothead:** This Character may Attack on the Turn it enters play. Attack permission only; it does not allow early Cause Trouble.
 
-**Retaliate:** When this Character survives an Attack, it deals its Power as damage to the attacking Character.
+**Retaliate:** When Attacked, deal this Character’s Power to the attacker after Attack damage, even if this Character was Defeated by that Attack.
 
 **Sucker Punch:** This Character may Attack Ready opposing Characters.
 
@@ -253,7 +253,7 @@ The Mordecai content audit must assign/finalize each Leader's Breaking Point and
 
 **Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure.**
 
-This triggers for each qualifying Defeat, with no once-per-Turn limit. A Defeat caused by an Action, Item, or other non-Attack effect does not qualify. This replaces Florida Man’s historical Adrenaline and damaged-Character Hothead/Sucker Punch/Ready passives. It is ordinary Composure loss and cannot substitute for the final successful Cause Trouble at Last Straw. His Breaking Point remains under content audit. His Attack-only passive is implemented in the production Reckless browser package; other Styles still require their own parity audit.
+This triggers for each qualifying Defeat, with no once-per-Turn limit. A Defeat caused by an Action, Item, or other non-Attack effect does not qualify. This replaces Florida Man’s historical Adrenaline and damaged-Character Hothead/Sucker Punch/Ready passives. It is ordinary Composure loss and cannot substitute for the final successful Cause Trouble at Last Straw. His Breaking Point is “You Ain’t Seen Nothing Yet!” as specified below. His Attack-only passive is implemented in the production Reckless browser package; other Styles still require their own parity audit.
 
 ## 18. Game end
 
@@ -277,3 +277,34 @@ Design order remains:
 **irresistible idea → preserve the outrageous part → add meaningful counterplay → tune numbers**
 
 The core is feature-complete for this playtest. Next work is consistency, terminology, cards/decks/abilities, Leader Breaking Points, Last Straws, engine/browser/builder parity, and human playtesting.
+
+
+## Stonewall audit and threshold content — 8 October 2026
+
+This section supersedes legacy card behavior for the audited Stonewall pool. The 33 locked cards and 40-card coverage deck are in CARDS.json and DECKS.json. The prior conversational count of 32 omitted Bicycle Cop, which was added when Committee moved to Cost 4. Preserve every lock; choose a card to table later if the target remains 32 plus an open 33rd slot. All costs/stats are provisional until cross-style testing.
+
+**Meat Shield** replaces Bodyguard on audited cards. While a Character with Meat Shield is Rotated, opposing Characters that can legally Attack it must choose one of the defender’s legally attackable Rotated Meat Shields before Attacking another Character. Ready Meat Shields do not protect or redirect, even when Sucker Punch makes them attackable. Multiple eligible Meat Shields offer a choice. Meat Shield does not restrict Cause Trouble, Actions, Items, or abilities. Crossing Guard alone may optionally enter Rotated; this is separate printed text, not part of the keyword.
+
+**Absorb X** uses the highest granted value, never adds multiple grants together. “Have Absorb 1” does not mean “Absorb +1.” This applies equally to innate Absorb, Helicopter Mom, Patio Umbrella, and Dig In. Mom protects other friendly Characters only while she is Ready; Umbrella protects its wearer only while Rotated. Dig In applies to your Characters (including those played later) until the start of your next Turn. None reduces Composure loss.
+
+**Ready timing:** A Character Readies only when it changes from Rotated to Ready. Entering Ready or applying Ready to an already Ready Character does not trigger Ready abilities. Grandma heals another chosen friendly Character for up to 2 on any actual Ready transition, including effects; no once-per-Turn limit. Old Dog heals itself for 1 only on an actual transition during its controller’s Ready step. Lawn Chair and Take a Breather Ready a chosen friendly Rotated Character and prohibit that Character from Attacking or Causing Trouble for the rest of the current Turn. Those restrictions apply even if it did not act earlier. Lawn Chair spends 1 Ready Stash and Rotates the Item; Stash payment does not discard a normal Stash card. These effects do not erase entry restrictions.
+
+**Skip next Ready step:** Committee and Not in My Neighborhood prevent automatic Readying during the chosen Character’s controller’s next Ready step. Consume the restriction on that step, then allow later steps normally. This does not prevent a card effect from Readying the Character earlier or during that Turn. A Character already Ready when the skipped step arrives remains Ready; the restriction does not Rotate it.
+
+**Durations:** File a Complaint’s −2 Power expires at the start of its caster’s next Turn. Concerned Citizen’s bonuses from opposing Actions/Items remain through its controller’s next Turn and expire at the end of that Turn. Dig In lasts until the start of its caster’s next Turn. Wait Them Out is playable only before any friendly Attack that Turn and prevents all further friendly Attacks that Turn; Cause Trouble remains permitted.
+
+**HOA Lawyer:** Each active copy adds 1 to the final Cost of an opposing Action that targets one or more of that Lawyer’s controller’s Characters or Items. Multiple copies stack. Apply the tax once per Lawyer per Action, not once per target. Friendly-target-only Actions and untargeted effects such as Category 5 do not pay this tax. Targets and affordability are validated before Stash or cards are spent. Targeted Actions played for free still pay the tax.
+
+**HOA President:** Failure to Respond remains unchanged: beginning in Round 8, your Characters get +1 Trouble.
+
+**Breaking Point — Final Warning:** When an opposing Character Causes Trouble that crosses your Leader from above 10 to 10 or below, you may Dismiss that Character after its Trouble resolves. The Composure loss remains. Dismiss is not Defeat, but leave-play/Dismiss abilities still trigger. Non-Trouble Composure loss triggers/spends Breaking Point without a Dismiss. This is a one-time threshold ability.
+
+**Florida Man Breaking Point — You Ain’t Seen Nothing Yet!:** Roll a visible D6. 1: Rotate a chosen Ready friendly Character. 2–5: Ready a chosen friendly Rotated Character. 6: Ready all your Characters. If there is no eligible Character, resolve the roll without a target effect. Readying does not grant Hothead or early Trouble. Roll, outcome, and history are visible to both players.
+
+Resolve queued Breaking Point abilities after the current effect and before any crossed Last Straw. Crossing both thresholds with one Cause Trouble still allows Final Warning, then reveals Last Straw and ends the current Turn. A later legal Cause Trouble remains necessary for the final win. Empty-deck Last Straw does not retroactively trigger Breaking Point.
+
+**Peace and Quiet:** Restore up to 3 Composure, capped at the Leader’s starting 20, only if your Leader is not at Last Straw. If yours is at Last Straw and the opponent is not, the opponent loses 3 Composure instead. If both are at Last Straw, Draw a card instead. These are exclusive branches. Recovery never resets an already-triggered Breaking Point or Last Straw. Ordinary Composure loss cannot replace the final Cause Trouble.
+
+**Community Founder:** Its other-friendly-Character +1 Trouble aura is active while its controller is currently at 10 or less Composure or Last Straw. Recovery above 10 turns the aura off without resetting the spent Breaking Point. It stacks with Round 8’s passive; multiple Founders also stack. It does not boost itself.
+
+Security Camera shows the full opposing hand only to its controller. The AI does not use that hand outside the reveal choice. Other Leader Breaking Point abilities and the shared selectable Last Straw effect pool remain pending their own content audits. Simulators are not asserted to have browser parity.

@@ -7,6 +7,9 @@ export function aiChoice(g,r){let {player:p,options=[],multi=false,max=2,title='
  if(title.startsWith('Escape Artist:'))return options.filter(o=>o.value!==null&&g.obj(o.value)).sort((a,b)=>{let x=g.obj(a.value),y=g.obj(b.value);return (g.card(x).cost-x.damage)-(g.card(y).cost-y.damage)})[0]?.value??null;
  if(title==='Choose a Character'||title.includes('Choose Ready Character')){let own=options.filter(o=>g.obj(o.value)?.owner===p);if(own.length)return own.sort((a,b)=>{let x=g.obj(a.value),y=g.obj(b.value);return ((y.ready?10:0)+g.guard(y)-y.damage+g.power(y))-((x.ready?10:0)+g.guard(x)-x.damage+g.power(x))})[0].value}
 
+ if(title.startsWith('Security Camera:'))return options[0]?.value??null;
+ if(title.includes('heal')||title.includes('Grandma')){const bodies=options.filter(o=>g.obj(o.value));if(bodies.length)return bodies.sort((a,b)=>g.obj(b.value).damage-g.obj(a.value).damage)[0].value}
+ if(title==='Crossing Guard: enter Rotated for Meat Shield?')return g.chars(p).length>1;
  if(multi){if(title.includes('Blockers')){let incoming=g.pendingAttack?.power??0,hp=g.players[p].hp,attacker=g.obj(g.pendingAttack?.attacker);let choices=options.map(o=>g.obj(o.value)).filter(Boolean);let best=choices.sort((a,b)=>(g.guard(b)-b.damage)-(g.guard(a)-a.damage))[0];if(!best)return [];let absorb=Math.min(incoming,Math.max(0,g.guard(best)-best.damage));let kills=attacker&&g.power(best)>=g.guard(attacker)-attacker.damage;return hp<=incoming||hp<=12&&kills&&absorb>=2||hp<=7&&absorb>=3?[best.uid]:[]}return options.slice(0,max).map(o=>o.value)}
  if(title.includes('Guard Discard'))return 0;
  if(title.includes('Final roll'))return g.chars(p).some(x=>g.canAttack(x))?'power':'trouble';
@@ -40,10 +43,14 @@ export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p)
  let trigger=legal.find(o=>o.c.type==='Item'&&own.some(x=>g.has(x,'P105'))||o.c.type==='Action'&&['P049','P050','P052','P053','LAB-FLM-007'].includes(o.c.id));if(trigger)return play(trigger);
  let discount=legal.find(o=>o.c.id==='P055'&&legal.some(v=>v.c.type==='Character'&&g.availableFuel(p)>=o.c.cost+Math.max(0,v.c.cost-2)));if(discount)return play(discount);
  let bodies=legal.filter(o=>o.c.type==='Character');if(bodies.length){bodies.sort((a,b)=>b.c.cost-a.c.cost);return play(bodies[0])}
- let removal=legal.find(o=>['P139','P141','P081'].includes(o.c.id));if(removal)return play(removal);
- if(attackers.length){let a=attackers[0],sucker=g.keyword?.(a,'Sucker Punch')??g.layers(a).some(id=>g.card(id).keywords.includes('Sucker Punch'));let targets=opp.filter(x=>!x.ready||sucker||g.players[p].lastStraw||g.layers(x).some(id=>g.card(id).keywords.includes('Bodyguard')));let tuxedos=opp.filter(x=>x.id==='LAB-CAT-003'&&!x.cloaked);if(tuxedos.length)targets=targets.filter(x=>x.id==='LAB-CAT-003'||!g.trait(x,'Cat'));let kill=targets.filter(x=>(g.attackPower?.(a)??g.power(a))>=g.guard(x)-x.damage).sort((x,y)=>(g.trouble(y)-g.trouble(x))||(g.card(y).cost-g.card(x).cost))[0];if(g.canCauseTrouble(a)&&g.players[1-p].lastStraw)return {type:'trouble',uid:a.uid};if(g.canCauseTrouble(a)&&g.players[1-p].hp<=g.trouble(a))return {type:'trouble',uid:a.uid};if(kill&&g.trouble(kill)>=2)return {type:'attack',uid:a.uid};if(kill&&g.card(kill).cost>=3)return {type:'attack',uid:a.uid};if(g.canCauseTrouble(a))return {type:'trouble',uid:a.uid};if(targets.length)return {type:'attack',uid:a.uid}}
+ const troublemakers=own.filter(x=>g.canCauseTrouble(x)).sort((a,b)=>g.trouble(b)-g.trouble(a));
+ if(troublemakers.length&&(g.players[1-p].lastStraw||g.players[1-p].hp<=g.trouble(troublemakers[0])))return {type:'trouble',uid:troublemakers[0].uid};
+ let removal=legal.find(o=>['P139','P140','P141','P143','P081'].includes(o.c.id));if(removal)return play(removal);
+ if(attackers.length){let a=attackers[0],sucker=g.keyword?.(a,'Sucker Punch')??g.layers(a).some(id=>g.card(id).keywords.includes('Sucker Punch'));let targets=g.attackTargets(a);let kill=targets.filter(x=>(g.attackPower?.(a)??g.power(a))>=g.guard(x)-x.damage).sort((x,y)=>(g.trouble(y)-g.trouble(x))||(g.card(y).cost-g.card(x).cost))[0];if(g.canCauseTrouble(a)&&g.players[1-p].lastStraw)return {type:'trouble',uid:a.uid};if(g.canCauseTrouble(a)&&g.players[1-p].hp<=g.trouble(a))return {type:'trouble',uid:a.uid};if(kill&&g.trouble(kill)>=2)return {type:'attack',uid:a.uid};if(kill&&g.card(kill).cost>=3)return {type:'attack',uid:a.uid};if(g.canCauseTrouble(a))return {type:'trouble',uid:a.uid};if(targets.length)return {type:'attack',uid:a.uid}}
+ if(troublemakers.length)return {type:'trouble',uid:troublemakers[0].uid};
  let readyAgain=legal.find(o=>o.c.id==='P025'&&own.some(x=>!x.ready&&g.guard(x)-x.damage>2));if(readyAgain)return play(readyAgain);
  let pills=s.board.find(x=>x.id==='P027'&&g.canUse(x)&&!g.obj(x.attached)?.ready&&g.guard(g.obj(x.attached))-g.obj(x.attached).damage>1);if(pills)return {type:'activate',uid:pills.uid};
+ let lawn=s.board.find(x=>x.id==='P148'&&g.canUse(x));if(lawn)return {type:'activate',uid:lawn.uid};
  let rest=legal.find(o=>!['P019','P025','P055','P081','P170'].includes(o.c.id));if(rest)return play(rest);
  let act=s.board.find(x=>g.canUse(x)&&!['P027','P029','P178'].includes(x.id)&&(!['P124','P132','P117','P179','P120'].includes(x.id)||own.some(y=>y.damage))&&(!['P138','P147'].includes(x.id)||opp.length));if(act)return {type:'activate',uid:act.uid};
  return {type:'pass'}}

@@ -1,10 +1,11 @@
 // The locked Reckless audit, shared by the browser and its regression tests.
 // Load after the other production packages so the current combat rules win.
-import {Game, LEADERS} from './engine.js?v=mordecai-04-reckless-01';
+import {Game, LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
 
 const ACTIONS = new Set(['P019','P020','P021','P022','P024','P026','LAB-FLM-002','LAB-FLM-005','LAB-FLM-007']);
 const ITEMS = new Set(['P027','P028','P030','LAB-FLM-001','LAB-FLM-004']);
 const CHARACTERS = new Set(Array.from({length:18},(_,i)=>`P${String(i+1).padStart(3,'0')}`));
+Game.prototype.readyCharacter ||= async function(x){if(x&&this.obj(x.uid)&&!x.ready){x.ready=true;return true}return false};
 const current = c => c && !['banked','retired','pending-redesign'].includes(c.status);
 
 LEADERS['Florida Man'].passive='Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure.';
@@ -54,13 +55,13 @@ Game.prototype.attackTargets=function(a){
   return targets;
 };
 Game.prototype.canAttack=function(x){
-  if(!x||this.card(x).type!=='Character'||x.cloaked||!x.ready||x.noAttack||this.has(x,'P135'))return false;
-  const blocker=this.players.flatMap(s=>s.board).some(y=>y.uid!==x.uid&&y.ready&&!y.cloaked&&this.has(y,'P135'));
+  if(!x||this.card(x).type!=='Character'||x.cloaked||!x.ready||x.noAttack)return false;
+  const blocker=false;
   const hot=this.players[x.owner].lastStraw||this.keyword(x,'Hothead')||this.chars(x.owner).some(y=>y.uid!==x.uid&&this.has(y,'P165')&&this.trait(x,'Wrestler'));
   return !blocker&&(x.born<this.round||hot)&&this.attackTargets(x).length>0;
 };
 Game.prototype.troubleEligible=function(x){
-  return !!x&&!x.cloaked&&!x.noTrouble&&!this.has(x,'P135')&&x.born<this.round&&this.trouble(x)>0&&
+  return !!x&&!x.cloaked&&!x.noTrouble&&x.born<this.round&&this.trouble(x)>0&&
     (x.id!=='P013'||this.players[x.owner].attackVictories>0);
 };
 Game.prototype.canCauseTrouble=function(x){return !!x?.ready&&this.troubleEligible(x)};
@@ -139,8 +140,8 @@ Game.prototype.actionEffect=async function(p,id,target,second,previous){
   const x=this.obj(target);
   switch(id){
     case 'P019': x.power+=3;x.hot=true;this.say('Hold My Beer: +3 Power and Hothead this Turn');return;
-    case 'P020': x.ready=true;x.power+=2;x.noTrouble=true;this.say('SPRING BREAK!!!: Ready, +2 Power; no Trouble this Turn');return;
-    case 'P021': x.ready=true;x.noAttack=true;this.say('Victory Lap: Ready; no more Attacks this Turn');return;
+    case 'P020': await this.readyCharacter(x);x.power+=2;x.noTrouble=true;this.say('SPRING BREAK!!!: Ready, +2 Power; no Trouble this Turn');return;
+    case 'P021': await this.readyCharacter(x);x.noAttack=true;this.say('Victory Lap: Ready; no more Attacks this Turn');return;
     case 'P022': await this.combatDamage(this.players.flatMap(s=>s.board).filter(x=>this.card(x).type==='Character').map(x=>[x,4,'effect']));this.say('Category 5 deals 4 to every Character');return;
     case 'P024': {
       const results={1:'Rotate chosen Character',2:'+3 Power OR +1 Trouble this Turn',3:'+3 Power OR +1 Trouble this Turn',4:'+3 Power OR +1 Trouble this Turn',5:'+3 Power OR +1 Trouble this Turn',6:'+3 Power AND +1 Trouble this Turn'};
@@ -215,7 +216,7 @@ Game.prototype.resolveTrouble=async function(a,{rotate=true,ramp=false}={}){
     if(r===1){this.hurtLeader(p,2);return false}
   }
   this.say(`${ramp?'Ramp double hit: ':''}${this.card(a).name} Causes Trouble · ${this.trouble(a)} Trouble`);
-  for(const bell of [...this.players[opp].board.filter(x=>x.id==='P148')])if(this.obj(bell.uid))await this.rummage(opp);
+
   if(this.players[opp].lastStraw){this.players[opp].unhinged=true;this.say(`${this.name(opp)} is UNHINGED! Final Cause Trouble`)}
   else this.hurtLeader(opp,this.trouble(a));
   return true;
@@ -236,11 +237,11 @@ Game.prototype.attackVictory=async function(a){
   }
   for(const captain of this.chars(p).filter(y=>y.id==='P011'&&y.uid!==a.uid&&!y.captainUsed)){
     const use=await this.choose(p,'Sandbar Party Captain: Ready after another Character wins an Attack?', [{label:'Ready Captain',value:true},{label:'Skip',value:false}]);
-    if(use){captain.ready=true;captain.captainUsed=true;this.say('Sandbar Party Captain Readies (once this Turn)')}
+    if(use){await this.readyCharacter(captain);captain.captainUsed=true;this.say('Sandbar Party Captain Readies (once this Turn)')}
   }
   if(a.id==='P018'&&!a.wranglerUsed&&this.obj(a.uid)){
     const use=await this.choose(p,'Gator Wrangler: Ready for another Attack, but no Trouble this Turn?', [{label:'Ready Wrangler',value:true},{label:'Skip',value:false}]);
-    if(use){a.ready=true;a.wranglerUsed=true;a.noTrouble=true;this.say('Gator Wrangler Readies; cannot Cause Trouble this Turn')}
+    if(use){await this.readyCharacter(a);a.wranglerUsed=true;a.noTrouble=true;this.say('Gator Wrangler Readies; cannot Cause Trouble this Turn')}
   }
 };
 
@@ -278,8 +279,8 @@ Game.prototype.attack=async function(uid){
       this.pendingAttack.power=incoming;this._attackDamageTarget=target;this._attackDefeated=false;
       try{await this.combatDamage([[defender,incoming,'attack']])}finally{this._attackDamageTarget=null}
       if(this._attackDefeated)await this.attackVictory(a);
-      if(this.obj(uid)&&this.obj(target)&&this.keyword(defender,'Retaliate'))await this.combatDamage([[a,retaliation,'retaliation']]);
-      if(this.obj(target)&&this.has(defender,'P131'))this.heal(defender,1);
+      if(this.obj(uid)&&this.keyword(defender,'Retaliate'))await this.combatDamage([[a,retaliation,'retaliation']]);
+
     }
   }
   a.nextAttackPower=0;await this.finishAttack(a);

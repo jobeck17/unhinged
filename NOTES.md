@@ -1,3 +1,52 @@
+## Stonewall committed audit — 8 October 2026
+
+This section is the latest Stonewall source of truth and supersedes older suggestions below.
+
+- Locked cards preserved: **33 unique** (21 Characters / 9 Actions / 3 Items); prior chat count missed Bicycle Cop added beside the moved Committee. No approved card silently cut. Open follow-up: choose one to table if keeping 32 cards plus slot 33 open.
+- Coverage deck: **40 cards**, all 33 once plus an extra Off-Leash Dog, Grumpy Old Guy, Mall Walker, Crossing Guard, Church Usher, File a Complaint, and Take a Breather. This broad coverage deck is not a tuned competitive deck.
+- Leader passive unchanged: Round 8 +1 Trouble. HOA Final Warning and Florida Man’s D6 Breaking Point are locked/implemented.
+- Meat Shield is the new keyword name. Absorb uses highest value. Retaliate now works even when its defender is Defeated, matching the audit’s one-use Marine role.
+- Grandma heals on every actual Ready transition; Old Dog only during its Ready step. Lawn Chair / Take a Breather restore Ready but prohibit further Attack/Trouble that Turn.
+- **Tabled:** Unpaid Dues (provisional Cost 5 catch-up Stash discard), Neighborhood Newsletter (insufficient Ready-trigger support), old Cigarette Case effect. No current Stash-removal card was added. Mass bounce was replaced by limited Absolutely Not.
+- **Cross-style follow-up:** Reckless Lifeguard and Helicopter Mom share a Ready Absorb aura. Both remain locked; revisit overlap after other styles are audited. Multiple Lawyers/Founders and repeatable healing need balance testing.
+- Browser is implementation-tested. Other styles and simulators need their own parity audits. Last Straw content pool remains pending. All balance conclusions await cross-style simulation and human playtesting.
+
+| ID | Card | Cost | Power / Health / Trouble | Text |
+|---|---|---:|---|---|
+| P072 | Helicopter Mom | 5 | 2/5/2 | While this Character is Ready, your other Characters have Absorb 1. |
+| P083 | Neighborhood Bylaws | 2 | Action | An opponent Discards a card. They choose the card. |
+| P121 | Grumpy Old Guy | 2 | 1/3/1 | Absorb 1. |
+| P122 | HOA Enforcement Committee | 4 | 2/5/1 | When played, you may Rotate a chosen opposing Character. That Character cannot Ready during its controller’s next Ready step. |
+| P124 | Mall Walker | 2 | 1/4/2 | No ability. |
+| P125 | Concerned Citizen | 4 | 2/4/2 | Whenever an opponent plays an Action or Item, this Character gets +1 Power until the end of your next Turn. |
+| P126 | Crossing Guard | 2 | 1/3/1 | Meat Shield. You may play this Character Rotated. |
+| P127 | PTA President | 4 | 2/4/2 | When played, heal up to 2 damage from another chosen friendly Character. If you healed any damage this way, Draw a card. |
+| P128 | Retired Marine Next Door | 3 | 3/2/2 | Retaliate. |
+| P129 | HOA Vice President | 4 | 2/5/1 | Meat Shield. Retaliate. |
+| P130 | Nosey Neighbor | 5 | 2/5/2 | Once during each opponent’s Turn, when one of their Characters Causes Trouble, Draw a card. |
+| P131 | Old Dog | 3 | 1/5/2 | When this Character Readies during your Ready step, heal 1 damage from it. |
+| P132 | Grandma | 5 | 2/5/2 | Whenever this Character Readies, heal up to 2 damage from another chosen friendly Character. |
+| P133 | Gated Community Security | 6 | 3/7/2 | Meat Shield. Retaliate. |
+| P134 | Church Usher | 2 | 1/2/1 | When played, Draw a card. |
+| P135 | Mall Cop | 4 | 2/5/1 | While this Character is Ready, opposing Characters with Hothead get −1 Power. |
+| P136 | Tow-Truck Driver | 5 | 3/5/1 | When played, you may Dismiss a chosen opposing Item costing 3 or less. |
+| P137 | HOA Lawyer | 5 | 2/5/2 | Opposing Actions that target one or more of your Characters or Items cost 1 more. |
+| P138 | Neighborhood Watch | 2 | 2/2/1 | Retaliate. |
+| P139 | File a Complaint | 1 | Action | A chosen opposing Character gets −2 Power until the start of your next Turn. |
+| P140 | Not in My Neighborhood | 2 | Action | A chosen opposing Rotated Character cannot Ready during its controller’s next Ready step. |
+| P141 | Absolutely Not | 3 | Action | Return a chosen opposing Character costing 3 or less to its owner’s hand. |
+| P143 | Violation Notice | 4 | Action | Dismiss a chosen opposing Rotated Character costing 4 or less. |
+| P144 | Peace and Quiet | 2 | Action | Restore 3 Composure to your Leader. Unless they’re at Last Straw—then the opposing Leader loses 3 Composure instead. Oh… they’re at Last Straw too?! Draw a card, I guess. |
+| P145 | Dig In | 2 | Action | Your Characters have Absorb 1 until the start of your next Turn. If an opponent has more Characters than you, Draw a card. |
+| P146 | Wait Them Out | 2 | Action | Play only if you haven’t Attacked this Turn. Draw 2 cards. You cannot Attack this Turn. |
+| P147 | Security Camera | 2 | Item | Rotate: Look at the opposing player’s hand. |
+| P148 | Lawn Chair | 2 | Item | Rotate this Item and spend 1 Stash: Ready a chosen friendly Rotated Character. That Character cannot Attack or Cause Trouble again this Turn. |
+| P149 | Patio Umbrella | 2 | Item | Attach to a friendly Character. While the attached Character is Rotated, it has Absorb 1. |
+| LAB-HOA-001 | Off-Leash Dog | 1 | 1/3/1 | No ability. |
+| LAB-HOA-002 | Bicycle Cop | 3 | 2/4/2 | When played, you may Rotate a chosen opposing Character costing 2 or less. |
+| LAB-HOA-003 | Community Founder | 7 | 3/7/3 | While your Leader is at Breaking Point or Last Straw, your other Characters get +1 Trouble. |
+| LAB-HOA-004 | Take a Breather | 1 | Action | Ready a chosen friendly Rotated Character. That Character cannot Attack or Cause Trouble again this Turn. |
+
 ## Reckless 32-card baseline and browser implementation — 7 October 2026
 
 - **LOCKED — 32 current-set Reckless cards, slot 33 reserved.** User will fill the last slot after other Style passes and testing. All 18 Characters, 9 Actions and 5 Items are marked testing and included in the coverage deck. No further balance changes made.

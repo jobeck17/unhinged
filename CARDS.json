@@ -1447,23 +1447,25 @@
     {
       "id": "P072",
       "type": "Character",
-      "cost": 4,
-      "name": "Neighborhood Group Admin",
+      "cost": 5,
+      "name": "Helicopter Mom",
       "traits": [
-        "HOA"
+        "Parent"
       ],
-      "text": "Whenever an opponent's effect Returns one of your Characters to your hand, that opponent Discards a card.",
+      "text": "While this Character is Ready, your other Characters have Absorb 1.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 3,
-      "guard": 7,
+      "power": 2,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "Thirty-seven missed alerts. One unfamiliar sedan.",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P073",
@@ -1669,18 +1671,20 @@
       "id": "P083",
       "type": "Action",
       "cost": 2,
-      "name": "Terms and Conditions",
+      "name": "Neighborhood Bylaws",
       "stats": "",
       "traits": [],
-      "text": "An opponent Discards a card. If they have more cards in hand than you, they Discard another card.",
+      "text": "An opponent Discards a card. They choose the card.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P084",
@@ -2393,28 +2397,32 @@
       "cost": 2,
       "name": "Grumpy Old Guy",
       "traits": [],
-      "text": "When this Character is attacked, the attacker gets -1 Power for this Attack.",
+      "text": "Absorb 1.",
       "style": "Stonewall",
       "complexity": "ongoing",
-      "keywords": [],
-      "power": 2,
-      "guard": 4,
+      "keywords": [
+        "Absorb 1"
+      ],
+      "power": 1,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P122",
       "type": "Character",
-      "cost": 3,
+      "cost": 4,
       "name": "HOA Enforcement Committee",
       "traits": [
         "HOA"
       ],
-      "text": "Opposing Characters played while their controller has more Characters in play than you enter play Rotated.",
+      "text": "When played, you may Rotate a chosen opposing Character. That Character cannot Ready during its controller’s next Ready step.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2423,9 +2431,11 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 3
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P123",
@@ -2452,37 +2462,41 @@
       "cost": 2,
       "name": "Mall Walker",
       "traits": [],
-      "text": "During your Ready step, if this Character is Rotated, you may leave it Rotated. If you do, choose an opposing Rotated Character. That Character does not Ready during its controller's next Ready step.",
+      "text": "",
       "style": "Stonewall",
-      "complexity": "ongoing",
+      "complexity": "textless",
       "keywords": [],
       "power": 1,
       "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P125",
       "type": "Character",
       "cost": 4,
-      "name": "Keyboard Warrior",
+      "name": "Concerned Citizen",
       "traits": [],
-      "text": "Whenever an opponent plays an Action, this gets +1 Power and +1 Health this Turn.",
+      "text": "Whenever an opponent plays an Action or Item, this Character gets +1 Power until the end of your next Turn.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 6,
+      "power": 2,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "Brave enough to hit send.",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P126",
@@ -2490,20 +2504,22 @@
       "cost": 2,
       "name": "Crossing Guard",
       "traits": [],
-      "text": "Bodyguard.",
+      "text": "Meat Shield. You may play this Character Rotated.",
       "style": "Stonewall",
-      "complexity": "keyword_only",
+      "complexity": "ongoing",
       "keywords": [
-        "Bodyguard"
+        "Meat Shield"
       ],
-      "power": 2,
-      "guard": 4,
+      "power": 1,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P127",
@@ -2513,18 +2529,20 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, heal 1 damage from a Character. Your other Parent and Kid Characters get +1 Health.",
+      "text": "When played, heal up to 2 damage from another chosen friendly Character. If you healed any damage this way, Draw a card.",
       "style": "Stonewall",
-      "complexity": "mixed",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 5,
+      "power": 2,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P128",
@@ -2532,20 +2550,22 @@
       "cost": 3,
       "name": "Retired Marine Next Door",
       "traits": [],
-      "text": "Stubborn.",
+      "text": "Retaliate.",
       "style": "Stonewall",
-      "complexity": "keyword_only",
+      "complexity": "ongoing",
       "keywords": [
-        "Stubborn"
+        "Retaliate"
       ],
-      "power": 4,
-      "guard": 4,
+      "power": 3,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "Quiet neighborhood. Strict perimeter.",
-      "trouble": 1
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P129",
@@ -2555,37 +2575,44 @@
       "traits": [
         "HOA"
       ],
-      "text": "Opposing Characters costing 2 or less enter play Rotated.",
+      "text": "Meat Shield. Retaliate.",
       "style": "Stonewall",
       "complexity": "ongoing",
-      "keywords": [],
-      "power": 3,
-      "guard": 6,
+      "keywords": [
+        "Meat Shield",
+        "Retaliate"
+      ],
+      "power": 2,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "Vice is not silent.",
-      "trouble": 3
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P130",
       "type": "Character",
       "cost": 5,
-      "name": "Linda From Neighborhood Watch",
+      "name": "Nosey Neighbor",
       "traits": [],
-      "text": "When this enters play, look at an opponent's hand. Whenever an opponent Draws outside their Draw step, you may Draw a card, then Discard a card.",
+      "text": "Once during each opponent’s Turn, when one of their Characters Causes Trouble, Draw a card.",
       "style": "Stonewall",
-      "complexity": "mixed",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 6,
+      "power": 2,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 3
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P131",
@@ -2595,58 +2622,65 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this Character is attacked and survives, heal 1 damage from it.",
+      "text": "When this Character Readies during your Ready step, heal 1 damage from it.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 2,
+      "power": 1,
       "guard": 5,
       "audit_identity": [],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P132",
       "type": "Character",
       "cost": 5,
-      "name": "Church Potluck Grandma",
+      "name": "Grandma",
       "traits": [
         "Parent"
       ],
-      "text": "At the start of your Turn, heal 1 damage from another Character.",
+      "text": "Whenever this Character Readies, heal up to 2 damage from another chosen friendly Character.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 7,
+      "power": 2,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P133",
       "type": "Character",
       "cost": 6,
-      "name": "Concrete Goose",
+      "name": "Gated Community Security",
       "traits": [
         "Construct"
       ],
-      "text": "Slowpoke.",
+      "text": "Meat Shield. Retaliate.",
       "style": "Stonewall",
-      "complexity": "keyword_only",
+      "complexity": "ongoing",
       "keywords": [
-        "Slowpoke"
+        "Meat Shield",
+        "Retaliate"
       ],
-      "power": 5,
-      "guard": 10,
+      "power": 3,
+      "guard": 7,
       "audit_identity": [],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "The association has approved its use of force.",
-      "trouble": 2
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P134",
@@ -2654,18 +2688,20 @@
       "cost": 2,
       "name": "Church Usher",
       "traits": [],
-      "text": "When this enters play, Draw a card.",
+      "text": "When played, Draw a card.",
       "style": "Stonewall",
-      "complexity": "on_play",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 2,
+      "power": 1,
       "guard": 2,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P135",
@@ -2673,37 +2709,43 @@
       "cost": 4,
       "name": "Mall Cop",
       "traits": [],
-      "text": "This Character cannot Attack. While this is Ready, other Characters cannot use Hothead.",
+      "text": "While this Character is Ready, opposing Characters with Hothead get −1 Power.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
       "power": 2,
-      "guard": 6,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "No running.",
-      "trouble": 2
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P136",
       "type": "Character",
       "cost": 5,
       "name": "Tow-Truck Driver",
-      "traits": [],
-      "text": "When this enters play, choose a Rotated opposing Character. Its owner may Discard a card. If they do not, that Character skips its next Ready step.",
+      "traits": [
+        "Driver"
+      ],
+      "text": "When played, you may Dismiss a chosen opposing Item costing 3 or less.",
       "style": "Stonewall",
-      "complexity": "on_play",
+      "complexity": "ongoing",
       "keywords": [],
-      "power": 5,
-      "guard": 6,
+      "power": 3,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 2
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P137",
@@ -2713,37 +2755,43 @@
       "traits": [
         "HOA"
       ],
-      "text": "Opposing Actions that target one or more of your cards cost 1 more.",
+      "text": "Opposing Actions that target one or more of your Characters or Items cost 1 more.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 7,
+      "power": 2,
+      "guard": 5,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "",
-      "trouble": 3
+      "trouble": 2,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P138",
       "type": "Character",
       "cost": 2,
-      "name": "Neighborhood Lifeguard",
+      "name": "Neighborhood Watch",
       "traits": [],
-      "text": "Opposing damaged Characters get -1 Power.",
+      "text": "Retaliate.",
       "style": "Stonewall",
       "complexity": "ongoing",
-      "keywords": [],
+      "keywords": [
+        "Retaliate"
+      ],
       "power": 2,
-      "guard": 3,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "testing",
       "flavor": "NO RUNNING includes whatever this is.",
-      "trouble": 1
+      "trouble": 1,
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P139",
@@ -2752,15 +2800,17 @@
       "name": "File a Complaint",
       "stats": "",
       "traits": [],
-      "text": "An opposing Character gets -2 Power this Turn.",
+      "text": "A chosen opposing Character gets −2 Power until the start of your next Turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P140",
@@ -2769,15 +2819,17 @@
       "name": "Not in My Neighborhood",
       "stats": "",
       "traits": [],
-      "text": "Choose a Rotated opposing Character. Its owner may Discard a card. If they do not, it skips its next Ready step.",
+      "text": "A chosen opposing Rotated Character cannot Ready during its controller’s next Ready step.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P141",
@@ -2786,15 +2838,17 @@
       "name": "Absolutely Not",
       "stats": "",
       "traits": [],
-      "text": "Return all Rotated Characters and Items in play to their owners' hands.",
+      "text": "Return a chosen opposing Character costing 3 or less to its owner’s hand.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P142",
@@ -2816,36 +2870,40 @@
     {
       "id": "P143",
       "type": "Action",
-      "cost": 1,
-      "name": "Read the Fine Print",
+      "cost": 4,
+      "name": "Violation Notice",
       "stats": "",
       "traits": [],
-      "text": "A Character gets -1 Power and -1 Health this Turn.",
+      "text": "Dismiss a chosen opposing Rotated Character costing 4 or less.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P144",
       "type": "Action",
       "cost": 2,
-      "name": "'Tis But a Scratch",
+      "name": "Peace and Quiet",
       "stats": "",
       "traits": [],
-      "text": "Heal 3 damage from your Leader. This costs 1 less if your Leader has less Health than the opposing Leader.",
+      "text": "Restore 3 Composure to your Leader. Unless they’re at Last Straw—then the opposing Leader loses 3 Composure instead. Oh… they’re at Last Straw too?! Draw a card, I guess.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P145",
@@ -2854,15 +2912,17 @@
       "name": "Dig In",
       "stats": "",
       "traits": [],
-      "text": "Your Characters get +1 Health this Turn. If you have fewer Characters in play than an opponent, Draw a card.",
+      "text": "Your Characters have Absorb 1 until the start of your next Turn. If an opponent has more Characters than you, Draw a card.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P146",
@@ -2871,83 +2931,92 @@
       "name": "Wait Them Out",
       "stats": "",
       "traits": [],
-      "text": "Draw 2 cards. You cannot Attack this Turn.",
+      "text": "Play only if you haven’t Attacked this Turn. Draw 2 cards. You cannot Attack this Turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P147",
       "type": "Item",
-      "cost": 1,
+      "cost": 2,
       "name": "Security Camera",
       "stats": "",
       "traits": [],
-      "text": "Whenever an opposing Character becomes Rotated outside combat, Draw a card, then Discard a card.",
+      "text": "Rotate: Look at the opposing player’s hand.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P148",
       "type": "Item",
       "cost": 2,
-      "name": "Video Doorbell",
+      "name": "Lawn Chair",
       "stats": "",
       "traits": [],
-      "text": "Whenever an opposing Character Causes Trouble, Draw a card, then Discard a card.",
+      "text": "Rotate this Item and spend 1 Stash: Ready a chosen friendly Rotated Character. That Character cannot Attack or Cause Trouble again this Turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P149",
       "type": "Item",
       "cost": 2,
-      "name": "Occupied Stroller",
+      "name": "Patio Umbrella",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +2 Health, or +3 Health if it is a Parent or Kid. When the attached Character would take damage, you may Dismiss this to prevent 2 of that damage.",
+      "text": "Attach to a friendly Character. While the attached Character is Rotated, it has Absorb 1.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "complexity": null,
-      "status": "playtest",
-      "flavor": "The safest place in the neighborhood is behind it."
+      "complexity": "ongoing",
+      "status": "testing",
+      "flavor": "The safest place in the neighborhood is behind it.",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     },
     {
       "id": "P150",
       "type": "Item",
       "cost": 1,
-      "name": "Grandma's Cigarette Case",
+      "name": "Neighborhood Newsletter",
       "stats": "",
       "traits": [],
-      "text": "Whenever an opponent Readies a card outside their Ready step, Ready one of your Rotated Items.",
+      "text": "Tabled: Ready-triggered card draw needs more support. Replaces the old Grandma’s Cigarette Case concept.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "status": "banked",
+      "flavor": "",
+      "digital_status": "banked"
     },
     {
       "id": "P151",
@@ -4405,6 +4474,75 @@
       "flavor": "",
       "audit_note": "Name and tiered draw locked for testing on 2026-10-07. Playable during normal own main Turn regardless of combat result: Draw 1 baseline, Draw 2 total after qualifying friendly Attack Defeat. Does not scale per Defeat. Replaces Spoils of the Brawl name and play-only condition. Browser implementation verified 2026-10-07.",
       "digital_status": "implemented-reckless-2026-10-07"
+    },
+    {
+      "id": "LAB-HOA-001",
+      "type": "Character",
+      "style": "Stonewall",
+      "traits": [],
+      "keywords": [],
+      "flavor": "",
+      "name": "Off-Leash Dog",
+      "cost": 1,
+      "text": "",
+      "status": "testing",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "complexity": "textless",
+      "power": 1,
+      "guard": 3,
+      "trouble": 1,
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
+    },
+    {
+      "id": "LAB-HOA-002",
+      "type": "Character",
+      "style": "Stonewall",
+      "traits": [],
+      "keywords": [],
+      "flavor": "",
+      "name": "Bicycle Cop",
+      "cost": 3,
+      "text": "When played, you may Rotate a chosen opposing Character costing 2 or less.",
+      "status": "testing",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "complexity": "ongoing",
+      "power": 2,
+      "guard": 4,
+      "trouble": 2,
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
+    },
+    {
+      "id": "LAB-HOA-003",
+      "type": "Character",
+      "style": "Stonewall",
+      "traits": [],
+      "keywords": [],
+      "flavor": "",
+      "name": "Community Founder",
+      "cost": 7,
+      "text": "While your Leader is at Breaking Point or Last Straw, your other Characters get +1 Trouble.",
+      "status": "testing",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "complexity": "ongoing",
+      "power": 3,
+      "guard": 7,
+      "trouble": 3,
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
+    },
+    {
+      "id": "LAB-HOA-004",
+      "type": "Action",
+      "style": "Stonewall",
+      "traits": [],
+      "keywords": [],
+      "flavor": "",
+      "name": "Take a Breather",
+      "cost": 1,
+      "text": "Ready a chosen friendly Rotated Character. That Character cannot Attack or Cause Trouble again this Turn.",
+      "status": "testing",
+      "digital_status": "implemented-stonewall-2026-10-08",
+      "complexity": "ongoing",
+      "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
     }
   ]
 }

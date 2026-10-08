@@ -27,6 +27,7 @@ jobs:
           node --check web/rockstar.js
       - run: |
           node --check web/reckless.js
+          node --check web/stonewall.js
           node --check builder/app.js
           node builder/smoke.mjs
       - run: node --check poll/app.js
@@ -40,6 +41,7 @@ jobs:
           test -f web/ai.js
       - run: node web/smoke.mjs
       - run: node web/reckless.test.mjs
+      - run: node web/stonewall.test.mjs
       # Historical labs remain runnable research fixtures but do not gate Mordecai production.
       # Mordecai production simulation is intentionally held until engine parity.
   deploy:

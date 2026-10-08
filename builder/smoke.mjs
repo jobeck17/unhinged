@@ -25,3 +25,11 @@ const cat=decks.decks.find(d=>d.leader==='Crazy Cat Lady');
 assert(cat.deckbuilding_exception?.includes('10 copies of Stray Cat'));
 assert.equal(cat.cards['LAB-CAT-001'],6);
 console.log('Mordecai deck builder sync smoke passed');
+
+const hoa=decks.decks.find(d=>d.leader==='HOA President');
+assert.equal(hoa.audit_card_ids.length,33);
+assert(hoa.audit_card_ids.every(id=>hoa.cards[id]));
+assert(hoa.breaking_point.includes('Final Warning'));
+assert(pool.cards.find(c=>c.id==='P150').status==='banked');
+assert.match(app,/leaderText/);
+console.log('Stonewall builder pool, baseline and Leader text checks passed');

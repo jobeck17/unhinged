@@ -6,9 +6,9 @@ Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo →
 
 **Mordecai 0.4 is canonical.** Composure 2.0 has graduated from the lab. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative.
 
-The production baseline now contains **223 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
+The production baseline now contains **233 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
 
-The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. The other Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
+The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. Stonewall now also has its audited cards and 40-card coverage deck implemented. Remaining Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
 
 The Scheme, Board Width, and old Composure folders remain development history unless explicitly reopened.
 
@@ -16,7 +16,7 @@ The Scheme, Board Width, and old Composure folders remain development history un
 
 [Play the current deck](https://jobeck17.github.io/unhinged/web/). Select Florida Man. The 40-card list contains all 32 locked Reckless cards once, plus one extra copy each of Feral Chihuahua, Vape Kid, Boogie Boarder, Unsupervised Toddler, Amateur Storm Chaser, Spring Break Frat Bro, Victory Lap, and Did You See That?!. This is a broad verification deck rather than a tuned competitive list. The 33rd Style slot is reserved. Safety Goggles (formerly Life Jacket) and Fireworks Incident are banked for the next set; Dirty Needle remains pending.
 
-Every die result is shown in a persistent result panel, history, and event log. Checks: `node web/reckless.test.mjs`, `node web/smoke.mjs`, `node builder/smoke.mjs`, and `node poll/test.mjs`. The Reckless tests cover every card, every die face, reroll/expiry behavior, combat-only rewards, attachments, Absorb, Last Straw interactions, and full-deck card conservation. These verify implementation, not balance. Unique Breaking Point and Last Straw card effects remain the existing unfinished content pass.
+Every die result is shown in a persistent result panel, history, and event log. Checks: `node web/reckless.test.mjs`, `node web/smoke.mjs`, `node builder/smoke.mjs`, and `node poll/test.mjs`. The Reckless tests cover every card, every die face, reroll/expiry behavior, combat-only rewards, attachments, Absorb, Last Straw interactions, and full-deck card conservation. These verify implementation, not balance. Florida Man and HOA President have their locked Breaking Point effects implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.
 
 ## Current creative direction
 
@@ -203,3 +203,11 @@ The deck builder lives at `/builder/` and reads the same `CARDS.json` and `DECKS
 - `node poll/test.mjs` validates questions and server-side response handling. The Pages workflow syntax-checks and tests the survey, then copies only its five public assets into `_site/poll/`.
 
 One browser receipt discourages repeat submissions, and the server deduplicates retries by submission UUID. This anonymous poll does not enforce one vote per person.
+
+## Stonewall coverage playtest — 8 October 2026
+
+Select **HOA President** in [the production playtest](https://jobeck17.github.io/unhinged/web/) or [deck builder](https://jobeck17.github.io/unhinged/builder/). The coverage deck has 40 cards and every **33 locked Stonewall cards**: 21 Characters, 9 Actions, 3 Items. The conversation’s 32-card count missed the added Bicycle Cop when Committee moved to Cost 4. Every lock is preserved; choosing one to table remains open if the target is 32 with slot 33 reserved.
+
+Implemented: Meat Shield legal-target priority, non-additive Absorb, Retaliate even on Defeat, optional Rotated entry, healing and actual Ready-transition triggers, Ready-step skips, duration-bound Power, stacked Lawyer taxes, hand reveals, targeted bounce/removal, Composure recovery branches, Round 8/Founder Trouble, HOA Final Warning, and Florida Man’s visible Breaking Point D6.
+
+Run `node web/stonewall.test.mjs`, `node web/reckless.test.mjs`, `node web/smoke.mjs`, `node builder/smoke.mjs`, and `node poll/test.mjs`. Regression checks exercise every audited card, both threshold abilities and every die face; full-deck games check progress and card conservation in both seats. They verify functionality, not balance. Unpaid Dues and Newsletter are tabled. Last Straw’s shared effect pool and other styles’ audits remain unfinished.

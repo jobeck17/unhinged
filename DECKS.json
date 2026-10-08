@@ -94,7 +94,9 @@
         "LAB-FLM-004",
         "LAB-FLM-005",
         "LAB-FLM-007"
-      ]
+      ],
+      "passive": "Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure.",
+      "breaking_point": "You Ain’t Seen Nothing Yet! Roll a D6: 1 — Rotate a chosen Ready friendly Character; 2–5 — Ready a chosen friendly Rotated Character; 6 — Ready all your Characters."
     },
     {
       "name": "Comeback Tour",
@@ -222,46 +224,101 @@
       "composure": 20
     },
     {
-      "name": "Violation Notice",
+      "name": "Neighborhood Watch — Stonewall Audit",
       "leader": "HOA President",
       "styles": [
         "Stonewall"
       ],
       "packages": [
-        "Freeze / Stall",
-        "Reaction / Denial"
+        "Durable defenders",
+        "Ready / healing",
+        "Neighborhood disruption",
+        "Late-game Trouble"
       ],
       "cards": {
+        "P072": 1,
+        "P083": 1,
+        "P121": 2,
+        "P122": 1,
         "P124": 2,
-        "P126": 4,
-        "P121": 3,
-        "P122": 2,
-        "P128": 2,
-        "P129": 2,
+        "P125": 1,
+        "P126": 2,
+        "P127": 1,
+        "P128": 1,
+        "P129": 1,
         "P130": 1,
-        "P134": 3,
-        "P137": 2,
+        "P131": 1,
+        "P132": 1,
+        "P133": 1,
+        "P134": 2,
+        "P135": 1,
+        "P136": 1,
+        "P137": 1,
+        "P138": 1,
         "P139": 2,
-        "P143": 2,
-        "P140": 3,
-        "P141": 3,
-        "P083": 2,
-        "P146": 3,
-        "P148": 2,
-        "P149": 2
+        "P140": 1,
+        "P141": 1,
+        "P143": 1,
+        "P144": 1,
+        "P145": 1,
+        "P146": 1,
+        "P147": 1,
+        "P148": 1,
+        "P149": 1,
+        "LAB-HOA-001": 2,
+        "LAB-HOA-002": 1,
+        "LAB-HOA-003": 1,
+        "LAB-HOA-004": 2
       },
       "mulligan_priority": [
-        "A 2 Cost defender",
-        "Mall Walker or HOA Enforcement Committee",
-        "A cheap interaction Action"
+        "Off-Leash Dog or a 2-cost Character",
+        "An early defender",
+        "Cheap interaction"
       ],
       "watchpoints": [
-        "Does Failure to Respond create real urgency before Round 8 without making the endgame feel predetermined?",
-        "Can Stonewall survive long enough to threaten the deadline without simply stalling for its own sake?",
-        "Is Absolutely Not worth holding 3 Stash open?"
+        "Does Round 8 create a satisfying payoff?",
+        "Can opponents break Meat Shield, Absorb and healing boards?",
+        "Are Lawyer stacks and repeatable Ready effects fair?"
       ],
-      "status_note": "Revision 12 baseline; Absolutely Not is now a symmetric Rotated-board Return Action rather than a Response.",
-      "composure": 20
+      "status_note": "33-card Stonewall audit; 40-card baseline includes every locked card. Count reconciliation: one card over the intended 32; no locked card removed. Balance provisional.",
+      "composure": 20,
+      "audit_card_ids": [
+        "P072",
+        "P083",
+        "P121",
+        "P122",
+        "P124",
+        "P125",
+        "P126",
+        "P127",
+        "P128",
+        "P129",
+        "P130",
+        "P131",
+        "P132",
+        "P133",
+        "P134",
+        "P135",
+        "P136",
+        "P137",
+        "P138",
+        "P139",
+        "P140",
+        "P141",
+        "P143",
+        "P144",
+        "P145",
+        "P146",
+        "P147",
+        "P148",
+        "P149",
+        "LAB-HOA-001",
+        "LAB-HOA-002",
+        "LAB-HOA-003",
+        "LAB-HOA-004"
+      ],
+      "passive": "Failure to Respond: Beginning in Round 8, your Characters get +1 Trouble.",
+      "breaking_point": "Final Warning: When an opposing Character Causes Trouble that triggers your Breaking Point, you may Dismiss that Character after its Trouble resolves."
     },
     {
       "name": "Tag Team Trashfire",

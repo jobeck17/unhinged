@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-reckless-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
 await import('./magician.js');
 await import('./cat-lady.js');
 await import('./rockstar.js');
 await import('./reckless.js');
+await import('./stonewall.js');
 
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url)));
 const doc=JSON.parse(fs.readFileSync(new URL('../DECKS.json',import.meta.url)));

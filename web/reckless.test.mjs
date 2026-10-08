@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-reckless-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
 import './magician.js';
 import './cat-lady.js';
 import './rockstar.js';
 import './reckless.js';
+import './stonewall.js';
 import {aiAction,aiChoice} from './ai.js';
 
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url)));
