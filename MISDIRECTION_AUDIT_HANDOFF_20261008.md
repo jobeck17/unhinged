@@ -1,6 +1,6 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph tabled Tech Bro ★ and Trapdoor Assistant, banked Identity Thief ○ for Spy, and locked the 33-card active Magician pool. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph accepted ten stage-magic working-name replacements for the 32-card active pool. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
@@ -40,19 +40,19 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P061 Magician's Assistant | 2 | 2/2/1 | When played, you may return another character you control to your hand. |
 | P063 Rabbit | 2 | 1/2/1 | When this character enters or leaves play, draw a card. |
 | LAB-MAG-006 Dove | 2 | 2/1/0 | When this character enters or leaves play, you may deal 1 damage to an opposing character. |
-| P066 Off-Duty Clown ★ | 3 | 2/4/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
-| P076 Wi-Fi Bandit ★ | 1 | 1/1/1 | Hothead. Old random Stash exchange removed. |
-| P077 Script Kiddie ★ | 2 | 1/2/1 | This character may Cause Trouble the turn it enters play. Old Stash exchange removed. |
-| LAB-MAG-003 Birthday Boy ★ | 3 | 2/3/2 | When played, you may Dismiss another character you control. If you do, draw a card. |
+| P066 Stagehand ○ | 3 | 2/4/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
+| P076 Overeager Apprentice ○ | 1 | 1/1/1 | Hothead. Old random Stash exchange removed. |
+| P077 Opening Act ○ | 2 | 1/2/1 | This character may Cause Trouble the turn it enters play. Old Stash exchange removed. |
+| LAB-MAG-003 Disappearing Assistant ○ | 3 | 2/3/2 | When played, you may Dismiss another character you control. If you do, draw a card. |
 | LAB-MAG-001A/B Very Enthusiastic Volunteer ○ | 1 | 1/1/1 | When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn. Not permanent. |
 | P065 Escape Artist | 3 | 3/2/2 | Hothead. When played, you may return another character you control to your hand. |
 | P067 School Bully ★ | 3 | 3/2/1 | Hothead, Sucker Punch. Remove Chicken. Reserve old name for another style/leader. |
 | LAB-MAG-004 Lady Who's Moving Out Again ○ | 3 | 2/3/1 | Hothead. When played, gets +2 Power this turn. When returned from play to your hand, you may return an opposing character costing 2 or less to its owner's hand. |
-| P039 Social Media Influencer ★ | 4 | 2/4/2 | When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom. Old opponent-top-card reveal removed. |
+| P039 Sleight-of-Hand Artist ○ | 4 | 2/4/2 | When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom. Old opponent-top-card reveal removed. |
 | P064 The Mentalist | 4 | 1/3/1 | Temporary borrowed opposing-deck character; details below. |
-| P068 Social Media Grifter ★ | 4 | 3/3/2 | When played, draw 2 cards, then discard a card. |
-| P075 Pirate Radio Operator ★ | 4 | 3/3/2 | When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card. No discard. |
-| P073 IT Guy Who Quit Six Months Ago ★ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
+| P068 Card Shark ○ | 4 | 3/3/2 | When played, draw 2 cards, then discard a card. |
+| P075 Street Magician ○ | 4 | 3/3/2 | When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card. No discard. |
+| P073 Quick-Change Artist ○ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
 | P078 Heckler | 5 | 3/4/2 | Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item. Old opponent-choice/free-play engine removed. |
 
 Current active locked character curve: cost 1 = 3; cost 2 = 4; cost 3 = 5; cost 4 = 4; cost 5 = 2; cost 6 = 1. Total 19 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
@@ -96,7 +96,7 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 | P085 Ace Up My Sleeve | 3 | Draw 2 cards. Final user lock at chat ending. Old Rotated item/character bounce removed. |
 | P086 Now You Don't (formerly Switcheroo) | 2 | Choose a character you control and an opposing character with equal or lower cost. Dismiss both to their owners' discard piles. Joseph explicitly revised name and destination; paired Trap Door recovery and balance need deeper exploration. |
 | LAB-MAG-002 Ethan's JUST Being Dramatic ★ | 2 | Draw 2 cards, then discard a card. Old plain friendly bounce removed. |
-| P142 I Want to Speak to Your Manager ★ | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
+| P142 Vanishing Act ○ | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
 | P090 Poof! | 1 | Choose a character you control. After it next Causes Trouble this turn, return it to your hand. Must play before Trouble. No Ready, immediate-Trouble permission, or draw added. |
 
 Important reversals: User rejected converting Poof! into conditional draw and explicitly restored the bounce-after-Trouble version. User instead reopened P085 and converted that generic bounce into 3-cost Draw 2. Do not accidentally restore earlier versions.
@@ -111,7 +111,7 @@ Manager testing lock: start at cost 2 with unrestricted opposing Item return and
 
 | ID / working name | Cost | Approved effect |
 |---|---:|---|
-| P088 Beer-Stained Cards ★ | 2 | Rotate this Item and spend 1 Stash: Draw a card. |
+| P088 Marked Deck ○ | 2 | Rotate this Item and spend 1 Stash: Draw a card. |
 | LAB-MAG-005 Magician's Hat | 3 | Rotate this Item and spend 1 Stash: Return a Magical Character you control to your hand. |
 | New ID pending — Trap Door | 3 | May store a just-Dismissed friendly Character costing <=5 from your discard face-down if empty. Rotate and spend 1 Stash: Play stored Character free. Persistent; one stored card; see full lock below. |
 
@@ -249,6 +249,25 @@ Other active/table/bank name flags remain intact. Active pool remains 33.
 - **Current active pool: 32 locked designs = 19 Characters / 10 Actions / 3 Items.** Character curve costs 1–6: **3 / 4 / 5 / 4 / 2 / 1**. Unique cost/type counts (Character/Action/Item): 1 = 3/3/0 (6); 2 = 4/5/1 (10); 3 = 5/2/2 (9); 4 = 4/0/0 (4); 5 = 2/0/0 (2); 6 = 1/0/0 (1).
 - Birthday Kid and Social Media Influencer remain locked as standalone deck selection/setup, without Blogger payoff. Other names, mechanics, banks and table decisions remain unchanged.
 - User invites stage-magic naming alternatives. Invisible String? and Magic Wand/Transform remain tentative; do not rename them or other unresolved names without approval. No replacement Character approved. Implementation/testing remains pending.
+
+## Misdirection working-name replacements — approved 8 October 2026
+
+Joseph approved all ten suggested replacements as current working names, explicitly open to later refinement. Mechanics, IDs, costs and stats unchanged. These supersede earlier tentative Invisible String? / Magic Wand / Transform suggestions. Former ★ names have a replacement now; ○ indicates the new name remains reviewable, not a required re-rename.
+
+| ID | Previous working name | Current working name |
+|---|---|---|
+| P088 | Beer-Stained Cards | Marked Deck ○ |
+| P142 | I Want to Speak to Your Manager | Vanishing Act ○ |
+| P076 | Wi-Fi Bandit | Overeager Apprentice ○ |
+| P077 | Script Kiddie | Opening Act ○ |
+| P066 | Off-Duty Clown | Stagehand ○ |
+| LAB-MAG-003 | Birthday Boy | Disappearing Assistant ○ |
+| P039 | Social Media Influencer | Sleight-of-Hand Artist ○ |
+| P068 | Social Media Grifter | Card Shark ○ |
+| P075 | Pirate Radio Operator | Street Magician ○ |
+| P073 | IT Guy Who Quit Six Months Ago | Quick-Change Artist ○ |
+
+Beer-Stained Cards remains BANKED as a future Florida Man/Reckless name/concept; P088's current Misdirection draw-engine ability stays on Marked Deck. No style transfer. Previously approved Presto Chango, Ace Up My Sleeve, The Headliner, Heckler, The Mentalist and Now You Don't remain unchanged. Other name flags (including School Bully ★, Lady ○ and Enthusiastic Volunteer ○) remain intact. Pool stays 32 active designs; production/playtest implementation remains pending.
 
 ## Implementation checklist for later
 
