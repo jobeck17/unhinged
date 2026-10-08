@@ -39,8 +39,8 @@
       "name": "Bookie's Nephew",
       "type": "Character",
       "style": "Gambler",
-      "cost": 2,
-      "power": 2,
+      "cost": 1,
+      "power": 1,
       "guard": 2,
       "trouble": 1,
       "traits": [
@@ -55,10 +55,10 @@
       "name": "Casino Bus Grandma",
       "type": "Character",
       "style": "Gambler",
-      "cost": 2,
+      "cost": 1,
       "power": 1,
-      "guard": 3,
-      "trouble": 2,
+      "guard": 2,
+      "trouble": 1,
       "traits": [
         "Human"
       ],
@@ -69,102 +69,6 @@
     {
       "id": "LAB-GD-005",
       "name": "Man With a Foolproof System",
-      "type": "Character",
-      "style": "Gambler",
-      "cost": 2,
-      "power": 2,
-      "guard": 2,
-      "trouble": 2,
-      "traits": [
-        "Human"
-      ],
-      "keywords": [],
-      "text": "",
-      "status": "prototype"
-    },
-    {
-      "id": "LAB-GD-006",
-      "name": "Debt Collector's Roommate",
-      "type": "Character",
-      "style": "Gambler",
-      "cost": 3,
-      "power": 3,
-      "guard": 3,
-      "trouble": 2,
-      "traits": [
-        "Human"
-      ],
-      "keywords": [],
-      "text": "",
-      "status": "prototype"
-    },
-    {
-      "id": "LAB-GD-007",
-      "name": "Friend Who Doesn't Know the Rules",
-      "type": "Character",
-      "style": "Gambler",
-      "cost": 3,
-      "power": 2,
-      "guard": 4,
-      "trouble": 2,
-      "traits": [
-        "Human"
-      ],
-      "keywords": [],
-      "text": "",
-      "status": "prototype"
-    },
-    {
-      "id": "LAB-GD-008",
-      "name": "One More Hand Guy",
-      "type": "Character",
-      "style": "Gambler",
-      "cost": 3,
-      "power": 3,
-      "guard": 2,
-      "trouble": 1,
-      "traits": [
-        "Human"
-      ],
-      "keywords": [],
-      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
-      "status": "prototype"
-    },
-    {
-      "id": "LAB-GD-009",
-      "name": "Guy Who Swears He's Up",
-      "type": "Character",
-      "style": "Gambler",
-      "cost": 4,
-      "power": 3,
-      "guard": 4,
-      "trouble": 2,
-      "traits": [
-        "Human"
-      ],
-      "keywords": [],
-      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
-      "status": "prototype"
-    },
-    {
-      "id": "LAB-GD-010",
-      "name": "Card Counter Who Can't Count",
-      "type": "Character",
-      "style": "Gambler",
-      "cost": 4,
-      "power": 4,
-      "guard": 3,
-      "trouble": 2,
-      "traits": [
-        "Human"
-      ],
-      "keywords": [],
-      "text": "",
-      "status": "prototype"
-    },
-    {
-      "id": "LAB-GD-011",
-      "name": "Unpaid Babysitter",
       "type": "Character",
       "style": "Gambler",
       "cost": 5,
@@ -179,14 +83,110 @@
       "status": "prototype"
     },
     {
+      "id": "LAB-GD-006",
+      "name": "Debt Collector's Roommate",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 6,
+      "power": 5,
+      "guard": 6,
+      "trouble": 3,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-007",
+      "name": "Friend Who Doesn't Know the Rules",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 1,
+      "power": 1,
+      "guard": 3,
+      "trouble": 1,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-008",
+      "name": "One More Hand Guy",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 5,
+      "power": 4,
+      "guard": 4,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-009",
+      "name": "Guy Who Swears He's Up",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 5,
+      "power": 4,
+      "guard": 5,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-010",
+      "name": "Card Counter Who Can't Count",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 6,
+      "power": 6,
+      "guard": 5,
+      "trouble": 3,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-011",
+      "name": "Unpaid Babysitter",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 6,
+      "power": 5,
+      "guard": 6,
+      "trouble": 3,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
       "id": "LAB-GD-012",
       "name": "Last Call Larry",
       "type": "Character",
       "style": "Gambler",
-      "cost": 5,
+      "cost": 6,
       "power": 5,
-      "guard": 3,
-      "trouble": 2,
+      "guard": 5,
+      "trouble": 3,
       "traits": [
         "Human"
       ],
@@ -227,7 +227,7 @@
       "name": "Cash Out",
       "type": "Action",
       "style": "Gambler",
-      "cost": 2,
+      "cost": 1,
       "power": null,
       "guard": null,
       "trouble": null,
