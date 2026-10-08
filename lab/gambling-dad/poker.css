@@ -22,3 +22,12 @@
  .poker-card-stats{font-size:11px}
  .poker-card-status{font-size:8px}
 }
+
+/* The chip is a static reveal, not an animated flip. */
+.chip-sheet{text-align:center;max-width:480px}
+.lucky-chip{width:min(66vw,234px);aspect-ratio:1;margin:18px auto;display:grid;place-items:center;border-radius:50%;background:repeating-conic-gradient(#e7d7b3 0deg 9deg,#173e35 9deg 30deg);border:5px solid #c49b4e;box-shadow:0 9px 22px #0006}
+.lucky-chip-ring{width:85%;height:85%;border-radius:50%;border:5px double #d9af57;display:grid;place-items:center;background:#15392e}
+.lucky-chip-center{width:84%;height:84%;border-radius:50%;border:2px solid #d9af57;background:#217858;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;color:#fff0c9}
+.lucky-chip-center span{font-weight:800;font-size:clamp(8px,2.5vw,12px);letter-spacing:1px}
+.lucky-chip-center strong{font-size:clamp(32px,10vw,62px);letter-spacing:3px;line-height:1}
+.chip-result{font-size:1.25rem;font-weight:900;letter-spacing:2px;margin:12px}
