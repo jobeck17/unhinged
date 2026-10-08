@@ -42,7 +42,7 @@ After a win, loss, or tie, the browser reveals **both committed hands** with eac
 
 The result is **not generated all at once**: the UI reveals each circle separately, and the third chip isn't even flipped unless the user presses **Risk It**. The opponent AI uses the same payouts; it only skips the visual delay.
 
-**Important tension:** This converts surplus Stash into cards in hand, but still depletes Dad's deck and could accelerate Last Straw. Test whether paying 4 to play plus 2 Ready Stash per activation is worth the rewards. This is lab-only, not canon.
+**Rock Bottom Poker entry cost:** Gambling Dad must have 1 Ready Stash and spends it immediately on activation. Folding additionally discards 1 Stash. A poker loss with no Characters and at most 2 Stash also costs 3 Composure.\n\n**Important tension:** This converts surplus Stash into cards in hand, but still depletes Dad's deck and could accelerate Last Straw. Test whether paying 4 to play plus 2 Ready Stash per activation is worth the rewards. This is lab-only, not canon.
 
 ## Deck shell
 
