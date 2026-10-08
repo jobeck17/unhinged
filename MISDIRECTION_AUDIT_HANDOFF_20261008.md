@@ -1,6 +1,6 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph locked the new cost-6 finisher (4/5/3, first friendly return each turn grants +2 Trouble that turn). This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph renamed Switcheroo to Now You Don't with discard destinations, requested deeper Trap Door recovery exploration, and banked Bush for next set's Spy Leader. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
@@ -16,7 +16,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 - Trigger leave-play effects, retrigger entrance effects, and recover damaged survivors by returning and replaying them. Bounce is recovery, not a separate healing package.
 - Heavy card draw; meaningful Hothead package with competitive, not overpowered or underpowered stats.
 - Move cards among board, hand, Stash and occasionally deck. Do not make every card explicitly reward bounce: combat and standalone utility should matter too.
-- No permanent ramp package. Only limited temporary/conditional free deployment; Pick a Card and proposed Bush may be enough. Free deployment is still valuable even though it does not grow Stash.
+- No permanent ramp package. Only limited temporary/conditional free deployment; Pick a Card is locked, Trap Door recovery is under exploration and Bush is now banked for the next set's Spy. Free deployment is still valuable even though it does not grow Stash.
 - No healing outside bounce. Return-to-hand on Defeat is a possible future mechanic, not locked on any card.
 - Cause Trouble on entry is locked on one character, currently plain text; keyword name remains pending. It does not grant extra actions or attacks.
 - Named-card deck search/direct deployment (e.g., Rabbit or Dove, then reshuffle) is a brainstorm idea, not approved.
@@ -97,7 +97,7 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 | P082 Wrong Address ○ | 2 | Choose two opposing characters; their owner chooses one to return to its owner's hand. If they have only one character, choose and return that one instead. No cost cap. |
 | P084 Default Password ★ | 1 | Exchange a card in your Stash with a card in your hand. The replacement enters Stash in the same state—Ready or Rotated—as the card it replaces. This IS the initially unnamed locked exchange action, not an extra slot. |
 | P085 Have You Tried Turning It Off? ○ | 3 | Draw 2 cards. Final user lock at chat ending. Old Rotated item/character bounce removed. |
-| P086 Switcheroo | 2 | Choose a character you control and an opposing character with equal or lower cost. Return both to their owners' hands. |
+| P086 Now You Don't (formerly Switcheroo) | 2 | Choose a character you control and an opposing character with equal or lower cost. Dismiss both to their owners' discard piles. Joseph explicitly revised name and destination; paired Trap Door recovery and balance need deeper exploration. |
 | LAB-MAG-002 Ethan's JUST Being Dramatic ★ | 2 | Draw 2 cards, then discard a card. Old plain friendly bounce removed. |
 | P142 I Want to Speak to Your Manager ★ | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
 | P090 Poof! | 1 | Choose a character you control. After it next Causes Trouble this turn, return it to your hand. Must play before Trouble. No Ready, immediate-Trouble permission, or draw added. |
@@ -128,14 +128,14 @@ Beer-Stained Cards' revised wording is locked. Its name sounds like Florida Man 
 
 Magician's Hat cost, activation and Magical targeting are LOCKED. Magical is a trait, not a keyword, with no inherent rules effect. Rabbit and Dove initially gain Magical alongside Animal. Joseph approved this direction with the explicit condition that we review the whole set; the full eligibility list remains open. Do not automatically tag all Misdirection Characters. Review each candidate against entrance/return payoffs and repeated Hat use, including any eventual finisher. Preserve the approved Hat ability while deciding eligibility.
 
-Inconspicuous Bush is a prior cross-chat concept, not yet an approved card in this audit: hide a character costing up to 5 under it; Rotate to Dismiss Bush and put the hidden character in play. Retrieve authoritative ID/cost/style/current existence before adding. No Bush matched the current production CARDS.json name/effect scan at handoff creation. Cloak on a fragile high-Power character is likewise a prior direction still to place/revisit, not an approved new card. Do not assume old brainstorming equals a lock.
+Inconspicuous Bush is now BANKED for next set's Spy Leader, with hand-tucking behavior to explore. It is not in the current Magician set. Trap Door replaces it as this set's storage/recovery exploration: bring back the friendly Character sent to discard by Now You Don't, mechanism still open. See NOTES.md's 8 October Now You Don't / Trap Door entry. Trap Door is distinct from locked Trapdoor Assistant. Cloak on a fragile high-Power Character remains an unresolved prior direction, not an approved card.
 
 ## Audit completeness correction — 8 October 2026
 
 The existing production Misdirection Character/Action/Item entries are all accounted for in this handoff, including the two duplicate-design migrations. However, the assistant incorrectly described the audit as complete without presenting the explicitly listed Bush and fragile Cloak-character concepts. Review existing cards AND unresolved Misdirection concepts before declaring set completeness.
 
 Required closure queue:
-1. Inconspicuous Bush: present and review the banked up-to-5-cost storage/deployment concept; exact cost, type, timing, hidden-card cleanup and whether to include remain open. No implementation or approval inferred.
+1. Now You Don't / Trap Door: explore the paired friendly Dismiss and recovery mechanism. P086 name and discard destination are approved; cost/selection framework retained for now, balance open. Trap Door cost, type, activation, target tracking and loading/release are not locked. Inconspicuous Bush is explicitly banked for next set's Spy Leader with hand-tucking behavior.
 2. Fragile high-Power Magical/Cloak character: present the banked survival concept and decide include/rework/table. Cloak is not a current keyword and must not be restored automatically; current Retaliate is keyword-only.
 3. P078 Pirate With a Business License ○: resolve keep/rework/table explicitly.
 4. Named-card Rabbit/Dove deck search/direct deployment: explicitly keep banked or review; not currently approved.
