@@ -42,20 +42,20 @@ After a win, loss, or tie, the browser reveals **both committed hands** with eac
 
 The result is **not generated all at once**: the UI reveals each circle separately, and the third chip isn't even flipped unless the user presses **Risk It**. The opponent AI uses the same payouts; it only skips the visual delay.
 
-**Rock Bottom Poker entry cost:** Gambling Dad must have 1 Ready Stash and spends it immediately on activation. Folding additionally discards 1 Stash. A poker loss with no Characters and at most 2 Stash also costs 3 Composure.\n\n**Important tension:** This converts surplus Stash into cards in hand, but still depletes Dad's deck and could accelerate Last Straw. Test whether paying 4 to play plus 2 Ready Stash per activation is worth the rewards. This is lab-only, not canon.
+**Important tension:** This converts surplus Stash into cards in hand, but still depletes Dad's deck and could accelerate Last Straw. Test whether paying 4 to play plus 2 Ready Stash per activation is worth the rewards. This is lab-only, not canon.
 
 ## Deck shell
 
-**40 cards**, all 16 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 6 Actions, 6 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
+**40 cards**, all 17 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 6 Actions, 6 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
 
 ## Updated Cost curve — Slot Machine v0.3
 
-The previous low/high draft has been changed only to introduce four Cost-4 Items. **It's Basically Free Money is fully removed.** Its final copy becomes a fourth **That Was Almost a Win** for better hand flow. Two old Lucky Coin Items and the other two Free Money copies were replaced by four **Slot Machine** Items.
+The previous low/high draft has been changed only to introduce four Cost-4 Items. Remove both copies of **Lucky Coin From a Laundromat** and two of the three copies of **It's Basically Free Money**. Add four **Slot Machine** Items.
 
 | Printed Cost | Deck copies |
 | --- | ---: |
-| 1 | 23 |
-| 2 | 0 |
+| 1 | 22 |
+| 2 | 1 |
 | 3 | 0 |
 | 4 | 4 |
 | 5 | 7 |
