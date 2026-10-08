@@ -5,7 +5,7 @@ export function pokerScore(cards, pair) {
   return [pair.reduce((n,id)=>n+(cards[id]?.cost??0),0),
           pair.reduce((n,id)=>n+(cards[id]?.type==="Character"?(cards[id].power??0):0),0)];
 }
-export function compareScores(a,b) { return Math.sign(a[0]-b[0]) || Math.sign(a[1]-b[1]); }
+export function compareScores(a,b,mode="HIGH") { return (mode==="LOW"?Math.sign(b[0]-a[0]):Math.sign(a[0]-b[0])) || Math.sign(a[1]-b[1]); }
 export function installGamblingDad(Game, LEADERS) {
   LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: gain 4 Stash. Lose: reset Stash to 2."};
   const oldStart=Game.prototype.startTurn;
@@ -51,6 +51,9 @@ export function installGamblingDad(Game, LEADERS) {
   Game.prototype.dadPoker=async function(p=this.turn) {
     if(!this.canPoker(p))return false;
     this.players[p].pokerUsed=true;
+    const pokerMode=Math.random()<0.5?"HIGH":"LOW";
+    this.pokerMode=pokerMode;
+    await this.ask({player:p,pokerChip:true,pokerMode,title:"Dad\u0027s Lucky Poker Chip"});
     const opp=1-p, hands=[[],[]];
     for(let who=0;who<2;who++)for(let i=0;i<3;i++)hands[who].push(this.players[who].deck.pop());
     const options=[[0,1],[0,2],[1,2]], chosen=[[],[]], scores=[[],[]];
@@ -61,7 +64,7 @@ export function installGamblingDad(Game, LEADERS) {
       });
       // Offer THREE individual cards; the player chooses exactly TWO.
       // The best pair is an AI recommendation only, not a prebuilt human choice.
-      possibilities.sort((a,b)=>compareScores(b.score,a.score));
+      possibilities.sort((a,b)=>compareScores(b.score,a.score,pokerMode));
       const indices=await this.ask({
         player:who,title:"Rock Bottom Poker: choose TWO of your THREE cards",
         mandatory:true,pokerCards:true,multi:true,min:2,max:2,
@@ -81,8 +84,8 @@ export function installGamblingDad(Game, LEADERS) {
     }
     const bonus=this.players[p].board.filter(x=>x.id==="LAB-GD-016").length;
     scores[p][1]+=bonus;
-    const result=compareScores(scores[p],scores[opp]);
-    const prefix="Rock Bottom Poker: "+this.name(p)+" "+scores[p][0]+"/"+scores[p][1]+" vs "+this.name(opp)+" "+scores[opp][0]+"/"+scores[opp][1]+". ";
+    const result=compareScores(scores[p],scores[opp],pokerMode);
+    const prefix="Rock Bottom Poker ("+pokerMode+"): "+this.name(p)+" "+scores[p][0]+"/"+scores[p][1]+" vs "+this.name(opp)+" "+scores[opp][0]+"/"+scores[opp][1]+". ";
     const s=this.players[p];
     if(result>0){
       if(!s.pokerOrigins)s.pokerOrigins=[];
@@ -117,7 +120,7 @@ export function installGamblingDad(Game, LEADERS) {
       this.players[opp].discard.push(...chosen[opp]);
       this.say(prefix+"A complete TIE. Both pairs discarded; no payout.");
     }
-    this.pokerLast={costDad:scores[p][0],powerDad:scores[p][1],costOpp:scores[opp][0],powerOpp:scores[opp][1],result:result>0?"WIN · +4 Stash":result<0?"LOSS · Stash down to 2":"TIE · no payout"};
+    this.pokerLast={mode:pokerMode,costDad:scores[p][0],powerDad:scores[p][1],costOpp:scores[opp][0],powerOpp:scores[opp][1],result:result>0?"WIN · +4 Stash":result<0?"LOSS · Stash down to 2":"TIE · no payout"};
     this.update?.();
     return result;
   };
