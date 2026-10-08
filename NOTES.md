@@ -1,3 +1,11 @@
+## Magical eligibility — LOCKED 8 October 2026
+
+Joseph approved adding Magical to Magician's Assistant (P061), Escape Artist (P065) and Disappearing Assistant (LAB-MAG-003). Together with already-approved Rabbit (P063) and Dove (LAB-MAG-006), these are the **five Magical Characters in the current active set**.
+
+Magical is a trait, not a keyword. Preserve existing other traits; Rabbit/Dove retain Animal. No other active Character gains Magical in this pass. Magician's Hat may target any friendly member of these five, under its locked cost-3 / Rotate plus spend 1 Stash activation. All other mechanics, names, costs, stats and the 32-card count remain unchanged. This closes the initial whole-set Hat eligibility decision; changes require an explicit later tuning decision.
+
+Remaining design closure: decide include/rework/bank for fragile high-Power/Cloak concept and explicitly bank/review named Rabbit/Dove deck search; then final interaction review and 40-card copy distribution. Leader passive, Breaking Point, names and initial curve are approved. Implementation/testing remains pending.
+
 ## Birthday Party Magician Breaking Point — LOCKED 8 October 2026
 
 **For My Next Trick…:** “You may return a character you control to your hand. Then you may play a character costing 3 or less from your hand without paying its cost.”
