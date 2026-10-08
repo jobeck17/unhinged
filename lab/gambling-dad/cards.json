@@ -1,0 +1,268 @@
+{
+  "version": "LAB-GD-0.1",
+  "status": "PROTOTYPE",
+  "cards": [
+    {
+      "id": "LAB-GD-001",
+      "name": "Gas Station Regular",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 1,
+      "power": 1,
+      "guard": 2,
+      "trouble": 1,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-002",
+      "name": "Guy Who's Due",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 1,
+      "power": 2,
+      "guard": 1,
+      "trouble": 1,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-003",
+      "name": "Bookie's Nephew",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "trouble": 1,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "Whenever you win Dad Poker, this gets +1 Power this Turn.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-004",
+      "name": "Casino Bus Grandma",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 2,
+      "power": 1,
+      "guard": 3,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "Whenever you lose Dad Poker, Draw a card.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-005",
+      "name": "Man With a Foolproof System",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 2,
+      "power": 2,
+      "guard": 2,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-006",
+      "name": "Debt Collector's Roommate",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 3,
+      "power": 3,
+      "guard": 3,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-007",
+      "name": "Friend Who Doesn't Know the Rules",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 3,
+      "power": 2,
+      "guard": 4,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-008",
+      "name": "One More Hand Guy",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 3,
+      "power": 3,
+      "guard": 2,
+      "trouble": 1,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-009",
+      "name": "Guy Who Swears He's Up",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 4,
+      "power": 3,
+      "guard": 4,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-010",
+      "name": "Card Counter Who Can't Count",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 4,
+      "power": 4,
+      "guard": 3,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-011",
+      "name": "Unpaid Babysitter",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 5,
+      "power": 4,
+      "guard": 5,
+      "trouble": 3,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-012",
+      "name": "Last Call Larry",
+      "type": "Character",
+      "style": "Gambler",
+      "cost": 5,
+      "power": 5,
+      "guard": 3,
+      "trouble": 2,
+      "traits": [
+        "Human"
+      ],
+      "keywords": [],
+      "text": "Whenever you lose Dad Poker, this gets +2 Power this Turn.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-013",
+      "name": "That Was Almost a Win",
+      "type": "Action",
+      "style": "Gambler",
+      "cost": 1,
+      "power": null,
+      "guard": null,
+      "trouble": null,
+      "traits": [],
+      "keywords": [],
+      "text": "Draw 2 cards, then Discard 1 card.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-014",
+      "name": "It's Basically Free Money",
+      "type": "Action",
+      "style": "Gambler",
+      "cost": 2,
+      "power": null,
+      "guard": null,
+      "trouble": null,
+      "traits": [],
+      "keywords": [],
+      "text": "Ready up to 2 Stash.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-015",
+      "name": "Cash Out",
+      "type": "Action",
+      "style": "Gambler",
+      "cost": 2,
+      "power": null,
+      "guard": null,
+      "trouble": null,
+      "traits": [],
+      "keywords": [],
+      "text": "Choose one of your Characters. It gets +2 Power this Turn.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-016",
+      "name": "Lucky Coin From a Laundromat",
+      "type": "Item",
+      "style": "Gambler",
+      "cost": 2,
+      "power": null,
+      "guard": null,
+      "trouble": null,
+      "traits": [],
+      "keywords": [],
+      "text": "During your Dad Poker games, you get +1 total Power in a Cost tie.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-017",
+      "name": "Gas Station Scratch-Off",
+      "type": "Item",
+      "style": "Gambler",
+      "cost": 1,
+      "power": null,
+      "guard": null,
+      "trouble": null,
+      "traits": [],
+      "keywords": [],
+      "text": "Whenever you win Dad Poker, Draw a card.",
+      "status": "prototype"
+    }
+  ]
+}
