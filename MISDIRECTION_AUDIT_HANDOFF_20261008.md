@@ -2,7 +2,17 @@
 
 Updated 8 October 2026, after Joseph banked Cloak and declare-and-search for the next Spy set, closing Magician concept inclusion decisions. This is the continuation record for a new chat. Read this before continuing the audit.
 
-## Exact stopping point and next steps
+## Implementation checkpoint — 8 October 2026
+
+Joseph explicitly requested implementation, builder/playtest updates, checks, tests and commit. The full 32-design audit is now implemented in the production data and browser engine; the older design-only statements below are historical context. No locks have been retuned. Stable IDs: **LAB-MAG-008 The Headliner**, **LAB-MAG-009 Trap Door**. Volunteer consolidates on LAB-MAG-001A; LAB-MAG-001B is retired. Party Mom consolidates on LAB-MAG-004; P089 is retired. Saved builder decks and canonical deck references migrate those aliases.
+
+The 40-card coverage baseline includes all 32 designs once, with one extra Rabbit, Dove, Magician's Assistant, Impatient Apprentice, Volunteer From the Audience, Opening Act, Escape Artist and Trap Door: **26 Characters / 10 Actions / 4 Items**. This is an implementation-testing copy distribution, not a newly locked competitive deck or a balance conclusion. Unique cost counts remain **6 / 10 / 9 / 4 / 2 / 1**, and the character curve remains **3 / 4 / 5 / 4 / 2 / 1**.
+
+The Show Must Go On and For My Next Trick… are implemented. Stash owners can inspect their faces and choose which Ready cards pay; exchanges preserve each slot's state. All five locked Magical Characters are implemented. Spy concepts, Is This Your Card? alternative, banked names, tabled designs and their naming flags remain preserved.
+
+Verification: `node web/magician.test.mjs` exercises all 32 designs and all ten Actions, the three-card machine, Stubborn prevention, Dove/Absorb, Hat eligibility, ownership, borrowed-card scheduling, Poof expiry, the Headliner cap, shared passive cap, Breaking Point, hidden hand selection, taxes and Stash state. It also completes 48 seeded production-engine matches against all eight Leaders. Existing Reckless/Stonewall regressions, builder/data smoke and poll checks pass. `web/browser.test.mjs` tests all ten Actions through the actual browser controls, Trap Door/Heckler and builder migration; the Pages workflow gates publishing on these Chromium checks. Run it with a server on port 8765 and Playwright installed. Human playtests and balance tuning remain next; historical simulator parity is not asserted.
+
+## Historical exact stopping point and next steps
 
 Character first pass, ten Actions, three Items and the new finisher are approved (32 active distinct designs: 19 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive is now locked as The Show Must Go On (see below); Breaking Point is now locked as For My Next Trick… (see latest lock below). Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 

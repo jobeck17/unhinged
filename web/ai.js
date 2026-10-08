@@ -7,6 +7,7 @@ export function aiChoice(g,r){let {player:p,options=[],multi=false,max=2,title='
  if(title.startsWith('Escape Artist:'))return options.filter(o=>o.value!==null&&g.obj(o.value)).sort((a,b)=>{let x=g.obj(a.value),y=g.obj(b.value);return (g.card(x).cost-x.damage)-(g.card(y).cost-y.damage)})[0]?.value??null;
  if(title==='Choose a Character'||title.includes('Choose Ready Character')){let own=options.filter(o=>g.obj(o.value)?.owner===p);if(own.length)return own.sort((a,b)=>{let x=g.obj(a.value),y=g.obj(b.value);return ((y.ready?10:0)+g.guard(y)-y.damage+g.power(y))-((x.ready?10:0)+g.guard(x)-x.damage+g.power(x))})[0].value}
 
+ if(title.startsWith('Poof!:'))return options.filter(o=>g.obj(o.value)&&g.canCauseTrouble(g.obj(o.value)))[0]?.value??options[0]?.value;
  if(title.startsWith('Security Camera:'))return options[0]?.value??null;
  if(title.includes('heal')||title.includes('Grandma')){const bodies=options.filter(o=>g.obj(o.value));if(bodies.length)return bodies.sort((a,b)=>g.obj(b.value).damage-g.obj(a.value).damage)[0].value}
  if(title==='Crossing Guard: enter Rotated for Meat Shield?')return g.chars(p).length>1;
@@ -34,6 +35,9 @@ export function aiAction(g,p){let s=g.players[p],own=g.chars(p),opp=g.chars(1-p)
  const play=o=>({type:'play',index:o.index});
  if(g.name(p)==='Mad Scientist'){let alive=legal.find(o=>o.c.id==='LAB-SCI-009');if(alive)return play(alive);let battery=s.board.find(x=>x.id==='LAB-SCI-013'&&g.canUse(x)&&s.fuel<s.stash.length);if(battery)return {type:'activate',uid:battery.uid};let lab=legal.find(o=>['LAB-SCI-005','LAB-SCI-010','LAB-SCI-012','LAB-SCI-013'].includes(o.c.id));if(lab)return play(lab)}
  if(g.name(p)==='Crazy Cat Lady'&&own.filter(x=>g.trait(x,'Cat')).length<3){let cat=legal.filter(o=>o.c.type==='Character'&&o.c.traits.includes('Cat')).sort((a,b)=>a.c.cost-b.c.cost)[0];if(cat)return play(cat);let can=legal.find(o=>o.c.id==='LAB-CAT-010');if(can)return play(can)}
+ let poof=legal.find(o=>o.c.id==='P090'&&own.some(x=>g.canCauseTrouble(x)&&x.poofTurn!==(g.turnSerial||0)));if(poof)return play(poof);
+ let trap=legal.find(o=>o.c.id==='LAB-MAG-009');if(trap)return play(trap);
+ let release=s.board.find(x=>x.id==='LAB-MAG-009'&&g.canUse(x));if(release)return {type:'activate',uid:release.uid};
  // Establish an engine before spending its trigger cards.
  let engine=legal.find(o=>['P011','P048','P105'].includes(o.c.id)&&(!['P011'].includes(o.c.id)||own.length>=2));if(engine)return play(engine);
  // Spend buffs and attachments while there is still an attack to improve.

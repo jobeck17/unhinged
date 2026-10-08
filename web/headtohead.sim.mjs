@@ -1,7 +1,11 @@
 import fs from 'node:fs';
-import {Game} from './engine.js?v=mordecai-04-stonewall-01';
-import './magician.js';import './cat-lady.js';import './rockstar.js';import './reckless.js';import './stonewall.js';
+import {Game} from './engine.js?v=mordecai-04-misdirection-01';
 import {aiAction,aiChoice} from './ai.js';
+import './cat-lady.js';
+import './rockstar.js';
+import './reckless.js';
+import './stonewall.js';
+import './magician.js';
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url))),doc=JSON.parse(fs.readFileSync(new URL('../DECKS.json',import.meta.url)));
 const fl=doc.decks.find(d=>d.leader==='Florida Man'),hoa=doc.decks.find(d=>d.leader==='HOA President');
 function rng(seed){return ()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296}}

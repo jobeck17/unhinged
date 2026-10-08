@@ -42,6 +42,13 @@ jobs:
       - run: node web/smoke.mjs
       - run: node web/reckless.test.mjs
       - run: node web/stonewall.test.mjs
+      - run: node web/magician.test.mjs
+      - name: Verify builder and every Misdirection Action in Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.51.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8765 > /tmp/unhinged-http.log 2>&1 &
+          node web/browser.test.mjs
       # Historical labs remain runnable research fixtures but do not gate Mordecai production.
       # Mordecai production simulation is intentionally held until engine parity.
   deploy:

@@ -92,7 +92,7 @@ There is **no universal once-per-Turn Attack-or-Cause-Trouble cap**. Readiness i
 
 There is no automatic resource progression. Once per Round during your Turn, you may put one card from hand face-down into Stash. This is not a separate action.
 
-Normal Stash enters Ready, pays 1 toward a Cost when Rotated, has no printed identity/stats/text while there, and cannot leave unless a rule/effect moves it. Its identity is unknowable even to its owner unless an effect permits looking. Stash count and Ready/Rotated state are public.
+Normal Stash enters Ready, pays 1 toward a Cost when Rotated, has no printed identity/stats/text while there, and cannot leave unless a rule/effect moves it. Its owner may inspect its identity at any time; opponents may not inspect it unless an effect permits looking. When paying a Cost, choose which Ready Stash cards to Rotate. An exchange preserves each replaced slot’s Ready or Rotated state. Stash count and Ready/Rotated state are public.
 
 Effects may create face-up temporary Stash or otherwise break these rules. Unless text says otherwise, face-up temporary Stash is discarded when spent. Costs may be reduced to 0.
 
@@ -307,4 +307,15 @@ Resolve queued Breaking Point abilities after the current effect and before any 
 
 **Community Founder:** Its other-friendly-Character +1 Trouble aura is active while its controller is currently at 10 or less Composure or Last Straw. Recovery above 10 turns the aura off without resetting the spent Breaking Point. It stacks with Round 8’s passive; multiple Founders also stack. It does not boost itself.
 
-Security Camera shows the full opposing hand only to its controller. The AI does not use that hand outside the reveal choice. Other Leader Breaking Point abilities and the shared selectable Last Straw effect pool remain pending their own content audits. Simulators are not asserted to have browser parity.
+Security Camera shows the full opposing hand only to its controller. The AI does not use that hand outside the reveal choice. Florida Man, HOA President and Birthday Party Magician now have implemented Breaking Points. Remaining Leader Breaking Point abilities and the shared selectable Last Straw effect pool remain pending their own content audits. Simulators are not asserted to have browser parity.
+
+
+## Misdirection implementation checkpoint — 8 October 2026
+
+Birthday Party Magician’s **The Show Must Go On** Readies one chosen Rotated Stash after the first friendly Character actually returns from play to your hand or is Dismissed during your turn. Return and Dismiss share one use; the first event spends that use even if no Stash is Rotated. Defeat, Sacrifice and discarding from hand do not qualify. **For My Next Trick…** optionally returns a friendly Character, then independently offers a free Character costing 3 or less from hand when Breaking Point first triggers.
+
+**Trap Door** (LAB-MAG-009) optionally captures only the just-Dismissed friendly Character costing 5 or less from your discard while the Item is in play and empty. One actual card can be stored under only one copy. Defeat, Sacrifice, hand discard and return to hand do not qualify. Rotate the Item and spend 1 Stash to play its stored Character for free, triggering entrance abilities. Leaving play discards the stored card to its owner. Owner inspection is allowed; opponents see the stored count, and face-down storage does not erase a previously public card identity. Only **Heckler** gains immediate Trouble permission from being played under an Item; ordinary free deployment does not grant it.
+
+**The Mentalist** plays the revealed opposing-deck Character with separate owner/controller tracking. Entrance effects belong to its controller; it may Attack immediately but cannot Cause Trouble that turn. At the end of the current turn, return that same surviving instance to its owner's hand even if The Mentalist has left. A borrowed card that already left play is not retrieved or resurrected. **Poof!** follows the chosen instance until its next successful Cause Trouble in the current turn, then returns it; unused permission expires at turn end.
+
+The Headliner gets its own once-per-turn +2 Trouble only after seeing another friendly Character actually return to your hand while it is in play. Stagehand triggers on every qualifying return. Volunteer and Party Mom's Power bonuses expire at the end of the current turn. Dove deals normal damage, including Absorb; it never permanently reduces Health.

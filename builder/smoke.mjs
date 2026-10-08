@@ -34,3 +34,14 @@ assert(pool.cards.find(c=>c.id==='P150').status==='banked');
 assert.equal((app.match(/leaderText\(\)/g)||[]).length,2,'Leader rules are actually rendered');
 assert.match(app,/!TYPES.includes\(c.type\)/,'Effect records are not deck cards');
 console.log('Stonewall builder pool, baseline and Leader text checks passed');
+
+const magician=decks.decks.find(d=>d.leader==='Birthday Party Magician');
+assert.equal(magician.audit_card_ids.length,32);
+assert(magician.audit_card_ids.every(id=>magician.cards[id]));
+assert(Object.values(magician.cards).every(n=>n<=4));
+assert(magician.passive.includes('The Show Must Go On'));
+assert(magician.breaking_point.includes('For My Next Trick'));
+assert.equal(pool.cards.filter(c=>c.style==='Misdirection'&&!['banked','retired','pending-redesign'].includes(c.status)).length,32);
+assert.match(app,/LAB-MAG-001B','LAB-MAG-001A/);
+assert.match(app,/P089','LAB-MAG-004/);
+console.log('Misdirection builder pool, migrations, baseline and Leader checks passed');

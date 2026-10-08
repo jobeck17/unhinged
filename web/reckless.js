@@ -1,6 +1,6 @@
 // The locked Reckless audit, shared by the browser and its regression tests.
 // Load after the other production packages so the current combat rules win.
-import {Game, LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
+import {Game, LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
 
 const ACTIONS = new Set(['P019','P020','P021','P022','P024','P026','LAB-FLM-002','LAB-FLM-005','LAB-FLM-007']);
 const ITEMS = new Set(['P027','P028','P030','LAB-FLM-001','LAB-FLM-004']);
@@ -251,7 +251,7 @@ Game.prototype.attack=async function(uid){
   const target=await this.pick('Attack which target?',p,this.attackTargets(a));
   this.pendingAttackerPower=null;this._catAttackAttacker=null;
   const victim=this.obj(target);if(!victim||!this.attackTargets(a).some(x=>x.uid===target))return;
-  a.ready=false;a.attacked=true;this.players[p].attacked=true;
+  a.ready=false;await this.onAttack?.(a);a.attacked=true;this.players[p].attacked=true;
   this.pendingAttack={attacker:uid,target,power:this.attackPower(a)};
   this.say(`${this.card(a).name} attacks ${this.card(victim).name}`);
   if(a.id==='P009'){

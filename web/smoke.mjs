@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
-await import('./magician.js');
+import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
 await import('./cat-lady.js');
 await import('./rockstar.js');
 await import('./reckless.js');
 await import('./stonewall.js');
+await import('./magician.js');
 
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url)));
 const doc=JSON.parse(fs.readFileSync(new URL('../DECKS.json',import.meta.url)));
@@ -47,20 +47,17 @@ console.log('Mordecai 0.4 browser smoke passed');
 
 const md=doc.decks.find(d=>d.leader==='Birthday Party Magician');
 assert.equal(Object.values(md.cards).reduce((a,b)=>a+b,0),40,'Magician deck stays at 40');
-assert.equal(md.cards.P063,6,'Magician runs six Rabbits');
-assert.equal(md.cards['LAB-MAG-005'],3,'Magician runs three Hats');
-assert.equal(md.cards['LAB-MAG-006'],2,'Magician runs two Doves');
-assert.equal(md.cards['LAB-MAG-007'],2,'Magician runs two Do Not Look in the Hat');
-assert.equal(md.cards.P080??0,0,'Now You See Me removed from STANK-66 Magician');
-assert.equal(md.cards.P070??0,0,'Tech Bro removed from STANK-66 Magician');
-assert.equal(md.cards.P087??0,0,'Burner Phone removed from STANK-66 Magician');
+assert.equal(md.audit_card_ids.length,32);
+assert(md.audit_card_ids.every(id=>md.cards[id]));
+assert.equal(md.cards['LAB-MAG-009'],2);
+assert.equal(md.cards['LAB-MAG-007']??0,0);
 const pc=id=>pool.cards.find(c=>c.id===id);
-assert.deepEqual([pc('P063').cost,pc('P063').power,pc('P063').guard],[2,1,3]);
-assert.equal(pc('P065').power,3); assert.equal(pc('P067').power,3);
-assert.equal(pc('LAB-MAG-005').cost,4); assert.equal(pc('LAB-MAG-006').trouble,0);
-assert.equal(pc('P088').name,'Beer-Stained Cards');
-assert(!pc('LAB-MAG-001A').text.includes('first time this card attacks'),'Volunteer auto-Return removed');
-console.log('STANK-66 Magician promotion smoke passed');
+assert.deepEqual([pc('P063').cost,pc('P063').power,pc('P063').guard,pc('P063').trouble],[2,1,2,1]);
+assert.equal(pc('LAB-MAG-005').cost,3);
+assert.equal(pc('P088').name,'Marked Deck');
+assert.equal(pc('LAB-MAG-001B').status,'retired');
+assert.equal(pc('P089').replaced_by,'LAB-MAG-004');
+console.log('Locked Misdirection data and deck smoke passed');
 
 const cd=doc.decks.find(d=>d.leader==='Crazy Cat Lady');
 assert.equal(Object.values(cd.cards).reduce((a,b)=>a+b,0),40);

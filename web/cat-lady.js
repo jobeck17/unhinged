@@ -1,5 +1,5 @@
 // Mordecai production implementation of Landon's Crazy Cat Lady Lab 1.3 / STANK-66 package.
-import {Game,LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
 
 const CAT='Crazy Cat Lady', SHOEBOX='LAB-CAT-017', MITTENS='LAB-CAT-020', SNOWBALL='LAB-CAT-013', HAIRY='LAB-CAT-016', THREE='LAB-CAT-006', TUX='LAB-CAT-003';
 LEADERS[CAT].passive='Strength in Numbers............ Mostly Numbers........ Probably.: At the start of your Turn, if you control fewer than 3 Cats, you may Stash one additional card this Turn. If you control 3 or more Cats, Draw an additional card.';
@@ -136,7 +136,7 @@ Game.prototype.activate=async function(uid,mode=null){
  if(buried)options.push({label:`WHERE DID YOU GET THAT?! — discard ${buried} buried Cats for +${buried} permanent Power`,value:'shoebox'});
  const choice=mode||(options.length===1?options[0].value:await this.choose(p,'Mittens III: choose an ability',options));if(!choice)return;
  if(choice==='stash'){
-   const s=this.players[p],ready=s.fuel>0,index=s.stash.length-1,id=s.stash.splice(index,1)[0];s.discard.push(id);if(ready)s.fuel=Math.max(0,s.fuel-1);s.fuel=Math.min(s.fuel,s.stash.length);
+   const s=this.players[p],index=s.stash.length-1,states=this.stashStates?.(p),ready=states?states[index]:s.fuel>0,id=s.stash.splice(index,1)[0];if(states)states.splice(index,1);s.discard.push(id);if(ready)s.fuel=Math.max(0,s.fuel-1);s.fuel=Math.min(s.fuel,s.stash.length);
    x.ready=false;x.mittensPermanentAttack=(x.mittensPermanentAttack||0)+1;this.say('Mittens III says YUMMY! and permanently gets +1 Power');return;
  }
  if(choice==='shoebox'){

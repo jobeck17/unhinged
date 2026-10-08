@@ -812,20 +812,21 @@
       "id": "P039",
       "type": "Character",
       "cost": 4,
-      "name": "Social Media Influencer",
+      "name": "Card Counter",
       "traits": [],
-      "text": "When this enters play, look at the top card of an opponent's deck. While this remains in play, opponents play with the top card of their deck revealed.",
+      "text": "When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
-      "power": 3,
-      "guard": 5,
+      "power": 2,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "name_lock": true
     },
     {
       "id": "P040",
@@ -1217,9 +1218,10 @@
       "cost": 2,
       "name": "Magician's Assistant",
       "traits": [
-        "Magician"
+        "Magician",
+        "Magical"
       ],
-      "text": "When this enters play, you may Return another of your Characters to your hand.",
+      "text": "When played, you may return another character you control to your hand.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1230,7 +1232,8 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
+      "trouble": 1,
+      "name_lock": true
     },
     {
       "id": "P062",
@@ -1240,18 +1243,19 @@
       "traits": [
         "Kid"
       ],
-      "text": "When this enters play, look at the top 2 cards of your deck. Put one on top and the other on the bottom.",
+      "text": "When played, look at the top 2 cards of your deck. Put one on top and the other on the bottom.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
-      "power": 2,
-      "guard": 1,
+      "power": 1,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 3
+      "trouble": 1,
+      "name_lock": true
     },
     {
       "id": "P063",
@@ -1259,11 +1263,34 @@
       "cost": 2,
       "name": "Rabbit",
       "traits": [
-        "Animal"
+        "Animal",
+        "Magical"
       ],
-      "text": "When this Character enters or leaves play, Draw a card.",
+      "text": "When this character enters or leaves play, draw a card.",
       "style": "Misdirection",
       "complexity": "mixed",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "",
+      "trouble": 1,
+      "name_lock": true
+    },
+    {
+      "id": "P064",
+      "type": "Character",
+      "cost": 4,
+      "name": "The Mentalist",
+      "traits": [
+        "Magician"
+      ],
+      "text": "When played, reveal the top card of an opponent's deck. If it is a character, you may play it under your control without paying its cost. It may attack immediately but cannot Cause Trouble this turn. At the end of this turn, return it to its owner's hand if it is still in play. If you do not play the revealed card, put it on the bottom of its owner's deck.",
+      "style": "Misdirection",
+      "complexity": "on_play",
       "keywords": [],
       "power": 1,
       "guard": 3,
@@ -1272,28 +1299,8 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
-    },
-    {
-      "id": "P064",
-      "type": "Character",
-      "cost": 4,
-      "name": "Volunteer From the Audience",
-      "traits": [
-        "Magician"
-      ],
-      "text": "When this enters play, reveal the top card of an opponent's deck. If it is a Character, you may put it into play under your control. At the end of your Turn, put that Character into its owner's discard. Otherwise, put the revealed card on the bottom of its owner's deck.",
-      "style": "Misdirection",
-      "complexity": "on_play",
-      "keywords": [],
-      "power": 3,
-      "guard": 5,
-      "audit_identity": [
-        "Human"
-      ],
-      "status": "playtest",
-      "flavor": "",
-      "trouble": 2
+      "trouble": 1,
+      "name_lock": true
     },
     {
       "id": "P065",
@@ -1301,9 +1308,10 @@
       "cost": 3,
       "name": "Escape Artist",
       "traits": [
-        "Magician"
+        "Magician",
+        "Magical"
       ],
-      "text": "Hothead. When this enters play, you may Return another of your Characters to your hand.",
+      "text": "Hothead. When played, you may return another character you control to your hand.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [
@@ -1316,44 +1324,45 @@
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "name_lock": true
     },
     {
       "id": "P066",
       "type": "Character",
-      "cost": 2,
-      "name": "Off-Duty Clown",
+      "cost": 3,
+      "name": "Stagehand",
       "traits": [
         "Clown"
       ],
-      "text": "Whenever another of your Characters is Returned from play to your hand, Draw a card, then Discard a card.",
+      "text": "Whenever another character you control is returned from play to your hand, draw a card, then discard a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
       "power": 2,
-      "guard": 3,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 1
+      "trouble": 1,
+      "name_lock": true
     },
     {
       "id": "P067",
       "type": "Character",
       "cost": 3,
-      "name": "School Bully",
+      "name": "Big Brother",
       "traits": [
         "Kid"
       ],
-      "text": "Hothead. Sucker Punch. Chicken.",
+      "text": "Hothead. Sucker Punch.",
       "style": "Misdirection",
       "complexity": "keyword_only",
       "keywords": [
         "Hothead",
-        "Sucker Punch",
-        "Chicken"
+        "Sucker Punch"
       ],
       "power": 3,
       "guard": 2,
@@ -1361,29 +1370,32 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Toughest kid on the playground until somebody swings back.",
-      "trouble": 3
+      "flavor": "",
+      "trouble": 1,
+      "name_lock": true,
+      "reserved_previous_name": "School Bully — possible HOA / Backyard Wrestler"
     },
     {
       "id": "P068",
       "type": "Character",
       "cost": 4,
-      "name": "Social Media Grifter",
+      "name": "Card Shark",
       "traits": [
         "Criminal"
       ],
-      "text": "When this enters play, Draw 2 cards, then Discard a card.",
+      "text": "When played, draw 2 cards, then discard a card.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
-      "power": 4,
+      "power": 3,
       "guard": 3,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "name_lock": true
     },
     {
       "id": "P069",
@@ -1391,18 +1403,19 @@
       "cost": 4,
       "name": "Conspiracy Blogger",
       "traits": [],
-      "text": "At the start of your Turn, name Character, Action, or Item. Reveal the top card of your deck. If you named its type, put it into your hand. Otherwise, put it on the bottom of your deck.",
+      "text": "At the start of your turn, name Character, Action or Item. Reveal the top card of your deck. If it is the named type, put it into your hand. Otherwise, put it on the bottom of your deck.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 3,
-      "guard": 5,
+      "power": 2,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "banked",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "name_flag": "○"
     },
     {
       "id": "P070",
@@ -1410,7 +1423,7 @@
       "cost": 3,
       "name": "Tech Bro",
       "traits": [],
-      "text": "When this Character Defeats another Character in combat, Draw a card.",
+      "text": "When Defeated, draw a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
@@ -1419,9 +1432,10 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "banked",
       "flavor": "It’s a normal doorbell, but the subscription is mandatory.",
-      "trouble": 2
+      "trouble": 2,
+      "name_flag": "★"
     },
     {
       "id": "P071",
@@ -1431,18 +1445,18 @@
       "traits": [
         "Magician"
       ],
-      "text": "When this enters play, you may Return an opposing Character costing 3 or less to its owner's hand.",
+      "text": "When played, you may return an opposing character costing 3 or less to its owner's hand.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
       "power": 1,
-      "guard": 1,
+      "guard": 2,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "banked",
       "flavor": "Nobody saw where the floor went.",
-      "trouble": 2
+      "trouble": 1
     },
     {
       "id": "P072",
@@ -1471,22 +1485,23 @@
       "id": "P073",
       "type": "Character",
       "cost": 5,
-      "name": "IT Guy Who Quit Six Months Ago",
+      "name": "Quick-Change Artist",
       "traits": [
         "Hacker"
       ],
-      "text": "You may look at your Stash. When this enters play, you may Return one card from your Stash to your hand. If you do, put a card from your hand into your Stash Rotated.",
+      "text": "When played, you may exchange up to 2 cards in your Stash with the same number of cards from your hand. Each replacement retains the replaced card's Ready or Rotated state.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
-      "power": 4,
-      "guard": 6,
+      "power": 3,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "name_lock": true
     },
     {
       "id": "P074",
@@ -1496,106 +1511,115 @@
       "traits": [
         "Criminal"
       ],
-      "text": "When this enters play, choose another Character. This gains one of that Character's printed Traits and one of its printed keywords while that Character remains in play.",
+      "text": "When played, you may choose another character and gain one of its printed keywords while that character remains in play.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
-      "power": 5,
-      "guard": 5,
+      "power": 3,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
+      "status": "banked",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "name_flag": "○"
     },
     {
       "id": "P075",
       "type": "Character",
       "cost": 4,
-      "name": "Pirate Radio Operator",
+      "name": "Street Magician",
       "traits": [
         "Criminal",
         "Musician"
       ],
-      "text": "When this attacks, an opponent chooses one: this gets +2 Power for this Attack; or you Draw a card, then Discard a card.",
+      "text": "When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
-      "power": 4,
-      "guard": 5,
-      "audit_identity": [
-        "Human"
-      ],
-      "status": "playtest",
-      "flavor": "",
-      "trouble": 2
-    },
-    {
-      "id": "P076",
-      "type": "Character",
-      "cost": 2,
-      "name": "Wi-Fi Bandit",
-      "traits": [
-        "Criminal",
-        "Hacker"
-      ],
-      "text": "When this enters play, Return a random card from your Stash to your hand. Then put a card from your hand into your Stash Rotated.",
-      "style": "Misdirection",
-      "complexity": "on_play",
-      "keywords": [],
-      "power": 2,
-      "guard": 2,
-      "audit_identity": [
-        "Human"
-      ],
-      "status": "playtest",
-      "flavor": "Your password is his password.",
-      "trouble": 1
-    },
-    {
-      "id": "P077",
-      "type": "Character",
-      "cost": 2,
-      "name": "Script Kiddie",
-      "traits": [
-        "Kid",
-        "Hacker"
-      ],
-      "text": "When this enters play, look at one card in your Stash. You may Return it to your hand. If you do, put a card from your hand into your Stash Rotated.",
-      "style": "Misdirection",
-      "complexity": "on_play",
-      "keywords": [],
-      "power": 2,
+      "power": 3,
       "guard": 3,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 1
+      "trouble": 2,
+      "name_lock": true
+    },
+    {
+      "id": "P076",
+      "type": "Character",
+      "cost": 1,
+      "name": "Impatient Apprentice",
+      "traits": [
+        "Criminal",
+        "Hacker"
+      ],
+      "text": "Hothead.",
+      "style": "Misdirection",
+      "complexity": "on_play",
+      "keywords": [
+        "Hothead"
+      ],
+      "power": 1,
+      "guard": 1,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "",
+      "trouble": 1,
+      "name_lock": true
+    },
+    {
+      "id": "P077",
+      "type": "Character",
+      "cost": 2,
+      "name": "Opening Act",
+      "traits": [
+        "Kid",
+        "Hacker"
+      ],
+      "text": "This character may Cause Trouble the turn it enters play.",
+      "style": "Misdirection",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "playtest",
+      "flavor": "",
+      "trouble": 1,
+      "name_lock": true
     },
     {
       "id": "P078",
       "type": "Character",
       "cost": 5,
-      "name": "Pirate With a Business License",
+      "name": "Heckler",
       "traits": [
         "Pirate"
       ],
-      "text": "Whenever an opponent makes a choice instructed by one of your cards, reveal the top card of your deck. If it costs 2 or less, you may Play it without paying its Cost. Otherwise, put it on the bottom of your deck.",
+      "text": "Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item.",
       "style": "Misdirection",
       "complexity": "ongoing",
-      "keywords": [],
-      "power": 4,
-      "guard": 7,
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "power": 3,
+      "guard": 4,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Every trick is fully licensed, bonded, and questionably insured.",
+      "flavor": "",
       "build_around": true,
-      "trouble": 2
+      "trouble": 2,
+      "name_lock": true
     },
     {
       "id": "P079",
@@ -1604,7 +1628,7 @@
       "name": "Pick a Card",
       "stats": "",
       "traits": [],
-      "text": "If you have fewer than 3 cards in hand, Draw until you have 3. Shuffle your hand face down. An opponent chooses one card. Reveal it. You may Play it without paying its Cost.",
+      "text": "An opponent chooses a card from your whole remaining hand without seeing its face. Reveal it; you may play it without paying its cost.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1612,7 +1636,8 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P080",
@@ -1621,7 +1646,7 @@
       "name": "Now You See Me",
       "stats": "",
       "traits": [],
-      "text": "Return one of your Characters to your hand. Then you may Play a Character costing 2 or less from your hand by paying 1 less.",
+      "text": "Return a character you control to your hand. Then you may play a character costing 2 or less from your hand without paying its cost.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1629,7 +1654,8 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P081",
@@ -1638,26 +1664,7 @@
       "name": "Look Over There!",
       "stats": "",
       "traits": [],
-      "text": "",
-      "style": "Misdirection",
-      "keywords": [],
-      "power": null,
-      "guard": null,
-      "audit_identity": [],
-      "complexity": null,
-      "status": "pending-redesign",
-      "flavor": "",
-      "retired_text": "Response — When one of your Characters is attacked: Return that Character to your hand.",
-      "audit_note": "Response mechanics retired game-wide on 2026-10-07. Effect unassigned pending deliberate Action redesign; exclude from playtests until redesigned."
-    },
-    {
-      "id": "P082",
-      "type": "Action",
-      "cost": 2,
-      "name": "Wrong Address",
-      "stats": "",
-      "traits": [],
-      "text": "Choose two opposing Characters. Their owner chooses one of them. Return that Character to its owner's hand. If they have only one Character, choose and Return that Character instead.",
+      "text": "Rotate a chosen opposing character costing 3 or less.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1665,7 +1672,28 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "retired_text": "Response — When one of your Characters is attacked: Return that Character to your hand.",
+      "audit_note": "Response mechanics retired game-wide on 2026-10-07. Effect unassigned pending deliberate Action redesign; exclude from playtests until redesigned.",
+      "name_lock": true
+    },
+    {
+      "id": "P082",
+      "type": "Action",
+      "cost": 2,
+      "name": "Choose Your Fate",
+      "stats": "",
+      "traits": [],
+      "text": "Choose two opposing characters. Their owner chooses one to return to its owner's hand. If they have only one character, return that one instead.",
+      "style": "Misdirection",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "playtest",
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P083",
@@ -1690,10 +1718,10 @@
       "id": "P084",
       "type": "Action",
       "cost": 1,
-      "name": "Default Password",
+      "name": "Presto Chango",
       "stats": "",
       "traits": [],
-      "text": "Return a random card from your Stash to your hand. Then put a card from your hand into your Stash Rotated.",
+      "text": "Exchange a card in your Stash with a card in your hand. The replacement retains the replaced card’s Ready or Rotated state.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1701,16 +1729,17 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P085",
       "type": "Action",
-      "cost": 2,
-      "name": "Have You Tried Turning It Off?",
+      "cost": 3,
+      "name": "Ace Up My Sleeve",
       "stats": "",
       "traits": [],
-      "text": "Return a Rotated Item or Character to its owner's hand.",
+      "text": "Draw 2 cards.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1718,16 +1747,17 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P086",
       "type": "Action",
       "cost": 2,
-      "name": "Switcheroo",
+      "name": "Now You Don't",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters and an opposing Character with equal or lower Cost. Return both to their owners' hands.",
+      "text": "Choose a character you control and an opposing character with equal or lower cost. Dismiss both to their owners' discard piles.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1735,7 +1765,8 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P087",
@@ -1751,17 +1782,18 @@
       "guard": null,
       "audit_identity": [],
       "complexity": null,
-      "status": "playtest",
-      "flavor": ""
+      "status": "banked",
+      "flavor": "",
+      "name_flag": "★"
     },
     {
       "id": "P088",
       "type": "Item",
       "cost": 2,
-      "name": "Beer-Stained Cards",
+      "name": "Marked Deck",
       "stats": "",
       "traits": [],
-      "text": "Once during your Turn, Rotate this and Rotate 1 Ready Stash: Draw a card.",
+      "text": "Rotate this Item and spend 1 Stash: Draw a card.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1769,7 +1801,9 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true,
+      "banked_previous_name": "Beer-Stained Cards — Florida Man"
     },
     {
       "id": "P089",
@@ -1787,18 +1821,19 @@
         "Human"
       ],
       "complexity": "mixed",
-      "status": "playtest",
+      "status": "retired",
       "flavor": "The truck is still warm from last time.",
-      "trouble": 3
+      "trouble": 3,
+      "replaced_by": "LAB-MAG-004"
     },
     {
       "id": "P090",
       "type": "Action",
-      "cost": 2,
+      "cost": 1,
       "name": "Poof!",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Characters. After it Causes Trouble this Turn, Return it to your hand.",
+      "text": "Choose a character you control. After it next Causes Trouble this turn, return it to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1806,7 +1841,8 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": "Now you see me. Now you owe me a new tablecloth."
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P091",
@@ -2854,10 +2890,10 @@
       "id": "P142",
       "type": "Action",
       "cost": 2,
-      "name": "I Want to Speak to Your Manager",
+      "name": "Vanishing Act",
       "stats": "",
       "traits": [],
-      "text": "Return an Item or Character costing 2 or less to its owner's hand.",
+      "text": "Return an opposing Item to its owner's hand. Draw a card.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -2865,7 +2901,8 @@
       "audit_identity": [],
       "complexity": null,
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "P143",
@@ -3677,44 +3714,47 @@
     {
       "id": "LAB-MAG-003",
       "type": "Character",
-      "cost": 2,
-      "name": "Birthday Boy",
+      "cost": 3,
+      "name": "Disappearing Assistant",
       "traits": [
-        "Kid"
+        "Kid",
+        "Magical"
       ],
-      "text": "When this enters play, you may exchange a card in your Stash with a card in your hand.",
+      "text": "When played, you may Dismiss another character you control. If you do, draw a card.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
       "power": 2,
-      "guard": 1,
+      "guard": 3,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
       "flavor": "",
-      "trouble": 2
+      "trouble": 2,
+      "name_lock": true
     },
     {
       "id": "LAB-MAG-001A",
       "type": "Character",
-      "cost": 2,
-      "name": "Very Enthusiastic Volunteer",
+      "cost": 1,
+      "name": "Volunteer From the Audience",
       "traits": [
         "Kid"
       ],
-      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently.",
+      "text": "When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
       "power": 1,
-      "guard": 2,
-      "trouble": 3,
+      "guard": 1,
+      "trouble": 1,
       "audit_identity": [
         "Human"
       ],
       "status": "playtest",
-      "flavor": "Somebody in the back row is starting to notice a pattern."
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "LAB-MAG-001B",
@@ -3734,16 +3774,17 @@
       "audit_identity": [
         "Human"
       ],
-      "status": "playtest",
-      "flavor": "Somebody in the back row is starting to notice a pattern."
+      "status": "retired",
+      "flavor": "Somebody in the back row is starting to notice a pattern.",
+      "replaced_by": "LAB-MAG-001A"
     },
     {
       "id": "LAB-MAG-002",
       "type": "Action",
-      "cost": 1,
-      "name": "Ethan’s JUST Being Dramatic",
+      "cost": 2,
+      "name": "Encore!",
       "traits": [],
-      "text": "Return one of your Characters to your hand.",
+      "text": "Draw a card. If a character you controlled was returned from play to your hand this turn, draw another card.",
       "style": "Misdirection",
       "complexity": "simple",
       "keywords": [],
@@ -3753,36 +3794,38 @@
         "Human"
       ],
       "status": "playtest",
-      "flavor": "He does this all the time."
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "LAB-MAG-004",
       "type": "Character",
       "cost": 3,
-      "name": "Lady Who's Moving Out Again",
+      "name": "Party Mom",
       "traits": [],
-      "text": "Hothead. When this enters play, it gets +2 Power this Turn. When this is Returned from play to your hand, you may Return an opposing Character that costs 2 or less to its owner’s hand.",
+      "text": "Hothead. When played, this character gets +2 Power this turn. When returned from play to your hand, you may return an opposing character costing 2 or less to its owner's hand.",
       "style": "Misdirection",
       "keywords": [
         "Hothead"
       ],
-      "power": 3,
-      "guard": 5,
-      "trouble": 2,
+      "power": 2,
+      "guard": 3,
+      "trouble": 1,
       "audit_identity": [
         "Human"
       ],
       "complexity": "mixed",
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "LAB-MAG-005",
       "type": "Item",
-      "cost": 4,
+      "cost": 3,
       "name": "Magician's Hat",
       "traits": [],
-      "text": "Activate — Return a Rabbit or Dove you control to your hand.",
+      "text": "Rotate this Item and spend 1 Stash: Return a Magical character you control to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -3790,7 +3833,8 @@
       "audit_identity": [],
       "complexity": "activated",
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "LAB-CAT-001",
@@ -4376,9 +4420,10 @@
       "cost": 2,
       "name": "Dove",
       "traits": [
-        "Animal"
+        "Animal",
+        "Magical"
       ],
-      "text": "When this enters or leaves play, you may choose an opposing Character. It gets -1 Health permanently.",
+      "text": "When this character enters or leaves play, you may deal 1 damage to an opposing character.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -4389,7 +4434,8 @@
         "Animal"
       ],
       "status": "playtest",
-      "flavor": ""
+      "flavor": "",
+      "name_lock": true
     },
     {
       "id": "LAB-MAG-007",
@@ -4404,7 +4450,7 @@
       "power": null,
       "guard": null,
       "audit_identity": [],
-      "status": "playtest",
+      "status": "banked",
       "flavor": "No, seriously. Don’t."
     },
     {
@@ -4543,6 +4589,90 @@
       "digital_status": "implemented-stonewall-2026-10-08",
       "complexity": "ongoing",
       "audit_notes": "Locked Stonewall audit, 2026-10-08. Balance provisional; browser effects implemented."
+    },
+    {
+      "id": "LAB-MAG-008",
+      "type": "Character",
+      "style": "Misdirection",
+      "traits": [],
+      "keywords": [],
+      "status": "playtest",
+      "complexity": "mixed",
+      "flavor": "",
+      "audit_identity": [
+        "Human"
+      ],
+      "name": "The Headliner",
+      "cost": 6,
+      "power": 4,
+      "guard": 5,
+      "trouble": 3,
+      "text": "The first time each turn another character you control is returned from play to your hand, this character gets +2 Trouble this turn.",
+      "name_lock": true
+    },
+    {
+      "id": "LAB-MAG-009",
+      "type": "Item",
+      "style": "Misdirection",
+      "traits": [],
+      "keywords": [],
+      "status": "playtest",
+      "complexity": "mixed",
+      "flavor": "",
+      "audit_identity": [
+        "Human"
+      ],
+      "name": "Trap Door",
+      "cost": 3,
+      "text": "Whenever a character you control costing 5 or less is Dismissed, you may put that card from your discard face-down under this Item if there is no card under it. Rotate this Item and spend 1 Stash: Play the character under it without paying its cost.",
+      "power": null,
+      "guard": null,
+      "name_lock": true
     }
-  ]
+  ],
+  "misdirection_audit": {
+    "date": "2026-10-08",
+    "active_card_ids": [
+      "P062",
+      "P076",
+      "LAB-MAG-001A",
+      "P061",
+      "P063",
+      "LAB-MAG-006",
+      "P077",
+      "P066",
+      "LAB-MAG-003",
+      "P065",
+      "P067",
+      "LAB-MAG-004",
+      "P039",
+      "P064",
+      "P068",
+      "P075",
+      "P073",
+      "P078",
+      "LAB-MAG-008",
+      "P081",
+      "P084",
+      "P090",
+      "P080",
+      "P086",
+      "P082",
+      "LAB-MAG-002",
+      "P142",
+      "P079",
+      "P085",
+      "P088",
+      "LAB-MAG-005",
+      "LAB-MAG-009"
+    ],
+    "implementation": "misdirection-01",
+    "banked_spy_concepts": [
+      "Inconspicuous Bush: hand-tucking",
+      "Identity Thief",
+      "Cloak / fragile high-Power character",
+      "Declare a card, then search your deck for it"
+    ],
+    "banked_leader_alternative": "Is This Your Card? — top 5, up to 2 to hand, rest to bottom"
+  }
 }

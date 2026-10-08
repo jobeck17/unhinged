@@ -1,6 +1,6 @@
 // Locked Stonewall cards and the Florida Man / HOA Breaking Point content pass.
 // Load after Reckless. All other styles retain their production packages.
-import {Game,LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
 export const STONEWALL_IDS=new Set(['P072','P083',...Array.from({length:30},(_,i)=>`P${121+i}`).filter(id=>id!=='P123'&&id!=='P142'&&id!=='P150'),...Array.from({length:4},(_,i)=>`LAB-HOA-00${i+1}`)]);
 const actions=new Set(['P083','P139','P140','P141','P143','P144','P145','P146','LAB-HOA-004']);
 const live=c=>c&&!['banked','retired','pending-redesign'].includes(c.status);
@@ -137,7 +137,7 @@ Game.prototype.canUse=function(x){if(!x)return false;if(STONEWALL_IDS.has(x.id))
 const activate=Game.prototype.activate;
 Game.prototype.activate=async function(uid,mode){const x=this.obj(uid);if(!x||!this.canUse(x))return;
  if(x.id==='P147'){x.ready=false;this.say('Security Camera Rotates: look at opposing hand');const hand=this.players[1-x.owner].hand;await this.choose(x.owner,'Security Camera: opposing hand',hand.length?hand.map((id,i)=>({label:`${this.card(id).name} · Cost ${this.card(id).cost}`,value:i})):[{label:'Their hand is empty',value:null}]);await this.advance();return}
- if(x.id==='P148'){const target=await this.pick('Lawn Chair: Ready friendly Rotated Character',x.owner,this.chars(x.owner).filter(y=>!y.ready));const y=this.obj(target);if(!y)return;if(!this.payCost(x.owner,1))return;x.ready=false;await this.readyCharacter(y);y.noAttack=true;y.noTrouble=true;await this.advance();return}
+ if(x.id==='P148'){const target=await this.pick('Lawn Chair: Ready friendly Rotated Character',x.owner,this.chars(x.owner).filter(y=>!y.ready));const y=this.obj(target);if(!y)return;if(!await this.preparePayment(x.owner,1)||!this.payCost(x.owner,1))return;x.ready=false;await this.readyCharacter(y);y.noAttack=true;y.noTrouble=true;await this.advance();return}
  return activate.call(this,uid,mode);
 };
 const resolve=Game.prototype.resolveTrouble;

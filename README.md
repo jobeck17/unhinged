@@ -8,7 +8,7 @@ Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo →
 
 The production baseline now contains **233 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
 
-The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. Stonewall now also has its audited cards and 40-card coverage deck implemented. Remaining Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
+The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. Stonewall now also has its audited cards and 40-card coverage deck implemented. Misdirection now also has its locked 32-card pool, 40-card coverage deck and Magician Leader effects implemented. Remaining Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
 
 The Scheme, Board Width, and old Composure folders remain development history unless explicitly reopened.
 
@@ -46,7 +46,7 @@ A deck should still play a real game when its spectacular engine does not go off
 - NOTES.md — the one living notebook for decisions, questions, next work, and saved ideas.
 - SIMULATION.md — current simulation status and historical methodology; Mordecai balance runs are on hold until engine parity.
 - sim/round-robin.js — 36-configuration anomaly detector.
-- web/ — browser playtest; Reckless card audit implemented, remaining Style audits pending.
+- web/ — browser playtest; Reckless, Stonewall and Misdirection audits implemented, remaining Style audits pending.
 - builder/ — Dreamborn-inspired deck builder using the same canonical card pool.
 
 Mordecai locks the new core architecture, not final card balance. The next production pass is consistency and content: terminology, Leaders, Breaking Points, Last Straws, decks, cards, abilities, simulator, browser, and builder.
@@ -211,3 +211,10 @@ Select **HOA President** in [the production playtest](https://jobeck17.github.io
 Implemented: Meat Shield legal-target priority, non-additive Absorb, Retaliate even on Defeat, optional Rotated entry, healing and actual Ready-transition triggers, Ready-step skips, duration-bound Power, stacked Lawyer taxes, hand reveals, targeted bounce/removal, Composure recovery branches, Round 8/Founder Trouble, HOA Final Warning, and Florida Man’s visible Breaking Point D6.
 
 Run `node web/stonewall.test.mjs`, `node web/reckless.test.mjs`, `node web/smoke.mjs`, `node builder/smoke.mjs`, and `node poll/test.mjs`. Regression checks exercise every audited card, both threshold abilities and every die face; full-deck games check progress and card conservation in both seats. They verify functionality, not balance. Unpaid Dues and Newsletter are tabled. Last Straw’s shared effect pool and other styles’ audits remain unfinished.
+
+
+## Misdirection coverage playtest — 8 October 2026
+
+Select **Birthday Party Magician** in [the playtest](https://jobeck17.github.io/unhinged/web/) or [builder](https://jobeck17.github.io/unhinged/builder/). All 32 locked designs are available, with a 40-card coverage baseline (26 Characters, 10 Actions, 4 Items). The Headliner is LAB-MAG-008; Trap Door is LAB-MAG-009. Names, stats, ten revised Actions, three Items, five Magical traits, Leader passive and Breaking Point match the audit. Banked Spy concepts and tabled cards stay outside the active pool. The builder migrates duplicate Volunteer/Party Mom IDs in old saved decks.
+
+Tests: `node web/magician.test.mjs`, `node web/reckless.test.mjs`, `node web/stonewall.test.mjs`, `node web/smoke.mjs`, `node builder/smoke.mjs`, and `node poll/test.mjs`. Misdirection has 264 regression checks plus 48 seeded full matches against all eight Leaders. These demonstrate functionality, not competitive balance. For actual browser controls, install Playwright, serve the repository on port 8765, and run `node web/browser.test.mjs`; the Pages workflow runs this before publishing. `BROWSER_BASE_URL` can target another served build. Browser fixture injection lives only in the intercepted test response, with no production debug endpoint.

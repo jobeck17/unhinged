@@ -1,13 +1,17 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
-import './magician.js';import './cat-lady.js';import './rockstar.js';import './reckless.js';import './stonewall.js';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
+import './cat-lady.js';
+import './rockstar.js';
+import './reckless.js';
+import './stonewall.js';
+import './magician.js';
 import {aiAction,aiChoice} from './ai.js';
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url))),doc=JSON.parse(fs.readFileSync(new URL('../DECKS.json',import.meta.url)));
 const hoa=doc.decks.find(d=>d.leader==='HOA President'),fl=doc.decks[0],covered=new Set();let checks=0;
 function ok(value,msg){assert(value,msg);checks++}
 function eq(a,b,msg){assert.deepEqual(a,b,msg);checks++}
-function fixture(decide){let g;g=new Game(pool,{decks:[hoa,fl]},async r=>{const v=decide?.(r,g);return v!==undefined?v:r.multi?[]:r.options[0]?.value??null},()=>{},{firstPlayer:0});g.round=3;g.turn=0;for(const s of g.players){s.board=[];s.hand=[];s.discard=[];s.deck=Array(80).fill('P001');s.stash=Array(20).fill('P001');s.fuel=20}satisfyDice(g,6);return g}
+function fixture(decide){let g;g=new Game(pool,{decks:[hoa,fl]},async r=>{const v=decide?.(r,g);return v!==undefined?v:r.multi?(r.min?r.options.slice(0,r.min).map(o=>o.value):[]):r.options[0]?.value??null},()=>{},{firstPlayer:0});g.round=3;g.turn=0;for(const s of g.players){s.board=[];s.hand=[];s.discard=[];s.deck=Array(80).fill('P001');s.stash=Array(20).fill('P001');s.fuel=20}satisfyDice(g,6);return g}
 function satisfyDice(g,r){g.random=()=> (r-.5)/6}
 function body(g,id,p=0,ready=true){if(g.card(id).style==='Stonewall')covered.add(id);const x=g.enter(p,id);x.born=0;x.ready=ready;return x}
 async function play(g,id){covered.add(id);g.players[g.turn].hand.push(id);const i=g.players[g.turn].hand.length-1;ok(g.canPlay(i),'legal '+id);const before=g.players[g.turn].fuel,cost=g.playCost(g.turn,id);await g.play(i);eq(g.players[0].fuel,before-cost,'paid cost '+id)}

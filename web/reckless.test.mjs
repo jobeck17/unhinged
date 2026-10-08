@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-stonewall-01';
-import './magician.js';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
 import './cat-lady.js';
 import './rockstar.js';
 import './reckless.js';
 import './stonewall.js';
+import './magician.js';
 import {aiAction,aiChoice} from './ai.js';
 
 const pool=JSON.parse(fs.readFileSync(new URL('../CARDS.json',import.meta.url)));
@@ -14,7 +14,7 @@ const baseline=decks.decks[0], covered=new Set();let assertions=0;
 function check(v,message){assert(v,message);assertions++}
 function fixture(decide=null){
  let g;
- const ask=async r=>{const v=decide?.(r,g);return v!==undefined?v:r.multi?[]:r.options[0]?.value??null};
+ const ask=async r=>{const v=decide?.(r,g);return v!==undefined?v:r.multi?(r.min?r.options.slice(0,r.min).map(o=>o.value):[]):r.options[0]?.value??null};
  g=new Game(pool,{decks:[baseline,decks.decks[4]]},ask,()=>{},{firstPlayer:0});
  g.round=2;g.turn=0;
  for(const s of g.players){s.board=[];s.hand=[];s.discard=[];s.deck=Array(80).fill('P001');s.stash=Array(12).fill('P001');s.fuel=12;s.attackVictories=0}
