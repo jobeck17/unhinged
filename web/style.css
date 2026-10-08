@@ -14,3 +14,22 @@ main{max-width:1600px;margin:auto;padding:14px 18px 30px}header{display:flex;jus
 @media(max-width:600px){main{padding:9px}.controls{align-items:flex-start;flex-direction:column;gap:8px}.setup{padding:16px;margin-top:2vh}.setup h1{letter-spacing:-2px}.card{width:146px;min-width:146px;height:210px}.hand .card{width:154px;min-width:154px;height:222px}.lower{grid-template-columns:1fr}.zone-pile{min-width:78px}nav{gap:12px;flex-wrap:wrap}}
 
 .dice-result{display:flex;gap:16px;align-items:center;padding:16px 20px;margin:16px 0;border:2px solid #e9bd4b;border-radius:14px;background:#fff5cd;color:#202323}.dice-result p{margin:4px 0}.die-face{font-size:64px;line-height:1}.dice-result details{font-size:13px}
+
+/* Compact Leaders keep match status visible; ability text can be expanded. */
+.leader{border:1px solid #3b565e;border-radius:9px}.leader-heading{width:100%}.leader-heading strong{display:block}.leader-abilities{width:100%;font-size:11px;margin-top:10px}.leader-abilities summary{font-size:11px;color:#cbd5d5}.leader-passive{display:block}.slots{min-width:0}.item-cards{min-width:0}
+@media(max-width:700px){
+ .tabletop{padding:8px;overflow:hidden;border-radius:16px}
+ .battlefield,.zonebar,.item-shelf{min-width:0;width:100%}
+ .battle-row{grid-template-columns:minmax(0,1fr);gap:4px;min-height:0;align-items:start}
+ .leader{position:static;min-height:0;padding:10px;backdrop-filter:none;background:#0f1d22ed}
+ .leader-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.leader-heading>div{min-width:0}
+ .leader .eyebrow{font-size:8px;letter-spacing:1px}.leader strong{font-size:16px;margin:4px 0 0}
+ .composure{font-size:32px;display:flex;flex-direction:column;align-items:center;flex-shrink:0;gap:2px}.composure small{margin:0;font-size:7px}
+ .leader-info{font-size:10px;margin-top:5px}.leader-abilities{margin-top:5px}.leader-abilities summary{font-size:10px;padding:3px 0}.leader-passive{font-size:12px;line-height:1.5}
+ .zonebar{justify-content:flex-start;gap:6px;flex-wrap:wrap;padding:4px 0;min-height:44px}.zone-pile{min-width:0;flex:1;height:38px;padding-left:25px}.mini-card{width:20px;height:31px;left:0;top:3px}.zone-label{font-size:7px;letter-spacing:.5px}.zone-pile b{font-size:15px}.zone-pile small{font-size:8px;max-width:65px}
+ #inspect-stash{font-size:10px;padding:7px 9px}.own-zones #inspect-stash{order:5}
+ .slots{overflow-x:auto;align-items:flex-start;padding:4px 3px 8px;scroll-snap-type:x proximity}.slots .card{scroll-snap-align:start}
+ .empty-slot{height:56px;width:100%;min-width:100%;background:#0f1d2222;border-color:#557179}.empty-slot span{font-size:14px}.empty-slot small{font-size:8px;margin-top:3px}.slots:has(.card) .empty-slot{height:210px;width:68px;min-width:68px}
+ .item-shelf{grid-template-columns:minmax(0,1fr);gap:0}.item-label{padding:4px;font-size:8px}.item-cards{padding:4px 3px 8px}
+ .scroll-hint{font-size:10px;margin:4px 0 8px}.controls{display:flex;flex-direction:row;align-items:center;padding:6px 0 8px;gap:10px}.controls>div:first-child{min-width:0}.controls .eyebrow{font-size:8px}.controls p{font-size:12px;line-height:1.4}.controls .primary{white-space:nowrap;padding:10px 12px}
+}
