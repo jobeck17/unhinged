@@ -33,3 +33,24 @@ main{max-width:1600px;margin:auto;padding:14px 18px 30px}header{display:flex;jus
  .item-shelf{grid-template-columns:minmax(0,1fr);gap:0}.item-label{padding:4px;font-size:8px}.item-cards{padding:4px 3px 8px}
  .scroll-hint{font-size:10px;margin:4px 0 8px}.controls{display:flex;flex-direction:row;align-items:center;padding:6px 0 8px;gap:10px}.controls>div:first-child{min-width:0}.controls .eyebrow{font-size:8px}.controls p{font-size:12px;line-height:1.4}.controls .primary{white-space:nowrap;padding:10px 12px}
 }
+
+/* Portrait playtest: compact table and a reachable turn bar. */
+body:has(.overlay){overflow:hidden}
+@media(max-width:700px){
+ #app:has(.tabletop){padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+ #app>header{margin-bottom:6px}#app>header .brand{font-size:21px}#app>header .eyebrow{font-size:8px}#new{padding:8px 10px;min-height:40px}
+ .controls{position:fixed;left:0;right:0;bottom:0;z-index:10;margin:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #486169;background:#102127f5;box-shadow:0 -8px 24px #0005;min-height:64px;gap:10px}
+ .controls>div:first-child{flex:1}.controls .eyebrow{font-size:9px;line-height:1.4}.controls p{font-size:11px;line-height:1.3;margin-top:2px}.controls .primary{min-height:44px;padding:10px 16px}
+ .scroll-hint{font-size:9px;margin:2px 0 5px}.tabletop{padding:6px;border-radius:13px}.battlefield{gap:5px;padding:2px 0}.battle-row.own{padding-top:5px}
+ .leader{padding:7px 9px}.leader strong{font-size:14px}.leader .eyebrow{font-size:7px}.composure{font-size:28px}.leader-info{margin-top:3px;font-size:9px}.leader-abilities{margin-top:2px}.leader-abilities summary{padding:3px 0;min-height:24px}
+ .zonebar{min-height:38px;padding:2px 0;gap:4px}.zone-pile{height:32px}.zone-pile small{max-width:58px}.mini-card{height:28px;top:1px}.zone-pile b{font-size:14px}#inspect-stash{padding:7px;font-size:9px}
+ .empty-slot{height:34px}.empty-slot span{font-size:10px;display:flex;align-items:center;gap:7px}.empty-slot small{margin:0;font-size:7px}.slots:has(.card) .empty-slot{height:168px;width:42px;min-width:42px}.slots:has(.card) .empty-slot span{display:block}.slots:has(.card) .empty-slot small{margin-top:4px}
+ .slots,.item-cards{gap:7px;padding:4px 3px 6px}.hand-cards{gap:7px;padding-bottom:8px}.section-head{align-items:center;gap:8px}.section-head h2{font-size:15px;margin:9px 0 5px}.section-head h2 small{font-size:10px;margin-left:5px}.section-head>span{font-size:10px;white-space:nowrap}
+ .lower{gap:0;margin-top:8px}.lower>details{border-top:1px solid #345056;padding:8px 0}.lower summary{font-size:12px}
+ .dice-result{gap:9px;padding:9px 11px;margin:7px 0;border-width:1px;border-radius:9px;align-items:flex-start}.die-face{font-size:32px}.dice-result strong{font-size:12px}.dice-result p,.dice-result details{font-size:11px;line-height:1.35;margin:3px 0}.dice-result>div{min-width:0}
+ .setup{padding:8px;margin:12px auto}.setup h1{font-size:42px;letter-spacing:-2px;margin:15px 0}.setup .intro{font-size:15px;line-height:1.45}.settings{gap:12px;margin:18px 0}.setup details{margin-top:16px}.setup>nav{gap:10px;flex-wrap:wrap;font-size:12px}.setup .muted{font-size:10px;line-height:1.5}.setup>#keep{min-height:44px;width:100%;position:sticky;bottom:8px;z-index:2}.setup>#start{min-height:44px}
+ .overlay{padding:8px 8px calc(8px + env(safe-area-inset-bottom))}.sheet{padding:14px;max-height:calc(100dvh - 24px - env(safe-area-inset-bottom));border-radius:12px;overscroll-behavior:contain}.sheet h2{font-size:23px;line-height:1.15;letter-spacing:-.5px;overflow-wrap:anywhere}.sheet .muted{font-size:12px;line-height:1.45}
+ .sheet .stats{gap:5px;font-size:11px}.sheet .stats span{padding:5px 7px}.sheet .choice{min-height:44px;padding:10px;font-size:13px;margin:6px 0;overflow-wrap:anywhere}
+ .sheet .buttons,.sheet .modal-actions{position:sticky;bottom:-14px;z-index:2;gap:6px;background:var(--paper);padding:10px 0 14px;margin-top:8px;box-shadow:0 -8px 12px var(--paper)}
+ .sheet .buttons button{min-width:95px;min-height:44px;font-size:12px;padding:9px}.modal-actions button{min-height:44px}.sheet>#close{position:sticky;bottom:0;min-height:44px;width:100%;background:#1e3035}
+}
