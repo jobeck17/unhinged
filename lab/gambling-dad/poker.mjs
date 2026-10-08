@@ -26,6 +26,7 @@ export function compareScores(a,b,mode="HIGH") {
    Math.sign(a[2]-b[2]);
 }
 export const SLOT_MACHINE="LAB-GD-018";
+export const BLUFF="LAB-GD-013";
 export function slotPayout(flips,continuePlaying,handSize){
   if(flips.length<2||flips[0]!==flips[1])return {outcome:"MISS",draw:0};
   if(!continuePlaying)return {outcome:"CASH OUT",draw:1};
@@ -48,7 +49,7 @@ export function installGamblingDad(Game, LEADERS) {
   };
   const oldCanPlay=Game.prototype.canPlay;
   Game.prototype.canPlay=function(i,p=this.turn){
-    return oldCanPlay.call(this,i,p) && (this.players[p].hand[i]!=="LAB-GD-015"||this.chars(p).length>0);
+    return this.players[p].hand[i]!==BLUFF && oldCanPlay.call(this,i,p) && (this.players[p].hand[i]!=="LAB-GD-015"||this.chars(p).length>0);
   };
   const oldCanUse=Game.prototype.canUse;
   Game.prototype.canUse=function(x){
@@ -92,11 +93,6 @@ export function installGamblingDad(Game, LEADERS) {
   };
   const oldAction=Game.prototype.actionEffect;
   Game.prototype.actionEffect=async function(p,id,target,second,previous) {
-    if(id==="LAB-GD-013"){
-      this.draw(p,2);
-      if(this.players[p].hand.length)await this.discard(p);
-      return;
-    }
     if(id==="LAB-GD-014"){
       const s=this.players[p],n=Math.min(2,s.stash.length-s.fuel);
       s.fuel+=n;this.say("It's Basically Free Money Readies "+n+" Stash");
@@ -154,6 +150,24 @@ export function installGamblingDad(Game, LEADERS) {
          indices.some(i=>!Number.isInteger(i)||i<0||i>3))
         throw new Error("Rock Bottom Poker requires exactly two different cards from the four drawn.");
       chosen[who]=indices.map(i=>hands[who][i]);
+      // Bluff is a hand-only Action played inside the poker flow, not a normal Turn action.
+      // Dad must commit his original two cards before seeing the redraw.
+      if(who===p && this.players[p].hand.includes(BLUFF) &&
+         this.availableFuel(p)>=2 && this.players[p].deck.length>=2){
+        const bluff=await this.ask({player:p,pokerBluff:true,pokerMode,
+          selected:chosen[p].map(id=>({id,name:this.card(id).name,cost:this.card(id).cost})),
+          remaining:this.players[p].deck.length});
+        if(bluff==="redraw"){
+          // Consume the card and pay the cost before replacing the selected pair.
+          const handIndex=this.players[p].hand.indexOf(BLUFF);
+          if(handIndex>=0 && this.availableFuel(p)>=2 && this.players[p].deck.length>=2 && this.payCost(p,2)){
+            this.players[p].hand.splice(handIndex,1);
+            this.players[p].discard.push(BLUFF,...chosen[p]);
+            chosen[p]=[this.players[p].deck.pop(),this.players[p].deck.pop()];
+            this.say("Bluff: Spend 2 Ready Stash; Discard the selected poker pair and redraw two mandatory replacements.");
+          }
+        }
+      }
       scores[who]=pokerValue(this.cards,chosen[who],pokerMode);
       const leftover=[0,1,2,3].filter(i=>!indices.includes(i));
       this.players[who].deck.unshift(...leftover.map(i=>hands[who][i]));
