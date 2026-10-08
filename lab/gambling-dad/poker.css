@@ -1,0 +1,24 @@
+/* LAB ONLY: Dad Poker shows three individual cards and requires two selections. */
+.poker-sheet{width:min(100%,690px)}
+.poker-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 12px}
+.poker-choice{display:flex;flex-direction:column;align-items:stretch;gap:8px;text-align:left;border:2px solid #879590;background:#f5f0e5;color:#183033;border-radius:12px;min-width:0;padding:10px;cursor:pointer;min-height:215px;transition:border-color .12s,transform .12s,background .12s}
+.poker-choice:hover{transform:translateY(-3px);border-color:#1f8f77}
+.poker-choice.selected{background:#e4f5ec;border-color:#168e69;outline:3px solid #168e69;outline-offset:-3px}
+.poker-card-type{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:#536363}
+.poker-card-art{height:64px;background:linear-gradient(140deg,#1faf78,#254f3d);color:white;display:grid;place-items:center;border-radius:7px;overflow:hidden;font-size:11px;text-transform:uppercase}
+.poker-card-art img{width:100%;height:100%;object-fit:cover}
+.poker-card-name{font-size:15px;line-height:1.15;overflow-wrap:anywhere}
+.poker-card-stats{display:flex;justify-content:space-between;gap:4px;flex-wrap:wrap;font-size:13px;margin-top:auto}
+.poker-card-status{font-weight:800;font-size:10px;letter-spacing:.4px;color:#276653}
+#poker-selection{font-weight:700}
+#poker-confirm:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:420px){
+ .poker-sheet{padding:12px}
+ .poker-choices{gap:5px}
+ .poker-choice{padding:6px;gap:6px;min-height:194px}
+ .poker-card-name{font-size:12px}
+ .poker-card-type{font-size:8px}
+ .poker-card-art{height:48px}
+ .poker-card-stats{font-size:11px}
+ .poker-card-status{font-size:8px}
+}
