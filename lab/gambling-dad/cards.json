@@ -206,7 +206,7 @@
       "trouble": null,
       "traits": [],
       "keywords": [],
-      "text": "During Rock Bottom Poker, after selecting your two poker cards, you may spend 2 Ready Stash and play this from your hand. Discard your selected pair, Draw 2 replacement poker cards, and use that pair. Once per poker hand.",
+      "text": "During Rock Bottom Poker, after selecting your two cards, you may spend 2 Ready Stash and play this from your hand. Discard the selected pair, draw 2 replacement poker cards, then choose 2 from those and your 2 unselected cards. Return the other 2 to the bottom of your deck. Once per poker hand.",
       "status": "prototype"
     },
     {
