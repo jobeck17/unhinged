@@ -210,6 +210,20 @@
       "status": "prototype"
     },
     {
+      "id": "LAB-GD-014",
+      "name": "It's Basically Free Money",
+      "type": "Action",
+      "style": "Gambler",
+      "cost": 2,
+      "power": null,
+      "guard": null,
+      "trouble": null,
+      "traits": [],
+      "keywords": [],
+      "text": "Ready up to 2 Stash.",
+      "status": "prototype"
+    },
+    {
       "id": "LAB-GD-015",
       "name": "Cash Out",
       "type": "Action",
