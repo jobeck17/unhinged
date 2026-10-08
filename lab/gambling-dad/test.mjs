@@ -3,6 +3,21 @@ import {readFileSync} from "node:fs";
 import {Game,LEADERS} from "../../web/engine.js";
 import {installGamblingDad,pokerValue,handRank,pokerHandType,compareScores,SLOT_MACHINE,slotPayout} from "./poker.mjs";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
+const productionBrowser=readFileSync(new URL("../../web/app.js",import.meta.url),"utf8");
+const dadBrowser=readFileSync(new URL("./app.js",import.meta.url),"utf8");
+// Regression: query-string versions are module identity. A mismatched
+// engine URL creates a second, unpatched Game class and stalls the opponent.
+const requiredModuleLines=productionBrowser.split("\n").filter(line=>
+ line.startsWith("import ") &&
+ ["engine.js","ai.js","magician.js","cat-lady.js","rockstar.js","reckless.js","stonewall.js"].some(name=>line.includes("/"+name+"?v="))
+);
+assert.equal(requiredModuleLines.length,7,"all production gameplay imports found");
+for(const line of requiredModuleLines){
+ const labLine=line.replaceAll("./","../../web/");
+ assert(dadBrowser.includes(labLine),"Lab must share production gameplay module identity: "+labLine);
+}
+assert(dadBrowser.includes("Opponent AI turn failed"),"AI errors must not trap the turn");
+
 const cards=read("./cards.json").cards,deck=read("./deck.json");
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
 assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),40);
