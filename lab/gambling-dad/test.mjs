@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {Game,LEADERS} from "../../web/engine.js";
-import {installGamblingDad,pokerValue,handRank,compareScores} from "./poker.mjs";
+import {installGamblingDad,pokerValue,handRank,pokerHandType,compareScores} from "./poker.mjs";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const cards=read("./cards.json").cards,deck=read("./deck.json");
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
@@ -14,6 +14,15 @@ assert(LEADERS["Gambling Dad"].passive.includes("Rock Bottom Poker"));
 const pair=(a,b)=>[a,b];
 const score=(a,b,mode)=>pokerValue(catalog,pair(a,b),mode);
 const one="LAB-GD-001",two="LAB-GD-014",five="LAB-GD-005",six="LAB-GD-011";
+for(const mode of ["HIGH","LOW"]){
+ assert.equal(pokerHandType(catalog,[one,one]),"Matching Pair","1+1 is always a Pair");
+ assert.equal(pokerHandType(catalog,[one,two]),"Straight","1+2 is always a Straight");
+ assert.equal(pokerHandType(catalog,[one,five]),"High Roller","1+5 is always High Roller");
+ assert.equal(handRank(catalog,[one,one],mode),mode==="HIGH"?3:1);
+ assert.equal(handRank(catalog,[one,two],mode),2);
+ assert.equal(handRank(catalog,[one,five],mode),mode==="HIGH"?1:3);
+}
+
 assert.equal(handRank(catalog,[six,six],"HIGH"),3);
 assert.equal(handRank(catalog,[six,six],"LOW"),1);
 assert.equal(handRank(catalog,[five,six],"HIGH"),2);
