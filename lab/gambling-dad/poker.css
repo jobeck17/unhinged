@@ -1,6 +1,6 @@
-/* LAB ONLY: Dad Poker shows three individual cards and requires two selections. */
-.poker-sheet{width:min(100%,690px)}
-.poker-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 12px}
+/* LAB ONLY: Rock Bottom Poker shows four individual cards and requires two selections. */
+.poker-sheet{width:min(100%,760px)}
+.poker-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 12px}
 .poker-choice{display:flex;flex-direction:column;align-items:stretch;gap:8px;text-align:left;border:2px solid #879590;background:#f5f0e5;color:#183033;border-radius:12px;min-width:0;padding:10px;cursor:pointer;min-height:215px;transition:border-color .12s,transform .12s,background .12s}
 .poker-choice:hover{transform:translateY(-3px);border-color:#1f8f77}
 .poker-choice.selected{background:#e4f5ec;border-color:#168e69;outline:3px solid #168e69;outline-offset:-3px}
@@ -14,8 +14,8 @@
 #poker-confirm:disabled{opacity:.4;cursor:not-allowed}
 @media(max-width:420px){
  .poker-sheet{padding:12px}
- .poker-choices{gap:5px}
- .poker-choice{padding:6px;gap:6px;min-height:194px}
+ .poker-choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .poker-choice{padding:6px;gap:6px;min-height:160px}
  .poker-card-name{font-size:12px}
  .poker-card-type{font-size:8px}
  .poker-card-art{height:48px}
@@ -31,3 +31,8 @@
 .lucky-chip-center span{font-weight:800;font-size:clamp(8px,2.5vw,12px);letter-spacing:1px}
 .lucky-chip-center strong{font-size:clamp(32px,10vw,62px);letter-spacing:3px;line-height:1}
 .chip-result{font-size:1.25rem;font-weight:900;letter-spacing:2px;margin:12px}
+
+.poker-ranking{border:2px solid #b39b61;background:#f7f1d9;border-radius:11px;padding:11px 13px;text-align:left;margin:12px 0}
+.poker-ranking b{font-size:13px;color:#354337}
+.poker-ranking p{font-size:13px;font-weight:800;margin:7px 0}
+.poker-ranking small{font-size:11px;line-height:1.35;display:block}
