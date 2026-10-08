@@ -12,18 +12,20 @@
 
 This is an **advanced** Leader: easy comparison, difficult decisions about when to risk Stash and which cards to commit.
 
-## Rock Bottom Poker — first prototype
+## Rock Bottom Poker — four-card hierarchy test
 
-1. Gambling Dad may start Rock Bottom Poker once on his own Turn only if both decks have at least three cards. Flip **Dad's Lucky Poker Chip** (fair 50/50): **HIGH** means highest combined Cost wins; **LOW** means lowest combined Cost wins. The browser shows the result before cards are drawn. No animation.
-2. Each player sets aside their normal hand (the browser game leaves those hands untouched). Each draws three separate poker cards from their *own deck*.
-3. Each secretly chooses exactly two of their three poker cards; the third returns to the bottom of its owner's deck.
-4. Reveal both pairs. Compare combined **printed Cost** using the chip side (HIGH or LOW). Only if Cost totals tie, higher combined **printed Power** wins (Action/Item Power = 0).
-5. If **Dad wins**, his Stash gains all **four** committed cards (the opponent gains none). These cards remain owned by their original players if removed later.
-6. If **Dad loses**, Dad's selected two cards go to his Discard; the opponent's selected two return to the bottom of their own deck. Dad's Stash shrinks to **at most 2**, placing excess cards in their original owners' Discards. A Stash of 0 or 1 is not increased.
-7. If **both totals tie**, all four committed cards go to their original owners' Discards. Dad's Stash remains unchanged.
-8. Printed Costs/Power only; no battlefield modifiers. The temporary poker draws are **not** normal Draw effects. The Leader can still Stash normally once per Round.
+1. Once during Dad's Turn, if **both decks have 4 or more cards**, flip **Dad's Lucky Poker Chip** fairly (HIGH/LOW, 50/50). No animation; the chip's face is shown before play.
+2. Both players temporarily draw **4 cards** from their own decks, separate from their normal hands.
+3. Only Dad may **Fold** after seeing his draw, losing 1 Stash (or 0 if empty) and returning all poker cards to the bottoms of their respective decks. Folding consumes his use of poker this Turn.
+4. Otherwise each player secretly chooses **2 of their 4 cards**; the other 2 go to the bottom of their own decks. The browser picker shows the hand hierarchy and the currently selected hand.
+5. **Hand types:** Matching Pair (equal Costs), Straight (consecutive Costs), High Roller (all other combinations).
+6. **HIGH:** Matching Pair > Straight > High Roller. **LOW:** High Roller > Straight > Matching Pair. Hand type ALWAYS beats total Cost.
+7. Within the same hand type, HIGH favors higher combined printed Cost; LOW favors lower combined printed Cost. If Costs tie, higher combined printed Power wins (non-Characters count 0 Power). Complete tie: both played pairs are discarded and Dad's Stash stays the same.
+8. **Dad wins:** all four selected cards become Ready Stash for him (ownership is still tracked).
+9. **Dad loses:** return the opponent's chosen cards to its deck, discard Dad's pair, reduce his Stash to at most two, and **Defeat every Character Dad controls**. Other Items are not wiped.
+10. All four unused cards (two per player) return to the bottoms of their owners' decks. These special draws do not trigger regular Draw effects. Ordinary Stashing remains available.
 
-**Important playtest simplifications:** Opponent AI chooses its best two-card pair, so it doesn't bluff. Nobody wagers additional hand cards. Tie/loss handling, the unused third card, and card ownership are provisional. Only Dad gets extra Stash on a win. Winning poker is not itself a victory condition.
+The opponent AI picks its best two-card hand by the current HIGH/LOW hierarchy. The complete four-card/fold/bankruptcy design is EXPERIMENTAL and should be tested against canonical decks before any promotion.
 
 ## Deck shell
 
