@@ -5,7 +5,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad} from './poker.mjs?v=gd-09';
+import {installGamblingDad,handRank} from './poker.mjs?v=gd-10';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
@@ -83,6 +83,18 @@ function detail(ref){
 function showModal(entry){document.querySelector('.overlay')?.remove();if(!entry)return;document.body.insertAdjacentHTML('beforeend',entry.html);const overlay=document.querySelector('.overlay');overlay.onclick=e=>{if(e.target===overlay&&entry.kind==='detail')close()}}
 function close(){modal=null;document.querySelector('.overlay')?.remove()}
 async function ask(r){
+ if(r.pokerFold){
+  if(r.player!==human)return "play";
+  return new Promise(resolve=>{
+   const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">ROCK BOTTOM POKER · '+esc(r.pokerMode)+'</div><h2>Play or Fold?</h2>'+
+    '<p>You drew four poker cards: '+r.cards.map(c=>esc(c.name)+' (Cost '+c.cost+')').join(', ')+'.</p>'+
+    '<p class="muted">Fold: discard 1 Stash and return all poker cards. Play: risk the board and your Stash.</p>'+
+    '<div class="modal-actions"><button id="fold-hand">Fold (lose 1 Stash)</button><button id="play-hand" class="primary">Play</button></div></div></div>';
+   modal={kind:"choice",html};showModal(modal);
+   document.querySelector("#fold-hand").onclick=()=>{close();resolve("fold")};
+   document.querySelector("#play-hand").onclick=()=>{close();resolve("play")};
+  });
+ }
  if(r.pokerChip){
   if(r.player!==human)return null;
   return new Promise(resolve=>{
@@ -92,15 +104,15 @@ async function ask(r){
    const html='<div class="overlay"><div class="sheet poker-sheet chip-sheet">'+
      '<div class="type">ROCK BOTTOM POKER</div><h2>Dad\'s Lucky Poker Chip</h2>'+
      chip+'<p class="chip-result">'+mode+' POKER</p>'+
-     '<p class="muted">'+(mode==="HIGH"?"The HIGHEST combined Cost wins.":"The LOWEST combined Cost wins.")+
+     '<p class="muted">'+(mode==="HIGH"?"Pair beats Straight beats High Roller. Higher Cost wins matching ranks.":"High Roller beats Straight beats Pair. Lower Cost wins matching ranks.")+
      ' Power breaks ties in Cost.</p>'+
-     '<div class="modal-actions"><button id="chip-continue" class="primary">Deal three cards</button></div></div></div>';
+     '<div class="modal-actions"><button id="chip-continue" class="primary">Deal four cards</button></div></div></div>';
    modal={kind:"choice",html};showModal(modal);
    document.querySelector("#chip-continue").onclick=()=>{close();resolve(null)};
   });
  }
  if(r.pokerCards){
-  // Separate from ordinary selection: each of the 3 drawn cards is shown once.
+  // Four distinct drawn cards; choose exactly two.
   // AI returns the two indices with the best printed Cost, then Power.
   if(r.player!==human)return [...r.recommendedPair];
   return new Promise(resolve=>{
@@ -116,7 +128,8 @@ async function ask(r){
    }).join('');
    const html='<div class="overlay"><div class="sheet poker-sheet">'+
      '<div class="type">99 GAMBLERS QUIT BEFORE THEY WIN BIG!</div>'+
-     '<h2>Pick your poker hand</h2><p class="muted">You drew three cards. Select exactly two to wager; the third goes to the bottom of your deck.</p>'+
+     '<h2>Pick your poker hand</h2><p class="muted">You drew four cards. Select exactly two; the other two go to the bottom of your deck.</p>'+
+     '<div class="poker-ranking"><b>'+esc(r.pokerMode)+' POKER — STRONGEST TO WEAKEST</b><p>'+ (r.pokerMode==="HIGH"?"1. Matching Pair · 2. Straight · 3. High Roller":"1. High Roller · 2. Straight · 3. Matching Pair")+'</p><small>Pair = equal Costs · Straight = consecutive Costs · High Roller = neither. Hand rank always beats Cost. '+(r.pokerMode==="HIGH"?"Higher":"Lower")+' combined Cost wins equal ranks; Power breaks Cost ties.</small></div>'+
      '<div class="poker-choices">'+cardMarkup+'</div>'+
      '<p id="poker-selection" class="muted" aria-live="polite">0 of 2 selected</p>'+
      '<div class="modal-actions"><button id="poker-confirm" class="primary" disabled>Confirm two cards</button></div>'+
@@ -133,7 +146,13 @@ async function ask(r){
      button.setAttribute('aria-pressed',String(picked.includes(i)));
      button.querySelector('.poker-card-status').textContent=picked.includes(i)?'✓ SELECTED':'TAP TO SELECT';
      confirm.disabled=picked.length!==2;
-     document.querySelector('#poker-selection').textContent=picked.length+' of 2 selected';
+     const status=document.querySelector('#poker-selection');
+     if(picked.length===2){
+       const ids=picked.map(i=>r.options[i].cardId),costs=ids.map(id=>game.card(id).cost);
+       const rank=handRank(game.cards,ids,r.pokerMode);
+       const label=r.pokerMode==="HIGH"?({3:"Matching Pair",2:"Straight",1:"High Roller"})[rank]:({3:"High Roller",2:"Straight",1:"Matching Pair"})[rank];
+       status.textContent="2 of 2 selected · "+label+" · Cost "+(costs[0]+costs[1]);
+     }else status.textContent=picked.length+' of 2 selected';
     });
    });
    confirm.addEventListener('click',()=>{
@@ -153,4 +172,4 @@ function dicePanel(){
  return '<section class="dice-result" role="status" aria-live="polite"><span class="die-face" aria-label="Die rolled '+r.value+'">'+['','⚀','⚁','⚂','⚃','⚄','⚅'][r.value]+'</span><div><strong>'+esc(r.label)+' · rolled '+r.value+'</strong><p>'+esc(r.outcome)+'</p><details><summary>Dice history</summary>'+rolls.map(d=>'<p>'+esc(d.label)+' — '+d.value+' · '+esc(d.outcome)+'</p>').join('')+'</details></div></section>';
 }
 
-function pokerPanel(){const v=game?.pokerLast;if(!v)return '';return '<section class="dice-result" role="status" aria-live="polite"><strong>Rock Bottom Poker · '+esc(v.result)+'</strong><p>'+esc(v.mode||'HIGH')+' poker · Dad '+v.costDad+' Cost / '+v.powerDad+' Power · Opponent '+v.costOpp+' Cost / '+v.powerOpp+' Power</p></section>'}
+function pokerPanel(){const v=game?.pokerLast;if(!v)return '';if(v.folded)return '<section class="dice-result"><strong>'+esc(v.result)+'</strong></section>';return '<section class="dice-result" role="status" aria-live="polite"><strong>Rock Bottom Poker · '+esc(v.result)+'</strong><p>'+esc(v.mode||'HIGH')+' poker · Dad '+v.costDad+' Cost / '+v.powerDad+' Power · Opponent '+v.costOpp+' Cost / '+v.powerOpp+' Power</p></section>'}
