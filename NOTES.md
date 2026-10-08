@@ -1,3 +1,13 @@
+## Birthday Party Magician Breaking Point — LOCKED 8 October 2026
+
+**For My Next Trick…:** “You may return a character you control to your hand. Then you may play a character costing 3 or less from your hand without paying its cost.”
+
+Joseph chose this proposal. Triggers once at the first above-10 to <=10 Composure crossing, under protected threshold timing. The return and deployment are independent optional instructions; deployment does not require returning a Character. Resolve return and resulting triggers before choosing the hand deployment, so a returned eligible Character or a card drawn from a leave trigger may be played. Normal entry restrictions and entrance/when-played abilities apply. During the opponent's turn no voluntary attack/activation/Trouble window is added. Defeated Characters cannot be recovered from discard by the return instruction. If both Breaking Point and Last Straw cross, Breaking Point resolves first per core rules.
+
+**BANKED alternate — Is This Your Card?:** “Look at the top 5 cards of your deck. Put up to 2 into your hand and the rest on the bottom in any order.” Keep specifically as an alternate Magician Breaking Point if testing shows hand refill more impactful than return/deployment. Not an additional ability/card and not active. No production implementation made here.
+
+Leader passive and Breaking Point design are now approved. Next review whole-set Magical eligibility; unresolved fragile high-Power/Cloak and named Rabbit/Dove search concepts need include/bank decisions; then 40-card copy distribution and final interaction review. Implementation/testing remains pending. Pool remains 32 active cards; Leader outside deck.
+
 ## Birthday Party Magician passive — LOCKED 8 October 2026
 
 **The Show Must Go On:** “Once during your turn, when a character you control is returned to your hand or Dismissed, Ready 1 Stash.”
