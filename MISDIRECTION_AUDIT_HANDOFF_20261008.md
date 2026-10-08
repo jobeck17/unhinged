@@ -1,10 +1,10 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph locked Manager at cost 2 (opposing Item return + Draw 1), flagged its name ★, and deferred the Hat action to the Item review. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph tabled Burner Phone ★ and Do Not Look in the Hat, locked Beer-Stained Cards ★, and requested trait-based targeting for Magician's Hat. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
-Character first pass and ten actions are approved. Next audit the three Items; revisit Do Not Look in the Hat alongside Magician's Hat. Joseph said to table the Hat for items; treat that as deferred to this joint review, not a permanent retirement lock. After that revisit the character curve, ability distribution, and create a real finisher; finally rename cards as one coherent theme pass. Work in batches of three: current card, proposed update, role/combo and any testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass, ten actions and one Item are approved. Burner Phone ★ and Do Not Look in the Hat are TABLED. Finish Magician's Hat with trait-based targeting; exact trait, eligible Characters and final cost/activation remain to approve. After that revisit the character curve, ability distribution, and create a real finisher; finally rename cards as one coherent theme pass. Work in batches of three: current card, proposed update, role/combo and any testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
@@ -100,16 +100,26 @@ Wrong Address's 2-cost unrestricted opposing bounce is a testing flag, particula
 
 Manager testing lock: start at cost 2 with unrestricted opposing Item return and Draw 1. Test efficiency against expensive Item engines before adding a cap; no cap or cost increase is currently approved. Returning an attachment leaves its Character in play. The working name does not fit the Magician theme and must be renamed in the later coherent naming pass.
 
-## Remaining items and deferred Hat action — old versions, NOT audited locks
+## Locked Items (1)
 
-Review these three Items together and resolve the deferred Hat action alongside its Item:
+| ID / working name | Cost | Approved effect |
+|---|---:|---|
+| P088 Beer-Stained Cards ★ | 2 | Rotate this Item and spend 1 Stash: Draw a card. |
 
-| Card | Existing cost/effect | Review concern |
-|---|---|---|
-| LAB-MAG-007 Do Not Look in the Hat | Action 1: play Rabbit or Dove from hand free, only if you control a Rotated Magician's Hat. | Deferred to the Item review. Proposal to table because of deployment overlap has not been recorded as permanent retirement; resolve alongside Hat and stated limited free deployment. |
-| P087 Burner Phone | Item 1: Rotate, look at up to 2 Stash cards, may retrieve one and replace it with a hand card Rotated. | Inspection now general; exchange action and IT Guy already cover exchange. Rework/retain/table deliberately. |
-| P088 Beer-Stained Cards | Item 2: once during own turn, Rotate it and spend 1 Ready Stash to draw a card. | Repeatable draw, cost/tempo needs audit. |
-| LAB-MAG-005 Magician's Hat | Item 4: Activate, return a Rabbit or Dove you control to hand. | Narrow reusable bounce engine; audit cost and activation wording, avoid too much bounce. |
+Beer-Stained Cards' revised wording is locked. Its name sounds like Florida Man and needs a Misdirection-theme rename; this does not move the mechanical slot to Reckless. Separate copies each Rotate and pay separately. Rotation normally limits each copy to one activation between Ready transitions; no additional once-per-turn limit is locked. Watch whether existing draw makes this engine unnecessary.
+
+## Tabled cards
+
+- P087 Burner Phone ★: TABLED by Joseph. Preserve rename flag if reconsidered. Old Stash inspection/exchange no longer justifies its active slot.
+- LAB-MAG-007 Do Not Look in the Hat: TABLED by Joseph after Item review. This supersedes the earlier defer-to-Items status. Do not include it as an approved action or revive without reopening.
+
+## Remaining Item — Magician's Hat
+
+LAB-MAG-005 Magician's Hat is still PENDING. Existing production version: cost 4, “Activate — Return a Rabbit or Dove you control to your hand.”
+
+Prior proposal, not yet locked: cost 3, “Rotate this Item and spend 1 Stash: Return a Rabbit or Dove you control to your hand.”
+
+Joseph requested replacing named-card targeting with a trait, “magical or something.” Trait-based targeting is the approved design direction; exact trait name, assignment, cost and activation are not yet finalized. Proposed next version: cost 3, “Rotate this Item and spend 1 Stash: Return a Magical Character you control to your hand.” Magical is a proposed new trait, not a keyword, and has no inherent rules effect. Rabbit and Dove currently have Animal; adding Magical would preserve Animal. Do not automatically give Magical to every Misdirection Character. Broader targets, particularly entry/return payoffs and any future finisher, need deliberate eligibility and repeat-bounce testing. No trait assignments are locked yet.
 
 Inconspicuous Bush is a prior cross-chat concept, not yet an approved card in this audit: hide a character costing up to 5 under it; Rotate to Dismiss Bush and put the hidden character in play. Retrieve authoritative ID/cost/style/current existence before adding. No Bush matched the current production CARDS.json name/effect scan at handoff creation. Cloak on a fragile high-Power character is likewise a prior direction still to place/revisit, not an approved new card. Do not assume old brainstorming equals a lock.
 
@@ -142,7 +152,7 @@ Reckless committed pool has 32 cards with last slot intentionally open. Stonewal
 
 ## Implementation checklist for later
 
-1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 21 characters + 10 actions = 31; three existing Items and the deferred Hat action are not yet locked. Pending Pirate is not included.
+1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 21 Characters + 10 Actions + 1 Item = 32. Magician's Hat remains pending; Burner Phone ★ and Do Not Look in the Hat are tabled. Pending Pirate is not included.
 2. Retrieve latest remote CARD/DECK/rule state. Apply this record's final approvals, not obsolete baseline values or superseded proposals. Keep IDs stable where possible; explicitly migrate duplicate references.
 3. Update CARDS.json, DECKS.json, builder text, engine effects, AI choices, tests, rules and NOTES when authorized to implement. Do not claim functional verification before running it.
 4. Test entrance vs play wording for direct deployments; borrowed ownership and trigger controller; Hothead copying; temporary Power expiry; bounce clears board damage/buffs appropriately; optional choices; deck shortfalls; cost payment and per-slot Stash state; hidden-hand choice privacy; Poof one-use expiry; scheduled effects following source departure without retrieving a new incarnation of a card.
@@ -151,4 +161,4 @@ Reckless committed pool has 32 cards with last slot intentionally open. Stonewal
 
 ## Suggested opening prompt for the new chat
 
-Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Audit Burner Phone, Beer-Stained Cards and Magician's Hat, resolving the deferred Do Not Look in the Hat action alongside the Hat. Then revisit a finisher and the character curve. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
+Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Burner Phone ★ and Do Not Look in the Hat are now tabled. Beer-Stained Cards ★ is locked at cost 2: Rotate this Item and spend 1 Stash, Draw a card. Finish Magician's Hat with trait-based targeting (exact trait and final cost/activation pending). Then revisit a finisher and the character curve. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
