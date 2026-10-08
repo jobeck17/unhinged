@@ -1,3 +1,13 @@
+## Misdirection name confirmations and draw-overlap review — 8 October 2026
+
+- **P082 Wrong Address ○ → Choose Your Fate:** approved rename; name flag resolved. Ability unchanged.
+- **P142 Vanishing Act:** user explicitly LOCKED name; remove ○. Ability unchanged.
+- **P088 Marked Deck:** user explicitly LOCKED name; remove ○. Beer-Stained Cards future Florida Man name bank remains.
+- **Open names:** Overeager Apprentice and Ethan remain unresolved (user left proposed replacements blank). User suggests Volunteer From the Audience for the current 1-cost Very Enthusiastic Volunteer; treat question mark as tentative, not a new lock. That prior name is available because P064 is now The Mentalist.
+- **Family-flavor direction:** School Bully should evoke the Birthday Kid's older brother; Lady should evoke the Birthday Kid's mom. User flags literal names as too long. Short exact names remain unapproved; preserve existing working labels/flags for now.
+- **Ability overlap reopened:** user identifies identical “Draw 2, discard 1” on Ethan (cost-2 Action) and Card Shark (cost-4 Character). Prior approval remains historical; do not claim the difference in card type resolves the concern. Review a distinct effect for Ethan; no mechanics changed by this naming update.
+- Pool stays 32 active designs; revisions not implemented in playtest.
+
 ## Misdirection working-name replacements — approved 8 October 2026
 
 Joseph approved all ten suggested replacements as current working names, explicitly open to later refinement. Mechanics, IDs, costs and stats unchanged. These supersede earlier tentative Invisible String? / Magic Wand / Transform suggestions. Former ★ names have a replacement now; ○ indicates the new name remains reviewable, not a required re-rename.
