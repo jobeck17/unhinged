@@ -20,14 +20,13 @@
     "LAB-GD-011": 1,
     "LAB-GD-012": 1,
     "LAB-GD-013": 3,
-    "LAB-GD-014": 1,
     "LAB-GD-015": 2,
     "LAB-GD-017": 2,
     "LAB-GD-018": 4
   },
   "lab": true,
   "status": "PROTOTYPE",
-  "status_note": "Four Slot Machine Items (Cost 4) replace both Lucky Coins and two It's Basically Free Money Actions. Poker rules and slot activation remain isolated in the lab.",
+  "status_note": "Four Slot Machine Items (Cost 4) remain. The final It's Basically Free Money Action has been removed from the deck, leaving a 39-card experimental list; no replacement was added. Poker rules and slot activation remain isolated in the lab.",
   "watchpoints": [
     "Does 4 bonus Stash break ordinary pacing?",
     "Is resetting to two Stash punishing but recoverable?",
