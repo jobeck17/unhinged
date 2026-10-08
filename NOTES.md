@@ -1,3 +1,22 @@
+## Final naming / Encore revision — locked 8 October 2026
+
+Joseph approved all five suggestions:
+- **P076 Overeager Apprentice → Impatient Apprentice** (name locked), unchanged Cost 1, 1/1/1, Hothead.
+- **LAB-MAG-001A/B Very Enthusiastic Volunteer → Volunteer From the Audience** (name locked), unchanged Cost 1, 1/1/1, optional +1 Power this Turn to another friendly Character when it enters or returns from play to your hand. This name now belongs to this 1-cost design; P064 remains The Mentalist.
+- **P067 School Bully → Big Brother** (name locked), unchanged Cost 3, 3/2/1, Hothead/Sucker Punch. Old School Bully name remains reserved for another style as previously noted.
+- **LAB-MAG-004 Lady Who's Moving Out Again → Party Mom** (name locked), unchanged Cost 3, 2/3/1, Hothead, entry +2 Power this Turn and optional opposing <=2-cost return when returned to your hand.
+- **LAB-MAG-002 Ethan's JUST Being Dramatic → Encore!** (name and mechanics locked), Cost 2 Action: “Draw a card. If a character you controlled was returned from play to your hand this turn, draw another card.” Supersedes Draw 2/discard 1. Card Shark remains unchanged.
+
+Encore checks an earlier qualifying return during the current Turn and draws two total when satisfied, not one per returned Character. No return is performed by Encore itself; the Action is playable without a qualifying event for Draw 1. Costs paid before effects. Track event history independently of the returned card's subsequent location; no extra restrictions approved. Test cost efficiency with cheap return enablers and empty-deck threshold sequencing.
+
+Active pool remains 32 designs; character/type/cost counts unchanged. Remaining DESIGN closure:
+1. Whole-set Magical assignments, with Rabbit/Dove initial assignments already approved.
+2. Birthday Party Magician's passive review and Breaking Point design.
+3. Explicit disposition of fragile high-Power/Cloak concept and Rabbit/Dove named deck-search/direct-deployment brainstorm (not current rules/cards).
+4. Final combined ability/cost sanity review and 40-card copy distribution. Working ○ names accepted earlier can be refined optionally; no active ★ remains after this batch.
+
+IMPLEMENTATION/VERIFICATION afterwards: stable IDs for Trap Door/The Headliner, duplicate Volunteer/Lady migration, CARDS/DECK/rule/UI/engine/AI parity, tests/browser checks and balance/human playtests. Preserve Reckless/Stonewall. Still design-only; do not infer a deployment request.
+
 ## Misdirection name confirmations and draw-overlap review — 8 October 2026
 
 - **P082 Wrong Address ○ → Choose Your Fate:** approved rename; name flag resolved. Ability unchanged.
