@@ -5,7 +5,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad} from './poker.mjs?v=gd-08';
+import {installGamblingDad} from './poker.mjs?v=gd-09';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
@@ -83,6 +83,22 @@ function detail(ref){
 function showModal(entry){document.querySelector('.overlay')?.remove();if(!entry)return;document.body.insertAdjacentHTML('beforeend',entry.html);const overlay=document.querySelector('.overlay');overlay.onclick=e=>{if(e.target===overlay&&entry.kind==='detail')close()}}
 function close(){modal=null;document.querySelector('.overlay')?.remove()}
 async function ask(r){
+ if(r.pokerChip){
+  if(r.player!==human)return null;
+  return new Promise(resolve=>{
+   const mode=r.pokerMode==="LOW"?"LOW":"HIGH";
+   const chip='<div class="lucky-chip" role="img" aria-label="Dad\'s Lucky Poker Chip: '+mode+' poker">'+
+     '<div class="lucky-chip-ring"><div class="lucky-chip-center"><span>DAD\'S LUCKY</span><strong>'+mode+'</strong><span>POKER CHIP</span></div></div></div>';
+   const html='<div class="overlay"><div class="sheet poker-sheet chip-sheet">'+
+     '<div class="type">ROCK BOTTOM POKER</div><h2>Dad\'s Lucky Poker Chip</h2>'+
+     chip+'<p class="chip-result">'+mode+' POKER</p>'+
+     '<p class="muted">'+(mode==="HIGH"?"The HIGHEST combined Cost wins.":"The LOWEST combined Cost wins.")+
+     ' Power breaks ties in Cost.</p>'+
+     '<div class="modal-actions"><button id="chip-continue" class="primary">Deal three cards</button></div></div></div>';
+   modal={kind:"choice",html};showModal(modal);
+   document.querySelector("#chip-continue").onclick=()=>{close();resolve(null)};
+  });
+ }
  if(r.pokerCards){
   // Separate from ordinary selection: each of the 3 drawn cards is shown once.
   // AI returns the two indices with the best printed Cost, then Power.
@@ -137,4 +153,4 @@ function dicePanel(){
  return '<section class="dice-result" role="status" aria-live="polite"><span class="die-face" aria-label="Die rolled '+r.value+'">'+['','⚀','⚁','⚂','⚃','⚄','⚅'][r.value]+'</span><div><strong>'+esc(r.label)+' · rolled '+r.value+'</strong><p>'+esc(r.outcome)+'</p><details><summary>Dice history</summary>'+rolls.map(d=>'<p>'+esc(d.label)+' — '+d.value+' · '+esc(d.outcome)+'</p>').join('')+'</details></div></section>';
 }
 
-function pokerPanel(){const v=game?.pokerLast;if(!v)return '';return '<section class="dice-result" role="status" aria-live="polite"><strong>Rock Bottom Poker · '+esc(v.result)+'</strong><p>Dad '+v.costDad+' Cost / '+v.powerDad+' Power · Opponent '+v.costOpp+' Cost / '+v.powerOpp+' Power</p></section>'}
+function pokerPanel(){const v=game?.pokerLast;if(!v)return '';return '<section class="dice-result" role="status" aria-live="polite"><strong>Rock Bottom Poker · '+esc(v.result)+'</strong><p>'+esc(v.mode||'HIGH')+' poker · Dad '+v.costDad+' Cost / '+v.powerDad+' Power · Opponent '+v.costOpp+' Cost / '+v.powerOpp+' Power</p></section>'}
