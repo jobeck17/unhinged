@@ -1,0 +1,38 @@
+{
+  "id": "LAB-DECK-GD-001",
+  "name": "I Can Win It Back (Skeletal Draft)",
+  "leader": "Gambling Dad",
+  "styles": [
+    "Gambler"
+  ],
+  "composure": 20,
+  "cards": {
+    "LAB-GD-001": 4,
+    "LAB-GD-002": 3,
+    "LAB-GD-003": 3,
+    "LAB-GD-004": 3,
+    "LAB-GD-005": 3,
+    "LAB-GD-006": 2,
+    "LAB-GD-007": 2,
+    "LAB-GD-008": 2,
+    "LAB-GD-009": 2,
+    "LAB-GD-010": 2,
+    "LAB-GD-011": 1,
+    "LAB-GD-012": 1,
+    "LAB-GD-013": 3,
+    "LAB-GD-014": 3,
+    "LAB-GD-015": 2,
+    "LAB-GD-016": 2,
+    "LAB-GD-017": 2
+  },
+  "lab": true,
+  "status": "PROTOTYPE",
+  "status_note": "Draft shell for co-designers to replace freely. Dad Poker and current support text are implemented only in this isolated lab.",
+  "watchpoints": [
+    "Does 4 bonus Stash break ordinary pacing?",
+    "Is resetting to two Stash punishing but recoverable?",
+    "Do opponent hands remain relevant without giving opponent Stash?",
+    "Does the once-per-Turn poker choice dominate Character play?",
+    "How often can both players draw three without exhausting decks?"
+  ]
+}
