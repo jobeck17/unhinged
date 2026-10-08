@@ -197,16 +197,16 @@
     },
     {
       "id": "LAB-GD-013",
-      "name": "That Was Almost a Win",
+      "name": "Bluff",
       "type": "Action",
       "style": "Gambler",
-      "cost": 1,
+      "cost": 2,
       "power": null,
       "guard": null,
       "trouble": null,
       "traits": [],
       "keywords": [],
-      "text": "Draw 2 cards, then Discard 1 card.",
+      "text": "During Rock Bottom Poker, after selecting your two poker cards, you may spend 2 Ready Stash and play this from your hand. Discard your selected pair, Draw 2 replacement poker cards, and use that pair. Once per poker hand.",
       "status": "prototype"
     },
     {
