@@ -179,7 +179,13 @@ export function installGamblingDad(Game, LEADERS) {
         if(s.pokerOrigins?.length>i)s.pokerOrigins.pop();
       }
       s.fuel=Math.min(s.fuel,s.stash.length);
+      const rockBottom=this.chars(p).length===0 && s.stash.length<=2;
       for(const character of [...this.chars(p)])await this.remove(character,"discard",true);
+      if(rockBottom){
+        s.hp=Math.max(0,s.hp-3);
+        this.say("ROCK BOTTOM: no Characters and at most 2 Stash — Gambling Dad loses 3 Composure.");
+        this.checkEnd();
+      }
       this.say(prefix+"Dad LOSES. Stash resets to at most two; all Characters Defeated.");
       for(const x of this.chars(p)){
         if(x.id==="LAB-GD-004")this.draw(p,1);
