@@ -1,13 +1,17 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {Game,LEADERS} from "../../web/engine.js";
+import {aiAction,aiChoice} from "../../web/ai.js";
+import {runOpponentTurn} from "./opponent.mjs";
 import {installGamblingDad,pokerValue,handRank,pokerHandType,compareScores,SLOT_MACHINE,slotPayout} from "./poker.mjs";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const cards=read("./cards.json").cards,deck=read("./deck.json");
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
-assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),40);
+assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),39);
 assert.equal(deck.cards[SLOT_MACHINE],4,"exactly four Slot Machine Items");
-assert.equal(deck.cards["LAB-GD-014"],1,"two Free Money copies are replaced");
+assert.equal(deck.cards["LAB-GD-014"],undefined,"Free Money is absent from the deck");
+assert.equal(deck.cards["LAB-GD-013"],3,"exactly three Bluff Actions replace Almost a Win");
+assert.equal(cards.find(c=>c.id==="LAB-GD-013")?.name,"Bluff");
 assert.equal(deck.cards["LAB-GD-016"],undefined,"old Lucky Coin is gone");
 assert.equal(cards.find(c=>c.id===SLOT_MACHINE)?.cost,4,"Slot Machine must cost four");
 assert.equal(cards.find(c=>c.id===SLOT_MACHINE)?.type,"Item");
@@ -205,4 +209,36 @@ const spinJackpot=await spinScenario(["L","L","L"],"continue");
 assert.equal(spinJackpot.g.slotLast.outcome,"JACKPOT");
 assert.equal(spinJackpot.g.slotLast.drawn,7,"Jackpot refills the entire hand");
 assert.equal(spinJackpot.g.players[0].hand.length,7);
-console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card picker, revealed both hands on wins/losses/ties, fold, ownership and lab isolation, 8 slot outcomes and full activation branches");
+
+ // Regression: the opponent must finish a Round-2 Florida Man turn.
+ let floridaGame;
+ floridaGame=setup(async request=>aiChoice(floridaGame,request));
+ floridaGame.turn=1;floridaGame.startTurn();
+ const normalAi=await runOpponentTurn(floridaGame,{
+   human:0,decide:aiAction,delay:async()=>{}
+ });
+ assert.equal(floridaGame.turn,0,"Florida Man must hand control back after its turn");
+ assert.equal(normalAi.errors,0,"Normal Florida Man play should not require recovery");
+
+ // An unexpected AI/card exception must not strand the UI on "Opponent is thinking".
+ const broken=setup(async()=>null);
+ broken.turn=1;broken.startTurn();
+ const seen=[];
+ const recovered=await runOpponentTurn(broken,{
+   human:0,decide:()=>{throw Error("simulated AI card failure")},
+   delay:async()=>{},onError:error=>seen.push(error.message)
+ });
+ assert.equal(broken.turn,0,"Broken opponent action should fall back to ending the turn");
+ assert.equal(recovered.errors,1);
+ assert.match(seen[0],/simulated AI card failure/);
+
+ // Even if the AI loops excessively, the action cap must end its turn.
+ const capped=setup(async()=>null);
+ capped.turn=1;capped.startTurn();
+ const limit=await runOpponentTurn(capped,{
+   human:0,decide:aiAction,delay:async()=>{},maxActions:1
+ });
+ assert.equal(capped.turn,0,"Opponent action limit should safely end the turn");
+ assert.equal(limit.errors,1);
+
+console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card picker, revealed both hands on wins/losses/ties, fold, ownership and lab isolation, 8 slot outcomes, full activation branches, and Florida Man opponent-turn recovery");
