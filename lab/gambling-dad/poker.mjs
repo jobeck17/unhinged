@@ -7,7 +7,7 @@ export function pokerScore(cards, pair) {
 }
 export function compareScores(a,b) { return Math.sign(a[0]-b[0]) || Math.sign(a[1]-b[1]); }
 export function installGamblingDad(Game, LEADERS) {
-  LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Double or Nothing. Win: gain 4 Stash. Lose: reset Stash to 2."};
+  LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Not So Full House. Win: gain 4 Stash. Lose: reset Stash to 2."};
   const oldStart=Game.prototype.startTurn;
   Game.prototype.startTurn=function(...args){
     this.players[this.turn].pokerUsed=false;
@@ -63,7 +63,7 @@ export function installGamblingDad(Game, LEADERS) {
       // The best pair is an AI recommendation only, not a prebuilt human choice.
       possibilities.sort((a,b)=>compareScores(b.score,a.score));
       const indices=await this.ask({
-        player:who,title:"Double or Nothing: choose TWO of your THREE cards",
+        player:who,title:"Not So Full House: choose TWO of your THREE cards",
         mandatory:true,pokerCards:true,multi:true,min:2,max:2,
         options:hands[who].map((id,i)=>({
           value:i,cardId:id,
@@ -73,7 +73,7 @@ export function installGamblingDad(Game, LEADERS) {
       });
       if(!Array.isArray(indices)||indices.length!==2||new Set(indices).size!==2||
          indices.some(i=>!Number.isInteger(i)||i<0||i>2))
-        throw new Error("Double or Nothing requires exactly two different cards from the three drawn.");
+        throw new Error("Not So Full House requires exactly two different cards from the three drawn.");
       chosen[who]=indices.map(i=>hands[who][i]);
       scores[who]=pokerScore(this.cards,chosen[who]);
       const leftover=[0,1,2].find(i=>!indices.includes(i));
@@ -82,7 +82,7 @@ export function installGamblingDad(Game, LEADERS) {
     const bonus=this.players[p].board.filter(x=>x.id==="LAB-GD-016").length;
     scores[p][1]+=bonus;
     const result=compareScores(scores[p],scores[opp]);
-    const prefix="Double or Nothing: "+this.name(p)+" "+scores[p][0]+"/"+scores[p][1]+" vs "+this.name(opp)+" "+scores[opp][0]+"/"+scores[opp][1]+". ";
+    const prefix="Not So Full House: "+this.name(p)+" "+scores[p][0]+"/"+scores[p][1]+" vs "+this.name(opp)+" "+scores[opp][0]+"/"+scores[opp][1]+". ";
     const s=this.players[p];
     if(result>0){
       if(!s.pokerOrigins)s.pokerOrigins=[];
