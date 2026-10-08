@@ -1,3 +1,12 @@
+## Misdirection support batch — locked 8 October 2026
+
+- **LAB-MAG-003 Birthday Boy ★:** Cost **3**, **2/3/2**. “When played, you may Dismiss another character you control. If you do, draw a card.” Supersedes the locked cost-2 2/1/2 vanilla version. Keeps ★. Friendly Dismiss requires another Character; draw only if it was actually Dismissed. Dismiss is not Defeat. Rabbit/Dove leave-play triggers and Trap Door capture may apply.
+- **P078 Pirate With a Business License ○:** Cost **5**, **3/4/2**, **Sucker Punch**. “This character may Cause Trouble the turn it enters play if played from under an Item.” Replaces BOTH old production opponent-choice free-deployment and the never-approved once-per-turn proposal. Keeps ○. No Hothead granted; Sucker Punch does not permit an ordinary entry-turn Attack. Immediate Trouble permission applies only to the instance played from under an Item and still requires Ready/positive Trouble. Trap Door release qualifies; ordinary hand play, Pick a Card or borrowed-deck play does not.
+- **Pool now 36 locked designs:** 23 Characters / 10 Actions / 3 Items. Character curve costs 1–6: **3 / 4 / 7 / 5 / 3 / 1**. Unique all-card cost/type counts: 1 = 3/3/0 (6); 2 = 4/5/1 (10); 3 = 7/2/2 (11); 4 = 5/0/0 (5); 5 = 3/0/0 (3); 6 = 1/0/0 (1). Types listed Character/Action/Item. Pirate is now included; finisher remains a separate design.
+- **Support gained:** Trap Door has two friendly-Dismiss enablers (Now You Don't and Birthday Boy); two innate Sucker Punch Characters (School Bully and Pirate) plus Identity Thief copying; two immediate-Trouble designs (Script Kiddie and conditional Pirate). Birthday Boy adds optional draw support.
+- **Testing:** Birthday Boy's replay/Dismiss/draw and Trap Door return may be strong value; Pirate turns Item release into immediate Trouble. Compare actual resource/board costs and loop readiness. Character curve now crowds cost 3; review unique roles and 40-card copy counts before proposing further moves.
+- Remains design-only, not implemented/tested in playtest. Other locks/name flags, Spy/Bush bank and unresolved Cloak concept preserved.
+
 ## Misdirection curve batch — locked 8 October 2026
 
 Joseph approved all three proposals:
