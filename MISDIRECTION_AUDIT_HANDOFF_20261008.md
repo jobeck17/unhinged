@@ -149,9 +149,13 @@ Tech Bro ★ and Trapdoor Assistant are TABLED. Identity Thief ○ is BANKED for
 
 P069 Conspiracy Blogger ○ is TABLED; approved design and flag preserved outside the active set.
 
-## Magical trait — initial assignments and whole-set review
+## Magical trait — five-character eligibility locked
 
-Magician's Hat cost, activation and Magical targeting are LOCKED. Magical is a trait, not a keyword, with no inherent rules effect. Rabbit and Dove initially gain Magical alongside Animal. Joseph approved this direction with the explicit condition that we review the whole set; the full eligibility list remains open. Do not automatically tag all Misdirection Characters. Review each candidate against entrance/return payoffs and repeated Hat use, including any eventual finisher. Preserve the approved Hat ability while deciding eligibility.
+Joseph approved adding Magical to Magician's Assistant (P061), Escape Artist (P065) and Disappearing Assistant (LAB-MAG-003). Together with already-approved Rabbit (P063) and Dove (LAB-MAG-006), these are the **five Magical Characters in the current active set**.
+
+Magical is a trait, not a keyword. Preserve existing other traits; Rabbit/Dove retain Animal. No other active Character gains Magical in this pass. Magician's Hat may target any friendly member of these five, under its locked cost-3 / Rotate plus spend 1 Stash activation. All other mechanics, names, costs, stats and the 32-card count remain unchanged. This closes the initial whole-set Hat eligibility decision; changes require an explicit later tuning decision.
+
+Remaining design closure: decide include/rework/bank for fragile high-Power/Cloak concept and explicitly bank/review named Rabbit/Dove deck search; then final interaction review and 40-card copy distribution. Leader passive, Breaking Point, names and initial curve are approved. Implementation/testing remains pending.
 
 Inconspicuous Bush is now BANKED for next set's Spy Leader, with hand-tucking behavior to explore. It is not in the current Magician set. Trap Door replaces it in this set and is now locked as the persistent Dismiss-triggered storage/release engine above. See NOTES.md's 8 October Now You Don't / Trap Door entry. Trap Door is distinct from locked Trapdoor Assistant. Cloak on a fragile high-Power Character remains an unresolved prior direction, not an approved card.
 
@@ -328,6 +332,14 @@ Joseph chose this proposal. Triggers once at the first above-10 to <=10 Composur
 **BANKED alternate — Is This Your Card?:** “Look at the top 5 cards of your deck. Put up to 2 into your hand and the rest on the bottom in any order.” Keep specifically as an alternate Magician Breaking Point if testing shows hand refill more impactful than return/deployment. Not an additional ability/card and not active. No production implementation made here.
 
 Leader passive and Breaking Point design are now approved. Next review whole-set Magical eligibility; unresolved fragile high-Power/Cloak and named Rabbit/Dove search concepts need include/bank decisions; then 40-card copy distribution and final interaction review. Implementation/testing remains pending. Pool remains 32 active cards; Leader outside deck.
+
+## Magical eligibility — LOCKED 8 October 2026
+
+Joseph approved adding Magical to Magician's Assistant (P061), Escape Artist (P065) and Disappearing Assistant (LAB-MAG-003). Together with already-approved Rabbit (P063) and Dove (LAB-MAG-006), these are the **five Magical Characters in the current active set**.
+
+Magical is a trait, not a keyword. Preserve existing other traits; Rabbit/Dove retain Animal. No other active Character gains Magical in this pass. Magician's Hat may target any friendly member of these five, under its locked cost-3 / Rotate plus spend 1 Stash activation. All other mechanics, names, costs, stats and the 32-card count remain unchanged. This closes the initial whole-set Hat eligibility decision; changes require an explicit later tuning decision.
+
+Remaining design closure: decide include/rework/bank for fragile high-Power/Cloak concept and explicitly bank/review named Rabbit/Dove deck search; then final interaction review and 40-card copy distribution. Leader passive, Breaking Point, names and initial curve are approved. Implementation/testing remains pending.
 
 ## Implementation checklist for later
 
