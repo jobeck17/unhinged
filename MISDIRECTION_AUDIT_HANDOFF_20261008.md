@@ -1,10 +1,10 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph renamed Switcheroo to Now You Don't with discard destinations, requested deeper Trap Door recovery exploration, and banked Bush for next set's Spy Leader. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph locked the persistent cost-3 Trap Door and Now You See Me / Now You Don't / Trap Door machine. Bush remains banked for next set's Spy Leader. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
-Character first pass, ten Actions, two Items and the new finisher are approved (34 distinct designs: 22 Characters, 10 Actions, 2 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. The original pending Pirate has been reviewed but still needs an explicit disposition; do not silently treat the new finisher lock as a table/rewrite lock for P078. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass, ten Actions, three Items and the new finisher are approved (35 distinct designs: 22 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. The original pending Pirate has been reviewed but still needs an explicit disposition; do not silently treat the new finisher lock as a table/rewrite lock for P078. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
@@ -16,7 +16,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 - Trigger leave-play effects, retrigger entrance effects, and recover damaged survivors by returning and replaying them. Bounce is recovery, not a separate healing package.
 - Heavy card draw; meaningful Hothead package with competitive, not overpowered or underpowered stats.
 - Move cards among board, hand, Stash and occasionally deck. Do not make every card explicitly reward bounce: combat and standalone utility should matter too.
-- No permanent ramp package. Only limited temporary/conditional free deployment; Pick a Card is locked, Trap Door recovery is under exploration and Bush is now banked for the next set's Spy. Free deployment is still valuable even though it does not grow Stash.
+- No permanent ramp package. Only limited temporary/conditional free deployment; Pick a Card is locked, Trap Door's Dismiss-triggered storage/release is locked and Bush is now banked for the next set's Spy. Free deployment is still valuable even though it does not grow Stash.
 - No healing outside bounce. Return-to-hand on Defeat is a possible future mechanic, not locked on any card.
 - Cause Trouble on entry is locked on one character, currently plain text; keyword name remains pending. It does not grant extra actions or attacks.
 - Named-card deck search/direct deployment (e.g., Rabbit or Dove, then reshuffle) is a brainstorm idea, not approved.
@@ -110,14 +110,28 @@ Wrong Address's 2-cost unrestricted opposing bounce is a testing flag, particula
 
 Manager testing lock: start at cost 2 with unrestricted opposing Item return and Draw 1. Test efficiency against expensive Item engines before adding a cap; no cap or cost increase is currently approved. Returning an attachment leaves its Character in play. The working name does not fit the Magician theme and must be renamed in the later coherent naming pass.
 
-## Locked Items (2)
+## Locked Items (3)
 
 | ID / working name | Cost | Approved effect |
 |---|---:|---|
 | P088 Beer-Stained Cards ★ | 2 | Rotate this Item and spend 1 Stash: Draw a card. |
 | LAB-MAG-005 Magician's Hat | 3 | Rotate this Item and spend 1 Stash: Return a Magical Character you control to your hand. |
+| New ID pending — Trap Door | 3 | May store a just-Dismissed friendly Character costing <=5 from your discard face-down if empty. Rotate and spend 1 Stash: Play stored Character free. Persistent; one stored card; see full lock below. |
 
 Beer-Stained Cards' revised wording is locked. Its name sounds like Florida Man and needs a Misdirection-theme rename; this does not move the mechanical slot to Reckless. Separate copies each Rotate and pay separately. Rotation normally limits each copy to one activation between Ready transitions; no additional once-per-turn limit is locked. Watch whether existing draw makes this engine unnecessary.
+
+### Trap Door — full lock and combo
+
+**LOCKED FOR TESTING — Trap Door (new ID pending), Cost 3 Misdirection Item:**
+
+“Whenever a character you control costing 5 or less is Dismissed, you may put that card from your discard face-down under this Item if there is no card under it.
+Rotate this Item and spend 1 Stash: Play the character under it without paying its cost.”
+
+Persistent engine; one stored Character per copy. Enters Ready under core Item rules. Capture is optional and only for a Character just Dismissed while this Item is in play; not generic discard-pile retrieval, Defeat, Sacrifice, Return or hand discard. Controller chooses among simultaneous catch triggers; the same card cannot be caught by multiple copies. Owner may inspect their stored card; source and movement came from a public Dismiss event, so face-down storage does not erase previously known information. Stored card is not in play and cannot act or trigger in-play abilities.
+
+Release empties the storage slot and triggers normal entrance/when-played effects; normal Character entry restrictions apply. No Hothead or immediate Trouble is granted by Trap Door. Rotate/payment limits activation; no extra once-per-turn cap approved. If Trap Door leaves play, its stored Character goes to its owner's discard. Release/cleanup and instance tracking require engine tests. Distinct from locked Trapdoor Assistant.
+
+**INTENDED THREE-CARD MACHINE:** Rabbit in play + established empty Ready Trap Door. Now You See Me (2): Return Rabbit, draw 1, play Dove free, optionally deal 1 damage. Now You Don't (2): Dismiss Dove and an opposing Character costing <=2; Dove may deal 1 exit damage, Trap Door may store it. Activate Trap Door (1 Stash): play Dove free, optionally deal 1 entrance damage. Total 5 Stash that turn, plus previously paid Item setup cost 3. End with Rabbit in hand and Dove in play. Dismissed enemy must actually leave; Stubborn and other prevention can alter outcomes. No claim of tested balance or implemented engine behavior.
 
 ## Tabled cards
 
@@ -128,14 +142,14 @@ Beer-Stained Cards' revised wording is locked. Its name sounds like Florida Man 
 
 Magician's Hat cost, activation and Magical targeting are LOCKED. Magical is a trait, not a keyword, with no inherent rules effect. Rabbit and Dove initially gain Magical alongside Animal. Joseph approved this direction with the explicit condition that we review the whole set; the full eligibility list remains open. Do not automatically tag all Misdirection Characters. Review each candidate against entrance/return payoffs and repeated Hat use, including any eventual finisher. Preserve the approved Hat ability while deciding eligibility.
 
-Inconspicuous Bush is now BANKED for next set's Spy Leader, with hand-tucking behavior to explore. It is not in the current Magician set. Trap Door replaces it as this set's storage/recovery exploration: bring back the friendly Character sent to discard by Now You Don't, mechanism still open. See NOTES.md's 8 October Now You Don't / Trap Door entry. Trap Door is distinct from locked Trapdoor Assistant. Cloak on a fragile high-Power Character remains an unresolved prior direction, not an approved card.
+Inconspicuous Bush is now BANKED for next set's Spy Leader, with hand-tucking behavior to explore. It is not in the current Magician set. Trap Door replaces it in this set and is now locked as the persistent Dismiss-triggered storage/release engine above. See NOTES.md's 8 October Now You Don't / Trap Door entry. Trap Door is distinct from locked Trapdoor Assistant. Cloak on a fragile high-Power Character remains an unresolved prior direction, not an approved card.
 
 ## Audit completeness correction — 8 October 2026
 
 The existing production Misdirection Character/Action/Item entries are all accounted for in this handoff, including the two duplicate-design migrations. However, the assistant incorrectly described the audit as complete without presenting the explicitly listed Bush and fragile Cloak-character concepts. Review existing cards AND unresolved Misdirection concepts before declaring set completeness.
 
 Required closure queue:
-1. Now You Don't / Trap Door: explore the paired friendly Dismiss and recovery mechanism. P086 name and discard destination are approved; cost/selection framework retained for now, balance open. Trap Door cost, type, activation, target tracking and loading/release are not locked. Inconspicuous Bush is explicitly banked for next set's Spy Leader with hand-tucking behavior.
+1. Now You Don't / Trap Door: paired mechanism is now LOCKED above; implement/test later. Inconspicuous Bush remains explicitly banked for next set's Spy Leader with hand-tucking behavior.
 2. Fragile high-Power Magical/Cloak character: present the banked survival concept and decide include/rework/table. Cloak is not a current keyword and must not be restored automatically; current Retaliate is keyword-only.
 3. P078 Pirate With a Business License ○: resolve keep/rework/table explicitly.
 4. Named-card Rabbit/Dove deck search/direct deployment: explicitly keep banked or review; not currently approved.
@@ -173,7 +187,7 @@ Reckless committed pool has 32 cards with last slot intentionally open. Stonewal
 
 ## Implementation checklist for later
 
-1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 22 Characters + 10 Actions + 2 Items = 34. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pending Pirate is not included.
+1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 22 Characters + 10 Actions + 3 Items = 35. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pending Pirate is not included.
 2. Retrieve latest remote CARD/DECK/rule state. Apply this record's final approvals, not obsolete baseline values or superseded proposals. Keep IDs stable where possible; explicitly migrate duplicate references.
 3. Update CARDS.json, DECKS.json, builder text, engine effects, AI choices, tests, rules and NOTES when authorized to implement. Do not claim functional verification before running it.
 4. Test entrance vs play wording for direct deployments; borrowed ownership and trigger controller; Hothead copying; temporary Power expiry; bounce clears board damage/buffs appropriately; optional choices; deck shortfalls; cost payment and per-slot Stash state; hidden-hand choice privacy; Poof one-use expiry; scheduled effects following source departure without retrieving a new incarnation of a card.
