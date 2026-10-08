@@ -46,21 +46,21 @@ The result is **not generated all at once**: the UI reveals each circle separate
 
 ## Deck shell
 
-**40 cards**, all 17 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 6 Actions, 6 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
+**39 cards** in the current experimental deck; editable counts in `deck.json`. 28 Characters, 5 Actions, 6 Items. The last copy of It's Basically Free Money has been removed without replacement. The card definition remains available in `cards.json` for future experiments. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
 
 ## Updated Cost curve — Slot Machine v0.3
 
-The previous low/high draft has been changed only to introduce four Cost-4 Items. Remove both copies of **Lucky Coin From a Laundromat** and two of the three copies of **It's Basically Free Money**. Add four **Slot Machine** Items.
+Four **Slot Machine** Items replaced both copies of **Lucky Coin From a Laundromat** and two copies of **It's Basically Free Money**. The final **It's Basically Free Money** copy has now been removed as well, with no replacement, leaving 39 cards.
 
 | Printed Cost | Deck copies |
 | --- | ---: |
 | 1 | 22 |
-| 2 | 1 |
+| 2 | 0 |
 | 3 | 0 |
 | 4 | 4 |
 | 5 | 7 |
 | 6 | 6 |
-| **Total** | **40** |
+| **Total** | **39** |
 
 All 28 Character copies remain unchanged. The original low/high Character philosophy remains; the Cost-4 Items are a deliberate exception to make earned Stash useful. The Slot Machine costs 4 Stash to play and an additional 2 Ready Stash whenever activated.
 
