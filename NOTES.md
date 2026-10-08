@@ -1,3 +1,15 @@
+## Spy-set concepts banked; Magician concept decisions closed — 8 October 2026
+
+Joseph explicitly BANKED BOTH remaining concepts for the next Misdirection Spy Leader:
+- **Cloak / fragile high-Power Character:** retain the stealth/survival direction for Spy, including the prior fragile high-Power concept. Cloak's exact rules, stats, cost and timing remain OPEN; it is not an active Magician card or current keyword.
+- **Declare-and-search:** evolve the earlier Rabbit/Dove search brainstorm into “declare a card, then search your deck for it.” Fits Spy intelligence/target acquisition. Exact declaration procedure, permitted card names/types, cost, destination, reveal verification, shuffle, failure handling and limits remain OPEN. No automatic direct/free deployment approved and no active Magician tutor added.
+
+Spy bank now includes **Inconspicuous Bush** (hidden hand-tucked Character concept), **Identity Thief ○** (preserved keyword-copy design), **Cloak**, and **declare-and-search**. Preserve banks separately from active rules.
+
+Current Magician active pool remains **32 locked designs: 19 Characters / 10 Actions / 3 Items**. Names, curve, five Magical assignments, Leader passive and Breaking Point have been approved. Current-set concept inclusion decisions are closed; these two are no longer unresolved Magician slots.
+
+Next: concrete 40-card testing/coverage deck and final interaction review, then separately requested implementation and verification. All revised Magician mechanics still design-only; do not claim browser/simulator parity before implementation.
+
 ## Magical eligibility — LOCKED 8 October 2026
 
 Joseph approved adding Magical to Magician's Assistant (P061), Escape Artist (P065) and Disappearing Assistant (LAB-MAG-003). Together with already-approved Rabbit (P063) and Dove (LAB-MAG-006), these are the **five Magical Characters in the current active set**.
