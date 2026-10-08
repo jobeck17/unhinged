@@ -29,6 +29,22 @@ This is an **advanced** Leader: easy comparison, difficult decisions about when 
 
 **40 cards**, all 17 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 8 Actions, 4 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
 
+## Cost curve experiment — low-or-high v0.2
+
+Playtest feedback: the first 40-card shell had too many Cost 2–4 cards and Dad was losing too many poker hands. The prototype now deliberately has **no Cost 3 or 4 cards**:
+
+| Printed Cost | Deck copies |
+| --- | ---: |
+| 1 | 22 |
+| 2 | 5 |
+| 5 | 7 |
+| 6 | 6 |
+| **Total** | **40** |
+
+That's **27 cheap cards** to build a board without gambling, and **13 expensive Characters** whose high printed Cost helps in Dad Poker. Relevant Power / Health / Trouble stats were adjusted to match the new Costs, but the Leader ability and poker rules were **not** changed.
+
+**Tradeoff to watch:** a 5- or 6-Cost card is hard to deploy without a winning pot. If expensive cards strand in hand for many Turns, keep the poker identity but consider reducing the number of Cost 6 cards rather than adding middling costs back. These are placeholder numbers, not a final balance claim.
+
 ## Counterplay and failure conditions
 
 The opponent controls their own selection of two from three and can deny the pot. Dad chooses **when** to risk a reset. Reassess if a four-Stash win makes matches nearly unwinnable, Dad can risk-free spam at 2 Stash, or poker repeatedly steals attention from Characters. Reduce the payout or increase the frequency/cost of access only after human playtesting. No automatic promotion to canon.
