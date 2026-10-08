@@ -10,7 +10,7 @@ installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both Draw 3 separate poker cards, pick 2, higher printed Cost total wins (Power breaks Cost ties). Dad wins +4 Ready Stash; Dad loses Stash down to two; complete tie discards both pairs. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
+const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins +4 Ready Stash; Dad loses Stash down to two and all his Characters are Defeated; complete tie discards both pairs. Both selected hands are revealed after play. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
 try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
@@ -171,4 +171,23 @@ function dicePanel(){
  return '<section class="dice-result" role="status" aria-live="polite"><span class="die-face" aria-label="Die rolled '+r.value+'">'+['','⚀','⚁','⚂','⚃','⚄','⚅'][r.value]+'</span><div><strong>'+esc(r.label)+' · rolled '+r.value+'</strong><p>'+esc(r.outcome)+'</p><details><summary>Dice history</summary>'+rolls.map(d=>'<p>'+esc(d.label)+' — '+d.value+' · '+esc(d.outcome)+'</p>').join('')+'</details></div></section>';
 }
 
-function pokerPanel(){const v=game?.pokerLast;if(!v)return '';if(v.folded)return '<section class="dice-result"><strong>'+esc(v.result)+'</strong></section>';return '<section class="dice-result" role="status" aria-live="polite"><strong>Rock Bottom Poker · '+esc(v.result)+'</strong><p>'+esc(v.mode||'HIGH')+' poker · Dad '+v.costDad+' Cost / '+v.powerDad+' Power · Opponent '+v.costOpp+' Cost / '+v.powerOpp+' Power</p></section>'}
+function pokerPanel(){
+ const v=game?.pokerLast;
+ if(!v)return '';
+ if(v.folded)return '<section class="poker-reveal" role="status"><strong>Rock Bottom Poker · '+esc(v.result)+'</strong></section>';
+ const reveal=(hand,owner,power)=>{
+   if(!hand)return '';
+   const costs=hand.cards.map(c=>Number(c.cost));
+   const label=owner===human?'YOUR HAND':'OPPONENT\'S HAND';
+   return '<div class="poker-reveal-hand">'+
+     '<span class="poker-reveal-label">'+label+'</span>'+
+     '<strong class="poker-reveal-type">Cost '+costs.join(' + ')+' = '+costs.reduce((a,b)=>a+b,0)+' — '+esc(hand.type)+'</strong>'+
+     '<span class="poker-reveal-cards">'+hand.cards.map(c=>esc(c.name)+' (Cost '+esc(c.cost)+')').join(' + ')+'</span>'+
+     '<span class="poker-reveal-power">Poker Power: '+esc(power)+'</span></div>';
+ };
+ return '<section class="poker-reveal" role="status" aria-live="polite">'+
+   '<div class="poker-reveal-header"><span>'+esc(v.mode||'HIGH')+' POKER · BOTH HANDS REVEALED</span>'+
+   '<strong>Rock Bottom Poker · '+esc(v.result)+'</strong></div>'+
+   '<div class="poker-reveal-grid">'+reveal(v.dadHand,v.dadPlayer,v.powerDad)+
+   reveal(v.oppHand,v.opponentPlayer,v.powerOpp)+'</div></section>';
+}
