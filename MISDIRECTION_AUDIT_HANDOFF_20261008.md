@@ -1,6 +1,6 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph locked Birthday Party Magician's The Show Must Go On passive. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph banked Cloak and declare-and-search for the next Spy set, closing Magician concept inclusion decisions. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
@@ -165,9 +165,9 @@ The existing production Misdirection Character/Action/Item entries are all accou
 
 Required closure queue:
 1. Now You Don't / Trap Door: paired mechanism is now LOCKED above; implement/test later. Inconspicuous Bush remains explicitly banked for next set's Spy Leader with hand-tucking behavior.
-2. Fragile high-Power Magical/Cloak character: present the banked survival concept and decide include/rework/table. Cloak is not a current keyword and must not be restored automatically; current Retaliate is keyword-only.
+2. Fragile high-Power/Cloak character: explicitly BANKED for next set's Spy. Exact rules remain open; not a current keyword or Magician card.
 3. P078 Heckler: disposition resolved; new Sucker Punch / Item-release Trouble design is locked. Test later.
-4. Named-card Rabbit/Dove deck search/direct deployment: explicitly keep banked or review; not currently approved.
+4. Named-card search: explicitly BANKED for next set's Spy as declare a card, then search your deck for it. Cost/destination/verification/failure rules open; no free/direct deployment approved.
 5. Whole-set Magical assignments, curve, ability distribution, copy counts and names; Leader passive and Breaking Point.
 6. Stash inspection/state-preserving exchange are recorded decisions awaiting rules/engine/UI implementation, not current production parity.
 
@@ -340,6 +340,18 @@ Joseph approved adding Magical to Magician's Assistant (P061), Escape Artist (P0
 Magical is a trait, not a keyword. Preserve existing other traits; Rabbit/Dove retain Animal. No other active Character gains Magical in this pass. Magician's Hat may target any friendly member of these five, under its locked cost-3 / Rotate plus spend 1 Stash activation. All other mechanics, names, costs, stats and the 32-card count remain unchanged. This closes the initial whole-set Hat eligibility decision; changes require an explicit later tuning decision.
 
 Remaining design closure: decide include/rework/bank for fragile high-Power/Cloak concept and explicitly bank/review named Rabbit/Dove deck search; then final interaction review and 40-card copy distribution. Leader passive, Breaking Point, names and initial curve are approved. Implementation/testing remains pending.
+
+## Spy-set concepts banked; Magician concept decisions closed — 8 October 2026
+
+Joseph explicitly BANKED BOTH remaining concepts for the next Misdirection Spy Leader:
+- **Cloak / fragile high-Power Character:** retain the stealth/survival direction for Spy, including the prior fragile high-Power concept. Cloak's exact rules, stats, cost and timing remain OPEN; it is not an active Magician card or current keyword.
+- **Declare-and-search:** evolve the earlier Rabbit/Dove search brainstorm into “declare a card, then search your deck for it.” Fits Spy intelligence/target acquisition. Exact declaration procedure, permitted card names/types, cost, destination, reveal verification, shuffle, failure handling and limits remain OPEN. No automatic direct/free deployment approved and no active Magician tutor added.
+
+Spy bank now includes **Inconspicuous Bush** (hidden hand-tucked Character concept), **Identity Thief ○** (preserved keyword-copy design), **Cloak**, and **declare-and-search**. Preserve banks separately from active rules.
+
+Current Magician active pool remains **32 locked designs: 19 Characters / 10 Actions / 3 Items**. Names, curve, five Magical assignments, Leader passive and Breaking Point have been approved. Current-set concept inclusion decisions are closed; these two are no longer unresolved Magician slots.
+
+Next: concrete 40-card testing/coverage deck and final interaction review, then separately requested implementation and verification. All revised Magician mechanics still design-only; do not claim browser/simulator parity before implementation.
 
 ## Implementation checklist for later
 
