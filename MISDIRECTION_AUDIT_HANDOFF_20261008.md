@@ -1,6 +1,6 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph accepted ten stage-magic working-name replacements for the 32-card active pool. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph locked Impatient Apprentice, Volunteer From the Audience, Big Brother, Party Mom and Encore!, including Encore's conditional Draw 2 revision. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
@@ -18,7 +18,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 - Move cards among board, hand, Stash and occasionally deck. Do not make every card explicitly reward bounce: combat and standalone utility should matter too.
 - No permanent ramp package. Only limited temporary/conditional free deployment; Pick a Card is locked, Trap Door's Dismiss-triggered storage/release is locked and Bush is now banked for the next set's Spy. Free deployment is still valuable even though it does not grow Stash.
 - No healing outside bounce. Return-to-hand on Defeat is a possible future mechanic, not locked on any card.
-- Cause Trouble on entry is locked on one character, currently plain text; keyword name remains pending. It does not grant extra actions or attacks.
+- Cause Trouble on entry has two locked designs: Opening Act's general permission and Heckler's Item-release permission. Both are plain text; keyword naming is optional/pending. It does not grant extra actions or attacks.
 - Named-card deck search/direct deployment (e.g., Rabbit or Dove, then reshuffle) is a brainstorm idea, not approved.
 - Enough distinct options and a win-pressure payoff, not endless draw/bounce loops. Avoid redundant effects. Most expensive character should justify its role; the cost-6 finisher is now locked (see below).
 - Stats below are Power / Health / Trouble. No universal Trouble bonuses; bonuses belong on specific card text.
@@ -41,13 +41,13 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P063 Rabbit | 2 | 1/2/1 | When this character enters or leaves play, draw a card. |
 | LAB-MAG-006 Dove | 2 | 2/1/0 | When this character enters or leaves play, you may deal 1 damage to an opposing character. |
 | P066 Stagehand ○ | 3 | 2/4/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
-| P076 Overeager Apprentice ○ | 1 | 1/1/1 | Hothead. Old random Stash exchange removed. |
+| P076 Impatient Apprentice | 1 | 1/1/1 | Hothead. Old random Stash exchange removed. |
 | P077 Opening Act ○ | 2 | 1/2/1 | This character may Cause Trouble the turn it enters play. Old Stash exchange removed. |
 | LAB-MAG-003 Disappearing Assistant ○ | 3 | 2/3/2 | When played, you may Dismiss another character you control. If you do, draw a card. |
-| LAB-MAG-001A/B Very Enthusiastic Volunteer ○ | 1 | 1/1/1 | When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn. Not permanent. |
+| LAB-MAG-001A/B Volunteer From the Audience | 1 | 1/1/1 | When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn. Not permanent. |
 | P065 Escape Artist | 3 | 3/2/2 | Hothead. When played, you may return another character you control to your hand. |
-| P067 School Bully ★ | 3 | 3/2/1 | Hothead, Sucker Punch. Remove Chicken. Reserve old name for another style/leader. |
-| LAB-MAG-004 Lady Who's Moving Out Again ○ | 3 | 2/3/1 | Hothead. When played, gets +2 Power this turn. When returned from play to your hand, you may return an opposing character costing 2 or less to its owner's hand. |
+| P067 Big Brother | 3 | 3/2/1 | Hothead, Sucker Punch. Remove Chicken. Reserve old name for another style/leader. |
+| LAB-MAG-004 Party Mom | 3 | 2/3/1 | Hothead. When played, gets +2 Power this turn. When returned from play to your hand, you may return an opposing character costing 2 or less to its owner's hand. |
 | P039 Sleight-of-Hand Artist ○ | 4 | 2/4/2 | When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom. Old opponent-top-card reveal removed. |
 | P064 The Mentalist | 4 | 1/3/1 | Temporary borrowed opposing-deck character; details below. |
 | P068 Card Shark ○ | 4 | 3/3/2 | When played, draw 2 cards, then discard a card. |
@@ -69,7 +69,7 @@ Joseph explicitly approved this proposal. It is a new design, named The Headline
 
 Testing flag: repeatable 5 Trouble may be strong behind reliable bounce; assess survival, setup/resource costs and board-presence sacrifice before tuning. No stat/cost change is approved.
 
-### Volunteer From the Audience — full lock
+### The Mentalist — full lock (formerly the cost-4 Volunteer From the Audience)
 
 Cost 4, 1/3/1. When played, reveal the top card of an opponent's deck. If it is a character, you may play it under your control without paying its cost. It may attack immediately but cannot Cause Trouble this turn. At the end of your turn, return it to its owner's hand if it is still in play. If you do not play the revealed card, put it on the bottom of its owner's deck.
 
@@ -95,7 +95,7 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 | P084 Presto Chango | 1 | Exchange a card in your Stash with a card in your hand. The replacement enters Stash in the same state—Ready or Rotated—as the card it replaces. This IS the initially unnamed locked exchange action, not an extra slot. |
 | P085 Ace Up My Sleeve | 3 | Draw 2 cards. Final user lock at chat ending. Old Rotated item/character bounce removed. |
 | P086 Now You Don't (formerly Switcheroo) | 2 | Choose a character you control and an opposing character with equal or lower cost. Dismiss both to their owners' discard piles. Joseph explicitly revised name and destination; paired Trap Door recovery and balance need deeper exploration. |
-| LAB-MAG-002 Ethan's JUST Being Dramatic ★ | 2 | Draw 2 cards, then discard a card. Old plain friendly bounce removed. |
+| LAB-MAG-002 Encore! | 2 | Draw a card. If a character you controlled was returned from play to your hand this turn, draw another card. |
 | P142 Vanishing Act | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
 | P090 Poof! | 1 | Choose a character you control. After it next Causes Trouble this turn, return it to your hand. Must play before Trouble. No Ready, immediate-Trouble permission, or draw added. |
 
@@ -278,6 +278,25 @@ Beer-Stained Cards remains BANKED as a future Florida Man/Reckless name/concept;
 - **Family-flavor direction:** School Bully should evoke the Birthday Kid's older brother; Lady should evoke the Birthday Kid's mom. User flags literal names as too long. Short exact names remain unapproved; preserve existing working labels/flags for now.
 - **Ability overlap reopened:** user identifies identical “Draw 2, discard 1” on Ethan (cost-2 Action) and Card Shark (cost-4 Character). Prior approval remains historical; do not claim the difference in card type resolves the concern. Review a distinct effect for Ethan; no mechanics changed by this naming update.
 - Pool stays 32 active designs; revisions not implemented in playtest.
+
+## Final naming / Encore revision — locked 8 October 2026
+
+Joseph approved all five suggestions:
+- **P076 Overeager Apprentice → Impatient Apprentice** (name locked), unchanged Cost 1, 1/1/1, Hothead.
+- **LAB-MAG-001A/B Very Enthusiastic Volunteer → Volunteer From the Audience** (name locked), unchanged Cost 1, 1/1/1, optional +1 Power this Turn to another friendly Character when it enters or returns from play to your hand. This name now belongs to this 1-cost design; P064 remains The Mentalist.
+- **P067 School Bully → Big Brother** (name locked), unchanged Cost 3, 3/2/1, Hothead/Sucker Punch. Old School Bully name remains reserved for another style as previously noted.
+- **LAB-MAG-004 Lady Who's Moving Out Again → Party Mom** (name locked), unchanged Cost 3, 2/3/1, Hothead, entry +2 Power this Turn and optional opposing <=2-cost return when returned to your hand.
+- **LAB-MAG-002 Ethan's JUST Being Dramatic → Encore!** (name and mechanics locked), Cost 2 Action: “Draw a card. If a character you controlled was returned from play to your hand this turn, draw another card.” Supersedes Draw 2/discard 1. Card Shark remains unchanged.
+
+Encore checks an earlier qualifying return during the current Turn and draws two total when satisfied, not one per returned Character. No return is performed by Encore itself; the Action is playable without a qualifying event for Draw 1. Costs paid before effects. Track event history independently of the returned card's subsequent location; no extra restrictions approved. Test cost efficiency with cheap return enablers and empty-deck threshold sequencing.
+
+Active pool remains 32 designs; character/type/cost counts unchanged. Remaining DESIGN closure:
+1. Whole-set Magical assignments, with Rabbit/Dove initial assignments already approved.
+2. Birthday Party Magician's passive review and Breaking Point design.
+3. Explicit disposition of fragile high-Power/Cloak concept and Rabbit/Dove named deck-search/direct-deployment brainstorm (not current rules/cards).
+4. Final combined ability/cost sanity review and 40-card copy distribution. Working ○ names accepted earlier can be refined optionally; no active ★ remains after this batch.
+
+IMPLEMENTATION/VERIFICATION afterwards: stable IDs for Trap Door/The Headliner, duplicate Volunteer/Lady migration, CARDS/DECK/rule/UI/engine/AI parity, tests/browser checks and balance/human playtests. Preserve Reckless/Stonewall. Still design-only; do not infer a deployment request.
 
 ## Implementation checklist for later
 
