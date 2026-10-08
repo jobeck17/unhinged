@@ -1,10 +1,10 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph locked the persistent cost-3 Trap Door and Now You See Me / Now You Don't / Trap Door machine. Bush remains banked for next set's Spy Leader. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph locked Birthday Boy's Dismiss/draw revision and Pirate's Sucker Punch / Item-release Trouble revision. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
-Character first pass, ten Actions, three Items and the new finisher are approved (35 distinct designs: 22 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. The original pending Pirate has been reviewed but still needs an explicit disposition; do not silently treat the new finisher lock as a table/rewrite lock for P078. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass, ten Actions, three Items and the new finisher are approved (36 distinct designs: 23 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
@@ -32,7 +32,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 - School Bully's name is reserved for possible HOA or Backyard Wrestler use. The Hothead/Sucker Punch mechanical slot stays in Misdirection.
 - Do the naming pass after mechanics/curve, rather than forcing flavor now.
 
-## Locked characters (22 distinct designs)
+## Locked characters (23 distinct designs)
 
 | ID / working name | Cost | P/H/T | Approved effect |
 |---|---:|---|---|
@@ -43,7 +43,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P066 Off-Duty Clown ★ | 3 | 2/4/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
 | P076 Wi-Fi Bandit ★ | 1 | 1/1/1 | Hothead. Old random Stash exchange removed. |
 | P077 Script Kiddie ★ | 2 | 1/2/1 | This character may Cause Trouble the turn it enters play. Old Stash exchange removed. |
-| LAB-MAG-003 Birthday Boy ★ | 2 | 2/1/2 | No ability. Old Stash exchange removed. |
+| LAB-MAG-003 Birthday Boy ★ | 3 | 2/3/2 | When played, you may Dismiss another character you control. If you do, draw a card. |
 | LAB-MAG-001A/B Very Enthusiastic Volunteer ○ | 1 | 1/1/1 | When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn. Not permanent. |
 | P065 Escape Artist | 3 | 3/2/2 | Hothead. When played, you may return another character you control to your hand. |
 | P067 School Bully ★ | 3 | 3/2/1 | Hothead, Sucker Punch. Remove Chicken. Reserve old name for another style/leader. |
@@ -57,8 +57,9 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P075 Pirate Radio Operator ★ | 4 | 3/3/2 | When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card. No discard. |
 | P073 IT Guy Who Quit Six Months Ago ★ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
 | P074 Identity Thief ○ | 5 | 3/4/2 | When played, may choose another character and gain one of its printed keywords while that character remains in play. No trait copying. |
+| P078 Pirate With a Business License ○ | 5 | 3/4/2 | Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item. Old opponent-choice/free-play engine removed. |
 
-Current locked character curve: cost 1 = 3; cost 2 = 5; cost 3 = 6; cost 4 = 5; cost 5 = 2; cost 6 = 1. Total 22 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
+Current locked character curve: cost 1 = 3; cost 2 = 4; cost 3 = 7; cost 4 = 5; cost 5 = 3; cost 6 = 1. Total 23 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
 
 Consolidate LAB-MAG-001A and LAB-MAG-001B into ONE Volunteer design during implementation, updating deck references. Consolidate P089 (old alternate Lady) and LAB-MAG-004 into the locked Lady design; do not preserve two conflicting cards with the same name in the active set.
 
@@ -85,7 +86,7 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 - Rabbit: repeated card draw is intended; test loop costs and avoid accidental infinite triggers.
 - Dove: damage, not permanent Health loss or placing tokens that bypass damage rules. Interacts with Absorb and damage triggers normally.
 - Identity Thief can copy Hothead and attack immediately on entry; only printed keywords, not Script Kiddie's non-keyword permission. Verify numeric keywords and source-leaving behavior in implementation.
-- P078 Pirate With a Business License ○: PENDING, not locked and not definitively tabled. Current old cost 5, 4/7/2; proposed 5, 2/4/2, once during your turn after opponent makes a choice instructed by your card, reveal top deck card; may play it free if cost <=2, otherwise bottom it. Need explicitly bottom any revealed card not played. Only audited character enabler is Pirate Radio Operator; Pick a Card and Wrong Address actions also qualify. Sparse support and another free-play effect may justify tabling or replacing it with a finisher. Two copies would each trigger once per turn and resolve sequential reveals, NOT draw 2. A once-per-turn limit is per copy unless text explicitly says shared.
+- P078 Pirate is LOCKED in the character table. Test immediate Trouble via Trap Door; Sucker Punch is not Hothead. Earlier opponent-choice/free-play versions are superseded.
 
 ## Locked actions (10)
 
@@ -151,7 +152,7 @@ The existing production Misdirection Character/Action/Item entries are all accou
 Required closure queue:
 1. Now You Don't / Trap Door: paired mechanism is now LOCKED above; implement/test later. Inconspicuous Bush remains explicitly banked for next set's Spy Leader with hand-tucking behavior.
 2. Fragile high-Power Magical/Cloak character: present the banked survival concept and decide include/rework/table. Cloak is not a current keyword and must not be restored automatically; current Retaliate is keyword-only.
-3. P078 Pirate With a Business License ○: resolve keep/rework/table explicitly.
+3. P078 Pirate With a Business License ○: disposition resolved; new Sucker Punch / Item-release Trouble design is locked. Test later.
 4. Named-card Rabbit/Dove deck search/direct deployment: explicitly keep banked or review; not currently approved.
 5. Whole-set Magical assignments, curve, ability distribution, copy counts and names; Leader passive and Breaking Point.
 6. Stash inspection/state-preserving exchange are recorded decisions awaiting rules/engine/UI implementation, not current production parity.
@@ -175,7 +176,7 @@ General inspectability changes old cards that previously granted inspection. Upd
 - Script Kiddie + Now You See Me: immediate Trouble after entry/re-entry; still rotates for each Trouble use.
 - Birthday Kid/Influencer + Blogger: arrange correct-type reveals.
 - Poof! + Rabbit/Lady: Trouble first, then exit draw or opposing bounce; no instant action permission granted by Poof! itself.
-- Wrong Address/Radio/Pick a Card + pending Pirate: opponent-choice triggers, only if this pending build-around survives audit.
+- Birthday Boy / Now You Don't + Trap Door: Dismiss a friendly Character, store it, then release it; Rabbit/Dove leave and entrance triggers apply. Pirate released from Trap Door may Cause Trouble immediately. Old opponent-choice Pirate combo is superseded.
 
 ## Prior deck status and test baseline
 
@@ -195,11 +196,20 @@ Joseph approved all three proposals:
 These explicitly supersede the earlier curve/stat locks. Approved pool remains 35 designs: 22 Characters, 10 Actions, 3 Items.
 Cost/type counts (unique designs, not deck copies): Cost 1 = 3 Characters/3 Actions/0 Items (6); Cost 2 = 5/5/1 (11); Cost 3 = 6/2/2 (10); Cost 4 = 5/0/0 (5); Cost 5 = 2/0/0 (2); Cost 6 = 1/0/0 (1).
 
-Next review support gaps without silently altering locks: Trap Door currently only catches friendly Dismiss from Now You Don't; Sucker Punch only innate School Bully plus Identity Thief copying; immediate Trouble only Script Kiddie. Existing draw/filter and entrance effects are well represented. Additional proposals remain unapproved. All Misdirection revisions still await playtest implementation and testing.
+Historical support gaps from the first curve batch are now resolved by the locked Birthday Boy and Pirate revisions below. Existing draw/filter and entrance effects remain well represented. All Misdirection revisions still await playtest implementation and testing.
+
+## Misdirection support batch — locked 8 October 2026
+
+- **LAB-MAG-003 Birthday Boy ★:** Cost **3**, **2/3/2**. “When played, you may Dismiss another character you control. If you do, draw a card.” Supersedes the locked cost-2 2/1/2 vanilla version. Keeps ★. Friendly Dismiss requires another Character; draw only if it was actually Dismissed. Dismiss is not Defeat. Rabbit/Dove leave-play triggers and Trap Door capture may apply.
+- **P078 Pirate With a Business License ○:** Cost **5**, **3/4/2**, **Sucker Punch**. “This character may Cause Trouble the turn it enters play if played from under an Item.” Replaces BOTH old production opponent-choice free-deployment and the never-approved once-per-turn proposal. Keeps ○. No Hothead granted; Sucker Punch does not permit an ordinary entry-turn Attack. Immediate Trouble permission applies only to the instance played from under an Item and still requires Ready/positive Trouble. Trap Door release qualifies; ordinary hand play, Pick a Card or borrowed-deck play does not.
+- **Pool now 36 locked designs:** 23 Characters / 10 Actions / 3 Items. Character curve costs 1–6: **3 / 4 / 7 / 5 / 3 / 1**. Unique all-card cost/type counts: 1 = 3/3/0 (6); 2 = 4/5/1 (10); 3 = 7/2/2 (11); 4 = 5/0/0 (5); 5 = 3/0/0 (3); 6 = 1/0/0 (1). Types listed Character/Action/Item. Pirate is now included; finisher remains a separate design.
+- **Support gained:** Trap Door has two friendly-Dismiss enablers (Now You Don't and Birthday Boy); two innate Sucker Punch Characters (School Bully and Pirate) plus Identity Thief copying; two immediate-Trouble designs (Script Kiddie and conditional Pirate). Birthday Boy adds optional draw support.
+- **Testing:** Birthday Boy's replay/Dismiss/draw and Trap Door return may be strong value; Pirate turns Item release into immediate Trouble. Compare actual resource/board costs and loop readiness. Character curve now crowds cost 3; review unique roles and 40-card copy counts before proposing further moves.
+- Remains design-only, not implemented/tested in playtest. Other locks/name flags, Spy/Bush bank and unresolved Cloak concept preserved.
 
 ## Implementation checklist for later
 
-1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 22 Characters + 10 Actions + 3 Items = 35. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pending Pirate is not included.
+1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 23 Characters + 10 Actions + 3 Items = 36. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pirate is now locked and included.
 2. Retrieve latest remote CARD/DECK/rule state. Apply this record's final approvals, not obsolete baseline values or superseded proposals. Keep IDs stable where possible; explicitly migrate duplicate references.
 3. Update CARDS.json, DECKS.json, builder text, engine effects, AI choices, tests, rules and NOTES when authorized to implement. Do not claim functional verification before running it.
 4. Test entrance vs play wording for direct deployments; borrowed ownership and trigger controller; Hothead copying; temporary Power expiry; bounce clears board damage/buffs appropriately; optional choices; deck shortfalls; cost payment and per-slot Stash state; hidden-hand choice privacy; Poof one-use expiry; scheduled effects following source departure without retrieving a new incarnation of a card.
@@ -208,4 +218,4 @@ Next review support gaps without silently altering locks: Trap Door currently on
 
 ## Suggested opening prompt for the new chat
 
-Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Burner Phone ★ and Do Not Look in the Hat are now tabled. Beer-Stained Cards ★ is locked at cost 2: Rotate this Item and spend 1 Stash, Draw a card. Magician's Hat is locked at cost 3: Rotate this Item and spend 1 Stash, Return a Magical Character you control to your hand. Rabbit and Dove initially gain Magical alongside Animal; review the whole set for final eligibility. New finisher is locked at cost 6, 4/5/3: first time each turn another friendly Character is returned from play to your hand, gets +2 Trouble this turn. Name/ID pending. Next review the character curve, ability distribution, Magical assignments and the pending Pirate's disposition. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
+Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Burner Phone ★ and Do Not Look in the Hat are now tabled. Beer-Stained Cards ★ is locked at cost 2: Rotate this Item and spend 1 Stash, Draw a card. Magician's Hat is locked at cost 3: Rotate this Item and spend 1 Stash, Return a Magical Character you control to your hand. Rabbit and Dove initially gain Magical alongside Animal; review the whole set for final eligibility. New finisher is locked at cost 6, 4/5/3: first time each turn another friendly Character is returned from play to your hand, gets +2 Trouble this turn. Name/ID pending. Next review the character curve, ability distribution, Magical assignments and the locked Pirate's Item-release interactions. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
