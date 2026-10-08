@@ -5,7 +5,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-13';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-14';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
@@ -170,6 +170,25 @@ async function ask(r){
      '<div class="modal-actions"><button id="chip-continue" class="primary">Deal four cards</button></div></div></div>';
    modal={kind:"choice",html};showModal(modal);
    document.querySelector("#chip-continue").onclick=()=>{close();resolve(null)};
+  });
+ }
+ if(r.pokerBluff){
+  if(r.player!==human){
+    // AI takes the redraw only with a poor initial hand, when it can afford the risk.
+    const score=game.cards && r.selected?.length===2 ?
+      pokerValue(game.cards,r.selected.map(c=>c.id),r.pokerMode) : [3,0,0];
+    return score[0]===1 && game.players[r.player].deck.length>=8 ? "redraw" : "keep";
+  }
+  return new Promise(resolve=>{
+    const html='<div class="overlay"><div class="sheet poker-sheet">'+
+      '<div class="type">ROCK BOTTOM POKER · '+esc(r.pokerMode)+'</div>'+
+      '<h2>Keep your hand or Bluff?</h2>'+
+      '<p>Your selected pair: '+r.selected.map(c=>esc(c.name)+' (Cost '+c.cost+')').join(' + ')+'</p>'+
+      '<p class="muted">Redraw (Bluff): spend 2 Ready Stash, Discard your selected two poker cards, and Draw two new poker cards. You must keep the replacements. '+r.remaining+' cards remain in your deck before the redraw.</p>'+
+      '<div class="modal-actions"><button id="keep-poker" class="primary">Keep Hand</button><button id="redraw-bluff">Redraw (Bluff) · 2 Stash</button></div></div></div>';
+    modal={kind:'choice',html};showModal(modal);
+    document.querySelector('#keep-poker').onclick=()=>{close();resolve("keep")};
+    document.querySelector('#redraw-bluff').onclick=()=>{close();resolve("redraw")};
   });
  }
  if(r.pokerCards){
