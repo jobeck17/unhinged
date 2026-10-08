@@ -1,9 +1,20 @@
-## Misdirection — Now You Don't / Trap Door exploration — 8 October 2026
+## Misdirection — three-card Trap Door machine locked — 8 October 2026
 
 - **APPROVED DESIGN REVISION — P086:** rename Switcheroo to **Now You Don't**. Keep its current cost-2/equal-or-lower opposing-character selection framework unless subsequently revised, but move both selected Characters from play to their owners' discard piles instead of returning them to hand. Use **Dismiss**, not Defeat: this preserves leave-play triggers without automatically firing Defeated abilities. This changes the prior bounce lock by Joseph's explicit instruction; no production implementation yet. Balance remains open because this is stronger opposing removal.
-- **EXPLORE DEEPER — Trap Door:** current Magician storage/recovery concept replaces Bush in this set's exploration. It brings the friendly Character sent to discard by Now You Don't back into play somehow. Exact cost, card type, loading zone, activation, timing, eligibility, and whether it tracks that specific Character or can recover other discard Characters are OPEN. Do not approve a generic resurrection engine or automatic return by inference. It is distinct from the already locked Trapdoor Assistant Character.
+- Trap Door mechanics are now locked; see the full lock below. This supersedes the earlier open mechanism and the named-action recycling proposal.
 - **BANKED NEXT SET — Inconspicuous Bush:** reserve for the next Misdirection Leader, a **Spy**, explicitly requested by Joseph. Explore loading a Character from hand face-down/tucked beneath it, with behavior changed for that set. Earlier cost-3 and release wording were assistant proposals, not locks. Do not add Bush to the current Magician pool.
 - Preserve all other Misdirection locks and naming flags. Revised cards remain documented design decisions awaiting implementation; the current full audit record is MISDIRECTION_AUDIT_HANDOFF_20261008.md.
+
+**LOCKED FOR TESTING — Trap Door (new ID pending), Cost 3 Misdirection Item:**
+
+“Whenever a character you control costing 5 or less is Dismissed, you may put that card from your discard face-down under this Item if there is no card under it.
+Rotate this Item and spend 1 Stash: Play the character under it without paying its cost.”
+
+Persistent engine; one stored Character per copy. Enters Ready under core Item rules. Capture is optional and only for a Character just Dismissed while this Item is in play; not generic discard-pile retrieval, Defeat, Sacrifice, Return or hand discard. Controller chooses among simultaneous catch triggers; the same card cannot be caught by multiple copies. Owner may inspect their stored card; source and movement came from a public Dismiss event, so face-down storage does not erase previously known information. Stored card is not in play and cannot act or trigger in-play abilities.
+
+Release empties the storage slot and triggers normal entrance/when-played effects; normal Character entry restrictions apply. No Hothead or immediate Trouble is granted by Trap Door. Rotate/payment limits activation; no extra once-per-turn cap approved. If Trap Door leaves play, its stored Character goes to its owner's discard. Release/cleanup and instance tracking require engine tests. Distinct from locked Trapdoor Assistant.
+
+**INTENDED THREE-CARD MACHINE:** Rabbit in play + established empty Ready Trap Door. Now You See Me (2): Return Rabbit, draw 1, play Dove free, optionally deal 1 damage. Now You Don't (2): Dismiss Dove and an opposing Character costing <=2; Dove may deal 1 exit damage, Trap Door may store it. Activate Trap Door (1 Stash): play Dove free, optionally deal 1 entrance damage. Total 5 Stash that turn, plus previously paid Item setup cost 3. End with Rabbit in hand and Dove in play. Dismissed enemy must actually leave; Stubborn and other prevention can alter outcomes. No claim of tested balance or implemented engine behavior.
 
 ## First Reckless / Stonewall head-to-head — 8 October 2026
 
