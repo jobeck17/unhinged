@@ -19,15 +19,14 @@
     "LAB-GD-010": 2,
     "LAB-GD-011": 1,
     "LAB-GD-012": 1,
-    "LAB-GD-013": 3,
-    "LAB-GD-014": 1,
+    "LAB-GD-013": 4,
     "LAB-GD-015": 2,
     "LAB-GD-017": 2,
     "LAB-GD-018": 4
   },
   "lab": true,
   "status": "PROTOTYPE",
-  "status_note": "Four Slot Machine Items (Cost 4) replace both Lucky Coins and two It's Basically Free Money Actions. Poker rules and slot activation remain isolated in the lab.",
+  "status_note": "Free Money removed. Fourth card-draw Action added. Four Cost-4 Slot Machine Items, 40 cards total, Characters unchanged.",
   "watchpoints": [
     "Does 4 bonus Stash break ordinary pacing?",
     "Is resetting to two Stash punishing but recoverable?",
