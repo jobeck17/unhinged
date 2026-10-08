@@ -10,6 +10,9 @@ assert.equal(labDeck.leader,"Gambling Dad");
 assert.equal(labDeck.styles[0],"Gambler");
 assert.equal(Object.values(labDeck.cards).reduce((a,b)=>a+b,0),40);
 assert.equal(labCards.cards.length,17);
+const curve=Object.fromEntries([1,2,3,4,5,6].map(cost=>[cost,labCards.cards.filter(c=>c.cost===cost).reduce((n,c)=>n+labDeck.cards[c.id],0)]));
+assert.deepEqual(curve,{1:22,2:5,3:0,4:0,5:7,6:6},"Gambling Dad must have a polarized low/high Cost curve");
+
 assert(labCards.cards.every(c=>c.id.startsWith("LAB-GD-")));
 assert(labCards.cards.every(c=>c.style==="Gambler"));
 assert.equal(labCards.cards.filter(c=>c.type==="Character").reduce((n,c)=>n+labDeck.cards[c.id],0),28);
@@ -26,7 +29,7 @@ const create=()=>{
   g.turn=0;g.round=2;g.players[0].pokerUsed=false;
   return g;
 };
-assert.deepEqual(pokerScore(Object.fromEntries(pool.cards.map(c=>[c.id,c])),["LAB-GD-011","LAB-GD-015"]),[7,4],"Action Power is zero");
+assert.deepEqual(pokerScore(Object.fromEntries(pool.cards.map(c=>[c.id,c])),["LAB-GD-011","LAB-GD-015"]),[7,5],"Action Power is zero");
 assert.equal(compareScores([6,7],[6,4]),1,"Power breaks Cost tie");
 assert.equal(compareScores([5,9],[6,0]),-1,"Cost outweighs Power");
 
@@ -66,4 +69,4 @@ assert.equal(tie.players[0].stash.length,3,"Tie does not reset Stash");
 assert.equal(tie.players[0].discard.length,2,"Dad's selected pair is discarded on tie");
 assert.equal(tie.players[1].discard.length,2,"Opponent's selected pair is discarded on tie");
 assert(!tie.canPoker(0));
-console.log("Gambling Dad lab: 40-card shell, scoring, win, loss, tie and ownership assertions passed");
+console.log("Gambling Dad lab: 40-card shell, polarized Cost curve, scoring, win, loss, tie and ownership assertions passed");
