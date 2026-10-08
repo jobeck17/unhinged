@@ -245,7 +245,7 @@ async function aiTurn(){
    else throw Error('Unknown opponent action: '+m.type);
    render();
   }
-  if(game.turn!==human&&game.winner===null)throw Error('Opponent AI action limit reached');
+  if(game.turn!==human&&game.winner===null){game.say('Opponent AI reached action limit; ending Turn.');await game.pass()}
  }catch(e){
   console.error('Opponent AI turn failed',e);
   // Prevent a failed lab AI decision from permanently trapping the human.
