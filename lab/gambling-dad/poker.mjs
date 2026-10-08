@@ -150,7 +150,18 @@ export function installGamblingDad(Game, LEADERS) {
       this.players[opp].discard.push(...chosen[opp]);
       this.say(prefix+"A complete TIE. Both pairs discarded; no payout.");
     }
-    this.pokerLast={mode:pokerMode,rankDad:scores[p][0],rankOpp:scores[opp][0],costDad:scores[p][1],powerDad:scores[p][2],costOpp:scores[opp][1],powerOpp:scores[opp][2],result:result>0?"WIN · +4 Stash":result<0?"LOSS · Stash down to 2; board cleared":"TIE · no payout"};
+    const revealHand=who=>({
+      type:pokerHandType(this.cards,chosen[who]),
+      cards:chosen[who].map(id=>({name:this.card(id).name,cost:Number(this.card(id).cost)}))
+    });
+    this.pokerLast={
+      mode:pokerMode,dadPlayer:p,opponentPlayer:opp,
+      dadHand:revealHand(p),oppHand:revealHand(opp),
+      rankDad:scores[p][0],rankOpp:scores[opp][0],
+      costDad:scores[p][1],powerDad:scores[p][2],
+      costOpp:scores[opp][1],powerOpp:scores[opp][2],
+      result:result>0?"WIN · +4 Stash":result<0?"LOSS · Stash down to 2; board cleared":"TIE · no payout"
+    };
     this.update?.();
     return result;
   };
