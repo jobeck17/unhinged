@@ -40,11 +40,11 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P061 Magician's Assistant | 2 | 2/2/1 | When played, you may return another character you control to your hand. |
 | P063 Rabbit | 2 | 1/2/1 | When this character enters or leaves play, draw a card. |
 | LAB-MAG-006 Dove | 2 | 2/1/0 | When this character enters or leaves play, you may deal 1 damage to an opposing character. |
-| P066 Off-Duty Clown ★ | 2 | 2/3/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
-| P076 Wi-Fi Bandit ★ | 2 | 2/2/1 | Hothead. Old random Stash exchange removed. |
+| P066 Off-Duty Clown ★ | 3 | 2/4/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
+| P076 Wi-Fi Bandit ★ | 1 | 1/1/1 | Hothead. Old random Stash exchange removed. |
 | P077 Script Kiddie ★ | 2 | 1/2/1 | This character may Cause Trouble the turn it enters play. Old Stash exchange removed. |
 | LAB-MAG-003 Birthday Boy ★ | 2 | 2/1/2 | No ability. Old Stash exchange removed. |
-| LAB-MAG-001A/B Very Enthusiastic Volunteer ○ | 2 | 1/2/1 | When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn. Not permanent. |
+| LAB-MAG-001A/B Very Enthusiastic Volunteer ○ | 1 | 1/1/1 | When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn. Not permanent. |
 | P065 Escape Artist | 3 | 3/2/2 | Hothead. When played, you may return another character you control to your hand. |
 | P067 School Bully ★ | 3 | 3/2/1 | Hothead, Sucker Punch. Remove Chicken. Reserve old name for another style/leader. |
 | P071 Trapdoor Assistant | 3 | 1/2/1 | When played, you may return an opposing character costing 3 or less to its owner's hand. |
@@ -58,7 +58,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P073 IT Guy Who Quit Six Months Ago ★ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
 | P074 Identity Thief ○ | 5 | 3/4/2 | When played, may choose another character and gain one of its printed keywords while that character remains in play. No trait copying. |
 
-Current locked character curve: cost 1 = 1; cost 2 = 8; cost 3 = 5; cost 4 = 5; cost 5 = 2; cost 6 = 1. Total 22 (including the new finisher). Eight 2-cost designs is flagged as crowded; do not cut them arbitrarily before the complete curve review. A playable deck's copy distribution matters as well as unique designs.
+Current locked character curve: cost 1 = 3; cost 2 = 5; cost 3 = 6; cost 4 = 5; cost 5 = 2; cost 6 = 1. Total 22 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
 
 Consolidate LAB-MAG-001A and LAB-MAG-001B into ONE Volunteer design during implementation, updating deck references. Consolidate P089 (old alternate Lady) and LAB-MAG-004 into the locked Lady design; do not preserve two conflicting cards with the same name in the active set.
 
@@ -184,6 +184,18 @@ Reckless/Florida Man and Stonewall/HOA are already implemented, committed and br
 400 production-engine games (100 seeds x both seats x both first players): HOA 224 wins (56.4% of 397 completed), Florida 173 (43.6%), 3 unresolved at 60-round cap. Mean 9.6 rounds, median 9; first player won 48.1%. Unresolved games had both decks empty and no characters left. No new tie rule introduced. Simple heuristic AI, coverage decks, no mulligans, pending shared Last Straw effects; NOT a final balance verdict. Reports: HEAD_TO_HEAD_20261008.md/json; reproducible runner: web/headtohead.sim.mjs.
 
 Reckless committed pool has 32 cards with last slot intentionally open. Stonewall count is 33 approved designs (21 characters, 9 actions, 3 items), not 32; preserve user locks and revisit whether a card should be tabled instead of silently deleting one. Standard 40-card decks and regression checks already exist. New Misdirection simulations should wait until its actual revised mechanics are implemented.
+
+## Misdirection curve batch — locked 8 October 2026
+
+Joseph approved all three proposals:
+- **P076 Wi-Fi Bandit ★:** Cost **1**, **1/1/1**, Hothead.
+- **LAB-MAG-001A/B Very Enthusiastic Volunteer ○:** Cost **1**, **1/1/1**, unchanged optional +1 Power this Turn to another friendly Character on entrance or return from play to your hand. Consolidate duplicate IDs later.
+- **P066 Off-Duty Clown ★:** Cost **3**, **2/4/1**, unchanged draw 1/discard 1 whenever another friendly Character returns from play to your hand.
+
+These explicitly supersede the earlier curve/stat locks. Approved pool remains 35 designs: 22 Characters, 10 Actions, 3 Items.
+Cost/type counts (unique designs, not deck copies): Cost 1 = 3 Characters/3 Actions/0 Items (6); Cost 2 = 5/5/1 (11); Cost 3 = 6/2/2 (10); Cost 4 = 5/0/0 (5); Cost 5 = 2/0/0 (2); Cost 6 = 1/0/0 (1).
+
+Next review support gaps without silently altering locks: Trap Door currently only catches friendly Dismiss from Now You Don't; Sucker Punch only innate School Bully plus Identity Thief copying; immediate Trouble only Script Kiddie. Existing draw/filter and entrance effects are well represented. Additional proposals remain unapproved. All Misdirection revisions still await playtest implementation and testing.
 
 ## Implementation checklist for later
 
