@@ -40,19 +40,19 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P061 Magician's Assistant | 2 | 2/2/1 | When played, you may return another character you control to your hand. |
 | P063 Rabbit | 2 | 1/2/1 | When this character enters or leaves play, draw a card. |
 | LAB-MAG-006 Dove | 2 | 2/1/0 | When this character enters or leaves play, you may deal 1 damage to an opposing character. |
-| P066 Stagehand ○ | 3 | 2/4/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
+| P066 Stagehand | 3 | 2/4/1 | Whenever another character you control is returned from play to your hand, draw a card, then discard a card. |
 | P076 Impatient Apprentice | 1 | 1/1/1 | Hothead. Old random Stash exchange removed. |
-| P077 Opening Act ○ | 2 | 1/2/1 | This character may Cause Trouble the turn it enters play. Old Stash exchange removed. |
-| LAB-MAG-003 Disappearing Assistant ○ | 3 | 2/3/2 | When played, you may Dismiss another character you control. If you do, draw a card. |
+| P077 Opening Act | 2 | 1/2/1 | This character may Cause Trouble the turn it enters play. Old Stash exchange removed. |
+| LAB-MAG-003 Disappearing Assistant | 3 | 2/3/2 | When played, you may Dismiss another character you control. If you do, draw a card. |
 | LAB-MAG-001A/B Volunteer From the Audience | 1 | 1/1/1 | When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn. Not permanent. |
 | P065 Escape Artist | 3 | 3/2/2 | Hothead. When played, you may return another character you control to your hand. |
 | P067 Big Brother | 3 | 3/2/1 | Hothead, Sucker Punch. Remove Chicken. Reserve old name for another style/leader. |
 | LAB-MAG-004 Party Mom | 3 | 2/3/1 | Hothead. When played, gets +2 Power this turn. When returned from play to your hand, you may return an opposing character costing 2 or less to its owner's hand. |
-| P039 Sleight-of-Hand Artist ○ | 4 | 2/4/2 | When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom. Old opponent-top-card reveal removed. |
+| P039 Card Counter | 4 | 2/4/2 | When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom. Old opponent-top-card reveal removed. |
 | P064 The Mentalist | 4 | 1/3/1 | Temporary borrowed opposing-deck character; details below. |
-| P068 Card Shark ○ | 4 | 3/3/2 | When played, draw 2 cards, then discard a card. |
-| P075 Street Magician ○ | 4 | 3/3/2 | When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card. No discard. |
-| P073 Quick-Change Artist ○ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
+| P068 Card Shark | 4 | 3/3/2 | When played, draw 2 cards, then discard a card. |
+| P075 Street Magician | 4 | 3/3/2 | When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card. No discard. |
+| P073 Quick-Change Artist | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
 | P078 Heckler | 5 | 3/4/2 | Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item. Old opponent-choice/free-play engine removed. |
 
 Current active locked character curve: cost 1 = 3; cost 2 = 4; cost 3 = 5; cost 4 = 4; cost 5 = 2; cost 6 = 1. Total 19 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
@@ -259,13 +259,13 @@ Joseph approved all ten suggested replacements as current working names, explici
 | P088 | Beer-Stained Cards | Marked Deck |
 | P142 | I Want to Speak to Your Manager | Vanishing Act |
 | P076 | Wi-Fi Bandit | Overeager Apprentice ○ |
-| P077 | Script Kiddie | Opening Act ○ |
-| P066 | Off-Duty Clown | Stagehand ○ |
-| LAB-MAG-003 | Birthday Boy | Disappearing Assistant ○ |
+| P077 | Script Kiddie | Opening Act |
+| P066 | Off-Duty Clown | Stagehand |
+| LAB-MAG-003 | Birthday Boy | Disappearing Assistant |
 | P039 | Social Media Influencer | Sleight-of-Hand Artist ○ |
-| P068 | Social Media Grifter | Card Shark ○ |
-| P075 | Pirate Radio Operator | Street Magician ○ |
-| P073 | IT Guy Who Quit Six Months Ago | Quick-Change Artist ○ |
+| P068 | Social Media Grifter | Card Shark |
+| P075 | Pirate Radio Operator | Street Magician |
+| P073 | IT Guy Who Quit Six Months Ago | Quick-Change Artist |
 
 Beer-Stained Cards remains BANKED as a future Florida Man/Reckless name/concept; P088's current Misdirection draw-engine ability stays on Marked Deck. No style transfer. Previously approved Presto Chango, Ace Up My Sleeve, The Headliner, Heckler, The Mentalist and Now You Don't remain unchanged. Other name flags (including School Bully ★, Lady ○ and Enthusiastic Volunteer ○) remain intact. Pool stays 32 active designs; production/playtest implementation remains pending.
 
@@ -297,6 +297,14 @@ Active pool remains 32 designs; character/type/cost counts unchanged. Remaining 
 4. Final combined ability/cost sanity review and 40-card copy distribution. Working ○ names accepted earlier can be refined optionally; no active ★ remains after this batch.
 
 IMPLEMENTATION/VERIFICATION afterwards: stable IDs for Trap Door/The Headliner, duplicate Volunteer/Lady migration, CARDS/DECK/rule/UI/engine/AI parity, tests/browser checks and balance/human playtests. Preserve Reckless/Stonewall. Still design-only; do not infer a deployment request.
+
+## Card Counter and Leader passive review — 8 October 2026
+
+- **P039 Sleight-of-Hand Artist → Card Counter:** name LOCKED by Joseph. Unchanged Cost 4, 2/4/2; played top-3 split into hand/top/bottom.
+- Joseph accepted the other outstanding working names in the preceding message: Opening Act, Stagehand, Disappearing Assistant, Card Shark, Street Magician and Quick-Change Artist. Their name-review flags are resolved for this pass; no mechanical changes.
+- **CURRENT production Birthday Party Magician passive**, verified in web/engine.js: “Ace Up My Sleeve: Once during your Turn, when your Character is Returned to hand, Ready 1 Stash.” This is current browser text/behavior; NOT the physical sneaking IDEA in lab/LEADER_PASSIVES.md.
+- The passive's Ace Up My Sleeve title now overlaps the approved draw Action name. Passive title/revision remains unapproved until Joseph decides; no Leader effect changed in production.
+- Leader passive and Breaking Point review remains open. All 32 active card names are now accepted; remaining work is trait/Leader/concept/deck review followed by implementation/testing.
 
 ## Implementation checklist for later
 
