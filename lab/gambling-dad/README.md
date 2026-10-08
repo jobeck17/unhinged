@@ -8,13 +8,13 @@
 
 **Gambling Dad** — Gambler · 20 Composure
 
-**99 GAMBLERS QUIT BEFORE THEY WIN BIG!** — Once during your Turn, you may play **Dad Poker**. You may Stash normally.
+**99 GAMBLERS QUIT BEFORE THEY WIN BIG!** — Once during your Turn, you may play **Not So Full House**. You may Stash normally.
 
 This is an **advanced** Leader: easy comparison, difficult decisions about when to risk Stash and which cards to commit.
 
-## Dad Poker — first prototype
+## Not So Full House — first prototype
 
-1. Gambling Dad may start Dad Poker once on his own Turn only if both decks have at least three cards.
+1. Gambling Dad may start Not So Full House once on his own Turn only if both decks have at least three cards.
 2. Each player sets aside their normal hand (the browser game leaves those hands untouched). Each draws three separate poker cards from their *own deck*.
 3. Each secretly chooses exactly two of their three poker cards; the third returns to the bottom of its owner's deck.
 4. Reveal both pairs. Add **printed Cost** first. Highest Cost total wins. Only if tied, add **printed Power** (Action/Item Power = 0). Higher Power total wins the Cost tie.
@@ -41,7 +41,7 @@ Playtest feedback: the first 40-card shell had too many Cost 2–4 cards and Dad
 | 6 | 6 |
 | **Total** | **40** |
 
-That's **27 cheap cards** to build a board without gambling, and **13 expensive Characters** whose high printed Cost helps in Dad Poker. Relevant Power / Health / Trouble stats were adjusted to match the new Costs, but the Leader ability and poker rules were **not** changed.
+That's **27 cheap cards** to build a board without gambling, and **13 expensive Characters** whose high printed Cost helps in Not So Full House. Relevant Power / Health / Trouble stats were adjusted to match the new Costs, but the Leader ability and poker rules were **not** changed.
 
 **Tradeoff to watch:** a 5- or 6-Cost card is hard to deploy without a winning pot. If expensive cards strand in hand for many Turns, keep the poker identity but consider reducing the number of Cost 6 cards rather than adding middling costs back. These are placeholder numbers, not a final balance claim.
 
