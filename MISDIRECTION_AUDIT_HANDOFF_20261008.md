@@ -1,10 +1,10 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph approved Magician's Hat at cost 3 with Magical targeting and agreed to Rabbit/Dove as initial trait assignments, subject to whole-set review. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph locked the new cost-6 finisher (4/5/3, first friendly return each turn grants +2 Trouble that turn). This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
-Character first pass, ten Actions and two Items are approved (33 distinct designs). Burner Phone ★ and Do Not Look in the Hat are TABLED. Next revisit the finisher, character curve and ability distribution, and review Magical eligibility across the entire set. After that revisit the character curve, ability distribution, and create a real finisher; finally rename cards as one coherent theme pass. Work in batches of three: current card, proposed update, role/combo and any testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass, ten Actions, two Items and the new finisher are approved (34 distinct designs: 22 Characters, 10 Actions, 2 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. The original pending Pirate has been reviewed but still needs an explicit disposition; do not silently treat the new finisher lock as a table/rewrite lock for P078. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
@@ -20,7 +20,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 - No healing outside bounce. Return-to-hand on Defeat is a possible future mechanic, not locked on any card.
 - Cause Trouble on entry is locked on one character, currently plain text; keyword name remains pending. It does not grant extra actions or attacks.
 - Named-card deck search/direct deployment (e.g., Rabbit or Dove, then reshuffle) is a brainstorm idea, not approved.
-- Enough distinct options and a win-pressure payoff, not endless draw/bounce loops. Avoid redundant effects. Most expensive character should justify its role; a finisher is still missing.
+- Enough distinct options and a win-pressure payoff, not endless draw/bounce loops. Avoid redundant effects. Most expensive character should justify its role; the cost-6 finisher is now locked (see below).
 - Stats below are Power / Health / Trouble. No universal Trouble bonuses; bonuses belong on specific card text.
 - Global Responses were previously scrapped. Do not reintroduce them.
 
@@ -32,7 +32,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 - School Bully's name is reserved for possible HOA or Backyard Wrestler use. The Hothead/Sucker Punch mechanical slot stays in Misdirection.
 - Do the naming pass after mechanics/curve, rather than forcing flavor now.
 
-## Locked characters (21 distinct designs)
+## Locked characters (22 distinct designs)
 
 | ID / working name | Cost | P/H/T | Approved effect |
 |---|---:|---|---|
@@ -58,9 +58,19 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P073 IT Guy Who Quit Six Months Ago ★ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
 | P074 Identity Thief ○ | 5 | 3/4/2 | When played, may choose another character and gain one of its printed keywords while that character remains in play. No trait copying. |
 
-Current locked character curve: cost 1 = 1; cost 2 = 8; cost 3 = 5; cost 4 = 5; cost 5 = 2. Total 21. Eight 2-cost designs is flagged as crowded; do not cut them arbitrarily before the complete curve review. A playable deck's copy distribution matters as well as unique designs.
+Current locked character curve: cost 1 = 1; cost 2 = 8; cost 3 = 5; cost 4 = 5; cost 5 = 2; cost 6 = 1. Total 22 (including the new finisher). Eight 2-cost designs is flagged as crowded; do not cut them arbitrarily before the complete curve review. A playable deck's copy distribution matters as well as unique designs.
 
 Consolidate LAB-MAG-001A and LAB-MAG-001B into ONE Volunteer design during implementation, updating deck references. Consolidate P089 (old alternate Lady) and LAB-MAG-004 into the locked Lady design; do not preserve two conflicting cards with the same name in the active set.
+
+### New finisher — LOCKED, name and ID pending
+
+Cost 6, Power / Health / Trouble = 4 / 5 / 3.
+
+“The first time each turn another character you control is returned from play to your hand, this character gets +2 Trouble this turn.”
+
+Joseph explicitly approved this proposal. It is a new design, not yet assigned a stable ID; do not overwrite P078 without a separate decision. No Hothead or immediate Trouble permission is granted. It must be in play to see the return; earlier returns before it enters do not retroactively grant the bonus. Bonus is temporary and capped at +2 per turn per instance, regardless of additional returns. Separate copies each trigger; leaving/re-entering creates a new instance under core rules. Base Trouble 3 becomes 5 after a qualifying return. Magical eligibility remains open for the whole-set review.
+
+Testing flag: repeatable 5 Trouble may be strong behind reliable bounce; assess survival, setup/resource costs and board-presence sacrifice before tuning. No stat/cost change is approved.
 
 ### Volunteer From the Audience — full lock
 
@@ -149,7 +159,7 @@ Reckless committed pool has 32 cards with last slot intentionally open. Stonewal
 
 ## Implementation checklist for later
 
-1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 21 Characters + 10 Actions + 2 Items = 33. Finisher and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pending Pirate is not included.
+1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 22 Characters + 10 Actions + 2 Items = 34. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pending Pirate is not included.
 2. Retrieve latest remote CARD/DECK/rule state. Apply this record's final approvals, not obsolete baseline values or superseded proposals. Keep IDs stable where possible; explicitly migrate duplicate references.
 3. Update CARDS.json, DECKS.json, builder text, engine effects, AI choices, tests, rules and NOTES when authorized to implement. Do not claim functional verification before running it.
 4. Test entrance vs play wording for direct deployments; borrowed ownership and trigger controller; Hothead copying; temporary Power expiry; bounce clears board damage/buffs appropriately; optional choices; deck shortfalls; cost payment and per-slot Stash state; hidden-hand choice privacy; Poof one-use expiry; scheduled effects following source departure without retrieving a new incarnation of a card.
@@ -158,4 +168,4 @@ Reckless committed pool has 32 cards with last slot intentionally open. Stonewal
 
 ## Suggested opening prompt for the new chat
 
-Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Burner Phone ★ and Do Not Look in the Hat are now tabled. Beer-Stained Cards ★ is locked at cost 2: Rotate this Item and spend 1 Stash, Draw a card. Magician's Hat is locked at cost 3: Rotate this Item and spend 1 Stash, Return a Magical Character you control to your hand. Rabbit and Dove initially gain Magical alongside Animal; review the whole set for final eligibility. Next revisit a finisher, the character curve and ability distribution. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
+Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Burner Phone ★ and Do Not Look in the Hat are now tabled. Beer-Stained Cards ★ is locked at cost 2: Rotate this Item and spend 1 Stash, Draw a card. Magician's Hat is locked at cost 3: Rotate this Item and spend 1 Stash, Return a Magical Character you control to your hand. Rabbit and Dove initially gain Magical alongside Animal; review the whole set for final eligibility. New finisher is locked at cost 6, 4/5/3: first time each turn another friendly Character is returned from play to your hand, gets +2 Trouble this turn. Name/ID pending. Next review the character curve, ability distribution, Magical assignments and the pending Pirate's disposition. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
