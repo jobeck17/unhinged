@@ -90,8 +90,24 @@ async function run(mode,dadDraw,oppDraw,decision="play",selection=[0,1]){
  assert(requests.some(r=>r.pokerFold));
  return {g,outcome,requests};
 }
+function assertRevealedHands(game,mode){
+ const result=game.pokerLast;
+ assert.equal(result.mode,mode,"Reveal always includes the actual chip mode");
+ assert.equal(result.dadPlayer,0);
+ assert.equal(result.opponentPlayer,1);
+ for(const [role,who] of [["dadHand","Dad"],["oppHand","Opponent"]]){
+  const hand=result[role];
+  assert.equal(hand.cards.length,2,who+" reveals exactly two committed cards");
+  assert(hand.cards.every(c=>typeof c.name==="string"&&Number.isFinite(c.cost)),who+" reveals card names and numeric Costs");
+  const [a,b]=hand.cards.map(c=>c.cost);
+  const expectedType=a===b?"Matching Pair":Math.abs(a-b)===1?"Straight":"High Roller";
+  assert.equal(hand.type,expectedType,who+" hand uses general Cost classification");
+  assert.equal(a+b,result[who==="Dad"?"costDad":"costOpp"],who+" revealed Costs match actual scored total");
+ }
+}
 let win=await run("HIGH",[six,six,one,one],[one,five,two,one]);
 assert.equal(win.outcome,1);
+assertRevealedHands(win.g,"HIGH");
 assert.equal(win.g.players[0].stash.length,4);
 assert.equal(win.g.players[0].fuel,4);
 assert.equal(win.g.players[0].deck.length,2);
@@ -100,16 +116,28 @@ assert(!win.g.canPoker(0));
 let lose=await run("HIGH",[one,one,five,six],[six,six,one,two]);
 lose.g.players[0].stash; // A loss should never award Stash.
 assert.equal(lose.outcome,-1);
+assertRevealedHands(lose.g,"HIGH");
 assert.equal(lose.g.players[0].stash.length,0);
 let low=await run("LOW",[one,six,six,six],[six,six,six,six]);
 assert.equal(low.outcome,1,"LOW rewards nonconsecutive High Roller over all-six Pair");
+assertRevealedHands(low.g,"LOW");
+assert.equal(low.g.pokerLast.dadHand.type,"High Roller");
+assert.equal(low.g.pokerLast.oppHand.type,"Matching Pair");
 let fold=await run("HIGH",[one,one,five,six],[six,six,one,two],"fold");
 assert.equal(fold.outcome,"fold");
+assert.equal(fold.g.pokerLast.folded,true);
+assert.equal(fold.g.pokerLast.dadHand,undefined,"A fold reveals no hands");
 assert.equal(fold.g.players[0].deck.length,4);
 assert.equal(fold.g.players[1].deck.length,4);
 assert.equal(fold.requests.filter(r=>r.pokerCards).length,0);
 assert(!fold.g.canPoker(0));
 let manual=await run("HIGH",[one,six,two,five],[one,one,one,one],"play",[0,2]);
 assert.equal(manual.requests.filter(r=>r.pokerCards).length,2);
+assertRevealedHands(manual.g,"HIGH");
 assert.deepEqual(manual.g.players[0].deck,[six,five],"Unselected two cards return to bottom of deck");
-console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card hand ranks, selected pair, win, loss, fold, draw count, and lab isolation");
+let tie=await run("HIGH",[one,one,one,one],[one,one,one,one]);
+assert.equal(tie.outcome,0,"Identical Matching Pairs tie");
+assertRevealedHands(tie.g,"HIGH");
+assert.equal(tie.g.pokerLast.dadHand.type,"Matching Pair");
+assert.equal(tie.g.pokerLast.oppHand.type,"Matching Pair");
+console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card picker, revealed both hands on wins/losses/ties, fold, ownership and lab isolation");
