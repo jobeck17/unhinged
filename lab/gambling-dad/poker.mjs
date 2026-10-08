@@ -59,13 +59,24 @@ export function installGamblingDad(Game, LEADERS) {
         const ids=pair.map(i=>hands[who][i]),score=pokerScore(this.cards,ids);
         return {pair,ids,score,label:ids.map(id=>this.card(id).name+" (Cost "+this.card(id).cost+", Power "+(this.card(id).power||0)+")").join(" + ")+" — "+score[0]+" Cost / "+score[1]+" Power"};
       });
-      // The AI chooses the first (best) option, while humans can choose any pair.
+      // Offer THREE individual cards; the player chooses exactly TWO.
+      // The best pair is an AI recommendation only, not a prebuilt human choice.
       possibilities.sort((a,b)=>compareScores(b.score,a.score));
-      const selected=await this.choose(who,"Dad Poker: commit exactly TWO of your THREE cards",possibilities.map((entry,i)=>({label:entry.label,value:i})));
-      const entry=possibilities[selected??0];
-      chosen[who]=entry.ids;
-      scores[who]=entry.score;
-      const leftover=hands[who].findIndex((_,i)=>!entry.pair.includes(i));
+      const indices=await this.ask({
+        player:who,title:"Dad Poker: choose TWO of your THREE cards",
+        mandatory:true,pokerCards:true,multi:true,min:2,max:2,
+        options:hands[who].map((id,i)=>({
+          value:i,cardId:id,
+          label:this.card(id).name+" · Cost "+this.card(id).cost+" · Power "+(this.card(id).type==="Character"?(this.card(id).power||0):0)
+        })),
+        recommendedPair:possibilities[0].pair
+      });
+      if(!Array.isArray(indices)||indices.length!==2||new Set(indices).size!==2||
+         indices.some(i=>!Number.isInteger(i)||i<0||i>2))
+        throw new Error("Dad Poker requires exactly two different cards from the three drawn.");
+      chosen[who]=indices.map(i=>hands[who][i]);
+      scores[who]=pokerScore(this.cards,chosen[who]);
+      const leftover=[0,1,2].find(i=>!indices.includes(i));
       this.players[who].deck.unshift(hands[who][leftover]);
     }
     const bonus=this.players[p].board.filter(x=>x.id==="LAB-GD-016").length;
