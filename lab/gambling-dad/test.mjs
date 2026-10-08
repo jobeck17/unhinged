@@ -30,6 +30,31 @@ assert.equal(handRank(catalog,[one,six],"LOW"),3);
 assert.equal(compareScores(score(one,one,"HIGH"),score(five,six,"HIGH"),"HIGH"),1,"Pair outranks Straight even at low Cost");
 assert.equal(compareScores(score(one,six,"LOW"),score(six,six,"LOW"),"LOW"),1,"High Roller outranks Pair in LOW");
 assert.equal(compareScores(score(one,one,"LOW"),score(six,six,"LOW"),"LOW"),1,"LOW favors lower Cost within same rank");
+ 
+// Exhaustive generalized classification: every printed Cost pair over the
+// full supported range, plus future higher Costs, must behave identically
+// regardless of chip mode. No named cards or specific pairs are special-cased.
+const maxPrintedCost=Math.max(...Object.values(catalog).map(c=>Number(c.cost)||0));
+const testCosts=Array.from({length:Math.max(10,maxPrintedCost+2)+1},(_,i)=>i);
+const costCards=Object.fromEntries(testCosts.map(cost=>["cost-"+cost,{cost,type:"Character",power:0}]));
+let checked=0;
+for(const a of testCosts)for(const b of testCosts){
+ const ids=["cost-"+a,"cost-"+b];
+ const kind=a===b?"Matching Pair":Math.abs(a-b)===1?"Straight":"High Roller";
+ assert.equal(pokerHandType(costCards,ids),kind);
+ assert.equal(pokerHandType(costCards,[...ids].reverse()),kind,"hand identity must be order-independent");
+ for(const mode of ["HIGH","LOW"]){
+  const expectedRank=(mode==="HIGH"
+   ?{"Matching Pair":3,"Straight":2,"High Roller":1}
+   :{"Matching Pair":1,"Straight":2,"High Roller":3})[kind];
+  assert.equal(handRank(costCards,ids,mode),expectedRank);
+  const actual=pokerValue(costCards,ids,mode);
+  assert.deepEqual(actual,[expectedRank,a+b,0],"score includes rank, combined printed Cost, printed Power");
+  checked++;
+ }
+}
+assert(checked>=200,"all combinations were checked");
+
 function setup(ask){
  const g=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},ask,()=>{},{firstPlayer:0});
  g.turn=0;g.round=2;g.players[0].pokerUsed=false;
@@ -41,7 +66,17 @@ async function run(mode,dadDraw,oppDraw,decision="play",selection=[0,1]){
   requests.push(r);
   if(r.pokerChip)return null;
   if(r.pokerFold)return decision;
-  if(r.pokerCards){assert.equal(r.pokerMode,mode,"Picker receives actual chip mode");assert.equal(r.options.length,4);return r.player===0?selection:r.recommendedPair;}
+  if(r.pokerCards){
+   assert.equal(r.pokerMode,mode,"Picker receives actual chip mode");
+   assert.equal(r.options.length,4,"Always show four individually selectable cards");
+   const ids=r.options.map(o=>o.cardId);
+   const pairs=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
+   const scores=pairs.map(pair=>pokerValue(catalog,pair.map(i=>ids[i]),mode));
+   const selected=pairs.findIndex(pair=>pair.every((i,k)=>i===r.recommendedPair[k]));
+   assert(selected>=0,"AI recommendation must be one of the six two-card combinations");
+   assert(scores.every(other=>compareScores(scores[selected],other,mode)>=0),"AI recommends a globally strongest available hand");
+   return r.player===0?selection:r.recommendedPair;
+  }
   return r.options?.[0]?.value??null;
  });
  g.players[0].deck=[...dadDraw].reverse();
@@ -77,4 +112,4 @@ assert(!fold.g.canPoker(0));
 let manual=await run("HIGH",[one,six,two,five],[one,one,one,one],"play",[0,2]);
 assert.equal(manual.requests.filter(r=>r.pokerCards).length,2);
 assert.deepEqual(manual.g.players[0].deck,[six,five],"Unselected two cards return to bottom of deck");
-console.log("PASS: Four-card hand ranks HIGH/LOW, selected pair, opponent AI, win, loss, fold, draw count, and lab isolation");
+console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card hand ranks, selected pair, win, loss, fold, draw count, and lab isolation");
