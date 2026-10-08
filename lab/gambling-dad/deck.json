@@ -27,7 +27,7 @@
   },
   "lab": true,
   "status": "PROTOTYPE",
-  "status_note": "Draft shell for co-designers to replace freely. Cost curve test v0.2: 27 cards at Cost 1–2 and 13 at Cost 5–6; no Cost 3–4. Dad Poker and current support text remain isolated in this lab.",
+  "status_note": "Draft shell for co-designers to replace freely. Cost curve test v0.2: 27 cards at Cost 1–2 and 13 at Cost 5–6; no Cost 3–4. Rock Bottom Poker and current support text remain isolated in this lab.",
   "watchpoints": [
     "Does 4 bonus Stash break ordinary pacing?",
     "Is resetting to two Stash punishing but recoverable?",
