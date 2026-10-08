@@ -41,7 +41,7 @@ async function run(mode,dadDraw,oppDraw,decision="play",selection=[0,1]){
   requests.push(r);
   if(r.pokerChip)return null;
   if(r.pokerFold)return decision;
-  if(r.pokerCards){assert.equal(r.options.length,4);return r.player===0?selection:r.recommendedPair;}
+  if(r.pokerCards){assert.equal(r.pokerMode,mode,"Picker receives actual chip mode");assert.equal(r.options.length,4);return r.player===0?selection:r.recommendedPair;}
   return r.options?.[0]?.value??null;
  });
  g.players[0].deck=[...dadDraw].reverse();
