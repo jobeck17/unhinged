@@ -46,7 +46,7 @@ The result is **not generated all at once**: the UI reveals each circle separate
 
 ## Deck shell
 
-**39 cards** in the current experimental deck; editable counts in `deck.json`. 28 Characters, 5 Actions, 6 Items. The last copy of It's Basically Free Money has been removed without replacement. The card definition remains available in `cards.json` for future experiments. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
+**39 cards** in the current experimental deck; editable counts in `deck.json`. 28 Characters, 5 Actions, 6 Items. Three copies of **That Was Almost a Win** have been replaced by three copies of **Bluff** (Cost 2). The last copy of It's Basically Free Money has been removed without replacement. The card definition remains available in `cards.json` for future experiments. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
 
 ## Updated Cost curve — Slot Machine v0.3
 
@@ -54,8 +54,8 @@ Four **Slot Machine** Items replaced both copies of **Lucky Coin From a Laundrom
 
 | Printed Cost | Deck copies |
 | --- | ---: |
-| 1 | 22 |
-| 2 | 0 |
+| 1 | 19 |
+| 2 | 3 |
 | 3 | 0 |
 | 4 | 4 |
 | 5 | 7 |
@@ -71,3 +71,7 @@ The opponent controls their own selection of two from four and can deny the pot.
 ## Run the automated assertions
 
 From the repository root: `node lab/gambling-dad/test.mjs`. Browser lab uses production engine as a dependency but neither overwrites the engine nor modifies canonical files.
+
+## Bluff — poker redraw test
+
+**Bluff** · Action · Cost **2** · **3 copies** · `LAB-GD-013`. This replaces all three **That Was Almost a Win** cards without changing deck size. Bluff cannot be played as a normal action. After Dad selects two of four poker cards, if Bluff is in his normal hand, at least two cards remain in his deck, and he can pay 2 Ready Stash, the browser offers **Keep Hand** or **Redraw (Bluff)**. Redraw spends 2 Ready Stash, discards Bluff and the selected two poker cards, and draws two mandatory replacement poker cards. The other two original poker cards return to the bottom of the deck normally. Only one Bluff can be used per poker hand. The replacement pair is final even if worse. This test adds resource risk and deck depletion; it is not canonical.\n
