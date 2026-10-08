@@ -1,25 +1,21 @@
-import {Game,LEADERS} from '../../web/engine.js?v=mordecai-04-stonewall-01';
-import {aiAction,aiChoice} from '../../web/ai.js?v=stonewall-01';
-import '../../web/magician.js?v=stonewall-01';
-import '../../web/cat-lady.js?v=stonewall-01';
-import '../../web/rockstar.js?v=stonewall-01';
-import '../../web/reckless.js?v=stonewall-01';
-import '../../web/stonewall.js?v=stonewall-01';
-import {applyLandonLab} from '../../web/landon-lab.js?v=stonewall-01';
-import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-15';
+import {Game,LEADERS} from '../../web/engine.js?v=mordecai-04-reckless-01';
+import {aiAction,aiChoice} from '../../web/ai.js?v=mordecai-04';
+import '../../web/magician.js?v=reckless-01';
+import '../../web/cat-lady.js?v=reckless-01';
+import '../../web/rockstar.js?v=reckless-01';
+import '../../web/reckless.js?v=reckless-01';
+import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
+import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-13';
 installGamblingDad(Game,LEADERS);
-// Production gameplay packages patch the SAME engine module; stop early if
-// mismatched import URLs leave the lab without their combat functions.
-if(typeof Game.prototype.attackTargets!=="function")throw new Error("Gambling Dad lab: gameplay packages are attached to a different engine module.");
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='EXPERIMENTAL LAB: Rock Bottom Poker costs 1 Ready Stash and is usable once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins +4 Ready Stash; Dad loses Stash down to two and all his Characters are Defeated; complete tie discards both pairs. Both selected hands are revealed after play. Slot Machine is a Cost 4 Item: Activate by spending 2 Ready Stash; sequentially flip chip twice. If they match, Draw 1 or risk a third flip to refill to 7; if either check fails, draw nothing. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
+const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins +4 Ready Stash; Dad loses Stash down to two and all his Characters are Defeated; complete tie discards both pairs. Both selected hands are revealed after play. Slot Machine is a Cost 4 Item: Activate by spending 2 Ready Stash; sequentially flip chip twice. If they match, Draw 1 or risk a third flip to refill to 7; if either check fails, draw nothing. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
 try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
  ({pool,decks}=applyLandonLab(pool,decks));
- const [labCards,labDeck]=await Promise.all([fetch('./cards.json?v=gd-15').then(r=>{if(!r.ok)throw Error('Gambling Dad cards unavailable');return r.json()}),fetch('./deck.json?v=gd-15').then(r=>{if(!r.ok)throw Error('Gambling Dad deck unavailable');return r.json()})]);
+ const [labCards,labDeck]=await Promise.all([fetch('./cards.json?v=gd-13').then(r=>{if(!r.ok)throw Error('Gambling Dad cards unavailable');return r.json()}),fetch('./deck.json?v=gd-13').then(r=>{if(!r.ok)throw Error('Gambling Dad deck unavailable');return r.json()})]);
  pool.cards.push(...labCards.cards);decks.decks.unshift(labDeck);
  setup();
 }catch(e){root.innerHTML='<section class="setup"><h1>Lab failed to load.</h1><p>'+esc(e.message)+'</p></section>'}
@@ -153,7 +149,7 @@ async function ask(r){
   return new Promise(resolve=>{
    const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">ROCK BOTTOM POKER · '+esc(r.pokerMode)+'</div><h2>Play or Fold?</h2>'+
     '<p>You drew four poker cards: '+r.cards.map(c=>esc(c.name)+' (Cost '+c.cost+')').join(', ')+'.</p>'+
-    '<p class="muted">Fold: discard 1 Stash in addition to the 1 Ready Stash paid to enter; return all poker cards. Play: risk the board and your Stash.</p>'+
+    '<p class="muted">Fold: discard 1 Stash and return all poker cards. Play: risk the board and your Stash.</p>'+
     '<div class="modal-actions"><button id="fold-hand">Fold (lose 1 Stash)</button><button id="play-hand" class="primary">Play</button></div></div></div>';
    modal={kind:"choice",html};showModal(modal);
    document.querySelector("#fold-hand").onclick=()=>{close();resolve("fold")};
@@ -228,32 +224,7 @@ async function ask(r){
  if(r.player!==human)return aiChoice(game,r);return new Promise(resolve=>{let chosen=[];const html='<div class="overlay"><div class="sheet"><div class="type">CHOOSE</div><h2>'+esc(r.title)+'</h2>'+(r.attackContext?'<div class="attack-context"><strong>'+esc(r.attackContext.name)+' · '+esc(r.attackContext.power)+' Attack</strong><span>Health '+esc(r.attackContext.guard)+' · Damage '+esc(r.attackContext.damage)+'</span></div>':'')+'<p class="muted">'+(r.multi?'Choose up to '+(r.max||r.options.length)+'.':'Choose one.')+'</p>'+r.options.map((o,i)=>'<button class="choice" data-c="'+i+'">'+esc(o.label)+'</button>').join('')+'<div class="modal-actions">'+(r.title==='Attack which target?'?'<button id="attack-back">Back</button>':(r.mandatory?'':'<button id="cancel">Cancel</button>'))+(r.multi?'<button id="done" class="primary">Confirm 0</button>':'')+'</div></div></div>';modal={kind:'choice',html};showModal(modal);const finish=v=>{close();resolve(v)};document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const i=+b.dataset.c;if(!r.multi)return finish(r.options[i].value);if(chosen.includes(i)){chosen=chosen.filter(x=>x!==i);b.classList.remove('selected')}else if(!r.max||chosen.length<r.max){chosen.push(i);b.classList.add('selected')}document.querySelector('#done').textContent='Confirm '+chosen.length});document.querySelector('#cancel')?.addEventListener('click',()=>finish(r.multi?[]:null));document.querySelector('#attack-back')?.addEventListener('click',()=>finish(null));document.querySelector('#done')?.addEventListener('click',()=>finish(chosen.map(i=>r.options[i].value)))})}
 function start(a,b){human=0;game=new Game(pool,{...decks,decks:[decks.decks[a],decks.decks[b]]},ask,()=>{if(phase==='playing'&&!modal)render()},{firstPlayer:human});game.mulligan(1,[]);phase='mulligan';render()}
 async function humanAction(fn){if(busy||game.turn!==human)return;busy=true;render();try{await fn()}catch(e){console.error(e);alert(e.message)}finally{busy=false;render();await aiTurn()}}
-async function aiTurn(){
- if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;
- busy=true;render();let n=0;
- try{
-  while(game.turn!==human&&game.winner===null&&n++<70){
-   await new Promise(r=>setTimeout(r,170));
-   const m=game.canPoker(game.turn)&&game.players[game.turn].stash.length<=4?{type:'poker'}:aiAction(game,game.turn);
-   if(m.type==='poker')await game.dadPoker(game.turn);
-   else if(m.type==='pass')await game.pass();
-   else if(m.type==='stash')await game.stash(m.index,game.turn);
-   else if(m.type==='attack')await game.attack(m.uid);
-   else if(m.type==='trouble')await game.causeTrouble(m.uid);
-   else if(m.type==='play')await game.play(m.index);
-   else if(m.type==='activate')await game.activate(m.uid);
-   else throw Error('Unknown opponent action: '+m.type);
-   render();
-  }
-  if(game.turn!==human&&game.winner===null){game.say('Opponent AI reached action limit; ending Turn.');await game.pass()}
- }catch(e){
-  console.error('Opponent AI turn failed',e);
-  // Prevent a failed lab AI decision from permanently trapping the human.
-  game.say('Lab opponent AI error; opponent passes its Turn.');
-  try{if(game.turn!==human&&game.winner===null)await game.pass()}
-  catch(recoveryError){console.error('Opponent AI recovery failed',recoveryError);alert('Opponent turn failed. Please start a new match.')}
- }finally{busy=false;render()}
-}
+async function aiTurn(){if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;busy=true;render();let n=0;try{while(game.turn!==human&&game.winner===null&&n++<70){await new Promise(r=>setTimeout(r,170));const m=game.canPoker(game.turn)&&game.players[game.turn].stash.length<=4?{type:'poker'}:aiAction(game,game.turn);if(m.type==='poker')await game.dadPoker(game.turn);else if(m.type==='pass')await game.pass();else if(m.type==='stash')game.stash(m.index,game.turn);else if(m.type==='attack')await game.attack(m.uid);else if(m.type==='trouble')await game.causeTrouble(m.uid);else if(m.type==='play')await game.play(m.index);else if(m.type==='activate')await game.activate(m.uid);render()}if(n>=70)throw Error('AI action limit reached')}finally{busy=false;render()}}
 
 function dicePanel(){
  const rolls=game.diceRolls||[];if(!rolls.length)return '';
