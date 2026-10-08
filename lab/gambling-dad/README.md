@@ -46,16 +46,16 @@ The result is **not generated all at once**: the UI reveals each circle separate
 
 ## Deck shell
 
-**40 cards**, all 17 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 6 Actions, 6 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
+**40 cards**, all 16 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 6 Actions, 6 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
 
 ## Updated Cost curve — Slot Machine v0.3
 
-The previous low/high draft has been changed only to introduce four Cost-4 Items. Remove both copies of **Lucky Coin From a Laundromat** and two of the three copies of **It's Basically Free Money**. Add four **Slot Machine** Items.
+The previous low/high draft has been changed only to introduce four Cost-4 Items. **It's Basically Free Money is fully removed.** Its final copy becomes a fourth **That Was Almost a Win** for better hand flow. Two old Lucky Coin Items and the other two Free Money copies were replaced by four **Slot Machine** Items.
 
 | Printed Cost | Deck copies |
 | --- | ---: |
-| 1 | 22 |
-| 2 | 1 |
+| 1 | 23 |
+| 2 | 0 |
 | 3 | 0 |
 | 4 | 4 |
 | 5 | 7 |
