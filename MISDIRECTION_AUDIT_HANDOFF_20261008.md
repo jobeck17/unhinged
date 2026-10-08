@@ -4,7 +4,7 @@ Updated 8 October 2026, after Joseph tabled Tech Bro ★ and Trapdoor Assistant,
 
 ## Exact stopping point and next steps
 
-Character first pass, ten Actions, three Items and the new finisher are approved (33 active distinct designs: 20 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass, ten Actions, three Items and the new finisher are approved (32 active distinct designs: 19 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
@@ -32,7 +32,7 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 - School Bully's name is reserved for possible HOA or Backyard Wrestler use. The Hothead/Sucker Punch mechanical slot stays in Misdirection.
 - Do the naming pass after mechanics/curve, rather than forcing flavor now.
 
-## Active locked characters (20 distinct designs)
+## Active locked characters (19 distinct designs)
 
 | ID / working name | Cost | P/H/T | Approved effect |
 |---|---:|---|---|
@@ -51,12 +51,11 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P039 Social Media Influencer ★ | 4 | 2/4/2 | When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom. Old opponent-top-card reveal removed. |
 | P064 The Mentalist | 4 | 1/3/1 | Temporary borrowed opposing-deck character; details below. |
 | P068 Social Media Grifter ★ | 4 | 3/3/2 | When played, draw 2 cards, then discard a card. |
-| P069 Conspiracy Blogger ○ | 4 | 2/4/2 | At the start of your turn, name Character, Action or Item. Reveal your deck's top card. Correct type: put into hand. Incorrect: put on bottom. |
 | P075 Pirate Radio Operator ★ | 4 | 3/3/2 | When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card. No discard. |
 | P073 IT Guy Who Quit Six Months Ago ★ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
 | P078 Heckler | 5 | 3/4/2 | Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item. Old opponent-choice/free-play engine removed. |
 
-Current active locked character curve: cost 1 = 3; cost 2 = 4; cost 3 = 5; cost 4 = 5; cost 5 = 2; cost 6 = 1. Total 20 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
+Current active locked character curve: cost 1 = 3; cost 2 = 4; cost 3 = 5; cost 4 = 4; cost 5 = 2; cost 6 = 1. Total 19 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
 
 Consolidate LAB-MAG-001A and LAB-MAG-001B into ONE Volunteer design during implementation, updating deck references. Consolidate P089 (old alternate Lady) and LAB-MAG-004 into the locked Lady design; do not preserve two conflicting cards with the same name in the active set.
 
@@ -146,6 +145,10 @@ Release empties the storage slot and triggers normal entrance/when-played effect
 
 Tech Bro ★ and Trapdoor Assistant are TABLED. Identity Thief ○ is BANKED for next set's Spy. Existing Burner Phone ★ / Do Not Look in the Hat tables remain. Do not restore any to the active pool automatically.
 
+| P069 Conspiracy Blogger ○ | 4 | 2/4/2 | At the start of your turn, name Character, Action or Item. Reveal your deck's top card. Correct type: put into hand. Incorrect: put on bottom. |
+
+P069 Conspiracy Blogger ○ is TABLED; approved design and flag preserved outside the active set.
+
 ## Magical trait — initial assignments and whole-set review
 
 Magician's Hat cost, activation and Magical targeting are LOCKED. Magical is a trait, not a keyword, with no inherent rules effect. Rabbit and Dove initially gain Magical alongside Animal. Joseph approved this direction with the explicit condition that we review the whole set; the full eligibility list remains open. Do not automatically tag all Misdirection Characters. Review each candidate against entrance/return payoffs and repeated Hat use, including any eventual finisher. Preserve the approved Hat ability while deciding eligibility.
@@ -181,7 +184,7 @@ General inspectability changes old cards that previously granted inspection. Upd
 - Volunteer + bounce: temporary Power on entrance and return, then attack with another character.
 - Hothead survivor + bounce: recover damage and reuse its entrance after paying replay cost; cannot bounce after it is already Defeated without explicit rescue text.
 - Script Kiddie + Now You See Me: immediate Trouble after entry/re-entry; still rotates for each Trouble use.
-- Birthday Kid/Influencer + Blogger: arrange correct-type reveals.
+- Birthday Kid/Influencer retain deck selection and next-draw setup; Blogger's correct-type payoff is now tabled.
 - Poof! + Rabbit/Lady: Trouble first, then exit draw or opposing bounce; no instant action permission granted by Poof! itself.
 - Birthday Boy / Now You Don't + Trap Door: Dismiss a friendly Character, store it, then release it; Rabbit/Dove leave and entrance triggers apply. Pirate released from Trap Door may Cause Trouble immediately. Old opponent-choice Pirate combo is superseded.
 
@@ -240,9 +243,16 @@ Keeps four innate Hothead Characters, two innate Sucker Punch Characters and two
 - Joseph questions Conspiracy Blogger's overall role. Its cost-4 2/4/2 type-guess/top-card ability remains locked pending an explicit keep/rework/table decision. It works with Birthday Kid/Influencer setup but duplicates an already-rich card-advantage package. Do not table by inference.
 
 Other active/table/bank name flags remain intact. Active pool remains 33.
+## Conspiracy Blogger table — approved 8 October 2026
+
+- **P069 Conspiracy Blogger ○: TABLED** by Joseph. Preserve approved Cost 4, 2/4/2, start-of-turn name Character/Action/Item and reveal top deck card; correct to hand, wrong to bottom. No automatic migration or replacement; preserve ○.
+- **Current active pool: 32 locked designs = 19 Characters / 10 Actions / 3 Items.** Character curve costs 1–6: **3 / 4 / 5 / 4 / 2 / 1**. Unique cost/type counts (Character/Action/Item): 1 = 3/3/0 (6); 2 = 4/5/1 (10); 3 = 5/2/2 (9); 4 = 4/0/0 (4); 5 = 2/0/0 (2); 6 = 1/0/0 (1).
+- Birthday Kid and Social Media Influencer remain locked as standalone deck selection/setup, without Blogger payoff. Other names, mechanics, banks and table decisions remain unchanged.
+- User invites stage-magic naming alternatives. Invisible String? and Magic Wand/Transform remain tentative; do not rename them or other unresolved names without approval. No replacement Character approved. Implementation/testing remains pending.
+
 ## Implementation checklist for later
 
-1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current active approved counts: 20 Characters + 10 Actions + 3 Items = 33. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pirate is now locked and included.
+1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current active approved counts: 19 Characters + 10 Actions + 3 Items = 32. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pirate is now locked and included.
 2. Retrieve latest remote CARD/DECK/rule state. Apply this record's final approvals, not obsolete baseline values or superseded proposals. Keep IDs stable where possible; explicitly migrate duplicate references.
 3. Update CARDS.json, DECKS.json, builder text, engine effects, AI choices, tests, rules and NOTES when authorized to implement. Do not claim functional verification before running it.
 4. Test entrance vs play wording for direct deployments; borrowed ownership and trigger controller; Hothead copying; temporary Power expiry; bounce clears board damage/buffs appropriately; optional choices; deck shortfalls; cost payment and per-slot Stash state; hidden-hand choice privacy; Poof one-use expiry; scheduled effects following source departure without retrieving a new incarnation of a card.
