@@ -130,6 +130,20 @@ Magician's Hat cost, activation and Magical targeting are LOCKED. Magical is a t
 
 Inconspicuous Bush is a prior cross-chat concept, not yet an approved card in this audit: hide a character costing up to 5 under it; Rotate to Dismiss Bush and put the hidden character in play. Retrieve authoritative ID/cost/style/current existence before adding. No Bush matched the current production CARDS.json name/effect scan at handoff creation. Cloak on a fragile high-Power character is likewise a prior direction still to place/revisit, not an approved new card. Do not assume old brainstorming equals a lock.
 
+## Audit completeness correction — 8 October 2026
+
+The existing production Misdirection Character/Action/Item entries are all accounted for in this handoff, including the two duplicate-design migrations. However, the assistant incorrectly described the audit as complete without presenting the explicitly listed Bush and fragile Cloak-character concepts. Review existing cards AND unresolved Misdirection concepts before declaring set completeness.
+
+Required closure queue:
+1. Inconspicuous Bush: present and review the banked up-to-5-cost storage/deployment concept; exact cost, type, timing, hidden-card cleanup and whether to include remain open. No implementation or approval inferred.
+2. Fragile high-Power Magical/Cloak character: present the banked survival concept and decide include/rework/table. Cloak is not a current keyword and must not be restored automatically; current Retaliate is keyword-only.
+3. P078 Pirate With a Business License ○: resolve keep/rework/table explicitly.
+4. Named-card Rabbit/Dove deck search/direct deployment: explicitly keep banked or review; not currently approved.
+5. Whole-set Magical assignments, curve, ability distribution, copy counts and names; Leader passive and Breaking Point.
+6. Stash inspection/state-preserving exchange are recorded decisions awaiting rules/engine/UI implementation, not current production parity.
+
+Broader vault hooks (e.g. Jailbroken Robot Vacuum storage) are not automatically Misdirection omissions: Robot Vacuum currently belongs to Salvage. Preserve them in their existing scope. No existing Misdirection production card was found unreferenced by this handoff in the CARDS.json comparison.
+
 ## Stash rule decision and implementation warning
 
 Own Stash may be inspected at any time. Looking/rearranging must preserve EACH card's Ready/Rotated state; physically peek individually or keep Ready and Rotated groups separate. No identity-memory minigame required. Earlier suggestion of position-only selection was superseded.
