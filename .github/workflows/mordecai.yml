@@ -67,7 +67,7 @@ jobs:
           cp poll/index.html poll/app.js poll/questions.js poll/config.js poll/style.css _site/poll/
           mkdir -p _site/lab/leader-rulebreakers/crazy-cat-lady _site/lab/leader-rulebreakers/mad-scientist
           cp index.html CARDS.json DECKS.json _site/
-          cp web/index.html web/*.js web/style.css _site/web/
+          cp web/*.html web/*.js web/*.css _site/web/
           cp builder/index.html builder/app.js builder/style.css builder/smoke.mjs _site/builder/
           cp lab/leader-rulebreakers/crazy-cat-lady/CARDS.json lab/leader-rulebreakers/crazy-cat-lady/DECK.json _site/lab/leader-rulebreakers/crazy-cat-lady/
           cp lab/leader-rulebreakers/mad-scientist/CARDS.json lab/leader-rulebreakers/mad-scientist/DECK.json lab/leader-rulebreakers/mad-scientist/TOKENS.json _site/lab/leader-rulebreakers/mad-scientist/

@@ -1,3 +1,4 @@
+import {cardFace} from './card-face.js?v=face-01';
 import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 import {aiAction,aiChoice} from './ai.js?v=meatshield-01';
 import './cat-lady.js?v=meatshield-01';
@@ -19,7 +20,7 @@ try{
 
 function setup(){
  const opts=decks.decks.map((d,i)=>'<option value="'+i+'">'+esc(d.leader)+' · '+esc(d.styles[0])+'</option>').join('');
- root.innerHTML='<section class="setup"><span class="eyebrow">UNHINGED / MORDECAI 0.4</span><h1>Drive them<br>Unhinged.</h1><p class="intro">Fight their Characters. Cause Trouble. Eight decks. New core. Cause a scene.</p><div class="settings"><label>Your deck<select id="you">'+opts+'</select></label><label>Opponent deck<select id="them">'+opts+'</select></label></div><button id="start" class="primary">Cause a scene →</button><details><summary>Current playtest rules</summary><p>'+rules+'</p></details><p class="muted">PRODUCTION PLAYTEST · Mordecai 0.4 · 20 Composure · Breaking Point 10 · Last Straw at 0 · 8 decks</p><nav><a href="https://github.com/jobeck17/unhinged/blob/main/RULES.md">Mordecai rules</a><a href="../builder/">Deck Builder</a></nav></section>';
+ root.innerHTML='<section class="setup"><span class="eyebrow">UNHINGED / MORDECAI 0.4</span><h1>Drive them<br>Unhinged.</h1><p class="intro">Fight their Characters. Cause Trouble. Eight decks. New core. Cause a scene.</p><div class="settings"><label>Your deck<select id="you">'+opts+'</select></label><label>Opponent deck<select id="them">'+opts+'</select></label></div><button id="start" class="primary">Cause a scene →</button><details><summary>Current playtest rules</summary><p>'+rules+'</p></details><p class="muted">PRODUCTION PLAYTEST · Mordecai 0.4 · 20 Composure · Breaking Point 10 · Last Straw at 0 · 8 decks</p><nav><a href="https://github.com/jobeck17/unhinged/blob/main/RULES.md">Mordecai rules</a><a href="../builder/">Deck Builder</a><a href="cards.html">Card face demos</a></nav></section>';
  root.querySelector('#you').value='0';root.querySelector('#them').value='4';
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
@@ -61,12 +62,11 @@ function row(p){
 }
 function cardHTML(x,zone,p,index,chosen=false){
  const c=game.card(x),b=zone==='board',char=c.type==='Character',rot=b&&!x.ready,selected=zone==='hand'&&chosen;
- let stats='';
- if(char)stats='<span class="stats"><span><small>POWER</small>'+(b?game.power(x):c.power)+'</span><span><small>'+(b?'HEALTH LEFT':'HEALTH')+'</small>'+(b?Math.max(0,game.guard(x)-x.damage):c.guard)+'</span><span class="stat-trouble"><small>TROUBLE</small>'+(b?game.trouble(x):c.trouble)+'</span></span>';
  const status=b?[x.stored?'1 Character stored face-down':'',game.absorb?.(x)?'Absorb '+game.absorb(x):'',x.skipReady?'Skips next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '):'';
  const foot=selected?'✓ REPLACE':b?(rot?'ROTATED':char&&x.born>=game.round&&!(x.enteredTurn<(game.turnSerial||0))?'NEW THIS TURN':x.damage?x.damage+' DAMAGE':'READY'):'TAP FOR ACTIONS';
- const art=c.art?'<span class="card-art"><img src="'+esc(c.art)+'" alt="" loading="lazy"></span>':'<span class="card-art art-placeholder style-'+esc((c.style||'neutral').toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'"><span>'+esc(c.style||c.type)+'</span></span>';
- return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'"><span class="card-top"><span>'+esc(c.type)+' · '+esc(c.style)+'</span><b>'+(b?(rot?'ROTATED':'READY'):'COST '+c.cost)+'</b></span>'+art+'<strong>'+esc(c.name)+'</strong><span class="card-text">'+esc(c.text||c.flavor||'')+(b&&x.nextAttackPower?'<br><b>Next Attack: +'+x.nextAttackPower+' Power'+(x.rampTrouble?' + Trouble':'')+'</b>':'')+'</span>'+stats+'<span class="card-foot '+(x.damage?'damage':'')+'">'+esc(foot)+(status?'<br>'+esc(status):'')+'</span></button>';
+ const liveStats=b&&char?'<span class="card-live-stats">Power '+game.power(x)+' · Health left '+Math.max(0,game.guard(x)-x.damage)+' · Trouble '+game.trouble(x)+'</span>':'';
+ const next=b&&x.nextAttackPower?'Next Attack: +'+x.nextAttackPower+' Power'+(x.rampTrouble?' + Trouble':''):'';
+ return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'">'+cardFace(c)+'<span class="card-foot '+(x.damage?'damage':'')+'">'+liveStats+esc(foot)+(status?'<br>'+esc(status):'')+(next?'<br>'+esc(next):'')+'</span></button>';
 }
 function inspectStash(){
  const s=game.players[human],states=game.stashStates(human);
@@ -81,7 +81,7 @@ function detail(ref){
  let stats='<span>Cost '+c.cost+'</span>'+(ref.handIndex!==undefined&&game.playCost(human,c.id)!==c.cost?'<span>Pay '+game.playCost(human,c.id)+' Stash</span>':'')+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
  const attackNote=x&&own&&c.type==='Character'&&me&&!attack&&game.attackTargets(x).length===0?'<p class="muted">No legal Attack target. Ready opponents are protected unless you have Sucker Punch; Rotated Meat Shields must be attacked first.</p>':'';
  const liveStatus=x?'<p class="muted">'+esc([game.absorb(x)?'Absorb '+game.absorb(x):'',x.skipReady?'Skips its next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '))+'</p>':'';
- const modalArt=c.art?'<img class="detail-art" src="'+esc(c.art)+'" alt="">':'';modal={kind:'detail',html:'<div class="overlay"><article class="sheet">'+modalArt+'<div class="type">'+esc(c.type)+' · '+esc(c.style)+' · '+esc(c.id)+'</div><h2>'+esc(c.name)+'</h2><div class="stats">'+stats+'</div><p class="rule">'+esc(c.text||c.flavor||'No special ability.')+'</p>'+((c.traits||[]).length?'<p class="muted">Traits: '+esc(c.traits.join(', '))+'</p>':'')+(x?.stored?'<p class="muted">Stored face-down: '+(own?esc(game.card(x.stored.id).name):'1 Character')+'</p>':'')+liveStatus+attackNote+'<div class="buttons">'+buttons+'</div></article></div>'};showModal(modal);
+ modal={kind:'detail',html:'<div class="overlay"><article class="sheet"><div class="physical-detail">'+cardFace(c)+'</div><div class="stats">'+stats+'</div>'+((x?.stored)?'<p class="muted">Stored face-down: '+(own?esc(game.card(x.stored.id).name):'1 Character')+'</p>':'')+liveStatus+attackNote+'<div class="buttons">'+buttons+'</div></article></div>'};showModal(modal);
  document.querySelector('#close')?.addEventListener('click',close);document.querySelector('#stash')?.addEventListener('click',()=>{const i=ref.handIndex;close();humanAction(async()=>game.stash(i))});document.querySelector('#play')?.addEventListener('click',()=>{close();humanAction(()=>game.play(ref.handIndex))});document.querySelector('#attack')?.addEventListener('click',()=>{close();humanAction(()=>game.attack(x.uid))});document.querySelector('#trouble')?.addEventListener('click',()=>{close();humanAction(()=>game.causeTrouble(x.uid))});document.querySelector('#activate')?.addEventListener('click',()=>{close();humanAction(()=>game.activate(x.uid))});
 }
 function showModal(entry){document.querySelector('.overlay')?.remove();if(!entry)return;document.body.insertAdjacentHTML('beforeend',entry.html);const overlay=document.querySelector('.overlay');overlay.onclick=e=>{if(e.target===overlay&&entry.kind==='detail')close()}}
