@@ -6,6 +6,7 @@ import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
 import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-15';
+import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
@@ -243,7 +244,24 @@ async function ask(r){
  if(r.player!==human)return aiChoice(game,r);return new Promise(resolve=>{let chosen=[];const html='<div class="overlay"><div class="sheet"><div class="type">CHOOSE</div><h2>'+esc(r.title)+'</h2>'+(r.attackContext?'<div class="attack-context"><strong>'+esc(r.attackContext.name)+' · '+esc(r.attackContext.power)+' Attack</strong><span>Health '+esc(r.attackContext.guard)+' · Damage '+esc(r.attackContext.damage)+'</span></div>':'')+'<p class="muted">'+(r.multi?'Choose up to '+(r.max||r.options.length)+'.':'Choose one.')+'</p>'+r.options.map((o,i)=>'<button class="choice" data-c="'+i+'">'+esc(o.label)+'</button>').join('')+'<div class="modal-actions">'+(r.title==='Attack which target?'?'<button id="attack-back">Back</button>':(r.mandatory?'':'<button id="cancel">Cancel</button>'))+(r.multi?'<button id="done" class="primary">Confirm 0</button>':'')+'</div></div></div>';modal={kind:'choice',html};showModal(modal);const finish=v=>{close();resolve(v)};document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const i=+b.dataset.c;if(!r.multi)return finish(r.options[i].value);if(chosen.includes(i)){chosen=chosen.filter(x=>x!==i);b.classList.remove('selected')}else if(!r.max||chosen.length<r.max){chosen.push(i);b.classList.add('selected')}document.querySelector('#done').textContent='Confirm '+chosen.length});document.querySelector('#cancel')?.addEventListener('click',()=>finish(r.multi?[]:null));document.querySelector('#attack-back')?.addEventListener('click',()=>finish(null));document.querySelector('#done')?.addEventListener('click',()=>finish(chosen.map(i=>r.options[i].value)))})}
 function start(a,b){human=0;game=new Game(pool,{...decks,decks:[decks.decks[a],decks.decks[b]]},ask,()=>{if(phase==='playing'&&!modal)render()},{firstPlayer:human});game.mulligan(1,[]);phase='mulligan';render()}
 async function humanAction(fn){if(busy||game.turn!==human)return;busy=true;render();try{await fn()}catch(e){console.error(e);alert(e.message)}finally{busy=false;render();await aiTurn()}}
-async function aiTurn(){if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;busy=true;render();let n=0;try{while(game.turn!==human&&game.winner===null&&n++<70){await new Promise(r=>setTimeout(r,170));const m=game.canPoker(game.turn)&&game.players[game.turn].stash.length<=4?{type:'poker'}:aiAction(game,game.turn);if(m.type==='poker')await game.dadPoker(game.turn);else if(m.type==='pass')await game.pass();else if(m.type==='stash')game.stash(m.index,game.turn);else if(m.type==='attack')await game.attack(m.uid);else if(m.type==='trouble')await game.causeTrouble(m.uid);else if(m.type==='play')await game.play(m.index);else if(m.type==='activate')await game.activate(m.uid);render()}if(n>=70)throw Error('AI action limit reached')}finally{busy=false;render()}}
+async function aiTurn(){
+ if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;
+ busy=true;render();
+ try{
+  await runOpponentTurn(game,{
+   human,decide:aiAction,
+   delay:()=>new Promise(resolve=>setTimeout(resolve,170)),
+   onUpdate:render,
+   onError:(error,context)=>{
+    console.error('Gambling Dad lab: opponent action failed',context,error);
+    game.say('Opponent had a playtest error; ending its turn so the match can continue.');
+   }
+  });
+ }catch(error){
+  console.error('Gambling Dad lab: opponent could not recover',error);
+  alert('Opponent turn could not finish: '+error.message+'. Please use New match or report this error.');
+ }finally{busy=false;render()}
+}
 
 function dicePanel(){
  const rolls=game.diceRolls||[];if(!rolls.length)return '';
