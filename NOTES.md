@@ -1,3 +1,11 @@
+## Card Counter and Leader passive review — 8 October 2026
+
+- **P039 Sleight-of-Hand Artist → Card Counter:** name LOCKED by Joseph. Unchanged Cost 4, 2/4/2; played top-3 split into hand/top/bottom.
+- Joseph accepted the other outstanding working names in the preceding message: Opening Act, Stagehand, Disappearing Assistant, Card Shark, Street Magician and Quick-Change Artist. Their name-review flags are resolved for this pass; no mechanical changes.
+- **CURRENT production Birthday Party Magician passive**, verified in web/engine.js: “Ace Up My Sleeve: Once during your Turn, when your Character is Returned to hand, Ready 1 Stash.” This is current browser text/behavior; NOT the physical sneaking IDEA in lab/LEADER_PASSIVES.md.
+- The passive's Ace Up My Sleeve title now overlaps the approved draw Action name. Passive title/revision remains unapproved until Joseph decides; no Leader effect changed in production.
+- Leader passive and Breaking Point review remains open. All 32 active card names are now accepted; remaining work is trait/Leader/concept/deck review followed by implementation/testing.
+
 ## Final naming / Encore revision — locked 8 October 2026
 
 Joseph approved all five suggestions:
