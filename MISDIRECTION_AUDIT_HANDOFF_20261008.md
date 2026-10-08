@@ -49,24 +49,24 @@ Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.gith
 | P067 School Bully ★ | 3 | 3/2/1 | Hothead, Sucker Punch. Remove Chicken. Reserve old name for another style/leader. |
 | LAB-MAG-004 Lady Who's Moving Out Again ○ | 3 | 2/3/1 | Hothead. When played, gets +2 Power this turn. When returned from play to your hand, you may return an opposing character costing 2 or less to its owner's hand. |
 | P039 Social Media Influencer ★ | 4 | 2/4/2 | When played, look at the top 3 cards of your deck. Put one into your hand, one on top and one on the bottom. Old opponent-top-card reveal removed. |
-| P064 Volunteer From the Audience ○ | 4 | 1/3/1 | Temporary borrowed opposing-deck character; details below. |
+| P064 The Mentalist | 4 | 1/3/1 | Temporary borrowed opposing-deck character; details below. |
 | P068 Social Media Grifter ★ | 4 | 3/3/2 | When played, draw 2 cards, then discard a card. |
 | P069 Conspiracy Blogger ○ | 4 | 2/4/2 | At the start of your turn, name Character, Action or Item. Reveal your deck's top card. Correct type: put into hand. Incorrect: put on bottom. |
 | P075 Pirate Radio Operator ★ | 4 | 3/3/2 | When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card. No discard. |
 | P073 IT Guy Who Quit Six Months Ago ★ | 5 | 3/4/2 | When played, may exchange up to 2 Stash cards with the same number from hand. Each replacement retains the replaced card's Ready/Rotated state. Stash-inspection permission removed as redundant. |
-| P078 Pirate With a Business License ○ | 5 | 3/4/2 | Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item. Old opponent-choice/free-play engine removed. |
+| P078 Heckler | 5 | 3/4/2 | Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item. Old opponent-choice/free-play engine removed. |
 
 Current active locked character curve: cost 1 = 3; cost 2 = 4; cost 3 = 5; cost 4 = 5; cost 5 = 2; cost 6 = 1. Total 20 (including the new finisher). Joseph approved the first curve batch: Wi-Fi Bandit cost 1, 1/1/1 Hothead; Very Enthusiastic Volunteer cost 1, 1/1/1, same effect; Off-Duty Clown cost 3, 2/4/1, same effect. These supersede their earlier costs/stats; all name flags preserved. A playable deck's copy distribution matters as well as unique designs.
 
 Consolidate LAB-MAG-001A and LAB-MAG-001B into ONE Volunteer design during implementation, updating deck references. Consolidate P089 (old alternate Lady) and LAB-MAG-004 into the locked Lady design; do not preserve two conflicting cards with the same name in the active set.
 
-### New finisher — LOCKED, name and ID pending
+### The Headliner — LOCKED, ID pending
 
-Cost 6, Power / Health / Trouble = 4 / 5 / 3.
+**The Headliner**, Cost 6, Power / Health / Trouble = 4 / 5 / 3.
 
 “The first time each turn another character you control is returned from play to your hand, this character gets +2 Trouble this turn.”
 
-Joseph explicitly approved this proposal. It is a new design, not yet assigned a stable ID; do not overwrite P078 without a separate decision. No Hothead or immediate Trouble permission is granted. It must be in play to see the return; earlier returns before it enters do not retroactively grant the bonus. Bonus is temporary and capped at +2 per turn per instance, regardless of additional returns. Separate copies each trigger; leaving/re-entering creates a new instance under core rules. Base Trouble 3 becomes 5 after a qualifying return. Magical eligibility remains open for the whole-set review.
+Joseph explicitly approved this proposal. It is a new design, named The Headliner, not yet assigned a stable ID; do not overwrite P078 without a separate decision. No Hothead or immediate Trouble permission is granted. It must be in play to see the return; earlier returns before it enters do not retroactively grant the bonus. Bonus is temporary and capped at +2 per turn per instance, regardless of additional returns. Separate copies each trigger; leaving/re-entering creates a new instance under core rules. Base Trouble 3 becomes 5 after a qualifying return. Magical eligibility remains open for the whole-set review.
 
 Testing flag: repeatable 5 Trouble may be strong behind reliable bounce; assess survival, setup/resource costs and board-presence sacrifice before tuning. No stat/cost change is approved.
 
@@ -93,8 +93,8 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 | P080 Now You See Me | 2 | Return a character you control to your hand. Then you may play a character costing 2 or less from your hand without paying its cost. Old extra discounted payment removed. |
 | P081 Look Over There! | 1 | Rotate a chosen opposing character costing 3 or less. No skip-next-ready effect, no Response text. |
 | P082 Wrong Address ○ | 2 | Choose two opposing characters; their owner chooses one to return to its owner's hand. If they have only one character, choose and return that one instead. No cost cap. |
-| P084 Default Password ★ | 1 | Exchange a card in your Stash with a card in your hand. The replacement enters Stash in the same state—Ready or Rotated—as the card it replaces. This IS the initially unnamed locked exchange action, not an extra slot. |
-| P085 Have You Tried Turning It Off? ○ | 3 | Draw 2 cards. Final user lock at chat ending. Old Rotated item/character bounce removed. |
+| P084 Presto Chango | 1 | Exchange a card in your Stash with a card in your hand. The replacement enters Stash in the same state—Ready or Rotated—as the card it replaces. This IS the initially unnamed locked exchange action, not an extra slot. |
+| P085 Ace Up My Sleeve | 3 | Draw 2 cards. Final user lock at chat ending. Old Rotated item/character bounce removed. |
 | P086 Now You Don't (formerly Switcheroo) | 2 | Choose a character you control and an opposing character with equal or lower cost. Dismiss both to their owners' discard piles. Joseph explicitly revised name and destination; paired Trap Door recovery and balance need deeper exploration. |
 | LAB-MAG-002 Ethan's JUST Being Dramatic ★ | 2 | Draw 2 cards, then discard a card. Old plain friendly bounce removed. |
 | P142 I Want to Speak to Your Manager ★ | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
@@ -159,7 +159,7 @@ The existing production Misdirection Character/Action/Item entries are all accou
 Required closure queue:
 1. Now You Don't / Trap Door: paired mechanism is now LOCKED above; implement/test later. Inconspicuous Bush remains explicitly banked for next set's Spy Leader with hand-tucking behavior.
 2. Fragile high-Power Magical/Cloak character: present the banked survival concept and decide include/rework/table. Cloak is not a current keyword and must not be restored automatically; current Retaliate is keyword-only.
-3. P078 Pirate With a Business License ○: disposition resolved; new Sucker Punch / Item-release Trouble design is locked. Test later.
+3. P078 Heckler: disposition resolved; new Sucker Punch / Item-release Trouble design is locked. Test later.
 4. Named-card Rabbit/Dove deck search/direct deployment: explicitly keep banked or review; not currently approved.
 5. Whole-set Magical assignments, curve, ability distribution, copy counts and names; Leader passive and Breaking Point.
 6. Stash inspection/state-preserving exchange are recorded decisions awaiting rules/engine/UI implementation, not current production parity.
@@ -208,7 +208,7 @@ Historical support gaps from the first curve batch are now resolved by the locke
 ## Misdirection support batch — locked 8 October 2026
 
 - **LAB-MAG-003 Birthday Boy ★:** Cost **3**, **2/3/2**. “When played, you may Dismiss another character you control. If you do, draw a card.” Supersedes the locked cost-2 2/1/2 vanilla version. Keeps ★. Friendly Dismiss requires another Character; draw only if it was actually Dismissed. Dismiss is not Defeat. Rabbit/Dove leave-play triggers and Trap Door capture may apply.
-- **P078 Pirate With a Business License ○:** Cost **5**, **3/4/2**, **Sucker Punch**. “This character may Cause Trouble the turn it enters play if played from under an Item.” Replaces BOTH old production opponent-choice free-deployment and the never-approved once-per-turn proposal. Keeps ○. No Hothead granted; Sucker Punch does not permit an ordinary entry-turn Attack. Immediate Trouble permission applies only to the instance played from under an Item and still requires Ready/positive Trouble. Trap Door release qualifies; ordinary hand play, Pick a Card or borrowed-deck play does not.
+- **P078 Heckler:** Cost **5**, **3/4/2**, **Sucker Punch**. “This character may Cause Trouble the turn it enters play if played from under an Item.” Replaces BOTH old production opponent-choice free-deployment and the never-approved once-per-turn proposal. Keeps ○. No Hothead granted; Sucker Punch does not permit an ordinary entry-turn Attack. Immediate Trouble permission applies only to the instance played from under an Item and still requires Ready/positive Trouble. Trap Door release qualifies; ordinary hand play, Pick a Card or borrowed-deck play does not.
 - **Pool now 36 locked designs:** 23 Characters / 10 Actions / 3 Items. Character curve costs 1–6: **3 / 4 / 7 / 5 / 3 / 1**. Unique all-card cost/type counts: 1 = 3/3/0 (6); 2 = 4/5/1 (10); 3 = 7/2/2 (11); 4 = 5/0/0 (5); 5 = 3/0/0 (3); 6 = 1/0/0 (1). Types listed Character/Action/Item. Pirate is now included; finisher remains a separate design.
 - **Support gained:** Trap Door has two friendly-Dismiss enablers (Now You Don't and Birthday Boy); two innate Sucker Punch Characters (School Bully and Pirate) plus Identity Thief copying; two immediate-Trouble designs (Script Kiddie and conditional Pirate). Birthday Boy adds optional draw support.
 - **Testing:** Birthday Boy's replay/Dismiss/draw and Trap Door return may be strong value; Pirate turns Item release into immediate Trouble. Compare actual resource/board costs and loop readiness. Character curve now crowds cost 3; review unique roles and 40-card copy counts before proposing further moves.
@@ -225,6 +225,21 @@ Current Magician active pool: **33 locked designs = 20 Characters / 10 Actions /
 
 Keeps four innate Hothead Characters, two innate Sucker Punch Characters and two immediate-Trouble designs. Trap Door still has two friendly-Dismiss enablers. Tables are pool decisions, not deletion of approved designs. Other locks/name flags preserved. Current production CARDS/DECK/engine remain earlier versions until implementation. Magical whole-set review, naming, Leader audit and unresolved fragile Cloak-character concept remain open.
 
+## Misdirection naming pass — 8 October 2026
+
+**Definite user renames (mechanics unchanged, design-only until implementation):**
+- P084 Default Password ★ → **Presto Chango**. Name approved; rename flag resolved.
+- P085 Have You Tried Turning It Off? ○ → **Ace Up My Sleeve**. Name approved; review flag resolved.
+- New cost-6 finisher → **The Headliner**. Name approved; stable ID still pending.
+- P078 Pirate With a Business License ○ → **Heckler**. “Pirate” is interpreted as the cost-5 Sucker Punch / Item-release Trouble card in the latest overview; P075 Pirate Radio Operator ★ stays unchanged. Name approved under that mapping.
+- P064 Volunteer From the Audience ○ → **The Mentalist**. Name approved; review flag resolved.
+
+**Tentative, not final name locks:**
+- P088 Beer-Stained Cards ★: **Invisible String?** proposed by Joseph. Keep rename open pending confirmation. Bank **Beer-Stained Cards** as a future Florida Man/Reckless name/concept; this does NOT transfer the current draw-engine mechanics to Reckless.
+- P142 I Want to Speak to Your Manager ★: **Magic Wand** or **Transform** are alternatives, not a final choice; retain working label/★ until settled.
+- Joseph questions Conspiracy Blogger's overall role. Its cost-4 2/4/2 type-guess/top-card ability remains locked pending an explicit keep/rework/table decision. It works with Birthday Kid/Influencer setup but duplicates an already-rich card-advantage package. Do not table by inference.
+
+Other active/table/bank name flags remain intact. Active pool remains 33.
 ## Implementation checklist for later
 
 1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current active approved counts: 20 Characters + 10 Actions + 3 Items = 33. Finisher is locked; character curve and whole-set Magical eligibility remain to review; Burner Phone ★ and Do Not Look in the Hat are tabled. Pirate is now locked and included.
@@ -236,4 +251,4 @@ Keeps four innate Hothead Characters, two innate Sucker Punch Characters and two
 
 ## Suggested opening prompt for the new chat
 
-Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Burner Phone ★ and Do Not Look in the Hat are now tabled. Beer-Stained Cards ★ is locked at cost 2: Rotate this Item and spend 1 Stash, Draw a card. Magician's Hat is locked at cost 3: Rotate this Item and spend 1 Stash, Return a Magical Character you control to your hand. Rabbit and Dove initially gain Magical alongside Animal; review the whole set for final eligibility. New finisher is locked at cost 6, 4/5/3: first time each turn another friendly Character is returned from play to your hand, gets +2 Trouble this turn. Name/ID pending. Next review the character curve, ability distribution, Magical assignments and the locked Pirate's Item-release interactions. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
+Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Burner Phone ★ and Do Not Look in the Hat are now tabled. Beer-Stained Cards ★ is locked at cost 2: Rotate this Item and spend 1 Stash, Draw a card. Magician's Hat is locked at cost 3: Rotate this Item and spend 1 Stash, Return a Magical Character you control to your hand. Rabbit and Dove initially gain Magical alongside Animal; review the whole set for final eligibility. New finisher is locked at cost 6, 4/5/3: first time each turn another friendly Character is returned from play to your hand, gets +2 Trouble this turn. Name now locked as The Headliner; ID pending. Next review the character curve, ability distribution, Magical assignments and the locked Pirate's Item-release interactions. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
