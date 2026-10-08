@@ -1,3 +1,16 @@
+## Birthday Party Magician passive — LOCKED 8 October 2026
+
+**The Show Must Go On:** “Once during your turn, when a character you control is returned to your hand or Dismissed, Ready 1 Stash.”
+
+Joseph approved the broadened passive and title. Supersedes the design-level return-only Ace Up My Sleeve passive. Ace Up My Sleeve remains the cost-3 Draw 2 Action.
+
+- First qualifying actual movement during your turn triggers; return and Dismiss share ONE use, not one each. No opposing-turn activation, no stacking uses from multiple Characters.
+- Character must have been under your control immediately before leaving play. Return branch requires destination your hand; borrowed Characters returned to their owner's opposing hand do not qualify. Dismiss branch may qualify for a controlled borrowed Character going to its owner's discard.
+- Actual Dismiss/return required: prevented movement (e.g. Stubborn) does not trigger. Defeat/Sacrifice and hand discard do not qualify. No recursion from Stash exchange or Item movement.
+- Ready a chosen eligible Rotated Stash card; normal per-card identity/state handling must be implemented. No Stash added and no permanent ramp. Passive's once-per-turn use is consumed by its first qualifying trigger even if no Rotated Stash is available, consistent with the proposed automatic first-event model/current production passive; don't change this timing silently.
+- Supports bounce and Now You Don't / Disappearing Assistant / Trap Door. Once-per-turn resource refund remains a testing parameter.
+- DESIGN LOCK ONLY: existing web/engine.js still uses earlier return-only passive until implementation. No browser/engine edits in this update. Breaking Point remains open.
+
 ## Card Counter and Leader passive review — 8 October 2026
 
 - **P039 Sleight-of-Hand Artist → Card Counter:** name LOCKED by Joseph. Unchanged Cost 4, 2/4/2; played top-3 split into hand/top/bottom.
