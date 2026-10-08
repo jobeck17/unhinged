@@ -14,10 +14,10 @@ This is an **advanced** Leader: easy comparison, difficult decisions about when 
 
 ## Rock Bottom Poker — first prototype
 
-1. Gambling Dad may start Rock Bottom Poker once on his own Turn only if both decks have at least three cards.
+1. Gambling Dad may start Rock Bottom Poker once on his own Turn only if both decks have at least three cards. Flip **Dad's Lucky Poker Chip** (fair 50/50): **HIGH** means highest combined Cost wins; **LOW** means lowest combined Cost wins. The browser shows the result before cards are drawn. No animation.
 2. Each player sets aside their normal hand (the browser game leaves those hands untouched). Each draws three separate poker cards from their *own deck*.
 3. Each secretly chooses exactly two of their three poker cards; the third returns to the bottom of its owner's deck.
-4. Reveal both pairs. Add **printed Cost** first. Highest Cost total wins. Only if tied, add **printed Power** (Action/Item Power = 0). Higher Power total wins the Cost tie.
+4. Reveal both pairs. Compare combined **printed Cost** using the chip side (HIGH or LOW). Only if Cost totals tie, higher combined **printed Power** wins (Action/Item Power = 0).
 5. If **Dad wins**, his Stash gains all **four** committed cards (the opponent gains none). These cards remain owned by their original players if removed later.
 6. If **Dad loses**, Dad's selected two cards go to his Discard; the opponent's selected two return to the bottom of their own deck. Dad's Stash shrinks to **at most 2**, placing excess cards in their original owners' Discards. A Stash of 0 or 1 is not increased.
 7. If **both totals tie**, all four committed cards go to their original owners' Discards. Dad's Stash remains unchanged.
