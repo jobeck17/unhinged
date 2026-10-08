@@ -1,3 +1,10 @@
+## Conspiracy Blogger table — approved 8 October 2026
+
+- **P069 Conspiracy Blogger ○: TABLED** by Joseph. Preserve approved Cost 4, 2/4/2, start-of-turn name Character/Action/Item and reveal top deck card; correct to hand, wrong to bottom. No automatic migration or replacement; preserve ○.
+- **Current active pool: 32 locked designs = 19 Characters / 10 Actions / 3 Items.** Character curve costs 1–6: **3 / 4 / 5 / 4 / 2 / 1**. Unique cost/type counts (Character/Action/Item): 1 = 3/3/0 (6); 2 = 4/5/1 (10); 3 = 5/2/2 (9); 4 = 4/0/0 (4); 5 = 2/0/0 (2); 6 = 1/0/0 (1).
+- Birthday Kid and Social Media Influencer remain locked as standalone deck selection/setup, without Blogger payoff. Other names, mechanics, banks and table decisions remain unchanged.
+- User invites stage-magic naming alternatives. Invisible String? and Magic Wand/Transform remain tentative; do not rename them or other unresolved names without approval. No replacement Character approved. Implementation/testing remains pending.
+
 ## Misdirection naming pass — 8 October 2026
 
 **Definite user renames (mechanics unchanged, design-only until implementation):**
