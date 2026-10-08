@@ -97,11 +97,6 @@ export function installGamblingDad(Game, LEADERS) {
       if(this.players[p].hand.length)await this.discard(p);
       return;
     }
-    if(id==="LAB-GD-014"){
-      const s=this.players[p],n=Math.min(2,s.stash.length-s.fuel);
-      s.fuel+=n;this.say("It's Basically Free Money Readies "+n+" Stash");
-      return;
-    }
     if(id==="LAB-GD-015"){
       const uid=await this.pick("Cash Out: give +2 Power to your Character",p,this.chars(p));
       const x=this.obj(uid);
