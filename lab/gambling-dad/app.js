@@ -5,7 +5,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-14';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-15';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
@@ -184,7 +184,7 @@ async function ask(r){
       '<div class="type">ROCK BOTTOM POKER · '+esc(r.pokerMode)+'</div>'+
       '<h2>Keep your hand or Bluff?</h2>'+
       '<p>Your selected pair: '+r.selected.map(c=>esc(c.name)+' (Cost '+c.cost+')').join(' + ')+'</p>'+
-      '<p class="muted">Redraw (Bluff): spend 2 Ready Stash, Discard your selected two poker cards, and Draw two new poker cards. You must keep the replacements. '+r.remaining+' cards remain in your deck before the redraw.</p>'+
+      '<p class="muted">Redraw (Bluff): spend 2 Ready Stash, Discard your selected two poker cards, and Draw two new poker cards. Then choose any two of the four cards (the two you kept back plus two new draws). '+r.remaining+' cards remain in your deck before the redraw.</p>'+
       '<div class="modal-actions"><button id="keep-poker" class="primary">Keep Hand</button><button id="redraw-bluff">Redraw (Bluff) · 2 Stash</button></div></div></div>';
     modal={kind:'choice',html};showModal(modal);
     document.querySelector('#keep-poker').onclick=()=>{close();resolve("keep")};
@@ -208,7 +208,7 @@ async function ask(r){
    }).join('');
    const html='<div class="overlay"><div class="sheet poker-sheet">'+
      '<div class="type">99 GAMBLERS QUIT BEFORE THEY WIN BIG!</div>'+
-     '<h2>Pick your poker hand</h2><p class="muted">You drew four cards. Select exactly two; the other two go to the bottom of your deck.</p>'+
+     '<h2>'+(r.pokerBluffRepick?'Bluff: pick your new hand':'Pick your poker hand')+'</h2><p class="muted">Choose exactly two cards; the other two go to the bottom of your deck.</p>'+
      '<div class="poker-ranking"><b>'+esc(r.pokerMode)+' POKER — STRONGEST TO WEAKEST</b><p>'+ (r.pokerMode==="HIGH"?"1. Matching Pair · 2. Straight · 3. High Roller":"1. High Roller · 2. Straight · 3. Matching Pair")+'</p><small>Pair = equal Costs · Straight = consecutive Costs · High Roller = neither. Hand rank always beats Cost. '+(r.pokerMode==="HIGH"?"Higher":"Lower")+' combined Cost wins equal ranks; Power breaks Cost ties.</small></div>'+
      '<div class="poker-choices">'+cardMarkup+'</div>'+
      '<p id="poker-selection" class="muted" aria-live="polite">0 of 2 selected</p>'+
