@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 import './cat-lady.js';
 import './rockstar.js';
 import './reckless.js';

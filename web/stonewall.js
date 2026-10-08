@@ -1,6 +1,6 @@
 // Locked Stonewall cards and the Florida Man / HOA Breaking Point content pass.
 // Load after Reckless. All other styles retain their production packages.
-import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 export const STONEWALL_IDS=new Set(['P072','P083',...Array.from({length:30},(_,i)=>`P${121+i}`).filter(id=>id!=='P123'&&id!=='P142'&&id!=='P150'),...Array.from({length:4},(_,i)=>`LAB-HOA-00${i+1}`)]);
 const actions=new Set(['P083','P139','P140','P141','P143','P144','P145','P146','LAB-HOA-004']);
 const live=c=>c&&!['banked','retired','pending-redesign'].includes(c.status);
@@ -105,7 +105,6 @@ const enter=Game.prototype.enterEffect;
 Game.prototype.enterEffect=async function(x,previous){
  if(!STONEWALL_IDS.has(x.id))return enter.call(this,x,previous);
  const p=x.owner;
- if(x.id==='P126'){const rotated=await this.choose(p,'Crossing Guard: enter Rotated for Meat Shield?', [{label:'Enter Ready',value:false},{label:'Enter Rotated',value:true}]);if(rotated)x.ready=false}
  if(x.id==='P134')this.draw(p);
  if(x.id==='P122'||x.id==='LAB-HOA-002'){
   const list=this.chars(1-p).filter(y=>x.id==='P122'||this.card(y).cost<=2);

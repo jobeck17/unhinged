@@ -1,6 +1,6 @@
 // The locked Reckless audit, shared by the browser and its regression tests.
 // Load after the other production packages so the current combat rules win.
-import {Game, LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
+import {Game, LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 
 const ACTIONS = new Set(['P019','P020','P021','P022','P024','P026','LAB-FLM-002','LAB-FLM-005','LAB-FLM-007']);
 const ITEMS = new Set(['P027','P028','P030','LAB-FLM-001','LAB-FLM-004']);

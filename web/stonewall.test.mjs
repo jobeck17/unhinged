@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 import './cat-lady.js';
 import './rockstar.js';
 import './reckless.js';
@@ -22,7 +22,12 @@ for(const id of ['LAB-HOA-001','P124','P128','P129','P133','P135','P137','P138',
 {const g=fixture(),x=body(g,'P121');await g.damage(x,2);eq(x.damage,1,'Old Guy Absorb');const mom=body(g,'P072');body(g,'P072');g.players[0].digIn=true;eq(g.absorb(x),1,'auras do not stack');await g.damage(x,1);eq(x.damage,1,'zero damage ignored');eq(g.absorb(mom),1,'other Mom may protect first Mom')}
 // Meat Shield only restricts attacks against legally attackable Rotated shields.
 {const g=fixture(),a=body(g,'P012',1),target=body(g,'P124',0,false),shield=body(g,'P126',0,true);eq(g.attackTargets(a).map(x=>x.uid),[target.uid],'Ready shield inactive');shield.ready=false;eq(g.attackTargets(a).map(x=>x.uid),[shield.uid],'shield first');const second=body(g,'P129',0,false);eq(g.attackTargets(a).length,2,'choose shields');shield.cloaked=true;eq(g.attackTargets(a).map(x=>x.uid),[second.uid],'cannot attack cloak');second.ready=true;eq(g.attackTargets(a).map(x=>x.uid),[target.uid],'Ready shields do not protect even vs Sucker Punch');a.sucker=true;ok(g.attackTargets(a).some(x=>x.uid===second.uid),'Sucker hits Ready shield without redirect')}
-for(const rotate of [true,false]){const g=fixture(r=>r.title.startsWith('Crossing Guard:')?rotate:undefined);await play(g,'P126');eq(g.chars(0)[0].ready,!rotate,'optional rotated entry')}
+for(const id of ['P126','P129','P133'])for(const rotate of [true,false])for(const free of [true,false]){
+ let prompts=0;const g=fixture(r=>{if(r.title.includes('enter Rotated for Meat Shield?')){prompts++;return rotate}});
+ g.players[0].hand=[id];const before=g.players[0].fuel;ok(await g.playCard(0,id,'hand',free?0:g.card(id).cost,{index:0}),'Meat Shield paid/free play '+id);
+ const shield=g.chars(0)[0];eq(shield.ready,!rotate,'Meat Shield entry choice '+id);eq(prompts,1,'exactly one entry prompt '+id);eq(g.players[0].fuel,before-(free?0:g.card(id).cost),'entry choice does not add cost '+id);ok(!g.canCauseTrouble(shield),'entry choice does not grant Trouble '+id);
+ const attacker=body(g,'P001',1);attacker.born=0;const other=body(g,'P124',0,false);eq(g.attackTargets(attacker).map(x=>x.uid),[rotate?shield.uid:other.uid],'Rotated shield immediately redirects attacks '+id);
+}
 // Retaliate still deals captured Power after the defender is Defeated.
 for(const id of ['P138','P128','P129','P133']){const g=fixture(),a=body(g,'P014',1),d=body(g,id,0,false);g.turn=1;a.power=10;g.ask=async r=>r.title.startsWith('Wannabe')?false:r.options[0]?.value;await g.attack(a.uid);ok(!g.obj(d.uid),'defender dies '+id);ok(!g.obj(a.uid)||a.damage===g.card(id).power,'retaliates on Defeat '+id)}
 // No old Mall Cop shutdown; only Hothead Power penalty while Ready.

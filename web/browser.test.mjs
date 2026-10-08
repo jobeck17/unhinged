@@ -64,6 +64,19 @@ try{
  await page.locator(`[data-uid="${trapUid}"]`).click();assert.match(await page.locator('.sheet').innerText(),/Stored face-down: Heckler/);await page.click('#activate');
  if(await page.locator('#done').count()){await page.locator('[data-c]').first().click();await page.click('#done')}
  await page.waitForSelector('#end');const hecklerUid=await page.evaluate(()=>globalThis.__audit.get().players[0].board.find(x=>x.id==='P078').uid);await page.locator(`[data-uid="${hecklerUid}"]`).click();assert(await page.locator('#trouble').count(),'released Heckler has Cause Trouble button');await page.click('#close');
+ // All Meat Shields offer both entry states through the actual Play modal.
+ for(const id of ['P126','P129','P133'])for(const rotated of [false,true]){
+  await page.evaluate(id=>globalThis.__audit.fixture({hand:[id]}),id);
+  await page.locator('[data-zone="hand"][data-index="0"]').click();await page.click('#play');
+  await page.waitForSelector('#done');const title=await page.locator('.sheet h2').innerText(),cost=Number(title.match(/exactly (\d+)/)[1]);
+  for(let i=0;i<cost;i++)await page.locator('[data-c]').nth(i).click();await page.click('#done');
+  await page.getByRole('heading',{name:/enter Rotated for Meat Shield/}).waitFor();
+  assert.equal(await page.getByRole('button',{name:'Enter Ready',exact:true}).count(),1);
+  assert.equal(await page.getByRole('button',{name:'Enter Rotated',exact:true}).count(),1);
+  await page.getByRole('button',{name:rotated?'Enter Rotated':'Enter Ready',exact:true}).click();await page.waitForSelector('#end');
+  const ready=await page.evaluate(id=>globalThis.__audit.get().players[0].board.find(x=>x.id===id).ready,id);assert.equal(ready,!rotated);
+ }
+ console.log('Meat Shield browser verification passed: Ready and Rotated entry choices for Crossing Guard, HOA Vice President and Gated Community Security');
  // Builder: visible 32-card pool, baseline, Leader text and saved ID migration.
  await page.goto(base+'builder/');await page.waitForSelector('#leader');await page.selectOption('#leader','Birthday Party Magician');assert.match(await page.locator('#resultcount').innerText(),/32 legal cards/);await page.click('#baseline');assert.match(await page.locator('.count').innerText(),/40\/40/);assert.match(await page.locator('.construction-note').innerText(),/For My Next Trick/);assert.match(await page.locator('#grid').innerText(),/Trap Door/);assert.doesNotMatch(await page.locator('#grid').innerText(),/Conspiracy Blogger|Do Not Look in the Hat/);
  await page.evaluate(()=>localStorage.setItem('unhinged-builder-mordecai-04',JSON.stringify({leader:'Birthday Party Magician',cards:{'LAB-MAG-001B':1,P089:1}})));await page.reload();await page.waitForSelector('#leader');const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('unhinged-builder-mordecai-04')));assert.equal(saved.cards['LAB-MAG-001A'],1);assert.equal(saved.cards['LAB-MAG-004'],1);assert(!saved.cards.P089);

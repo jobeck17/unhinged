@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import {Game} from './engine.js?v=mordecai-04-misdirection-01';
+import {Game} from './engine.js?v=mordecai-04-meatshield-01';
 import {aiAction,aiChoice} from './ai.js';
 import './cat-lady.js';
 import './rockstar.js';

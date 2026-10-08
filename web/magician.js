@@ -1,5 +1,5 @@
 // 8 October 2026 locked audit. Load last: composes with Reckless and Stonewall.
-import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 export const MISDIRECTION_IDS=new Set(['P062','P076','LAB-MAG-001A','P061','P063','LAB-MAG-006','P077','P066','LAB-MAG-003','P065','P067','LAB-MAG-004','P039','P064','P068','P075','P073','P078','LAB-MAG-008','P081','P084','P090','P080','P086','P082','LAB-MAG-002','P142','P079','P085','P088','LAB-MAG-005','LAB-MAG-009']);
 const HAT='LAB-MAG-005',TRAP='LAB-MAG-009',HEAD='LAB-MAG-008',VOL='LAB-MAG-001A',DOVE='LAB-MAG-006',MOM='LAB-MAG-004';
 const live=(g,x)=>!!x&&!!g.obj(x.uid)&&!x.cloaked;

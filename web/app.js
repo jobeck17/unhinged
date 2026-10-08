@@ -1,17 +1,17 @@
-import {Game,LEADERS} from './engine.js?v=mordecai-04-misdirection-01';
-import {aiAction,aiChoice} from './ai.js?v=misdirection-01';
-import './cat-lady.js?v=misdirection-01';
-import './rockstar.js?v=misdirection-01';
-import './reckless.js?v=misdirection-01';
-import './stonewall.js?v=misdirection-01';
-import './magician.js?v=misdirection-02';
-import {applyLandonLab} from './landon-lab.js?v=misdirection-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
+import {aiAction,aiChoice} from './ai.js?v=meatshield-01';
+import './cat-lady.js?v=meatshield-01';
+import './rockstar.js?v=meatshield-01';
+import './reckless.js?v=meatshield-01';
+import './stonewall.js?v=meatshield-01';
+import './magician.js?v=meatshield-01';
+import {applyLandonLab} from './landon-lab.js?v=meatshield-01';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.';
 try{
- [pool,decks]=await Promise.all([fetch('../CARDS.json?v=misdirection-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=misdirection-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
+ [pool,decks]=await Promise.all([fetch('../CARDS.json?v=meatshield-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=meatshield-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
  ({pool,decks}=applyLandonLab(pool,decks));
  setup();

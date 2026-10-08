@@ -122,6 +122,7 @@ export class Game{
  if(c.type==='Character'){
   let x;if(choice){x=this.obj(choice);x.lower=x.id;x.id=id;x.born=this.round;x.enteredTurn=this.turnSerial||0;x.hot=bonusHot;x.power=0;if(entryContext)Object.assign(x,entryContext);await this.checkDefeat(x)}else{x=this.enter(p,id,null,null,cardOwner);if(x){x.hot=bonusHot;if(entryContext)Object.assign(x,entryContext)}}
   if(!x||!this.obj(x.uid))return true;
+  if(this.keyword?.(x,'Meat Shield')??c.keywords.includes('Meat Shield')){const rotated=await this.choose(p,`${c.name}: enter Rotated for Meat Shield?`,[{label:'Enter Ready',value:false},{label:'Enter Rotated',value:true}]);if(rotated)x.ready=false}
   await this.enterEffect(x,previous);if(s.friendPower&&this.obj(x.uid)){let z=this.chars(p).filter(y=>y.uid!==x.uid);if(z.length){let t=await this.pick('Bring a Friend: give +1 Power',p,z,true);if(t!=null)this.obj(t).power++}s.friendPower=false}if(c.type==='Character'&&s.nextCharDiscount)s.nextCharDiscount=0;if(c.type==='Character'&&s.discountUndead===id)s.discountUndead=null;if(c.type==='Item'&&s.nextItemDiscount)s.nextItemDiscount=0;
  }else if(c.type==='Item'){
   let x=this.enter(p,id,['P027','P028','LAB-FLM-004','P057','P117','P149','P177','P178','P179'].includes(id)?target:null);if(id==='P029')x.beside=1-p;
