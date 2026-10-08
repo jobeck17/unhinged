@@ -35,6 +35,8 @@ const create=(customAsk)=>{
 assert.deepEqual(pokerScore(Object.fromEntries(pool.cards.map(c=>[c.id,c])),["LAB-GD-011","LAB-GD-015"]),[7,5],"Action Power is zero");
 assert.equal(compareScores([6,7],[6,4]),1,"Power breaks Cost tie");
 assert.equal(compareScores([5,9],[6,0]),-1,"Cost outweighs Power");
+assert.equal(compareScores([5,9],[6,0],"LOW"),1,"Low Poker rewards lower Cost");
+assert.equal(compareScores([6,7],[6,4],"LOW"),1,"Power still breaks Cost ties on LOW");
 
 const win=create();
 win.players[0].deck=["LAB-GD-001","LAB-GD-011","LAB-GD-012"];
@@ -77,6 +79,7 @@ assert(!tie.canPoker(0));
 // Choosing indices 0 and 2 must leave card 1 untouched, even if it is stronger.
 const witnessed=[];
 const manual=create(async r=>{
+  if(r.pokerChip){assert(["HIGH","LOW"].includes(r.pokerMode),"Coin decides fair High/Low mode");return null;}
   if(!r.pokerCards)return r.options?.[0]?.value??null;
   assert.equal(r.options.length,3,"Present three cards, not three pairs");
   assert.deepEqual(r.options.map(x=>x.value),[0,1,2],"Each option is one card index");
