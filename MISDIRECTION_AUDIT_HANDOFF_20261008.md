@@ -1,10 +1,10 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph locked Have You Tried Turning It Off? at cost 3, Draw 2. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph locked Manager at cost 2 (opposing Item return + Draw 1), flagged its name ★, and deferred the Hat action to the Item review. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
-Character first pass and most actions are approved. Finish the remaining actions, then audit items. After that revisit the character curve, ability distribution, and create a real finisher; finally rename cards as one coherent theme pass. Work in batches of three: current card, proposed update, role/combo and any testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass and ten actions are approved. Next audit the three Items; revisit Do Not Look in the Hat alongside Magician's Hat. Joseph said to table the Hat for items; treat that as deferred to this joint review, not a permanent retirement lock. After that revisit the character curve, ability distribution, and create a real finisher; finally rename cards as one coherent theme pass. Work in batches of three: current card, proposed update, role/combo and any testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
@@ -77,7 +77,7 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 - Identity Thief can copy Hothead and attack immediately on entry; only printed keywords, not Script Kiddie's non-keyword permission. Verify numeric keywords and source-leaving behavior in implementation.
 - P078 Pirate With a Business License ○: PENDING, not locked and not definitively tabled. Current old cost 5, 4/7/2; proposed 5, 2/4/2, once during your turn after opponent makes a choice instructed by your card, reveal top deck card; may play it free if cost <=2, otherwise bottom it. Need explicitly bottom any revealed card not played. Only audited character enabler is Pirate Radio Operator; Pick a Card and Wrong Address actions also qualify. Sparse support and another free-play effect may justify tabling or replacing it with a finisher. Two copies would each trigger once per turn and resolve sequential reveals, NOT draw 2. A once-per-turn limit is per copy unless text explicitly says shared.
 
-## Locked actions (9)
+## Locked actions (10)
 
 | ID / working name | Cost | Approved effect |
 |---|---:|---|
@@ -89,6 +89,7 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 | P085 Have You Tried Turning It Off? ○ | 3 | Draw 2 cards. Final user lock at chat ending. Old Rotated item/character bounce removed. |
 | P086 Switcheroo | 2 | Choose a character you control and an opposing character with equal or lower cost. Return both to their owners' hands. |
 | LAB-MAG-002 Ethan's JUST Being Dramatic ★ | 2 | Draw 2 cards, then discard a card. Old plain friendly bounce removed. |
+| P142 I Want to Speak to Your Manager ★ | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
 | P090 Poof! | 1 | Choose a character you control. After it next Causes Trouble this turn, return it to your hand. Must play before Trouble. No Ready, immediate-Trouble permission, or draw added. |
 
 Important reversals: User rejected converting Poof! into conditional draw and explicitly restored the bounce-after-Trouble version. User instead reopened P085 and converted that generic bounce into 3-cost Draw 2. Do not accidentally restore earlier versions.
@@ -97,14 +98,15 @@ Ethan's draw 2/discard 1 overlaps Social Media Grifter's character entrance but 
 
 Wrong Address's 2-cost unrestricted opposing bounce is a testing flag, particularly against a single expensive character; no cost cap has been approved.
 
-## Remaining actions and items — old versions, NOT audited locks
+Manager testing lock: start at cost 2 with unrestricted opposing Item return and Draw 1. Test efficiency against expensive Item engines before adding a cap; no cap or cost increase is currently approved. Returning an attachment leaves its Character in play. The working name does not fit the Magician theme and must be renamed in the later coherent naming pass.
 
-Likely next action batch has only two remaining existing actions; don't invent a third merely to fill the batch:
+## Remaining items and deferred Hat action — old versions, NOT audited locks
+
+Review these three Items together and resolve the deferred Hat action alongside its Item:
 
 | Card | Existing cost/effect | Review concern |
 |---|---|---|
-| P142 I Want to Speak to Your Manager | Action 2: return an Item or Character costing <=2 to owner's hand. | Another generic bounce; user wants less redundant bounce. Item interaction may justify a different role. |
-| LAB-MAG-007 Do Not Look in the Hat | Action 1: play Rabbit or Dove from hand free, only if you control a Rotated Magician's Hat. | Conditional free-play package; review alongside Hat and stated limited free deployment. |
+| LAB-MAG-007 Do Not Look in the Hat | Action 1: play Rabbit or Dove from hand free, only if you control a Rotated Magician's Hat. | Deferred to the Item review. Proposal to table because of deployment overlap has not been recorded as permanent retirement; resolve alongside Hat and stated limited free deployment. |
 | P087 Burner Phone | Item 1: Rotate, look at up to 2 Stash cards, may retrieve one and replace it with a hand card Rotated. | Inspection now general; exchange action and IT Guy already cover exchange. Rework/retain/table deliberately. |
 | P088 Beer-Stained Cards | Item 2: once during own turn, Rotate it and spend 1 Ready Stash to draw a card. | Repeatable draw, cost/tempo needs audit. |
 | LAB-MAG-005 Magician's Hat | Item 4: Activate, return a Rabbit or Dove you control to hand. | Narrow reusable bounce engine; audit cost and activation wording, avoid too much bounce. |
@@ -140,7 +142,7 @@ Reckless committed pool has 32 cards with last slot intentionally open. Stonewal
 
 ## Implementation checklist for later
 
-1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 21 characters + 9 actions = 30; three existing items and two remaining actions are not yet locked. Pending Pirate is not included.
+1. Finish actions/items and finisher/curve/names before assuming set size finalized. Current approved counts: 21 characters + 10 actions = 31; three existing Items and the deferred Hat action are not yet locked. Pending Pirate is not included.
 2. Retrieve latest remote CARD/DECK/rule state. Apply this record's final approvals, not obsolete baseline values or superseded proposals. Keep IDs stable where possible; explicitly migrate duplicate references.
 3. Update CARDS.json, DECKS.json, builder text, engine effects, AI choices, tests, rules and NOTES when authorized to implement. Do not claim functional verification before running it.
 4. Test entrance vs play wording for direct deployments; borrowed ownership and trigger controller; Hothead copying; temporary Power expiry; bounce clears board damage/buffs appropriately; optional choices; deck shortfalls; cost payment and per-slot Stash state; hidden-hand choice privacy; Poof one-use expiry; scheduled effects following source departure without retrieving a new incarnation of a card.
@@ -149,4 +151,4 @@ Reckless committed pool has 32 cards with last slot intentionally open. Stonewal
 
 ## Suggested opening prompt for the new chat
 
-Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. We just locked Have You Tried Turning It Off? at 3 cost, Draw 2. Finish remaining actions (Manager and Do Not Look in the Hat), then items, then revisit a finisher and the character curve. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
+Continue Unhinged's Misdirection/Birthday Party Magician audit. Read MISDIRECTION_AUDIT_HANDOFF_20261008.md in jobeck17/unhinged. Manager is now locked at 2 cost: return an opposing Item, Draw 1, no cost cap; its name is flagged ★. Audit Burner Phone, Beer-Stained Cards and Magician's Hat, resolving the deferred Do Not Look in the Hat action alongside the Hat. Then revisit a finisher and the character curve. Use batches of three where possible and preserve all locks/name flags. Revised Misdirection cards have not been implemented yet.
