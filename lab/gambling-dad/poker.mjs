@@ -97,6 +97,11 @@ export function installGamblingDad(Game, LEADERS) {
       if(this.players[p].hand.length)await this.discard(p);
       return;
     }
+    if(id==="LAB-GD-014"){
+      const s=this.players[p],n=Math.min(2,s.stash.length-s.fuel);
+      s.fuel+=n;this.say("It's Basically Free Money Readies "+n+" Stash");
+      return;
+    }
     if(id==="LAB-GD-015"){
       const uid=await this.pick("Cash Out: give +2 Power to your Character",p,this.chars(p));
       const x=this.obj(uid);
@@ -107,11 +112,10 @@ export function installGamblingDad(Game, LEADERS) {
   };
   Game.prototype.canPoker=function(p=this.turn) {
     return this.winner===null && this.turn===p && this.name(p)===DAD &&
-       !this.players[p].pokerUsed && this.players[p].fuel>=1 && this.players.every(s=>s.deck.length>=4);
+       !this.players[p].pokerUsed && this.players.every(s=>s.deck.length>=4);
   };
   Game.prototype.dadPoker=async function(p=this.turn) {
     if(!this.canPoker(p))return false;
-    if(!this.payCost(p,1))return false;
     this.players[p].pokerUsed=true;
     const pokerMode=Math.random()<0.5?"HIGH":"LOW";
     this.pokerMode=pokerMode;
@@ -180,13 +184,7 @@ export function installGamblingDad(Game, LEADERS) {
         if(s.pokerOrigins?.length>i)s.pokerOrigins.pop();
       }
       s.fuel=Math.min(s.fuel,s.stash.length);
-      const rockBottom=this.chars(p).length===0 && s.stash.length<=2;
       for(const character of [...this.chars(p)])await this.remove(character,"discard",true);
-      if(rockBottom){
-        s.hp=Math.max(0,s.hp-3);
-        this.say("ROCK BOTTOM: no Characters and at most 2 Stash — Gambling Dad loses 3 Composure.");
-        this.checkEnd();
-      }
       this.say(prefix+"Dad LOSES. Stash resets to at most two; all Characters Defeated.");
       for(const x of this.chars(p)){
         if(x.id==="LAB-GD-004")this.draw(p,1);
