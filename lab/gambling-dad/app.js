@@ -5,7 +5,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,handRank} from './poker.mjs?v=gd-10';
+import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-11';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
@@ -149,9 +149,8 @@ async function ask(r){
      const status=document.querySelector('#poker-selection');
      if(picked.length===2){
        const ids=picked.map(i=>r.options[i].cardId),costs=ids.map(id=>game.card(id).cost);
-       const rank=handRank(game.cards,ids,r.pokerMode);
-       const label=r.pokerMode==="HIGH"?({3:"Matching Pair",2:"Straight",1:"High Roller"})[rank]:({3:"High Roller",2:"Straight",1:"Matching Pair"})[rank];
-       status.textContent="2 of 2 selected · "+label+" · Cost "+(costs[0]+costs[1]);
+       const label=pokerHandType(game.cards,ids);
+       status.textContent="YOUR HAND: "+label+" ("+costs[0]+" + "+costs[1]+") · Total Cost "+(costs[0]+costs[1]);
      }else status.textContent=picked.length+' of 2 selected';
     });
    });
