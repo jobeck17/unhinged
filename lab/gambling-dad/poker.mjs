@@ -25,6 +25,13 @@ export function compareScores(a,b,mode="HIGH") {
    (mode==="LOW"?Math.sign(b[1]-a[1]):Math.sign(a[1]-b[1])) ||
    Math.sign(a[2]-b[2]);
 }
+export const SLOT_MACHINE="LAB-GD-018";
+export function slotPayout(flips,continuePlaying,handSize){
+  if(flips.length<2||flips[0]!==flips[1])return {outcome:"MISS",draw:0};
+  if(!continuePlaying)return {outcome:"CASH OUT",draw:1};
+  if(flips[2]===flips[0])return {outcome:"JACKPOT",draw:Math.max(0,7-handSize)};
+  return {outcome:"BUST",draw:0};
+}
 export function installGamblingDad(Game, LEADERS) {
   LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: gain 4 Stash. Lose: reset Stash to 2 and Defeat your Characters. Only Dad may Fold for 1 Stash."};
   const oldStart=Game.prototype.startTurn;
@@ -42,6 +49,46 @@ export function installGamblingDad(Game, LEADERS) {
   const oldCanPlay=Game.prototype.canPlay;
   Game.prototype.canPlay=function(i,p=this.turn){
     return oldCanPlay.call(this,i,p) && (this.players[p].hand[i]!=="LAB-GD-015"||this.chars(p).length>0);
+  };
+  const oldCanUse=Game.prototype.canUse;
+  Game.prototype.canUse=function(x){
+    if(x?.id===SLOT_MACHINE){
+      return this.winner===null && x.owner===this.turn && x.ready && !x.cloaked &&
+        this.players[x.owner].fuel>=2 && this.players[x.owner].deck.length>0;
+    }
+    return oldCanUse.call(this,x);
+  };
+  const oldActivate=Game.prototype.activate;
+  Game.prototype.activate=async function(uid,mode=null){
+    const x=this.obj(uid),p=this.turn;
+    if(x?.id!==SLOT_MACHINE)return oldActivate.call(this,uid,mode);
+    if(!this.canUse(x)||!this.payCost(p,2))return;
+    x.ready=false;
+    this.say("Slot Machine: spends 2 Ready Stash and starts flipping Dad's Lucky Poker Chip.");
+    // Only reveal the chip results as they happen. The third flip is not made
+    // unless the player deliberately risks their first-two match.
+    await this.ask({player:p,slotStart:true});
+    const flips=[];
+    for(let i=0;i<2;i++){
+      flips.push(Math.random()<0.5?"H":"L");
+      await this.ask({player:p,slotFlip:true,index:i,face:flips[i]});
+    }
+    if(flips[0]!==flips[1]){
+      await this.ask({player:p,slotFinish:true,slotOutcome:"MISS",flips:[...flips]});
+      this.slotLast={flips:[...flips],outcome:"MISS",drawn:0};
+      this.say("Slot Machine: first two flips differ. No cards drawn.");
+      return;
+    }
+    const decision=await this.ask({player:p,slotDecision:true,flips:[...flips],handSize:this.players[p].hand.length});
+    if(decision==="continue"){
+      flips.push(Math.random()<0.5?"H":"L");
+      await this.ask({player:p,slotFlip:true,index:2,face:flips[2]});
+    }
+    const payout=slotPayout(flips,decision==="continue",this.players[p].hand.length);
+    const drawn=payout.draw?this.draw(p,payout.draw):0;
+    this.slotLast={flips:[...flips],outcome:payout.outcome,drawn};
+    await this.ask({player:p,slotFinish:true,slotOutcome:payout.outcome,flips:[...flips],drawn});
+    this.say("Slot Machine: "+payout.outcome+" · Draw "+drawn+".");
   };
   const oldAction=Game.prototype.actionEffect;
   Game.prototype.actionEffect=async function(p,id,target,second,previous) {
