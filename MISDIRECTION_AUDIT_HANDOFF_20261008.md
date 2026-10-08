@@ -91,12 +91,12 @@ The borrowed character's entrance abilities trigger. It is not permanent theft. 
 | P079 Pick a Card | 3 | Opponent chooses a card from your whole remaining hand without seeing its face. Reveal it; you may play it without paying its cost. NO draw-to-three. Physically fan the whole hand with backs toward opponent; digital must not reveal identities during selection. |
 | P080 Now You See Me | 2 | Return a character you control to your hand. Then you may play a character costing 2 or less from your hand without paying its cost. Old extra discounted payment removed. |
 | P081 Look Over There! | 1 | Rotate a chosen opposing character costing 3 or less. No skip-next-ready effect, no Response text. |
-| P082 Wrong Address ○ | 2 | Choose two opposing characters; their owner chooses one to return to its owner's hand. If they have only one character, choose and return that one instead. No cost cap. |
+| P082 Choose Your Fate | 2 | Choose two opposing characters; their owner chooses one to return to its owner's hand. If they have only one character, choose and return that one instead. No cost cap. |
 | P084 Presto Chango | 1 | Exchange a card in your Stash with a card in your hand. The replacement enters Stash in the same state—Ready or Rotated—as the card it replaces. This IS the initially unnamed locked exchange action, not an extra slot. |
 | P085 Ace Up My Sleeve | 3 | Draw 2 cards. Final user lock at chat ending. Old Rotated item/character bounce removed. |
 | P086 Now You Don't (formerly Switcheroo) | 2 | Choose a character you control and an opposing character with equal or lower cost. Dismiss both to their owners' discard piles. Joseph explicitly revised name and destination; paired Trap Door recovery and balance need deeper exploration. |
 | LAB-MAG-002 Ethan's JUST Being Dramatic ★ | 2 | Draw 2 cards, then discard a card. Old plain friendly bounce removed. |
-| P142 Vanishing Act ○ | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
+| P142 Vanishing Act | 2 | Return an opposing Item to its owner's hand. Draw a card. No cost cap; no Character option. Requires an opposing Item; cannot be played solely to draw. |
 | P090 Poof! | 1 | Choose a character you control. After it next Causes Trouble this turn, return it to your hand. Must play before Trouble. No Ready, immediate-Trouble permission, or draw added. |
 
 Important reversals: User rejected converting Poof! into conditional draw and explicitly restored the bounce-after-Trouble version. User instead reopened P085 and converted that generic bounce into 3-cost Draw 2. Do not accidentally restore earlier versions.
@@ -111,7 +111,7 @@ Manager testing lock: start at cost 2 with unrestricted opposing Item return and
 
 | ID / working name | Cost | Approved effect |
 |---|---:|---|
-| P088 Marked Deck ○ | 2 | Rotate this Item and spend 1 Stash: Draw a card. |
+| P088 Marked Deck | 2 | Rotate this Item and spend 1 Stash: Draw a card. |
 | LAB-MAG-005 Magician's Hat | 3 | Rotate this Item and spend 1 Stash: Return a Magical Character you control to your hand. |
 | New ID pending — Trap Door | 3 | May store a just-Dismissed friendly Character costing <=5 from your discard face-down if empty. Rotate and spend 1 Stash: Play stored Character free. Persistent; one stored card; see full lock below. |
 
@@ -256,8 +256,8 @@ Joseph approved all ten suggested replacements as current working names, explici
 
 | ID | Previous working name | Current working name |
 |---|---|---|
-| P088 | Beer-Stained Cards | Marked Deck ○ |
-| P142 | I Want to Speak to Your Manager | Vanishing Act ○ |
+| P088 | Beer-Stained Cards | Marked Deck |
+| P142 | I Want to Speak to Your Manager | Vanishing Act |
 | P076 | Wi-Fi Bandit | Overeager Apprentice ○ |
 | P077 | Script Kiddie | Opening Act ○ |
 | P066 | Off-Duty Clown | Stagehand ○ |
@@ -268,6 +268,16 @@ Joseph approved all ten suggested replacements as current working names, explici
 | P073 | IT Guy Who Quit Six Months Ago | Quick-Change Artist ○ |
 
 Beer-Stained Cards remains BANKED as a future Florida Man/Reckless name/concept; P088's current Misdirection draw-engine ability stays on Marked Deck. No style transfer. Previously approved Presto Chango, Ace Up My Sleeve, The Headliner, Heckler, The Mentalist and Now You Don't remain unchanged. Other name flags (including School Bully ★, Lady ○ and Enthusiastic Volunteer ○) remain intact. Pool stays 32 active designs; production/playtest implementation remains pending.
+
+## Misdirection name confirmations and draw-overlap review — 8 October 2026
+
+- **P082 Wrong Address ○ → Choose Your Fate:** approved rename; name flag resolved. Ability unchanged.
+- **P142 Vanishing Act:** user explicitly LOCKED name; remove ○. Ability unchanged.
+- **P088 Marked Deck:** user explicitly LOCKED name; remove ○. Beer-Stained Cards future Florida Man name bank remains.
+- **Open names:** Overeager Apprentice and Ethan remain unresolved (user left proposed replacements blank). User suggests Volunteer From the Audience for the current 1-cost Very Enthusiastic Volunteer; treat question mark as tentative, not a new lock. That prior name is available because P064 is now The Mentalist.
+- **Family-flavor direction:** School Bully should evoke the Birthday Kid's older brother; Lady should evoke the Birthday Kid's mom. User flags literal names as too long. Short exact names remain unapproved; preserve existing working labels/flags for now.
+- **Ability overlap reopened:** user identifies identical “Draw 2, discard 1” on Ethan (cost-2 Action) and Card Shark (cost-4 Character). Prior approval remains historical; do not claim the difference in card type resolves the concern. Review a distinct effect for Ethan; no mechanics changed by this naming update.
+- Pool stays 32 active designs; revisions not implemented in playtest.
 
 ## Implementation checklist for later
 
