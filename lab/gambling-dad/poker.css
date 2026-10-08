@@ -49,3 +49,14 @@
 .poker-reveal-cards{font-size:12px;line-height:1.4}
 .poker-reveal-power{font-weight:700;font-size:12px;color:#4d6259}
 @media(max-width:480px){.poker-reveal{padding:10px}.poker-reveal-grid{grid-template-columns:1fr;gap:8px}.poker-reveal-hand{padding:10px}}
+
+/* LAB ONLY: Slot Machine reveals H/L chips in sequence with an intentional stop. */
+.slot-sheet{width:min(100%,490px);text-align:center;background:#f8f0d9;color:#1d362c;border:3px solid #bf984f;border-radius:18px}
+.slot-sheet h2{color:#204f3d;letter-spacing:1px}
+.slot-reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px auto;max-width:360px}
+.slot-reel{border-radius:50%;aspect-ratio:1;display:grid;place-items:center;font-size:clamp(30px,7vw,58px);font-weight:900;color:#8a8b7d;background:#e2dcc6;border:6px double #ac9b73;box-shadow:inset 0 3px 8px #0002}
+.slot-reel.revealed{color:#f9e6ad;background:#185843;border-color:#d7ae5d;box-shadow:0 6px 15px #0003,inset 0 0 0 3px #297558}
+.slot-status{min-height:42px;font-size:16px;font-weight:800;line-height:1.4}
+.slot-sheet .modal-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.slot-sheet button{min-width:135px}
+@media(max-width:420px){.slot-reels{gap:7px}.slot-reel{border-width:4px}.slot-sheet{padding:12px}}
