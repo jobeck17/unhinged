@@ -23,9 +23,10 @@ assert(!canonDecks.decks.some(d=>d.leader==="Gambling Dad"));
 installGamblingDad(Game,LEADERS);
 assert(LEADERS["Gambling Dad"].passive.includes(PASSIVE));
 const pool={cards:[...canonCards.cards,...labCards.cards]};
-const create=()=>{
+const create=(customAsk)=>{
   const g=new Game(pool,{decks:[labDeck,canonDecks.decks[0]]},
-    async r=>r.options?.[0]?.value??null,()=>{},{firstPlayer:0});
+    customAsk??(async r=>r.pokerCards?[...r.recommendedPair]:(r.options?.[0]?.value??null)),
+    ()=>{},{firstPlayer:0});
   g.turn=0;g.round=2;g.players[0].pokerUsed=false;
   return g;
 };
@@ -69,4 +70,23 @@ assert.equal(tie.players[0].stash.length,3,"Tie does not reset Stash");
 assert.equal(tie.players[0].discard.length,2,"Dad's selected pair is discarded on tie");
 assert.equal(tie.players[1].discard.length,2,"Opponent's selected pair is discarded on tie");
 assert(!tie.canPoker(0));
-console.log("Gambling Dad lab: 40-card shell, polarized Cost curve, scoring, win, loss, tie and ownership assertions passed");
+
+// The human must receive three *individual* cards and be able to commit any two.
+// Choosing indices 0 and 2 must leave card 1 untouched, even if it is stronger.
+const witnessed=[];
+const manual=create(async r=>{
+  if(!r.pokerCards)return r.options?.[0]?.value??null;
+  assert.equal(r.options.length,3,"Present three cards, not three pairs");
+  assert.deepEqual(r.options.map(x=>x.value),[0,1,2],"Each option is one card index");
+  assert(r.options.every(x=>typeof x.cardId==="string"),"Every card has its own ID");
+  witnessed.push({player:r.player,options:r.options.map(x=>x.cardId)});
+  return r.player===0?[0,2]:[...r.recommendedPair];
+});
+manual.players[0].deck=["LAB-GD-001","LAB-GD-011","LAB-GD-002"];
+manual.players[1].deck=["LAB-GD-001","LAB-GD-001","LAB-GD-001"];
+await manual.dadPoker(0);
+assert.equal(witnessed.length,2,"Each player selects a pair from three individual cards");
+assert.equal(manual.players[0].deck[0],"LAB-GD-011","Unselected middle card must return to deck");
+assert(!manual.players[0].stash.includes("LAB-GD-011"),"Unselected card is not wagered");
+
+console.log("Gambling Dad lab: 40-card shell, polarized Cost curve, individual choose-two picker, scoring, win, loss, tie and ownership assertions passed");
