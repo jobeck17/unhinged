@@ -1,14 +1,14 @@
 # Unhinged — Misdirection audit handoff
 
-Updated 8 October 2026, after Joseph locked Impatient Apprentice, Volunteer From the Audience, Big Brother, Party Mom and Encore!, including Encore's conditional Draw 2 revision. This is the continuation record for a new chat. Read this before continuing the audit.
+Updated 8 October 2026, after Joseph locked Birthday Party Magician's The Show Must Go On passive. This is the continuation record for a new chat. Read this before continuing the audit.
 
 ## Exact stopping point and next steps
 
-Character first pass, ten Actions, three Items and the new finisher are approved (32 active distinct designs: 19 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive and Breaking Point remain unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass, ten Actions, three Items and the new finisher are approved (32 active distinct designs: 19 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive is now locked as The Show Must Go On (see below); Breaking Point remains unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
-Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.github.io/unhinged/web/ ; builder: https://jobeck17.github.io/unhinged/builder/ . Leader: Birthday Party Magician. Current deck name: Now You See Me. Leave the leader passive unchanged for now; it has not been audited in this pass. Breaking Point also remains to review.
+Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.github.io/unhinged/web/ ; builder: https://jobeck17.github.io/unhinged/builder/ . Leader: Birthday Party Magician. Current deck name: Now You See Me. Leader passive design is now The Show Must Go On: once during your turn, friendly return to your hand or Dismiss Readies 1 Stash. Production implementation is pending. Breaking Point remains to review.
 
 ## Identity and design guardrails
 
@@ -305,6 +305,19 @@ IMPLEMENTATION/VERIFICATION afterwards: stable IDs for Trap Door/The Headliner, 
 - **CURRENT production Birthday Party Magician passive**, verified in web/engine.js: “Ace Up My Sleeve: Once during your Turn, when your Character is Returned to hand, Ready 1 Stash.” This is current browser text/behavior; NOT the physical sneaking IDEA in lab/LEADER_PASSIVES.md.
 - The passive's Ace Up My Sleeve title now overlaps the approved draw Action name. Passive title/revision remains unapproved until Joseph decides; no Leader effect changed in production.
 - Leader passive and Breaking Point review remains open. All 32 active card names are now accepted; remaining work is trait/Leader/concept/deck review followed by implementation/testing.
+
+## Birthday Party Magician passive — LOCKED 8 October 2026
+
+**The Show Must Go On:** “Once during your turn, when a character you control is returned to your hand or Dismissed, Ready 1 Stash.”
+
+Joseph approved the broadened passive and title. Supersedes the design-level return-only Ace Up My Sleeve passive. Ace Up My Sleeve remains the cost-3 Draw 2 Action.
+
+- First qualifying actual movement during your turn triggers; return and Dismiss share ONE use, not one each. No opposing-turn activation, no stacking uses from multiple Characters.
+- Character must have been under your control immediately before leaving play. Return branch requires destination your hand; borrowed Characters returned to their owner's opposing hand do not qualify. Dismiss branch may qualify for a controlled borrowed Character going to its owner's discard.
+- Actual Dismiss/return required: prevented movement (e.g. Stubborn) does not trigger. Defeat/Sacrifice and hand discard do not qualify. No recursion from Stash exchange or Item movement.
+- Ready a chosen eligible Rotated Stash card; normal per-card identity/state handling must be implemented. No Stash added and no permanent ramp. Passive's once-per-turn use is consumed by its first qualifying trigger even if no Rotated Stash is available, consistent with the proposed automatic first-event model/current production passive; don't change this timing silently.
+- Supports bounce and Now You Don't / Disappearing Assistant / Trap Door. Once-per-turn resource refund remains a testing parameter.
+- DESIGN LOCK ONLY: existing web/engine.js still uses earlier return-only passive until implementation. No browser/engine edits in this update. Breaking Point remains open.
 
 ## Implementation checklist for later
 
