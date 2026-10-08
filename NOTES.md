@@ -1,3 +1,7 @@
+## First Reckless / Stonewall head-to-head — 8 October 2026
+
+400 deterministic production-engine AI games, alternating seats and first player: HOA 224 wins (56.4% of 397 completed); Florida 173 (43.6%). Three exhausted-deck, no-Character endgames reached the round cap: flag a future tie/stalemate-rule discussion, without adding a rule now. Finished games averaged 9.6 rounds; median 9; first-player win rate 48.1%. Broad coverage lists and basic AI, not a balance verdict. No nerfs or other tuning applied. Reproducible script and full results: web/headtohead.sim.mjs, HEAD_TO_HEAD_20261008.json, HEAD_TO_HEAD_20261008.md.
+
 ## Stonewall committed audit — 8 October 2026
 
 This section is the latest Stonewall source of truth and supersedes older suggestions below.
