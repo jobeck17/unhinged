@@ -5,10 +5,17 @@ export function pokerScore(cards, pair) {
   return [pair.reduce((n,id)=>n+(cards[id]?.cost??0),0),
           pair.reduce((n,id)=>n+(cards[id]?.type==="Character"?(cards[id].power??0):0),0)];
 }
+export function pokerHandType(cards,ids) {
+ const a=Number(cards[ids[0]].cost),b=Number(cards[ids[1]].cost);
+ if(a===b)return "Matching Pair";
+ if(Math.abs(a-b)===1)return "Straight";
+ return "High Roller";
+}
 export function handRank(cards,ids,mode="HIGH") {
- const a=cards[ids[0]].cost,b=cards[ids[1]].cost;
- const pair=a===b,straight=Math.abs(a-b)===1;
- return mode==="HIGH"?(pair?3:straight?2:1):(pair?1:straight?2:3);
+ const type=pokerHandType(cards,ids);
+ return (mode==="HIGH"
+   ? {"Matching Pair":3,"Straight":2,"High Roller":1}
+   : {"Matching Pair":1,"Straight":2,"High Roller":3})[type];
 }
 export function pokerValue(cards,ids,mode="HIGH") {
  return [handRank(cards,ids,mode),...pokerScore(cards,ids)];
