@@ -1,4 +1,4 @@
-import {Game,LEADERS} from '../../web/engine.js?v=mordecai-04-reckless-01';
+import {Game,LEADERS} from '../../web/engine.js?v=mordecai-04-stonewall-01';
 import {aiAction,aiChoice} from '../../web/ai.js?v=mordecai-04';
 import '../../web/magician.js?v=reckless-01';
 import '../../web/cat-lady.js?v=reckless-01';
@@ -7,6 +7,9 @@ import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
 import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-14';
 installGamblingDad(Game,LEADERS);
+// Production gameplay packages patch the SAME engine module; stop early if
+// mismatched import URLs leave the lab without their combat functions.
+if(typeof Game.prototype.attackTargets!=="function")throw new Error("Gambling Dad lab: gameplay packages are attached to a different engine module.");
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
