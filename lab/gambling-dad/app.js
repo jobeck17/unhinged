@@ -5,12 +5,12 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-12';
+import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-13';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins +4 Ready Stash; Dad loses Stash down to two and all his Characters are Defeated; complete tie discards both pairs. Both selected hands are revealed after play. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
+const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins +4 Ready Stash; Dad loses Stash down to two and all his Characters are Defeated; complete tie discards both pairs. Both selected hands are revealed after play. Slot Machine is a Cost 4 Item: Activate by spending 2 Ready Stash; sequentially flip chip twice. If they match, Draw 1 or risk a third flip to refill to 7; if either check fails, draw nothing. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
 try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
@@ -83,6 +83,67 @@ function detail(ref){
 function showModal(entry){document.querySelector('.overlay')?.remove();if(!entry)return;document.body.insertAdjacentHTML('beforeend',entry.html);const overlay=document.querySelector('.overlay');overlay.onclick=e=>{if(e.target===overlay&&entry.kind==='detail')close()}}
 function close(){modal=null;document.querySelector('.overlay')?.remove()}
 async function ask(r){
+ if(r.slotStart){
+  if(r.player!==human)return null;
+  const html='<div class="overlay"><div class="sheet slot-sheet" role="dialog" aria-label="Slot Machine">'+
+    '<div class="type">DAD\'S LUCKY POKER CHIP</div><h2>🎰 SLOT MACHINE 🎰</h2>'+
+    '<p class="muted">Two matching flips unlock a choice. Will you take a card or risk everything for a full hand?</p>'+
+    '<div class="slot-reels" role="group" aria-label="Three slot machine chip flips">'+
+      [0,1,2].map(i=>'<div class="slot-reel" id="slot-'+i+'" aria-label="Flip '+(i+1)+': waiting">?</div>').join('')+
+    '</div><p id="slot-status" class="slot-status" role="status" aria-live="polite">Flipping the first chip…</p>'+
+    '<div id="slot-buttons" class="modal-actions"></div></div></div>';
+  modal={kind:"slot",html};showModal(modal);return null;
+ }
+ if(r.slotFlip){
+  if(r.player!==human)return null;
+  // Leave the previous reel(s) visible. Flip and reveal one new circle at a time.
+  const status=document.querySelector("#slot-status");
+  if(status)status.textContent="Flipping chip "+(r.index+1)+"…";
+  await new Promise(resolve=>setTimeout(resolve,550));
+  const face=r.face==="H"?"H":"L";
+  const reel=document.querySelector("#slot-"+r.index);
+  if(reel){
+    reel.textContent=face;reel.classList.add("revealed");
+    reel.setAttribute("aria-label","Flip "+(r.index+1)+": "+(face==="H"?"HIGH":"LOW"));
+  }
+  if(status)status.textContent=r.index===0?"First chip: "+face+". Second flip coming…":
+    r.index===1?"First two chips: "+document.querySelector("#slot-0")?.textContent+" / "+face+".":
+    "Third chip: "+face+".";
+  await new Promise(resolve=>setTimeout(resolve,600));
+  return null;
+ }
+ if(r.slotDecision){
+  if(r.player!==human){
+    const missing=Math.max(0,7-r.handSize);
+    return missing>=3&&game.players[r.player].deck.length>=missing?"continue":"cash";
+  }
+  return new Promise(resolve=>{
+    const status=document.querySelector("#slot-status");
+    if(status)status.textContent="TWO IN A ROW! Take 1 card, or risk it all for a jackpot?";
+    const actions=document.querySelector("#slot-buttons");
+    if(!actions){resolve("cash");return}
+    actions.innerHTML='<button type="button" id="slot-cash">Take 1 card</button>'+
+      '<button type="button" id="slot-risk" class="primary">Risk it! Flip the third</button>';
+    document.querySelector("#slot-cash").onclick=()=>{close();resolve("cash")};
+    document.querySelector("#slot-risk").onclick=()=>{
+      actions.innerHTML='';if(status)status.textContent="You went for the jackpot…";
+      resolve("continue");
+    };
+  });
+ }
+ if(r.slotFinish){
+  if(r.player!==human)return null;
+  const status=document.querySelector("#slot-status");
+  const labels={
+    MISS:"No match on the first two. No cards drawn.",
+    CASH_OUT:"CASH OUT! Draw "+r.drawn+" card.",
+    BUST:"NO JACKPOT. You risked the match and draw nothing!",
+    JACKPOT:"JACKPOT!!! Draw "+r.drawn+" cards!"
+  };
+  if(status)status.textContent=labels[r.slotOutcome]||"Slot Machine finished.";
+  await new Promise(resolve=>setTimeout(resolve,r.slotOutcome==="MISS"?850:1350));
+  close();return null;
+ }
  if(r.pokerFold){
   if(r.player!==human)return "play";
   return new Promise(resolve=>{
