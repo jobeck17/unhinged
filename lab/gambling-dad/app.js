@@ -124,7 +124,7 @@ async function ask(r){
     if(!actions){resolve("cash");return}
     actions.innerHTML='<button type="button" id="slot-cash">Take 1 card</button>'+
       '<button type="button" id="slot-risk" class="primary">Risk it! Flip the third</button>';
-    document.querySelector("#slot-cash").onclick=()=>{close();resolve("cash")};
+    document.querySelector("#slot-cash").onclick=()=>{actions.innerHTML="";if(status)status.textContent="Cashing out…";resolve("cash")};
     document.querySelector("#slot-risk").onclick=()=>{
       actions.innerHTML='';if(status)status.textContent="You went for the jackpot…";
       resolve("continue");
