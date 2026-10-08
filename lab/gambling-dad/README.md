@@ -27,25 +27,42 @@ This is an **advanced** Leader: easy comparison, difficult decisions about when 
 
 After a win, loss, or tie, the browser reveals **both committed hands** with each card's printed Cost, the Cost total, the Matching Pair / Straight / High Roller classification, card names, and Poker Power. The result stays displayed above the board until the next poker hand. The opponent AI picks its best two-card hand by the current HIGH/LOW hierarchy. The complete four-card/fold/bankruptcy design is EXPERIMENTAL and should be tested against canonical decks before any promotion.
 
+## Slot Machine — NEW LAB TEST 🎰
+
+**Slot Machine** · Item · Cost **4** · **4 copies** · `LAB-GD-018`
+
+**Activate — Spend 2 Ready Stash and Rotate this Item.** Flip Dad's Lucky Poker Chip (HIGH/LOW) **one flip at a time**. The browser starts with three empty circular slots:
+
+1. Flip the first chip; show **H** or **L** in slot 1.
+2. Flip the second chip; show **H** or **L** in slot 2.
+3. **If the first two differ**, the spin ends immediately, the overlay closes, and no cards are drawn. **Do not flip a third time.**
+4. **If the first two match**, pause and ask Dad: **Take 1 card** (Draw 1; stop) **or Risk It** (flip the third chip).
+5. If the third flip matches the first two (**HHH** or **LLL**), **Draw until your hand contains 7 cards** (or stop if the deck runs out). Otherwise **Draw nothing**.
+6. The Item Rotates when activated, so each copy can activate at most once between Readies. A Ready copy needs 2 Ready Stash and a nonempty deck to activate.
+
+The result is **not generated all at once**: the UI reveals each circle separately, and the third chip isn't even flipped unless the user presses **Risk It**. The opponent AI uses the same payouts; it only skips the visual delay.
+
+**Important tension:** This converts surplus Stash into cards in hand, but still depletes Dad's deck and could accelerate Last Straw. Test whether paying 4 to play plus 2 Ready Stash per activation is worth the rewards. This is lab-only, not canon.
+
 ## Deck shell
 
-**40 cards**, all 17 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 8 Actions, 4 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
+**40 cards**, all 17 prototype cards in `cards.json`; editable counts in `deck.json`. 28 Characters, 6 Actions, 6 Items. These are rough placeholders for iteration, not locked design. Some are deliberately textless; a few reward poker wins/losses. The current lab browser wires these effects; please replace names, costs, stats, and effects as needed.
 
-## Cost curve experiment — low-or-high v0.2
+## Updated Cost curve — Slot Machine v0.3
 
-Playtest feedback: the first 40-card shell had too many Cost 2–4 cards and Dad was losing too many poker hands. The prototype now deliberately has **no Cost 3 or 4 cards**:
+The previous low/high draft has been changed only to introduce four Cost-4 Items. Remove both copies of **Lucky Coin From a Laundromat** and two of the three copies of **It's Basically Free Money**. Add four **Slot Machine** Items.
 
 | Printed Cost | Deck copies |
 | --- | ---: |
 | 1 | 22 |
-| 2 | 5 |
+| 2 | 1 |
+| 3 | 0 |
+| 4 | 4 |
 | 5 | 7 |
 | 6 | 6 |
 | **Total** | **40** |
 
-That's **27 cheap cards** to build a board without gambling, and **13 expensive Characters** whose high printed Cost helps in Rock Bottom Poker. Relevant Power / Health / Trouble stats were adjusted to match the new Costs, but the Leader ability and poker rules were **not** changed.
-
-**Tradeoff to watch:** a 5- or 6-Cost card is hard to deploy without a winning pot. If expensive cards strand in hand for many Turns, keep the poker identity but consider reducing the number of Cost 6 cards rather than adding middling costs back. These are placeholder numbers, not a final balance claim.
+All 28 Character copies remain unchanged. The original low/high Character philosophy remains; the Cost-4 Items are a deliberate exception to make earned Stash useful. The Slot Machine costs 4 Stash to play and an additional 2 Ready Stash whenever activated.
 
 ## Counterplay and failure conditions
 
