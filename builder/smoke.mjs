@@ -31,5 +31,6 @@ assert.equal(hoa.audit_card_ids.length,33);
 assert(hoa.audit_card_ids.every(id=>hoa.cards[id]));
 assert(hoa.breaking_point.includes('Final Warning'));
 assert(pool.cards.find(c=>c.id==='P150').status==='banked');
-assert.match(app,/leaderText/);
+assert.equal((app.match(/leaderText\(\)/g)||[]).length,2,'Leader rules are actually rendered');
+assert.match(app,/!TYPES.includes\(c.type\)/,'Effect records are not deck cards');
 console.log('Stonewall builder pool, baseline and Leader text checks passed');
