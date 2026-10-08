@@ -47,7 +47,7 @@
         "Human"
       ],
       "keywords": [],
-      "text": "Whenever you win Dad Poker, this gets +1 Power this Turn.",
+      "text": "Whenever you win Rock Bottom Poker, this gets +1 Power this Turn.",
       "status": "prototype"
     },
     {
@@ -63,7 +63,7 @@
         "Human"
       ],
       "keywords": [],
-      "text": "Whenever you lose Dad Poker, Draw a card.",
+      "text": "Whenever you lose Rock Bottom Poker, Draw a card.",
       "status": "prototype"
     },
     {
@@ -127,7 +127,7 @@
         "Human"
       ],
       "keywords": [],
-      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
+      "text": "Whenever you win Rock Bottom Poker, this gets +1 Trouble this Turn.",
       "status": "prototype"
     },
     {
@@ -143,7 +143,7 @@
         "Human"
       ],
       "keywords": [],
-      "text": "Whenever you win Dad Poker, this gets +1 Trouble this Turn.",
+      "text": "Whenever you win Rock Bottom Poker, this gets +1 Trouble this Turn.",
       "status": "prototype"
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "id": "LAB-GD-011",
-      "name": "Unpaid Babysitter",
+      "name": "Divorced Dad",
       "type": "Character",
       "style": "Gambler",
       "cost": 6,
@@ -176,7 +176,8 @@
       ],
       "keywords": [],
       "text": "",
-      "status": "prototype"
+      "status": "prototype",
+      "flavor": "She got the house. He got a poker face."
     },
     {
       "id": "LAB-GD-012",
@@ -191,7 +192,7 @@
         "Human"
       ],
       "keywords": [],
-      "text": "Whenever you lose Dad Poker, this gets +2 Power this Turn.",
+      "text": "Whenever you lose Rock Bottom Poker, this gets +2 Power this Turn.",
       "status": "prototype"
     },
     {
@@ -247,7 +248,7 @@
       "trouble": null,
       "traits": [],
       "keywords": [],
-      "text": "During your Dad Poker games, you get +1 total Power in a Cost tie.",
+      "text": "During your Rock Bottom Poker games, you get +1 total Power in a Cost tie.",
       "status": "prototype"
     },
     {
@@ -261,7 +262,7 @@
       "trouble": null,
       "traits": [],
       "keywords": [],
-      "text": "Whenever you win Dad Poker, Draw a card.",
+      "text": "Whenever you win Rock Bottom Poker, Draw a card.",
       "status": "prototype"
     }
   ]
