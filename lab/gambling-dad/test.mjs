@@ -10,6 +10,7 @@ assert.equal(labDeck.leader,"Gambling Dad");
 assert.equal(labDeck.styles[0],"Gambler");
 assert.equal(Object.values(labDeck.cards).reduce((a,b)=>a+b,0),40);
 assert.equal(labCards.cards.length,17);
+assert(labCards.cards.some(c=>c.name==="Divorced Dad" && c.type==="Character" && c.id==="LAB-GD-011"),"Divorced Dad must be a Character in the draft deck");
 const curve=Object.fromEntries([1,2,3,4,5,6].map(cost=>[cost,labCards.cards.filter(c=>c.cost===cost).reduce((n,c)=>n+labDeck.cards[c.id],0)]));
 assert.deepEqual(curve,{1:22,2:5,3:0,4:0,5:7,6:6},"Gambling Dad must have a polarized low/high Cost curve");
 
