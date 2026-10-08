@@ -25,7 +25,7 @@ This is an **advanced** Leader: easy comparison, difficult decisions about when 
 9. **Dad loses:** return the opponent's chosen cards to its deck, discard Dad's pair, reduce his Stash to at most two, and **Defeat every Character Dad controls**. Other Items are not wiped.
 10. All four unused cards (two per player) return to the bottoms of their owners' decks. These special draws do not trigger regular Draw effects. Ordinary Stashing remains available.
 
-The opponent AI picks its best two-card hand by the current HIGH/LOW hierarchy. The complete four-card/fold/bankruptcy design is EXPERIMENTAL and should be tested against canonical decks before any promotion.
+After a win, loss, or tie, the browser reveals **both committed hands** with each card's printed Cost, the Cost total, the Matching Pair / Straight / High Roller classification, card names, and Poker Power. The result stays displayed above the board until the next poker hand. The opponent AI picks its best two-card hand by the current HIGH/LOW hierarchy. The complete four-card/fold/bankruptcy design is EXPERIMENTAL and should be tested against canonical decks before any promotion.
 
 ## Deck shell
 
@@ -49,7 +49,7 @@ That's **27 cheap cards** to build a board without gambling, and **13 expensive 
 
 ## Counterplay and failure conditions
 
-The opponent controls their own selection of two from three and can deny the pot. Dad chooses **when** to risk a reset. Reassess if a four-Stash win makes matches nearly unwinnable, Dad can risk-free spam at 2 Stash, or poker repeatedly steals attention from Characters. Reduce the payout or increase the frequency/cost of access only after human playtesting. No automatic promotion to canon.
+The opponent controls their own selection of two from four and can deny the pot. Dad chooses **when** to risk a reset. Reassess if a four-Stash win makes matches nearly unwinnable, Dad can risk-free spam at 2 Stash, or poker repeatedly steals attention from Characters. Reduce the payout or increase the frequency/cost of access only after human playtesting. No automatic promotion to canon.
 
 ## Run the automated assertions
 
