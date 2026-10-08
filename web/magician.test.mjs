@@ -184,6 +184,18 @@ for(const kind of ['defeat','return','sacrifice','handDiscard']){
 {
  const g=fixture(r=>r.title.startsWith('The Mentalist: play')?false:undefined);g.players[1].deck=['P085','P067'];await play(g,'P064');eq(g.players[1].deck,['P067','P085'],'declined character bottom owner deck');
 }
+// Production render may inspect Stash during the synchronous stash notification.
+{
+ const g=fixture(),s=g.players[0];s.hand=['P063'];g.update=()=>g.players.forEach((_,p)=>g.stashStates(p));g.stash(0);eq(s.stashReady.length,s.stash.length,'render-time Stash inspection never adds an extra slot');eq(s.stashReady.at(-1),true,'new Stash slot Ready');
+}
+// Trash Baron payment masks opposing identities and spends the actual chosen slots.
+{
+ let masked;const g=fixture(r=>{if(r.title.includes('opposing Stash')){masked=r;return [2]}return undefined});g.decks[0]={...g.decks[0],leader:'Trash Baron'};g.players[1].stash=['P061','P063','P065'];g.players[1].fuel=3;g.players[1].stashReady=[true,true,true];ok(await g.preparePayment(0,1),'Trash Baron payment prepared');ok(g.payCost(0,1),'Trash Baron pays');eq(masked.options.map(o=>o.label),['Opposing Stash 1 · Ready','Opposing Stash 2 · Ready','Opposing Stash 3 · Ready'],'opposing Stash faces stay private');eq(g.players[1].stashReady,[true,true,false],'chosen opposing Stash spent');eq(g.players[0].fuel,20,'own fuel not spent');
+}
+// Returning a borrowed card does not count as a return to controller's hand.
+{
+ const g=fixture(),head=body(g,'LAB-MAG-008');g.players[1].deck=['P076'];await play(g,'P064');const borrowed=g.chars(0).find(x=>x.id==='P076');await g.remove(borrowed,'hand');eq(g.players[1].hand,['P076'],'borrowed returns to real owner');ok(!g.players[0].returnedThisTurn&&!g.players[0].leaderPassiveUsed,'borrowed owner-hand return is not controller return history/passive');eq(g.trouble(head),3,'borrowed owner-hand return does not boost Headliner');
+}
 // Every design can be paid and enter the playtest, not just displayed in builder.
 for(const id of MISDIRECTION_IDS){if(['Character','Item'].includes(fixture().card(id).type)){const g=fixture(declineReturns);await play(g,id);ok(g.players[0].board.some(x=>x.id===id),'in-play design '+id)}}
 eq(covered,MISDIRECTION_IDS,'all 32 designs exercised');eq(actions.size,10,'all ten Action effects exercised');
@@ -194,7 +206,7 @@ function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(see
 const oldRandom=Math.random;
 try{for(let seed=1;seed<=3;seed++)for(const enemy of doc.decks)for(let first=0;first<2;first++){
  const random=rng(seed*9173+doc.decks.indexOf(enemy)*127+first);Math.random=random;let g;g=new Game(pool,{decks:[magician,enemy]},r=>Promise.resolve(aiChoice(g,r)),()=>{},{firstPlayer:first});g.random=random;g.begin();let steps=0,consecutive=0,last=g.turn;
- while(g.winner===null&&g.round<=70&&steps++<2000){const p=g.turn,m=aiAction(g,p);if(m.type==='pass')await g.pass();else if(m.type==='stash')g.stash(m.index,p);else if(m.type==='play')await g.play(m.index);else if(m.type==='attack')await g.attack(m.uid);else if(m.type==='trouble')await g.causeTrouble(m.uid);else if(m.type==='activate')await g.activate(m.uid);if(last===g.turn)consecutive++;else{last=g.turn;consecutive=0}assert(consecutive<70,'production AI per-turn action limit');for(const s of g.players){assert(s.fuel>=0&&s.fuel<=s.stash.length,'legal fuel');assert(!s.hand.some(id=>!g.card(id)),'valid cards')}}
+ while(g.winner===null&&g.round<=70&&steps++<2000){const p=g.turn,m=aiAction(g,p);if(m.type==='pass')await g.pass();else if(m.type==='stash')g.stash(m.index,p);else if(m.type==='play')await g.play(m.index);else if(m.type==='attack')await g.attack(m.uid);else if(m.type==='trouble')await g.causeTrouble(m.uid);else if(m.type==='activate')await g.activate(m.uid);if(last===g.turn)consecutive++;else{last=g.turn;consecutive=0}assert(consecutive<70,'production AI per-turn action limit');const cardsInZones=g.players.reduce((total,s)=>total+s.deck.length+s.hand.length+s.discard.length+s.stash.length+s.board.reduce((n,x)=>n+(g.card(x).token?0:1)+(x.lower?1:0)+(x.cargo?.length||0)+(x.hidden?1:0)+(x.stored?1:0),0),0);assert(cardsInZones===80,'all 80 physical cards conserved');for(const s of g.players){assert(s.fuel>=0&&s.fuel<=s.stash.length,'legal fuel');assert(!s.hand.some(id=>!g.card(id)),'valid cards')}}
  assert.notEqual(g.winner,null,'complete game vs '+enemy.leader);games++;
 }}finally{Math.random=oldRandom}
 console.log(`Misdirection integration passed: ${games} complete seeded matches against all eight Leaders (functionality, not balance evidence)`);

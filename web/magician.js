@@ -42,7 +42,7 @@ Game.prototype.spendOwnStash=function(p,n){
 const pay=Game.prototype.payCost;
 Game.prototype.payCost=function(p,n){if(this.availableFuel(p)<n){this.stashPayment=null;return false}const result=pay.call(this,p,n);this.stashPayment=null;return result};
 const stash=Game.prototype.stash;
-Game.prototype.stash=function(i,p=this.turn){this.stashStates(p);const before=this.players[p].stash.length,result=stash.call(this,i,p);if(result&&this.players[p].stash.length>before)this.players[p].stashReady.push(true);return result};
+Game.prototype.stash=function(i,p=this.turn){this.stashStates(p);const before=this.players[p].stash.length,result=stash.call(this,i,p);if(result&&this.players[p].stash.length>before)this.players[p].stashReady[this.players[p].stash.length-1]=true;return result};
 const start=Game.prototype.startTurn;
 Game.prototype.startTurn=function(){
  for(const s of this.players){s.returnedThisTurn=false;for(const x of s.board){x.headlinerUsed=false;x.poofTurn=null}}

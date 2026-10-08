@@ -4,7 +4,7 @@ import './cat-lady.js?v=misdirection-01';
 import './rockstar.js?v=misdirection-01';
 import './reckless.js?v=misdirection-01';
 import './stonewall.js?v=misdirection-01';
-import './magician.js?v=misdirection-01';
+import './magician.js?v=misdirection-02';
 import {applyLandonLab} from './landon-lab.js?v=misdirection-01';
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
@@ -50,7 +50,7 @@ function render(){
  '<section class="controls"><div><span class="eyebrow">'+esc(game.decks[game.turn].leader)+' · '+(active?'YOUR TURN':'ACTIVE')+'</span><p>'+esc(instruction)+'</p></div><div class="actions">'+(active?'<button id="end" class="primary">End Turn</button>':'')+'</div></section>'+
  dicePanel()+'<p class="scroll-hint">Swipe the table sideways when the board gets crowded.</p><div class="tabletop">'+zoneBar(1-human)+'<div class="battlefield">'+row(1-human)+row(human)+'</div>'+zoneBar(human)+'</div>'+
  '<section class="hand"><div class="section-head"><h2>Your hand <small>'+game.players[human].hand.length+' cards</small></h2><span>Stash '+game.players[human].fuel+'/'+game.players[human].stash.length+' Ready</span></div><div class="hand-cards">'+game.players[human].hand.map((id,i)=>cardHTML({id},'hand',human,i)).join('')+'</div></section>'+
- '<div class="lower"><details open><summary>What this lab is testing</summary><p>A Ready Character can Attack, Cause Trouble, or stay Ready and protected from ordinary Attacks. At 10 Composure the Leader hits Breaking Point. At 0 the hidden Last Straw is revealed and the Turn ends after it resolves. While at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes the Leader Unhinged. Florida Man and HOA President have their audited Breaking Point abilities; other Leader Breaking Points and selectable Last Straw effects remain pending.</p></details><details open><summary>Recent events</summary>'+game.log.slice(0,10).map(x=>'<p>'+esc(x)+'</p>').join('')+'</details></div>';
+ '<div class="lower"><details open><summary>What this lab is testing</summary><p>A Ready Character can Attack, Cause Trouble, or stay Ready and protected from ordinary Attacks. At 10 Composure the Leader hits Breaking Point. At 0 the hidden Last Straw is revealed and the Turn ends after it resolves. While at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes the Leader Unhinged. Florida Man, HOA President and Birthday Party Magician have their audited Breaking Point abilities; other Leader Breaking Points and selectable Last Straw effects remain pending.</p></details><details open><summary>Recent events</summary>'+game.log.slice(0,10).map(x=>'<p>'+esc(x)+'</p>').join('')+'</details></div>';
  wireCards();root.querySelector('#end')?.addEventListener('click',()=>humanAction(()=>game.pass()));root.querySelector('#new').onclick=()=>{game=null;phase='setup';modal=null;selected.clear();setup()};if(modal)showModal(modal);
 }
 function row(p){
