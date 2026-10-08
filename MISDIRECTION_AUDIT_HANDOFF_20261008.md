@@ -4,11 +4,11 @@ Updated 8 October 2026, after Joseph locked Birthday Party Magician's The Show M
 
 ## Exact stopping point and next steps
 
-Character first pass, ten Actions, three Items and the new finisher are approved (32 active distinct designs: 19 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive is now locked as The Show Must Go On (see below); Breaking Point remains unaudited. Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
+Character first pass, ten Actions, three Items and the new finisher are approved (32 active distinct designs: 19 Characters, 10 Actions, 3 Items). Burner Phone ★ and Do Not Look in the Hat are TABLED. P078 Pirate is now locked as a separate Sucker Punch / Item-release Trouble Character; old choice/free-play designs are superseded. Next complete character curve/ability distribution and whole-set Magical eligibility, then coherent naming. Leader passive is now locked as The Show Must Go On (see below); Breaking Point is now locked as For My Next Trick… (see latest lock below). Work in batches of three where useful: current card, proposed update, role/combo and testing concern. Joseph approves individually or by batch. Do not restart approved decisions.
 
 These Misdirection locks are DESIGN decisions for isolated-deck testing, NOT claims of implemented or verified browser behavior. This handoff intentionally does not edit CARDS.json, DECKS.json or the engine. Those still contain earlier Magician designs. Implement after the audit is complete or when requested. Balance is provisional until simulations and other style audits.
 
-Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.github.io/unhinged/web/ ; builder: https://jobeck17.github.io/unhinged/builder/ . Leader: Birthday Party Magician. Current deck name: Now You See Me. Leader passive design is now The Show Must Go On: once during your turn, friendly return to your hand or Dismiss Readies 1 Stash. Production implementation is pending. Breaking Point remains to review.
+Canonical repo: jobeck17/unhinged, Mordecai 0.4. Playtest: https://jobeck17.github.io/unhinged/web/ ; builder: https://jobeck17.github.io/unhinged/builder/ . Leader: Birthday Party Magician. Current deck name: Now You See Me. Leader passive design is now The Show Must Go On: once during your turn, friendly return to your hand or Dismiss Readies 1 Stash. Production implementation is pending. Breaking Point design is now locked as For My Next Trick…; production implementation is pending.
 
 ## Identity and design guardrails
 
@@ -318,6 +318,16 @@ Joseph approved the broadened passive and title. Supersedes the design-level ret
 - Ready a chosen eligible Rotated Stash card; normal per-card identity/state handling must be implemented. No Stash added and no permanent ramp. Passive's once-per-turn use is consumed by its first qualifying trigger even if no Rotated Stash is available, consistent with the proposed automatic first-event model/current production passive; don't change this timing silently.
 - Supports bounce and Now You Don't / Disappearing Assistant / Trap Door. Once-per-turn resource refund remains a testing parameter.
 - DESIGN LOCK ONLY: existing web/engine.js still uses earlier return-only passive until implementation. No browser/engine edits in this update. Breaking Point remains open.
+
+## Birthday Party Magician Breaking Point — LOCKED 8 October 2026
+
+**For My Next Trick…:** “You may return a character you control to your hand. Then you may play a character costing 3 or less from your hand without paying its cost.”
+
+Joseph chose this proposal. Triggers once at the first above-10 to <=10 Composure crossing, under protected threshold timing. The return and deployment are independent optional instructions; deployment does not require returning a Character. Resolve return and resulting triggers before choosing the hand deployment, so a returned eligible Character or a card drawn from a leave trigger may be played. Normal entry restrictions and entrance/when-played abilities apply. During the opponent's turn no voluntary attack/activation/Trouble window is added. Defeated Characters cannot be recovered from discard by the return instruction. If both Breaking Point and Last Straw cross, Breaking Point resolves first per core rules.
+
+**BANKED alternate — Is This Your Card?:** “Look at the top 5 cards of your deck. Put up to 2 into your hand and the rest on the bottom in any order.” Keep specifically as an alternate Magician Breaking Point if testing shows hand refill more impactful than return/deployment. Not an additional ability/card and not active. No production implementation made here.
+
+Leader passive and Breaking Point design are now approved. Next review whole-set Magical eligibility; unresolved fragile high-Power/Cloak and named Rabbit/Dove search concepts need include/bank decisions; then 40-card copy distribution and final interaction review. Implementation/testing remains pending. Pool remains 32 active cards; Leader outside deck.
 
 ## Implementation checklist for later
 
