@@ -158,8 +158,6 @@ export function installGamblingDad(Game, LEADERS) {
       const leftover=[0,1,2,3].filter(i=>!indices.includes(i));
       this.players[who].deck.unshift(...leftover.map(i=>hands[who][i]));
     }
-    const bonus=this.players[p].board.filter(x=>x.id==="LAB-GD-016").length;
-    scores[p][2]+=bonus;
     const result=compareScores(scores[p],scores[opp],pokerMode);
     const prefix="Rock Bottom Poker ("+pokerMode+"): "+this.name(p)+" "+scores[p][1]+"/"+scores[p][2]+" vs "+this.name(opp)+" "+scores[opp][1]+"/"+scores[opp][2]+". ";
     const s=this.players[p];
