@@ -5,7 +5,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-11';
+import {installGamblingDad,pokerHandType} from './poker.mjs?v=gd-12';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
