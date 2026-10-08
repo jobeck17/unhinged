@@ -35,6 +35,7 @@ assert(!canonical.cards.some(c=>c.id.startsWith("LAB-GD-")));
 const catalog=Object.fromEntries([...canonical.cards,...cards].map(c=>[c.id,c]));
 installGamblingDad(Game,LEADERS);
 assert(LEADERS["Gambling Dad"].passive.includes("Rock Bottom Poker"));
+assert.equal(typeof Game.prototype.canPoker,"function");
 const pair=(a,b)=>[a,b];
 const score=(a,b,mode)=>pokerValue(catalog,pair(a,b),mode);
 const one="LAB-GD-001",two=canonical.cards.find(c=>c.cost===2).id,five="LAB-GD-005",six="LAB-GD-011";
