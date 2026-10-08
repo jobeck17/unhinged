@@ -1,3 +1,18 @@
+## Misdirection naming pass — 8 October 2026
+
+**Definite user renames (mechanics unchanged, design-only until implementation):**
+- P084 Default Password ★ → **Presto Chango**. Name approved; rename flag resolved.
+- P085 Have You Tried Turning It Off? ○ → **Ace Up My Sleeve**. Name approved; review flag resolved.
+- New cost-6 finisher → **The Headliner**. Name approved; stable ID still pending.
+- P078 Pirate With a Business License ○ → **Heckler**. “Pirate” is interpreted as the cost-5 Sucker Punch / Item-release Trouble card in the latest overview; P075 Pirate Radio Operator ★ stays unchanged. Name approved under that mapping.
+- P064 Volunteer From the Audience ○ → **The Mentalist**. Name approved; review flag resolved.
+
+**Tentative, not final name locks:**
+- P088 Beer-Stained Cards ★: **Invisible String?** proposed by Joseph. Keep rename open pending confirmation. Bank **Beer-Stained Cards** as a future Florida Man/Reckless name/concept; this does NOT transfer the current draw-engine mechanics to Reckless.
+- P142 I Want to Speak to Your Manager ★: **Magic Wand** or **Transform** are alternatives, not a final choice; retain working label/★ until settled.
+- Joseph questions Conspiracy Blogger's overall role. Its cost-4 2/4/2 type-guess/top-card ability remains locked pending an explicit keep/rework/table decision. It works with Birthday Kid/Influencer setup but duplicates an already-rich card-advantage package. Do not table by inference.
+
+Other active/table/bank name flags remain intact. Active pool remains 33.
 ## Misdirection active-pool tables — locked 8 October 2026
 
 Joseph approved all three table decisions:
