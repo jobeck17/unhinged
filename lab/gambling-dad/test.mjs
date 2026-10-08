@@ -67,5 +67,5 @@ assert.equal(fold.requests.filter(r=>r.pokerCards).length,0);
 assert(!fold.g.canPoker(0));
 let manual=await run("HIGH",[one,six,two,five],[one,one,one,one],"play",[0,2]);
 assert.equal(manual.requests.filter(r=>r.pokerCards).length,2);
-assert.deepEqual(manual.g.players[0].deck,[five,six],"Unselected two cards return to bottom of deck");
+assert.deepEqual(manual.g.players[0].deck,[six,five],"Unselected two cards return to bottom of deck");
 console.log("PASS: Four-card hand ranks HIGH/LOW, selected pair, opponent AI, win, loss, fold, draw count, and lab isolation");
