@@ -22,6 +22,7 @@ assert(!canonCards.cards.some(c=>c.id.startsWith("LAB-GD-")));
 assert(!canonDecks.decks.some(d=>d.leader==="Gambling Dad"));
 installGamblingDad(Game,LEADERS);
 assert(LEADERS["Gambling Dad"].passive.includes(PASSIVE));
+assert(LEADERS["Gambling Dad"].passive.includes("Not So Full House"),"Leader poker ability has the approved name");
 const pool={cards:[...canonCards.cards,...labCards.cards]};
 const create=(customAsk)=>{
   const g=new Game(pool,{decks:[labDeck,canonDecks.decks[0]]},
