@@ -238,20 +238,6 @@
       "status": "prototype"
     },
     {
-      "id": "LAB-GD-016",
-      "name": "Lucky Coin From a Laundromat",
-      "type": "Item",
-      "style": "Gambler",
-      "cost": 2,
-      "power": null,
-      "guard": null,
-      "trouble": null,
-      "traits": [],
-      "keywords": [],
-      "text": "During your Rock Bottom Poker games, you get +1 total Power in a Cost tie.",
-      "status": "prototype"
-    },
-    {
       "id": "LAB-GD-017",
       "name": "Gas Station Scratch-Off",
       "type": "Item",
@@ -263,6 +249,20 @@
       "traits": [],
       "keywords": [],
       "text": "Whenever you win Rock Bottom Poker, Draw a card.",
+      "status": "prototype"
+    },
+    {
+      "id": "LAB-GD-018",
+      "name": "Slot Machine",
+      "type": "Item",
+      "style": "Gambler",
+      "cost": 4,
+      "power": null,
+      "guard": null,
+      "trouble": null,
+      "traits": [],
+      "keywords": [],
+      "text": "Activate — Spend 2 Ready Stash. Flip Dad's Lucky Poker Chip twice. If the results differ, draw nothing. If they match, choose: Draw 1 card, or flip once more. If the third flip matches, Draw until you have 7 cards in hand. Otherwise, draw nothing.",
       "status": "prototype"
     }
   ]
