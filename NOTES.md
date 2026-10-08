@@ -1,3 +1,14 @@
+## Misdirection active-pool tables — locked 8 October 2026
+
+Joseph approved all three table decisions:
+- **P070 Tech Bro ★:** TABLED for a future set. Preserve approved Cost 3, 3/2/2, “When Defeated, draw a card.” No migration of ability onto another active Character.
+- **P071 Trapdoor Assistant:** TABLED. Preserve approved Cost 3, 1/2/1, optional opposing Character return costing <=3 when played. Its absence removes repeatable entrance bounce, while Lady/Wrong Address retain opposing bounce. No merge approved.
+- **P074 Identity Thief ○:** BANKED for the next Misdirection Spy set. Preserve approved Cost 5, 3/4/2, optional copy of another Character's one printed keyword while that Character remains in play. No trait copying. Preserve ○.
+
+Current Magician active pool: **33 locked designs = 20 Characters / 10 Actions / 3 Items**. Character curve costs 1–6: **3 / 4 / 5 / 5 / 2 / 1**. Unique cost/type counts (Character/Action/Item): 1 = 3/3/0 (6); 2 = 4/5/1 (10); 3 = 5/2/2 (9); 4 = 5/0/0 (5); 5 = 2/0/0 (2); 6 = 1/0/0 (1).
+
+Keeps four innate Hothead Characters, two innate Sucker Punch Characters and two immediate-Trouble designs. Trap Door still has two friendly-Dismiss enablers. Tables are pool decisions, not deletion of approved designs. Other locks/name flags preserved. Current production CARDS/DECK/engine remain earlier versions until implementation. Magical whole-set review, naming, Leader audit and unresolved fragile Cloak-character concept remain open.
+
 ## Misdirection support batch — locked 8 October 2026
 
 - **LAB-MAG-003 Birthday Boy ★:** Cost **3**, **2/3/2**. “When played, you may Dismiss another character you control. If you do, draw a card.” Supersedes the locked cost-2 2/1/2 vanilla version. Keeps ★. Friendly Dismiss requires another Character; draw only if it was actually Dismissed. Dismiss is not Defeat. Rabbit/Dove leave-play triggers and Trap Door capture may apply.
