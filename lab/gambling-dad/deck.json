@@ -27,12 +27,13 @@
   },
   "lab": true,
   "status": "PROTOTYPE",
-  "status_note": "Draft shell for co-designers to replace freely. Dad Poker and current support text are implemented only in this isolated lab.",
+  "status_note": "Draft shell for co-designers to replace freely. Cost curve test v0.2: 27 cards at Cost 1–2 and 13 at Cost 5–6; no Cost 3–4. Dad Poker and current support text remain isolated in this lab.",
   "watchpoints": [
     "Does 4 bonus Stash break ordinary pacing?",
     "Is resetting to two Stash punishing but recoverable?",
     "Do opponent hands remain relevant without giving opponent Stash?",
     "Does the once-per-Turn poker choice dominate Character play?",
-    "How often can both players draw three without exhausting decks?"
+    "How often can both players draw three without exhausting decks?",
+    "Do Cost 6 Characters sit in hand too long after losses, despite more poker wins?"
   ]
 }
