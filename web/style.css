@@ -54,3 +54,6 @@ body:has(.overlay){overflow:hidden}
  .sheet .buttons,.sheet .modal-actions{position:sticky;bottom:-14px;z-index:2;gap:6px;background:var(--paper);padding:10px 0 14px;margin-top:8px;box-shadow:0 -8px 12px var(--paper)}
  .sheet .buttons button{min-width:95px;min-height:44px;font-size:12px;padding:9px}.modal-actions button{min-height:44px}.sheet>#close{position:sticky;bottom:0;min-height:44px;width:100%;background:#1e3035}
 }
+
+/* Dark secondary controls on the paper dialog need light labels. */
+.sheet button:not(.choice):not(.primary):not(.trouble-button){color:var(--ink)}.sheet .trouble-button{color:#fff}

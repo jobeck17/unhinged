@@ -17,5 +17,5 @@ button.card{padding:0;background:none;border:0;border-radius:10px;height:auto;wi
 /* Wordy cards reserve more room for rules rather than clipping them. */
 .face-long .face-art{height:24cqw}.face-long .face-rules{font-size:3.9cqw;line-height:1.25}.face-dense .face-art{height:3cqw}.face-dense .face-rules{font-size:4.4cqw;line-height:1.25}.face-dense .face-flavor{font-size:3.6cqw}
 
-@media(max-width:700px){button.card,.hand .card{width:140px;min-width:140px}.slots button.card,.item-cards button.card{width:120px;min-width:120px}.card-foot{font-size:8px;padding:4px 5px}.physical-detail{width:min(100%,260px);margin-bottom:10px}}
+@media(max-width:700px){button.card,.hand .card{width:140px;min-width:140px}.slots button.card{width:112px;min-width:112px}.item-cards button.card{width:100px;min-width:100px}.card-foot{font-size:8px;padding:4px 5px}.physical-detail{width:min(100%,260px);margin-bottom:10px}}
 @media(max-width:700px) and (max-height:700px){.physical-detail{width:min(100%,220px)}}
