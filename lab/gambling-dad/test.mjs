@@ -1,11 +1,18 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {Game,LEADERS} from "../../web/engine.js";
-import {installGamblingDad,pokerValue,handRank,pokerHandType,compareScores} from "./poker.mjs";
+import {installGamblingDad,pokerValue,handRank,pokerHandType,compareScores,SLOT_MACHINE,slotPayout} from "./poker.mjs";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const cards=read("./cards.json").cards,deck=read("./deck.json");
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
 assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),40);
+assert.equal(deck.cards[SLOT_MACHINE],4,"exactly four Slot Machine Items");
+assert.equal(deck.cards["LAB-GD-014"],1,"two Free Money copies are replaced");
+assert.equal(deck.cards["LAB-GD-016"],undefined,"old Lucky Coin is gone");
+assert.equal(cards.find(c=>c.id===SLOT_MACHINE)?.cost,4,"Slot Machine must cost four");
+assert.equal(cards.find(c=>c.id===SLOT_MACHINE)?.type,"Item");
+assert.equal(cards.filter(c=>c.type==="Character").reduce((n,c)=>n+(deck.cards[c.id]||0),0),28,"all Character counts unchanged");
+
 assert(cards.some(c=>c.name==="Divorced Dad"&&c.id==="LAB-GD-011"));
 assert(!canonical.cards.some(c=>c.id.startsWith("LAB-GD-")));
 const catalog=Object.fromEntries([...canonical.cards,...cards].map(c=>[c.id,c]));
@@ -140,4 +147,62 @@ assert.equal(tie.outcome,0,"Identical Matching Pairs tie");
 assertRevealedHands(tie.g,"HIGH");
 assert.equal(tie.g.pokerLast.dadHand.type,"Matching Pair");
 assert.equal(tie.g.pokerLast.oppHand.type,"Matching Pair");
-console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card picker, revealed both hands on wins/losses/ties, fold, ownership and lab isolation");
+
+// Slot Machine: test every three-flip combination and real Game.activate paths.
+for(const a of ["H","L"])for(const b of ["H","L"])for(const c of ["H","L"]){
+ const value=slotPayout([a,b,c],true,0);
+ assert.equal(value.outcome,a!==b?"MISS":b===c?"JACKPOT":"BUST");
+ assert.equal(value.draw,value.outcome==="JACKPOT"?7:0);
+ if(a===b)assert.deepEqual(slotPayout([a,b],false,0),{outcome:"CASH OUT",draw:1});
+}
+async function spinScenario(flips,decision){
+ const requests=[];
+ const g=setup(async r=>{
+  if(r.slotStart||r.slotFlip||r.slotDecision||r.slotFinish){
+   requests.push(r);
+   if(r.slotDecision)return decision;
+   return null;
+  }
+  return r.options?.[0]?.value??null;
+ });
+ const item=g.enter(0,SLOT_MACHINE),player=g.players[0];
+ player.stash=[one,one,one,one];
+ player.fuel=4;
+ player.hand=[];
+ player.deck=Array(12).fill(one);
+ assert(g.canUse(item),"Ready Slot Machine with two Stash and a deck is usable");
+ const results=[...flips];
+ const original=Math.random;
+ Math.random=()=>{
+  const result=results.shift();
+  if(!result)throw Error("Unexpected extra chip flip");
+  return result==="H"?0.1:0.9;
+ };
+ try{await g.activate(item.uid)}finally{Math.random=original}
+ assert.equal(results.length,0,"Only requested flips occur");
+ assert.equal(player.fuel,2,"Activation spends exactly two Ready Stash");
+ assert.equal(item.ready,false,"Slot Machine Rotates when activated");
+ assert(!g.canUse(item),"A Rotated Slot Machine cannot activate again this Turn");
+ assert.deepEqual(requests.filter(r=>r.slotFlip).map(r=>r.face),flips,"Reels reveal strictly one flip at a time");
+ assert.equal(requests.filter(r=>r.slotStart).length,1,"Three empty reels appear before any flip");
+ assert.equal(requests.filter(r=>r.slotFinish).length,1,"Spin concludes after the outcome");
+ return {g,requests};
+}
+const spinMiss=await spinScenario(["H","L"],"continue");
+assert.equal(spinMiss.g.slotLast.outcome,"MISS");
+assert.equal(spinMiss.g.slotLast.drawn,0);
+assert.equal(spinMiss.requests.filter(r=>r.slotDecision).length,0,"First-two mismatch closes without offering a decision");
+assert.equal(spinMiss.g.players[0].hand.length,0);
+const spinCash=await spinScenario(["L","L"],"cash");
+assert.equal(spinCash.g.slotLast.outcome,"CASH OUT");
+assert.equal(spinCash.g.slotLast.drawn,1);
+assert.equal(spinCash.requests.filter(r=>r.slotDecision).length,1);
+assert.equal(spinCash.g.players[0].hand.length,1);
+const spinBust=await spinScenario(["H","H","L"],"continue");
+assert.equal(spinBust.g.slotLast.outcome,"BUST");
+assert.equal(spinBust.g.slotLast.drawn,0);
+const spinJackpot=await spinScenario(["L","L","L"],"continue");
+assert.equal(spinJackpot.g.slotLast.outcome,"JACKPOT");
+assert.equal(spinJackpot.g.slotLast.drawn,7,"Jackpot refills the entire hand");
+assert.equal(spinJackpot.g.players[0].hand.length,7);
+console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card picker, revealed both hands on wins/losses/ties, fold, ownership and lab isolation, 8 slot outcomes and full activation branches");
