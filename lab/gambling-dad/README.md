@@ -79,3 +79,7 @@ From the repository root: `node lab/gambling-dad/test.mjs` and `node lab/gamblin
 ## Opponent rotation browser fix
 
 The Gambling Dad browser now imports the **same production Game module instance** as the shared Leader packages. Previously its distinct engine URL skipped their gameplay patches. A lab-only `compat.mjs` supplies missing hooks needed by the current shared modules without editing canonical files. The opponent smoke test checks that Round-2 Characters can Cause Trouble, rotate, and remain Rotated when the human turn begins (Florida Man and Gambling Dad opponents).\n
+
+## Lab deck builder
+
+[Open Gambling Dad Lab Deck Builder](https://jobeck17.github.io/unhinged/lab/gambling-dad/builder/). This is a **separate experimental builder** derived from the familiar Mordecai builder; it merges the current canonical pool with lab Gambling Dad cards **only in the lab browser**, offers Gambling Dad as a Leader, and loads his current **39-card draft** to edit (add one card to reach the standard 40). It also retains canonical Leaders as controls, but never allows `LAB-GD-` cards under other Leaders. Mad Scientist's reserved `LAB-SCI-` cards are excluded from Dad. Import, export, search, cost curve, and browser-local saving remain available, using an isolated storage key. **Deck exports are not automatically loaded into the separate Gambling Dad playtest**; that playtest still starts from its own lab reference deck. `node lab/gambling-dad/builder/smoke.mjs` checks the builder. Neither canonical builder nor canonical card/deck data are modified.
