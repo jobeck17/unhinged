@@ -36,7 +36,7 @@ export function slotPayout(flips,continuePlaying,handSize){
 }
 export function installGamblingDad(Game, LEADERS) {
   LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: gain 4 Stash. Lose: reset Stash to 2 and Defeat your Characters. Only Dad may Fold for 1 Stash."};
-  // Lab-only casino surveillance. The Pit Boss can Cause Trouble while Ready,
+  // Lab-only casino surveillance. Unlicensed Poker Psychologist can Cause Trouble while Ready,
   // but cannot Attack and cannot Ready while it maintains a mark.
   const oldCanAttack=Game.prototype.canAttack;
   Game.prototype.canAttack=function(x){return x?.id!==PIT_BOSS && oldCanAttack.call(this,x)};
@@ -47,7 +47,7 @@ export function installGamblingDad(Game, LEADERS) {
       if(!target){pit.pitMark=null;continue}
       if(pit.pitWasReady && !target.ready){
         this.draw(owner,1);
-        this.say("The Pit Boss: "+this.card(target).name+" Rotated — Draw a card.");
+        this.say("Unlicensed Poker Psychologist: "+this.card(target).name+" Rotated — Draw a card.");
       }
       pit.pitWasReady=!!target.ready;
     }
@@ -89,11 +89,11 @@ export function installGamblingDad(Game, LEADERS) {
     const x=this.obj(uid),p=this.turn;
     if(x?.id===PIT_BOSS){
       if(!this.canUse(x))return;
-      const targetUid=await this.pick("The Pit Boss: mark an opposing Character",p,this.chars(1-p).filter(y=>!y.cloaked));
+      const targetUid=await this.pick("Unlicensed Poker Psychologist: mark an opposing Character",p,this.chars(1-p).filter(y=>!y.cloaked));
       const target=this.obj(targetUid);
       if(!target||!this.obj(uid)||!this.canUse(x))return;
       x.ready=false;x.pitMark=target.uid;x.pitWasReady=!!target.ready;
-      this.say("The Pit Boss watches "+this.card(target).name+".");
+      this.say("Unlicensed Poker Psychologist watches "+this.card(target).name+".");
       return this.advance();
     }
     if(x?.id!==SLOT_MACHINE)return oldActivate.call(this,uid,mode);
