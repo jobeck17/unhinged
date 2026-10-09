@@ -66,6 +66,43 @@ for(const a of testCosts)for(const b of testCosts){
 }
 assert(checked>=200,"all combinations were checked");
 
+// Pit Boss replaces the three Foolproof System cards; still Causes Trouble,
+ // cannot Attack, and commits its Ready state to a single watched Character.
+ const pitCard=cards.find(c=>c.id==='LAB-GD-005');
+ assert.equal(pitCard.name,'The Pit Boss');
+ assert.deepEqual([pitCard.cost,pitCard.power,pitCard.guard,pitCard.trouble],[3,0,4,1]);
+ assert.equal(deck.cards['LAB-GD-005'],3);
+ const surveillance=setupPitBoss();
+ async function setupPitBossTest(){
+  const g=surveillance;g.turn=0;
+  const pit=g.enter(0,'LAB-GD-005'),target=g.enter(1,'P001');
+  pit.born=1;target.born=1;
+  assert.equal(g.canAttack(pit),false,'Pit Boss never attacks');
+  assert.equal(g.canCauseTrouble(pit),true,'Pit Boss can Cause Trouble while Ready');
+  assert.equal(g.canUse(pit),true,'Pit Boss can mark opposing Character');
+  await g.activate(pit.uid);
+  assert.equal(pit.pitMark,target.uid);
+  assert.equal(pit.ready,false);
+  target.ready=false;
+  await g.advance();
+  assert(g.log.some(line=>line.includes('Pit Boss:')&&line.includes('Draw a card')),'target rotation draws');
+  const eventCount=g.log.filter(line=>line.includes('Pit Boss:')&&line.includes('Draw a card')).length;
+  await g.advance();
+  assert.equal(g.log.filter(line=>line.includes('Pit Boss:')&&line.includes('Draw a card')).length,eventCount,'no repeated draw without a fresh rotation');
+  g.turn=0;g.startTurn();
+  assert.equal(pit.ready,false,'Pit Boss stays Rotated while marking');
+  assert.equal(g.canCauseTrouble(pit),false,'Rotated Pit Boss cannot Cause Trouble');
+  await g.remove(target);
+  g.startTurn();
+  assert.equal(pit.pitMark,null);
+  assert.equal(pit.ready,true,'Pit Boss can Ready once watched Character leaves');
+ }
+ await setupPitBossTest();
+ function setupPitBoss(){
+  const g=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
+    async r=>r.options?.[0]?.value??null,()=>{},{firstPlayer:0});
+  g.round=2;return g;
+ }
 function setup(ask){
  const g=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},ask,()=>{},{firstPlayer:0});
  g.turn=0;g.round=2;g.players[0].pokerUsed=false;
