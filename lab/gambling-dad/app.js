@@ -5,7 +5,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-15';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-17';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
@@ -173,29 +173,19 @@ async function ask(r){
    document.querySelector("#chip-continue").onclick=()=>{close();resolve(null)};
   });
  }
- if(r.pokerBluff){
-  if(r.player!==human){
-    // AI takes the redraw only with a poor initial hand, when it can afford the risk.
-    const score=game.cards && r.selected?.length===2 ?
-      pokerValue(game.cards,r.selected.map(c=>c.id),r.pokerMode) : [3,0,0];
-    return score[0]===1 && game.players[r.player].deck.length>=8 ? "redraw" : "keep";
-  }
-  return new Promise(resolve=>{
-    const html='<div class="overlay"><div class="sheet poker-sheet">'+
-      '<div class="type">ROCK BOTTOM POKER · '+esc(r.pokerMode)+'</div>'+
-      '<h2>Keep your hand or Bluff?</h2>'+
-      '<p>Your selected pair: '+r.selected.map(c=>esc(c.name)+' (Cost '+c.cost+')').join(' + ')+'</p>'+
-      '<p class="muted">Redraw (Bluff): spend 2 Ready Stash, Discard your selected two poker cards, and Draw two new poker cards. Then choose any two of the four cards (the two you kept back plus two new draws). '+r.remaining+' cards remain in your deck before the redraw.</p>'+
-      '<div class="modal-actions"><button id="keep-poker" class="primary">Keep Hand</button><button id="redraw-bluff">Redraw (Bluff) · 2 Stash</button></div></div></div>';
-    modal={kind:'choice',html};showModal(modal);
-    document.querySelector('#keep-poker').onclick=()=>{close();resolve("keep")};
-    document.querySelector('#redraw-bluff').onclick=()=>{close();resolve("redraw")};
-  });
- }
  if(r.pokerCards){
   // Four distinct drawn cards; choose exactly two.
   // AI returns the two indices with the best printed Cost, then Power.
-  if(r.player!==human)return [...r.recommendedPair];
+  if(r.player!==human){
+    const indices=[...r.recommendedPair];
+    if(r.canBluff && !r.pokerBluffRepick){
+      const ids=indices.map(i=>r.options[i].cardId);
+      const score=pokerValue(game.cards,ids,r.pokerMode);
+      if(score[0]===1 && game.players[r.player].deck.length>=8)
+        return {indices,bluff:true};
+    }
+    return indices;
+  }
   return new Promise(resolve=>{
    const cardMarkup=r.options.map((o,i)=>{
     const c=game.card(o.cardId);
@@ -213,11 +203,14 @@ async function ask(r){
      '<div class="poker-ranking"><b>'+esc(r.pokerMode)+' POKER — STRONGEST TO WEAKEST</b><p>'+ (r.pokerMode==="HIGH"?"1. Matching Pair · 2. Straight · 3. High Roller":"1. High Roller · 2. Straight · 3. Matching Pair")+'</p><small>Pair = equal Costs · Straight = consecutive Costs · High Roller = neither. Hand rank always beats Cost. '+(r.pokerMode==="HIGH"?"Higher":"Lower")+' combined Cost wins equal ranks; Power breaks Cost ties.</small></div>'+
      '<div class="poker-choices">'+cardMarkup+'</div>'+
      '<p id="poker-selection" class="muted" aria-live="polite">0 of 2 selected</p>'+
-     '<div class="modal-actions"><button id="poker-confirm" class="primary" disabled>Confirm two cards</button></div>'+
+     '<div class="modal-actions"><button id="poker-confirm" class="primary" disabled>'+(r.pokerBluffRepick?'Play New Poker Hand':'Play Poker Hand')+'</button>'+
+     (r.canBluff&&!r.pokerBluffRepick?'<button id="poker-redraw-bluff" disabled>Redraw (Bluff) · 2 Stash</button>':'')+'</div>'+
+     (r.canBluff&&!r.pokerBluffRepick?'<p class="muted">Bluff: discard your selected two cards, draw two new cards, then pick any two from those and the two you did not select.</p>':'')+
      '</div></div>';
    modal={kind:'choice',html};showModal(modal);
    const picked=[];
    const confirm=document.querySelector('#poker-confirm');
+   const redraw=document.querySelector('#poker-redraw-bluff');
    document.querySelectorAll('[data-poker-choice]').forEach(button=>{
     button.addEventListener('click',()=>{
      const i=Number(button.dataset.pokerChoice),j=picked.indexOf(i);
@@ -227,6 +220,7 @@ async function ask(r){
      button.setAttribute('aria-pressed',String(picked.includes(i)));
      button.querySelector('.poker-card-status').textContent=picked.includes(i)?'✓ SELECTED':'TAP TO SELECT';
      confirm.disabled=picked.length!==2;
+     if(redraw)redraw.disabled=picked.length!==2;
      const status=document.querySelector('#poker-selection');
      if(picked.length===2){
        const ids=picked.map(i=>r.options[i].cardId),costs=ids.map(id=>game.card(id).cost);
@@ -238,6 +232,10 @@ async function ask(r){
    confirm.addEventListener('click',()=>{
     if(picked.length!==2)return;
     close();resolve([...picked]);
+   });
+   redraw?.addEventListener('click',()=>{
+    if(picked.length!==2)return;
+    close();resolve({indices:[...picked],bluff:true});
    });
   });
  }
