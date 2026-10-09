@@ -6,7 +6,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-17';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-19';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
@@ -68,9 +68,11 @@ function cardHTML(x,zone,p,index,chosen=false){
  const c=game.card(x),b=zone==='board',char=c.type==='Character',rot=b&&!x.ready,selected=zone==='hand'&&chosen;
  let stats='';
  if(char)stats='<span class="stats"><span><small>POWER</small>'+(b?game.power(x):c.power)+'</span><span><small>'+(b?'HEALTH LEFT':'HEALTH')+'</small>'+(b?Math.max(0,game.guard(x)-x.damage):c.guard)+'</span><span class="stat-trouble"><small>TROUBLE</small>'+(b?game.trouble(x):c.trouble)+'</span></span>';
+ const pitMark=b&&game.players.some(s=>s.board.some(y=>y.id==='LAB-GD-005'&&y.pitMark===x.uid));
+ const pitLocked=b&&x.id==='LAB-GD-005'&&!!x.pitMark;
  const foot=selected?'✓ REPLACE':b?(rot?'ROTATED':char&&x.born>=game.round?'NEW THIS TURN':x.damage?x.damage+' DAMAGE':'READY'):'TAP FOR ACTIONS';
  const art=c.art?'<span class="card-art"><img src="'+esc(c.art)+'" alt="" loading="lazy"></span>':'<span class="card-art art-placeholder style-'+esc((c.style||'neutral').toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'"><span>'+esc(c.style||c.type)+'</span></span>';
- return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'"><span class="card-top"><span>'+esc(c.type)+' · '+esc(c.style)+'</span><b>'+(b?(rot?'ROTATED':'READY'):'COST '+c.cost)+'</b></span>'+art+'<strong>'+esc(c.name)+'</strong><span class="card-text">'+esc(c.text||c.flavor||'')+(b&&x.nextAttackPower?'<br><b>Next Attack: +'+x.nextAttackPower+' Power'+(x.rampTrouble?' + Trouble':'')+'</b>':'')+'</span>'+stats+'<span class="card-foot '+(x.damage?'damage':'')+'">'+esc(foot)+'</span></button>';
+ return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'"><span class="card-top"><span>'+esc(c.type)+' · '+esc(c.style)+'</span><b>'+(b?(pitMark?'MARKED':pitLocked?'WATCHING':rot?'ROTATED':'READY'):'COST '+c.cost)+'</b></span>'+art+'<strong>'+esc(c.name)+'</strong><span class="card-text">'+esc(c.text||c.flavor||'')+(b&&x.nextAttackPower?'<br><b>Next Attack: +'+x.nextAttackPower+' Power'+(x.rampTrouble?' + Trouble':'')+'</b>':'')+'</span>'+stats+'<span class="card-foot '+(x.damage?'damage':'')+'">'+esc(foot)+'</span></button>';
 }
 function wireCards(){root.querySelectorAll('.card').forEach(b=>b.onclick=()=>{if(phase==='mulligan'){const i=+b.dataset.index;selected.has(i)?selected.delete(i):selected.add(i);render();return}if(+b.dataset.p!==human&&b.dataset.zone==='board')return detail({uid:+b.dataset.uid});if(b.dataset.zone==='hand')detail({id:game.players[human].hand[+b.dataset.index],handIndex:+b.dataset.index});else detail({uid:+b.dataset.uid})})}
 function detail(ref){
