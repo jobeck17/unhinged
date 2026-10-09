@@ -188,6 +188,21 @@ for(const kind of ['defeat','return','sacrifice','handDiscard']){
 {
  const g=fixture(),s=g.players[0];s.hand=['P063'];g.update=()=>g.players.forEach((_,p)=>g.stashStates(p));g.stash(0);eq(s.stashReady.length,s.stash.length,'render-time Stash inspection never adds an extra slot');eq(s.stashReady.at(-1),true,'new Stash slot Ready');
 }
+// Cancel before confirming a payment leaves hand, board, slot states and turn untouched.
+{
+ const g=fixture(r=>r.title.startsWith('Pay cost:')?[]:undefined),s=g.players[0];s.hand=['P063'];
+ const before=JSON.stringify({players:g.players,turn:g.turn,round:g.round,serial:g.turnSerial});
+ eq(await g.playCard(0,'P063','hand',2,{index:0}),false,'canceled play aborts');
+ eq(JSON.stringify({players:g.players,turn:g.turn,round:g.round,serial:g.turnSerial}),before,'canceled play changes no game state');eq(g.stashPayment,null,'no stale payment');
+ g.ask=async r=>r.multi?r.options.slice(0,r.min||r.max||2).map(o=>o.value):r.options[0]?.value;
+ ok(await g.playCard(0,'P063','hand',2,{index:0}),'retry after cancel succeeds');eq(s.fuel,18,'retry pays once');eq(s.board.filter(x=>x.id==='P063').length,1,'retry enters once');
+}
+// A two-payer payment is atomic even after the opponent's slots were selected.
+{
+ const g=fixture(r=>r.title.startsWith('Pay cost:')?[]:undefined);g.decks[0]={...g.decks[0],leader:'Trash Baron'};
+ Object.assign(g.players[1],{stash:['P061'],fuel:1,stashReady:[true]});
+ const before=JSON.stringify(g.players);eq(await g.preparePayment(0,3),false,'cancel second payer');eq(JSON.stringify(g.players),before,'both payers unchanged on cancel');eq(g.stashPayment,null,'no partial payment plan');
+}
 // Trash Baron payment masks opposing identities and spends the actual chosen slots.
 {
  let masked;const g=fixture(r=>{if(r.title.includes('opposing Stash')){masked=r;return [2]}return undefined});g.decks[0]={...g.decks[0],leader:'Trash Baron'};g.players[1].stash=['P061','P063','P065'];g.players[1].fuel=3;g.players[1].stashReady=[true,true,true];ok(await g.preparePayment(0,1),'Trash Baron payment prepared');ok(g.payCost(0,1),'Trash Baron pays');eq(masked.options.map(o=>o.label),['Opposing Stash 1 · Ready','Opposing Stash 2 · Ready','Opposing Stash 3 · Ready'],'opposing Stash faces stay private');eq(g.players[1].stashReady,[true,true,false],'chosen opposing Stash spent');eq(g.players[0].fuel,20,'own fuel not spent');

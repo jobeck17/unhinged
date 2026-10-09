@@ -62,6 +62,17 @@ try{
  }
  await page.setViewportSize({width:390,height:844});
  console.log('Portrait layout verification passed: 320/390/430px, crowded Character/Item rows, full card inspection and fixed End Turn');
+ // Accidental Play: Cancel works with no selection and with a partial payment selection.
+ for(const selectSlot of [false,true]){
+  await page.evaluate(()=>globalThis.__audit.fixture({hand:['P063'],own:['P061']}));
+  const before=await page.evaluate(()=>JSON.stringify(globalThis.__audit.get().players));
+  await page.locator('[data-zone="hand"][data-index="0"]').click();await page.click('#play');await page.waitForSelector('#done');
+  if(selectSlot)await page.locator('[data-c]').first().click();
+  assert(await page.locator('#done').isDisabled(),'exact payment still required');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.waitForSelector('#end');
+  assert.equal(await page.evaluate(()=>JSON.stringify(globalThis.__audit.get().players)),before,'Cancel preserves hand, board and Stash');
+  assert.equal(await page.locator('.overlay').count(),0,'Cancel closes payment prompt');
+ }
+ console.log('Payment Cancel browser verification passed: unselected and partial selection, no state changes');
  // Exercise every Action through the production detail/Play/choice modal UI.
  const cases=[
   {id:'P081',opp:['P076'],test:s=>assert.equal(s.opp[0].ready,false)},

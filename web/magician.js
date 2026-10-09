@@ -22,8 +22,9 @@ Game.prototype.preparePayment=async function(p,n){
  for(const owner of payers){
   const s=this.players[owner],states=this.stashStates(owner),count=Math.min(remaining,s.fuel);if(!count)continue;
   const opts=s.stash.map((id,i)=>({label:owner===p?`${this.card(id).name} · Stash ${i+1} · Ready`:`Opposing Stash ${i+1} · Ready`,value:i})).filter(o=>states[o.value]);
+  // Before confirmation, Cancel aborts payment without spending any payer’s Stash.
   // No meaningful decision if every Ready slot is being spent.
-  let picks=count===opts.length?opts.map(o=>o.value):await this.ask({title:`Pay cost: choose exactly ${count} Ready ${owner===p?'':'opposing '}Stash`,player:p,multi:true,max:count,min:count,mandatory:true,options:opts});
+  let picks=count===opts.length?opts.map(o=>o.value):await this.ask({title:`Pay cost: choose exactly ${count} Ready ${owner===p?'':'opposing '}Stash`,player:p,multi:true,max:count,min:count,mandatory:false,options:opts});
   if(!Array.isArray(picks)||picks.length!==count||new Set(picks).size!==count||picks.some(i=>!opts.some(o=>o.value===i)))return false;
   payment.push({owner,picks});remaining-=count;
  }
