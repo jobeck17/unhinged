@@ -70,8 +70,12 @@ The opponent controls their own selection of two from four and can deny the pot.
 
 ## Run the automated assertions
 
-From the repository root: `node lab/gambling-dad/test.mjs`. Browser lab uses production engine as a dependency but neither overwrites the engine nor modifies canonical files.
+From the repository root: `node lab/gambling-dad/test.mjs` and `node lab/gambling-dad/opponent-smoke.mjs`. Browser lab uses production engine as a dependency but neither overwrites the engine nor modifies canonical files.
 
 ## Bluff — poker mulligan test
 
 **Bluff** · Action · Cost **2** · **3 copies** · `LAB-GD-013`. Replaces all three **That Was Almost a Win** cards. Bluff is playable only in Rock Bottom Poker, not as a normal Turn Action. On the **original four-card poker selection screen**, after Dad selects two cards, **Redraw (Bluff) · 2 Stash** appears beside **Play Poker Hand** when Bluff is in his normal hand, he has 2 Ready Stash, and at least two cards remain in his deck. Both buttons are disabled until exactly two cards are selected. Bluff is a direct choice on that screen, **not a separate popup after confirming the hand**. Spend 2 Ready Stash and discard Bluff and the original selected pair. Draw two fresh poker cards and **choose any two from the four cards**: the two original unselected cards plus the two freshly drawn cards. Return the other two to the bottom of Dad's deck. Dad cannot use a second Bluff in the same poker hand. The discarded pair is gone even if the new hand is worse. This is lab-only.
+
+## Opponent rotation browser fix
+
+The Gambling Dad browser now imports the **same production Game module instance** as the shared Leader packages. Previously its distinct engine URL skipped their gameplay patches. A lab-only `compat.mjs` supplies missing hooks needed by the current shared modules without editing canonical files. The opponent smoke test checks that Round-2 Characters can Cause Trouble, rotate, and remain Rotated when the human turn begins (Florida Man and Gambling Dad opponents).\n
