@@ -69,7 +69,7 @@ assert(checked>=200,"all combinations were checked");
 // Pit Boss replaces the three Foolproof System cards; still Causes Trouble,
  // cannot Attack, and commits its Ready state to a single watched Character.
  const pitCard=cards.find(c=>c.id==='LAB-GD-005');
- assert.equal(pitCard.name,'The Pit Boss');
+ assert.equal(pitCard.name,'Unlicensed Poker Psychologist');
  assert.deepEqual([pitCard.cost,pitCard.power,pitCard.guard,pitCard.trouble],[3,0,4,1]);
  assert.equal(deck.cards['LAB-GD-005'],3);
  const surveillance=setupPitBoss();
