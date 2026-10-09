@@ -24,7 +24,7 @@ Lab experiments may read or test against the canonical game, but they must not s
 
 - `schemes/` — active next-core prototype: simultaneous damage, exposed workers, eight Leader Schemes, 71 supported cards, shared browser/simulation engine, and paired comparison results.
 
-- `gambling-dad/` — Gambler Leader prototype with Rock Bottom Poker, a 40-card placeholder deck, and an isolated browser playtest. [Play the lab](https://jobeck17.github.io/unhinged/lab/gambling-dad/).
+- `gambling-dad/` — Gambler Leader prototype with Rock Bottom Poker, a 39-card experimental draft, an isolated browser playtest, and a separate lab-only deck builder. [Play the lab](https://jobeck17.github.io/unhinged/lab/gambling-dad/) · [Build a deck](https://jobeck17.github.io/unhinged/lab/gambling-dad/builder/).
 
 - `LEADER_PASSIVES.md` — alternate Leader passives organized by Leader for isolated testing.
 - `leader-rulebreakers/` — Leader packages that break construction, setup, resource, or other base expectations.
