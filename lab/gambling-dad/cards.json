@@ -68,7 +68,7 @@
     },
     {
       "id": "LAB-GD-005",
-      "name": "The Pit Boss",
+      "name": "Unlicensed Poker Psychologist",
       "type": "Character",
       "style": "Gambler",
       "cost": 3,
@@ -79,7 +79,7 @@
         "Human"
       ],
       "keywords": [],
-      "text": "Activate — Rotate this and mark an opposing Character. Whenever the marked Character Rotates, Draw a card. The Pit Boss cannot Ready while its mark remains. The mark cannot be moved or voluntarily removed. This Character cannot Attack.",
+      "text": "Activate — Rotate this and mark an opposing Character. Whenever the marked Character Rotates, Draw a card. Unlicensed Poker Psychologist cannot Ready while its mark remains. The mark cannot be moved or voluntarily removed. This Character cannot Attack.",
       "status": "prototype",
       "flavor": "The house is always watching."
     },
