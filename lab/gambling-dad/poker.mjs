@@ -137,51 +137,52 @@ export function installGamblingDad(Game, LEADERS) {
       // Offer FOUR individual cards; the player chooses exactly TWO.
       // The best pair is an AI recommendation only, not a prebuilt human choice.
       possibilities.sort((a,b)=>compareScores(b.score,a.score,pokerMode));
-      const indices=await this.ask({
+      // Bluff is offered on the same poker picker as the hand confirmation.
+      // Selecting Redraw commits the chosen pair, then opens one new four-card picker.
+      const canBluff=who===p && this.players[p].hand.includes(BLUFF) &&
+        this.availableFuel(p)>=2 && this.players[p].deck.length>=2;
+      const selection=await this.ask({
         player:who,title:"Rock Bottom Poker: choose TWO of your FOUR cards",
         mandatory:true,pokerCards:true,pokerMode,multi:true,min:2,max:2,
+        canBluff,
         options:hands[who].map((id,i)=>({
           value:i,cardId:id,
           label:this.card(id).name+" · Cost "+this.card(id).cost+" · Power "+(this.card(id).type==="Character"?(this.card(id).power||0):0)
         })),
         recommendedPair:possibilities[0].pair
       });
+      const indices=Array.isArray(selection)?selection:selection?.indices;
       if(!Array.isArray(indices)||indices.length!==2||new Set(indices).size!==2||
          indices.some(i=>!Number.isInteger(i)||i<0||i>3))
         throw new Error("Rock Bottom Poker requires exactly two different cards from the four drawn.");
       chosen[who]=indices.map(i=>hands[who][i]);
       let leftover=[0,1,2,3].filter(i=>!indices.includes(i)).map(i=>hands[who][i]);
-      // Bluff discards the committed pair, then lets Dad choose from the
-      // two held-back cards plus two fresh draws (a real four-card mulligan).
-      if(who===p && this.players[p].hand.includes(BLUFF) &&
-         this.availableFuel(p)>=2 && this.players[p].deck.length>=2){
-        const bluff=await this.ask({player:p,pokerBluff:true,pokerMode,
-          selected:chosen[p].map(id=>({id,name:this.card(id).name,cost:this.card(id).cost})),
-          remaining:this.players[p].deck.length});
-        if(bluff==="redraw"){
-          const handIndex=this.players[p].hand.indexOf(BLUFF);
-          if(handIndex>=0 && this.availableFuel(p)>=2 && this.players[p].deck.length>=2 && this.payCost(p,2)){
-            this.players[p].hand.splice(handIndex,1);
-            this.players[p].discard.push(BLUFF,...chosen[p]);
-            const mulligan=[...leftover,this.players[p].deck.pop(),this.players[p].deck.pop()];
-            const candidates=options.map(pair=>({
-              pair,score:pokerValue(this.cards,pair.map(i=>mulligan[i]),pokerMode)
-            })).sort((a,b)=>compareScores(b.score,a.score,pokerMode));
-            const repick=await this.ask({
-              player:p,title:"Bluff: choose TWO of your FOUR cards",
-              mandatory:true,pokerCards:true,pokerBluffRepick:true,pokerMode,
-              multi:true,min:2,max:2,
-              options:mulligan.map((id,i)=>({value:i,cardId:id,
-                label:this.card(id).name+" · Cost "+this.card(id).cost})),
-              recommendedPair:candidates[0].pair
-            });
-            if(!Array.isArray(repick)||repick.length!==2||new Set(repick).size!==2||
-               repick.some(i=>!Number.isInteger(i)||i<0||i>3))
-              throw new Error("Bluff requires choosing two different cards from the replacement four.");
-            chosen[p]=repick.map(i=>mulligan[i]);
-            leftover=mulligan.filter((_,i)=>!repick.includes(i));
-            this.say("Bluff: Spend 2 Ready Stash, Discard the original pair, and pick two from four cards.");
-          }
+      // Discard the selected pair, draw two more, and choose any two
+      // from those new cards and the original unselected pair.
+      if(canBluff && selection?.bluff===true){
+        const handIndex=this.players[p].hand.indexOf(BLUFF);
+        if(handIndex>=0 && this.availableFuel(p)>=2 && this.players[p].deck.length>=2 && this.payCost(p,2)){
+          this.players[p].hand.splice(handIndex,1);
+          this.players[p].discard.push(BLUFF,...chosen[p]);
+          const mulligan=[...leftover,this.players[p].deck.pop(),this.players[p].deck.pop()];
+          const candidates=options.map(pair=>({
+            pair,score:pokerValue(this.cards,pair.map(i=>mulligan[i]),pokerMode)
+          })).sort((a,b)=>compareScores(b.score,a.score,pokerMode));
+          const repick=await this.ask({
+            player:p,title:"Bluff: choose TWO of your FOUR cards",
+            mandatory:true,pokerCards:true,pokerBluffRepick:true,pokerMode,
+            multi:true,min:2,max:2,
+            canBluff:false,
+            options:mulligan.map((id,i)=>({value:i,cardId:id,
+              label:this.card(id).name+" · Cost "+this.card(id).cost})),
+            recommendedPair:candidates[0].pair
+          });
+          if(!Array.isArray(repick)||repick.length!==2||new Set(repick).size!==2||
+             repick.some(i=>!Number.isInteger(i)||i<0||i>3))
+            throw new Error("Bluff requires choosing two different cards from the replacement four.");
+          chosen[p]=repick.map(i=>mulligan[i]);
+          leftover=mulligan.filter((_,i)=>!repick.includes(i));
+          this.say("Bluff: Spend 2 Ready Stash, Discard the original pair, and pick two from four cards.");
         }
       }
       scores[who]=pokerValue(this.cards,chosen[who],pokerMode);
