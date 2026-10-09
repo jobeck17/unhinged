@@ -27,6 +27,7 @@ export function compareScores(a,b,mode="HIGH") {
 }
 export const SLOT_MACHINE="LAB-GD-018";
 export const BLUFF="LAB-GD-013";
+export const PIT_BOSS="LAB-GD-005";
 export function slotPayout(flips,continuePlaying,handSize){
   if(flips.length<2||flips[0]!==flips[1])return {outcome:"MISS",draw:0};
   if(!continuePlaying)return {outcome:"CASH OUT",draw:1};
@@ -35,10 +36,33 @@ export function slotPayout(flips,continuePlaying,handSize){
 }
 export function installGamblingDad(Game, LEADERS) {
   LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: gain 4 Stash. Lose: reset Stash to 2 and Defeat your Characters. Only Dad may Fold for 1 Stash."};
+  // Lab-only casino surveillance. The Pit Boss can Cause Trouble while Ready,
+  // but cannot Attack and cannot Ready while it maintains a mark.
+  const oldCanAttack=Game.prototype.canAttack;
+  Game.prototype.canAttack=function(x){return x?.id!==PIT_BOSS && oldCanAttack.call(this,x)};
+  const oldAdvance=Game.prototype.advance;
+  Game.prototype.advance=async function(...args){
+    for(const owner of [0,1])for(const pit of this.chars(owner).filter(x=>x.id===PIT_BOSS&&x.pitMark)){
+      const target=this.obj(pit.pitMark);
+      if(!target){pit.pitMark=null;continue}
+      if(pit.pitWasReady && !target.ready){
+        this.draw(owner,1);
+        this.say("The Pit Boss: "+this.card(target).name+" Rotated — Draw a card.");
+      }
+      pit.pitWasReady=!!target.ready;
+    }
+    return oldAdvance.apply(this,args);
+  };
   const oldStart=Game.prototype.startTurn;
   Game.prototype.startTurn=function(...args){
     this.players[this.turn].pokerUsed=false;
-    return oldStart.apply(this,args);
+    const result=oldStart.apply(this,args);
+    for(const owner of [0,1])for(const pit of this.chars(owner).filter(x=>x.id===PIT_BOSS&&x.pitMark)){
+      const target=this.obj(pit.pitMark);
+      if(target){pit.ready=false;pit.pitWasReady=!!target.ready}
+      else pit.pitMark=null;
+    }
+    return result;
   };
   const oldTrouble=Game.prototype.trouble;
   Game.prototype.trouble=function(x){return oldTrouble.call(this,x)+(x?.pokerTrouble||0)};
@@ -53,6 +77,7 @@ export function installGamblingDad(Game, LEADERS) {
   };
   const oldCanUse=Game.prototype.canUse;
   Game.prototype.canUse=function(x){
+    if(x?.id===PIT_BOSS)return this.winner===null && x.owner===this.turn && x.ready && !x.pitMark && !x.cloaked && this.chars(1-x.owner).some(y=>!y.cloaked);
     if(x?.id===SLOT_MACHINE){
       return this.winner===null && x.owner===this.turn && x.ready && !x.cloaked &&
         this.players[x.owner].fuel>=2 && this.players[x.owner].deck.length>0;
@@ -62,6 +87,15 @@ export function installGamblingDad(Game, LEADERS) {
   const oldActivate=Game.prototype.activate;
   Game.prototype.activate=async function(uid,mode=null){
     const x=this.obj(uid),p=this.turn;
+    if(x?.id===PIT_BOSS){
+      if(!this.canUse(x))return;
+      const targetUid=await this.pick("The Pit Boss: mark an opposing Character",p,this.chars(1-p).filter(y=>!y.cloaked));
+      const target=this.obj(targetUid);
+      if(!target||!this.obj(uid)||!this.canUse(x))return;
+      x.ready=false;x.pitMark=target.uid;x.pitWasReady=!!target.ready;
+      this.say("The Pit Boss watches "+this.card(target).name+".");
+      return this.advance();
+    }
     if(x?.id!==SLOT_MACHINE)return oldActivate.call(this,uid,mode);
     if(!this.canUse(x)||!this.payCost(p,2))return;
     x.ready=false;
