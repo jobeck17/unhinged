@@ -6,7 +6,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-19';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-20';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
