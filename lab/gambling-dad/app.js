@@ -1,4 +1,5 @@
-import {Game,LEADERS} from '../../web/engine.js?v=mordecai-04-reckless-01';
+import {Game,LEADERS} from '../../web/engine.js?v=mordecai-04-meatshield-01';
+import './compat.mjs?v=gd-18';
 import {aiAction,aiChoice} from '../../web/ai.js?v=mordecai-04';
 import '../../web/magician.js?v=reckless-01';
 import '../../web/cat-lady.js?v=reckless-01';
