@@ -146,6 +146,46 @@ let manual=await run("HIGH",[one,six,two,five],[one,one,one,one],"play",[0,2]);
 assert.equal(manual.requests.filter(r=>r.pokerCards).length,2);
 assertRevealedHands(manual.g,"HIGH");
 assert.deepEqual(manual.g.players[0].deck,[six,five],"Unselected two cards return to bottom of deck");
+// Bluff appears on the original four-card poker picker, before confirming a hand.
+const bluffRequests=[];
+let bluffGame=setup(async r=>{
+ bluffRequests.push(r);
+ if(r.pokerChip)return null;
+ if(r.pokerFold)return "play";
+ if(r.pokerCards){
+  if(r.player===0 && r.pokerBluffRepick){
+   assert.equal(r.canBluff,false,"cannot Bluff a second time on the mulligan picker");
+   return [1,2]; // choose a kept card and a freshly drawn card
+  }
+  if(r.player===0){
+   assert.equal(r.canBluff,true,"Bluff is available on the original poker picker");
+   return {indices:[0,1],bluff:true};
+  }
+  return [...r.recommendedPair];
+ }
+ return r.options?.[0]?.value??null;
+});
+bluffGame.players[0].hand=["LAB-GD-013"];
+bluffGame.players[0].stash=[one,one];
+bluffGame.players[0].fuel=2;
+// Initial poker draw (from the top): six, one, one, two.
+// Bluff discards six+one; kept: one+two, new: six+five.
+bluffGame.players[0].deck=[five,six,two,one,one,six];
+bluffGame.players[1].deck=[one,one,one,one];
+const originalRandom=Math.random; Math.random=()=>0.9;
+try{await bluffGame.dadPoker(0)}finally{Math.random=originalRandom}
+assert.equal(bluffRequests.filter(r=>r.pokerBluff).length,0,"no separate Bluff popup is requested");
+assert.equal(bluffRequests.filter(r=>r.pokerCards && r.player===0).length,2,"initial picker and mulligan picker both offered");
+assert.equal(bluffGame.pokerLast.dadHand.type,"High Roller");
+assert.deepEqual(bluffGame.pokerLast.dadHand.cards.map(c=>c.cost),[2,6],"mulligan picks any two from the four available");
+assert.deepEqual(bluffGame.players[0].deck,[one,five],"unselected mulligan cards return to bottom");
+assert.equal(bluffGame.players[0].hand.includes("LAB-GD-013"),false,"Bluff action is consumed");
+assert(bluffGame.players[0].discard.includes("LAB-GD-013"),"Bluff goes to discard");
+assert.equal(bluffGame.players[0].fuel,4,"Bluff costs 2 Ready Stash before winning 4 Stash");
+const pokerScreenSource=readFileSync(new URL("./app.js",import.meta.url),"utf8");
+assert.match(pokerScreenSource,/id="poker-redraw-bluff"/,"Bluff control is present on poker picker");
+assert.match(pokerScreenSource,/resolve\(\{indices:\[\.\.\.picked\],bluff:true\}\)/,"Bluff uses the selected cards directly");
+
 let tie=await run("HIGH",[one,one,one,one],[one,one,one,one]);
 assert.equal(tie.outcome,0,"Identical Matching Pairs tie");
 assertRevealedHands(tie.g,"HIGH");
@@ -241,4 +281,4 @@ assert.equal(spinJackpot.g.players[0].hand.length,7);
  assert.equal(capped.turn,0,"Opponent action limit should safely end the turn");
  assert.equal(limit.errors,1);
 
-console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card picker, revealed both hands on wins/losses/ties, fold, ownership and lab isolation, 8 slot outcomes, full activation branches, and Florida Man opponent-turn recovery");
+console.log("PASS: "+checked+" generalized HIGH/LOW Cost-pair cases, optimal AI selection, four-card picker, revealed both hands on wins/losses/ties, fold, ownership and lab isolation, 8 slot outcomes, full activation branches, Florida Man opponent-turn recovery, and inline Bluff mulligan");
