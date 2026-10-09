@@ -30,6 +30,9 @@ jobs:
           node --check web/stonewall.js
           node --check builder/app.js
           node builder/smoke.mjs
+      - run: |
+          node --check lab/gambling-dad/builder/app.js
+          node lab/gambling-dad/builder/smoke.mjs
       - run: node --check poll/app.js
       - run: node --check poll/questions.js
       - run: node poll/test.mjs
@@ -81,6 +84,8 @@ jobs:
           test -f _site/lab/gambling-dad/index.html
           test -f _site/lab/gambling-dad/app.js
           test -f _site/lab/gambling-dad/poker.mjs
+          test -f _site/lab/gambling-dad/builder/index.html
+          test -f _site/lab/gambling-dad/builder/app.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
