@@ -125,12 +125,15 @@ async function run(mode,dadDraw,oppDraw,decision="play",selection=[0,1]){
  const g=setup(async r=>{
   requests.push(r);
   if(r.pokerChip)return null;
-  if(r.pokerFold)return decision;
   if(r.pokerReward)return "stash";
   if(r.pokerDoubleDown)return "walk";
   if(r.pokerCards){
    assert.equal(r.pokerMode,mode,"Picker receives actual chip mode");
    assert.equal(r.options.length,4,"Always show four individually selectable cards");
+   if(r.player===0&&!r.pokerBluffRepick){
+    assert.equal(r.canFold,true,"first hand offers Fold on its four-card picker");
+    if(decision==="fold")return "fold";
+   }else assert.equal(r.canFold,false,"Fold must not appear on opponent or Bluff repick pickers");
    const ids=r.options.map(o=>o.cardId);
    const pairs=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
    const scores=pairs.map(pair=>pokerValue(catalog,pair.map(i=>ids[i]),mode));
@@ -149,7 +152,8 @@ async function run(mode,dadDraw,oppDraw,decision="play",selection=[0,1]){
  try{outcome=await g.dadPoker(0)}finally{Math.random=rand}
  assert.equal(g.pokerMode,mode);
  assert(requests.some(r=>r.pokerChip));
- assert(requests.some(r=>r.pokerFold));
+ assert.equal(requests.some(r=>r.pokerFold),false,"No separate pre-hand Fold dialog");
+ assert(requests.some(r=>r.pokerCards && r.canFold),"Fold belongs to first poker card picker");
  return {g,outcome,requests};
 }
 function assertRevealedHands(game,mode){
@@ -191,7 +195,9 @@ assert.equal(fold.g.pokerLast.folded,true);
 assert.equal(fold.g.pokerLast.dadHand,undefined,"A fold reveals no hands");
 assert.equal(fold.g.players[0].deck.length,4);
 assert.equal(fold.g.players[1].deck.length,4);
-assert.equal(fold.requests.filter(r=>r.pokerCards).length,0);
+assert.equal(fold.requests.filter(r=>r.pokerCards).length,1,"Fold chosen on the first poker picker; opponent never chooses a hand");
+assert.equal(fold.requests[fold.requests.length-1].canFold,true);
+assert.equal(fold.requests.some(r=>r.pokerReward),false,"Folding does not resolve a win reward");
 assert(!fold.g.canPoker(0));
 let manual=await run("HIGH",[one,six,two,five],[one,one,one,one],"play",[0,2]);
 assert.equal(manual.requests.filter(r=>r.pokerCards).length,2);
