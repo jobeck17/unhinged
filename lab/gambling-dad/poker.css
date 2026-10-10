@@ -1,7 +1,7 @@
 /* LAB ONLY: Rock Bottom Poker shows four individual cards and requires two selections. */
 .poker-sheet{width:min(100%,760px)}
 .poker-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 12px}
-.poker-choice{display:flex;flex-direction:column;align-items:stretch;gap:8px;text-align:left;border:2px solid #879590;background:#f5f0e5;color:#183033;border-radius:12px;min-width:0;padding:10px;cursor:pointer;min-height:215px;transition:border-color .12s,transform .12s,background .12s}
+.poker-choice{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:8px;text-align:left;border:2px solid #879590;background:#f5f0e5;color:#183033;border-radius:12px;min-width:0;padding:10px;cursor:pointer;min-height:215px;transition:border-color .12s,transform .12s,background .12s}
 .poker-choice:hover{transform:translateY(-3px);border-color:#1f8f77}
 .poker-choice.selected{background:#e4f5ec;border-color:#168e69;outline:3px solid #168e69;outline-offset:-3px}
 .poker-card-type{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:#536363}
@@ -60,3 +60,15 @@
 .slot-sheet .modal-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
 .slot-sheet button{min-width:135px}
 @media(max-width:420px){.slot-reels{gap:7px}.slot-reel{border-width:4px}.slot-sheet{padding:12px}}
+
+/* Printed card Cost is visible before selection, including on narrow phones. */
+.poker-card-cost{position:absolute;z-index:1;top:7px;right:7px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:43px;min-height:49px;padding:3px 6px;background:#173f35;color:#fff4d1;border:2px solid #c59a4e;border-radius:10px;box-shadow:0 2px 3px #0004;font-variant-numeric:tabular-nums}
+.poker-card-cost small{font-size:9px;font-weight:900;letter-spacing:.04em;line-height:1.1}
+.poker-card-cost strong{font-size:26px;line-height:1;font-weight:950}
+.poker-card-type{padding-right:48px;min-height:44px;overflow-wrap:anywhere}
+@media(max-width:420px){
+ .poker-card-cost{min-width:39px;min-height:44px;top:5px;right:5px;padding:2px 5px}
+ .poker-card-cost small{font-size:8px}
+ .poker-card-cost strong{font-size:23px}
+ .poker-card-type{padding-right:43px;min-height:43px}
+}
