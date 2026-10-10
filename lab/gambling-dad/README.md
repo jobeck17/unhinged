@@ -18,7 +18,7 @@ This is an **advanced** Leader: easy comparison, difficult decisions about when 
 
 ## Rock Bottom Poker — reward-choice / Double Down rework (TESTING)
 
-Dad can start **one** poker sequence during his Turn when both decks contain at least four cards. Flip the HIGH/LOW chip, both players look at four cards, and each selects two as before. Matching Pair / Straight / High Roller ranking and ties still work normally.
+Dad can start **one** poker sequence during his Turn when both decks contain at least four cards. Flip the HIGH/LOW chip, both players look at four cards, and each selects two as before. **Only hand type and combined printed Cost determine the outcome.** HIGH ranks Matching Pair > Straight > High Roller, preferring higher Cost within the same type. LOW ranks High Roller > Straight > Matching Pair, preferring lower Cost within the same type. **If hand type and combined Cost match, it is a tie even when the Characters' Power differs.** Power is never a poker tiebreaker.
 
 - **Win:** choose **Gain 2 Ready Stash** (Dad's chosen two poker cards enter Stash) **or Draw 2 cards** (Dad's chosen two cards return to the bottom of his deck before the draw). The opponent's selected cards return to the bottom of its deck. Unchosen cards return to their own decks.
 - **Lose:** Dad's selected pair is discarded; the opponent's pair returns to its deck. Dad loses up to **2 actual Stash cards** and chooses **1 card from hand to discard**, if he has any. **Characters are not automatically Defeated.**
