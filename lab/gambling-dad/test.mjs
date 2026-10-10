@@ -322,6 +322,21 @@ assert.equal(tie.outcome,0,"Identical Matching Pairs tie");
 assertRevealedHands(tie.g,"HIGH");
 assert.equal(tie.g.pokerLast.dadHand.type,"Matching Pair");
 assert.equal(tie.g.pokerLast.oppHand.type,"Matching Pair");
+// End-to-end regression: previously LOW (and HIGH) could decide matching Cost
+// using Power, incorrectly making one player lose instead of declaring a tie.
+for(const mode of ["HIGH","LOW"]){
+ const realTie=await run(mode,Array(4).fill(one),Array(4).fill("LAB-GD-002"));
+ assert.equal(realTie.outcome,0,mode+": matching pairs with the same Cost are a complete tie");
+ assert.equal(realTie.g.pokerLast.result,"TIE · no new reward",mode+": no winner is awarded");
+ assert.equal(realTie.g.pokerLast.costDad,2);
+ assert.equal(realTie.g.pokerLast.costOpp,2);
+ assert.equal(realTie.g.pokerLast.powerDad,undefined,"Power is not used or recorded for poker");
+ assert.equal(realTie.g.pokerLast.powerOpp,undefined,"Power is not used or recorded for poker");
+ assert.equal(realTie.requests.filter(r=>r.pokerReward||r.pokerLossDiscard).length,0,"tie has no win reward or loss penalty");
+ assert.equal(realTie.g.players[0].discard.filter(id=>id===one).length,2,"Dad commits two cards on tie");
+ assert.equal(realTie.g.players[1].discard.filter(id=>id==="LAB-GD-002").length,2,"opponent commits two cards on tie");
+ assert.equal(realTie.g.log.some(line=>line.includes("A complete TIE")),true);
+}
 
 // Slot Machine: test every three-flip combination and real Game.activate paths.
 for(const a of ["H","L"])for(const b of ["H","L"])for(const c of ["H","L"]){
