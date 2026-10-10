@@ -33,6 +33,7 @@ jobs:
       - run: |
           node --check lab/gambling-dad/builder/app.js
           node lab/gambling-dad/builder/smoke.mjs
+          node lab/gambling-dad/payment-smoke.mjs
       - run: node --check poll/app.js
       - run: node --check poll/questions.js
       - run: node poll/test.mjs
