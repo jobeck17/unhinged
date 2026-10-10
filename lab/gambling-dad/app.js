@@ -211,18 +211,6 @@ async function ask(r){
    });
   });
  }
- if(r.pokerFold){
-  if(r.player!==human)return "play";
-  return new Promise(resolve=>{
-   const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">ROCK BOTTOM POKER · '+esc(r.pokerMode)+'</div><h2>Play or Fold?</h2>'+
-    '<p>You drew four poker cards: '+r.cards.map(c=>esc(c.name)+' (Cost '+c.cost+')').join(', ')+'.</p>'+
-    '<p class="muted">Fold: lose 1 Stash and return all poker cards. Play: a loss costs up to 2 Stash and 1 card from your hand.</p>'+
-    '<div class="modal-actions"><button id="fold-hand">Fold (lose 1 Stash)</button><button id="play-hand" class="primary">Play</button></div></div></div>';
-   modal={kind:"choice",html};showModal(modal);
-   document.querySelector("#fold-hand").onclick=()=>{close();resolve("fold")};
-   document.querySelector("#play-hand").onclick=()=>{close();resolve("play")};
-  });
- }
  if(r.pokerChip){
   if(r.player!==human)return null;
   return new Promise(resolve=>{
@@ -271,13 +259,15 @@ async function ask(r){
      '<div class="poker-choices">'+cardMarkup+'</div>'+
      '<p id="poker-selection" class="muted" aria-live="polite">0 of 2 selected</p>'+
      '<div class="modal-actions"><button id="poker-confirm" class="primary" disabled>'+(r.pokerBluffRepick?'Play New Poker Hand':'Play Poker Hand')+'</button>'+
-     (r.canBluff&&!r.pokerBluffRepick?'<button id="poker-redraw-bluff" disabled>Redraw (Bluff) · 2 Stash</button>':'')+'</div>'+
+     (r.canBluff&&!r.pokerBluffRepick?'<button id="poker-redraw-bluff" disabled>Redraw (Bluff) · 2 Stash</button>':'')+
+     (r.canFold?'<button type="button" id="poker-fold" title="Return all poker cards; lose up to 1 Stash">Fold · Lose 1 Stash</button>':'')+'</div>'+
      (r.canBluff&&!r.pokerBluffRepick?'<p class="muted">Bluff: discard your selected two cards, draw two new cards, then pick any two from those and the two you did not select.</p>':'')+
      '</div></div>';
    modal={kind:'choice',html};showModal(modal);
    const picked=[];
    const confirm=document.querySelector('#poker-confirm');
    const redraw=document.querySelector('#poker-redraw-bluff');
+   const fold=document.querySelector('#poker-fold');
    document.querySelectorAll('[data-poker-choice]').forEach(button=>{
     button.addEventListener('click',()=>{
      const i=Number(button.dataset.pokerChoice),j=picked.indexOf(i);
@@ -303,6 +293,10 @@ async function ask(r){
    redraw?.addEventListener('click',()=>{
     if(picked.length!==2)return;
     close();resolve({indices:[...picked],bluff:true});
+   });
+   fold?.addEventListener('click',()=>{
+    // Folding does not require selecting two cards first.
+    close();resolve('fold');
    });
   });
  }
