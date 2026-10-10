@@ -19,7 +19,7 @@ Dad can start **one** poker sequence during his Turn when both decks contain at 
 - **Win:** choose **Gain 2 Ready Stash** (Dad's chosen two poker cards enter Stash) **or Draw 2 cards** (Dad's chosen two cards return to the bottom of his deck before the draw). The opponent's selected cards return to the bottom of its deck. Unchosen cards return to their own decks.
 - **Lose:** Dad's selected pair is discarded; the opponent's pair returns to its deck. Dad loses up to **2 actual Stash cards** and chooses **1 card from hand to discard**, if he has any. **Characters are not automatically Defeated.**
 - **Tie:** both selected pairs are discarded, and there is no new reward.
-- **Fold:** on the first hand only, Dad can Fold after looking at four cards. It costs **1 Stash**, returns poker cards, and consumes the Turn's poker opportunity.
+- **Fold:** on the first hand only, Dad can Fold **directly from the four-card hand picker**, without choosing two cards or opening an earlier Play/Fold popup. The **Fold · Lose 1 Stash** button removes up to **1 Stash card**, returns all eight drawn poker cards to their original decks, and consumes the Turn's poker opportunity. No Fold on a Bluff re-pick or Double Down.
 
 **Breaking Point — DOUBLE DOWN:** the first time Dad's Composure crosses from above 10 to 10 or below, Double Down unlocks for the rest of the game. After winning the first poker hand, choose **Walk Away** (receive that reward immediately) or **Double Down** (play one more full poker hand for a second reward). This second hand can choose either reward independently, allowing +4 Stash, Draw 4, or +2 Stash and Draw 2 on two wins.
 
