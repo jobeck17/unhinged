@@ -2,8 +2,7 @@
 export const DAD = "Gambling Dad";
 export const PASSIVE = "99 GAMBLERS QUIT BEFORE THEY WIN BIG!";
 export function pokerScore(cards, pair) {
-  return [pair.reduce((n,id)=>n+(cards[id]?.cost??0),0),
-          pair.reduce((n,id)=>n+(cards[id]?.type==="Character"?(cards[id].power??0):0),0)];
+  return pair.reduce((n,id)=>n+(cards[id]?.cost??0),0);
 }
 export function pokerHandType(cards,ids) {
  const a=Number(cards[ids[0]].cost),b=Number(cards[ids[1]].cost);
@@ -18,12 +17,11 @@ export function handRank(cards,ids,mode="HIGH") {
    : {"Matching Pair":1,"Straight":2,"High Roller":3})[type];
 }
 export function pokerValue(cards,ids,mode="HIGH") {
- return [handRank(cards,ids,mode),...pokerScore(cards,ids)];
+ return [handRank(cards,ids,mode),pokerScore(cards,ids)];
 }
 export function compareScores(a,b,mode="HIGH") {
  return Math.sign(a[0]-b[0]) ||
-   (mode==="LOW"?Math.sign(b[1]-a[1]):Math.sign(a[1]-b[1])) ||
-   Math.sign(a[2]-b[2]);
+   (mode==="LOW"?Math.sign(b[1]-a[1]):Math.sign(a[1]-b[1]));
 }
 export const SLOT_MACHINE="LAB-GD-018";
 export const BLUFF="LAB-GD-013";
@@ -259,7 +257,7 @@ export function installGamblingDad(Game, LEADERS) {
     for(const who of [p,opp]){
       const possibilities=options.map(pair=>{
         const ids=pair.map(i=>hands[who][i]),score=pokerValue(this.cards,ids,pokerMode);
-        return {pair,ids,score,label:ids.map(id=>this.card(id).name+" (Cost "+this.card(id).cost+", Power "+(this.card(id).power||0)+")").join(" + ")+" — "+score[1]+" Cost / "+score[2]+" Power"};
+        return {pair,ids,score,label:ids.map(id=>this.card(id).name+" (Cost "+this.card(id).cost+")").join(" + ")+" — "+score[1]+" total Cost"};
       });
       // Offer FOUR individual cards; the player chooses exactly TWO.
       // The best pair is an AI recommendation only, not a prebuilt human choice.
@@ -274,7 +272,7 @@ export function installGamblingDad(Game, LEADERS) {
         canBluff,canFold:round===1 && who===p,
         options:hands[who].map((id,i)=>({
           value:i,cardId:id,
-          label:this.card(id).name+" · Cost "+this.card(id).cost+" · Power "+(this.card(id).type==="Character"?(this.card(id).power||0):0)
+          label:this.card(id).name+" · Cost "+this.card(id).cost
         })),
         recommendedPair:possibilities[0].pair
       });
@@ -327,7 +325,7 @@ export function installGamblingDad(Game, LEADERS) {
     }
     const result=compareScores(scores[p],scores[opp],pokerMode);
     lastResult=result;
-    const prefix="Rock Bottom Poker"+(round===2?" DOUBLE DOWN":"")+" ("+pokerMode+"): "+this.name(p)+" "+scores[p][1]+"/"+scores[p][2]+" vs "+this.name(opp)+" "+scores[opp][1]+"/"+scores[opp][2]+". ";
+    const prefix="Rock Bottom Poker"+(round===2?" DOUBLE DOWN":"")+" ("+pokerMode+"): "+this.name(p)+" "+pokerHandType(this.cards,chosen[p])+" (Cost "+scores[p][1]+") vs "+this.name(opp)+" "+pokerHandType(this.cards,chosen[opp])+" (Cost "+scores[opp][1]+"). ";
     if(result>0){
       // Winning cards are held until Double Down finishes. This prevents
       // having to undo a Draw reward when the second hand loses.
@@ -360,8 +358,8 @@ export function installGamblingDad(Game, LEADERS) {
       mode:pokerMode,dadPlayer:p,opponentPlayer:opp,
       dadHand:revealHand(p),oppHand:revealHand(opp),
       rankDad:scores[p][0],rankOpp:scores[opp][0],
-      costDad:scores[p][1],powerDad:scores[p][2],
-      costOpp:scores[opp][1],powerOpp:scores[opp][2],
+      costDad:scores[p][1],
+      costOpp:scores[opp][1],
       rounds:[...history],doubled,
       result:result>0?"WIN · Reward selected":result<0?"LOSS · -2 Stash, discard 1":"TIE · no new reward"
     };
