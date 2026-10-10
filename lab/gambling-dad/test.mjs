@@ -21,9 +21,15 @@ assert.equal(deck.cards["LAB-GD-003"],3,"all existing Dealer's Child copies pres
 assert.equal(cards.filter(c=>c.id==="LAB-GD-003").length,1,"rename retains one existing card ID");
 assert.equal(cards.find(c=>c.id==="LAB-GD-003")?.name,"Dealer's Child","existing Character renamed in place");
 assert.equal(cards.find(c=>c.id==="LAB-GD-003")?.flavor,"DUDE, he keeps looking at my cards!","flavor text matches chosen joke");
+assert.match(cards.find(c=>c.id==="LAB-GD-003")?.text||"",/When this Character enters play, you may look at the top 4 cards/);
+assert.doesNotMatch(cards.find(c=>c.id==="LAB-GD-003")?.text||"",/Power this Turn/,"old win bonus no longer printed");
 assert(!cards.some(c=>c.name==="Bookie's Nephew"),"previous name is not a second Character");
 assert.match(appSource,/c\.flavor\?/, "lab card face exposes flavor alongside ability");
 assert.match(appSource,/class="card-flavor"/,"flavor has its own line on card");
+assert.match(appSource,/if\(r\.dealersChildPeek\)/,"optional private peek has a dedicated browser dialog");
+assert.match(appSource,/dealer-peek-open/,"player chooses when to look at the cards");
+assert.match(appSource,/dealer-peek-skip/,"player may decline the peek");
+assert.match(appSource,/r\.player!==human\)return "peek"/,"AI opponent peek never displays on the human screen");
 assert.match(pokerStyle,/\.card-text \.card-flavor/,"flavor text styled for playtest");
 assert.equal(cards.filter(c=>c.id==="LAB-GD-001").length,1,"renamed Character keeps a single card record");
 assert.equal(cards.find(c=>c.id==="LAB-GD-001")?.name,"Roulette Table Squatter");
@@ -43,6 +49,49 @@ assert(!canonical.cards.some(c=>c.id.startsWith("LAB-GD-")));
 const catalog=Object.fromEntries([...canonical.cards,...cards].map(c=>[c.id,c]));
 installGamblingDad(Game,LEADERS);
 assert(LEADERS["Gambling Dad"].passive.includes("Rock Bottom Poker"));
+
+const peekKid="LAB-GD-003";
+const peekRequests=[];
+const peekGame=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
+ async r=>{
+  if(r.dealersChildPeek){peekRequests.push(r);return peekRequests.length===1?"peek":"skip"}
+  if(r.pokerCards)return [0,1];
+  if(r.pokerChip)return null;
+  if(r.pokerReward)return "stash";
+  if(r.pokerDoubleDown)return "walk";
+  return r.options?.[0]?.value??null;
+ },()=>{},{firstPlayer:0});
+peekGame.turn=0;peekGame.round=2;
+peekGame.players[0].hand=[peekKid,peekKid];
+const untouchedDeck=["LAB-GD-001","LAB-GD-002","LAB-GD-005","LAB-GD-006","LAB-GD-011"];
+peekGame.players[1].deck=[...untouchedDeck];
+assert.equal(await peekGame.playCard(0,peekKid,"hand",0,{index:0}),true,"Dealer's Child is playable through the actual Character pipeline");
+assert.equal(peekRequests.length,1,"entering play triggers one private peek offer");
+assert.equal(peekRequests[0].player,0,"only the Character's controller receives the peek");
+assert.deepEqual(peekRequests[0].cardIds,["LAB-GD-011","LAB-GD-006","LAB-GD-005","LAB-GD-002"],"peek follows the engine's top-of-deck draw order");
+assert.deepEqual(peekGame.players[1].deck,untouchedDeck,"looking doesn't remove or reorder deck cards");
+assert(!peekGame.log.some(line=>line.includes("Debt Collector's Roommate")||line.includes("Card Counter Who Can't Count")),"the public log does not reveal peeked card names");
+assert.equal(await peekGame.playCard(0,peekKid,"hand",0,{index:0}),true);
+assert.equal(peekRequests.length,2,"second played copy offers another optional peek");
+assert.deepEqual(peekGame.players[1].deck,untouchedDeck,"declining the optional peek leaves the deck untouched");
+assert.equal(peekGame.chars(0).filter(x=>x.id===peekKid).length,2,"both original Character copies are played normally");
+peekGame.players[0].deck=["LAB-GD-011","LAB-GD-011","LAB-GD-001","LAB-GD-001"].reverse();
+peekGame.players[1].deck=["LAB-GD-001","LAB-GD-001","LAB-GD-001","LAB-GD-001"].reverse();
+const randomBeforePeek=Math.random;
+Math.random=()=>0.1;
+let pokerAfterPeek;
+try{pokerAfterPeek=await peekGame.dadPoker(0)}finally{Math.random=randomBeforePeek}
+assert.equal(pokerAfterPeek,1,"the test poker hand wins");
+assert(peekGame.chars(0).filter(x=>x.id===peekKid).every(x=>x.power===0),"Dealer's Child never receives the retired +1 Power bonus on a win");
+const peekShort=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
+ async r=>{if(r.dealersChildPeek){assert.deepEqual(r.cardIds,["LAB-GD-001","LAB-GD-002"]);return "skip"}return null},()=>{},{firstPlayer:0});
+peekShort.turn=0;peekShort.round=2;peekShort.players[1].deck=["LAB-GD-002","LAB-GD-001"];
+await peekShort.enterEffect(peekShort.enter(0,peekKid),[]);
+assert.deepEqual(peekShort.players[1].deck,["LAB-GD-002","LAB-GD-001"],"short deck peek reads only available cards, still in original order");
+peekShort.players[1].deck=[];
+await peekShort.enterEffect(peekShort.enter(0,peekKid),[]);
+assert.deepEqual(peekShort.players[1].deck,[],"empty-deck peek does nothing and cannot cause a draw");
+
 const pair=(a,b)=>[a,b];
 const score=(a,b,mode)=>pokerValue(catalog,pair(a,b),mode);
 const one="LAB-GD-001",two="LAB-GD-014",five="LAB-GD-005",six="LAB-GD-011";
