@@ -6,7 +6,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-25';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-26';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
@@ -254,7 +254,7 @@ async function ask(r){
    }).join('');
    const html='<div class="overlay"><div class="sheet poker-sheet">'+
      '<div class="type">99 GAMBLERS QUIT BEFORE THEY WIN BIG!</div>'+
-     '<h2>'+(r.pokerBluffRepick?'Bluff: pick your new hand':'Pick your poker hand')+'</h2><p class="muted">Choose exactly two cards; the other two go to the bottom of your deck.</p>'+
+     '<h2>'+(r.pokerBluffRepick?'Bluff: pick your new hand':'Pick your poker hand')+'</h2><p class="muted">Choose two cards to play'+(r.canFold?', or Fold now for 1 Stash':'')+'. The other cards go to the bottom of your deck.</p>'+
      '<div class="poker-ranking"><b>'+esc(r.pokerMode)+' POKER — STRONGEST TO WEAKEST</b><p>'+ (r.pokerMode==="HIGH"?"1. Matching Pair · 2. Straight · 3. High Roller":"1. High Roller · 2. Straight · 3. Matching Pair")+'</p><small>Pair = equal Costs · Straight = consecutive Costs · High Roller = neither. Hand rank always beats Cost. '+(r.pokerMode==="HIGH"?"Higher":"Lower")+' combined Cost wins equal ranks; Power breaks Cost ties.</small></div>'+
      '<div class="poker-choices">'+cardMarkup+'</div>'+
      '<p id="poker-selection" class="muted" aria-live="polite">0 of 2 selected</p>'+
