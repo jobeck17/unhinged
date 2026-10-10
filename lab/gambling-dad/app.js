@@ -213,10 +213,11 @@ async function ask(r){
     const c=game.card(o.cardId);
     const art=c.art?'<img src="'+esc(c.art)+'" alt="">':'<span>'+esc(c.style||c.type)+'</span>';
     return '<button type="button" class="poker-choice" data-poker-choice="'+i+'" aria-pressed="false">'+
+      '<span class="poker-card-cost" aria-label="Printed Cost '+esc(c.cost)+'"><small>COST</small><strong>'+esc(c.cost)+'</strong></span>'+
       '<span class="poker-card-type">'+esc(c.type)+' · '+esc(c.style)+'</span>'+
       '<span class="poker-card-art">'+art+'</span>'+
       '<strong class="poker-card-name">'+esc(c.name)+'</strong>'+
-      '<span class="poker-card-stats"><b>Cost '+c.cost+'</b><b>Power '+(c.type==='Character'?(c.power||0):0)+'</b></span>'+
+      '<span class="poker-card-stats"><b>Power '+(c.type==='Character'?(c.power||0):0)+'</b></span>'+
       '<span class="poker-card-status">TAP TO SELECT</span></button>';
    }).join('');
    const html='<div class="overlay"><div class="sheet poker-sheet">'+
