@@ -133,7 +133,7 @@ async function run(mode,dadDraw,oppDraw,decision="play",selection=[0,1]){
    if(r.player===0&&!r.pokerBluffRepick){
     assert.equal(r.canFold,true,"first hand offers Fold on its four-card picker");
     if(decision==="fold")return "fold";
-   }else assert.equal(r.canFold,false,"Fold must not appear on opponent or Bluff repick pickers");
+   }else assert(!r.canFold,"Fold must not appear on opponent or Bluff repick pickers");
    const ids=r.options.map(o=>o.cardId);
    const pairs=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
    const scores=pairs.map(pair=>pokerValue(catalog,pair.map(i=>ids[i]),mode));
