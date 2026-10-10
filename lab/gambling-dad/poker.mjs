@@ -89,7 +89,10 @@ export function installGamblingDad(Game, LEADERS) {
     const x=this.obj(uid),p=this.turn;
     if(x?.id===PIT_BOSS){
       if(!this.canUse(x))return;
-      const targetUid=await this.pick("Unlicensed Poker Psychologist: mark an opposing Character",p,this.chars(1-p).filter(y=>!y.cloaked));
+      const available=this.chars(1-p).filter(y=>!y.cloaked);
+      const targetUid=await this.ask({player:p,psychologistTarget:true,
+        title:"Unlicensed Poker Psychologist — choose an opposing Character",
+        options:available.map(y=>({value:y.uid,label:this.card(y).name+" · "+(y.ready?"Ready":"Rotated")}))});
       const target=this.obj(targetUid);
       if(!target||!this.obj(uid)||!this.canUse(x))return;
       x.ready=false;x.pitMark=target.uid;x.pitWasReady=!!target.ready;
