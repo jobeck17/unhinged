@@ -68,6 +68,15 @@ assert.equal(t.visibleCards().filter(c=>c.name==='Roulette Table Squatter').leng
 assert(!t.visibleCards().some(c=>c.name==='Gas Station Regular'),'old name no longer displays in builder');
 assert.match(getElement('#app').innerHTML,/Roulette Table Squatter/,'visible deck and card library use renamed character');
 assert(!t.state.pool.cards.some(c=>c.name==='Gas Station Regular'),'no retired-name duplicate in the loaded pool');
+const dealer=t.state.pool.cards.filter(c=>c.id==='LAB-GD-003');
+assert.equal(dealer.length,1,"Dealer's Child uses one existing card ID");
+assert.equal(dealer[0].name,"Dealer's Child");
+assert.equal(dealer[0].flavor,"DUDE, he keeps looking at my cards!");
+assert.equal(t.state.cards['LAB-GD-003'],3,"all three original copies remain");
+assert.equal(t.visibleCards().filter(c=>c.name==="Dealer's Child").length,1,"renamed card appears once");
+assert(!t.visibleCards().some(c=>c.name==="Bookie's Nephew"),"old name not duplicated");
+assert.match(getElement('#app').innerHTML,/Dealer&#39;s Child|Dealer's Child/,"builder displays renamed card");
+assert.match(getElement('#app').innerHTML,/DUDE, he keeps looking at my cards!/,"builder displays flavor with card rules");
 assert(t.visibleCards().some(c=>c.id==='LAB-GD-018'),'Slot Machine is displayed');
 assert(t.state.decks.decks.some(d=>d.leader==='Florida Man'),'canonical control Leaders still available');
 assert(!t.visibleCards().some(c=>c.id.startsWith('LAB-SCI-')),'Mad Scientist reserved cards are excluded for Dad');
