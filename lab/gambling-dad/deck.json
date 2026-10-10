@@ -26,13 +26,13 @@
   },
   "lab": true,
   "status": "PROTOTYPE",
-  "status_note": "Four Slot Machine Items (Cost 4) remain. The final It's Basically Free Money Action has been removed from the deck, leaving a 39-card experimental list; no replacement was added. Poker rules and slot activation remain isolated in the lab.",
+  "status_note": "39-card Gambling Dad lab draft. Poker testing now uses Gain 2 Ready Stash / Draw 2 on a win; lose 2 Stash + discard 1 hand card on loss; Breaking Point unlocks optional one-time-per-sequence Double Down.",
   "watchpoints": [
-    "Does 4 bonus Stash break ordinary pacing?",
-    "Is resetting to two Stash punishing but recoverable?",
-    "Do opponent hands remain relevant without giving opponent Stash?",
-    "Does the once-per-Turn poker choice dominate Character play?",
-    "How quickly does poker plus Slot Machine drain the deck?",
-    "Do Cost 6 Characters sit in hand too long after losses, despite more poker wins?"
+    "Does choosing Draw 2 outpace normal card advantage?",
+    "Does +2 Stash remain worth taking early?",
+    "At 10 Composure, do players choose Double Down when behind?",
+    "Is the 2-Stash-and-1-discard loss penalty meaningful without wiping Characters?",
+    "Do per-hand win triggers become overwhelming on Double Down?",
+    "Does playing two poker hands take too long?"
   ]
 }
