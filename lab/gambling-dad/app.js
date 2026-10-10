@@ -6,7 +6,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-26';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-29';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
@@ -17,7 +17,7 @@ try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
  ({pool,decks}=applyLandonLab(pool,decks));
- const [labCards,labDeck]=await Promise.all([fetch('./cards.json?v=gd-28').then(r=>{if(!r.ok)throw Error('Gambling Dad cards unavailable');return r.json()}),fetch('./deck.json?v=gd-13').then(r=>{if(!r.ok)throw Error('Gambling Dad deck unavailable');return r.json()})]);
+ const [labCards,labDeck]=await Promise.all([fetch('./cards.json?v=gd-29').then(r=>{if(!r.ok)throw Error('Gambling Dad cards unavailable');return r.json()}),fetch('./deck.json?v=gd-13').then(r=>{if(!r.ok)throw Error('Gambling Dad deck unavailable');return r.json()})]);
  pool.cards.push(...labCards.cards);decks.decks.unshift(labDeck);
  setup();
 }catch(e){root.innerHTML='<section class="setup"><h1>Lab failed to load.</h1><p>'+esc(e.message)+'</p></section>'}
@@ -87,6 +87,40 @@ function detail(ref){
 function showModal(entry){document.querySelector('.overlay')?.remove();if(!entry)return;document.body.insertAdjacentHTML('beforeend',entry.html);const overlay=document.querySelector('.overlay');overlay.onclick=e=>{if(e.target===overlay&&entry.kind==='detail')close()}}
 function close(){modal=null;document.querySelector('.overlay')?.remove()}
 async function ask(r){
+ if(r.dealersChildPeek){
+  // Only the controlling player may inspect this private information.
+  if(r.player!==human)return "peek";
+  return new Promise(resolve=>{
+   const ids=r.cardIds||[];
+   const html='<div class="overlay"><div class="sheet poker-sheet" role="dialog" aria-label="Dealer\'s Child peek">'+
+    '<div class="type">DEALER\'S CHILD · PRIVATE PEEK</div>'+
+    '<h2>Is he looking at my cards?!</h2>'+
+    '<p class="muted">You may look at the opponent\'s next '+ids.length+' deck card'+(ids.length===1?'':'s')+'. The peek does not draw, reveal to your opponent, or rearrange any cards.</p>'+
+    '<div id="dealer-peek-content" class="modal-actions">'+
+    '<button id="dealer-peek-open" class="primary">Look at the cards</button>'+
+    '<button id="dealer-peek-skip">Don\'t look</button></div></div></div>';
+   modal={kind:"choice",html};showModal(modal);
+   const finish=value=>{close();resolve(value)};
+   document.querySelector("#dealer-peek-skip").onclick=()=>finish("skip");
+   document.querySelector("#dealer-peek-open").onclick=()=>{
+    const markup=ids.map((id,i)=>{
+     const c=game.card(id);
+     return '<div class="dealer-peek-card"><small>'+ (i===0?'TOP CARD':'CARD '+(i+1)) +'</small>'+
+      '<strong class="dealer-peek-cost">COST '+esc(c?.cost??'?')+'</strong>'+
+      '<strong>'+esc(c?.name||'Unknown card')+'</strong>'+
+      '<span>'+esc(c?.type||'')+' · '+esc(c?.style||'')+'</span>'+
+      (c?.type==='Character'?'<span>Power '+esc(c.power||0)+' · Health '+esc(c.guard||0)+'</span>':'')+
+      '</div>';
+    }).join('');
+    const panel=document.querySelector("#dealer-peek-content");
+    panel.className="dealer-peek-content";
+    panel.innerHTML='<p class="muted">In draw order: left to right. Memorize them for Rock Bottom Poker!</p>'+
+     '<div class="dealer-peek-grid">'+markup+'</div>'+
+     '<div class="modal-actions"><button id="dealer-peek-done" class="primary">Done looking</button></div>';
+    document.querySelector("#dealer-peek-done").onclick=()=>finish("peek");
+   };
+  });
+ }
  if(r.psychologistTarget){
   if(r.player!==human){
    const options=r.options||[];
