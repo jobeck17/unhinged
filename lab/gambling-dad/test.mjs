@@ -17,6 +17,14 @@ assert.match(pokerStyle,/max-width:420px[\s\S]*\.poker-card-cost strong\{font-si
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
 assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),39);
 assert.equal(deck.cards["LAB-GD-001"],4,"all four Roulette Table Squatter copies retain the original ID");
+assert.equal(deck.cards["LAB-GD-003"],3,"all existing Dealer's Child copies preserved");
+assert.equal(cards.filter(c=>c.id==="LAB-GD-003").length,1,"rename retains one existing card ID");
+assert.equal(cards.find(c=>c.id==="LAB-GD-003")?.name,"Dealer's Child","existing Character renamed in place");
+assert.equal(cards.find(c=>c.id==="LAB-GD-003")?.flavor,"DUDE, he keeps looking at my cards!","flavor text matches chosen joke");
+assert(!cards.some(c=>c.name==="Bookie's Nephew"),"previous name is not a second Character");
+assert.match(appSource,/c\.flavor\?/, "lab card face exposes flavor alongside ability");
+assert.match(appSource,/class="card-flavor"/,"flavor has its own line on card");
+assert.match(pokerStyle,/\.card-text \.card-flavor/,"flavor text styled for playtest");
 assert.equal(cards.filter(c=>c.id==="LAB-GD-001").length,1,"renamed Character keeps a single card record");
 assert.equal(cards.find(c=>c.id==="LAB-GD-001")?.name,"Roulette Table Squatter");
 assert.equal(cards.filter(c=>c.name==="Roulette Table Squatter").length,1,"no duplicate card under the new name");
