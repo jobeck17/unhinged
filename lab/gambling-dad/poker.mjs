@@ -35,7 +35,8 @@ export function slotPayout(flips,continuePlaying,handSize){
   return {outcome:"BUST",draw:0};
 }
 export function installGamblingDad(Game, LEADERS) {
-  LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: gain 4 Stash. Lose: reset Stash to 2 and Defeat your Characters. Only Dad may Fold for 1 Stash."};
+  LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: choose Gain 2 Ready Stash or Draw 2. Lose: lose up to 2 Stash and discard 1 card. At Breaking Point, after a win you may Double Down for a second hand; losing it forfeits your first reward. Only Dad may Fold for 1 Stash."};
+  LEADERS[DAD].breaking="Double Down: After winning Rock Bottom Poker, you may risk your reward on a second hand. Win again to choose a second reward.";
   // LAB ONLY: do not ask players to choose physical Stash cards for ordinary
   // costs. The shared Magician package adds a multi-select payment picker to
   // every play, which makes unrelated Character names appear as Ready Stash.
@@ -175,7 +176,64 @@ export function installGamblingDad(Game, LEADERS) {
   };
   Game.prototype.dadPoker=async function(p=this.turn) {
     if(!this.canPoker(p))return false;
-    this.players[p].pokerUsed=true;
+    const s=this.players[p],opp=1-p;
+    s.pokerUsed=true;
+    const payouts=[],history=[];
+    let doubled=false,lastResult=0;
+
+    // Keep each physical Stash slot in sync with the Magician package. A
+    // Stash loss removes actual cards and never accidentally Readies a slot.
+    const removeStash=n=>{
+      const flags=typeof this.stashStates==="function"?this.stashStates(p):null;
+      for(let k=0;k<n&&s.stash.length;k++){
+        const i=s.stash.length-1,id=s.stash.pop();
+        const owner=s.pokerOrigins?.[i]??p;
+        if(s.pokerOrigins?.length>i)s.pokerOrigins.pop();
+        const ready=flags?flags.splice(i,1)[0]:s.fuel>0;
+        if(ready)s.fuel=Math.max(0,s.fuel-1);
+        this.players[owner].discard.push(id);
+      }
+      s.fuel=Math.min(s.fuel,s.stash.length);
+    };
+    const resolveRewards=()=>{
+      for(const {choice,cards} of payouts){
+        if(choice==="stash"){
+          if(typeof this.stashStates==="function")this.stashStates(p);
+          s.stash.push(...cards);
+          while((s.pokerOrigins||=[]).length<s.stash.length-2)s.pokerOrigins.push(p);
+          s.pokerOrigins.push(p,p);
+          if(s.stashReady)s.stashReady.push(true,true);
+          s.fuel+=2;
+          this.say("Rock Bottom Poker reward: gain 2 Ready Stash.");
+        }else{
+          this.players[p].deck.unshift(...cards);
+          this.draw(p,2);
+          this.say("Rock Bottom Poker reward: Draw 2 cards.");
+        }
+      }
+      payouts.length=0;
+    };
+    const abandonRewards=()=>{
+      for(const {cards} of payouts)this.players[p].deck.unshift(...cards);
+      payouts.length=0;
+    };
+    const loseHand=async()=>{
+      removeStash(2);
+      if(s.hand.length){
+        const options=s.hand.map((id,i)=>({value:i,label:this.card(id).name+" · Cost "+this.card(id).cost}));
+        const selected=await this.ask({player:p,pokerLossDiscard:true,title:"Poker loss — discard 1 card from your hand",options});
+        const index=options.some(o=>o.value===selected)?selected:0;
+        const [discarded]=s.hand.splice(index,1);
+        s.discard.push(discarded);
+        this.say("Poker loss: discards "+this.card(discarded).name+" from hand.");
+      }
+      this.say("Rock Bottom Poker: lose up to 2 Stash and discard 1 card from hand (if any).");
+      for(const x of this.chars(p)){
+        if(x.id==="LAB-GD-004")this.draw(p,1);
+        if(x.id==="LAB-GD-012")x.power+=2;
+      }
+    };
+    for(let round=1;round<=2;round++){
     const pokerMode=Math.random()<0.5?"HIGH":"LOW";
     this.pokerMode=pokerMode;
     await this.ask({player:p,pokerChip:true,pokerMode,title:"Dad\u0027s Lucky Poker Chip"});
@@ -183,14 +241,14 @@ export function installGamblingDad(Game, LEADERS) {
     for(let who=0;who<2;who++)for(let i=0;i<4;i++)hands[who].push(this.players[who].deck.pop());
     const options=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]], chosen=[[],[]], scores=[[],[]];
     // Dad alone can Fold, after seeing his own cards but before anybody commits cards.
-    const dadChoice=await this.ask({player:p,pokerFold:true,pokerMode,cards:hands[p].map(id=>({id,name:this.card(id).name,cost:this.card(id).cost})),title:"Play or Fold?"});
+    const dadChoice=round===1?await this.ask({player:p,pokerFold:true,pokerMode,cards:hands[p].map(id=>({id,name:this.card(id).name,cost:this.card(id).cost})),title:"Play or Fold?"}):"play";
     if(dadChoice==="fold"){
-      const stash=this.players[p],owner=stash.pokerOrigins?.pop()??p,discarded=stash.stash.pop();
-      if(discarded!==undefined){this.players[owner].discard.push(discarded);stash.fuel=Math.min(stash.fuel,stash.stash.length)}
+      removeStash(1);
       for(let who=0;who<2;who++)this.players[who].deck.unshift(...hands[who]);
       this.pokerLast={mode:pokerMode,result:"FOLD · Lose 1 Stash",folded:true};
       this.say("Rock Bottom Poker: Gambling Dad Folds and loses 1 Stash.");
-      this.update?.();return "fold";
+      this.update?.();
+      return "fold";
     }
     for(const who of [p,opp]){
       const possibilities=options.map(pair=>{
@@ -252,55 +310,65 @@ export function installGamblingDad(Game, LEADERS) {
       this.players[who].deck.unshift(...leftover);
     }
     const result=compareScores(scores[p],scores[opp],pokerMode);
-    const prefix="Rock Bottom Poker ("+pokerMode+"): "+this.name(p)+" "+scores[p][1]+"/"+scores[p][2]+" vs "+this.name(opp)+" "+scores[opp][1]+"/"+scores[opp][2]+". ";
-    const s=this.players[p];
+    lastResult=result;
+    const prefix="Rock Bottom Poker"+(round===2?" DOUBLE DOWN":"")+" ("+pokerMode+"): "+this.name(p)+" "+scores[p][1]+"/"+scores[p][2]+" vs "+this.name(opp)+" "+scores[opp][1]+"/"+scores[opp][2]+". ";
     if(result>0){
-      if(!s.pokerOrigins)s.pokerOrigins=[];
-      while(s.pokerOrigins.length<s.stash.length)s.pokerOrigins.push(p);
-      s.stash.push(...chosen[p],...chosen[opp]);
-      s.pokerOrigins.push(p,p,opp,opp);
-      s.fuel=Math.min(s.stash.length,s.fuel+4);
-      this.say(prefix+"Dad WINS four Ready Stash!");
+      // Winning cards are held until Double Down finishes. This prevents
+      // having to undo a Draw reward when the second hand loses.
+      this.players[opp].deck.unshift(...chosen[opp]);
       for(const x of this.chars(p)){
         if(x.id==="LAB-GD-003")x.power+=1;
         if(x.id==="LAB-GD-008"||x.id==="LAB-GD-009")x.pokerTrouble=(x.pokerTrouble||0)+1;
       }
       for(const item of s.board.filter(x=>x.id==="LAB-GD-017"))this.draw(p,1);
-    } else if(result<0){
+      const reward=await this.ask({player:p,pokerReward:true,round,title:"You won! Choose your poker reward"});
+      const choice=reward==="draw"?"draw":"stash";
+      payouts.push({choice,cards:chosen[p]});
+      this.say(prefix+"Dad WINS. Selected "+(choice==="stash"?"2 Ready Stash":"Draw 2")+".");
+    }else if(result<0){
       s.discard.push(...chosen[p]);
-      // Opponent is never awarded Stash. Its two committed cards go back to its own deck.
       this.players[opp].deck.unshift(...chosen[opp]);
-      while(s.stash.length>2){
-        const i=s.stash.length-1, id=s.stash.pop();
-        const originalOwner=s.pokerOrigins?.[i]??p;
-        this.players[originalOwner].discard.push(id);
-        if(s.pokerOrigins?.length>i)s.pokerOrigins.pop();
-      }
-      s.fuel=Math.min(s.fuel,s.stash.length);
-      for(const character of [...this.chars(p)])await this.remove(character,"discard",true);
-      this.say(prefix+"Dad LOSES. Stash resets to at most two; all Characters Defeated.");
-      for(const x of this.chars(p)){
-        if(x.id==="LAB-GD-004")this.draw(p,1);
-        if(x.id==="LAB-GD-012")x.power+=2;
-      }
-    } else {
-      this.players[p].discard.push(...chosen[p]);
+      if(doubled)abandonRewards();
+      await loseHand();
+      this.say(prefix+"Dad LOSES"+(doubled?" the Double Down; first reward forfeited.":"."));
+    }else{
+      s.discard.push(...chosen[p]);
       this.players[opp].discard.push(...chosen[opp]);
-      this.say(prefix+"A complete TIE. Both pairs discarded; no payout.");
+      this.say(prefix+"A complete TIE. Both pairs discarded.");
     }
     const revealHand=who=>({
       type:pokerHandType(this.cards,chosen[who]),
       cards:chosen[who].map(id=>({name:this.card(id).name,cost:Number(this.card(id).cost)}))
     });
+    history.push({round,mode:pokerMode,result:result>0?"WIN":result<0?"LOSS":"TIE"});
     this.pokerLast={
       mode:pokerMode,dadPlayer:p,opponentPlayer:opp,
       dadHand:revealHand(p),oppHand:revealHand(opp),
       rankDad:scores[p][0],rankOpp:scores[opp][0],
       costDad:scores[p][1],powerDad:scores[p][2],
       costOpp:scores[opp][1],powerOpp:scores[opp][2],
-      result:result>0?"WIN · +4 Stash":result<0?"LOSS · Stash down to 2; board cleared":"TIE · no payout"
+      rounds:[...history],doubled,
+      result:result>0?"WIN · Reward selected":result<0?"LOSS · -2 Stash, discard 1":"TIE · no new reward"
     };
     this.update?.();
-    return result;
+    if(round===1 && result>0 && s.breakingPointHit && this.players.every(v=>v.deck.length>=4)){
+      const risk=await this.ask({player:p,pokerDoubleDown:true,title:"BREAKING POINT — DOUBLE DOWN?",reward:payouts[0].choice});
+      if(risk==="double"){
+        doubled=true;
+        this.say("Gambling Dad DOUBLE DOWNS! The first reward is on the line.");
+        continue;
+      }
+    }
+    if(result>=0)resolveRewards();
+    if(doubled){
+      this.pokerLast.result=result>0?"DOUBLE DOWN WIN · Both rewards paid":result===0?"DOUBLE DOWN TIE · First reward paid":"DOUBLE DOWN LOSS · First reward forfeited; lose 2 Stash and discard 1 card";
+      this.pokerLast.doubled=true;
+    }else if(result>0){
+      this.pokerLast.result="WIN · "+(history[0].result==="WIN"?"Reward paid":"");
+    }
+    this.update?.();
+    break;
+    }
+    return lastResult;
   };
 }
