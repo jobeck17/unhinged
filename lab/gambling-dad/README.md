@@ -4,6 +4,10 @@
 
 [Play the Gambling Dad lab](https://jobeck17.github.io/unhinged/lab/gambling-dad/)
 
+## Dealer's Child — private peek (TESTING)
+
+**Dealer's Child** (`LAB-GD-003`, the existing three-copy Character, Cost 1, Power 1 / Health 2 / Trouble 1) replaces its old poker-win Power bonus with: **"When this Character enters play, you may look at the top 4 cards of your opponent's deck. Return them in the same order."** The effect is optional; if fewer than four cards remain, you see only those available. The lab-only picker shows the four cards in their actual upcoming draw order, privately to the Character's controller. It never removes, reorders, or reveals cards in the shared log. The peek can become outdated if the opponent's deck changes before poker. Flavor: *"DUDE, he keeps looking at my cards!"* No additional deck-builder entry is created.
+
 ## Leader
 
 **Gambling Dad** — Gambler · 20 Composure
