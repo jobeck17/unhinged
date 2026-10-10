@@ -6,6 +6,14 @@ import {runOpponentTurn} from "./opponent.mjs";
 import {installGamblingDad,pokerValue,handRank,pokerHandType,compareScores,SLOT_MACHINE,slotPayout} from "./poker.mjs";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const cards=read("./cards.json").cards,deck=read("./deck.json");
+// The four-card HIGH/LOW picker must show each printed Cost before selecting anything.
+const appSource=readFileSync(new URL("./app.js",import.meta.url),"utf8");
+const pokerStyle=readFileSync(new URL("./poker.css",import.meta.url),"utf8");
+assert.match(appSource,/poker-card-cost/,"poker card faces include prominent printed Cost");
+assert.match(appSource,/aria-label="Printed Cost/,"Cost badges are accessible without selection");
+assert.match(pokerStyle,/\.poker-card-cost strong\{font-size:26px/,"the Cost number is large on desktop");
+assert.match(pokerStyle,/max-width:420px[\s\S]*\.poker-card-cost strong\{font-size:23px/,"the Cost number stays readable on phones");
+
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
 assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),39);
 assert.equal(deck.cards[SLOT_MACHINE],4,"exactly four Slot Machine Items");
