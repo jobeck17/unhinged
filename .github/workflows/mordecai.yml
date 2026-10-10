@@ -34,6 +34,10 @@ jobs:
           node --check lab/gambling-dad/builder/app.js
           node lab/gambling-dad/builder/smoke.mjs
           node lab/gambling-dad/payment-smoke.mjs
+          node --check lab/gambling-dad/poker.mjs
+          node --check lab/gambling-dad/app.js
+          node lab/gambling-dad/rework.test.mjs
+          node lab/gambling-dad/test.mjs
       - run: node --check poll/app.js
       - run: node --check poll/questions.js
       - run: node poll/test.mjs
