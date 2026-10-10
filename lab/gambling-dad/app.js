@@ -6,13 +6,13 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-24';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-25';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins +4 Ready Stash; Dad loses Stash down to two and all his Characters are Defeated; complete tie discards both pairs. Both selected hands are revealed after play. Slot Machine is a Cost 4 Item: Activate by spending 2 Ready Stash; sequentially flip chip twice. If they match, Draw 1 or risk a third flip to refill to 7; if either check fails, draw nothing. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
+const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins by choosing 2 Ready Stash or Draw 2 cards. Dad loses up to 2 Stash and discards 1 hand card; Characters survive. At 10 or less Composure, Breaking Point unlocks the optional Double Down after a win: risk the first reward on one more poker hand for a second reward; a second loss forfeits the first reward. A tie keeps the first reward. Complete ties discard both committed pairs. Both selected hands are revealed after play. Slot Machine is a Cost 4 Item: Activate by spending 2 Ready Stash; sequentially flip chip twice. If they match, Draw 1 or risk a third flip to refill to 7; if either check fails, draw nothing. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Other Leaders\' unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
 try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
@@ -167,12 +167,56 @@ async function ask(r){
   await new Promise(resolve=>setTimeout(resolve,r.slotOutcome==="MISS"?850:1350));
   close();return null;
  }
+ if(r.pokerReward){
+  if(r.player!==human)return game.players[r.player].fuel<4?"stash":"draw";
+  return new Promise(resolve=>{
+   const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">ROCK BOTTOM POKER · HAND '+r.round+'</div>'+
+    '<h2>YOU WON! CHOOSE YOUR REWARD</h2>'+
+    '<p class="muted">Choose 2 Ready Stash or Draw 2 cards. If you Double Down, this first reward is at risk until the second hand ends.</p>'+
+    '<div class="modal-actions"><button id="poker-reward-stash" class="primary">Gain 2 Ready Stash</button><button id="poker-reward-draw">Draw 2 Cards</button></div></div></div>';
+   modal={kind:'choice',html};showModal(modal);
+   document.querySelector('#poker-reward-stash').onclick=()=>{close();resolve('stash')};
+   document.querySelector('#poker-reward-draw').onclick=()=>{close();resolve('draw')};
+  });
+ }
+ if(r.pokerDoubleDown){
+  if(r.player!==human)return 'walk';
+  return new Promise(resolve=>{
+   const selected=r.reward==='draw'?'Draw 2 cards':'Gain 2 Ready Stash';
+   const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">BREAKING POINT · GAMBLING DAD</div>'+
+    '<h2>🎰 DOUBLE DOWN?</h2><p>Your first reward is <strong>'+selected+'</strong>.</p>'+
+    '<p class="muted">Walk away and keep it, or play one more poker hand. Win to pick a second reward. Lose and forfeit your first reward, lose 2 Stash, and discard 1 card from your hand. A tie keeps your first reward. No folding on the second hand.</p>'+
+    '<div class="modal-actions"><button id="poker-walk" class="primary">Walk Away · Keep Reward</button><button id="poker-double">DOUBLE DOWN!</button></div></div></div>';
+   modal={kind:'choice',html};showModal(modal);
+   document.querySelector('#poker-walk').onclick=()=>{close();resolve('walk')};
+   document.querySelector('#poker-double').onclick=()=>{close();resolve('double')};
+  });
+ }
+ if(r.pokerLossDiscard){
+  if(r.player!==human){
+   const ids=r.options||[];
+   const cheapest=[...ids].sort((a,b)=>game.card(game.players[r.player].hand[a.value]).cost-game.card(game.players[r.player].hand[b.value]).cost);
+   return cheapest[0]?.value??null;
+  }
+  return new Promise(resolve=>{
+   const options=r.options||[];
+   const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">POKER LOSS</div>'+
+    '<h2>Discard 1 card from your hand</h2>'+
+    '<p class="muted">You lost the poker hand. You also lose up to 2 Stash. Choose which card to discard.</p>'+
+    options.map((o,i)=>'<button class="choice" data-loss-discard="'+i+'">'+esc(o.label)+'</button>').join('')+'</div></div>';
+   modal={kind:'choice',html};showModal(modal);
+   document.querySelectorAll('[data-loss-discard]').forEach(button=>button.onclick=()=>{
+    const value=options[+button.dataset.lossDiscard].value;
+    close();resolve(value);
+   });
+  });
+ }
  if(r.pokerFold){
   if(r.player!==human)return "play";
   return new Promise(resolve=>{
    const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">ROCK BOTTOM POKER · '+esc(r.pokerMode)+'</div><h2>Play or Fold?</h2>'+
     '<p>You drew four poker cards: '+r.cards.map(c=>esc(c.name)+' (Cost '+c.cost+')').join(', ')+'.</p>'+
-    '<p class="muted">Fold: discard 1 Stash and return all poker cards. Play: risk the board and your Stash.</p>'+
+    '<p class="muted">Fold: lose 1 Stash and return all poker cards. Play: a loss costs up to 2 Stash and 1 card from your hand.</p>'+
     '<div class="modal-actions"><button id="fold-hand">Fold (lose 1 Stash)</button><button id="play-hand" class="primary">Play</button></div></div></div>';
    modal={kind:"choice",html};showModal(modal);
    document.querySelector("#fold-hand").onclick=()=>{close();resolve("fold")};
