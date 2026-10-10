@@ -36,6 +36,32 @@ export function slotPayout(flips,continuePlaying,handSize){
 }
 export function installGamblingDad(Game, LEADERS) {
   LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: gain 4 Stash. Lose: reset Stash to 2 and Defeat your Characters. Only Dad may Fold for 1 Stash."};
+  // LAB ONLY: do not ask players to choose physical Stash cards for ordinary
+  // costs. The shared Magician package adds a multi-select payment picker to
+  // every play, which makes unrelated Character names appear as Ready Stash.
+  // Pay automatically, respecting which Stash slots are Ready and Trash
+  // Baron's opponent-first payment rule. Keep actual target and poker choices.
+  const normalPreparePayment=Game.prototype.preparePayment;
+  Game.prototype.preparePayment=async function(p,n){
+    if(typeof this.stashStates!=='function')return normalPreparePayment.call(this,p,n);
+    this.stashPayment=null;
+    if(n<=0)return true;
+    if(this.availableFuel(p)<n)return false;
+    const payers=this.name(p)==='Trash Baron'&&!this.decks[1-p].protectedStash?[1-p,p]:[p];
+    let remaining=n;
+    const payment=[];
+    for(const owner of payers){
+      const s=this.players[owner],ready=this.stashStates(owner).flatMap((value,i)=>value?[i]:[]);
+      const count=Math.min(remaining,s.fuel);
+      if(count>ready.length)return false;
+      if(count)payment.push({owner,picks:ready.slice(0,count)});
+      remaining-=count;
+      if(!remaining)break;
+    }
+    if(remaining)return false;
+    this.stashPayment=payment;
+    return true;
+  };
   // Lab-only casino surveillance. Unlicensed Poker Psychologist can Cause Trouble while Ready,
   // but cannot Attack and cannot Ready while it maintains a mark.
   const oldCanAttack=Game.prototype.canAttack;
