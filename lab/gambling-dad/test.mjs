@@ -111,6 +111,18 @@ assert.equal(handRank(catalog,[one,six],"LOW"),3);
 assert.equal(compareScores(score(one,one,"HIGH"),score(five,six,"HIGH"),"HIGH"),1,"Pair outranks Straight even at low Cost");
 assert.equal(compareScores(score(one,six,"LOW"),score(six,six,"LOW"),"LOW"),1,"High Roller outranks Pair in LOW");
 assert.equal(compareScores(score(one,one,"LOW"),score(six,six,"LOW"),"LOW"),1,"LOW favors lower Cost within same rank");
+// Different cards may have wildly different Power, but matching hand type and
+// total Cost are a true tie, in both chip modes.
+for(const mode of ["HIGH","LOW"]){
+ const strong={"p1":{cost:2,power:11,type:"Character"},"p2":{cost:4,power:12,type:"Character"}};
+ const weak={"a":{cost:2,power:0,type:"Action"},"b":{cost:4,power:0,type:"Item"}};
+ const high=pokerValue(strong,["p1","p2"],mode);
+ const low=pokerValue(weak,["a","b"],mode);
+ assert.deepEqual(high,low,"Poker ignores printed Power under "+mode);
+ assert.equal(compareScores(high,low,mode),0,"equal rank/Cost is TIE in "+mode);
+ assert.equal(compareScores(low,high,mode),0,"ties are symmetric in "+mode);
+}
+assert.doesNotMatch(appSource,/Power breaks Cost ties|Poker Power:|poker-card-stats/,"poker UI never implies Power decides results");
  
 // Exhaustive generalized classification: every printed Cost pair over the
 // full supported range, plus future higher Costs, must behave identically
@@ -130,7 +142,7 @@ for(const a of testCosts)for(const b of testCosts){
    :{"Matching Pair":1,"Straight":2,"High Roller":3})[kind];
   assert.equal(handRank(costCards,ids,mode),expectedRank);
   const actual=pokerValue(costCards,ids,mode);
-  assert.deepEqual(actual,[expectedRank,a+b,0],"score includes rank, combined printed Cost, printed Power");
+  assert.deepEqual(actual,[expectedRank,a+b],"score includes only hand rank and combined printed Cost");
   checked++;
  }
 }
