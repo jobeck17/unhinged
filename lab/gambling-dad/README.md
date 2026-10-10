@@ -12,20 +12,20 @@
 
 This is an **advanced** Leader: easy comparison, difficult decisions about when to risk Stash and which cards to commit.
 
-## Rock Bottom Poker — four-card hierarchy test
+## Rock Bottom Poker — reward-choice / Double Down rework (TESTING)
 
-1. Once during Dad's Turn, if **both decks have 4 or more cards**, flip **Dad's Lucky Poker Chip** fairly (HIGH/LOW, 50/50). No animation; the chip's face is shown before play.
-2. Both players temporarily draw **4 cards** from their own decks, separate from their normal hands.
-3. Only Dad may **Fold** after seeing his draw, losing 1 Stash (or 0 if empty) and returning all poker cards to the bottoms of their respective decks. Folding consumes his use of poker this Turn.
-4. Otherwise each player secretly chooses **2 of their 4 cards**; the other 2 go to the bottom of their own decks. The browser picker shows the hand hierarchy and the currently selected hand.
-5. **Hand types:** Matching Pair (equal Costs), Straight (consecutive Costs), High Roller (all other combinations).
-6. **HIGH:** Matching Pair > Straight > High Roller. **LOW:** High Roller > Straight > Matching Pair. Hand type ALWAYS beats total Cost.
-7. Within the same hand type, HIGH favors higher combined printed Cost; LOW favors lower combined printed Cost. If Costs tie, higher combined printed Power wins (non-Characters count 0 Power). Complete tie: both played pairs are discarded and Dad's Stash stays the same.
-8. **Dad wins:** all four selected cards become Ready Stash for him (ownership is still tracked).
-9. **Dad loses:** return the opponent's chosen cards to its deck, discard Dad's pair, reduce his Stash to at most two, and **Defeat every Character Dad controls**. Other Items are not wiped.
-10. All four unused cards (two per player) return to the bottoms of their owners' decks. These special draws do not trigger regular Draw effects. Ordinary Stashing remains available.
+Dad can start **one** poker sequence during his Turn when both decks contain at least four cards. Flip the HIGH/LOW chip, both players look at four cards, and each selects two as before. Matching Pair / Straight / High Roller ranking and ties still work normally.
 
-After a win, loss, or tie, the browser reveals **both committed hands** with each card's printed Cost, the Cost total, the Matching Pair / Straight / High Roller classification, card names, and Poker Power. The result stays displayed above the board until the next poker hand. The opponent AI picks its best two-card hand by the current HIGH/LOW hierarchy. The complete four-card/fold/bankruptcy design is EXPERIMENTAL and should be tested against canonical decks before any promotion.
+- **Win:** choose **Gain 2 Ready Stash** (Dad's chosen two poker cards enter Stash) **or Draw 2 cards** (Dad's chosen two cards return to the bottom of his deck before the draw). The opponent's selected cards return to the bottom of its deck. Unchosen cards return to their own decks.
+- **Lose:** Dad's selected pair is discarded; the opponent's pair returns to its deck. Dad loses up to **2 actual Stash cards** and chooses **1 card from hand to discard**, if he has any. **Characters are not automatically Defeated.**
+- **Tie:** both selected pairs are discarded, and there is no new reward.
+- **Fold:** on the first hand only, Dad can Fold after looking at four cards. It costs **1 Stash**, returns poker cards, and consumes the Turn's poker opportunity.
+
+**Breaking Point — DOUBLE DOWN:** the first time Dad's Composure crosses from above 10 to 10 or below, Double Down unlocks for the rest of the game. After winning the first poker hand, choose **Walk Away** (receive that reward immediately) or **Double Down** (play one more full poker hand for a second reward). This second hand can choose either reward independently, allowing +4 Stash, Draw 4, or +2 Stash and Draw 2 on two wins.
+
+**Risk:** the first reward is held pending until the second hand ends. Winning twice pays both; losing the second forfeits the first reward and triggers the normal loss penalty of 2 Stash plus 1 discarded hand card. A second-hand tie pays the first reward but grants no second. There is no second Fold or third hand. Double Down is not offered unless both decks have four cards for the second round. Existing **"Whenever you win/lose poker"** Character and Item effects still trigger when the corresponding individual hand wins/loses.
+
+After each hand, the browser shows both selected pairs and the result; a Double Down summary identifies the final reward outcome. Automated tests cover the two rewards, 10-Composure unlock, walking away, second-hand wins/losses/ties, board preservation, and the stash-payment prompt regression. Nothing is canonical until deliberately promoted.
 
 ## Slot Machine — NEW LAB TEST 🎰
 
