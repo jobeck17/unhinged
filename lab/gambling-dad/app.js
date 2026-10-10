@@ -61,7 +61,7 @@ function render(){
 function row(p){
  const s=game.players[p],d=game.decks[p],l=LEADERS[d.leader],chars=game.chars(p),items=s.board.filter(x=>game.card(x).type==='Item');
  const slots=chars.map(x=>cardHTML(x,'board',p)).join('')+(chars.length?'<div class="empty-slot"><span>+<small>NO CHARACTER CAP</small></span></div>':'<div class="empty-slot"><span>+<small>OPEN BOARD</small></span></div>');
- return '<section class="battle-row '+(p===human?'own':'opponent')+'"><button class="leader" disabled><span class="eyebrow">'+(p===human?'YOU':'OPPONENT')+' · LEADER</span><strong>'+esc(d.leader)+'</strong><span class="composure">'+s.hp+'<small>COMPOSURE</small></span><span class="leader-info">'+chars.length+' Characters<br>'+s.fuel+'/'+s.stash.length+' Ready Stash<br>Deck '+s.deck.length+' · Hand '+(p===human?s.hand.length:'?')+'</span><span class="leader-passive"><b>PASSIVE</b><br>'+esc(l.passive)+'</span></button><div class="slots">'+slots+'</div></section>'+
+ return '<section class="battle-row '+(p===human?'own':'opponent')+'"><button class="leader" disabled><span class="eyebrow">'+(p===human?'YOU':'OPPONENT')+' · LEADER</span><strong>'+esc(d.leader)+'</strong><span class="composure">'+s.hp+'<small>COMPOSURE</small></span><span class="leader-info">'+chars.length+' Characters<br>'+s.fuel+'/'+s.stash.length+' Ready Stash<br>Deck '+s.deck.length+' · Hand '+(p===human?s.hand.length:'?')+'</span><span class="leader-passive"><b>PASSIVE</b><br>'+esc(l.passive)+(d.leader==='Gambling Dad'?'<br><b>BREAKING POINT · '+(s.breakingPointHit?'UNLOCKED':'AT 10 COMPOSURE')+'</b><br>'+esc(l.breaking||'Double Down'):'')+'</span></button><div class="slots">'+slots+'</div></section>'+
  (items.length?'<section class="item-shelf"><div class="item-label">'+(p===human?'YOUR':'OPPONENT')+' ITEMS</div><div class="item-cards">'+items.map(x=>cardHTML(x,'board',p)).join('')+'</div></section>':'');
 }
 function cardHTML(x,zone,p,index,chosen=false){
@@ -350,7 +350,7 @@ function pokerPanel(){
  };
  return '<section class="poker-reveal" role="status" aria-live="polite">'+
    '<div class="poker-reveal-header"><span>'+esc(v.mode||'HIGH')+' POKER · BOTH HANDS REVEALED</span>'+
-   '<strong>Rock Bottom Poker · '+esc(v.result)+'</strong></div>'+
+   '<strong>Rock Bottom Poker · '+esc(v.result)+'</strong>'+(v.rounds?.length>1?'<span>'+v.rounds.map(a=>'Hand '+a.round+': '+a.result+' ('+a.mode+')').join(' · ')+'</span>':'')+'</div>'+
    '<div class="poker-reveal-grid">'+reveal(v.dadHand,v.dadPlayer,v.powerDad)+
    reveal(v.oppHand,v.opponentPlayer,v.powerOpp)+'</div></section>';
 }
