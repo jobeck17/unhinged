@@ -240,16 +240,7 @@ export function installGamblingDad(Game, LEADERS) {
     const opp=1-p, hands=[[],[]];
     for(let who=0;who<2;who++)for(let i=0;i<4;i++)hands[who].push(this.players[who].deck.pop());
     const options=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]], chosen=[[],[]], scores=[[],[]];
-    // Dad alone can Fold, after seeing his own cards but before anybody commits cards.
-    const dadChoice=round===1?await this.ask({player:p,pokerFold:true,pokerMode,cards:hands[p].map(id=>({id,name:this.card(id).name,cost:this.card(id).cost})),title:"Play or Fold?"}):"play";
-    if(dadChoice==="fold"){
-      removeStash(1);
-      for(let who=0;who<2;who++)this.players[who].deck.unshift(...hands[who]);
-      this.pokerLast={mode:pokerMode,result:"FOLD · Lose 1 Stash",folded:true};
-      this.say("Rock Bottom Poker: Gambling Dad Folds and loses 1 Stash.");
-      this.update?.();
-      return "fold";
-    }
+    // Dad may Fold right from the first four-card chooser, not in a separate dialog.
     for(const who of [p,opp]){
       const possibilities=options.map(pair=>{
         const ids=pair.map(i=>hands[who][i]),score=pokerValue(this.cards,ids,pokerMode);
@@ -265,13 +256,23 @@ export function installGamblingDad(Game, LEADERS) {
       const selection=await this.ask({
         player:who,title:"Rock Bottom Poker: choose TWO of your FOUR cards",
         mandatory:true,pokerCards:true,pokerMode,multi:true,min:2,max:2,
-        canBluff,
+        canBluff,canFold:round===1 && who===p,
         options:hands[who].map((id,i)=>({
           value:i,cardId:id,
           label:this.card(id).name+" · Cost "+this.card(id).cost+" · Power "+(this.card(id).type==="Character"?(this.card(id).power||0):0)
         })),
         recommendedPair:possibilities[0].pair
       });
+      if(selection==="fold" && round===1 && who===p){
+        // Neither side has committed a hand, and no Bluff resources were spent.
+        // Return all four of both players' poker cards, then pay the Fold penalty.
+        for(const owner of [p,opp])this.players[owner].deck.unshift(...hands[owner]);
+        removeStash(1);
+        this.pokerLast={mode:pokerMode,result:"FOLD · Lose 1 Stash",folded:true};
+        this.say("Rock Bottom Poker: Gambling Dad Folds and loses 1 Stash.");
+        this.update?.();
+        return "fold";
+      }
       const indices=Array.isArray(selection)?selection:selection?.indices;
       if(!Array.isArray(indices)||indices.length!==2||new Set(indices).size!==2||
          indices.some(i=>!Number.isInteger(i)||i<0||i>3))
