@@ -6,7 +6,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-20';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-21';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
@@ -87,6 +87,25 @@ function detail(ref){
 function showModal(entry){document.querySelector('.overlay')?.remove();if(!entry)return;document.body.insertAdjacentHTML('beforeend',entry.html);const overlay=document.querySelector('.overlay');overlay.onclick=e=>{if(e.target===overlay&&entry.kind==='detail')close()}}
 function close(){modal=null;document.querySelector('.overlay')?.remove()}
 async function ask(r){
+ if(r.psychologistTarget){
+  if(r.player!==human){
+   const options=r.options||[];
+   return options.length?options[0].value:null;
+  }
+  return new Promise(resolve=>{
+   const opts=r.options||[];
+   const html='<div class="overlay"><div class="sheet" role="dialog" aria-label="Psychologist target">'+
+    '<div class="type">UNLICENSED POKER PSYCHOLOGIST</div>'+
+    '<h2>Who are you watching?</h2>'+
+    '<p class="muted">Choose one opposing Character to mark. The Psychologist stays Rotated while watching it. Whenever it Rotates, you Draw a card.</p>'+
+    opts.map((o,i)=>'<button class="choice" data-psychologist-target="'+i+'">'+esc(o.label)+'</button>').join('')+
+    '<div class="modal-actions"><button id="psychologist-cancel">Cancel</button></div></div></div>';
+   modal={kind:'psychologist',html};showModal(modal);
+   const finish=value=>{close();resolve(value)};
+   document.querySelectorAll('[data-psychologist-target]').forEach(b=>b.onclick=()=>finish(opts[+b.dataset.psychologistTarget].value));
+   document.querySelector('#psychologist-cancel')?.addEventListener('click',()=>finish(null));
+  });
+ }
  if(r.slotStart){
   if(r.player!==human)return null;
   const html='<div class="overlay"><div class="sheet slot-sheet" role="dialog" aria-label="Slot Machine">'+
