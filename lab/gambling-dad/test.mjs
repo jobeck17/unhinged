@@ -72,23 +72,27 @@ assert(checked>=200,"all combinations were checked");
  assert.equal(pitCard.name,'Unlicensed Poker Psychologist');
  assert.deepEqual([pitCard.cost,pitCard.power,pitCard.guard,pitCard.trouble],[3,0,4,1]);
  assert.equal(deck.cards['LAB-GD-005'],3);
+ const psychologistSelections=[];
  const surveillance=setupPitBoss();
  async function setupPitBossTest(){
   const g=surveillance;g.turn=0;
-  const pit=g.enter(0,'LAB-GD-005'),target=g.enter(1,'P001');
+  const pit=g.enter(0,'LAB-GD-005'),target=g.enter(1,'P001'),ally=g.enter(0,'LAB-GD-001');
   pit.born=1;target.born=1;
   assert.equal(g.canAttack(pit),false,'Pit Boss never attacks');
   assert.equal(g.canCauseTrouble(pit),true,'Pit Boss can Cause Trouble while Ready');
   assert.equal(g.canUse(pit),true,'Pit Boss can mark opposing Character');
   await g.activate(pit.uid);
+  assert.equal(psychologistSelections.length,1,'dedicated psychologist chooser appeared');
+  assert.equal(psychologistSelections[0].psychologistTarget,true);
+  assert.deepEqual(psychologistSelections[0].options.map(o=>o.value),[target.uid],'only opposing Characters can be marked');
   assert.equal(pit.pitMark,target.uid);
   assert.equal(pit.ready,false);
   target.ready=false;
   await g.advance();
-  assert(g.log.some(line=>line.includes('Pit Boss:')&&line.includes('Draw a card')),'target rotation draws');
-  const eventCount=g.log.filter(line=>line.includes('Pit Boss:')&&line.includes('Draw a card')).length;
+  assert(g.log.some(line=>line.includes('Unlicensed Poker Psychologist:')&&line.includes('Draw a card')),'target rotation draws');
+  const eventCount=g.log.filter(line=>line.includes('Unlicensed Poker Psychologist:')&&line.includes('Draw a card')).length;
   await g.advance();
-  assert.equal(g.log.filter(line=>line.includes('Pit Boss:')&&line.includes('Draw a card')).length,eventCount,'no repeated draw without a fresh rotation');
+  assert.equal(g.log.filter(line=>line.includes('Unlicensed Poker Psychologist:')&&line.includes('Draw a card')).length,eventCount,'no repeated draw without a fresh rotation');
   g.turn=0;g.startTurn();
   assert.equal(pit.ready,false,'Pit Boss stays Rotated while marking');
   assert.equal(g.canCauseTrouble(pit),false,'Rotated Pit Boss cannot Cause Trouble');
@@ -100,7 +104,7 @@ assert(checked>=200,"all combinations were checked");
  await setupPitBossTest();
  function setupPitBoss(){
   const g=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
-    async r=>r.options?.[0]?.value??null,()=>{},{firstPlayer:0});
+    async r=>{if(r.psychologistTarget)psychologistSelections.push(r);return r.options?.[0]?.value??null},()=>{},{firstPlayer:0});
   g.round=2;return g;
  }
 function setup(ask){
