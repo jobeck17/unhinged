@@ -28,6 +28,7 @@ export function compareScores(a,b,mode="HIGH") {
 export const SLOT_MACHINE="LAB-GD-018";
 export const BLUFF="LAB-GD-013";
 export const PIT_BOSS="LAB-GD-005";
+export const DEALERS_CHILD="LAB-GD-003";
 export function slotPayout(flips,continuePlaying,handSize){
   if(flips.length<2||flips[0]!==flips[1])return {outcome:"MISS",draw:0};
   if(!continuePlaying)return {outcome:"CASH OUT",draw:1};
@@ -154,6 +155,20 @@ export function installGamblingDad(Game, LEADERS) {
     this.slotLast={flips:[...flips],outcome:payout.outcome,drawn};
     await this.ask({player:p,slotFinish:true,slotOutcome:payout.outcome,flips:[...flips],drawn});
     this.say("Slot Machine: "+payout.outcome+" · Draw "+drawn+".");
+  };
+  // Lab-only information effect: the deck's end is its top (draw() uses pop).
+  // Never remove, sort, or log the seen card IDs; only the viewing player may see them.
+  const oldEnterEffect=Game.prototype.enterEffect;
+  Game.prototype.enterEffect=async function(x,previous){
+    await oldEnterEffect.call(this,x,previous);
+    if(x?.id!==DEALERS_CHILD||!this.obj(x.uid))return;
+    const p=x.owner,opponentDeck=this.players[1-p].deck;
+    if(!opponentDeck.length)return;
+    const cardIds=opponentDeck.slice(-4).reverse();
+    const decision=await this.ask({player:p,dealersChildPeek:true,
+      title:"Dealer's Child — look at the opponent's top "+cardIds.length+" cards?",
+      cardIds});
+    if(decision==="peek")this.say("Dealer's Child peeks at the opposing deck.");
   };
   const oldAction=Game.prototype.actionEffect;
   Game.prototype.actionEffect=async function(p,id,target,second,previous) {
