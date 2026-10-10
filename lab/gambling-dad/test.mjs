@@ -44,7 +44,7 @@ for(const mode of ["HIGH","LOW"]){
 
 assert.equal(handRank(catalog,[six,six],"HIGH"),3);
 assert.equal(handRank(catalog,[six,six],"LOW"),1);
-assert.equal(handRank(catalog,[five,six],"HIGH"),2);
+assert.equal(handRank(catalog,[five,six],"HIGH"),1,"3-Cost Psychologist plus 6 is a High Roller, not a Straight");
 assert.equal(handRank(catalog,[one,six],"LOW"),3);
 assert.equal(compareScores(score(one,one,"HIGH"),score(five,six,"HIGH"),"HIGH"),1,"Pair outranks Straight even at low Cost");
 assert.equal(compareScores(score(one,six,"LOW"),score(six,six,"LOW"),"LOW"),1,"High Roller outranks Pair in LOW");
