@@ -6,13 +6,13 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-29';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-30';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less); Power breaks Cost ties. Only Dad may Fold for 1 Stash. Dad wins by choosing 2 Ready Stash or Draw 2 cards. Dad loses up to 2 Stash and discards 1 hand card; Characters survive. At 10 or less Composure, Breaking Point unlocks the optional Double Down after a win: risk the first reward on one more poker hand for a second reward; a second loss forfeits the first reward. A tie keeps the first reward. Complete ties discard both committed pairs. Both selected hands are revealed after play. Slot Machine is a Cost 4 Item: Activate by spending 2 Ready Stash; sequentially flip chip twice. If they match, Draw 1 or risk a third flip to refill to 7; if either check fails, draw nothing. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Other Leaders\' unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
+const rules='EXPERIMENTAL LAB: Rock Bottom Poker once during Gambling Dad\'s Turn; both draw 4 separate poker cards and pick 2. HIGH ranks Matching Pair > Straight > High Roller; LOW reverses those ranks. Equal-ranked hands compare combined printed Cost (HIGH prefers more, LOW less). Matching hand type and total Cost is a tie. Only Dad may Fold for 1 Stash. Dad wins by choosing 2 Ready Stash or Draw 2 cards. Dad loses up to 2 Stash and discards 1 hand card; Characters survive. At 10 or less Composure, Breaking Point unlocks the optional Double Down after a win: risk the first reward on one more poker hand for a second reward; a second loss forfeits the first reward. A tie keeps the first reward. Complete ties discard both committed pairs. Both selected hands are revealed after play. Slot Machine is a Cost 4 Item: Activate by spending 2 Ready Stash; sequentially flip chip twice. If they match, Draw 1 or risk a third flip to refill to 7; if either check fails, draw nothing. Normal Stashing remains. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Other Leaders\' unique Breaking Point abilities and selectable Last Straw effects are pending the production card-design pass.';
 try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
@@ -255,7 +255,7 @@ async function ask(r){
      '<div class="type">ROCK BOTTOM POKER</div><h2>Dad\'s Lucky Poker Chip</h2>'+
      chip+'<p class="chip-result">'+mode+' POKER</p>'+
      '<p class="muted">'+(mode==="HIGH"?"Pair beats Straight beats High Roller. Higher Cost wins matching ranks.":"High Roller beats Straight beats Pair. Lower Cost wins matching ranks.")+
-     ' Power breaks ties in Cost.</p>'+
+     ' Same hand type and total Cost means a tie.</p>'+
      '<div class="modal-actions"><button id="chip-continue" class="primary">Deal four cards</button></div></div></div>';
    modal={kind:"choice",html};showModal(modal);
    document.querySelector("#chip-continue").onclick=()=>{close();resolve(null)};
@@ -263,7 +263,7 @@ async function ask(r){
  }
  if(r.pokerCards){
   // Four distinct drawn cards; choose exactly two.
-  // AI returns the two indices with the best printed Cost, then Power.
+  // AI returns the two indices with the strongest hand type and printed Cost.
   if(r.player!==human){
     const indices=[...r.recommendedPair];
     if(r.canBluff && !r.pokerBluffRepick){
@@ -283,13 +283,12 @@ async function ask(r){
       '<span class="poker-card-type">'+esc(c.type)+' · '+esc(c.style)+'</span>'+
       '<span class="poker-card-art">'+art+'</span>'+
       '<strong class="poker-card-name">'+esc(c.name)+'</strong>'+
-      '<span class="poker-card-stats"><b>Power '+(c.type==='Character'?(c.power||0):0)+'</b></span>'+
       '<span class="poker-card-status">TAP TO SELECT</span></button>';
    }).join('');
    const html='<div class="overlay"><div class="sheet poker-sheet">'+
      '<div class="type">99 GAMBLERS QUIT BEFORE THEY WIN BIG!</div>'+
      '<h2>'+(r.pokerBluffRepick?'Bluff: pick your new hand':'Pick your poker hand')+'</h2><p class="muted">Choose two cards to play'+(r.canFold?', or Fold now for 1 Stash':'')+'. The other cards go to the bottom of your deck.</p>'+
-     '<div class="poker-ranking"><b>'+esc(r.pokerMode)+' POKER — STRONGEST TO WEAKEST</b><p>'+ (r.pokerMode==="HIGH"?"1. Matching Pair · 2. Straight · 3. High Roller":"1. High Roller · 2. Straight · 3. Matching Pair")+'</p><small>Pair = equal Costs · Straight = consecutive Costs · High Roller = neither. Hand rank always beats Cost. '+(r.pokerMode==="HIGH"?"Higher":"Lower")+' combined Cost wins equal ranks; Power breaks Cost ties.</small></div>'+
+     '<div class="poker-ranking"><b>'+esc(r.pokerMode)+' POKER — STRONGEST TO WEAKEST</b><p>'+ (r.pokerMode==="HIGH"?"1. Matching Pair · 2. Straight · 3. High Roller":"1. High Roller · 2. Straight · 3. Matching Pair")+'</p><small>Pair = equal Costs · Straight = consecutive Costs · High Roller = neither. Hand rank always beats Cost. '+(r.pokerMode==="HIGH"?"Higher":"Lower")+' combined Cost wins equal ranks. Same hand type and Cost is a tie.</small></div>'+
      '<div class="poker-choices">'+cardMarkup+'</div>'+
      '<p id="poker-selection" class="muted" aria-live="polite">0 of 2 selected</p>'+
      '<div class="modal-actions"><button id="poker-confirm" class="primary" disabled>'+(r.pokerBluffRepick?'Play New Poker Hand':'Play Poker Hand')+'</button>'+
@@ -366,19 +365,18 @@ function pokerPanel(){
  const v=game?.pokerLast;
  if(!v)return '';
  if(v.folded)return '<section class="poker-reveal" role="status"><strong>Rock Bottom Poker · '+esc(v.result)+'</strong></section>';
- const reveal=(hand,owner,power)=>{
+ const reveal=(hand,owner)=>{
    if(!hand)return '';
    const costs=hand.cards.map(c=>Number(c.cost));
    const label=owner===human?'YOUR HAND':'OPPONENT\'S HAND';
    return '<div class="poker-reveal-hand">'+
      '<span class="poker-reveal-label">'+label+'</span>'+
      '<strong class="poker-reveal-type">Cost '+costs.join(' + ')+' = '+costs.reduce((a,b)=>a+b,0)+' — '+esc(hand.type)+'</strong>'+
-     '<span class="poker-reveal-cards">'+hand.cards.map(c=>esc(c.name)+' (Cost '+esc(c.cost)+')').join(' + ')+'</span>'+
-     '<span class="poker-reveal-power">Poker Power: '+esc(power)+'</span></div>';
+     '<span class="poker-reveal-cards">'+hand.cards.map(c=>esc(c.name)+' (Cost '+esc(c.cost)+')').join(' + ')+'</span></div>';
  };
  return '<section class="poker-reveal" role="status" aria-live="polite">'+
    '<div class="poker-reveal-header"><span>'+esc(v.mode||'HIGH')+' POKER · BOTH HANDS REVEALED</span>'+
    '<strong>Rock Bottom Poker · '+esc(v.result)+'</strong>'+(v.rounds?.length>1?'<span>'+v.rounds.map(a=>'Hand '+a.round+': '+a.result+' ('+a.mode+')').join(' · ')+'</span>':'')+'</div>'+
-   '<div class="poker-reveal-grid">'+reveal(v.dadHand,v.dadPlayer,v.powerDad)+
-   reveal(v.oppHand,v.opponentPlayer,v.powerOpp)+'</div></section>';
+   '<div class="poker-reveal-grid">'+reveal(v.dadHand,v.dadPlayer)+
+   reveal(v.oppHand,v.opponentPlayer)+'</div></section>';
 }
