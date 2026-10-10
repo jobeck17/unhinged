@@ -47,7 +47,7 @@
         "Human"
       ],
       "keywords": [],
-      "text": "Whenever you win Rock Bottom Poker, this gets +1 Power this Turn.",
+      "text": "When this Character enters play, you may look at the top 4 cards of your opponent\'s deck. Return them in the same order.",
       "status": "prototype",
       "flavor": "DUDE, he keeps looking at my cards!"
     },
