@@ -60,7 +60,7 @@ assert.equal(cards.game.players[0].stash.length,3);
 assert.equal(cards.game.players[0].hand.length,4,"first win: Draw 2");
 assert.equal(cards.game.players[1].deck.length,4,"opponent's selected pair stays in opponent's deck");
 
-let walked=await scenario({atBreakingPoint:true,double:false});
+let walked=await scenario({atBreakingPoint:true,double:false,dadCards:[S,S,A,A,S,S,A,A],oppCards:Array(8).fill(A)});
 assert.equal(walked.game.players[0].hp,10);
 assert.equal(walked.requests.filter(r=>r.pokerDoubleDown).length,1);
 assert.equal(walked.game.players[0].stash.length,5);
