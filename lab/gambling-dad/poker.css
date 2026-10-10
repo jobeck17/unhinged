@@ -72,3 +72,6 @@
  .poker-card-cost strong{font-size:23px}
  .poker-card-type{padding-right:43px;min-height:43px}
 }
+
+/* Show Character flavor separately from printed rules in the poker lab. */
+.card-text .card-flavor{display:block;margin-top:5px;font-size:.9em;line-height:1.2;opacity:.86}
