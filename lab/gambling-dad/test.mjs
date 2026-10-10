@@ -16,6 +16,11 @@ assert.match(pokerStyle,/max-width:420px[\s\S]*\.poker-card-cost strong\{font-si
 
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
 assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),39);
+assert.equal(deck.cards["LAB-GD-001"],4,"all four Roulette Table Squatter copies retain the original ID");
+assert.equal(cards.filter(c=>c.id==="LAB-GD-001").length,1,"renamed Character keeps a single card record");
+assert.equal(cards.find(c=>c.id==="LAB-GD-001")?.name,"Roulette Table Squatter");
+assert.equal(cards.filter(c=>c.name==="Roulette Table Squatter").length,1,"no duplicate card under the new name");
+assert(!cards.some(c=>c.name==="Gas Station Regular"),"old Character name is retired");
 assert.equal(deck.cards[SLOT_MACHINE],4,"exactly four Slot Machine Items");
 assert.equal(deck.cards["LAB-GD-014"],undefined,"Free Money is absent from the deck");
 assert.equal(deck.cards["LAB-GD-013"],3,"exactly three Bluff Actions replace Almost a Win");
