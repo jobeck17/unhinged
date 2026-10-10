@@ -126,6 +126,8 @@ async function run(mode,dadDraw,oppDraw,decision="play",selection=[0,1]){
   requests.push(r);
   if(r.pokerChip)return null;
   if(r.pokerFold)return decision;
+  if(r.pokerReward)return "stash";
+  if(r.pokerDoubleDown)return "walk";
   if(r.pokerCards){
    assert.equal(r.pokerMode,mode,"Picker receives actual chip mode");
    assert.equal(r.options.length,4,"Always show four individually selectable cards");
@@ -168,10 +170,10 @@ function assertRevealedHands(game,mode){
 let win=await run("HIGH",[six,six,one,one],[one,five,two,one]);
 assert.equal(win.outcome,1);
 assertRevealedHands(win.g,"HIGH");
-assert.equal(win.g.players[0].stash.length,4);
-assert.equal(win.g.players[0].fuel,4);
+assert.equal(win.g.players[0].stash.length,2);
+assert.equal(win.g.players[0].fuel,2);
 assert.equal(win.g.players[0].deck.length,2);
-assert.equal(win.g.players[1].deck.length,2);
+assert.equal(win.g.players[1].deck.length,4);
 assert(!win.g.canPoker(0));
 let lose=await run("HIGH",[one,one,five,six],[six,six,one,two]);
 lose.g.players[0].stash; // A loss should never award Stash.
@@ -230,7 +232,7 @@ assert.deepEqual(bluffGame.pokerLast.dadHand.cards.map(c=>c.cost),[2,6],"mulliga
 assert.deepEqual(bluffGame.players[0].deck,[one,five],"unselected mulligan cards return to bottom");
 assert.equal(bluffGame.players[0].hand.includes("LAB-GD-013"),false,"Bluff action is consumed");
 assert(bluffGame.players[0].discard.includes("LAB-GD-013"),"Bluff goes to discard");
-assert.equal(bluffGame.players[0].fuel,4,"Bluff costs 2 Ready Stash before winning 4 Stash");
+assert.equal(bluffGame.players[0].fuel,2,"Bluff costs 2 Ready Stash before winning 2 Ready Stash");
 const pokerScreenSource=readFileSync(new URL("./app.js",import.meta.url),"utf8");
 assert.match(pokerScreenSource,/id="poker-redraw-bluff"/,"Bluff control is present on poker picker");
 assert.match(pokerScreenSource,/resolve\(\{indices:\[\.\.\.picked\],bluff:true\}\)/,"Bluff uses the selected cards directly");
