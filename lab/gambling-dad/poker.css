@@ -8,7 +8,6 @@
 .poker-card-art{height:64px;background:linear-gradient(140deg,#1faf78,#254f3d);color:white;display:grid;place-items:center;border-radius:7px;overflow:hidden;font-size:11px;text-transform:uppercase}
 .poker-card-art img{width:100%;height:100%;object-fit:cover}
 .poker-card-name{font-size:15px;line-height:1.15;overflow-wrap:anywhere}
-.poker-card-stats{display:flex;justify-content:space-between;gap:4px;flex-wrap:wrap;font-size:13px;margin-top:auto}
 .poker-card-status{font-weight:800;font-size:10px;letter-spacing:.4px;color:#276653}
 #poker-selection{font-weight:700}
 #poker-confirm:disabled{opacity:.4;cursor:not-allowed}
@@ -19,7 +18,6 @@
  .poker-card-name{font-size:12px}
  .poker-card-type{font-size:8px}
  .poker-card-art{height:48px}
- .poker-card-stats{font-size:11px}
  .poker-card-status{font-size:8px}
 }
 
