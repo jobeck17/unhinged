@@ -333,7 +333,6 @@ export function installGamblingDad(Game, LEADERS) {
       // having to undo a Draw reward when the second hand loses.
       this.players[opp].deck.unshift(...chosen[opp]);
       for(const x of this.chars(p)){
-        if(x.id==="LAB-GD-003")x.power+=1;
         if(x.id==="LAB-GD-008"||x.id==="LAB-GD-009")x.pokerTrouble=(x.pokerTrouble||0)+1;
       }
       for(const item of s.board.filter(x=>x.id==="LAB-GD-017"))this.draw(p,1);
