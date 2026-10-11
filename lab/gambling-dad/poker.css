@@ -80,3 +80,8 @@
 .dealer-peek-card .dealer-peek-cost{font-size:20px}
 .dealer-peek-card span{font-size:12px}
 @media(max-width:640px){.dealer-peek-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Explain poker restrictions when its button is disabled. */
+.poker-unavailable{display:flex;flex-direction:column;gap:3px;max-width:260px}
+.poker-unavailable button:disabled{opacity:.5;cursor:not-allowed}
+.poker-unavailable small{font-size:12px;line-height:1.3;color:#a7b3ac}
