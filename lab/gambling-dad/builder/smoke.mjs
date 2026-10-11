@@ -71,6 +71,7 @@ assert(!t.state.pool.cards.some(c=>c.name==='Gas Station Regular'),'no retired-n
 const dealer=t.state.pool.cards.filter(c=>c.id==='LAB-GD-003');
 assert.equal(dealer.length,1,"Dealer's Child uses one existing card ID");
 assert.equal(dealer[0].name,"Dealer's Child");
+assert.deepEqual([dealer[0].cost,dealer[0].power,dealer[0].guard,dealer[0].trouble],[2,2,2,1],"updated Dealer's Child stats appear in builder");
 assert.equal(dealer[0].flavor,"DUDE, he keeps looking at my cards!");
 assert.equal(t.state.cards['LAB-GD-003'],3,"all three original copies remain");
 assert.match(dealer[0].text,/When this Character enters play, you may look at the top 4 cards/,"updated peek ability in builder pool");
