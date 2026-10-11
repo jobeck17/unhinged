@@ -4,6 +4,10 @@
 
 [Play the Gambling Dad lab](https://jobeck17.github.io/unhinged/lab/gambling-dad/)
 
+## Roulette Table Squatter — even-Cost support (TESTING)
+
+**Roulette Table Squatter** (`LAB-GD-001`, four copies, Cost 1, 1 Power / 2 Health / 1 Trouble) now has the passive **"Your other Characters with even Costs get +1 Power."** It requires no activation or roulette roll; the even/odd wager provides the flavor. Power is computed dynamically while Squatters are in play and disappears when they leave. Bonuses from multiple Squatters currently stack (+2 with two, up to +4 with four). **Balance risk:** this makes a one-cost Character a potentially strong, reusable combat aura, especially for 2-Cost Dealer's Child and 6-Cost finishers; evaluate stacking and board-snowball playtests before promotion. Opposing and odd-Cost Characters are unaffected. Root/canonical rules remain unchanged.
+
 ## Dealer's Child — private peek (TESTING)
 
 **Dealer's Child** (`LAB-GD-003`, the existing three-copy Character, Cost 2, Power 2 / Health 2 / Trouble 1) replaces its old poker-win Power bonus with: **"When this Character enters play, you may look at the top 4 cards of your opponent's deck. Return them in the same order."** The effect is optional; if fewer than four cards remain, you see only those available. The lab-only picker shows the four cards in their actual upcoming draw order, privately to the Character's controller. It never removes, reorders, or reveals cards in the shared log. The peek can become outdated if the opponent's deck changes before poker. Flavor: *"DUDE, he keeps looking at my cards!"* Its Cost and Power were increased from 1 to 2 to give the information effect a meaningful cost and improve the experimental deck curve (12 one-cost and 3 two-cost Characters). No additional deck-builder entry is created.
