@@ -17,6 +17,8 @@ assert.match(pokerStyle,/max-width:420px[\s\S]*\.poker-card-cost strong\{font-si
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
 assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),39);
 assert.equal(deck.cards["LAB-GD-001"],4,"all four Roulette Table Squatter copies retain the original ID");
+assert.equal(cards.find(c=>c.id==="LAB-GD-001")?.text,"Your other Characters with even Costs get +1 Power.","Squatter is a tiny passive even-Cost support");
+assert.deepEqual((({cost,power,guard,trouble})=>[cost,power,guard,trouble])(cards.find(c=>c.id==="LAB-GD-001")),[1,1,2,1],"Squatter keeps its 1-cost 1/2/1 statline");
 assert.equal(deck.cards["LAB-GD-003"],3,"all existing Dealer's Child copies preserved");
 assert.equal(cards.filter(c=>c.id==="LAB-GD-003").length,1,"rename retains one existing card ID");
 assert.equal(cards.find(c=>c.id==="LAB-GD-003")?.name,"Dealer's Child","existing Character renamed in place");
@@ -52,6 +54,29 @@ assert(!canonical.cards.some(c=>c.id.startsWith("LAB-GD-")));
 const catalog=Object.fromEntries([...canonical.cards,...cards].map(c=>[c.id,c]));
 installGamblingDad(Game,LEADERS);
 assert(LEADERS["Gambling Dad"].passive.includes("Rock Bottom Poker"));
+
+// Squatter's passive adds Power to FRIENDLY, OTHER even-Cost Characters.
+const squatterGame=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
+ async r=>r.options?.[0]?.value??null,()=>{},{firstPlayer:0});
+const squatterId="LAB-GD-001";
+const evenCostId="LAB-GD-003"; // Cost 2
+const oddCostId="LAB-GD-002"; // Cost 1
+const squatter1=squatterGame.enter(0,squatterId);
+const evenFriend=squatterGame.enter(0,evenCostId);
+const oddFriend=squatterGame.enter(0,oddCostId);
+const enemyEven=squatterGame.enter(1,evenCostId);
+assert.equal(squatterGame.power(squatter1),1,"Squatter does not increase its own Power");
+assert.equal(squatterGame.power(evenFriend),3,"one Squatter grants +1 Power to other even-Cost Character");
+assert.equal(squatterGame.power(oddFriend),2,"odd-Cost Characters do not receive bonus");
+assert.equal(squatterGame.power(enemyEven),2,"opposing even-Cost Characters are not supported");
+const squatter2=squatterGame.enter(0,squatterId);
+assert.equal(squatterGame.power(evenFriend),4,"two Squatters currently stack to +2 Power");
+assert.equal(squatterGame.power(squatter1),1,"Squatters remain unaffected with two copies");
+await squatterGame.remove(squatter2,"discard",true);
+assert.equal(squatterGame.power(evenFriend),3,"buff disappears immediately when a Squatter leaves play");
+await squatterGame.remove(squatter1,"discard",true);
+assert.equal(squatterGame.power(evenFriend),2,"baseline Power restored when no Squatters remain");
+assert.equal(squatterGame.power(enemyEven),2,"opponent stats remain unchanged throughout");
 
 const peekKid="LAB-GD-003";
 // Verify the changed printed Cost is enforced during an ordinary play.
