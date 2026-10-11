@@ -63,6 +63,8 @@ assert(t.visibleCards().some(c=>c.id==='LAB-GD-013'),'Bluff is displayed');
 const squatters=t.state.pool.cards.filter(c=>c.id==='LAB-GD-001');
 assert.equal(squatters.length,1,'rename must reuse the original ID, never create a duplicate');
 assert.equal(squatters[0].name,'Roulette Table Squatter');
+assert.equal(squatters[0].text,'Your other Characters with even Costs get +1 Power.','Squatter passive displays in builder');
+assert.deepEqual([squatters[0].cost,squatters[0].power,squatters[0].guard,squatters[0].trouble],[1,1,2,1],'Squatter remains a 1-cost 1/2/1 Character');
 assert.equal(t.state.cards['LAB-GD-001'],4,'all four existing copies stay in the deck');
 assert.equal(t.visibleCards().filter(c=>c.name==='Roulette Table Squatter').length,1,'builder displays one Squatter entry');
 assert(!t.visibleCards().some(c=>c.name==='Gas Station Regular'),'old name no longer displays in builder');
