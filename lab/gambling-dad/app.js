@@ -6,7 +6,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-30';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-32';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
@@ -17,7 +17,7 @@ try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=reckless-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
  ({pool,decks}=applyLandonLab(pool,decks));
- const [labCards,labDeck]=await Promise.all([fetch('./cards.json?v=gd-31').then(r=>{if(!r.ok)throw Error('Gambling Dad cards unavailable');return r.json()}),fetch('./deck.json?v=gd-13').then(r=>{if(!r.ok)throw Error('Gambling Dad deck unavailable');return r.json()})]);
+ const [labCards,labDeck]=await Promise.all([fetch('./cards.json?v=gd-32').then(r=>{if(!r.ok)throw Error('Gambling Dad cards unavailable');return r.json()}),fetch('./deck.json?v=gd-13').then(r=>{if(!r.ok)throw Error('Gambling Dad deck unavailable');return r.json()})]);
  pool.cards.push(...labCards.cards);decks.decks.unshift(labDeck);
  setup();
 }catch(e){root.innerHTML='<section class="setup"><h1>Lab failed to load.</h1><p>'+esc(e.message)+'</p></section>'}
