@@ -11,6 +11,8 @@ const appSource=readFileSync(new URL("./app.js",import.meta.url),"utf8");
 const pokerStyle=readFileSync(new URL("./poker.css",import.meta.url),"utf8");
 assert.match(appSource,/poker-card-cost/,"poker card faces include prominent printed Cost");
 assert.match(appSource,/aria-label="Printed Cost/,"Cost badges are accessible without selection");
+assert.match(appSource,/pokerUnavailableReason\(human\)/,"browser visibly explains poker restrictions");
+assert.match(appSource,/class="poker-unavailable"/,"browser keeps a disabled poker button instead of hiding it");
 assert.match(pokerStyle,/\.poker-card-cost strong\{font-size:26px/,"the Cost number is large on desktop");
 assert.match(pokerStyle,/max-width:420px[\s\S]*\.poker-card-cost strong\{font-size:23px/,"the Cost number stays readable on phones");
 
@@ -77,6 +79,31 @@ assert.equal(squatterGame.power(evenFriend),3,"buff disappears immediately when 
 await squatterGame.remove(squatter1,"discard",true);
 assert.equal(squatterGame.power(evenFriend),2,"baseline Power restored when no Squatters remain");
 assert.equal(squatterGame.power(enemyEven),2,"opponent stats remain unchanged throughout");
+
+// Breaking Point does not disable poker; deck depletion can still prevent dealing 4.
+const pokerGate=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
+ async r=>r.options?.[0]?.value??null,()=>{},{firstPlayer:0});
+pokerGate.turn=0;pokerGate.round=2;
+pokerGate.players[0].deck=Array(8).fill("LAB-GD-001");
+pokerGate.players[1].deck=Array(8).fill("LAB-GD-002");
+pokerGate.hurtLeader(0,10);
+assert.equal(pokerGate.players[0].hp,10);
+assert.equal(pokerGate.players[0].breakingPointHit,true);
+assert.equal(pokerGate.canPoker(0),true,"at 10 Composure poker is still available");
+assert.equal(pokerGate.pokerUnavailableReason(0),null);
+pokerGate.hurtLeader(0,1);
+assert.equal(pokerGate.canPoker(0),true,"below 10 Composure poker remains available");
+pokerGate.players[0].pokerUsed=true;
+assert.equal(pokerGate.canPoker(0),false,"once-per-turn limit still applies");
+assert.match(pokerGate.pokerUnavailableReason(0),/already played poker/);
+pokerGate.startTurn();
+assert.equal(pokerGate.canPoker(0),true,"next Turn poker is available again below 10");
+pokerGate.players[1].deck=pokerGate.players[1].deck.slice(0,3);
+assert.equal(pokerGate.canPoker(0),false);
+assert.match(pokerGate.pokerUnavailableReason(0),/yours: 7, opponent: 3/);
+pokerGate.players[1].deck=Array(7).fill("LAB-GD-002");
+pokerGate.players[0].deck=Array(3).fill("LAB-GD-001");
+assert.match(pokerGate.pokerUnavailableReason(0),/yours: 3, opponent: 7/);
 
 const peekKid="LAB-GD-003";
 // Verify the changed printed Cost is enforced during an ordinary play.
