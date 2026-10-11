@@ -194,9 +194,19 @@ export function installGamblingDad(Game, LEADERS) {
     }
     return oldAction.call(this,p,id,target,second,previous);
   };
+  // Explain why poker is unavailable instead of silently hiding its button.
+  // Breaking Point at 10 Composure never prevents another poker hand.
+  Game.prototype.pokerUnavailableReason=function(p=this.turn) {
+    if(this.winner!==null)return "The match is already over.";
+    if(this.name(p)!==DAD)return "Only Gambling Dad can play Rock Bottom Poker.";
+    if(this.turn!==p)return "Wait for your Turn.";
+    if(this.players[p].pokerUsed)return "You already played poker this Turn.";
+    const own=this.players[p].deck.length,opp=this.players[1-p].deck.length;
+    if(own<4||opp<4)return "Need at least 4 cards in each deck (yours: "+own+", opponent: "+opp+").";
+    return null;
+  };
   Game.prototype.canPoker=function(p=this.turn) {
-    return this.winner===null && this.turn===p && this.name(p)===DAD &&
-       !this.players[p].pokerUsed && this.players.every(s=>s.deck.length>=4);
+    return this.pokerUnavailableReason(p)===null;
   };
   Game.prototype.dadPoker=async function(p=this.turn) {
     if(!this.canPoker(p))return false;
