@@ -20,6 +20,9 @@ assert.equal(deck.cards["LAB-GD-001"],4,"all four Roulette Table Squatter copies
 assert.equal(deck.cards["LAB-GD-003"],3,"all existing Dealer's Child copies preserved");
 assert.equal(cards.filter(c=>c.id==="LAB-GD-003").length,1,"rename retains one existing card ID");
 assert.equal(cards.find(c=>c.id==="LAB-GD-003")?.name,"Dealer's Child","existing Character renamed in place");
+assert.deepEqual((({cost,power,guard,trouble})=>[cost,power,guard,trouble])(cards.find(c=>c.id==="LAB-GD-003")),[2,2,2,1],"two-cost Dealer's Child has 2 Power / 2 Health / 1 Trouble");
+assert.equal(cards.filter(c=>c.type==="Character"&&c.cost===2).reduce((n,c)=>n+(deck.cards[c.id]||0),0),3,"all three original Dealer's Child copies occupy two-cost curve");
+assert.equal(cards.filter(c=>c.type==="Character"&&c.cost===1).reduce((n,c)=>n+(deck.cards[c.id]||0),0),12,"existing one-cost curve is reduced to twelve");
 assert.equal(cards.find(c=>c.id==="LAB-GD-003")?.flavor,"DUDE, he keeps looking at my cards!","flavor text matches chosen joke");
 assert.match(cards.find(c=>c.id==="LAB-GD-003")?.text||"",/When this Character enters play, you may look at the top 4 cards/);
 assert.doesNotMatch(cards.find(c=>c.id==="LAB-GD-003")?.text||"",/Power this Turn/,"old win bonus no longer printed");
@@ -51,6 +54,20 @@ installGamblingDad(Game,LEADERS);
 assert(LEADERS["Gambling Dad"].passive.includes("Rock Bottom Poker"));
 
 const peekKid="LAB-GD-003";
+// Verify the changed printed Cost is enforced during an ordinary play.
+const costGame=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
+ async r=>r.dealersChildPeek?"skip":r.options?.[0]?.value??null,()=>{},{firstPlayer:0});
+costGame.turn=0;costGame.round=2;costGame.players[0].hand=[peekKid];
+costGame.players[0].stash=["LAB-GD-001","LAB-GD-001"];
+costGame.players[0].fuel=1;
+assert.equal(costGame.canPlay(0),false,"Dealer's Child cannot be played with only one Ready Stash");
+costGame.players[0].fuel=2;
+assert.equal(costGame.canPlay(0),true,"Dealer's Child can be played with two Ready Stash");
+await costGame.play(0);
+assert.equal(costGame.players[0].fuel,0,"Dealer's Child spends two Ready Stash when played normally");
+assert.equal(costGame.chars(0).filter(x=>x.id===peekKid).length,1,"two-cost Character enters play");
+assert.equal(costGame.power(costGame.chars(0).find(x=>x.id===peekKid)),2,"played Character has 2 Power");
+assert.equal(costGame.guard(costGame.chars(0).find(x=>x.id===peekKid)),2,"played Character has 2 Health");
 const peekRequests=[];
 const peekGame=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
  async r=>{
