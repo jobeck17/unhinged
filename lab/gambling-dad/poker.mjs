@@ -27,6 +27,7 @@ export const SLOT_MACHINE="LAB-GD-018";
 export const BLUFF="LAB-GD-013";
 export const PIT_BOSS="LAB-GD-005";
 export const DEALERS_CHILD="LAB-GD-003";
+export const ROULETTE_SQUATTER="LAB-GD-001";
 export function slotPayout(flips,continuePlaying,handSize){
   if(flips.length<2||flips[0]!==flips[1])return {outcome:"MISS",draw:0};
   if(!continuePlaying)return {outcome:"CASH OUT",draw:1};
@@ -36,6 +37,16 @@ export function slotPayout(flips,continuePlaying,handSize){
 export function installGamblingDad(Game, LEADERS) {
   LEADERS[DAD]={style:"Gambler",passive:PASSIVE+" — Once during your Turn, you may play Rock Bottom Poker. Win: choose Gain 2 Ready Stash or Draw 2. Lose: lose up to 2 Stash and discard 1 card. At Breaking Point, after a win you may Double Down for a second hand; losing it forfeits your first reward. Only Dad may Fold for 1 Stash."};
   LEADERS[DAD].breaking="Double Down: After winning Rock Bottom Poker, you may risk your reward on a second hand. Win again to choose a second reward.";
+  // Lab-only passive support: an active Squatter grants +1 Power to each
+  // other friendly even-Cost Character. Resolve dynamically so the bonus
+  // immediately starts/stops as Squatters enter or leave play.
+  // Multiple Squatters currently stack; monitor four-copy board snowballs.
+  const oldPower=Game.prototype.power;
+  Game.prototype.power=function(x){
+    const power=oldPower.call(this,x);
+    if(!x || this.card(x).type!=="Character" || Number(this.card(x).cost)%2!==0)return power;
+    return power+this.chars(x.owner).filter(y=>y.id===ROULETTE_SQUATTER&&y.uid!==x.uid).length;
+  };
   // LAB ONLY: do not ask players to choose physical Stash cards for ordinary
   // costs. The shared Magician package adds a multi-select payment picker to
   // every play, which makes unrelated Character names appear as Ready Stash.
