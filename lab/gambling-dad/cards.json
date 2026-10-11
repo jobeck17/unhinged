@@ -39,8 +39,8 @@
       "name": "Dealer's Child",
       "type": "Character",
       "style": "Gambler",
-      "cost": 1,
-      "power": 1,
+      "cost": 2,
+      "power": 2,
       "guard": 2,
       "trouble": 1,
       "traits": [
