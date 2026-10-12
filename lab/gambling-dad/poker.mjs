@@ -28,6 +28,7 @@ export const BLUFF="LAB-GD-013";
 export const PIT_BOSS="LAB-GD-005";
 export const DEALERS_CHILD="LAB-GD-003";
 export const ROULETTE_SQUATTER="LAB-GD-001";
+export const GUY_WHOS_DUE="LAB-GD-002";
 export function slotPayout(flips,continuePlaying,handSize){
   if(flips.length<2||flips[0]!==flips[1])return {outcome:"MISS",draw:0};
   if(!continuePlaying)return {outcome:"CASH OUT",draw:1};
@@ -101,8 +102,16 @@ export function installGamblingDad(Game, LEADERS) {
     }
     return result;
   };
+  // Lab-only odd-Cost companion to Roulette Table Squatter: one Guy Who's
+  // Due gives +1 Trouble to each OTHER friendly Character with odd printed
+  // Cost. Compute dynamically so defeated/returned support stops applying;
+  // other copies can support one another, so overlapping copies stack.
   const oldTrouble=Game.prototype.trouble;
-  Game.prototype.trouble=function(x){return oldTrouble.call(this,x)+(x?.pokerTrouble||0)};
+  Game.prototype.trouble=function(x){
+    const trouble=oldTrouble.call(this,x)+(x?.pokerTrouble||0);
+    if(!x || this.card(x)?.type!=="Character" || Number(this.card(x).cost)%2!==1)return trouble;
+    return trouble+this.chars(x.owner).filter(y=>y.id===GUY_WHOS_DUE&&y.uid!==x.uid).length;
+  };
   const oldEndRound=Game.prototype.endRound;
   Game.prototype.endRound=async function(...args){
     for(const x of this.chars(this.turn))x.pokerTrouble=0;
