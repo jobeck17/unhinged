@@ -6,7 +6,7 @@ import '../../web/cat-lady.js?v=reckless-01';
 import '../../web/rockstar.js?v=reckless-01';
 import '../../web/reckless.js?v=reckless-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=reckless-01';
-import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-32';
+import {installGamblingDad,pokerHandType,pokerValue} from './poker.mjs?v=gd-34';
 import {runOpponentTurn} from './opponent.mjs?v=gd-16';
 installGamblingDad(Game,LEADERS);
 const root=document.querySelector('#app');
@@ -209,7 +209,7 @@ async function ask(r){
   return new Promise(resolve=>{
    const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">ROCK BOTTOM POKER · HAND '+r.round+'</div>'+
     '<h2>YOU WON! CHOOSE YOUR REWARD</h2>'+
-    '<p class="muted">Choose 2 Ready Stash or Draw 2 cards. If you Double Down, this first reward is at risk until the second hand ends.</p>'+
+    '<p class="muted">Choose 2 Ready Stash or Draw 2 cards.'+(r.round===1?' If you Double Down, this first reward is at risk until the second hand ends.':' This reward is added to any reward from your first hand.')+'</p>'+
     '<div class="modal-actions"><button id="poker-reward-stash" class="primary">Gain 2 Ready Stash</button><button id="poker-reward-draw">Draw 2 Cards</button></div></div></div>';
    modal={kind:'choice',html};showModal(modal);
    document.querySelector('#poker-reward-stash').onclick=()=>{close();resolve('stash')};
@@ -219,11 +219,15 @@ async function ask(r){
  if(r.pokerDoubleDown){
   if(r.player!==human)return 'walk';
   return new Promise(resolve=>{
-   const selected=r.reward==='draw'?'Draw 2 cards':'Gain 2 Ready Stash';
+   const openingTie=r.firstHandTied===true;
+   const selected=openingTie?'No reward — the first hand tied':r.reward==='draw'?'Draw 2 cards':'Gain 2 Ready Stash';
+   const explanation=openingTie
+     ?'Walk away from the tie, or play one more poker hand. Win to choose a reward. Lose 2 Stash and discard 1 card from your hand. A second tie gives no reward. No folding on the second hand.'
+     :'Walk away and keep it, or play one more poker hand. Win to pick a second reward. Lose and forfeit your first reward, lose 2 Stash, and discard 1 card from your hand. A tie keeps your first reward. No folding on the second hand.';
    const html='<div class="overlay"><div class="sheet poker-sheet"><div class="type">BREAKING POINT · GAMBLING DAD</div>'+
-    '<h2>🎰 DOUBLE DOWN?</h2><p>Your first reward is <strong>'+selected+'</strong>.</p>'+
-    '<p class="muted">Walk away and keep it, or play one more poker hand. Win to pick a second reward. Lose and forfeit your first reward, lose 2 Stash, and discard 1 card from your hand. A tie keeps your first reward. No folding on the second hand.</p>'+
-    '<div class="modal-actions"><button id="poker-walk" class="primary">Walk Away · Keep Reward</button><button id="poker-double">DOUBLE DOWN!</button></div></div></div>';
+    '<h2>🎰 DOUBLE DOWN?</h2><p>'+ (openingTie?'Your first hand tied: ':'Your first reward is ')+'<strong>'+selected+'</strong>.</p>'+
+    '<p class="muted">'+explanation+'</p>'+
+    '<div class="modal-actions"><button id="poker-walk" class="primary">'+(openingTie?'Walk Away · Take the Tie':'Walk Away · Keep Reward')+'</button><button id="poker-double">DOUBLE DOWN!</button></div></div></div>';
    modal={kind:'choice',html};showModal(modal);
    document.querySelector('#poker-walk').onclick=()=>{close();resolve('walk')};
    document.querySelector('#poker-double').onclick=()=>{close();resolve('double')};
