@@ -151,6 +151,51 @@ assert.equal(tie.result,0,"second hand ties");
 assert.equal(tie.game.players[0].stash.length,5,"second tie preserves first reward");
 assert.equal(tie.game.pokerLast.result.includes("First reward paid"),true);
 
+// Breaking Point now offers Double Down after an OPENING TIE too.
+// There is no banked reward, so second win = one reward, second tie = none,
+// and a second loss incurs the ordinary loss penalty.
+const allA=Array(8).fill(A);
+let openingTieWalk=await scenario({dadCards:allA,oppCards:allA,atBreakingPoint:true,double:false});
+assert.equal(openingTieWalk.result,0,"walking away from first-hand tie ends poker");
+assert.equal(openingTieWalk.requests.filter(r=>r.pokerDoubleDown).length,1,"tie unlocks the Double Down offer");
+assert.equal(openingTieWalk.requests.find(r=>r.pokerDoubleDown).firstHandTied,true);
+assert.equal(openingTieWalk.requests.find(r=>r.pokerDoubleDown).reward,null,"tie correctly has no banked reward");
+assert.equal(openingTieWalk.requests.filter(r=>r.pokerCards).length,2,"declining tie Double Down skips second hand");
+assert.equal(openingTieWalk.game.players[0].stash.length,3,"walking after tie gives no Stash");
+
+let openingTieWin=await scenario({
+ dadCards:[A,A,S,S,A,A,A,A],oppCards:allA,atBreakingPoint:true,double:true,rewards:["draw"]
+});
+assert.equal(openingTieWin.result,1,"second hand wins after an opening tie");
+assert.equal(openingTieWin.requests.filter(r=>r.pokerChip).length,2,"tie Double Down starts second poker hand");
+assert.equal(openingTieWin.requests.filter(r=>r.pokerReward).length,1,"only one reward earned from second-hand win");
+assert.equal(openingTieWin.game.players[0].hand.length,4,"second win after first tie draws two");
+assert.equal(openingTieWin.game.players[0].stash.length,3,"no unearned first reward after a tie");
+assert.deepEqual(openingTieWin.game.pokerLast.rounds.map(r=>r.result),["TIE","WIN"]);
+assert.match(openingTieWin.game.pokerLast.result,/One reward paid after opening tie/);
+assert.equal(openingTieWin.requests.filter(r=>r.pokerCards&&r.canFold).length,1,"no Fold on second hand");
+
+let openingTieLose=await scenario({
+ dadCards:allA,oppCards:[A,A,S,S,A,A,A,A],atBreakingPoint:true,double:true,hand:[A,B],stash:[A,B,S]
+});
+assert.equal(openingTieLose.result,-1,"second hand can lose after first-hand tie");
+assert.equal(openingTieLose.game.players[0].stash.length,1,"loss after opening tie costs two Stash");
+assert.equal(openingTieLose.game.players[0].hand.length,1,"loss after opening tie discards one card");
+assert.deepEqual(openingTieLose.game.pokerLast.rounds.map(r=>r.result),["TIE","LOSS"]);
+assert.match(openingTieLose.game.pokerLast.result,/no first reward/,"not falsely claiming first reward forfeited");
+
+let openingTieTwice=await scenario({dadCards:allA,oppCards:allA,atBreakingPoint:true,double:true});
+assert.equal(openingTieTwice.result,0,"both hands tied");
+assert.equal(openingTieTwice.requests.filter(r=>r.pokerChip).length,2);
+assert.equal(openingTieTwice.requests.filter(r=>r.pokerReward).length,0);
+assert.equal(openingTieTwice.game.players[0].stash.length,3,"two ties pay nothing");
+assert.match(openingTieTwice.game.pokerLast.result,/DOUBLE DOWN TIE · No reward/);
+
+let tieBeforeBreaking=await scenario({dadCards:allA,oppCards:allA});
+assert.equal(tieBeforeBreaking.requests.some(r=>r.pokerDoubleDown),false,"first-hand tie before Breaking Point cannot Double Down");
+let tiedWithShortDeck=await scenario({dadCards:Array(4).fill(A),oppCards:Array(4).fill(A),atBreakingPoint:true,double:true});
+assert.equal(tiedWithShortDeck.requests.some(r=>r.pokerDoubleDown),false,"opening tie cannot Double Down when either deck has fewer than four remaining");
+
 const shortDeck=await scenario({atBreakingPoint:true});
 assert.equal(shortDeck.requests.some(r=>r.pokerDoubleDown),false,"cannot offer second hand without 4 more cards for each deck");
-console.log("PASS: Gambling Dad rework, both 2-unit rewards, Double Down unlock/decline/win/mixed/draw/loss/tie, 2 Stash + 1 discard, board survives, short decks");
+console.log("PASS: Gambling Dad rework, both rewards, Double Down after win/tie including decline/win/loss/tie, 2 Stash + discard, board survives, short decks");
