@@ -154,6 +154,8 @@ assert.equal(tie.game.pokerLast.result.includes("First reward paid"),true);
 // Breaking Point now offers Double Down after an OPENING TIE too.
 // There is no banked reward, so second win = one reward, second tie = none,
 // and a second loss incurs the ordinary loss penalty.
+// Each poker hand takes four cards from the deck top; the second hand
+// sees cards 5-8, not the first hand's unselected cards (returned to bottom).
 const allA=Array(8).fill(A);
 let openingTieWalk=await scenario({dadCards:allA,oppCards:allA,atBreakingPoint:true,double:false});
 assert.equal(openingTieWalk.result,0,"walking away from first-hand tie ends poker");
@@ -164,7 +166,7 @@ assert.equal(openingTieWalk.requests.filter(r=>r.pokerCards).length,2,"declining
 assert.equal(openingTieWalk.game.players[0].stash.length,3,"walking after tie gives no Stash");
 
 let openingTieWin=await scenario({
- dadCards:[A,A,S,S,A,A,A,A],oppCards:allA,atBreakingPoint:true,double:true,rewards:["draw"]
+ dadCards:[A,A,A,A,S,S,A,A],oppCards:allA,atBreakingPoint:true,double:true,rewards:["draw"]
 });
 assert.equal(openingTieWin.result,1,"second hand wins after an opening tie");
 assert.equal(openingTieWin.requests.filter(r=>r.pokerChip).length,2,"tie Double Down starts second poker hand");
@@ -176,7 +178,7 @@ assert.match(openingTieWin.game.pokerLast.result,/One reward paid after opening 
 assert.equal(openingTieWin.requests.filter(r=>r.pokerCards&&r.canFold).length,1,"no Fold on second hand");
 
 let openingTieLose=await scenario({
- dadCards:allA,oppCards:[A,A,S,S,A,A,A,A],atBreakingPoint:true,double:true,hand:[A,B],stash:[A,B,S]
+ dadCards:allA,oppCards:[A,A,A,A,S,S,A,A],atBreakingPoint:true,double:true,hand:[A,B],stash:[A,B,S]
 });
 assert.equal(openingTieLose.result,-1,"second hand can lose after first-hand tie");
 assert.equal(openingTieLose.game.players[0].stash.length,1,"loss after opening tie costs two Stash");
