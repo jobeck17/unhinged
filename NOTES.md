@@ -1,3 +1,12 @@
+## Accident and Injury Attorney — BANKED Leader idea, 11 October 2026
+
+Joseph proposed **Accident and Injury Attorney** as an idea for the next Leader.
+- **Item concepts:** Roadside Billboard; Neck Brace.
+- **Action concept:** Call Me.
+- **Character concept:** someone who won a million in an injury settlement (working description; name open).
+
+Saved for future development. Leader Style, passive, Breaking Point, card mechanics, costs and stats remain OPEN. This is a BANKED concept, not an active Leader or approved deck addition.
+
 ## Spy-set concepts banked; Magician concept decisions closed — 8 October 2026
 
 Joseph explicitly BANKED BOTH remaining concepts for the next Misdirection Spy Leader:
