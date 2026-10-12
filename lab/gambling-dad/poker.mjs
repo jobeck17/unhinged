@@ -364,7 +364,7 @@ export function installGamblingDad(Game, LEADERS) {
       this.players[opp].deck.unshift(...chosen[opp]);
       if(doubled)abandonRewards();
       await loseHand();
-      this.say(prefix+"Dad LOSES"+(doubled?" the Double Down; first reward forfeited.":"."));
+      this.say(prefix+"Dad LOSES"+(doubled?(history[0]?.result==="TIE"?" the Double Down after an opening tie.":" the Double Down; first reward forfeited."):"."));
     }else{
       s.discard.push(...chosen[p]);
       this.players[opp].discard.push(...chosen[opp]);
@@ -385,17 +385,32 @@ export function installGamblingDad(Game, LEADERS) {
       result:result>0?"WIN · Reward selected":result<0?"LOSS · -2 Stash, discard 1":"TIE · no new reward"
     };
     this.update?.();
-    if(round===1 && result>0 && s.breakingPointHit && this.players.every(v=>v.deck.length>=4)){
-      const risk=await this.ask({player:p,pokerDoubleDown:true,title:"BREAKING POINT — DOUBLE DOWN?",reward:payouts[0].choice});
+    // After Breaking Point, either an opening WIN or an opening TIE may
+    // Double Down. An opening tie banks no reward, but a second-hand win
+    // still earns one; a second-hand loss incurs the usual penalty.
+    if(round===1 && result>=0 && s.breakingPointHit && this.players.every(v=>v.deck.length>=4)){
+      const risk=await this.ask({
+        player:p,pokerDoubleDown:true,title:"BREAKING POINT — DOUBLE DOWN?",
+        reward:payouts[0]?.choice??null,firstHandTied:result===0
+      });
       if(risk==="double"){
         doubled=true;
-        this.say("Gambling Dad DOUBLE DOWNS! The first reward is on the line.");
+        this.say(result===0
+          ?"Gambling Dad DOUBLE DOWNS after a TIE! No first reward banked."
+          :"Gambling Dad DOUBLE DOWNS! The first reward is on the line.");
         continue;
       }
     }
     if(result>=0)resolveRewards();
     if(doubled){
-      this.pokerLast.result=result>0?"DOUBLE DOWN WIN · Both rewards paid":result===0?"DOUBLE DOWN TIE · First reward paid":"DOUBLE DOWN LOSS · First reward forfeited; lose 2 Stash and discard 1 card";
+      const firstHandTied=history[0].result==="TIE";
+      this.pokerLast.result=result>0
+        ?(firstHandTied?"DOUBLE DOWN WIN · One reward paid after opening tie":"DOUBLE DOWN WIN · Both rewards paid")
+        :result===0
+          ?(firstHandTied?"DOUBLE DOWN TIE · No reward":"DOUBLE DOWN TIE · First reward paid")
+          :(firstHandTied
+            ?"DOUBLE DOWN LOSS · Lose 2 Stash and discard 1 card (no first reward)"
+            :"DOUBLE DOWN LOSS · First reward forfeited; lose 2 Stash and discard 1 card");
       this.pokerLast.doubled=true;
     }else if(result>0){
       this.pokerLast.result="WIN · "+(history[0].result==="WIN"?"Reward paid":"");
