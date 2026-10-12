@@ -19,6 +19,10 @@ assert.match(pokerStyle,/max-width:420px[\s\S]*\.poker-card-cost strong\{font-si
 const canonical=read("../../CARDS.json"),baseline=read("../../DECKS.json");
 assert.equal(Object.values(deck.cards).reduce((a,b)=>a+b,0),39);
 assert.equal(deck.cards["LAB-GD-001"],4,"all four Roulette Table Squatter copies retain the original ID");
+assert.equal(deck.cards["LAB-GD-002"],3,"all three Guy Who's Due copies retain the original ID");
+assert.equal(cards.filter(c=>c.id==="LAB-GD-002").length,1,"Guy Who's Due is updated in place");
+assert.equal(cards.find(c=>c.id==="LAB-GD-002")?.text,"Your other Characters with odd Costs get +1 Trouble.","Guy Who's Due supports other odd-Cost Characters passively");
+assert.deepEqual((({cost,power,guard,trouble})=>[cost,power,guard,trouble])(cards.find(c=>c.id==="LAB-GD-002")),[1,2,1,1],"Guy Who's Due retains its 1-cost 2/1/1 stats");
 assert.equal(cards.find(c=>c.id==="LAB-GD-001")?.text,"Your other Characters with even Costs get +1 Power.","Squatter is a tiny passive even-Cost support");
 assert.deepEqual((({cost,power,guard,trouble})=>[cost,power,guard,trouble])(cards.find(c=>c.id==="LAB-GD-001")),[1,1,2,1],"Squatter keeps its 1-cost 1/2/1 statline");
 assert.equal(deck.cards["LAB-GD-003"],3,"all existing Dealer's Child copies preserved");
@@ -79,6 +83,42 @@ assert.equal(squatterGame.power(evenFriend),3,"buff disappears immediately when 
 await squatterGame.remove(squatter1,"discard",true);
 assert.equal(squatterGame.power(evenFriend),2,"baseline Power restored when no Squatters remain");
 assert.equal(squatterGame.power(enemyEven),2,"opponent stats remain unchanged throughout");
+
+// Guy Who's Due is the inverse passive: +1 Trouble to OTHER FRIENDLY
+// odd-Cost Characters, including Squatter. Two copies support each other.
+const dueGame=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
+ async r=>r.options?.[0]?.value??null,()=>{},{firstPlayer:0});
+dueGame.turn=0;dueGame.round=2;
+const dueId="LAB-GD-002";
+const due1=dueGame.enter(0,dueId);
+const dueSquatter=dueGame.enter(0,squatterId);
+const dueEvenFriend=dueGame.enter(0,evenCostId);
+const dueEnemy=dueGame.enter(1,dueId);
+assert.equal(dueGame.trouble(due1),1,"a single Guy Who's Due does not buff himself");
+assert.equal(dueGame.trouble(dueSquatter),2,"the other odd-Cost Squatter gets +1 Trouble");
+assert.equal(dueGame.trouble(dueEvenFriend),1,"even-Cost Dealer's Child receives no Trouble bonus");
+assert.equal(dueGame.trouble(dueEnemy),1,"opponent Guy Who's Due is not buffed");
+assert.equal(dueGame.power(dueEvenFriend),3,"Squatter still supports even-Cost Characters alongside Guy Who's Due");
+const due2=dueGame.enter(0,dueId);
+assert.equal(dueGame.trouble(dueSquatter),3,"two Guy Who's Due copies stack +2 Trouble");
+assert.equal(dueGame.trouble(due1),2,"one Guy Who's Due supports the other copy");
+assert.equal(dueGame.trouble(due2),2,"mutual support works symmetrically");
+assert.equal(dueGame.trouble(dueEnemy),1,"opponent is still unaffected");
+const due3=dueGame.enter(0,dueId);
+assert.equal(dueGame.trouble(dueSquatter),4,"three Guy Who's Due copies stack +3 Trouble");
+assert.equal(dueGame.trouble(due1),3,"each Guy Who's Due excludes only himself");
+await dueGame.remove(due3,"discard",true);
+assert.equal(dueGame.trouble(dueSquatter),3,"Trouble aura immediately decreases when a supporter is defeated");
+await dueGame.remove(due2,"discard",true);
+assert.equal(dueGame.trouble(dueSquatter),2,"remaining aura still applies");
+dueGame.round=3; // Both Characters began in an earlier Round, so may Cause Trouble.
+const enemyBefore=dueGame.players[1].hp;
+assert.equal(dueGame.canCauseTrouble(dueSquatter),true);
+await dueGame.causeTrouble(dueSquatter.uid);
+assert.equal(dueGame.players[1].hp,enemyBefore-2,"Trouble aura really increases opposing Leader Composure loss");
+await dueGame.remove(due1,"discard",true);
+assert.equal(dueGame.trouble(dueSquatter),1,"Trouble returns to printed baseline with no supporter");
+
 
 // Breaking Point does not disable poker; deck depletion can still prevent dealing 4.
 const pokerGate=new Game({cards:[...canonical.cards,...cards]},{decks:[deck,baseline.decks[0]]},
