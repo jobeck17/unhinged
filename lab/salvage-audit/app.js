@@ -1,0 +1,98 @@
+import {cardFace} from '../../web/card-face.js?v=face-02';
+import {Game} from './salvage.mjs';
+import {LEADERS} from '../../web/engine.js?v=mordecai-04-meatshield-01';
+import {action,choice} from './pilot.mjs';
+import {applySalvage} from './data.mjs';
+const aiAction=(g,p)=>action(g,p),aiChoice=(g,r)=>choice(g,r,'heap-first');
+const root=document.querySelector('#app');
+const leaderExpanded=new Set(matchMedia('(min-width:701px)').matches?[0,1]:[]);
+let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Trash Baron’s audited passive and delayed Breaking Point are implemented in this lab. Other unique Breaking Points and selectable Last Straw effects remain pending.';
+try{
+ [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=meatshield-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=meatshield-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
+ if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
+ const draft=await fetch('../../brainstorm/salvage-audit/STARTING_DRAFT.json').then(r=>r.json());
+ ({pool,decks}=applySalvage(pool,decks,draft));
+ setup();
+}catch(e){root.innerHTML='<section class="setup"><h1>Lab failed to load.</h1><p>'+esc(e.message)+'</p></section>'}
+
+function setup(){
+ const opts=decks.decks.map((d,i)=>'<option value="'+i+'">'+esc(d.name||d.leader)+' · '+esc(d.styles[0])+'</option>').join('');
+ root.innerHTML='<section class="setup"><span class="eyebrow">UNHINGED / MORDECAI 0.4</span><h1>Drive them<br>Unhinged.</h1><p class="intro">Salvage audit: locked cards, temporary Item Stash and Junk Heap. Choose a trial list and opponent.</p><div class="settings"><label>Your deck<select id="you">'+opts+'</select></label><label>Opponent deck<select id="them">'+opts+'</select></label></div><button id="start" class="primary">Cause a scene →</button><details><summary>Current playtest rules</summary><p>'+rules+'</p></details><p class="muted">SALVAGE AUDIT PLAYTEST · provisional 40-card lists · production unchanged</p><nav><a href="https://github.com/jobeck17/unhinged/blob/main/RULES.md">Mordecai rules</a><a href="../../builder/">Deck Builder</a><a href="../../web/cards.html">Card face demos</a></nav></section>';
+ root.querySelector('#you').value='0';root.querySelector('#them').value='2';
+ root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
+}
+function pile(label,count,sub='',kind='back'){
+ const visual=kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
+ return '<div class="zone-pile"><span class="zone-label">'+esc(label)+'</span>'+visual+'<b>'+count+'</b>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</div>';
+}
+function zoneBar(p){
+ const s=game.players[p],opp=p!==human,top=s.discard.length?game.card(s.discard[s.discard.length-1])?.name:'Empty';
+ return '<div class="zonebar '+(opp?'opponent-zones':'own-zones')+'">'+
+   (opp?pile('Hand',s.hand.length,'hidden'):'')+
+   pile('Deck',s.deck.length,'cards')+
+   pile('Stash',s.stash.length,s.fuel+' Ready')+(opp?'':'<button id="inspect-stash">Inspect your Stash</button>')+
+   pile('Discard',s.discard.length,top,'discard')+
+ (s.salTemp?.some(Boolean)?'<details><summary>Face-up Item Stash</summary>'+s.stash.filter((id,i)=>s.salTemp[i]).map(id=>'<p>'+esc(game.card(id).name)+'</p>').join('')+'</details>':'')+
+ '</div>';
+}
+function render(){
+ if(phase==='setup'||!game)return setup();
+ if(phase==='mulligan'){
+  const s=game.players[human];
+  root.innerHTML='<section class="setup"><span class="eyebrow">MORDECAI 0.4 · MULLIGAN</span><h1>Keep or replace?</h1><p class="intro">Tap any cards you want to send back.</p><div class="hand-cards">'+s.hand.map((id,i)=>cardHTML({id},'hand',human,i,selected.has(i))).join('')+'</div><button id="keep" class="primary">'+(selected.size?'Replace '+selected.size:'Keep hand')+'</button></section>';
+  wireCards();root.querySelector('#keep').onclick=async()=>{await game.mulligan(human,[...selected]);selected.clear();game.begin();phase='playing';render();await aiTurn()};return;
+ }
+ game.players.forEach((_,p)=>game.stashStates(p));
+ const active=game.turn===human&&!busy&&game.winner===null;
+ const instruction=game.winner!==null?game.decks[game.winner].leader+' wins':busy?(game.turn===human?'Resolving your action…':'Opponent is thinking…'):active?'Fight, Cause Trouble, build, or End Turn.':'Opponent is thinking…';
+ root.innerHTML='<header><div><b class="brand">UNHINGED.</b><span class="eyebrow">MORDECAI 0.4 · ROUND '+game.round+'</span></div><button id="new">New match</button></header>'+
+ '<section class="controls"><div><span class="eyebrow">'+esc(game.decks[game.turn].leader)+' · '+(active?'YOUR TURN':'ACTIVE')+'</span><p>'+esc(instruction)+'</p></div><div class="actions">'+(active?'<button id="end" class="primary">End Turn</button>':'')+'</div></section>'+
+ dicePanel()+'<p class="scroll-hint">Swipe card rows sideways when the board gets crowded.</p><div class="tabletop">'+zoneBar(1-human)+'<div class="battlefield">'+row(1-human)+row(human)+'</div>'+zoneBar(human)+'</div>'+
+ '<section class="hand"><div class="section-head"><h2>Your hand <small>'+game.players[human].hand.length+' cards</small></h2><span>Stash '+game.players[human].fuel+'/'+game.players[human].stash.length+' Ready</span></div><div class="hand-cards">'+game.players[human].hand.map((id,i)=>cardHTML({id},'hand',human,i)).join('')+'</div></section>'+
+ '<div class="lower"><details><summary>What this lab is testing</summary><p>A Ready Character can Attack, Cause Trouble, or stay Ready and protected from ordinary Attacks. At 10 Composure the Leader hits Breaking Point. At 0 the hidden Last Straw is revealed and the Turn ends after it resolves. While at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes the Leader Unhinged. Florida Man, HOA President and Birthday Party Magician have their audited Breaking Point abilities; Trash Baron Readies opposing Stash at the start of its next turn after Breaking Point; remaining Leader Breaking Points and selectable Last Straw effects remain pending.</p></details><details><summary>Recent events</summary>'+game.log.slice(0,10).map(x=>'<p>'+esc(x)+'</p>').join('')+'</details></div>';
+ wireCards();root.querySelector('#end')?.addEventListener('click',()=>humanAction(()=>game.pass()));root.querySelector('#new').onclick=()=>{game=null;phase='setup';modal=null;selected.clear();setup()};if(modal)showModal(modal);
+}
+function row(p){
+ const s=game.players[p],d=game.decks[p],l=LEADERS[d.leader],chars=game.chars(p),items=s.board.filter(x=>game.card(x).type==='Item');
+ const slots=chars.map(x=>cardHTML(x,'board',p)).join('')+(chars.length?'<div class="empty-slot"><span>+<small>NO CHARACTER CAP</small></span></div>':'<div class="empty-slot"><span>+<small>OPEN BOARD</small></span></div>');
+ return '<section class="battle-row '+(p===human?'own':'opponent')+'"><article class="leader"><div class="leader-heading"><div><span class="eyebrow">'+(p===human?'YOU':'OPPONENT')+' · LEADER</span><strong>'+esc(d.leader)+'</strong></div><span class="composure">'+s.hp+'<small>COMPOSURE</small></span></div><span class="leader-info">'+chars.length+' Characters · '+s.fuel+'/'+s.stash.length+' Ready Stash</span><details class="leader-abilities" data-leader="'+p+'" '+(leaderExpanded.has(p)?'open':'')+'><summary>Leader abilities'+(s.breakingPointHit?' · Breaking Point used':'')+'</summary><span class="leader-passive"><b>PASSIVE</b><br>'+esc(l.passive)+'</span>'+(l.breaking?'<span class="leader-passive"><b>BREAKING POINT'+(s.breakingPointHit?' · USED':'')+'</b><br>'+esc(l.breaking)+'</span>':'')+'</details></article><div class="slots">'+slots+'</div></section>'+
+ (items.length?'<section class="item-shelf"><div class="item-label">'+(p===human?'YOUR':'OPPONENT')+' ITEMS</div><div class="item-cards">'+items.map(x=>cardHTML(x,'board',p)).join('')+'</div></section>':'');
+}
+function cardHTML(x,zone,p,index,chosen=false){
+ const c=game.card(x),b=zone==='board',char=c.type==='Character',rot=b&&!x.ready,selected=zone==='hand'&&chosen;
+ const status=b?[x.stored?'1 Character stored face-down':'',x.heapItems?.length?x.heapItems.length+' Items assembled':'',game.absorb?.(x)?'Absorb '+game.absorb(x):'',x.skipReady?'Skips next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '):'';
+ const foot=selected?'✓ REPLACE':b?(rot?'ROTATED':char&&x.born>=game.round&&!(x.enteredTurn<(game.turnSerial||0))?'NEW THIS TURN':x.damage?x.damage+' DAMAGE':'READY'):'TAP FOR ACTIONS';
+ const liveStats=b&&char?'<span class="card-live-stats">Power '+game.power(x)+' · Health left '+Math.max(0,game.guard(x)-x.damage)+' · Trouble '+game.trouble(x)+'</span>':'';
+ const next=b&&x.nextAttackPower?'Next Attack: +'+x.nextAttackPower+' Power'+(x.rampTrouble?' + Trouble':''):'';
+ return '<button class="card '+(rot?'rotated ':'')+(selected?'selected ':'')+'" data-zone="'+zone+'" data-p="'+p+'" data-index="'+(index??'')+'" data-uid="'+(x.uid??'')+'">'+cardFace(c)+'<span class="card-foot '+(x.damage?'damage':'')+'">'+liveStats+esc(foot)+(status?'<br>'+esc(status):'')+(next?'<br>'+esc(next):'')+'</span></button>';
+}
+function inspectStash(){
+ const s=game.players[human],states=game.stashStates(human);
+ modal={kind:'detail',html:'<div class="overlay"><article class="sheet"><h2>Your Stash</h2><p class="muted">Face-up temporary Item Stash is discarded when spent. Other Stash faces remain private.</p>'+s.stash.map((id,i)=>'<p><b>Stash '+(i+1)+' · '+(states[i]?'Ready':'Rotated')+'</b><br>'+esc(game.card(id).name)+(s.salTemp?.[i]?' · temporary Item':'')+'</p>').join('')+'<button id="close">Close</button></article></div>'};showModal(modal);document.querySelector('#close').onclick=close;
+}
+function wireCards(){root.querySelectorAll('[data-leader]').forEach(el=>el.ontoggle=()=>{const p=+el.dataset.leader;el.open?leaderExpanded.add(p):leaderExpanded.delete(p)});document.querySelector('#inspect-stash')?.addEventListener('click',inspectStash);root.querySelectorAll('.card').forEach(b=>b.onclick=()=>{if(phase==='mulligan'){const i=+b.dataset.index;selected.has(i)?selected.delete(i):selected.add(i);render();return}if(+b.dataset.p!==human&&b.dataset.zone==='board')return detail({uid:+b.dataset.uid});if(b.dataset.zone==='hand')detail({id:game.players[human].hand[+b.dataset.index],handIndex:+b.dataset.index});else detail({uid:+b.dataset.uid})})}
+function detail(ref){
+ const x=ref.uid?game.obj(ref.uid):null,c=game.card(x||ref.id);if(!c)return;
+ const me=game.turn===human&&!busy&&game.winner===null,own=x?.owner===human;
+ const play=ref.handIndex!==undefined&&me&&game.canPlay(ref.handIndex,human),stash=ref.handIndex!==undefined&&me&&game.canStash(ref.handIndex,human),attack=x&&own&&c.type==='Character'&&me&&game.canAttack(x),trouble=x&&own&&c.type==='Character'&&me&&game.canCauseTrouble(x),act=x&&own&&me&&game.canUse(x);
+ let buttons='<button id="close">Close</button>'+(stash?'<button id="stash">Stash</button>':'')+(play?'<button id="play" class="primary">Play</button>':'')+(attack?'<button id="attack" class="primary">Attack Character</button>':'')+(trouble?'<button id="trouble" class="trouble-button">Cause Trouble · '+game.trouble(x)+'</button>':'')+(act?'<button id="activate" class="primary">Activate Ability</button>':'');
+ let stats='<span>Cost '+c.cost+'</span>'+(ref.handIndex!==undefined&&game.playCost(human,c.id)!==c.cost?'<span>Pay '+game.playCost(human,c.id)+' Stash</span>':'')+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
+ const attackNote=x&&own&&c.type==='Character'&&me&&!attack&&game.attackTargets(x).length===0?'<p class="muted">No legal Attack target. Ready opponents are protected unless you have Sucker Punch; Rotated Meat Shields must be attacked first.</p>':'';
+ const liveStatus=x?'<p class="muted">'+esc([game.absorb(x)?'Absorb '+game.absorb(x):'',x.skipReady?'Skips its next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '))+'</p>':'';
+ modal={kind:'detail',html:'<div class="overlay"><article class="sheet"><div class="physical-detail">'+cardFace(c)+'</div><div class="stats">'+stats+'</div>'+((x?.stored)?'<p class="muted">Stored face-down: '+(own?esc(game.card(x.stored.id).name):'1 Character')+'</p>':'')+(x?.heapItems?.length?'<p class="muted">Assembled Items: '+x.heapItems.map(v=>esc(game.card(v.id).name)).join(', ')+'</p>':'')+liveStatus+attackNote+'<div class="buttons">'+buttons+'</div></article></div>'};showModal(modal);
+ document.querySelector('#close')?.addEventListener('click',close);document.querySelector('#stash')?.addEventListener('click',()=>{const i=ref.handIndex;close();humanAction(async()=>game.stash(i))});document.querySelector('#play')?.addEventListener('click',()=>{close();humanAction(()=>game.play(ref.handIndex))});document.querySelector('#attack')?.addEventListener('click',()=>{close();humanAction(()=>game.attack(x.uid))});document.querySelector('#trouble')?.addEventListener('click',()=>{close();humanAction(()=>game.causeTrouble(x.uid))});document.querySelector('#activate')?.addEventListener('click',()=>{close();humanAction(()=>game.activate(x.uid))});
+}
+function showModal(entry){document.querySelector('.overlay')?.remove();if(!entry)return;document.body.insertAdjacentHTML('beforeend',entry.html);const overlay=document.querySelector('.overlay');overlay.onclick=e=>{if(e.target===overlay&&entry.kind==='detail')close()}}
+function close(){modal=null;document.querySelector('.overlay')?.remove()}
+async function ask(r){if(r.player!==human)return aiChoice(game,r);return new Promise(resolve=>{let chosen=[];const html='<div class="overlay"><div class="sheet"><div class="type">CHOOSE</div><h2>'+esc(r.title)+'</h2>'+(r.attackContext?'<div class="attack-context"><strong>'+esc(r.attackContext.name)+' · '+esc(r.attackContext.power)+' Attack</strong><span>Health '+esc(r.attackContext.guard)+' · Damage '+esc(r.attackContext.damage)+'</span></div>':'')+'<p class="muted">'+(r.multi?(r.min?'Choose exactly '+r.min+'.':'Choose up to '+(r.max||r.options.length)+'.'):'Choose one.')+'</p>'+r.options.map((o,i)=>'<button class="choice" data-c="'+i+'">'+esc(o.label)+'</button>').join('')+'<div class="modal-actions">'+(r.title==='Attack which target?'?'<button id="attack-back">Back</button>':(r.mandatory?'':'<button id="cancel">Cancel</button>'))+(r.multi?'<button id="done" class="primary" '+(r.min?'disabled':'')+'>Confirm 0</button>':'')+'</div></div></div>';modal={kind:'choice',html};showModal(modal);const finish=v=>{close();resolve(v)};document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const i=+b.dataset.c;if(!r.multi)return finish(r.options[i].value);if(chosen.includes(i)){chosen=chosen.filter(x=>x!==i);b.classList.remove('selected')}else if(!r.max||chosen.length<r.max){chosen.push(i);b.classList.add('selected')}document.querySelector('#done').textContent='Confirm '+chosen.length;document.querySelector('#done').disabled=chosen.length<(r.min||0)});document.querySelector('#cancel')?.addEventListener('click',()=>finish(r.multi?[]:null));document.querySelector('#attack-back')?.addEventListener('click',()=>finish(null));document.querySelector('#done')?.addEventListener('click',()=>{if(chosen.length>=(r.min||0))finish(chosen.map(i=>r.options[i].value))})})}
+function start(a,b){human=0;game=new Game(pool,{...decks,decks:[decks.decks[a],decks.decks[b]]},ask,()=>{if(phase==='playing'&&!modal)render()},{firstPlayer:human});game.mulligan(1,[]);phase='mulligan';render()}
+async function humanAction(fn){if(busy||game.turn!==human)return;busy=true;render();try{await fn()}catch(e){console.error(e);alert(e.message)}finally{busy=false;render();await aiTurn()}}
+async function aiTurn(){if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;busy=true;render();let n=0;try{while(game.turn!==human&&game.winner===null&&n++<70){await new Promise(r=>setTimeout(r,170));const m=aiAction(game,game.turn);if(m.type==='pass')await game.pass();else if(m.type==='stash')game.stash(m.index,game.turn);else if(m.type==='attack')await game.attack(m.uid);else if(m.type==='trouble')await game.causeTrouble(m.uid);else if(m.type==='play')await game.play(m.index);else if(m.type==='activate')await game.activate(m.uid);render()}if(n>=70)throw Error('AI action limit reached')}finally{busy=false;render()}}
+
+function dicePanel(){
+ const rolls=game.diceRolls||[];if(!rolls.length)return '';
+ const r=rolls[0];
+ return '<section class="dice-result" role="status" aria-live="polite"><span class="die-face" aria-label="Die rolled '+r.value+'">'+['','⚀','⚁','⚂','⚃','⚄','⚅'][r.value]+'</span><div><strong>'+esc(r.label)+' · rolled '+r.value+'</strong><p>'+esc(r.outcome)+'</p><details><summary>Dice history</summary>'+rolls.map(d=>'<p>'+esc(d.label)+' — '+d.value+' · '+esc(d.outcome)+'</p>').join('')+'</details></div></section>';
+}

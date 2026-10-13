@@ -1,0 +1,186 @@
+{
+  "method": "Constructed ideal-hand production-engine sequencing fixtures, first player, opponent passes except injected eligible combat/Dismiss targets. Not randomized draws or win-rate evidence.",
+  "checkpoints": [
+    {
+      "leader": "Florida Man",
+      "turn": 1,
+      "label": "1-cost body",
+      "readyStash": 0,
+      "hand": 5,
+      "board": [
+        "Feral Chihuahua"
+      ]
+    },
+    {
+      "leader": "Florida Man",
+      "turn": 2,
+      "label": "2-cost Trouble body",
+      "readyStash": 0,
+      "hand": 4,
+      "board": [
+        "Feral Chihuahua",
+        "Designated Driver"
+      ]
+    },
+    {
+      "leader": "Florida Man",
+      "turn": 3,
+      "label": "3-cost Hothead",
+      "readyStash": 0,
+      "hand": 3,
+      "board": [
+        "Feral Chihuahua",
+        "Designated Driver",
+        "Spring Break Frat Bro"
+      ]
+    },
+    {
+      "leader": "Florida Man",
+      "turn": 4,
+      "label": "Attack victory -> Victory Lap -> buffed Trouble; Driver also Causes Trouble",
+      "readyStash": 1,
+      "hand": 1,
+      "board": [
+        "Feral Chihuahua",
+        "Designated Driver",
+        "Spring Break Frat Bro",
+        "Roman Candle"
+      ]
+    },
+    {
+      "leader": "HOA President",
+      "turn": 1,
+      "label": "1-cost body",
+      "readyStash": 0,
+      "hand": 5,
+      "board": [
+        "Off-Leash Dog"
+      ]
+    },
+    {
+      "leader": "HOA President",
+      "turn": 2,
+      "label": "Usher replaces its card",
+      "readyStash": 0,
+      "hand": 5,
+      "board": [
+        "Off-Leash Dog",
+        "Church Usher"
+      ]
+    },
+    {
+      "leader": "HOA President",
+      "turn": 3,
+      "label": "Retaliate body",
+      "readyStash": 0,
+      "hand": 4,
+      "board": [
+        "Off-Leash Dog",
+        "Church Usher",
+        "Retired Marine Next Door"
+      ]
+    },
+    {
+      "leader": "HOA President",
+      "turn": 4,
+      "label": "Meat Shield / Retaliate",
+      "readyStash": 0,
+      "hand": 3,
+      "board": [
+        "Off-Leash Dog",
+        "Church Usher",
+        "Retired Marine Next Door",
+        "HOA Vice President"
+      ]
+    },
+    {
+      "leader": "HOA President",
+      "turn": 5,
+      "label": "Grandma setup",
+      "readyStash": 0,
+      "hand": 2,
+      "board": [
+        "Off-Leash Dog",
+        "Church Usher",
+        "Retired Marine Next Door",
+        "HOA Vice President",
+        "Grandma"
+      ]
+    },
+    {
+      "leader": "HOA President",
+      "turn": 6,
+      "label": "Grandma Trouble -> Lawn Chair Ready/heal -> Bicycle Cop; hand exhausted",
+      "readyStash": 0,
+      "hand": 0,
+      "board": [
+        "Off-Leash Dog",
+        "Church Usher",
+        "Retired Marine Next Door",
+        "HOA Vice President",
+        "Grandma",
+        "Lawn Chair",
+        "Bicycle Cop"
+      ]
+    },
+    {
+      "leader": "Birthday Party Magician",
+      "turn": 1,
+      "label": "1-cost body",
+      "readyStash": 0,
+      "hand": 5,
+      "board": [
+        "Volunteer From the Audience"
+      ]
+    },
+    {
+      "leader": "Birthday Party Magician",
+      "turn": 2,
+      "label": "Rabbit setup + draw",
+      "readyStash": 0,
+      "hand": 5,
+      "board": [
+        "Volunteer From the Audience",
+        "Rabbit"
+      ]
+    },
+    {
+      "leader": "Birthday Party Magician",
+      "turn": 3,
+      "label": "Trap Door setup uses all three Stash",
+      "readyStash": 0,
+      "hand": 4,
+      "board": [
+        "Volunteer From the Audience",
+        "Rabbit",
+        "Trap Door"
+      ]
+    },
+    {
+      "leader": "Birthday Party Magician",
+      "turn": 4,
+      "label": "Dismiss trade -> capture/replay Rabbit -> Opening Act immediate Trouble",
+      "readyStash": 0,
+      "hand": 4,
+      "board": [
+        "Volunteer From the Audience",
+        "Trap Door",
+        "Rabbit",
+        "Opening Act"
+      ]
+    },
+    {
+      "leader": "Birthday Party Magician",
+      "turn": 5,
+      "label": "Opening Act Trouble -> return/free replay -> Trouble again; net Action cost 1",
+      "readyStash": 4,
+      "hand": 3,
+      "board": [
+        "Volunteer From the Audience",
+        "Trap Door",
+        "Rabbit",
+        "Opening Act"
+      ]
+    }
+  ]
+}

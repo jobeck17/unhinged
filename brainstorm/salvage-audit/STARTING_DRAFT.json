@@ -1,0 +1,755 @@
+{
+  "status": "32-card approved Salvage draft; Handyman banked; economy and disposable variety under discussion; production pending.",
+  "leader": {
+    "name": "Trash Baron",
+    "passive": "You may use opposing Ready Stash to pay your Costs as though it were your own. If an Item you control would go from play to your discard, you may put it face-up and Rotated into your Stash instead. Discard it when spent.",
+    "breaking_point": "At the start of your next turn, Ready all opposing Stash.",
+    "breaking_point_status": "Delayed Ready-all refresh locked October 10, 2026. Breaking Point does not switch turns.",
+    "scrap_status": "Leader-only salvage direction approved October 12; full passive wording and all-Item rate require review. Preserve opposing Ready Stash payment."
+  },
+  "keywords": {
+    "Scurry Away": "When an opposing Character would Cause Trouble to your Leader, you may return this Character to your hand to reduce that Trouble by 1."
+  },
+  "cards": [
+    {
+      "id": "P094",
+      "type": "Character",
+      "cost": 1,
+      "name": "Dumpster Diver",
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "When this enters play, look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest on the bottom in any order.",
+      "style": "Salvage",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 1,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Current name confirmed October 13, 2026; clears general and explicit naming flags."
+    },
+    {
+      "id": "P097",
+      "type": "Character",
+      "cost": 1,
+      "name": "Junkyard Dog",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "Meat Shield.",
+      "style": "Salvage",
+      "complexity": "textless",
+      "keywords": [
+        "Meat Shield"
+      ],
+      "power": 1,
+      "guard": 2,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "Beware of dog. Also tetanus.",
+      "trouble": 1,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Current name confirmed October 13, 2026; clears general and explicit naming flags."
+    },
+    {
+      "id": "P104",
+      "type": "Character",
+      "cost": 1,
+      "name": "Cockroach",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "Scurry Away.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [
+        "Scurry Away"
+      ],
+      "power": 1,
+      "guard": 1,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 1,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Current name confirmed October 13, 2026; clears general and explicit naming flags."
+    },
+    {
+      "id": "P109",
+      "type": "Action",
+      "cost": 1,
+      "name": "Scrounge",
+      "audit_lock": "Name, cost 1 and top-3 Item into hand/rest discard locked October 12, 2026.",
+      "stats": "",
+      "traits": [],
+      "text": "Look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest into your discard.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": ""
+    },
+    {
+      "id": "P114",
+      "type": "Action",
+      "cost": 1,
+      "name": "Finders Keepers",
+      "audit_lock": "Name and expanded top-4 Item deployment costing 2 or less, leftover top/bottom placement approved October 12, 2026. Retain cost 1.",
+      "stats": "",
+      "traits": [],
+      "text": "Look at the top 4 cards of your deck. You may reveal an Item costing 2 or less and play it for free. Put the rest on the top or bottom of your deck in any order.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-SAL-002",
+      "name": "Magnet on a String",
+      "type": "Item",
+      "cost": 1,
+      "style": "Salvage",
+      "traits": [],
+      "keywords": [],
+      "text": "Rotate, Dismiss this: Return another face-up Item from your Stash to your hand.",
+      "power": null,
+      "guard": null,
+      "naming_flags": [],
+      "status": "audit-draft",
+      "audit_lock": "Name, cost 1 and retrieval ability approved October 12; printed Scrap removed under leader-only rule."
+    },
+    {
+      "id": "P110",
+      "type": "Item",
+      "cost": 1,
+      "name": "Rusty Toolbox",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate, Dismiss this: Return another Item costing 1 or less from your discard to your hand.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "",
+      "naming_flags": [],
+      "audit_lock": "Name, cost 1 and retrieval ability approved October 12; printed Scrap removed under leader-only rule."
+    },
+    {
+      "id": "P118",
+      "type": "Item",
+      "cost": 1,
+      "name": "Zip Ties",
+      "stats": "",
+      "traits": [],
+      "text": "When an opposing Character attacks, you may Dismiss this to give that Character −2 Power for that Attack.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "",
+      "audit_lock": "Name and cost 1 retained. Reactive Dismiss to give an opposing attacking Character -2 Power for that Attack locked October 13, 2026. No Rotate requirement; works while Rotated. Supersedes October 12 proactive activation."
+    },
+    {
+      "id": "P120",
+      "type": "Item",
+      "cost": 1,
+      "name": "Used Ham Sandwich",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate, Dismiss this: Heal 2 damage from a friendly Character. If it is a Scavenger, Draw a card, then Discard a card.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "",
+      "audit_lock": "Cost 1, name Used Ham Sandwich, Rotate/Dismiss to heal friendly Character 2; if Scavenger draw 1 discard 1 approved October 12, 2026."
+    },
+    {
+      "id": "P091",
+      "type": "Character",
+      "cost": 2,
+      "name": "Scrap Dealer",
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "Once during your turn, when you Dismiss one of your Items, another chosen friendly Character gets +1 Power and +1 Trouble this turn.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "audit-draft",
+      "flavor": "Prepared for everything except the inspection.",
+      "trouble": 1,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Name locked October 13, 2026; clears name-review flag."
+    },
+    {
+      "id": "P100",
+      "type": "Character",
+      "cost": 2,
+      "name": "Wind-Up Toy",
+      "traits": [
+        "Construct"
+      ],
+      "text": "Sucker Punch. When this attacks a Ready Character, this gets +1 Power for that Attack.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [
+        "Sucker Punch"
+      ],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "No batteries required. No brakes included.",
+      "trouble": 1,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P103",
+      "type": "Character",
+      "cost": 2,
+      "name": "Possum in the Trash Can",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "When this is Defeated, you may Dismiss one of your Items. If you do, return this from your discard to your hand.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 1,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P106",
+      "type": "Character",
+      "cost": 2,
+      "name": "Junkyard Scrapper",
+      "traits": [
+        "Construct",
+        "Scavenger"
+      ],
+      "text": "While you have a face-up Item in your Stash, this gets +2 Power.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "One wheel squeaks. One wheel seeks revenge.",
+      "trouble": 1,
+      "naming_flags": [],
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P111",
+      "type": "Action",
+      "cost": 2,
+      "name": "Another Man’s Treasure",
+      "stats": "",
+      "traits": [],
+      "text": "Put up to 2 face-up Items from your Stash into your discard. A chosen friendly Character gets +1 Trouble this turn for each Item moved this way.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "Somebody was going to use it eventually.",
+      "audit_lock": "Ability and cost locked October 9, 2026; no Dismiss event for Stash movement."
+    },
+    {
+      "id": "P113",
+      "type": "Action",
+      "cost": 2,
+      "name": "Jury-Rig",
+      "stats": "",
+      "traits": [],
+      "text": "Dismiss one of your Items. If you do, Draw 2 cards.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "",
+      "audit_lock": "Cost 2 and Dismiss an Item to Draw 2 with no discard locked October 11, 2026."
+    },
+    {
+      "id": "P115",
+      "type": "Action",
+      "cost": 2,
+      "name": "One Man’s Trash…",
+      "naming_flags": [],
+      "audit_lock": "Name One Man’s Trash…, cost 2 and normal free replay of Item costing 2 or less from discard locked October 12, 2026. No delayed Dismiss or one-use tracking.",
+      "stats": "",
+      "traits": [],
+      "text": "Play an Item costing 2 or less from your discard for free.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-SAL-001",
+      "name": "Busted Shopping Cart",
+      "type": "Item",
+      "cost": 2,
+      "style": "Salvage",
+      "traits": [],
+      "keywords": [],
+      "text": "Rotate, Dismiss this: A chosen opposing Character gets -2 Trouble until the start of your next turn.",
+      "power": null,
+      "guard": null,
+      "naming_flags": [],
+      "status": "audit-draft",
+      "audit_lock": "Cost 2 locked October 9, 2026; ability remains as proposed.",
+      "name_lock": "Name locked October 13, 2026; clears name-review flag."
+    },
+    {
+      "id": "P112",
+      "type": "Item",
+      "cost": 2,
+      "name": "Bent Crowbar",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate, Dismiss this: Dismiss a chosen opposing Item costing 3 or less.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "",
+      "audit_lock": "Cost 2, name Bent Crowbar and opposing Item removal costing 3 or less approved October 12, 2026. Replaces Spare Parts healing/buff."
+    },
+    {
+      "id": "P117",
+      "type": "Item",
+      "cost": 2,
+      "name": "Duct Tape",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate: Heal 1 damage from a chosen friendly Character, or 2 if it is a Construct.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "",
+      "audit_lock": "Cost 2, name Duct Tape, persistent unattached repair ability locked October 12, 2026. No +1 Health, no attachment or Rotate/Ready attachment switching."
+    },
+    {
+      "id": "P119",
+      "type": "Item",
+      "cost": 2,
+      "name": "Tin Can Slingshot",
+      "audit_lock": "Name, cost 2 and Rotate/Dismiss deal 2 damage to chosen opposing Character locked October 12. Replaces Cables entirely; no entry draw or Ready effect.",
+      "stats": "",
+      "traits": [],
+      "text": "Rotate, Dismiss this: Deal 2 damage to a chosen opposing Character.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": ""
+    },
+    {
+      "id": "LAB-SAL-003",
+      "name": "Junk Heap",
+      "type": "Character",
+      "cost": 3,
+      "power": 0,
+      "guard": 2,
+      "trouble": 0,
+      "style": "Salvage",
+      "traits": [
+        "Construct"
+      ],
+      "keywords": [],
+      "text": "If an Item you control would go from play to your discard, you may put it under this Character instead, up to 5 Items. This gets +1 Power, +1 Health and +1 Trouble for each Item under it. This cannot Attack or Cause Trouble unless it has at least 3 Items under it.",
+      "status": "audit-draft",
+      "naming_flags": [],
+      "audit_lock": "Added as card 33 October 13, 2026. Name, cost 3, 0/2/0, Item storage/stat scaling, three-Item action gate and initial five-Item cap locked for testing; no extra five-Item payoff.",
+      "trait_review": "Construct assigned to explicit junk-built creature; no additional Animal/Human traits.",
+      "storage_cleanup": "When this leaves play, stored Items go to owners' discards. Stored cards are not in play; this cleanup is not Item Dismiss or leader salvage."
+    },
+    {
+      "id": "P096",
+      "type": "Character",
+      "cost": 3,
+      "name": "Shopping Cart Golem",
+      "traits": [
+        "Construct",
+        "Scavenger"
+      ],
+      "text": "Meat Shield.",
+      "style": "Salvage",
+      "complexity": "keyword_only",
+      "keywords": [
+        "Meat Shield"
+      ],
+      "power": 2,
+      "guard": 5,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "Sir Carts-a-Lot yields to no curb.",
+      "trouble": 1,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P099",
+      "type": "Character",
+      "cost": 3,
+      "name": "Trash Collector",
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "Scurry Away. When this enters play, you may put an Item from your discard face-up and Rotated into your Stash. Discard it when spent.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [
+        "Scurry Away"
+      ],
+      "power": 2,
+      "guard": 3,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "audit-draft",
+      "flavor": "Every cat has a name. The neighbors have numbers.",
+      "trouble": 1,
+      "naming_flags": [],
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P102",
+      "type": "Character",
+      "cost": 3,
+      "name": "Rat King",
+      "naming_flags": [],
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "traits": [
+        "Animal",
+        "Rat"
+      ],
+      "text": "Scurry Away. Your other Characters with Scurry Away get +1 Trouble.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [
+        "Scurry Away"
+      ],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 1,
+      "name_lock": "Current name confirmed October 13, 2026; clears general and explicit naming flags."
+    },
+    {
+      "id": "P107",
+      "type": "Character",
+      "cost": 3,
+      "name": "Shade Tree Mechanic",
+      "naming_flags": [],
+      "audit_lock": "Cost 3, 2/4/1, name Shade Tree Mechanic and normal free entry replay of Item costing 1 or less locked October 13; no scheduled Dismiss or one-use tracking.",
+      "traits": [
+        "Builder",
+        "Scavenger"
+      ],
+      "text": "When this enters play, you may play an Item costing 1 or less from your discard for free.",
+      "style": "Salvage",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 1,
+      "name_lock": "Name locked October 13, 2026; clears name-review flag."
+    },
+    {
+      "id": "P116",
+      "type": "Action",
+      "cost": 3,
+      "name": "Play Dead",
+      "naming_flags": [],
+      "audit_lock": "Cost 3 and friendly full heal/Rotate or opposing damaged-Character Return locked October 12; name flagged.",
+      "stats": "",
+      "traits": [],
+      "text": "Choose a damaged Character. If you control it, heal all damage from it, then Rotate it. Otherwise, Return it to its owner's hand.",
+      "style": "Salvage",
+      "keywords": [],
+      "power": null,
+      "guard": null,
+      "audit_identity": [],
+      "complexity": null,
+      "status": "audit-draft",
+      "flavor": "",
+      "name_lock": "Current name confirmed October 13, 2026; clears general and explicit naming flags."
+    },
+    {
+      "id": "P093",
+      "type": "Character",
+      "cost": 4,
+      "name": "Garage Inventor",
+      "traits": [
+        "Builder"
+      ],
+      "text": "Once during your turn, when you Dismiss one of your Items, reveal the top card of your deck. If it is an Item, you may play it for free Rotated. Otherwise, put it on the bottom of your deck.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 2,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P098",
+      "type": "Character",
+      "cost": 4,
+      "name": "Raccoon of Unusual Size",
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "traits": [
+        "Animal",
+        "Scavenger"
+      ],
+      "text": "Scurry Away. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [
+        "Scurry Away"
+      ],
+      "power": 4,
+      "guard": 4,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 2,
+      "naming_flags": [],
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P105",
+      "type": "Character",
+      "cost": 4,
+      "name": "Broken Robot Vacuum",
+      "naming_flags": [],
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "traits": [
+        "Construct",
+        "Scavenger"
+      ],
+      "text": "When this enters play, you may put the top 2 cards of your deck into your discard. This gets +1 Power for each Item in your discard.",
+      "style": "Salvage",
+      "complexity": "ongoing",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "The knife attachment voided the warranty.",
+      "trouble": 2,
+      "name_lock": "Name locked October 13, 2026; clears name-review flag."
+    },
+    {
+      "id": "P092",
+      "type": "Character",
+      "cost": 5,
+      "name": "Guy Fixing His Trans Am",
+      "traits": [
+        "Builder",
+        "Scavenger"
+      ],
+      "text": "When this enters play, you may return an Item from your discard to your hand. Once during your turn, when you spend a face-up Item from your Stash, you may return that Item from your discard to your hand.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 3,
+      "guard": 5,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "audit-draft",
+      "flavor": "It has been almost running for three summers.",
+      "trouble": 2,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Current name confirmed October 13, 2026; clears general and explicit naming flags."
+    },
+    {
+      "id": "P095",
+      "type": "Character",
+      "cost": 5,
+      "name": "Hoarder",
+      "traits": [
+        "Scavenger"
+      ],
+      "text": "When this enters play, return an Item costing 2 or less from your discard to your hand. The first Item you play during each of your turns costs 1 less. This discount does not stack with other Hoarders.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [],
+      "power": 3,
+      "guard": 6,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "audit-draft",
+      "flavor": "It is not clutter if there is a system.",
+      "art_note": "A backyard bunker stocked from curbside giveaways and salvaged supplies.",
+      "trouble": 2,
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "naming_flags": [],
+      "name_lock": "Name confirmed October 13, 2026; all remaining review flags cleared."
+    },
+    {
+      "id": "P108",
+      "type": "Character",
+      "cost": 6,
+      "name": "Junkyard Giant",
+      "traits": [
+        "Construct",
+        "Scavenger"
+      ],
+      "text": "Meat Shield. This gets +1 Trouble for each of your Items Dismissed this turn.",
+      "style": "Salvage",
+      "complexity": "mixed",
+      "keywords": [
+        "Meat Shield"
+      ],
+      "power": 4,
+      "guard": 7,
+      "audit_identity": [],
+      "status": "audit-draft",
+      "flavor": "",
+      "trouble": 1,
+      "naming_flags": [
+        "Unlicensed Pool Guy reserved for Florida Man; preserve banked original."
+      ],
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "name_lock": "Name locked October 13, 2026; clears name-review flag."
+    }
+  ],
+  "banked": [
+    {
+      "source_id": "P108",
+      "name": "Unlicensed Pool Guy",
+      "text": "When this enters play, Return an Item from your discard to your hand. Your Items cost 1 less.",
+      "note": "Preserve Florida Man naming reservation; no active move yet."
+    },
+    {
+      "id": "P101",
+      "type": "Character",
+      "cost": 3,
+      "name": "Handyman",
+      "naming_flags": [],
+      "audit_lock": "All Character costs, stats and abilities locked October 12, 2026. Current name retained; name flagged for final review.",
+      "traits": [
+        "Builder"
+      ],
+      "text": "When this enters play, you may Ready another of your Items. If you do, Draw a card.",
+      "style": "Salvage",
+      "complexity": "on_play",
+      "keywords": [],
+      "power": 2,
+      "guard": 4,
+      "audit_identity": [
+        "Human"
+      ],
+      "status": "banked",
+      "flavor": "",
+      "trouble": 2,
+      "name_lock": "Name locked October 13, 2026; clears name-review flag.",
+      "bank_reason": "Parked October 13; narrow Ready-Item role. Preserve locked name/stats/ability."
+    }
+  ],
+  "draw_direction": "Favor Item finding/revealing and Item recovery/recycling over generic draw. User references Oswald and Tamatoa; individual draw abilities must be revisited.",
+  "timing_clarifications": {
+    "P093": "Per-copy stacking locked October 10: each eligible Inventor may resolve discovery once during your turn from the same Dismiss, revealing sequential top cards. Entering Rotated still triggers entry abilities. If a qualifying Item is revealed but free play is declined or illegal, put it on the bottom; never leave a revealed card unresolved. The trigger counts as used even on a miss.",
+    "P092": "Per-copy stacking locked October 10: each eligible Trans Am may recover one actual face-up Item spent from your own Stash as payment and still in your discard. Cash In the Clutter does not spend Stash. If multiple Items are spent simultaneously, choose one for each eligible copy; no actual card can be returned twice. Fully resolve payment before recovery.",
+    "P095": "Nonstacking Hoarder discount locked October 10: at most 1 cost reduction from all Hoarders combined on the first Item played during your turn. Cost/stats and entry recovery remain draft values for individual review.",
+    "Scurry Away": "Superseding keyword locked October 10: opposing Character Trouble only, not general Composure loss. Multiple Characters may each actually return from play to hand to reduce the same event by 1 each, minimum zero. No Ready/Rotated requirement. No generic response window. Include at least one 1-cost pest during card review; precise assignments remain to review. Original Possum Defeat/Item-Dismiss recovery is banked as possible explicit card text, no longer the keyword.",
+    "Trouble protection": "October 12 superseding Cart lock: immediately Dismiss on activation, apply -2 Trouble to chosen opposing Character until start of controller's next turn. Multiple debuffs stack; effective Trouble minimum zero. Zero Trouble cannot Cause Trouble, including final Last Straw hit. No armed Item or next-event shield. Scurry Away retains its separate locked return-triggered reduction.",
+    "P108": "Counts all actual friendly Item Dismissals during the current turn, including before this Character entered play. Scrap replacement preserves the Dismiss count. Spending or moving cards out of Stash, returning Items to hand, and attachment cleanup do not count. Trouble bonus resets at turn end; no cap specified. Standard Character entry restrictions apply. Supersedes recycling/healing and original draw/healing entry proposals.",
+    "scrap_leader": "Supersedes keyword and selected-Item-only eligibility. Only Trash Baron grants broad salvage from play to own discard; any qualifying Item may use it, including non-Salvage Items in legal decks. Stash spending does not re-salvage. Zip Ties/Sandwich no longer excluded. Trash Collector explicit discard-to-Stash entry effect is a confirmed intentional cross-Leader exception, approved October 12.",
+    "P107": "Normal free replay from discard with no expiry/one-use marker. Enter normally and resolve entrance effects. Supersedes temporary end-turn Dismiss.",
+    "Junk Heap": "One Item chooses one replacement destination (leader Stash, heap storage or discard). Only capture an Item you control going from play to your discard, maximum five per Heap. Stored cards are face-up/public and not in play. Stored-card cleanup when Heap leaves is not Dismiss and cannot re-salvage. Standard entry restrictions apply even if assembled on entry turn. No final five-Item bonus."
+  },
+  "explore_later": [],
+  "review_watchpoints": [
+    "Temporary ramp from cheap tools, free deployment, discounts and opposing Stash.",
+    "Item exhaustion; discard-scaled Junk Heap remains an alternative proposal, not a change.",
+    "Vary disposable activation patterns; no new abilities approved yet. Full traits audit after all decks."
+  ]
+}

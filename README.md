@@ -1,5 +1,7 @@
 # Unhinged — Mordecai 0.4
 
+[Play the locked Salvage audit](https://jobeck17.github.io/unhinged/lab/salvage-audit/) — Trash Baron with two provisional 40-card lists, temporary Item Stash, reactive Zip Ties and Junk Heap. Separate from the main playtest while human testing and balance review continue. [Simulation findings](lab/salvage-audit/SUMMARY_20261013.md).
+
 Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl → 0.4 Mordecai**. Mordecai promotes the Composure 2.0 core after its 40-question rules interview.
 
 ## Current production state

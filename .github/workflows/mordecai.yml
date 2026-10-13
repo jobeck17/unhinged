@@ -51,12 +51,14 @@ jobs:
       - run: node web/reckless.test.mjs
       - run: node web/stonewall.test.mjs
       - run: node web/magician.test.mjs
+      - run: node lab/salvage-audit/test.mjs
       - name: Verify builder and every Misdirection Action in Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.51.1
           npx playwright install --with-deps chromium
           python3 -m http.server 8765 > /tmp/unhinged-http.log 2>&1 &
           node web/browser.test.mjs
+          node lab/salvage-audit/browser.test.mjs
       # Historical labs remain runnable research fixtures but do not gate Mordecai production.
       # Mordecai production simulation is intentionally held until engine parity.
   deploy:
@@ -81,6 +83,9 @@ jobs:
           cp lab/leader-rulebreakers/mad-scientist/CARDS.json lab/leader-rulebreakers/mad-scientist/DECK.json lab/leader-rulebreakers/mad-scientist/TOKENS.json _site/lab/leader-rulebreakers/mad-scientist/
           cp -R lab/gambling-dad _site/lab/
           cp -R lab/playtest _site/lab/
+          mkdir -p _site/lab/salvage-audit _site/brainstorm/salvage-audit
+          cp lab/salvage-audit/index.html lab/salvage-audit/app.js lab/salvage-audit/salvage.mjs lab/salvage-audit/pilot.mjs lab/salvage-audit/data.mjs _site/lab/salvage-audit/
+          cp brainstorm/salvage-audit/STARTING_DRAFT.json _site/brainstorm/salvage-audit/
           cp -R lab/composure _site/lab/
           mkdir -p _site/lab/board-width
           cp lab/board-width/index.html lab/board-width/style.css lab/board-width/app.mjs lab/board-width/engine.mjs lab/board-width/ai.mjs lab/board-width/selection.mjs lab/board-width/CARDS.json lab/board-width/DECKS.json _site/lab/board-width/
