@@ -1,5 +1,7 @@
 # Unhinged — Mordecai 0.4
 
+**New to the game? Read [How to Play](HOW_TO_PLAY.md).** Look up edge cases in the [Rules Reference](RULES.md).
+
 [Play the locked Salvage audit](https://jobeck17.github.io/unhinged/lab/salvage-audit/) — Trash Baron with two provisional 40-card lists, temporary Item Stash, reactive Zip Ties and Junk Heap. Separate from the main playtest while human testing and balance review continue. [Simulation findings](lab/salvage-audit/SUMMARY_20261013.md).
 
 Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo → 0.2 Donut → 0.3 Carl → 0.4 Mordecai**. Mordecai promotes the Composure 2.0 core after its 40-question rules interview.
@@ -46,7 +48,8 @@ A deck should still play a real game when its spectacular engine does not go off
 **Crazy Cat Lady** (snowball colony) and **Mad Scientist** (finite battery + randomized Abominations) are now promoted rulebreaker decks in the Mordecai production baseline. Their exact construction and balance remain under audit, but they continue to demonstrate the desired emotional target. Backyard Wrestler's experimental **From the Top Rope!** physical toss, Paper Football concepts, and bottle-stack/Waterfall concepts are saved in NOTES.md for future development.
 
 ## Source of truth
-- RULES.md — current rules and Leaders.
+- HOW_TO_PLAY.md — two-page learn-to-play guide.
+- RULES.md — Rules Reference: current rules, Leaders and card rulings.
 - CARDS.json — current 223-card production pool.
 - DECKS.json — current eight-deck production baseline across seven core Styles.
 - NOTES.md — the one living notebook for decisions, questions, next work, and saved ideas.

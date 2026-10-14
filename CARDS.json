@@ -98,7 +98,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "Where Did He Come From? — When this enters play, roll a six-sided die. 1 — Tantrum: Your Leader loses 2 Composure. 2 — He Broke Something: The opposing Leader loses 2 Composure. 3 — Snack Break: Nothing happens. 4 — Found Something: Draw a card. 5 — Sugar Rush: This gets +2 Power and Hothead this Turn. 6 — Where Are His Parents?!: This gets +3 Power and Hothead this Turn. After its next Attack this Turn, Dismiss it.",
+      "text": "Where Did He Come From? — When played, roll a six-sided die. 1 — Tantrum: Your Leader loses 2 Composure. 2 — He Broke Something: The opposing Leader loses 2 Composure. 3 — Snack Break: Nothing happens. 4 — Found Something: Draw a card. 5 — Sugar Rush: This gets +2 Power and Hothead this turn. 6 — Where Are His Parents?!: This gets +3 Power and Hothead this turn. After its next Attack this turn, Dismiss it.",
       "style": "Reckless",
       "complexity": "on_play",
       "keywords": [],
@@ -142,7 +142,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "Hothead. Just Gotta Rev It — Once during your Turn, if this Character is Ready and eligible to Attack, you may roll a six-sided die. On a 1, Rotate it. Otherwise, it gets +2 Power this Turn and you may roll once more. If the second roll is a 1, Rotate it and remove the Power bonus granted by this ability. Otherwise, increase that bonus to +4 Power this Turn.",
+      "text": "Hothead. Just Gotta Rev It — Once during your turn, if this Character is Ready and eligible to Attack, you may roll a six-sided die. On a 1, Expose it. Otherwise, it gets +2 Power this turn and you may roll once more. If the second roll is a 1, Expose it and remove the Power bonus granted by this ability. Otherwise, increase that bonus to +4 Power this turn.",
       "style": "Reckless",
       "complexity": "mixed",
       "keywords": [
@@ -166,7 +166,7 @@
       "traits": [
         "Human"
       ],
-      "text": "While this Character is Ready, your other Characters have Absorb 1. (Damage dealt to them is reduced by 1.)",
+      "text": "While this Character is Ready, your other Characters have Thick Skin 1. (Damage dealt to them is reduced by 1.)",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -189,7 +189,7 @@
       "traits": [
         "Animal"
       ],
-      "text": "When this attacks or Causes Trouble, roll a six-sided die. On a 1, cancel it and your Leader loses 2 Composure. Otherwise, continue normally.",
+      "text": "When this Attacks or Causes Trouble, roll a six-sided die. On a 1, cancel it and your Leader loses 2 Composure. Otherwise, continue normally.",
       "style": "Reckless",
       "complexity": "attack_trigger",
       "keywords": [],
@@ -236,7 +236,7 @@
       "traits": [
         "Human"
       ],
-      "text": "Once during your Turn, when another of your Characters Defeats an opposing Character with an Attack, you may Ready this Character.",
+      "text": "Once during your turn, when another of your Characters Defeats an opposing Character with an Attack, you may Ready this Character.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -280,7 +280,7 @@
       "traits": [
         "Human"
       ],
-      "text": "This Character can Cause Trouble only if one of your Characters has Defeated an opposing Character with an Attack this Turn.",
+      "text": "This Character can Cause Trouble only if one of your Characters has Defeated an opposing Character with an Attack this turn.",
       "style": "Reckless",
       "complexity": "ongoing",
       "keywords": [],
@@ -327,7 +327,7 @@
         "Daredevil",
         "Driver"
       ],
-      "text": "Hothead. No-Wake Zone? — When this Attacks, you may deal 1 damage to an opposing Character other than the target of this Attack. If you do, deal 1 damage to another Character you control.",
+      "text": "Hothead. No-Wake Zone? — When this Attacks, you may deal 1 damage to an opposing Character other than the target of this Attack. If you do, deal 1 damage to another of your Characters.",
       "style": "Reckless",
       "complexity": "attack_trigger",
       "keywords": [
@@ -397,7 +397,7 @@
       "traits": [
         "Daredevil"
       ],
-      "text": "Hothead. Once during your Turn, when this Character Defeats an opposing Character with an Attack, you may Ready it. If you do, it cannot Cause Trouble this Turn.",
+      "text": "Hothead. Once during your turn, when this Character Defeats an opposing Character with an Attack, you may Ready it. If you do, it cannot Cause Trouble this turn.",
       "style": "Reckless",
       "complexity": "attack_trigger",
       "keywords": [
@@ -420,7 +420,7 @@
       "name": "Hold My Beer",
       "stats": "",
       "traits": [],
-      "text": "One of your Characters gets +3 Power and Hothead this Turn.",
+      "text": "One of your Characters gets +3 Power and Hothead this turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -439,7 +439,7 @@
       "name": "SPRING BREAK!!!",
       "stats": "",
       "traits": [],
-      "text": "Ready one of your Rotated Characters that attacked this Turn. It gets +2 Power and cannot Cause Trouble this Turn.",
+      "text": "Ready one of your Exposed Characters that Attacked this turn. It gets +2 Power and cannot Cause Trouble this turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -459,7 +459,7 @@
       "name": "Victory Lap",
       "stats": "",
       "traits": [],
-      "text": "Ready one of your Rotated Characters that Defeated an opposing Character with an Attack this Turn. It cannot Attack again this Turn.",
+      "text": "Ready one of your Exposed Characters that Defeated an opposing Character with an Attack this turn. It cannot Attack again this turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -516,7 +516,7 @@
       "name": "Hey Y’all, Watch This!",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Ready Characters and roll a six-sided die. On a 1, Rotate it. On a 2–5, choose one: it gets +3 Power or +1 Trouble this Turn. On a 6, it gets both this Turn. After rolling a 2–5, you may roll once more; the new result replaces the first. Resolve only the final result.",
+      "text": "Choose one of your Ready Characters and roll a six-sided die. On a 1, Expose it. On a 2–5, choose one: it gets +3 Power or +1 Trouble this turn. On a 6, it gets both this turn. After rolling a 2–5, you may roll once more; the new result replaces the first. Resolve only the final result.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -573,7 +573,7 @@
       "name": "Gas Station Pills",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. Rotate this Item and roll a six-sided die. On a 1, Rotate the attached Character. On a 2–5, it gets +1 Power this Turn. On a 6, it gets +2 Power this Turn.",
+      "text": "Attach to one of your Characters. Use this Item and roll a six-sided die. On a 1, Expose the attached Character. On a 2–5, it gets +1 Power this turn. On a 6, it gets +2 Power this turn.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -611,7 +611,7 @@
       "name": "Hot Potato",
       "stats": "",
       "traits": [],
-      "text": "When this enters play, place it beside the opposing Leader. At the end of each Turn, deal 1 damage to the Leader this is beside. Then that player may Rotate one of their Ready Characters. If they do, move this beside the other Leader.",
+      "text": "When played, place it beside the opposing Leader. At the end of each turn, deal 1 damage to the Leader this is beside. Then that player may Expose one of their Ready Characters. If they do, move this beside the other Leader.",
       "style": "Unassigned",
       "keywords": [],
       "power": null,
@@ -629,7 +629,7 @@
       "name": "Homemade Launch Ramp",
       "stats": "",
       "traits": [],
-      "text": "Choose one of your Ready Characters. Rotate this Item and roll a six-sided die. On a 1, Rotate that Character. On a 2–3, its next Attack this Turn gets +2 Power. On a 4–5, deal 2 damage to it. On a 6, its next Attack this Turn gets +2 Power, and when it makes that Attack, it also Causes Trouble without Rotating. This extra Cause Trouble does not require it to be Ready or survive the Attack; all other Cause Trouble requirements apply.",
+      "text": "Choose one of your Ready Characters. Use this Item and roll a six-sided die. On a 1, Expose that Character. On a 2–3, its next Attack this turn gets +2 Power. On a 4–5, deal 2 damage to it. On a 6, its next Attack this turn gets +2 Power, and when it makes that Attack, it also Causes Trouble without being Exposed again. This extra Cause Trouble doesn't require it to be Ready or survive the Attack; all other Cause Trouble requirements apply.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -670,7 +670,7 @@
       "traits": [
         "Musician"
       ],
-      "text": "During your Ready step, if this Character is Rotated, you may leave it Rotated. While it remains Rotated this way, your other Musicians cost 1 less.",
+      "text": "During your Ready step, if this Character is Exposed, you may leave it Exposed. While it remains Exposed this way, your other Musicians cost 1 less.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -733,7 +733,7 @@
       "traits": [
         "Musician"
       ],
-      "text": "When this enters play, if you have 2 or fewer cards in hand, Draw a card.",
+      "text": "When played, if you have 2 or fewer cards in hand, Draw a card.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -754,7 +754,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, another of your Characters gets +1 Power this Turn. Your other Parent and Kid Characters get +1 Health.",
+      "text": "When played, another of your Characters gets +1 Power this turn. Your other Parent and Kid Characters get +1 Health.",
       "style": "Momentum",
       "complexity": "mixed",
       "keywords": [],
@@ -834,7 +834,7 @@
       "cost": 5,
       "name": "Boss Babe",
       "traits": [],
-      "text": "When this enters play, if an opponent has more cards in hand than you, Draw until you have the same number of cards.",
+      "text": "When played, if an opponent has more cards in hand than you, Draw until you have the same number of cards.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -855,7 +855,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, heal 2 damage from a Character. Your other Kid Characters get +1 Health.",
+      "text": "When played, heal 2 damage from a Character. Your other Kid Characters get +1 Health.",
       "style": "Momentum",
       "complexity": "mixed",
       "keywords": [],
@@ -893,7 +893,7 @@
       "cost": 3,
       "name": "Guy Who Mows at 7 AM",
       "traits": [],
-      "text": "When this enters play, you may Stash an additional card from your hand.",
+      "text": "When played, you may Stash an additional card from your hand.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -954,7 +954,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When this enters play, another of your Characters gets +2 Health this Turn. If that Character is a Kid, heal 1 damage from it.",
+      "text": "When played, another of your Characters gets +2 Health this turn. If that Character is a Kid, heal 1 damage from it.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -976,7 +976,7 @@
         "Kid",
         "Scout"
       ],
-      "text": "When this enters play, if an opponent has more cards in hand than you, Draw a card.",
+      "text": "When played, if an opponent has more cards in hand than you, Draw a card.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -995,7 +995,7 @@
       "cost": 6,
       "name": "Roadie Who Never Left",
       "traits": [],
-      "text": "Whenever you play a card costing 3 or more, your next card this Turn costs 1 less.",
+      "text": "Whenever you play a card costing 3 or more, your next card this turn costs 1 less.",
       "style": "Momentum",
       "complexity": "ongoing",
       "keywords": [],
@@ -1117,7 +1117,7 @@
       "name": "Bring a Friend",
       "stats": "",
       "traits": [],
-      "text": "The next Character you Play this Turn costs 1 less. When it enters play, you may give another of your Characters +1 Power this Turn.",
+      "text": "The next Character you Play this turn costs 1 less. When it enters play, you may give another of your Characters +1 Power this turn.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1134,7 +1134,7 @@
       "name": "Parking Lot Pep Talk",
       "stats": "",
       "traits": [],
-      "text": "A Character gets +1 Power and +2 Health this Turn. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card.",
+      "text": "A Character gets +1 Power and +2 Health this turn. If it is a Parent, Kid, Musician, or Clown, Draw a card, then Discard a card.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1202,7 +1202,7 @@
       "name": "Starter Kit",
       "stats": "",
       "traits": [],
-      "text": "Dismiss this: Your next Character this Turn costs 1 less.",
+      "text": "Dismiss this: Your next Character this turn costs 1 less.",
       "style": "Momentum",
       "keywords": [],
       "power": null,
@@ -1221,7 +1221,7 @@
         "Magician",
         "Magical"
       ],
-      "text": "When played, you may return another character you control to your hand.",
+      "text": "When played, you may Return another of your Characters to your hand.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1266,7 +1266,7 @@
         "Animal",
         "Magical"
       ],
-      "text": "When this character enters or leaves play, draw a card.",
+      "text": "When this Character enters or leaves play, Draw a card.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -1288,7 +1288,7 @@
       "traits": [
         "Magician"
       ],
-      "text": "When played, reveal the top card of an opponent's deck. If it is a character, you may play it under your control without paying its cost. It may attack immediately but cannot Cause Trouble this turn. At the end of this turn, return it to its owner's hand if it is still in play. If you do not play the revealed card, put it on the bottom of its owner's deck.",
+      "text": "When played, reveal the top card of an opponent's deck. If it is a Character, you may play it under your control without paying its cost. It may Attack immediately but cannot Cause Trouble this turn. At the end of this turn, Return it to its owner's hand if it is still in play. If you do not play the revealed card, put it on the bottom of its owner's deck.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1311,7 +1311,7 @@
         "Magician",
         "Magical"
       ],
-      "text": "Hothead. When played, you may return another character you control to your hand.",
+      "text": "Hothead. When played, you may Return another of your Characters to your hand.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [
@@ -1335,7 +1335,7 @@
       "traits": [
         "Clown"
       ],
-      "text": "Whenever another character you control is returned from play to your hand, draw a card, then discard a card.",
+      "text": "Whenever another of your Characters is Returned from play to your hand, Draw a card, then Discard a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
@@ -1383,7 +1383,7 @@
       "traits": [
         "Criminal"
       ],
-      "text": "When played, draw 2 cards, then discard a card.",
+      "text": "When played, Draw 2 cards, then Discard a card.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1423,7 +1423,7 @@
       "cost": 3,
       "name": "Tech Bro",
       "traits": [],
-      "text": "When Defeated, draw a card.",
+      "text": "When Defeated, Draw a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
@@ -1445,7 +1445,7 @@
       "traits": [
         "Magician"
       ],
-      "text": "When played, you may return an opposing character costing 3 or less to its owner's hand.",
+      "text": "When played, you may Return an opposing Character costing 3 or less to its owner's hand.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1466,7 +1466,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "While this Character is Ready, your other Characters have Absorb 1.",
+      "text": "While this Character is Ready, your other Characters have Thick Skin 1.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -1489,7 +1489,7 @@
       "traits": [
         "Hacker"
       ],
-      "text": "When played, you may exchange up to 2 cards in your Stash with the same number of cards from your hand. Each replacement retains the replaced card's Ready or Rotated state.",
+      "text": "When played, you may exchange up to 2 cards in your Stash with the same number of cards from your hand. Each replacement retains the replaced card's Ready or Used state.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -1511,7 +1511,7 @@
       "traits": [
         "Criminal"
       ],
-      "text": "When played, you may choose another character and gain one of its printed keywords while that character remains in play.",
+      "text": "When played, you may choose another Character and gain one of its printed keywords while that Character remains in play.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1534,7 +1534,7 @@
         "Criminal",
         "Musician"
       ],
-      "text": "When this character attacks, an opponent chooses one: it gets +2 Power for this attack; or you draw a card.",
+      "text": "When this Character Attacks, an opponent chooses one: it gets +2 Power for this Attack; or you Draw a card.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [],
@@ -1582,7 +1582,7 @@
         "Kid",
         "Hacker"
       ],
-      "text": "This character may Cause Trouble the turn it enters play.",
+      "text": "This Character may Cause Trouble the turn it enters play.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -1604,7 +1604,7 @@
       "traits": [
         "Pirate"
       ],
-      "text": "Sucker Punch. This character may Cause Trouble the turn it enters play if played from under an Item.",
+      "text": "Sucker Punch. This Character may Cause Trouble the turn it enters play if played from under an Item.",
       "style": "Misdirection",
       "complexity": "ongoing",
       "keywords": [
@@ -1646,7 +1646,7 @@
       "name": "Now You See Me",
       "stats": "",
       "traits": [],
-      "text": "Return a character you control to your hand. Then you may play a character costing 2 or less from your hand without paying its cost.",
+      "text": "Return one of your Characters to your hand. Then you may play a Character costing 2 or less from your hand without paying its cost.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1664,7 +1664,7 @@
       "name": "Look Over There!",
       "stats": "",
       "traits": [],
-      "text": "Rotate a chosen opposing character costing 3 or less.",
+      "text": "Expose an opposing Character costing 3 or less.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1684,7 +1684,7 @@
       "name": "Choose Your Fate",
       "stats": "",
       "traits": [],
-      "text": "Choose two opposing characters. Their owner chooses one to return to its owner's hand. If they have only one character, return that one instead.",
+      "text": "Choose two opposing Characters. Their owner chooses one to return to its owner's hand. If they have only one Character, Return that one instead.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1721,7 +1721,7 @@
       "name": "Presto Chango",
       "stats": "",
       "traits": [],
-      "text": "Exchange a card in your Stash with a card in your hand. The replacement retains the replaced card’s Ready or Rotated state.",
+      "text": "Exchange a card in your Stash with a card in your hand. The replacement retains the replaced card’s Ready or Used state.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1757,7 +1757,7 @@
       "name": "Now You Don't",
       "stats": "",
       "traits": [],
-      "text": "Choose a character you control and an opposing character with equal or lower cost. Dismiss both to their owners' discard piles.",
+      "text": "Choose one of your Characters and an opposing Character with equal or lower cost. Dismiss both to their owners' discard piles.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1775,7 +1775,7 @@
       "name": "Burner Phone",
       "stats": "",
       "traits": [],
-      "text": "Rotate: Look at up to 2 cards in your Stash. You may Return one to your hand. If you do, put a card from your hand into your Stash Rotated.",
+      "text": "Use: Look at up to 2 cards in your Stash. You may Return one to your hand. If you do, put a card from your hand into your Stash Used.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1793,7 +1793,7 @@
       "name": "Marked Deck",
       "stats": "",
       "traits": [],
-      "text": "Rotate this Item and spend 1 Stash: Draw a card.",
+      "text": "Use this Item and spend 1 Stash: Draw a card.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1812,7 +1812,7 @@
       "name": "Lady Who's Moving Out Again",
       "stats": "",
       "traits": [],
-      "text": "When this enters play and when this Character is Returned from play to your hand, another of your Characters gets +2 Power this Turn.",
+      "text": "When played and when this Character is Returned from play to your hand, another of your Characters gets +2 Power this turn.",
       "style": "Misdirection",
       "keywords": [],
       "power": 3,
@@ -1833,7 +1833,7 @@
       "name": "Poof!",
       "stats": "",
       "traits": [],
-      "text": "Choose a character you control. After it next Causes Trouble this turn, return it to your hand.",
+      "text": "Choose one of your Characters. After it next Causes Trouble this turn, Return it to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -1875,7 +1875,7 @@
         "Builder",
         "Scavenger"
       ],
-      "text": "When this enters play, Return an Item from your discard to your hand. Your Jerry-Rig cards enter your Stash Ready instead of Rotated.",
+      "text": "When played, Return an Item from your discard to your hand. Your Jerry-Rig cards enter your Stash Ready instead of Used.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
@@ -1917,7 +1917,7 @@
       "traits": [
         "Scavenger"
       ],
-      "text": "When this enters play, look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest on the bottom in any order.",
+      "text": "When played, look at the top 3 cards of your deck. You may reveal an Item and put it into your hand. Put the rest on the bottom in any order.",
       "style": "Salvage",
       "complexity": "on_play",
       "keywords": [],
@@ -1938,7 +1938,7 @@
       "traits": [
         "Scavenger"
       ],
-      "text": "When this enters play, Return an Item costing 2 or less from your discard to your hand. While you have 6 or more cards in hand, your Items cost 1 less.",
+      "text": "When played, Return an Item costing 2 or less from your discard to your hand. While you have 6 or more cards in hand, your Items cost 1 less.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
@@ -2004,7 +2004,7 @@
         "Animal",
         "Scavenger"
       ],
-      "text": "When this enters play, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack.",
+      "text": "When played, you may put an Item from your discard on the bottom of your deck. If you do, Draw a card. When this Attacks, you may Dismiss one of your Items. If you do, this gets +2 Power for this Attack.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
@@ -2021,7 +2021,7 @@
       "cost": 3,
       "name": "Crazy Cat Lady",
       "traits": [],
-      "text": "At the start of your Turn, look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If the revealed Character is an Animal, heal 1 damage from a Character.",
+      "text": "At the start of your turn, look at the top 3 cards of your deck. You may reveal a Character and put it into your hand. Put the rest on the bottom in any order. If the revealed Character is an Animal, heal 1 damage from a Character.",
       "style": "Salvage",
       "complexity": "ongoing",
       "keywords": [],
@@ -2042,7 +2042,7 @@
       "traits": [
         "Construct"
       ],
-      "text": "Sucker Punch. When this attacks a Ready Character, this gets +1 Power for that Attack.",
+      "text": "Sucker Punch. When this Attacks a Ready Character, this gets +1 Power for that Attack.",
       "style": "Salvage",
       "complexity": "ongoing",
       "keywords": [
@@ -2063,7 +2063,7 @@
       "traits": [
         "Builder"
       ],
-      "text": "When this enters play, you may Ready one of your Items. If you have another Builder in play, Draw a card.",
+      "text": "When played, you may Ready one of your Items. If you have another Builder in play, Draw a card.",
       "style": "Salvage",
       "complexity": "on_play",
       "keywords": [],
@@ -2085,7 +2085,7 @@
         "Animal",
         "Rat"
       ],
-      "text": "When this enters play, you may Return an Animal from your discard to your hand. Your other Rat Characters get +1 Power.",
+      "text": "When played, you may Return an Animal from your discard to your hand. Your other Rat Characters get +1 Power.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
@@ -2185,7 +2185,7 @@
         "Builder",
         "Scavenger"
       ],
-      "text": "When this enters play, you may Return an Item costing 1 from your discard to your hand.",
+      "text": "When played, you may Return an Item costing 1 from your discard to your hand.",
       "style": "Salvage",
       "complexity": "on_play",
       "keywords": [],
@@ -2206,7 +2206,7 @@
       "traits": [
         "Builder"
       ],
-      "text": "When this enters play, Return an Item from your discard to your hand. Your Items cost 1 less.",
+      "text": "When played, Return an Item from your discard to your hand. Your Items cost 1 less.",
       "style": "Salvage",
       "complexity": "mixed",
       "keywords": [],
@@ -2260,7 +2260,7 @@
       "name": "Cash In the Clutter",
       "stats": "",
       "traits": [],
-      "text": "Choose up to 2 Ready Stash controlled by either player and Rotate them. If you Rotated an opponent's Stash this way, Draw a card.",
+      "text": "Choose up to 2 Ready Stash controlled by either player. They become Used. If any of them were an opponent's, Draw a card.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2328,7 +2328,7 @@
       "name": "Don't Throw That Away",
       "stats": "",
       "traits": [],
-      "text": "Return an Item that entered your discard this Turn to your hand.",
+      "text": "Return an Item that entered your discard this turn to your hand.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2345,7 +2345,7 @@
       "name": "Good as New",
       "stats": "",
       "traits": [],
-      "text": "Choose a damaged Character. If you control it, heal all damage from it, then Rotate it. Otherwise, Return it to its owner's hand.",
+      "text": "Choose a damaged Character. If you control it, heal all damage from it, then Expose it. Otherwise, Return it to its owner's hand.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2362,7 +2362,7 @@
       "name": "Duct Tape",
       "stats": "",
       "traits": [],
-      "text": "Jerry-Rig. Attach to one of your Characters. It gets +1 Health. Rotate: Heal 1 damage from the attached Character, or 2 damage if it is a Construct.",
+      "text": "Jerry-Rig. Attach to one of your Characters. It gets +1 Health. Use: Heal 1 damage from the attached Character, or 2 damage if it is a Construct.",
       "style": "Salvage",
       "keywords": [
         "Jerry-Rig"
@@ -2381,7 +2381,7 @@
       "name": "Zip Ties",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. Dismiss this: The attached Character gets +2 Health this Turn, or +3 Health if it is a Builder.",
+      "text": "Attach to one of your Characters. Dismiss this: The attached Character gets +2 Health this turn, or +3 Health if it is a Builder.",
       "style": "Salvage",
       "keywords": [],
       "power": null,
@@ -2398,7 +2398,7 @@
       "name": "Mystery Drawer of Cables",
       "stats": "",
       "traits": [],
-      "text": "Jerry-Rig. When this enters play, Draw a card. Rotate, Dismiss this: Ready another of your Items.",
+      "text": "Jerry-Rig. When played, Draw a card. Use, Dismiss this: Ready another of your Items.",
       "style": "Salvage",
       "keywords": [
         "Jerry-Rig"
@@ -2433,7 +2433,7 @@
       "cost": 2,
       "name": "Grumpy Old Guy",
       "traits": [],
-      "text": "Absorb 1.",
+      "text": "Thick Skin 1.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [
@@ -2458,7 +2458,7 @@
       "traits": [
         "HOA"
       ],
-      "text": "When played, you may Rotate a chosen opposing Character. That Character cannot Ready during its controller’s next Ready step.",
+      "text": "When played, you may Expose an opposing Character. That Character cannot Ready during its controller’s next Ready step.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2479,7 +2479,7 @@
       "cost": 3,
       "name": "Coupon Lady",
       "traits": [],
-      "text": "When this enters play, you may Stash an additional card from your hand.",
+      "text": "When played, you may Stash an additional card from your hand.",
       "style": "Momentum",
       "complexity": "on_play",
       "keywords": [],
@@ -2519,7 +2519,7 @@
       "cost": 4,
       "name": "Concerned Citizen",
       "traits": [],
-      "text": "Whenever an opponent plays an Action or Item, this Character gets +1 Power until the end of your next Turn.",
+      "text": "Whenever an opponent plays an Action or Item, this Character gets +1 Power until the end of your next turn.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2565,7 +2565,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "When played, heal up to 2 damage from another chosen friendly Character. If you healed any damage this way, Draw a card.",
+      "text": "When played, heal up to 2 damage from another of your Characters. If you healed any damage this way, Draw a card.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2586,7 +2586,7 @@
       "cost": 3,
       "name": "Retired Marine Next Door",
       "traits": [],
-      "text": "Retaliate.",
+      "text": "Hits Back.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [
@@ -2611,7 +2611,7 @@
       "traits": [
         "HOA"
       ],
-      "text": "Meat Shield. Retaliate.",
+      "text": "Meat Shield. Hits Back.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [
@@ -2635,7 +2635,7 @@
       "cost": 5,
       "name": "Nosey Neighbor",
       "traits": [],
-      "text": "Once during each opponent’s Turn, when one of their Characters Causes Trouble, Draw a card.",
+      "text": "Once during each opponent’s turn, when one of their Characters Causes Trouble, Draw a card.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2679,7 +2679,7 @@
       "traits": [
         "Parent"
       ],
-      "text": "Whenever this Character Readies, heal up to 2 damage from another chosen friendly Character.",
+      "text": "Whenever this Character Readies, heal up to 2 damage from another of your Characters.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2702,7 +2702,7 @@
       "traits": [
         "Construct"
       ],
-      "text": "Meat Shield. Retaliate.",
+      "text": "Meat Shield. Hits Back.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [
@@ -2768,7 +2768,7 @@
       "traits": [
         "Driver"
       ],
-      "text": "When played, you may Dismiss a chosen opposing Item costing 3 or less.",
+      "text": "When played, you may Dismiss an opposing Item costing 3 or less.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [],
@@ -2812,7 +2812,7 @@
       "cost": 2,
       "name": "Neighborhood Watch",
       "traits": [],
-      "text": "Retaliate.",
+      "text": "Hits Back.",
       "style": "Stonewall",
       "complexity": "ongoing",
       "keywords": [
@@ -2836,7 +2836,7 @@
       "name": "File a Complaint",
       "stats": "",
       "traits": [],
-      "text": "A chosen opposing Character gets −2 Power until the start of your next Turn.",
+      "text": "An opposing Character gets −2 Power until the start of your next turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2855,7 +2855,7 @@
       "name": "Not in My Neighborhood",
       "stats": "",
       "traits": [],
-      "text": "A chosen opposing Rotated Character cannot Ready during its controller’s next Ready step.",
+      "text": "An opposing Exposed Character cannot Ready during its controller’s next Ready step.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2874,7 +2874,7 @@
       "name": "Absolutely Not",
       "stats": "",
       "traits": [],
-      "text": "Return a chosen opposing Character costing 3 or less to its owner’s hand.",
+      "text": "Return an opposing Character costing 3 or less to its owner’s hand.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2911,7 +2911,7 @@
       "name": "Violation Notice",
       "stats": "",
       "traits": [],
-      "text": "Dismiss a chosen opposing Rotated Character costing 4 or less.",
+      "text": "Dismiss an opposing Exposed Character costing 4 or less.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2949,7 +2949,7 @@
       "name": "Dig In",
       "stats": "",
       "traits": [],
-      "text": "Your Characters have Absorb 1 until the start of your next Turn. If an opponent has more Characters than you, Draw a card.",
+      "text": "Your Characters have Thick Skin 1 until the start of your next turn. If an opponent has more Characters than you, Draw a card.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2968,7 +2968,7 @@
       "name": "Wait Them Out",
       "stats": "",
       "traits": [],
-      "text": "Play only if you haven’t Attacked this Turn. Draw 2 cards. You cannot Attack this Turn.",
+      "text": "Play only if you haven’t Attacked this turn. Draw 2 cards. You cannot Attack this turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -2987,7 +2987,7 @@
       "name": "Security Camera",
       "stats": "",
       "traits": [],
-      "text": "Rotate: Look at the opposing player’s hand.",
+      "text": "Use: Look at the opposing player’s hand.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -3006,7 +3006,7 @@
       "name": "Lawn Chair",
       "stats": "",
       "traits": [],
-      "text": "Rotate this Item and spend 1 Stash: Ready a chosen friendly Rotated Character. That Character cannot Attack or Cause Trouble again this Turn.",
+      "text": "Use this Item and spend 1 Stash: Ready one of your Exposed Characters. That Character cannot Attack or Cause Trouble again this turn.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -3025,7 +3025,7 @@
       "name": "Patio Umbrella",
       "stats": "",
       "traits": [],
-      "text": "Attach to a friendly Character. While the attached Character is Rotated, it has Absorb 1.",
+      "text": "Attach to one of your Characters. While the attached Character is Exposed, it has Thick Skin 1.",
       "style": "Stonewall",
       "keywords": [],
       "power": null,
@@ -3108,7 +3108,7 @@
         "Undead",
         "Kid"
       ],
-      "text": "When this enters play, look at the top 3 cards of your deck. You may reveal an Animal or Undead Character and put it into your hand. Put the rest on the bottom in any order.",
+      "text": "When played, look at the top 3 cards of your deck. You may reveal an Animal or Undead Character and put it into your hand. Put the rest on the bottom in any order.",
       "style": "Expendable",
       "complexity": "on_play",
       "keywords": [],
@@ -3152,7 +3152,7 @@
         "Construct",
         "Daredevil"
       ],
-      "text": "When this enters play, you may Sacrifice another Character. If you do, your next card this Turn costs 2 less.",
+      "text": "When played, you may Sacrifice another Character. If you do, your next card this turn costs 2 less.",
       "style": "Expendable",
       "complexity": "on_play",
       "keywords": [],
@@ -3234,7 +3234,7 @@
         "Animal",
         "Rat"
       ],
-      "text": "When this is Defeated, another of your Characters gets +2 Power this Turn. If it is a Rat or Undead, it also gets +1 Health this Turn.",
+      "text": "When this is Defeated, another of your Characters gets +2 Power this turn. If it is a Rat or Undead, it also gets +1 Health this turn.",
       "style": "Expendable",
       "complexity": "ongoing",
       "keywords": [],
@@ -3275,7 +3275,7 @@
       "traits": [
         "Undead"
       ],
-      "text": "When this is Defeated, you may Return it from your discard to your hand at the end of this Turn.",
+      "text": "When this is Defeated, you may Return it from your discard to your hand at the end of this turn.",
       "style": "Expendable",
       "complexity": "ongoing",
       "keywords": [],
@@ -3319,7 +3319,7 @@
         "Undead",
         "Scavenger"
       ],
-      "text": "Once during your Turn, you may Play an Undead Character from your discard by paying its Cost. When you do, Sacrifice another Character.",
+      "text": "Once during your turn, you may Play an Undead Character from your discard by paying its Cost. When you do, Sacrifice another Character.",
       "style": "Expendable",
       "complexity": "ongoing",
       "keywords": [],
@@ -3361,7 +3361,7 @@
       "cost": 2,
       "name": "Backyard Wrestling Superfan",
       "traits": [],
-      "text": "When this enters play, another of your Characters gets +1 Power this Turn. Your other Wrestler Characters have Hothead.",
+      "text": "When played, another of your Characters gets +1 Power this turn. Your other Wrestler Characters have Hothead.",
       "style": "Expendable",
       "complexity": "mixed",
       "keywords": [],
@@ -3382,7 +3382,7 @@
       "traits": [
         "Wrestler"
       ],
-      "text": "Whenever you Play a Character during an opponent's Turn, Draw a card, then Discard a card.",
+      "text": "Whenever you Play a Character during an opponent's turn, Draw a card, then Discard a card.",
       "style": "Expendable",
       "complexity": "ongoing",
       "keywords": [],
@@ -3462,7 +3462,7 @@
       "name": "This Seemed Like a Good Idea",
       "stats": "",
       "traits": [],
-      "text": "Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Power and +2 Health this Turn.",
+      "text": "Choose two of your Characters. Sacrifice one of them. If you do, the other gets +2 Power and +2 Health this turn.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3496,7 +3496,7 @@
       "name": "Tag Me In!",
       "stats": "",
       "traits": [],
-      "text": "Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this Turn.",
+      "text": "Return one of your damaged Characters to your hand. If you do, you may Play a different Character from your hand with equal or lower Cost without paying its Cost. If the returned Character was a Wrestler, the new Character gains Hothead this turn.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3513,7 +3513,7 @@
       "name": "Again!",
       "stats": "",
       "traits": [],
-      "text": "Return a Character costing 2 or less from your discard to your hand. If it is Undead and one of your Characters was Defeated this Turn, it costs 1 less the next time you Play it this Turn.",
+      "text": "Return a Character costing 2 or less from your discard to your hand. If it is Undead and one of your Characters was Defeated this turn, it costs 1 less the next time you Play it this turn.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3564,7 +3564,7 @@
       "name": "Keep It Going!",
       "stats": "",
       "traits": [],
-      "text": "If one of your Characters was Defeated this Turn, Ready one Stash and Draw a card. You may Play only one Keep It Going! each Turn.",
+      "text": "If one of your Characters was Defeated this turn, Ready one Stash and Draw a card. You may Play only one Keep It Going! each turn.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3581,7 +3581,7 @@
       "name": "Bath Salts",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gains Undead. Dismiss this: The Character this was attached to gets +2 Power this Turn.",
+      "text": "Attach to one of your Characters. It gains Undead. Dismiss this: The Character this was attached to gets +2 Power this turn.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3598,7 +3598,7 @@
       "name": "Folding Chair",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. Dismiss this: The Character this was attached to gets +2 Power this Turn, or +3 Power if it is a Wrestler.",
+      "text": "Attach to one of your Characters. Dismiss this: The Character this was attached to gets +2 Power this turn, or +3 Power if it is a Wrestler.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3615,7 +3615,7 @@
       "name": "Definitely Safe Helmet",
       "stats": "",
       "traits": [],
-      "text": "Attach to one of your Characters. It gets +1 Health. Rotate: Heal 1 damage from the attached Character.",
+      "text": "Attach to one of your Characters. It gets +1 Health. Use: Heal 1 damage from the attached Character.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3632,7 +3632,7 @@
       "name": "Button Marked DO NOT PRESS",
       "stats": "",
       "traits": [],
-      "text": "Rotate, Sacrifice one of your Characters: Deal 2 damage to an opposing Character. This Item skips its next Ready step.",
+      "text": "Use, Sacrifice one of your Characters: Deal 2 damage to an opposing Character. This Item skips its next Ready step.",
       "style": "Expendable",
       "keywords": [],
       "power": null,
@@ -3666,7 +3666,7 @@
       "name": "A MILLION KILOGRAMS OF CAFFEINE!!!!",
       "subtitle": "The Human Body Was Not Consulted",
       "traits": [],
-      "text": "Choose one of your Characters. It gets +5 Power, Hothead, and Sucker Punch this Turn. After its next Attack this Turn, Defeat it.",
+      "text": "Choose one of your Characters. It gets +5 Power, Hothead, and Sucker Punch this turn. After its next Attack this turn, Defeat it.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -3720,7 +3720,7 @@
         "Kid",
         "Magical"
       ],
-      "text": "When played, you may Dismiss another character you control. If you do, draw a card.",
+      "text": "When played, you may Dismiss another of your Characters. If you do, Draw a card.",
       "style": "Misdirection",
       "complexity": "on_play",
       "keywords": [],
@@ -3742,7 +3742,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "When this character enters play or is returned from play to your hand, you may give another character you control +1 Power this turn.",
+      "text": "When this is played or Returned from play to your hand, you may give another of your Characters +1 Power this turn.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -3764,7 +3764,7 @@
       "traits": [
         "Kid"
       ],
-      "text": "Whenever Very Enthusiastic Volunteer enters play or is Returned from play to your hand, choose another Character you control. That Character gets +1 Power permanently.",
+      "text": "Whenever this is played or Returned from play to your hand, choose another of your Characters. That Character gets +1 Power permanently.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -3784,7 +3784,7 @@
       "cost": 2,
       "name": "Encore!",
       "traits": [],
-      "text": "Draw a card. If a character you controlled was returned from play to your hand this turn, draw another card.",
+      "text": "Draw a card. If one of your Characters was Returned from play to your hand this turn, Draw another card.",
       "style": "Misdirection",
       "complexity": "simple",
       "keywords": [],
@@ -3803,7 +3803,7 @@
       "cost": 3,
       "name": "Party Mom",
       "traits": [],
-      "text": "Hothead. When played, this character gets +2 Power this turn. When returned from play to your hand, you may return an opposing character costing 2 or less to its owner's hand.",
+      "text": "Hothead. When played, this Character gets +2 Power this turn. When Returned from play to your hand, you may Return an opposing Character costing 2 or less to its owner's hand.",
       "style": "Misdirection",
       "keywords": [
         "Hothead"
@@ -3825,7 +3825,7 @@
       "cost": 3,
       "name": "Magician's Hat",
       "traits": [],
-      "text": "Rotate this Item and spend 1 Stash: Return a Magical character you control to your hand.",
+      "text": "Use this Item and spend 1 Stash: Return one of your Magical Characters to your hand.",
       "style": "Misdirection",
       "keywords": [],
       "power": null,
@@ -3959,7 +3959,7 @@
         "Animal",
         "Cat"
       ],
-      "text": "When this enters play, if you control 3 or more Cats, Draw a card.",
+      "text": "When played, if you control 3 or more Cats, Draw a card.",
       "keywords": [],
       "power": 4,
       "guard": 5,
@@ -4027,7 +4027,7 @@
         "Animal",
         "Cat"
       ],
-      "text": "At the start of your Turn, Snowball gets +1 Power.",
+      "text": "At the start of your turn, Snowball gets +1 Power.",
       "keywords": [],
       "power": 1,
       "guard": 1,
@@ -4229,7 +4229,7 @@
         "Human",
         "Scientist"
       ],
-      "text": "When this enters play, look at the top 4 cards of your deck. You may reveal an Experiment Action and put it into your hand. Put the rest on the bottom in any order.",
+      "text": "When played, look at the top 4 cards of your deck. You may reveal an Experiment Action and put it into your hand. Put the rest on the bottom in any order.",
       "keywords": [],
       "power": 2,
       "guard": 3,
@@ -4247,7 +4247,7 @@
         "Human",
         "Part"
       ],
-      "text": "When this enters play, you may Return a Character costing 1 from your discard to your hand.",
+      "text": "When played, you may Return a Character costing 1 from your discard to your hand.",
       "keywords": [],
       "power": 2,
       "guard": 2,
@@ -4423,7 +4423,7 @@
         "Animal",
         "Magical"
       ],
-      "text": "When this character enters or leaves play, you may deal 1 damage to an opposing character.",
+      "text": "When this Character enters or leaves play, you may deal 1 damage to an opposing Character.",
       "style": "Misdirection",
       "complexity": "mixed",
       "keywords": [],
@@ -4443,7 +4443,7 @@
       "cost": 1,
       "name": "Do Not Look in the Hat",
       "traits": [],
-      "text": "Play a Rabbit or Dove from your hand for free. You may play this only if you control a Rotated Magician's Hat.",
+      "text": "Play a Rabbit or Dove from your hand for free. You may play this only if you control a Used Magician's Hat.",
       "style": "Misdirection",
       "complexity": "conditional",
       "keywords": [],
@@ -4493,7 +4493,7 @@
       "cost": 2,
       "name": "Safety Goggles",
       "traits": [],
-      "text": "Attach to one of your Characters. It has Absorb 1.",
+      "text": "Attach to one of your Characters. It has Thick Skin 1.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -4510,7 +4510,7 @@
       "cost": 2,
       "name": "Did You See That?!",
       "traits": [],
-      "text": "Draw a card. If one of your Characters Defeated an opposing Character with an Attack this Turn, Draw another.",
+      "text": "Draw a card. If one of your Characters Defeated an opposing Character with an Attack this turn, Draw another.",
       "style": "Reckless",
       "keywords": [],
       "power": null,
@@ -4548,7 +4548,7 @@
       "flavor": "",
       "name": "Bicycle Cop",
       "cost": 3,
-      "text": "When played, you may Rotate a chosen opposing Character costing 2 or less.",
+      "text": "When played, you may Expose an opposing Character costing 2 or less.",
       "status": "testing",
       "digital_status": "implemented-stonewall-2026-10-08",
       "complexity": "ongoing",
@@ -4584,7 +4584,7 @@
       "flavor": "",
       "name": "Take a Breather",
       "cost": 1,
-      "text": "Ready a chosen friendly Rotated Character. That Character cannot Attack or Cause Trouble again this Turn.",
+      "text": "Ready one of your Exposed Characters. That Character cannot Attack or Cause Trouble again this turn.",
       "status": "testing",
       "digital_status": "implemented-stonewall-2026-10-08",
       "complexity": "ongoing",
@@ -4607,7 +4607,7 @@
       "power": 4,
       "guard": 5,
       "trouble": 3,
-      "text": "The first time each turn another character you control is returned from play to your hand, this character gets +2 Trouble this turn.",
+      "text": "The first time each turn another of your Characters is Returned from play to your hand, this Character gets +2 Trouble this turn.",
       "name_lock": true
     },
     {
@@ -4624,7 +4624,7 @@
       ],
       "name": "Trap Door",
       "cost": 3,
-      "text": "Whenever a character you control costing 5 or less is Dismissed, you may put that card from your discard face-down under this Item if there is no card under it. Rotate this Item and spend 1 Stash: Play the character under it without paying its cost.",
+      "text": "Whenever one of your Characters costing 5 or less is Dismissed, you may put that card from your discard face-down under this Item if there is no card under it. Use this Item and spend 1 Stash: Play the Character under it without paying its cost.",
       "power": null,
       "guard": null,
       "name_lock": true

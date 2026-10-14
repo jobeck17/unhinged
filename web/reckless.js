@@ -144,7 +144,7 @@ Game.prototype.actionEffect=async function(p,id,target,second,previous){
     case 'P021': await this.readyCharacter(x);x.noAttack=true;this.say('Victory Lap: Ready; no more Attacks this Turn');return;
     case 'P022': await this.combatDamage(this.players.flatMap(s=>s.board).filter(x=>this.card(x).type==='Character').map(x=>[x,4,'effect']));this.say('Category 5 deals 4 to every Character');return;
     case 'P024': {
-      const results={1:'Rotate chosen Character',2:'+3 Power OR +1 Trouble this Turn',3:'+3 Power OR +1 Trouble this Turn',4:'+3 Power OR +1 Trouble this Turn',5:'+3 Power OR +1 Trouble this Turn',6:'+3 Power AND +1 Trouble this Turn'};
+      const results={1:'Expose chosen Character',2:'+3 Power OR +1 Trouble this Turn',3:'+3 Power OR +1 Trouble this Turn',4:'+3 Power OR +1 Trouble this Turn',5:'+3 Power OR +1 Trouble this Turn',6:'+3 Power AND +1 Trouble this Turn'};
       let r=this.rollDie('Hey Y’all, Watch This!',p,results);
       if(r>=2&&r<=5){const again=await this.choose(p,`Rolled ${r}: keep it or press your luck?`,[{label:'Keep this roll',value:false},{label:'Roll again (new result replaces this one)',value:true}]);if(again)r=this.rollDie('Hey Y’all, Watch This! reroll',p,results)}
       if(r===1)x.ready=false;
@@ -176,14 +176,14 @@ Game.prototype.activate=async function(uid,mode=null){
   const p=this.turn;
   if(x.id==='P007'){
     x.chainsawUsed=true;
-    let r=this.rollDie('Shirtless Guy With a Chainsaw',p,{1:'Stalled: Rotate Character',2:'+2 Power; may roll again',3:'+2 Power; may roll again',4:'+2 Power; may roll again',5:'+2 Power; may roll again',6:'+2 Power; may roll again'});
+    let r=this.rollDie('Shirtless Guy With a Chainsaw',p,{1:'Stalled: Expose Character',2:'+2 Power; may roll again',3:'+2 Power; may roll again',4:'+2 Power; may roll again',5:'+2 Power; may roll again',6:'+2 Power; may roll again'});
     if(r===1)x.ready=false;
-    else {x.power+=2;x.chainsawBonus=2;const again=await this.choose(p,`Chainsaw rolled ${r}: keep +2 or rev again?`,[{label:'Keep +2 Power',value:false},{label:'Rev again: risk losing the action for +4 Power',value:true}]);if(again){r=this.rollDie('Chainsaw second rev',p,{1:'Stalled: Rotate and lose Chainsaw bonus',2:'+4 Power total',3:'+4 Power total',4:'+4 Power total',5:'+4 Power total',6:'+4 Power total'});if(r===1){x.ready=false;x.power-=2;x.chainsawBonus=0}else{x.power+=2;x.chainsawBonus=4}}}
+    else {x.power+=2;x.chainsawBonus=2;const again=await this.choose(p,`Chainsaw rolled ${r}: keep +2 or rev again?`,[{label:'Keep +2 Power',value:false},{label:'Rev again: risk losing the action for +4 Power',value:true}]);if(again){r=this.rollDie('Chainsaw second rev',p,{1:'Stalled: Expose and lose Chainsaw bonus',2:'+4 Power total',3:'+4 Power total',4:'+4 Power total',5:'+4 Power total',6:'+4 Power total'});if(r===1){x.ready=false;x.power-=2;x.chainsawBonus=0}else{x.power+=2;x.chainsawBonus=4}}}
     await this.advance();return;
   }
   if(x.id==='P027'){
     const wearer=this.obj(x.attached);x.ready=false;
-    const r=this.rollDie('Gas Station Pills',p,{1:'Rotate wearer',2:'+1 Power this Turn',3:'+1 Power this Turn',4:'+1 Power this Turn',5:'+1 Power this Turn',6:'+2 Power this Turn'});
+    const r=this.rollDie('Gas Station Pills',p,{1:'Expose wearer',2:'+1 Power this Turn',3:'+1 Power this Turn',4:'+1 Power this Turn',5:'+1 Power this Turn',6:'+2 Power this Turn'});
     if(r===1)wearer.ready=false;else wearer.power+=r===6?2:1;
     await this.advance();return;
   }
@@ -191,7 +191,7 @@ Game.prototype.activate=async function(uid,mode=null){
     const chosen=await this.pick('Homemade Launch Ramp: choose your Ready Character',p,this.chars(p).filter(y=>y.ready));
     const y=this.obj(chosen);if(!y||!y.ready)return;
     x.ready=false;
-    const r=this.rollDie('Homemade Launch Ramp',p,{1:'Rotate Character',2:'Next Attack this Turn +2 Power',3:'Next Attack this Turn +2 Power',4:'Deal 2 damage to Character',5:'Deal 2 damage to Character',6:'Next Attack +2 Power AND Cause Trouble (no survival required)'});
+    const r=this.rollDie('Homemade Launch Ramp',p,{1:'Expose Character',2:'Next Attack this Turn +2 Power',3:'Next Attack this Turn +2 Power',4:'Deal 2 damage to Character',5:'Deal 2 damage to Character',6:'Next Attack +2 Power AND Cause Trouble (no survival required)'});
     if(r===1)y.ready=false;
     if(r===2||r===3||r===6)y.nextAttackPower=(y.nextAttackPower||0)+2;
     if(r===4||r===5)await this.damage(y,2);

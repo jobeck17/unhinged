@@ -1,3 +1,13 @@
+## Rules readability cleanup — 14 October 2026
+
+Joseph approved a wording and readability pass on branch `rules-cleanup`. It does not change balance, card costs or stats, and does not lift the paper-test freeze for anything else.
+
+- **New:** HOW_TO_PLAY.md, a two-page learn-to-play guide in the game's voice. RULES.md is now a Rules Reference for edge cases.
+- **Terms:** a sideways Character is **Exposed** (verb: Expose). A sideways Item or Stash card is **Used** (verb: Use). Absorb is now **Thick Skin**; Retaliate is now **Hits Back**. Keyword IDs in the CARDS.json `keywords` arrays keep their old internal names so engine code is unchanged; printed text uses the new names.
+- **Small rule simplifications:** (1) whenever things happen at once, the active player picks the order, replacing the separate active-first / non-active-first rules; (2) Put damage is folded into ordinary damage (no card currently uses it); (3) Stash is described as once per turn, which is equivalent. War is kept. Dismiss is kept until after paper testing.
+- **Card templating, all Styles:** "When played," for entrance abilities; "your Characters" / "one of your Characters" instead of "friendly" or "you control"; "an opposing Character" instead of "a chosen opposing Character"; card types and game verbs capitalized (Character, Draw, Return, Attack); lowercase "turn".
+- Browser playtest labels updated to match. Reckless, Stonewall, Misdirection, Salvage, smoke and builder tests pass. Playwright browser tests were not run.
+
 ## Outside-review design checkpoint — TESTING, 14 October 2026
 
 **Status: TESTING, not locked.** This checkpoint records Joseph's outside review and the next paper-test plan. It does not promote the proposed rules or Breaking Points into production. RULES.md, CARDS.json, DECKS.json, simulations, browser playtest and builder remain unchanged by this entry.
