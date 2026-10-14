@@ -8,7 +8,7 @@ Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo →
 
 **Mordecai 0.4 is canonical.** Composure 2.0 has graduated from the lab. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative.
 
-The production baseline now contains **233 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
+The production baseline now contains **235 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
 
 The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. Stonewall now also has its audited cards and 40-card coverage deck implemented. Misdirection now also has its locked 32-card pool, 40-card coverage deck and Magician Leader effects implemented. Remaining Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
 
@@ -47,7 +47,7 @@ A deck should still play a real game when its spectacular engine does not go off
 
 ## Source of truth
 - RULES.md — current rules and Leaders.
-- CARDS.json — current 223-card production pool.
+- CARDS.json — current 235-card production pool.
 - DECKS.json — current eight-deck production baseline across seven core Styles.
 - NOTES.md — the one living notebook for decisions, questions, next work, and saved ideas.
 - SIMULATION.md — current simulation status and historical methodology; Mordecai balance runs are on hold until engine parity.
