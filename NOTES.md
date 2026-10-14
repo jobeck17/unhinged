@@ -1,3 +1,22 @@
+## Trouble-denial keyword and School Administration Leader — BANKED, 14 October 2026
+
+Joseph proposed two connected-but-independent ideas for future design. **Neither is a current rule, keyword, Leader, or active deck.**
+
+### Proposed Trouble-denial keyword — BANKED
+- New defensive keyword analogous to **Meat Shield**, but affecting **Cause Trouble** rather than Attack targeting.
+- Core intent, in Joseph's words: opposing Characters **cannot Cause Trouble while this Character is in play or Rotated**. Exact activation condition is **OPEN**: while in play regardless of Ready/Rotated state, *or* only while Rotated, parallel to Meat Shield.
+- Preferred exploration: **Rotated-only protection** gives opponents a direct Attack target to remove, creates a meaningful Ready/Rotate decision, and fits Stonewall. It is an assistant proposal, **not approved or locked**.
+- Working keyword-name candidates, not approved: **Buzzkill**, **Detention**, **No Fun Allowed**. Do not establish any as canonical.
+- Important balance questions: whether this affects only opposing Characters; whether multiple copies can create a prolonged Trouble lock; whether the keyword includes Meat Shield's optional Ready/Rotated entry choice; how this impacts Last Straw's required final successful Cause Trouble; and what counterplay/break windows are needed. Current RULES.md explicitly says Cause Trouble is not combat and cannot be Blocked; this would be an explicit prevention exception, not generic blocking.
+
+### School Administration Leader/deck — BANKED
+- Theme: **School Administration**, an authority-and-bureaucracy cast that restrains antics.
+- Character seeds from Joseph: **Substitute Teacher**, **School Board Superintendent**, **Janitor**, **Hall Monitor**.
+- **Likely Style: Stonewall**, tentative and not locked.
+- Potential identity to explore: controlling the pace through disciplinary interventions / Trouble denial, distinct from HOA's combat-targeting Meat Shield and defensive healing. This is a design direction only; no powers, costs, stats, Leader passive, Breaking Point, or final Leader choice approved.
+- School Board Superintendent is a possible Leader candidate, not an approved Leader; card assignments remain open. Be careful not to duplicate existing school-adjacent cards without review.
+- Future review: choose the keyword's activation condition and name, ensure counterplay against lockouts, choose the Leader and deck's unique engine, then build cards and test. Do not change RULES.md, CARDS.json, DECKS.json, or the playtest until explicitly promoted from BANKED.
+
 ## Accident and Injury Attorney — BANKED Leader idea, 11 October 2026
 
 Joseph proposed **Accident and Injury Attorney** as an idea for the next Leader.
