@@ -1,3 +1,95 @@
+## Outside-review design checkpoint — TESTING, 14 October 2026
+
+**Status: TESTING, not locked.** This checkpoint records Joseph's outside review and the next paper-test plan. It does not promote the proposed rules or Breaking Points into production. RULES.md, CARDS.json, DECKS.json, simulations, browser playtest and builder remain unchanged by this entry.
+
+**Process freeze:** Until paper testing is done, freeze rules, audits, labs and new cards except the specific test changes listed below. Do not start new audits, labs, version bumps or card redesigns from this checkpoint. This process direction takes precedence over older “next audit / implementation / lab” work queues elsewhere in these notes. Change rules only based on what happens at the table.
+
+### Direction to preserve during testing
+
+1. **Keep Composure; do not revert to Leader Health.** Reverting would gut Ready/Rotated protection, the Trouble stat and most card/Leader text, and move the game closer to Hearthstone.
+2. **Keep the current structure:**
+   - Leader = deck identity + passive.
+   - Breaking Point at 10 = Leader-unique ability: “how this Leader cracks.”
+   - Last Straw = hidden card chosen at deckbuilding from a shared pool, not tied to any Leader: “how the player snaps.” Its hidden choice, bluffing and reveal moment are core identity.
+3. The game's identity lives in the **Leader + three-act Composure arc: 20 → Breaking Point → Last Straw → Unhinged**, not in the core turn skeleton. The skeleton is allowed to resemble other TCGs.
+
+### Human-playtest problem
+
+The final Cause Trouble at Last Straw is too easy. Trouble is unblockable, so Last Straw only delays the game about one round instead of creating a real final fight.
+
+### Only core rule change to test — Last Straw Guard
+
+**While your Leader is at Last Straw:**
+- An opposing Character cannot Cause Trouble while you control a Ready Character.
+- Your Ready Characters can be Attacked.
+
+Existing Last Straw bonuses stay: your Characters have Hothead and may Attack opposing Ready Characters.
+
+**Intended effect:** Act 3 becomes a siege. The attacker must clear the guards before the final hit. The cornered player chooses between attacking (giving up a guard) and staying Ready to guard.
+
+This is the **only core rule change being tested**. No other rules changes until after paper testing. This is a paper-test overlay, not an implemented rule or a new Trouble-denial keyword; the separate School Administration / keyword ideas below remain BANKED.
+
+### Last Straw test pool — 4–6 cards only
+
+For testing, make only **4–6 Last Straw cards, not 10–20**. They should be the loudest, swingiest effects in the game. Some should help hold the siege; some should blow it open.
+
+**Rough concepts — TESTING, not locked; tune freely within this listed exception:**
+- **Burn It All Down:** Defeat every Character, both sides.
+- **Fake Your Own Death:** Set your Leader to 5 Composure. Skip your next turn.
+- **Call My Lawyer:** Opposing Characters can't Cause Trouble until the end of your next turn.
+- **Take Everyone With Me:** The opponent's Leader also drops to Last Straw.
+
+These are concepts for the small paper-test pool, not finalized card text or additions to the canonical card pool.
+
+### Breaking Point principle and listed test versions
+
+Breaking Point usually triggers on the **opponent's turn**, when you lose Composure. Every Breaking Point must either work immediately on the opponent's turn or be explicitly delayed to the start of your next turn.
+
+**Table test:** Would someone say “oh no” when it fires?
+
+**Florida Man — You Ain't Seen Nothing Yet! — REWORK, TESTING**
+
+Problem: Readying your Characters on the opponent's turn does almost nothing; they Ready at your next turn anyway. It only protects them from Attacks for the rest of that turn. Weakest Breaking Point on the Leader who should have the loudest one.
+
+Test version: **“At the start of your next turn, roll a die for each of your Characters. 1: it is Defeated. 2–6: it gets +2 Power and Hothead this turn.”**
+
+Keep dice visible to both players. This is a test alternative to the current visible-D6 Ready/Rotate Breaking Point, not a production replacement.
+
+**HOA President — Final Warning — KEEP unchanged**
+
+Reactive, works on the opponent's turn, perfect theme. Retain its current text and behavior for the paper test.
+
+**Birthday Party Magician — For My Next Trick… — REWORK, TESTING**
+
+Problem: Functional but reads like a normal card, not a trick.
+
+Test version: **“Return any number of your Characters to your hand. Then play Characters from your hand with total Cost up to 6 for free.”**
+
+Intended feel: the whole board vanishes and reappears rearranged. Feeds the Magician's return synergies. This is a test alternative to the previously locked single-Character return / free Cost-3-or-less deployment, not a production replacement.
+
+**Trash Baron — KEEP**
+
+**“At the start of your next turn, Ready all opposing Stash.”**
+
+Thematic and creates real tension: leftover fuel helps the opponent. A math moment rather than a table moment; acceptable for one Leader.
+
+**Still to design:** Crazy Cat Lady, Mad Scientist, Washed-Up Rock Star and Backyard Wrestler Breaking Points. Apply the opponent-turn / explicitly delayed principle above when that work resumes. This records pending work; it does not start another audit or authorize designs during the paper-test freeze.
+
+### Paper-test process
+
+- Paper test **Florida Man vs HOA President** with **sleeved paper proxies**.
+- Play **5 games**.
+- Log only:
+  - where we laughed;
+  - where we got confused;
+  - whether either player wanted another game.
+- Specific questions to watch at the table:
+  - Does Last Straw Guard make the final round tense and fun?
+  - Do the Last Straw reveals land as table moments?
+  - Does the new Florida Man Breaking Point feel explosive?
+  - Does staying Ready create turtling/stalemates?
+- Change rules only based on what happens at the table. No additional core changes before this paper testing is complete.
+
 ## Trouble-denial keyword and School Administration Leader — BANKED, 14 October 2026
 
 Joseph proposed two connected-but-independent ideas for future design. **Neither is a current rule, keyword, Leader, or active deck.**
