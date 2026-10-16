@@ -1,3 +1,17 @@
+## Antique Holder — BANKED Pawn Shop Character idea, 16 October 2026
+
+**Status: BANKED IDEA ONLY — no production change, no implementation or playtest approval.** Preserved at the user's request during the ongoing Shady Pawn Shop Owner / Momentum brainstorming. This is not an exception to the 14 October paper-test process freeze and should not start an audit or card update.
+
+- **Working name:** Antique Holder.
+- **Based on:** Coupon Lady (P123), re-themed for the proposed Shady Pawn Shop Owner deck.
+- **Type / Style:** Character / Momentum.
+- **Proposed Cost:** 3.
+- **Proposed stats (Power / Health / Trouble):** **3 / 5 / 1**. The Trouble was deliberately reduced from Coupon Lady's current 3; Health 5 remains open for later balancing.
+- **Proposed ability (unchanged from Coupon Lady):** “When this enters play, you may Stash an additional card from your hand.”
+- **Tentative deck allocation:** 2 copies.
+- **Design purpose:** sturdy early Stash acceleration for Deals without high Trouble pressure.
+- **Canonical separation:** Coupon Lady in `CARDS.json` and all current deck lists remain unchanged. No new canonical card ID assigned. Revisit only after the process freeze and separate design/playtest approval.
+
 ## Last Straw runway proposal and paper-test questions — OPEN, 16 October 2026
 
 Joseph proposes testing Last Straw at 5 Composure without the Last Straw Guard overlay. See [PLAYTEST_QUESTIONS.md](PLAYTEST_QUESTIONS.md) for his proposal, unresolved finish/timing decisions, post-game questions and conditional follow-ups. This is a proposed paper experiment, not a production change or confirmed result. The 0-Composure finish and related Last Straw interactions must be agreed before playing; do not silently interpret the new threshold. No rules, cards, decks or engine changes are authorized by this note. Existing Trouble-denial / School Administration concepts remain BANKED.
