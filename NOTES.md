@@ -1,3 +1,16 @@
+## Moron's Gold — BANKED Pawn Shop Action idea, 16 October 2026
+
+**Status: BANKED IDEA ONLY — no canonical card or deck change, no implementation, and no new playtest authorization.** Saved at the user's request during Shady Pawn Shop Owner / Momentum design brainstorming. The 14 October paper-test process freeze remains in effect.
+
+- **Working name:** Moron's Gold.
+- **Based on:** One More Song (P053) from the existing Washed-Up Rock Star deck; a proposed rename and a small ability change, not a replacement in canonical `CARDS.json`.
+- **Type / Style:** Action / Momentum.
+- **Proposed Cost:** 1.
+- **Proposed effect:** “Ready 1 Stash. If you have 2 or more Deals, Ready another Stash.”
+- **Tentative deck allocation:** 2 copies.
+- **Design intention:** Keep the familiar cheap Stash recovery while replacing One More Song's low-hand condition with Shady Pawn Shop Owner's Deals threshold. Having 2 or more Deals is checked, not spent.
+- **Canonical separation:** No change to One More Song (P053) in `CARDS.json`, to `DECKS.json`, or to rules / web / simulator. No production identifier assigned. Balance and final text remain untested.
+
 ## Antique Holder — BANKED Pawn Shop Character idea, 16 October 2026
 
 **Status: BANKED IDEA ONLY — no production change, no implementation or playtest approval.** Preserved at the user's request during the ongoing Shady Pawn Shop Owner / Momentum brainstorming. This is not an exception to the 14 October paper-test process freeze and should not start an audit or card update.
