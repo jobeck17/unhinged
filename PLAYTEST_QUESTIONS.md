@@ -40,6 +40,28 @@ Record variant and agreed finish/timing, Leaders and Last Straws, first player, 
 15. Did either player feel unable to interact, unable to make progress, or stuck doing an obvious action? What precise board caused that feeling?
 16. Which rule/card caused confusion? What single change would you test next, and which moment is evidence for it?
 
+## Required observation: cheap swarm and lack of universal retaliation
+
+Joseph explicitly requested this stress test after the initial questionnaire. This is a test priority, not approval to change combat rules or a completed result.
+
+Concern: a board of Cost-1/2 Characters may concentrate several Attacks into exposed expensive Characters without taking return damage, preserve its attackers, and Cause Trouble with remaining eligible bodies. Conversely, fewer expensive Characters may have enough Power to defeat any small Character but lack enough actions to contain the swarm. Test both directions; combat might be too profitable for the swarm, not merely unattractive relative to Trouble.
+
+During the paper games, deliberately look for a cheap-wide board versus a smaller expensive board. Record the actual cards, Ready/Rotated states, damage and relevant abilities at one representative turning point. If the existing matchup does not produce this situation, mark the concern UNTESTED; a later focused legal deck/setup test needs explicit agreement rather than silently altering the current five-game decks.
+
+Respect the baseline: ordinary Attacks target Rotated Characters, new arrivals normally cannot Attack or Cause Trouble immediately, each ordinary Attack Rotates its attacker, damage persists, and Retaliate is already a printed exception. Do not let the same Character Attack then Cause Trouble without an explicit Ready effect. Multiple attackers can concentrate persistent damage, but cannot ordinarily attack a protected Ready target.
+
+Post-game questions:
+
+- Did Cost-1/2 attackers repeatedly remove expensive Characters while surviving? How many attackers/actions and total resource investment did each removal require?
+- How much Trouble did the swarm forgo to clear the board, and how much did its unused eligible Characters still cause that turn?
+- After the expensive side retaliated on its own turn, did the swarm retain or cheaply rebuild a decisive body-count advantage? Was its limit Power, available actions, resources or cards in hand?
+- Did playing a large Character offer a credible stabilisation line, or did using it merely expose it to a safe multi-attacker takedown? Was staying Ready meaningful protection or a losing concession?
+- Did printed Retaliate, durability, removal or other actual tools help at an accessible cost? Distinguish unavailable answers from missed or previously spent ones.
+- Was swarm strength conditional on commitment and risk, or was flooding cheap bodies the obvious plan regardless of the opponent?
+- At the recorded board, which cheap attackers would have been Defeated or damaged if defenders dealt their Power back? Would that create a meaningful decision or simply make expensive Characters oppressive? Label this a hypothetical unless separately played.
+
+Conditional follow-up: if repeated no-return-damage trades produce a self-reinforcing swarm, propose a separate controlled comparison of baseline combat versus universal retaliation. Keep decks and the agreed Last Straw overlay unchanged, swap pilots/first player where practical, and specify retaliation timing (including defeated defenders) before playing. Existing Retaliate must not deal return damage twice. No such alternate combat rule is approved by this note. Compare attacker survival, remaining Trouble, ability to stabilise and enjoyment; also check whether retaliation overcorrects against small Characters. Do not assume extra Trouble blocking fixes safe combat trades.
+
 ## Conditional follow-ups: BANKED pending results
 
 - Last Straw still gives no usable runway: inspect overshoot, effect choice and turn-ending protection before changing the threshold again. Earlier reveal is not automatically a meaningful turn.
