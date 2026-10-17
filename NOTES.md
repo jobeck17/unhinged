@@ -1,3 +1,17 @@
+## Grandma With a Million-Dollar Doorstop — BANKED Pawn Shop Character idea, 17 October 2026
+
+**Status: BANKED IDEA ONLY — not canonical or playtest-approved.** Preserved at the user's request. Does not override the 14 October paper-test process freeze.
+
+- **Name:** Grandma With a Million-Dollar Doorstop.
+- **Type / Style:** Character / Momentum.
+- **Proposed Cost:** 2.
+- **Proposed stats (Power / Health / Trouble):** **0 / 2 / 2**. The defenseless grandmother causing 2 Trouble is deliberate comedy.
+- **Ability — Sentimental Value:** “When this enters play, gain 1 Deal. You can't spend your last Deal while this is in play.”
+- **Proposed flavor text:** “PLEASE. Just name your price.” — Shady Pawn Shop Owner.
+- **Joke / identity:** Grandma innocently uses a priceless collectible as a doorstop while the desperate pawn shop owner tries to buy it. The Character generates a Deal, but prevents the player from spending the last one.
+- **Balance concern:** Immediate Deal generation for 2 Stash plus 2 Trouble may be efficient; verify in eventual playtests.
+- **Canonical separation:** No changes to canonical cards, decks, rules, apps, or simulation. No canonical card ID.
+
 ## Family Heirloom — BANKED Pawn Shop Item idea, 16 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Preserved at the user's request during the Shady Pawn Shop Owner / Momentum brainstorming. This note does not override the 14 October paper-test process freeze.
