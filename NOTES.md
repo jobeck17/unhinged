@@ -12,18 +12,19 @@
 - **Balance concern:** Immediate Deal generation for 2 Stash plus 2 Trouble may be efficient; verify in eventual playtests.
 - **Canonical separation:** No changes to canonical cards, decks, rules, apps, or simulation. No canonical card ID.
 
-## Family Heirloom — BANKED Pawn Shop Item idea, 16 October 2026
+## Family Heirloom — BANKED Pawn Shop Item idea, revised 17 October 2026
 
-**Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Preserved at the user's request during the Shady Pawn Shop Owner / Momentum brainstorming. This note does not override the 14 October paper-test process freeze.
+**Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** This replaces the earlier Family Heirloom proposal in this note. The 14 October paper-test process freeze remains in effect.
 
-- **Working name:** Family Heirloom (correct spelling; not “Family Airloom”).
+- **Working name:** Family Heirloom.
 - **Type / Style:** Attaching Item / Momentum.
 - **Proposed Cost:** 2.
-- **Proposed text:** “Attach to one of your Characters. The attached Character gets +1 Health for each Deal you have. If attached to Antique Holder, that Character also has Retaliate. When your Deals drop from 3 or more to 2 or fewer, Dismiss this.”
-- **Important intended behavior:** It may be played and stay attached while you have 0, 1, or 2 Deals. It does **not** automatically Dismiss just because you are currently at 2 or fewer. Once you climb to at least 3 Deals, dropping back to 2 or fewer Deals while this Item is in play causes its Dismissal. Dropping 4 → 3 is safe. Reaching 3 later does not return a previously Dismissed copy.
-- **Design goal:** An Item that grows in durability with your Deals, with special synergy for Antique Holder. The risk of losing it on a downward Deal-count threshold makes spending Deals a strategic tradeoff without adding counters or memory tracking.
-- **Balance question:** +3/+4 Health and Retaliate on Antique Holder may be potent; test later, including counterplay through Item removal, Return, and Dismiss effects. No final cost, copy count, or balance approval yet.
-- **Canonical separation:** No changes to `CARDS.json`, `DECKS.json`, rules, simulation, web or builder; no canonical card ID assigned.
+- **Proposed text:** “Attach to one of your Characters. The attached Character gets +1 Guard if you have 0–1 Deals, +2 Guard if you have 2–3 Deals, or +3 Guard if you have 4 Deals. If attached to Antique Holder, that Character also has Retaliate.”
+- **Intent:** Always useful even at 0 Deals; scales in three simple tiers without extra counters. If Deals are spent, the Guard bonus decreases accordingly, but the Item stays attached.
+- **Removed:** The earlier self-Dismissal downside triggered by dropping from 3 Deals to 2 or fewer is **no longer part of this proposal**.
+- **Terminology note:** The designers requested “Guard” for the Item's displayed bonus. Current canonical rules call the durability stat “Health”; reconcile naming only if this proposal is deliberately promoted, without silently altering canonical terminology.
+- **Balance question:** Test defensive stacking and Retaliate synergy with Antique Holder later.
+- **Canonical separation:** No changes to `CARDS.json`, `DECKS.json`, rules, playtest tools, or simulator; no canonical card ID.
 
 ## Moron's Gold — BANKED Pawn Shop Action idea, 16 October 2026
 
