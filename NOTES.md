@@ -1,3 +1,18 @@
+## Guy Who Got a Bad Deal — BANKED Pawn Shop Character idea, 18 October 2026
+
+**Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** User-approved working concept preserved without overriding the 14 October paper-test process freeze.
+
+- **Name:** Guy Who Got a Bad Deal.
+- **Type / Style:** Character / Momentum.
+- **Proposed Cost:** 3.
+- **Proposed stats (Power / Guard / Trouble):** **4 / 2 / 1**. Power 4 deliberately revised downward from initial 5.
+- **Ability:** “Hothead.”
+- **Flavor text:** “THAT WAS AT LEAST $40!!!!!”
+- **Character identity:** A furious customer who hits hard immediately but is fragile; no extra Deal interaction or complex text.
+- **Balance consideration:** High immediate Power plus Hothead could become especially strong with the proposed Pawn Shop Leader's 4-Deal Sucker Punch bonus; test before promotion.
+- **Terminology note:** Uses the designers' requested “Guard” working term; canonical rules still use Health.
+- **Canonical separation:** No changes to `CARDS.json`, `DECKS.json`, rules, simulation, web, or builder; no canonical card ID.
+
 ## Guy Selling His Wife's Dress — BANKED Pawn Shop Character idea, 18 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Saved at the user's request during Shady Pawn Shop Owner / Momentum brainstorming. This does not override the 14 October paper-test process freeze.
