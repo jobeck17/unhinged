@@ -1,3 +1,18 @@
+## Guy Selling His Wife's Dress — BANKED Pawn Shop Character idea, 18 October 2026
+
+**Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Saved at the user's request during Shady Pawn Shop Owner / Momentum brainstorming. This does not override the 14 October paper-test process freeze.
+
+- **Name:** Guy Selling His Wife's Dress.
+- **Type / Style:** Character / Momentum.
+- **Proposed Cost:** 2.
+- **Proposed stats (Power / Guard / Trouble):** **2 / 2 / 1**.
+- **Ability name:** **Twenty Bucks Is Twenty Bucks**.
+- **Proposed ability:** “This gets +1 Trouble while you have 2 or more Deals.”
+- **Flavor text:** “She only wore it once.”
+- **Character joke:** He is shamelessly pawning his wife's wedding dress for a pitiful return. The tiny conditional Trouble bonus is intentionally simple; flavor carries most of the personality.
+- **Terminology:** “Guard” is the designers' requested working terminology; current canonical rules use Health. This note does not change canonical terms.
+- **Canonical separation:** No changes to `CARDS.json`, `DECKS.json`, rules, simulation, web or builder; no canonical card ID.
+
 ## Grandma With a Million-Dollar Doorstop — BANKED Pawn Shop Character idea, 17 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical or playtest-approved.** Preserved at the user's request. Does not override the 14 October paper-test process freeze.
