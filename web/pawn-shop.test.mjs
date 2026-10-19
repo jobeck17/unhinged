@@ -20,7 +20,7 @@ const prompt=async req=>req.multi?req.options.slice(0,req.min||0).map(o=>o.value
 function game(){let g=new Game(pool,{decks:[pawn,florida]},prompt,()=>{}, {firstPlayer:0});g.begin();return g}
 function readyStash(g,p,n){const s=g.players[p];s.stash=Array(n).fill('P181');s.stashReady=Array(n).fill(true);s.fuel=n}
 
-// Pawn Shop Stash enters Rotated; starts next Turn Ready. Opposing normal Stash still enters Ready.
+// With 0–1 Deals, Pawn Shop Stash enters Rotated and Readies next Turn. Opponents' normal Stash enters Ready.
 {
  const g=game(),s=g.players[0];
  assert(g.stash(0), 'First Pawn Shop Stash should be allowed');
@@ -39,29 +39,63 @@ function readyStash(g,p,n){const s=g.players[p];s.stash=Array(n).fill('P181');s.
  assert.deepEqual(g.stashStates(1),[true]);
 }
 
-// At 4 Deals, Pawn Shop may Stash twice, both newly Rotated.
+// At 2+ Deals, a newly Stashed card enters Ready immediately.
+// At 4 Deals, both of the two allowed Stashes enter Ready.
+for(const deals of [0,1,2,3,4]){
+ const g=game(),s=g.players[0];s.deals=deals;
+ assert(g.stash(0));
+ assert.deepEqual(g.stashStates(0),[deals>=2],deals+' Deals readiness');
+ assert.equal(s.fuel,deals>=2?1:0,deals+' Deals current resource');
+ const second=g.stash(0);
+ assert.equal(second,deals===4,deals+' Deals second Stash permission');
+ if(deals===4){
+  assert.deepEqual(g.stashStates(0),[true,true]);
+  assert.equal(s.fuel,2);
+  assert(!g.stash(0));
+ }
+}
+// Hitting the threshold mid-Turn affects subsequent Stashes, not previous slots.
 {
- const g=game(),s=g.players[0];s.deals=4;
- assert(g.stash(0));assert(g.stash(0));assert(!g.stash(0));
- assert.deepEqual(g.stashStates(0),[false,false]);
- assert.equal(s.fuel,0);
- g.round=2;g.turn=0;g.startTurn();
- assert.deepEqual(g.stashStates(0),[true,true]);
- assert.equal(s.fuel,2);
+ const g=game(),s=g.players[0];
+ s.deals=1;
+ assert(g.stash(0));
+ assert.deepEqual(g.stashStates(0),[false]);
+ s.deals=4;
+ assert(g.stash(0));
+ assert.deepEqual(g.stashStates(0),[false,true]);
+ assert.equal(s.fuel,1);
+ s.deals=1;g.stashStates(0);
+ assert.deepEqual(g.stashStates(0),[false,true],'Prior Stash state never changes retroactively');
 }
 
-// Antique Holder's additional Stash enters Rotated for Pawn Shop and Ready for non-Pawn Shop.
-{
+// Antique Holder's bonus Stash matches the Deals threshold (even at 4 Deals).
+for(const deals of [0,1,2,3,4]){
  const g=game(),s=g.players[0],x=g.enter(0,'P181');
- s.hand=['P184'];
+ s.deals=deals;s.hand=['P184'];
  await g.enterEffect(x,[]);
- assert.deepEqual(g.stashStates(0),[false]);
- assert.equal(s.fuel,0);
+ assert.deepEqual(g.stashStates(0),[deals>=2],deals+' Deals: Antique Holder Stash');
+ assert.equal(s.fuel,deals>=2?1:0);
+}
+// Closing a Deal to reach 2 lets the *next* new Stash enter Ready.
+{
+ const g=game(),s=g.players[0];
  s.deals=1;readyStash(g,0,3);
  assert(g.canCloseDeal());
  assert(await g.closeDeal());
  assert.equal(s.deals,2);
  assert.equal(s.fuel,0);
+ s.hand=['P185'];
+ assert(g.stash(0));
+ assert.deepEqual(g.stashStates(0),[false,false,false,true]);
+ assert.equal(s.fuel,1);
+}
+// Antique Holder used by another Leader follows normal Ready-on-entry timing.
+{
+ const g=game(),s=g.players[1],x=g.enter(1,'P181');
+ s.hand=['P185'];
+ await g.enterEffect(x,[]);
+ assert.deepEqual(g.stashStates(1),[true]);
+ assert.equal(s.fuel,1);
 }
 
 // All Deal effects and attached bonuses are dynamic, including spending to lose a threshold.
@@ -120,4 +154,4 @@ function readyStash(g,p,n){const s=g.players[p];s.stash=Array(n).fill('P181');s.
  assert.equal(next.ready,true);
 }
 
-console.log('Canonical Pawn Shop: Stash timing, 4 Deals, Antique Holder, Deal thresholds/spending, Customer discount, No Refunds, discard retrieval PASS');
+console.log('Canonical Pawn Shop: 0–1 Rotated Stash, 2+ Ready Stash, 4-Deal double Stash, threshold transitions, Antique Holder, Deal spending, Customer discounts and Actions PASS');
