@@ -42,14 +42,14 @@ export function installPawnShop(Game,LEADERS){
  const start=Game.prototype.startTurn;
  Game.prototype.startTurn=function(){
   const p=this.turn,s=this.players[p];
-  const rotated=isPS(this,p)?this.chars(p).filter(x=>x.id===ID.clerk&&!x.ready).map(x=>x.uid):[];
+  const rotated=this.chars(p).filter(x=>x.id===ID.clerk&&!x.ready).map(x=>x.uid);
   s.pawnStashCount=0;s.closedDealThisTurn=false;s.clearancePending=[];
   const outcome=start.call(this);
+  for(const uid of rotated){
+   const x=this.obj(uid);
+   if(x){x.ready=false;x.clearanceActive=true;s.clearancePending.push(uid);}
+  }
   if(isPS(this,p)){
-   for(const uid of rotated){
-    const x=this.obj(uid);
-    if(x){x.ready=false;x.clearanceActive=true;s.clearancePending.push(uid);}
-   }
    if(deals(this,p)>=2&&!(this.round===1&&p===this.first)&&this.winner===null){
     this.draw(p,1,false);this.say('2+ Deals: Draws 2 this Turn instead of 1');
    }
@@ -58,7 +58,7 @@ export function installPawnShop(Game,LEADERS){
  };
  Game.prototype.decideClearance=function(uid,keep=true){
   const p=this.turn,s=this.players[p],x=this.obj(uid);
-  if(!isPS(this,p)||!s.clearancePending?.includes(uid)||!x)return false;
+  if(!s.clearancePending?.includes(uid)||!x)return false;
   s.clearancePending=s.clearancePending.filter(n=>n!==uid);
   if(!keep){x.ready=true;x.clearanceActive=false;this.say('Black Friday Employee ends the sale and Readies');}
   else this.say('Black Friday Employee stays Rotated for Customer discounts');
