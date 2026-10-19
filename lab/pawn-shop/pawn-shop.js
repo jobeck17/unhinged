@@ -72,9 +72,21 @@ export function installPawnShop(Game,LEADERS){
  };
  const stash=Game.prototype.stash;
  Game.prototype.stash=function(index,p=this.turn){
-  const success=stash.call(this,index,p);
-  if(success&&isPS(this,p))this.players[p].pawnStashCount=(this.players[p].pawnStashCount||0)+1;
-  return success;
+  if(!isPS(this,p))return stash.call(this,index,p);
+  if(!this.canStash(index,p))return false;
+  const s=this.players[p];
+  // Pawn Shop lab-only variant: each new face-down Stash slot enters Rotated.
+  // Capture existing individual slot states before extending the Stash.
+  const states=this.stashStates(p);
+  const id=s.hand.splice(index,1)[0];
+  s.stash.push(id);
+  states.push(false);
+  s.stashReady=states;
+  s.stashedThisTurn=true;
+  s.pawnStashCount=(s.pawnStashCount||0)+1;
+  // Do not increase s.fuel: it becomes Ready at the next Ready step.
+  this.say(`${this.name(p)} Stashes a card Rotated · ${s.stash.length} total`);
+  return true;
  };
  const keyword=Game.prototype.keyword;
  Game.prototype.keyword=function(x,word){
@@ -162,8 +174,11 @@ export function installPawnShop(Game,LEADERS){
    if(!s.hand.length)return;
    const i=await this.pickHand(p,'Antique Holder: Stash an additional card?',()=>true,true);
    if(i!=null&&s.hand[i]){
-    const id=s.hand.splice(i,1)[0];s.stash.push(id);s.fuel++;
-    this.say('Antique Holder Stashes an additional card');
+    const states=this.stashStates(p);
+    const id=s.hand.splice(i,1)[0];s.stash.push(id);
+    states.push(false);s.stashReady=states;
+    // Antique Holder's extra slot follows this lab's Rotated-on-entry rule.
+    this.say('Antique Holder Stashes an additional card Rotated');
    }
    return;
   }
