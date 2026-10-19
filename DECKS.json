@@ -134,7 +134,9 @@
         "How often do Characters Cause Trouble compared with merely gaining Power?"
       ],
       "status_note": "CURRENT eight-deck slot replacing Washed-Up Rock Star at designer request. First playable 40-card Pawn Shop draft: 4 each of ten designs. Stats/copy counts remain provisional. Specific Leader Breaking Point pending design.",
-      "composure": 20
+      "composure": 20,
+      "passive": "I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). Your Stash enters Rotated. At 2–3 Deals, Draw 2 instead of 1 during your Draw step, and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power, Hothead, and Sucker Punch.",
+      "breaking_point": "Pending design (the universal Breaking Point at 10 Composure still occurs)."
     },
     {
       "name": "Now You See Me",
