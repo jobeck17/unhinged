@@ -14,7 +14,9 @@ const doc=JSON.parse(readFileSync(new URL('../DECKS.json',import.meta.url),'utf8
 const pawn=doc.decks.find(d=>d.leader==='Shady Pawn Shop Owner');
 const florida=doc.decks.find(d=>d.leader==='Florida Man');
 assert(pawn&&florida);
-assert.equal(Object.keys(pawn.cards).length,11);
+assert.equal(Object.keys(pawn.cards).length,12);
+assert.equal(pawn.cards.P192,2);
+assert.equal(pawn.cards.P185,2);
 assert.equal(pawn.cards.P191,2);
 assert.equal(pawn.cards.P186,2);
 assert.equal(Object.values(pawn.cards).reduce((n,x)=>n+x,0),40);
@@ -182,6 +184,53 @@ for(const deals of [0,1,2,3,4]){
  assert(g.canPlay(0,1),'hybrid can use the Action');
  await g.play(0);
  assert.equal(s.deals,0);
+}
+
+// Scalper offers a real choice: free 4-Cost body, or one Deal to Dismiss
+// a Ready OR Rotated opposing Character costing <=3 and Draw once.
+{
+ const g=game(),p=0,s=g.players[p],victim=g.enter(1,'P002');
+ const card=g.enter(p,'P192');s.deals=2;
+ const before=s.hand.length;
+ await g.enterEffect(card,[]);
+ assert(!g.obj(victim.uid),'Scalper Dismisses a Ready opponent');
+ assert.equal(s.deals,1,'Spends exactly one Deal');
+ assert.equal(s.hand.length,before+1,'Successful resale Draws 1');
+}
+{
+ const g=game(),s=g.players[0],victim=g.enter(1,'P181'); // printed Cost 3
+ victim.ready=false;
+ s.deals=0;
+ const card=g.enter(0,'P192');await g.enterEffect(card,[]);
+ assert(g.obj(victim.uid),'Scalper has no Deal, so no free removal');
+ assert.equal(s.deals,0);
+}
+{
+ const choice=async req=>{
+  if(req.title?.includes('Pawn Shop Scalper'))return false;
+  return req.options?.[0]?.value??null;
+ };
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();g.players[0].deals=2;
+ const victim=g.enter(1,'P002'),card=g.enter(0,'P192');
+ await g.enterEffect(card,[]);
+ assert(g.obj(victim.uid),'Declining Resell Value leaves victim alive');
+ assert.equal(g.players[0].deals,2,'Declining has no Deal cost');
+}
+{
+ const g=game(),s=g.players[0],victim=g.enter(1,'P181'),grandma=g.enter(0,'P184');
+ s.deals=1;
+ const card=g.enter(0,'P192');await g.enterEffect(card,[]);
+ assert(g.obj(victim.uid),'Grandma protects last Deal from Scalper');
+ assert.equal(s.deals,1);
+}
+{
+ const g=game(),s=g.players[0],victim=g.enter(1,'P125'); // Cost 4 or higher
+ assert(g.card(victim).cost>3,'fixture above the target limit');
+ s.deals=2;
+ const card=g.enter(0,'P192');await g.enterEffect(card,[]);
+ assert(g.obj(victim.uid),'Scalper cannot Dismiss a costly opponent');
+ assert.equal(s.deals,2);
 }
 
 // Paying Pawn Shop card Costs uses Ready Stash automatically.
