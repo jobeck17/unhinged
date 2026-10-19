@@ -21,6 +21,22 @@ for(const d of decks.decks){
  assert.equal(count,40,d.leader+' baseline must contain 40 cards');
  for(const id of Object.keys(d.cards))assert(pool.cards.some(c=>c.id===id),d.leader+' references missing '+id);
 }
+
+const match=app.match(/const RETIRED_ROCKSTAR_IDS=new Set\((\[[^;]+\])\);/);
+assert(match,'Deck builder declares retired Rock Star-era pool');
+const rockIds=new Set(JSON.parse(match[1]));
+assert.equal(rockIds.size,30,'30 former Momentum cards hidden from the builder');
+for(const id of rockIds){
+ const c=pool.cards.find(c=>c.id===id);
+ assert(c&&c.style==='Momentum',id+' is a former Rock Star Momentum card');
+ assert(!decks.decks.some(d=>id in d.cards),id+' is not used by a current starter deck');
+}
+assert(!rockIds.has('P039'),'Misdirection Card Counter must remain available');
+for(let n=181;n<=190;n++)assert(!rockIds.has('P'+n),'New Pawn Shop cards remain available');
+assert.match(app,/RETIRED_ROCKSTAR_IDS\.has\(c\.id\)/,'builder legality filters retired Rock Star cards');
+assert.match(app,/!isLegal\(c\)/,'saved and imported deck lists drop retired cards');
+console.log('Rock Star builder cleanup: 30 old Momentum IDs blocked; Pawn Shop, Cats and Misdirection unaffected');
+
 const cat=decks.decks.find(d=>d.leader==='Crazy Cat Lady');
 assert(cat.deckbuilding_exception?.includes('10 copies of Stray Cat'));
 assert.equal(cat.cards['LAB-CAT-001'],6);
