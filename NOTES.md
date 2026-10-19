@@ -1,3 +1,18 @@
+## Guy Selling a Rusty Lawnmower — BANKED Pawn Shop Customer idea, 18 October 2026
+
+**Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Saved as a **Customer** at the user's request during the Shady Pawn Shop Owner / Momentum brainstorming; does not override the 14 October paper-test process freeze.
+
+- **Working name:** Guy Selling a Rusty Lawnmower.
+- **Type / Style / Trait:** Character / Momentum / **Customer** (proposed trait, not yet assigned in canonical data).
+- **Based on:** Guy Who Mows at 7 AM (P043) in the Washed-Up Rock Star deck, for a potential retheme and mechanical rework; not a replacement in production.
+- **Proposed Cost:** 3.
+- **Proposed stats (Power / Guard / Trouble):** **2 / 3 / 3**.
+- **Proposed ability:** “When this enters play, you may Draw 1 card, then Discard 1 card.”
+- **Flavor text:** “Dude, did you find that at a dump?” — Shady Pawn Shop Owner.
+- **Design intention:** The customer tries to sell worthless junk; simple hand filtering rather than another Stash-acceleration or keyword ability. Draw happens before Discard, with no net hand-size gain.
+- **Terminology note:** “Guard” is the requested working label; current canonical rules call the Character durability stat Health.
+- **Canonical separation:** No changes to `CARDS.json`, `DECKS.json`, rules, simulation, web, or builder; no canonical card ID or trait reassignment.
+
 ## Guy Who Got a Bad Deal — BANKED Pawn Shop Character idea, 18 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** User-approved working concept preserved without overriding the 14 October paper-test process freeze.
