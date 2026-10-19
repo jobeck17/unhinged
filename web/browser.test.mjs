@@ -11,8 +11,8 @@ const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('dialog',
 const fixtureCode=`
  globalThis.__audit={get:()=>game,fixture:(spec={})=>{
   human=0;busy=false;modal=null;selected.clear();
-  const magician=decks.decks.find(d=>d.leader==='Birthday Party Magician'),enemy=decks.decks.find(d=>d.leader==='Florida Man');
-  game=new Game(pool,{decks:[magician,enemy]},ask,()=>{if(phase==='playing'&&!modal)render()},{firstPlayer:0});game.round=3;game.turn=0;game.turnSerial=5;
+  const leader=decks.decks.find(d=>d.leader===(spec.leader||'Birthday Party Magician')),enemy=decks.decks.find(d=>d.leader==='Florida Man');
+  game=new Game(pool,{decks:[leader,enemy]},ask,()=>{if(phase==='playing'&&!modal)render()},{firstPlayer:0});game.round=3;game.turn=0;game.turnSerial=5;
   for(const s of game.players)Object.assign(s,{board:[],hand:[],discard:[],deck:Array(80).fill('P001'),stash:Array(8).fill('P001'),fuel:8,stashReady:Array(8).fill(true)});
   game.players[0].hand=spec.hand||[];
   for(const [p,ids] of [[0,spec.own||[]],[1,spec.opp||[]]])for(const id of ids){const x=game.enter(p,id);x.born=0;if(id==='P136')x.guard=10}
@@ -125,6 +125,27 @@ try{
   const ready=await page.evaluate(id=>globalThis.__audit.get().players[0].board.find(x=>x.id===id).ready,id);assert.equal(ready,!rotated);
  }
  console.log('Meat Shield browser verification passed: Ready and Rotated entry choices for Crossing Guard, HOA Vice President and Gated Community Security');
+ // Pawn Shop Heirloom attaches through the actual human picker, including
+ // when more than one Character is eligible. No Character = no Play button.
+ await page.evaluate(()=>globalThis.__audit.fixture({leader:'Shady Pawn Shop Owner',hand:['P183']}));
+ await page.locator('[data-zone="hand"][data-index="0"]').click();
+ assert.equal(await page.locator('#play').count(),0,'cannot attach Heirloom without a friendly Character');
+ await page.click('#close');
+ await page.evaluate(()=>globalThis.__audit.fixture({leader:'Shady Pawn Shop Owner',hand:['P183'],own:['P181','P185']}));
+ await page.locator('[data-zone="hand"][data-index="0"]').click();
+ assert(await page.locator('#play').isVisible(),'Heirloom can be played with friendly Characters');
+ await page.click('#play');
+ await page.getByRole('heading',{name:'Attach to your Character'}).waitFor();
+ const options=await page.locator('[data-c]').allTextContents();
+ assert.equal(options.length,2,'two friendly targets available');
+ assert(options.some(t=>t.includes('Antique Holder')));
+ assert(options.some(t=>t.includes("Guy Selling His Wife's Dress")));
+ const selected=await page.evaluate(()=>globalThis.__audit.get().chars(0).find(x=>x.id==='P185').uid);
+ await page.locator('[data-c]').nth(1).click();
+ await page.waitForFunction((uid)=>globalThis.__audit.get().items(globalThis.__audit.get().obj(uid)).some(i=>i.id==='P183'),selected);
+ assert.equal(await page.evaluate(uid=>globalThis.__audit.get().guard(globalThis.__audit.get().obj(uid)),selected),4,'selected Character receives Heirloom Guard');
+ assert.equal(await page.locator('[data-c]').count(),0,'picker closes after successful attachment');
+ console.log('Family Heirloom browser attachment: no-target, multiple choices, selected Guard bonus PASS');
  await page.setViewportSize({width:1280,height:900});
  // Builder: visible 32-card pool, baseline, Leader text and saved ID migration.
  await page.goto(base+'builder/');await page.waitForSelector('#leader');await page.selectOption('#leader','Birthday Party Magician');assert.match(await page.locator('#resultcount').innerText(),/32 legal cards/);await page.click('#baseline');assert.match(await page.locator('.count').innerText(),/40\/40/);assert.match(await page.locator('.construction-note').innerText(),/For My Next Trick/);assert.match(await page.locator('#grid').innerText(),/Trap Door/);assert.doesNotMatch(await page.locator('#grid').innerText(),/Conspiracy Blogger|Do Not Look in the Hat/);
