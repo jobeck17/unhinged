@@ -18,7 +18,7 @@
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** User-approved working concept preserved without overriding the 14 October paper-test process freeze.
 
 - **Name:** Guy Who Got a Bad Deal.
-- **Type / Style:** Character / Momentum.
+- **Type / Style / Trait:** Character / Momentum / **Customer** (proposed Pawn Shop trait only; no canonical assignment).
 - **Proposed Cost:** 3.
 - **Proposed stats (Power / Guard / Trouble):** **4 / 2 / 1**. Power 4 deliberately revised downward from initial 5.
 - **Ability:** “Hothead.”
@@ -33,7 +33,7 @@
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Saved at the user's request during Shady Pawn Shop Owner / Momentum brainstorming. This does not override the 14 October paper-test process freeze.
 
 - **Name:** Guy Selling His Wife's Dress.
-- **Type / Style:** Character / Momentum.
+- **Type / Style / Trait:** Character / Momentum / **Customer** (proposed Pawn Shop trait only; no canonical assignment).
 - **Proposed Cost:** 2.
 - **Proposed stats (Power / Guard / Trouble):** **2 / 2 / 1**.
 - **Ability name:** **Twenty Bucks Is Twenty Bucks**.
