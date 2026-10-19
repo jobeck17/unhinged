@@ -26,6 +26,8 @@ The **30 former Rock Star-era Momentum cards (P031–P038, P040–P060, P123) ar
 
 **Pawn Shop playtest usability (19 October 2026):** Card Costs automatically Rotate the earliest available Ready ordinary Stash slots, preserving temporary Stash until needed. You no longer have to choose Stash for every Pawn Shop card. Other Leaders retain the manual picker for their Stash-specific interactions. The regular payment costs, Deal thresholds, and Rotate mechanics remain unchanged.
 
+**Deck builder browsing update (19 October 2026):** Cards in the Pawn Shop and Cat Lady packages are now tagged with **card family** in `CARDS.json`, while retaining their shared **Momentum** Style. The deck builder can filter the visible library by **Momentum · Pawn Shop** or **Momentum · Cat Lady** (also in two-Style decks). Filtering the library never alters deck legality, saved quantities, or the cards permitted by the Leader. Crazy Cat Lady's construction selector now visibly says **Momentum · Cat Lady cards** rather than the uninformative “Rulebreaker pool”; her special Cat construction restriction and up-to-10 Stray Cats rule are unchanged.
+
 ## Reckless coverage playtest — 7 October 2026
 
 [Play the current deck](https://jobeck17.github.io/unhinged/web/). Select Florida Man. The 40-card list contains all 32 locked Reckless cards once, plus one extra copy each of Feral Chihuahua, Vape Kid, Boogie Boarder, Unsupervised Toddler, Amateur Storm Chaser, Spring Break Frat Bro, Victory Lap, and Did You See That?!. This is a broad verification deck rather than a tuned competitive list. The 33rd Style slot is reserved. Safety Goggles (formerly Life Jacket) and Fireworks Incident are banked for the next set; Dirty Needle remains pending.
