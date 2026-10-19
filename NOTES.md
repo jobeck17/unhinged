@@ -4,6 +4,8 @@
 
 **Status:** Current *playable first draft*; individual copy counts, numbers, No Refunds, and Leader Breaking Point still need human review. The archived `lab/pawn-shop/` remains separate history, not a parallel source of truth. For the active deck builder, all 30 original Rock Star-era Momentum cards (P031–P038, P040–P060, P123) are excluded from its legal card list and imported/saved deck lists, without deleting historical root card records. The old Leader/deck remain in Git history; new Pawn Shop cards P181–P190 remain buildable.
 
+**Builder organization (19 October 2026):** Canonical Pawn Shop P181–P190 cards carry family `Pawn Shop` and the 18 Cat Lady `LAB-CAT-` cards carry family `Cat Lady`. All remain **Momentum**, not separate Styles. The builder's card-family dropdown is a visibility filter only; it doesn't change legality or construction. Cat Lady's special option explicitly displays **Momentum · Cat Lady cards**, while continuing to permit Cat Characters from any Style and the Stray Cat 10-copy exception.
+
 ## One Man's Trash — BANKED Pawn Shop Action idea, 18 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Preserved at the user's explicit request during Shady Pawn Shop Owner / Momentum brainstorming. This does not override the 14 October paper-test process freeze.
