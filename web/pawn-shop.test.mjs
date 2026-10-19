@@ -16,7 +16,7 @@ const florida=doc.decks.find(d=>d.leader==='Florida Man');
 assert(pawn&&florida);
 assert.equal(Object.keys(pawn.cards).length,10);
 assert.equal(Object.values(pawn.cards).reduce((n,x)=>n+x,0),40);
-const prompt=async req=>req.multi?[]:req.options?.find(o=>o.value!==null)?.value??null;
+const prompt=async req=>req.multi?req.options.slice(0,req.min||0).map(o=>o.value):req.options?.find(o=>o.value!==null)?.value??null;
 function game(){let g=new Game(pool,{decks:[pawn,florida]},prompt,()=>{}, {firstPlayer:0});g.begin();return g}
 function readyStash(g,p,n){const s=g.players[p];s.stash=Array(n).fill('P181');s.stashReady=Array(n).fill(true);s.fuel=n}
 
