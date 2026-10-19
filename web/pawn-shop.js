@@ -5,7 +5,7 @@ const ID={antique:'P181',gold:'P182',heirloom:'P183',grandma:'P184',
 export function installPawnShop(Game,LEADERS){
  LEADERS[PS]={
   style:'Momentum',
-  passive:'I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). At 2–3 Deals, Draw 2 instead of 1 in your Draw step and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power, Hothead and Sucker Punch.'
+  passive:'I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, newly Stashed cards enter Rotated; at 2 or more Deals, they enter Ready. At 2 or more Deals, Draw 2 instead of 1 in your Draw step and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power and Sucker Punch.'
  };
  const isPS=(g,p)=>g.name(p)===PS;
  const deals=(g,p)=>g.players[p]?.deals||0;
@@ -75,17 +75,18 @@ export function installPawnShop(Game,LEADERS){
   if(!isPS(this,p))return stash.call(this,index,p);
   if(!this.canStash(index,p))return false;
   const s=this.players[p];
-  // Shady Pawn Shop Owner Leader rule: each new face-down Stash slot enters Rotated.
-  // Capture existing individual slot states before extending the Stash.
+  // Deal-based entry timing: 0–1 Deals -> Rotated; 2+ Deals -> Ready.
+  // Capture individual slot states BEFORE adding the new Stash slot.
   const states=this.stashStates(p);
   const id=s.hand.splice(index,1)[0];
+  const ready=deals(this,p)>=2;
   s.stash.push(id);
-  states.push(false);
+  states.push(ready);
   s.stashReady=states;
+  if(ready)s.fuel++;
   s.stashedThisTurn=true;
   s.pawnStashCount=(s.pawnStashCount||0)+1;
-  // Do not increase s.fuel: it becomes Ready at the next Ready step.
-  this.say(`${this.name(p)} Stashes a card Rotated · ${s.stash.length} total`);
+  this.say(`${this.name(p)} Stashes a card ${ready?'Ready':'Rotated'} · ${s.stash.length} total`);
   return true;
  };
  const keyword=Game.prototype.keyword;
@@ -193,10 +194,12 @@ export function installPawnShop(Game,LEADERS){
    if(i!=null&&s.hand[i]){
     const states=this.stashStates(p);
     const id=s.hand.splice(i,1)[0];s.stash.push(id);
-    const rotated=isPS(this,p);
-    states.push(!rotated);s.stashReady=states;
-    if(!rotated)s.fuel++;
-    this.say('Antique Holder Stashes an additional card '+(rotated?'Rotated':'Ready'));
+    // An additional Stash follows the same threshold as the regular Stash.
+    // Other Leaders still get normal Ready-on-entry Stash.
+    const ready=!isPS(this,p)||deals(this,p)>=2;
+    states.push(ready);s.stashReady=states;
+    if(ready)s.fuel++;
+    this.say('Antique Holder Stashes an additional card '+(ready?'Ready':'Rotated'));
    }
    return;
   }
