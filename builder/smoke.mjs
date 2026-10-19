@@ -45,7 +45,7 @@ assert.equal(pawnCards.length,10,'all ten Pawn Shop cards are explicitly tagged'
 assert.equal(catCards.length,18,'all Cat Lady cards are explicitly tagged');
 assert([...pawnCards,...catCards].every(c=>c.style==='Momentum'),'both groups retain Momentum Style');
 assert.match(app,/function familyGroups\(\)/,'family filter groups are generated from legal cards');
-assert.match(app,/id=\\"family\\"/,'family chooser shown in library');
+assert.match(app,/id="family"/,'family chooser shown in library');
 assert.match(app,/state\.family!=='All'/,'family chooser limits visible cards without changing construction');
 assert.match(app,/Momentum · Cat Lady cards/,'Cat Lady displayed as Momentum rather than Rulebreaker pool');
 assert.doesNotMatch(app,/Rulebreaker pool/,'old ambiguous Cat Lady label removed');
