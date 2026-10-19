@@ -23,7 +23,7 @@ const fixtureCode=`
 await page.route('**/web/app.js*',async route=>{const response=await route.fetch();await route.fulfill({response,body:await response.text()+fixtureCode})});
 try{
  // Normal bootstrap and actual buttons, before inserting test fixtures.
- await page.goto(base+'web/');await page.waitForSelector('#start');await page.selectOption('#you',{label:'Birthday Party Magician · Misdirection'});await page.click('#start');await page.click('#keep');await page.waitForSelector('#end');
+ await page.goto(base+'web/');await page.waitForSelector('#start');await page.selectOption('#you',{label:'Birthday Party Magician · Misdirection'});await page.click('#start');await page.click('#keep');try{await page.waitForSelector('#end',{timeout:7000})}catch(e){throw Error('Startup mulligan failed: '+JSON.stringify(errors)+'; phase='+await page.evaluate(()=>typeof phase==='string'?phase:'unknown')+'; visible='+JSON.stringify((await page.locator('body').innerText()).slice(0,240))+'; '+e.message)}
  assert((await page.locator('.leader-passive').allTextContents()).some(t=>t.includes('The Show Must Go On')));
  await page.click('#inspect-stash');assert.match(await page.locator('.sheet').innerText(),/Your Stash/);await page.click('#close');
  // Actual End Turn remains usable after scrolling and returns from the AI turn.
