@@ -1,7 +1,6 @@
 // Mordecai 0.4 production playtest engine. Internal power/guard field names remain during the data-schema migration.
 export const LEADERS={
  'Florida Man':{style:'Reckless',passive:'Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure.'},
- 'Washed-Up Rock Star':{style:'Momentum',passive:'Bad Publicity Is Still Publicity: Whenever your Leader loses Composure, Draw that many cards.'},
  'Birthday Party Magician':{style:'Misdirection',passive:'The Show Must Go On: Once during your turn, when a character you control is returned to your hand or Dismissed, Ready 1 Stash.'},
  'Trash Baron':{style:'Salvage',passive:'You may use opposing Ready Stash to pay your Costs as though it were your own.'},
  'HOA President':{style:'Stonewall',passive:'Failure to Respond: Beginning in Round 8, your Characters get +1 Trouble.'},
