@@ -1,7 +1,7 @@
 {
   "version": "0.4-mordecai",
-  "date": "2026-10-06",
-  "status": "Mordecai 0.4 production card pool promoted from Composure 2.0 / STANK. Content and terminology audit pending.",
+  "date": "2026-10-19",
+  "status": "Mordecai 0.4 production card pool including first-test Pawn Shop Momentum package; balance remains provisional.",
   "cards": [
     {
       "id": "P001",
@@ -4628,6 +4628,174 @@
       "power": null,
       "guard": null,
       "name_lock": true
+    },
+    {
+      "id": "P181",
+      "name": "Antique Holder",
+      "type": "Character",
+      "cost": 3,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "When this enters play, you may Stash an additional card from your hand.",
+      "flavor": "",
+      "status": "testing",
+      "power": 3,
+      "guard": 5,
+      "trouble": 1,
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
+    },
+    {
+      "id": "P182",
+      "name": "Moron's Gold",
+      "type": "Action",
+      "cost": 1,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Ready 1 Stash. If you have 2 or more Deals, Ready another Stash.",
+      "flavor": "",
+      "status": "testing",
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
+    },
+    {
+      "id": "P183",
+      "name": "Family Heirloom",
+      "type": "Item",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Attach to one of your Characters. That Character gets +1 Guard at 0–1 Deals, +2 Guard at 2–3 Deals, or +3 Guard at 4 Deals. If attached to Antique Holder, it has Retaliate.",
+      "flavor": "",
+      "status": "testing",
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "advanced"
+    },
+    {
+      "id": "P184",
+      "name": "Grandma With a Million-Dollar Doorstop",
+      "type": "Character",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Sentimental Value: When this enters play, gain 1 Deal. You can't spend your last Deal while this is in play.",
+      "flavor": "“PLEASE. Just name your price.” — Shady Pawn Shop Owner",
+      "status": "testing",
+      "power": 0,
+      "guard": 2,
+      "trouble": 2,
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
+    },
+    {
+      "id": "P185",
+      "name": "Guy Selling His Wife's Dress",
+      "type": "Character",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [],
+      "text": "Twenty Bucks Is Twenty Bucks: This gets +1 Trouble while you have 2 or more Deals.",
+      "flavor": "“She only wore it once.”",
+      "status": "testing",
+      "power": 2,
+      "guard": 2,
+      "trouble": 1,
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
+    },
+    {
+      "id": "P186",
+      "name": "Guy Who Got a Bad Deal",
+      "type": "Character",
+      "cost": 3,
+      "style": "Momentum",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [
+        "Hothead"
+      ],
+      "text": "Hothead.",
+      "flavor": "“THAT WAS AT LEAST $40!!!!!”",
+      "status": "testing",
+      "power": 4,
+      "guard": 2,
+      "trouble": 1,
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
+    },
+    {
+      "id": "P187",
+      "name": "Junkyard Visionary",
+      "type": "Character",
+      "cost": 3,
+      "style": "Momentum",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [],
+      "text": "When this enters play, you may Draw 1 card, then Discard 1 card.",
+      "flavor": "“Dude, did you find that at a dump?” — Shady Pawn Shop Owner",
+      "status": "testing",
+      "power": 2,
+      "guard": 3,
+      "trouble": 3,
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
+    },
+    {
+      "id": "P188",
+      "name": "One Man's Trash",
+      "type": "Action",
+      "cost": 1,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Choose a card in your discard. Put it into your hand.",
+      "flavor": "“Is another man's trash.”",
+      "status": "testing",
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
+    },
+    {
+      "id": "P189",
+      "name": "Black Friday Employee",
+      "type": "Character",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [
+        "Staff"
+      ],
+      "keywords": [],
+      "text": "Everything Must Go: During your Ready step, if this is Rotated, you may leave it Rotated. While it remains Rotated this way, your other Customers cost 1 less.",
+      "flavor": "“Ma'am, buy one, get one free does not mean you can take the free one.”",
+      "status": "testing",
+      "power": 2,
+      "guard": 3,
+      "trouble": 3,
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "advanced"
+    },
+    {
+      "id": "P190",
+      "name": "No Refunds",
+      "type": "Action",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Spend 1 Deal: Dismiss an opposing Character costing 4 or less.",
+      "flavor": "“We appreciate your understanding.”",
+      "status": "testing",
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "basic"
     }
   ],
   "misdirection_audit": {
