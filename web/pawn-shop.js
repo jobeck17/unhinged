@@ -1,7 +1,7 @@
 // Shady Pawn Shop Owner production card/Leader package. Canonical Momentum 40-card first-test build.
 const PS='Shady Pawn Shop Owner';
 const ID={antique:'P181',gold:'P182',heirloom:'P183',grandma:'P184',
- dress:'P185',bad:'P186',junk:'P187',trash:'P188',clerk:'P189',refund:'P190',lifetime:'P191'};
+ dress:'P185',bad:'P186',junk:'P187',trash:'P188',clerk:'P189',refund:'P190',lifetime:'P191',scalper:'P192'};
 export function installPawnShop(Game,LEADERS){
  LEADERS[PS]={
   style:'Momentum',
@@ -213,6 +213,26 @@ export function installPawnShop(Game,LEADERS){
  };
  const enterEffect=Game.prototype.enterEffect;
  Game.prototype.enterEffect=async function(x,previous){
+  if(x.id===ID.scalper){
+   const p=x.owner;
+   const legal=this.chars(1-p).filter(y=>this.card(y).cost<=3);
+   if(this.canSpendPawnDeal(p)&&legal.length){
+    const yes=await this.choose(p,'Pawn Shop Scalper: Spend 1 Deal for Resell Value?',[
+     {label:'Spend 1 Deal and scalp a Character',value:true},
+     {label:'Keep the Deal',value:false}
+    ]);
+    if(yes){
+     const picked=await this.pick('Resell Value: Choose an opposing Character costing 3 or less',p,legal);
+     if(picked!=null&&legal.some(y=>y.uid===picked)&&this.obj(picked)&&await this.spendPawnDeal(p)){
+      const victim=this.obj(picked);
+      if(victim)await this.dismiss(victim);
+      this.draw(p,1);
+      this.say('Pawn Shop Scalper resells a Character for double');
+     }
+    }
+   }
+   return;
+  }
   if(x.id===ID.grandma){
    const s=this.players[x.owner];
    s.deals=clamping(deals(this,x.owner)+1);
