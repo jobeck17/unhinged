@@ -129,6 +129,22 @@ try{
  // Builder: visible 32-card pool, baseline, Leader text and saved ID migration.
  await page.goto(base+'builder/');await page.waitForSelector('#leader');await page.selectOption('#leader','Birthday Party Magician');assert.match(await page.locator('#resultcount').innerText(),/32 legal cards/);await page.click('#baseline');assert.match(await page.locator('.count').innerText(),/40\/40/);assert.match(await page.locator('.construction-note').innerText(),/For My Next Trick/);assert.match(await page.locator('#grid').innerText(),/Trap Door/);assert.doesNotMatch(await page.locator('#grid').innerText(),/Conspiracy Blogger|Do Not Look in the Hat/);
  await page.evaluate(()=>localStorage.setItem('unhinged-builder-mordecai-04',JSON.stringify({leader:'Birthday Party Magician',cards:{'LAB-MAG-001B':1,P089:1}})));await page.reload();await page.waitForSelector('#leader');const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('unhinged-builder-mordecai-04')));assert.equal(saved.cards['LAB-MAG-001A'],1);assert.equal(saved.cards['LAB-MAG-004'],1);assert(!saved.cards.P089);
+
+ // Retired Rock Star-era Momentum package is absent from the current builder,
+ // even when chosen as a second Style or loaded from an older saved deck.
+ await page.selectOption('#leader','Shady Pawn Shop Owner');
+ assert.match(await page.locator('#grid').innerText(),/Antique Holder|Family Heirloom/);
+ assert.doesNotMatch(await page.locator('#grid').innerText(),/Wedding DJ|Reunion Tour Drummer|One-Hit Wonder|Portable Bluetooth Speaker/);
+ await page.selectOption('#secondary','Misdirection');
+ assert.match(await page.locator('#grid').innerText(),/Card Counter/,'unrelated Misdirection card remains legal');
+ await page.evaluate(()=>localStorage.setItem('unhinged-builder-mordecai-04',JSON.stringify({
+   leader:'Shady Pawn Shop Owner',secondary:'',cards:{P032:4,P181:2,P059:1}
+ })));
+ await page.reload();await page.waitForSelector('#leader');
+ const cleaned=await page.evaluate(()=>JSON.parse(localStorage.getItem('unhinged-builder-mordecai-04')));
+ assert.deepEqual(cleaned.cards,{P181:2},'retired Rock Star cards stripped from saved decks');
+ assert.doesNotMatch(await page.locator('#grid').innerText(),/Wedding DJ|Portable Bluetooth Speaker/);
+ console.log('Rock Star-era cards hidden from Pawn Shop builder, hybrid search and previous saved decks');
  assert.deepEqual(errors,[],'no browser exceptions or error dialogs');
  console.log('Browser verification passed: all 10 Action UIs, exact Stash payment, Trap Door release/Heckler, builder 32-card pool/40-card deck and saved migrations');
 }catch(error){await page.screenshot({path:'/tmp/misdirection-browser-failure.png',fullPage:true});console.error(await page.locator('body').innerText());throw error}finally{await browser.close()}
