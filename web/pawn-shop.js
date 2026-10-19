@@ -64,6 +64,26 @@ export function installPawnShop(Game,LEADERS){
   else this.say('Black Friday Employee stays Rotated for Customer discounts');
   this.update?.();return true;
  };
+ // In the Pawn Shop playtest, paying a card's printed Cost should not
+ // interrupt every play with a Stash picker. Other Leaders retain manual Stash
+ // selection, which matters to exchanges and specialist temporary Stash.
+ const originalPreparePayment=Game.prototype.preparePayment;
+ Game.prototype.preparePayment=async function(p,n){
+  if(!isPS(this,p))return originalPreparePayment.call(this,p,n);
+  this.stashPayment=null;
+  if(n<=0)return true;
+  if(this.availableFuel(p)<n)return false;
+  const s=this.players[p],states=this.stashStates(p);
+  // Preserve temporary face-up Stash when possible; choose the earliest Ready
+  // ordinary slots first. This is equivalent to choosing these cards by hand.
+  const ready=states.flatMap((isReady,i)=>isReady?[i]:[]);
+  const regular=ready.filter(i=>!s.tempStashCard||s.stash[i]!==s.tempStashCard);
+  const temporary=ready.filter(i=>s.tempStashCard&&s.stash[i]===s.tempStashCard);
+  const picks=[...regular,...temporary].slice(0,n);
+  if(picks.length!==n)return false;
+  this.stashPayment=[{owner:p,picks}];
+  return true;
+ };
  const canStash=Game.prototype.canStash;
  Game.prototype.canStash=function(index,p=this.turn){
   if(!isPS(this,p))return canStash.call(this,index,p);
