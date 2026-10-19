@@ -1,5 +1,5 @@
 import {cardFace} from './card-face.js?v=face-02';
-import {Game,LEADERS} from './engine.js?v=heirloom-attach-01';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 import {aiAction,aiChoice} from './ai.js?v=meatshield-01';
 import './cat-lady.js?v=meatshield-01';
 import './reckless.js?v=meatshield-01';
