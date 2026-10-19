@@ -1,3 +1,11 @@
+## CURRENT Pawn Shop addition — The Deal of a Lifetime (19 October 2026)
+
+**PROMOTED to canonical first-test** at designer request. **P191 The Deal of a Lifetime** is a Momentum / Pawn Shop Action, Cost 2: **“Spend 2 Deals: Ready all Characters you control. Those Characters can't Cause Trouble this Turn.”** Flavor: **“It's too good to be true.”** The effect enables another Attack, not more direct Trouble, and the lock persists through further Readies until the owner's next Turn. Grandma's last-Deal protection still applies to two-Deal spending.
+
+**40-card production test:** 2× P191 replace 2× P186 Guy Who Got a Bad Deal. This preserves the 40-card deck and the older card stays in the pool. Gameplay balance remains untested by humans.
+
+**First content milestone (unique designs):** **12 Characters / 6 Actions / 2 Items = 20 cards.** After adding P191: **6 Characters / 4 Actions / 1 Item = 11/20**. Need **6 more Characters, 2 more Actions, 1 more Item**. The eventual **38-card plan** is separate. After each future card addition, display completed roster by type, progress, missing slots, and suggested next archetype role.
+
 ## CURRENT promotion — Shady Pawn Shop Owner replaces Rock Star (19 October 2026)
 
 **PROMOTED TO CANONICAL ROOT** by explicit designer request. The earlier Pawn Shop BANKED entries below are historical design notes and no longer determine what is current. The canonical source is `RULES.md`, `CARDS.json` (P181–P190), and `DECKS.json` (Everything Must Go, 40 cards). Shady Pawn Shop Owner replaces Washed-Up Rock Star / Comeback Tour as the Momentum Leader in the eight-deck roster. The browser playtest and builder use the production files. Under this Leader, new Stash enters Rotated at 0–1 Deals, but Ready at 2+ Deals (including Antique Holder's bonus Stash), per the updated 19 October 2026 main-game rule.
