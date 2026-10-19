@@ -108,7 +108,8 @@
         "Deals / thresholds",
         "Customer discounts",
         "Deal-dependent Stash readiness (0–1 Rotated, 2+ Ready)",
-        "Pawn Shop item attachments"
+        "Pawn Shop item attachments",
+        "Deal cash-out: Spend 2 Deals to Ready all Characters for Attacks, not Trouble"
       ],
       "cards": {
         "P181": 4,
@@ -116,11 +117,12 @@
         "P183": 4,
         "P184": 4,
         "P185": 4,
-        "P186": 4,
+        "P186": 2,
         "P187": 4,
         "P188": 4,
         "P189": 4,
-        "P190": 4
+        "P190": 4,
+        "P191": 2
       },
       "mulligan_priority": [
         "A low-cost Character",
@@ -131,9 +133,10 @@
         "Does reaching 2 Deals and gaining immediate Ready Stash create an engaging tempo swing or an overwhelming snowball?",
         "Does Grandma grant Deals too quickly?",
         "Are Customer discounts and No Refunds interactive?",
-        "How often do Characters Cause Trouble compared with merely gaining Power?"
+        "How often do Characters Cause Trouble compared with merely gaining Power?",
+        "Does The Deal of a Lifetime make a second wave of Attacks too decisive without enabling additional Trouble?"
       ],
-      "status_note": "CURRENT eight-deck slot replacing Washed-Up Rock Star at designer request. First playable 40-card Pawn Shop draft: 4 each of ten designs. Stats/copy counts remain provisional. Specific Leader Breaking Point pending design.",
+      "status_note": "CURRENT 40-card Pawn Shop test: P181–P190 plus two P191 Actions replacing two Guy Who Got a Bad Deal copies. All balance provisional; unique Leader Breaking Point still pending.",
       "composure": 20,
       "passive": "I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, new Stash enters Rotated. At 2+ Deals, new Stash enters Ready; Draw 2 instead of 1 during your Draw step, and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power and Sucker Punch.",
       "breaking_point": "Pending design (the universal Breaking Point at 10 Composure still occurs)."
