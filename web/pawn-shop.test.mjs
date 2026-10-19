@@ -99,7 +99,7 @@ function readyStash(g,p,n){const s=g.players[p];s.stash=Array(n).fill('P181');s.
  await g.play(0);
  assert(!g.obj(foe.uid),'No Refunds dismisses a low-cost enemy');
  assert.equal(s.deals,1);
- readyStash(g,0,1);s.hand=['P188'];s.discard.push('P184');
+ readyStash(g,0,1);s.hand=['P188'];s.discard=['P184'];
  assert(g.canPlay(0,0));await g.play(0);
  assert(s.hand.includes('P184'),"One Man's Trash returns a discarded card");
 }
