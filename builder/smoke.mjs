@@ -55,6 +55,10 @@ assert.match(app,/None · Mono /,'standard Leaders can choose a secondary Style'
 assert.doesNotMatch(app,/Rulebreaker pool/,'old ambiguous Cat Lady label removed');
 console.log('Momentum groups: Pawn Shop (10), Cat Lady (18); style/legalities unchanged');
 
+const pawn=decks.decks.find(d=>d.leader==='Shady Pawn Shop Owner');
+assert.equal(pawn.cards.P191,2,'new two-Deal Action has two starter copies');
+assert.equal(pawn.cards.P186,2,'two plain Hothead copies were replaced');
+assert.equal(pool.cards.find(c=>c.id==='P191').family,'Pawn Shop');
 const cat=decks.decks.find(d=>d.leader==='Crazy Cat Lady');
 assert(cat.deckbuilding_exception?.includes('10 copies of Stray Cat'));
 assert.equal(cat.cards['LAB-CAT-001'],6);
