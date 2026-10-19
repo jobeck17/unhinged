@@ -1,0 +1,154 @@
+{
+  "version": "lab-ps-0.1",
+  "status": "PROTOTYPE",
+  "cards": [
+    {
+      "id": "LAB-PS-001",
+      "name": "Antique Holder",
+      "type": "Character",
+      "cost": 3,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "When this enters play, you may Stash an additional card from your hand.",
+      "flavor": "",
+      "status": "lab-prototype",
+      "power": 3,
+      "guard": 5,
+      "trouble": 1
+    },
+    {
+      "id": "LAB-PS-002",
+      "name": "Moron's Gold",
+      "type": "Action",
+      "cost": 1,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Ready 1 Stash. If you have 2 or more Deals, Ready another Stash.",
+      "flavor": "",
+      "status": "lab-prototype"
+    },
+    {
+      "id": "LAB-PS-003",
+      "name": "Family Heirloom",
+      "type": "Item",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Attach to one of your Characters. It gets +1 Guard at 0–1 Deals, +2 Guard at 2–3 Deals, or +3 Guard at 4 Deals. If attached to Antique Holder, it also has Retaliate.",
+      "flavor": "",
+      "status": "lab-prototype"
+    },
+    {
+      "id": "LAB-PS-004",
+      "name": "Grandma With a Million-Dollar Doorstop",
+      "type": "Character",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Sentimental Value: When this enters play, gain 1 Deal. You can't spend your last Deal while this is in play.",
+      "flavor": "“PLEASE. Just name your price.” — Shady Pawn Shop Owner",
+      "status": "lab-prototype",
+      "power": 0,
+      "guard": 2,
+      "trouble": 2
+    },
+    {
+      "id": "LAB-PS-005",
+      "name": "Guy Selling His Wife's Dress",
+      "type": "Character",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [],
+      "text": "Twenty Bucks Is Twenty Bucks: This gets +1 Trouble while you have 2 or more Deals.",
+      "flavor": "“She only wore it once.”",
+      "status": "lab-prototype",
+      "power": 2,
+      "guard": 2,
+      "trouble": 1
+    },
+    {
+      "id": "LAB-PS-006",
+      "name": "Guy Who Got a Bad Deal",
+      "type": "Character",
+      "cost": 3,
+      "style": "Momentum",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [
+        "Hothead"
+      ],
+      "text": "Hothead.",
+      "flavor": "“THAT WAS AT LEAST $40!!!!!”",
+      "status": "lab-prototype",
+      "power": 4,
+      "guard": 2,
+      "trouble": 1
+    },
+    {
+      "id": "LAB-PS-007",
+      "name": "Junkyard Visionary",
+      "type": "Character",
+      "cost": 3,
+      "style": "Momentum",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [],
+      "text": "When this enters play, you may Draw 1 card, then Discard 1 card.",
+      "flavor": "“Dude, did you find that at a dump?” — Shady Pawn Shop Owner",
+      "status": "lab-prototype",
+      "power": 2,
+      "guard": 3,
+      "trouble": 3
+    },
+    {
+      "id": "LAB-PS-008",
+      "name": "One Man's Trash",
+      "type": "Action",
+      "cost": 1,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Choose a card in your discard. Put it into your hand.",
+      "flavor": "“Is another man's trash.”",
+      "status": "lab-prototype"
+    },
+    {
+      "id": "LAB-PS-009",
+      "name": "Black Friday Employee",
+      "type": "Character",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [
+        "Staff"
+      ],
+      "keywords": [],
+      "text": "Everything Must Go: During your Ready step, if this is Rotated, you may leave it Rotated. While it remains Rotated this way, your other Customers cost 1 less.",
+      "flavor": "“Ma'am, buy one, get one free does not mean you can take the free one.”",
+      "status": "lab-prototype",
+      "power": 2,
+      "guard": 3,
+      "trouble": 3
+    },
+    {
+      "id": "LAB-PS-010",
+      "name": "No Refunds",
+      "type": "Action",
+      "cost": 2,
+      "style": "Momentum",
+      "traits": [],
+      "keywords": [],
+      "text": "Spend 1 Deal: Dismiss an opposing Character costing 4 or less.",
+      "flavor": "“We appreciate your understanding.”",
+      "status": "lab-prototype"
+    }
+  ]
+}
