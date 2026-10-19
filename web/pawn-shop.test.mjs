@@ -1,7 +1,7 @@
 // Canonical Shady Pawn Shop Owner first-test coverage.
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {Game,LEADERS} from './engine.js';
+import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 import './cat-lady.js';
 import './reckless.js';
 import './stonewall.js';
