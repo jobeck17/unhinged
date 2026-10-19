@@ -8,11 +8,21 @@ Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo →
 
 **Mordecai 0.4 is canonical.** Composure 2.0 has graduated from the lab. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative.
 
-The production baseline now contains **233 cards and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
+The production baseline now contains **245 card records and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
 
 The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. Stonewall now also has its audited cards and 40-card coverage deck implemented. Misdirection now also has its locked 32-card pool, 40-card coverage deck and Magician Leader effects implemented. Remaining Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
 
 The Scheme, Board Width, and old Composure folders remain development history unless explicitly reopened.
+
+## Pawn Shop promoted to current game — 19 October 2026
+
+**Shady Pawn Shop Owner (Momentum) replaces Washed-Up Rock Star / Comeback Tour** in the canonical eight-deck lineup. The main browser playtest and deck builder use the new **Everything Must Go** 40-card first-test deck, with **four copies of each of ten cards P181–P190** (24 Characters, 12 Actions, 4 Items).
+
+[Play Pawn Shop in the main game](https://jobeck17.github.io/unhinged/web/?v=pawnshop-main-01) · [Build a Momentum deck](https://jobeck17.github.io/unhinged/builder/?v=pawnshop-main-01)
+
+Pawn Shop earns **Deals** from its Leader or Grandma, gains extra Draw/Hothead at 2 Deals, and gains 2 Stashes/Power/Sucker Punch at 4 Deals. It can spend Deals on No Refunds. **Its Stash enters Rotated**, so its economics differ from all other Leaders' Ready-on-entry normal Stash. Antique Holder's extra Stash follows the Leader-specific rule. Character and Item cards remain accessible to normal Momentum decks under normal Style construction rules, including Customer traits.
+
+The former Rock Star cards remain in the Momentum pool as standalone cards. Rock Star's prior deck/Leader are retained in Git history, not current. The Pawn Shop draft's stats, copy counts, and Leader Breaking Point are pending further audit; production implementation and tests are not evidence of balance. The separate `lab/pawn-shop/` directory remains an archived first-prototype snapshot rather than a second canonical source.
 
 ## Reckless coverage playtest — 7 October 2026
 
