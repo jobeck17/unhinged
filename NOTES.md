@@ -6,6 +6,8 @@
 
 **Builder organization (19 October 2026):** Canonical Pawn Shop P181–P190 cards carry family `Pawn Shop` and the 18 Cat Lady `LAB-CAT-` cards carry family `Cat Lady`. All remain **Momentum**, not separate Styles. The builder's card-family dropdown is a visibility filter only; it doesn't change legality or construction. Cat Lady's special option explicitly displays **Momentum · Cat Lady cards**, while continuing to permit Cat Characters from any Style and the Stray Cat 10-copy exception.
 
+**Builder UI refinement (19 October 2026):** Separate **Primary Style** (Momentum for both Cat Lady and Pawn Shop) from **Secondary Style**. Standard Leaders retain the secondary-Style dropdown; Cat Lady and Mad Scientist show a plain restricted-construction explanation instead of an unusable dropdown. No underlying deck construction changes.
+
 ## One Man's Trash — BANKED Pawn Shop Action idea, 18 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Preserved at the user's explicit request during Shady Pawn Shop Owner / Momentum brainstorming. This does not override the 14 October paper-test process freeze.
