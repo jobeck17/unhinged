@@ -1,3 +1,16 @@
+## One Man's Trash — BANKED Pawn Shop Action idea, 18 October 2026
+
+**Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Preserved at the user's explicit request during Shady Pawn Shop Owner / Momentum brainstorming. This does not override the 14 October paper-test process freeze.
+
+- **Name:** One Man's Trash.
+- **Type / Style:** Action / Momentum.
+- **Proposed Cost:** **1** (the designers intentionally chose this over the earlier 2-Cost suggestion).
+- **Proposed ability:** “Choose a card in your discard. Put it into your hand.”
+- **Flavor text:** “Is another man's trash.”
+- **Intent:** Extremely simple, unrestricted single-card discard retrieval. Recovers a Character, Action, or Item, but the recovered card still has to be played normally. The name deliberately sets up “One man's trash...” and the flavor text subverts the proverb by saying it is another man's trash too.
+- **Balance watchpoint:** At Cost 1, can retrieve any card, including powerful Actions; check repeated recursion with multiple copies before promotion. Avoid adding conditional baggage preemptively.
+- **Canonical separation:** No changes to `CARDS.json`, `DECKS.json`, rules, simulation, web, or builder; no canonical card ID assigned.
+
 ## Junkyard Visionary — BANKED Pawn Shop Customer idea, revised 18 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Saved as a **Customer** at the user's request during the Shady Pawn Shop Owner / Momentum brainstorming; does not override the 14 October paper-test process freeze.
