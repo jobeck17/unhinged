@@ -2,18 +2,19 @@ import {cardFace} from './card-face.js?v=face-02';
 import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
 import {aiAction,aiChoice} from './ai.js?v=meatshield-01';
 import './cat-lady.js?v=meatshield-01';
-import './rockstar.js?v=meatshield-01';
 import './reckless.js?v=meatshield-01';
 import './stonewall.js?v=meatshield-01';
 import './magician.js?v=cancel-payment-01';
+import {installPawnShop} from './pawn-shop.js?v=pawn-main-01';
+installPawnShop(Game,LEADERS);
 import {applyLandonLab} from './landon-lab.js?v=meatshield-01';
 const root=document.querySelector('#app');
 const leaderExpanded=new Set(matchMedia('(min-width:701px)').matches?[0,1]:[]);
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.';
+const rules='Shady Pawn Shop Owner: newly Stashed cards enter Rotated; close one Deal per Turn by Rotating 3 Ready Stash (max 4 Deals). At 2 or more Deals, Draw 2 per normal Draw step and Characters have Hothead. At 4 Deals, Stash twice per Turn, your Characters have +1 Power and Sucker Punch. Black Friday Employee can stay Rotated during your Ready step to discount Customers. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.';
 try{
- [pool,decks]=await Promise.all([fetch('../CARDS.json?v=meatshield-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=meatshield-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
+ [pool,decks]=await Promise.all([fetch('../CARDS.json?v=pawn-main-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=pawn-main-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
  ({pool,decks}=applyLandonLab(pool,decks));
  setup();
@@ -26,7 +27,7 @@ function setup(){
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
 function pile(label,count,sub='',kind='back'){
- const visual=kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
+ const visual=kind==='stash-rotated'?'<span class="mini-card card-back stash-rotated" aria-label="Some Stash Rotated"></span>':kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
  return '<div class="zone-pile"><span class="zone-label">'+esc(label)+'</span>'+visual+'<b>'+count+'</b>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</div>';
 }
 function zoneBar(p){
@@ -34,7 +35,7 @@ function zoneBar(p){
  return '<div class="zonebar '+(opp?'opponent-zones':'own-zones')+'">'+
    (opp?pile('Hand',s.hand.length,'hidden'):'')+
    pile('Deck',s.deck.length,'cards')+
-   pile('Stash',s.stash.length,s.fuel+' Ready')+(opp?'':'<button id="inspect-stash">Inspect your Stash</button>')+
+   pile('Stash',s.stash.length,s.fuel+' Ready · '+(s.stash.length-s.fuel)+' Rotated',s.stash.length>s.fuel?'stash-rotated':'back')+(opp?'':'<button id="inspect-stash">Inspect your Stash</button>')+
    pile('Discard',s.discard.length,top,'discard')+
  '</div>';
 }
@@ -46,19 +47,32 @@ function render(){
   wireCards();root.querySelector('#keep').onclick=async()=>{await game.mulligan(human,[...selected]);selected.clear();game.begin();phase='playing';render();await aiTurn()};return;
  }
  game.players.forEach((_,p)=>game.stashStates(p));
+ const pending=game.turn===human&&!busy&&game.players[human].clearancePending?.length;
+ if(pending){
+  const uid=game.players[human].clearancePending[0];
+  root.innerHTML='<section class="setup"><span class="eyebrow">BLACK FRIDAY EMPLOYEE · READY STEP</span><h1>Keep the sale running?</h1><p class="intro">This Employee was Rotated. Keep it Rotated to discount Customers, or Ready it to take Character actions.</p><div class="settings"><button class="primary" id="keep-clearance">Keep Rotated · Discount Customers</button><button id="end-clearance">Ready this Employee</button></div></section>';
+  root.querySelector('#keep-clearance').onclick=()=>{game.decideClearance(uid,true);render()};
+  root.querySelector('#end-clearance').onclick=()=>{game.decideClearance(uid,false);render()};
+  return;
+ }
  const active=game.turn===human&&!busy&&game.winner===null;
+ const pawnControls=game.name(human)==='Shady Pawn Shop Owner'
+ ?'<section class="pawn-controls"><div><strong>DEALS '+(game.players[human].deals||0)+' / 4</strong><small>Close a Deal: Rotate 3 Ready Stash · once per Turn</small></div><button id="close-deal" '+(!active||!game.canCloseDeal(human)?'disabled':'')+'>Close a Deal</button></section>'
+ :'';
  const instruction=game.winner!==null?game.decks[game.winner].leader+' wins':busy?(game.turn===human?'Resolving your action…':'Opponent is thinking…'):active?'Fight, Cause Trouble, build, or End Turn.':'Opponent is thinking…';
  root.innerHTML='<header><div><b class="brand">UNHINGED.</b><span class="eyebrow">MORDECAI 0.4 · ROUND '+game.round+'</span></div><button id="new">New match</button></header>'+
  '<section class="controls"><div><span class="eyebrow">'+esc(game.decks[game.turn].leader)+' · '+(active?'YOUR TURN':'ACTIVE')+'</span><p>'+esc(instruction)+'</p></div><div class="actions">'+(active?'<button id="end" class="primary">End Turn</button>':'')+'</div></section>'+
- dicePanel()+'<p class="scroll-hint">Swipe card rows sideways when the board gets crowded.</p><div class="tabletop">'+zoneBar(1-human)+'<div class="battlefield">'+row(1-human)+row(human)+'</div>'+zoneBar(human)+'</div>'+
+ dicePanel()+pawnControls+'<p class="scroll-hint">Swipe card rows sideways when the board gets crowded.</p><div class="tabletop">'+zoneBar(1-human)+'<div class="battlefield">'+row(1-human)+row(human)+'</div>'+zoneBar(human)+'</div>'+
  '<section class="hand"><div class="section-head"><h2>Your hand <small>'+game.players[human].hand.length+' cards</small></h2><span>Stash '+game.players[human].fuel+'/'+game.players[human].stash.length+' Ready</span></div><div class="hand-cards">'+game.players[human].hand.map((id,i)=>cardHTML({id},'hand',human,i)).join('')+'</div></section>'+
  '<div class="lower"><details><summary>What this lab is testing</summary><p>A Ready Character can Attack, Cause Trouble, or stay Ready and protected from ordinary Attacks. At 10 Composure the Leader hits Breaking Point. At 0 the hidden Last Straw is revealed and the Turn ends after it resolves. While at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes the Leader Unhinged. Florida Man, HOA President and Birthday Party Magician have their audited Breaking Point abilities; other Leader Breaking Points and selectable Last Straw effects remain pending.</p></details><details><summary>Recent events</summary>'+game.log.slice(0,10).map(x=>'<p>'+esc(x)+'</p>').join('')+'</details></div>';
- wireCards();root.querySelector('#end')?.addEventListener('click',()=>humanAction(()=>game.pass()));root.querySelector('#new').onclick=()=>{game=null;phase='setup';modal=null;selected.clear();setup()};if(modal)showModal(modal);
+ wireCards();
+ root.querySelector('#close-deal')?.addEventListener('click',()=>humanAction(()=>game.closeDeal(human)));
+ root.querySelector('#end')?.addEventListener('click',()=>humanAction(()=>game.pass()));root.querySelector('#new').onclick=()=>{game=null;phase='setup';modal=null;selected.clear();setup()};if(modal)showModal(modal);
 }
 function row(p){
  const s=game.players[p],d=game.decks[p],l=LEADERS[d.leader],chars=game.chars(p),items=s.board.filter(x=>game.card(x).type==='Item');
  const slots=chars.map(x=>cardHTML(x,'board',p)).join('')+(chars.length?'<div class="empty-slot"><span>+<small>NO CHARACTER CAP</small></span></div>':'<div class="empty-slot"><span>+<small>OPEN BOARD</small></span></div>');
- return '<section class="battle-row '+(p===human?'own':'opponent')+'"><article class="leader"><div class="leader-heading"><div><span class="eyebrow">'+(p===human?'YOU':'OPPONENT')+' · LEADER</span><strong>'+esc(d.leader)+'</strong></div><span class="composure">'+s.hp+'<small>COMPOSURE</small></span></div><span class="leader-info">'+chars.length+' Characters · '+s.fuel+'/'+s.stash.length+' Ready Stash</span><details class="leader-abilities" data-leader="'+p+'" '+(leaderExpanded.has(p)?'open':'')+'><summary>Leader abilities'+(s.breakingPointHit?' · Breaking Point used':'')+'</summary><span class="leader-passive"><b>PASSIVE</b><br>'+esc(l.passive)+'</span>'+(l.breaking?'<span class="leader-passive"><b>BREAKING POINT'+(s.breakingPointHit?' · USED':'')+'</b><br>'+esc(l.breaking)+'</span>':'')+'</details></article><div class="slots">'+slots+'</div></section>'+
+ return '<section class="battle-row '+(p===human?'own':'opponent')+'"><article class="leader"><div class="leader-heading"><div><span class="eyebrow">'+(p===human?'YOU':'OPPONENT')+' · LEADER</span><strong>'+esc(d.leader)+'</strong></div><span class="composure">'+s.hp+'<small>COMPOSURE</small></span></div><span class="leader-info">'+chars.length+' Characters · '+s.fuel+'/'+s.stash.length+' Ready Stash'+(d.leader==='Shady Pawn Shop Owner'?' · '+(s.deals||0)+' Deals':'')+'</span><details class="leader-abilities" data-leader="'+p+'" '+(leaderExpanded.has(p)?'open':'')+'><summary>Leader abilities'+(s.breakingPointHit?' · Breaking Point used':'')+'</summary><span class="leader-passive"><b>PASSIVE</b><br>'+esc(l.passive)+'</span>'+(l.breaking?'<span class="leader-passive"><b>BREAKING POINT'+(s.breakingPointHit?' · USED':'')+'</b><br>'+esc(l.breaking)+'</span>':'')+'</details></article><div class="slots">'+slots+'</div></section>'+
  (items.length?'<section class="item-shelf"><div class="item-label">'+(p===human?'YOUR':'OPPONENT')+' ITEMS</div><div class="item-cards">'+items.map(x=>cardHTML(x,'board',p)).join('')+'</div></section>':'');
 }
 function cardHTML(x,zone,p,index,chosen=false){
@@ -90,7 +104,8 @@ function close(){modal=null;document.querySelector('.overlay')?.remove()}
 async function ask(r){if(r.player!==human)return aiChoice(game,r);return new Promise(resolve=>{let chosen=[];const html='<div class="overlay"><div class="sheet"><div class="type">CHOOSE</div><h2>'+esc(r.title)+'</h2>'+(r.attackContext?'<div class="attack-context"><strong>'+esc(r.attackContext.name)+' · '+esc(r.attackContext.power)+' Attack</strong><span>Health '+esc(r.attackContext.guard)+' · Damage '+esc(r.attackContext.damage)+'</span></div>':'')+'<p class="muted">'+(r.multi?(r.min?'Choose exactly '+r.min+'.':'Choose up to '+(r.max||r.options.length)+'.'):'Choose one.')+'</p>'+r.options.map((o,i)=>'<button class="choice" data-c="'+i+'">'+esc(o.label)+'</button>').join('')+'<div class="modal-actions">'+(r.title==='Attack which target?'?'<button id="attack-back">Back</button>':(r.mandatory?'':'<button id="cancel">Cancel</button>'))+(r.multi?'<button id="done" class="primary" '+(r.min?'disabled':'')+'>Confirm 0</button>':'')+'</div></div></div>';modal={kind:'choice',html};showModal(modal);const finish=v=>{close();resolve(v)};document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const i=+b.dataset.c;if(!r.multi)return finish(r.options[i].value);if(chosen.includes(i)){chosen=chosen.filter(x=>x!==i);b.classList.remove('selected')}else if(!r.max||chosen.length<r.max){chosen.push(i);b.classList.add('selected')}document.querySelector('#done').textContent='Confirm '+chosen.length;document.querySelector('#done').disabled=chosen.length<(r.min||0)});document.querySelector('#cancel')?.addEventListener('click',()=>finish(r.multi?[]:null));document.querySelector('#attack-back')?.addEventListener('click',()=>finish(null));document.querySelector('#done')?.addEventListener('click',()=>{if(chosen.length>=(r.min||0))finish(chosen.map(i=>r.options[i].value))})})}
 function start(a,b){human=0;game=new Game(pool,{...decks,decks:[decks.decks[a],decks.decks[b]]},ask,()=>{if(phase==='playing'&&!modal)render()},{firstPlayer:human});game.mulligan(1,[]);phase='mulligan';render()}
 async function humanAction(fn){if(busy||game.turn!==human)return;busy=true;render();try{await fn()}catch(e){console.error(e);alert(e.message)}finally{busy=false;render();await aiTurn()}}
-async function aiTurn(){if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;busy=true;render();let n=0;try{while(game.turn!==human&&game.winner===null&&n++<70){await new Promise(r=>setTimeout(r,170));const m=aiAction(game,game.turn);if(m.type==='pass')await game.pass();else if(m.type==='stash')game.stash(m.index,game.turn);else if(m.type==='attack')await game.attack(m.uid);else if(m.type==='trouble')await game.causeTrouble(m.uid);else if(m.type==='play')await game.play(m.index);else if(m.type==='activate')await game.activate(m.uid);render()}if(n>=70)throw Error('AI action limit reached')}finally{busy=false;render()}}
+async function aiTurn(){if(phase!=='playing'||!game||game.winner!==null||game.turn===human||busy)return;busy=true;render();let n=0;try{while(game.turn!==human&&game.winner===null&&n++<70){await new Promise(r=>setTimeout(r,170));if(game.name(game.turn)==='Shady Pawn Shop Owner'&&game.canCloseDeal(game.turn)&&(game.players[game.turn].deals||0)<2){await game.closeDeal(game.turn);render();continue;}
+ const m=aiAction(game,game.turn);if(m.type==='pass')await game.pass();else if(m.type==='stash')game.stash(m.index,game.turn);else if(m.type==='attack')await game.attack(m.uid);else if(m.type==='trouble')await game.causeTrouble(m.uid);else if(m.type==='play')await game.play(m.index);else if(m.type==='activate')await game.activate(m.uid);render()}if(n>=70)throw Error('AI action limit reached')}finally{busy=false;render()}}
 
 function dicePanel(){
  const rolls=game.diceRolls||[];if(!rolls.length)return '';
