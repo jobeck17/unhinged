@@ -1,15 +1,16 @@
-## Guy Selling a Rusty Lawnmower — BANKED Pawn Shop Customer idea, 18 October 2026
+## Junkyard Visionary — BANKED Pawn Shop Customer idea, revised 18 October 2026
 
 **Status: BANKED IDEA ONLY — not canonical, not implemented, not playtest-approved.** Saved as a **Customer** at the user's request during the Shady Pawn Shop Owner / Momentum brainstorming; does not override the 14 October paper-test process freeze.
 
-- **Working name:** Guy Selling a Rusty Lawnmower.
+- **Working name:** Junkyard Visionary.
+- **Previously called:** Guy Selling a Rusty Lawnmower (same proposed Character, renamed; not a second card).
 - **Type / Style / Trait:** Character / Momentum / **Customer** (proposed trait, not yet assigned in canonical data).
 - **Based on:** Guy Who Mows at 7 AM (P043) in the Washed-Up Rock Star deck, for a potential retheme and mechanical rework; not a replacement in production.
 - **Proposed Cost:** 3.
 - **Proposed stats (Power / Guard / Trouble):** **2 / 3 / 3**.
 - **Proposed ability:** “When this enters play, you may Draw 1 card, then Discard 1 card.”
 - **Flavor text:** “Dude, did you find that at a dump?” — Shady Pawn Shop Owner.
-- **Design intention:** The customer tries to sell worthless junk; simple hand filtering rather than another Stash-acceleration or keyword ability. Draw happens before Discard, with no net hand-size gain.
+- **Design intention:** A self-proclaimed visionary tries to sell a rusty lawnmower the shop considers worthless; simple hand filtering rather than another Stash-acceleration or keyword ability. Draw happens before Discard, with no net hand-size gain.
 - **Terminology note:** “Guard” is the requested working label; current canonical rules call the Character durability stat Health.
 - **Canonical separation:** No changes to `CARDS.json`, `DECKS.json`, rules, simulation, web, or builder; no canonical card ID or trait reassignment.
 
