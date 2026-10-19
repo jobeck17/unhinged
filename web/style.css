@@ -57,3 +57,11 @@ body:has(.overlay){overflow:hidden}
 
 /* Dark secondary controls on the paper dialog need light labels. */
 .sheet button:not(.choice):not(.primary):not(.trouble-button){color:var(--ink)}.sheet .trouble-button{color:#fff}
+
+/* Pawn Shop production Leader controls. */
+.pawn-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;margin:12px auto;max-width:1100px;border:1px solid #976c36;background:#30251b;border-radius:14px;color:#fff}
+.pawn-controls strong{font-size:1.13rem;letter-spacing:.05em}.pawn-controls small{display:block;color:#e1c8a4;margin-top:4px}
+.pawn-controls button{padding:10px 16px;border-radius:10px;background:#efb958;color:#302010;font-weight:800}
+.pawn-controls button:disabled{opacity:.42;cursor:not-allowed}
+.zone-pile .stash-rotated{transform:rotate(90deg) scale(.82);transform-origin:center center;top:2px}
+.zone-pile small{max-width:130px}
