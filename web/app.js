@@ -5,7 +5,7 @@ import './cat-lady.js?v=meatshield-01';
 import './reckless.js?v=meatshield-01';
 import './stonewall.js?v=meatshield-01';
 import './magician.js?v=cancel-payment-01';
-import {installPawnShop} from './pawn-shop.js?v=pawn-main-02';
+import {installPawnShop} from './pawn-shop.js?v=pawn-main-03';
 installPawnShop(Game,LEADERS);
 import {applyLandonLab} from './landon-lab.js?v=meatshield-01';
 const root=document.querySelector('#app');
