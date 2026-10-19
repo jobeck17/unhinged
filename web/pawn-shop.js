@@ -1,7 +1,7 @@
 // Shady Pawn Shop Owner production card/Leader package. Canonical Momentum 40-card first-test build.
 const PS='Shady Pawn Shop Owner';
 const ID={antique:'P181',gold:'P182',heirloom:'P183',grandma:'P184',
- dress:'P185',bad:'P186',junk:'P187',trash:'P188',clerk:'P189',refund:'P190'};
+ dress:'P185',bad:'P186',junk:'P187',trash:'P188',clerk:'P189',refund:'P190',lifetime:'P191'};
 export function installPawnShop(Game,LEADERS){
  LEADERS[PS]={
   style:'Momentum',
@@ -28,8 +28,11 @@ export function installPawnShop(Game,LEADERS){
   this.say('Pawn Shop Owner closes a Deal · '+s.deals+'/4 Deals');
   await this.advance();return true;
  };
+ Game.prototype.canSpendPawnDeals=function(p,n){
+  return Number.isInteger(n)&&n>0&&deals(this,p)>=n&&(!grandmaPresent(this,p)||deals(this,p)-n>=1);
+ };
  Game.prototype.canSpendPawnDeal=function(p){
-  return deals(this,p)>0&&!(deals(this,p)===1&&grandmaPresent(this,p));
+  return this.canSpendPawnDeals(p,1);
  };
  Game.prototype.spendPawnDeal=async function(p){
   if(!this.canSpendPawnDeal(p))return false;
@@ -39,10 +42,19 @@ export function installPawnShop(Game,LEADERS){
   for(const x of [...this.chars(p)])await this.checkDefeat(x);
   return true;
  };
+ Game.prototype.spendPawnDeals=async function(p,n){
+  if(!this.canSpendPawnDeals(p,n))return false;
+  this.players[p].deals=clamping(deals(this,p)-n);
+  this.say('Spends '+n+' Deals · '+deals(this,p)+'/4 remaining');
+  for(const x of [...this.chars(p)])await this.checkDefeat(x);
+  return true;
+ };
  const start=Game.prototype.startTurn;
  Game.prototype.startTurn=function(){
   const p=this.turn,s=this.players[p];
   const rotated=this.chars(p).filter(x=>x.id===ID.clerk&&!x.ready).map(x=>x.uid);
+  // The Action's Trouble lock expires at the beginning of the owner's next Turn.
+  for(const x of this.chars(p))delete x.pawnLifetimeNoTrouble;
   s.pawnStashCount=0;s.closedDealThisTurn=false;s.clearancePending=[];
   const outcome=start.call(this);
   for(const uid of rotated){
@@ -132,6 +144,10 @@ export function installPawnShop(Game,LEADERS){
  };
  // Cost checks for other Styles must be pure: don't even add an empty
  // nextCharDiscount property while inspecting or cancelling a non-Customer.
+ const canCauseTrouble=Game.prototype.canCauseTrouble;
+ Game.prototype.canCauseTrouble=function(x){
+  return !x?.pawnLifetimeNoTrouble&&canCauseTrouble.call(this,x);
+ };
  const playCost=Game.prototype.playCost;
  Game.prototype.playCost=function(p,id){
   const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
@@ -147,6 +163,7 @@ export function installPawnShop(Game,LEADERS){
   if(id===ID.heirloom&&!this.chars(p).length)return false;
   if(id===ID.trash&&!this.players[p].discard.length)return false;
   if(id===ID.refund&&(!this.canSpendPawnDeal(p)||!this.chars(1-p).some(x=>this.card(x).cost<=4)))return false;
+  if(id===ID.lifetime&&!this.canSpendPawnDeals(p,2))return false;
   const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
   if(!add)return canPlay.call(this,index,p);
   const s=this.players[p],had=Object.prototype.hasOwnProperty.call(s,'nextCharDiscount'),prev=s.nextCharDiscount,flag=this._pawnApplyingDiscount;
@@ -181,6 +198,7 @@ export function installPawnShop(Game,LEADERS){
    picked=await this.pick('Attach Family Heirloom to your Character',p,this.chars(p));
    if(picked==null)return false;
   }
+  if(id===ID.lifetime&&!this.canSpendPawnDeals(p,2))return false;
   if(id===ID.refund){
    const legal=this.chars(1-p).filter(x=>this.card(x).cost<=4);
    if(!this.canSpendPawnDeal(p)||!legal.length)return false;
@@ -245,6 +263,16 @@ export function installPawnShop(Game,LEADERS){
   if(id===ID.trash){
    const i=await this.pickDiscard(p,"One Man's Trash: Return any card");
    if(i!=null)s.hand.push(...s.discard.splice(i,1));return;
+  }
+  if(id===ID.lifetime){
+   if(await this.spendPawnDeals(p,2)){
+    for(const x of this.chars(p)){
+     x.ready=true;
+     x.pawnLifetimeNoTrouble=true;
+    }
+    this.say('The Deal of a Lifetime: All Characters Ready for another Attack, not Trouble');
+   }
+   return;
   }
   if(id===ID.refund){
    if(await this.spendPawnDeal(p)){
