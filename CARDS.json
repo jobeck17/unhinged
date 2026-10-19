@@ -4824,6 +4824,21 @@
       "digital_status": "implemented-pawn-shop-2026-10-19",
       "complexity": "basic",
       "family": "Pawn Shop"
+    },
+    {
+      "id": "P191",
+      "name": "The Deal of a Lifetime",
+      "type": "Action",
+      "cost": 2,
+      "style": "Momentum",
+      "family": "Pawn Shop",
+      "traits": [],
+      "keywords": [],
+      "text": "Spend 2 Deals: Ready all Characters you control. Those Characters can't Cause Trouble this Turn.",
+      "flavor": "“It's too good to be true.”",
+      "status": "testing",
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "advanced"
     }
   ],
   "misdirection_audit": {
