@@ -4839,6 +4839,26 @@
       "status": "testing",
       "digital_status": "implemented-pawn-shop-2026-10-19",
       "complexity": "advanced"
+    },
+    {
+      "id": "P192",
+      "name": "Pawn Shop Scalper",
+      "type": "Character",
+      "cost": 4,
+      "style": "Momentum",
+      "family": "Pawn Shop",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [],
+      "power": 3,
+      "guard": 4,
+      "trouble": 1,
+      "text": "Resell Value: When this enters play, you may Spend 1 Deal to Dismiss an opposing Character costing 3 or less. If you do, Draw 1 card.",
+      "flavor": "“I'm reselling this for double.”",
+      "status": "testing",
+      "digital_status": "implemented-pawn-shop-2026-10-19",
+      "complexity": "advanced"
     }
   ],
   "misdirection_audit": {
