@@ -264,6 +264,8 @@ This triggers for each qualifying Defeat, with no once-per-Turn limit. A Defeat 
 - At **4 Deals**, keep the Ready-on-entry Stash, 2-card Draw, and Hothead; you may Stash **twice** during your Turn, and your Characters get **+1 Power** and **Sucker Punch**.
 - The number of Deals can rise or fall. As soon as it crosses a threshold, continuous benefits change accordingly. The first player still skips their first Draw step.
 
+**Pawn Shop Scalper (P192):** Cost 4 Momentum Customer Character (3 Power / 4 Health / 1 Trouble). On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less, Ready or Rotated, then Draw 1 card. Without a Deal or a legal target, it still enters play. Grandma's final Deal protection applies.
+
 **Deals:** A Leader's Deal total starts at **0**. Deal tokens are public, are not Stash, and may be gained by effects such as Grandma With a Million-Dollar Doorstop. Deals are capped at **4**. Paying "Spend 1 Deal" reduces the total by one; if Grandma With a Million-Dollar Doorstop is in play, you cannot spend your last Deal. Cards referencing Deals also work in other legal Momentum decks; only the Shady Pawn Shop Owner gets the Leader-specific threshold buffs.
 
 **Customer / Staff:** Traits on Characters, not additional Styles. Black Friday Employee may remain Rotated during the controller's Ready step, discounting other Customers by 1 for each Employee kept Rotated that way. The controller chooses whether to Ready or keep it Rotated.
