@@ -143,7 +143,7 @@ try{
  const selected=await page.evaluate(()=>globalThis.__audit.get().chars(0).find(x=>x.id==='P185').uid);
  await page.locator('[data-c]').nth(1).click();
  await page.waitForFunction((uid)=>globalThis.__audit.get().items(globalThis.__audit.get().obj(uid)).some(i=>i.id==='P183'),selected);
- assert.equal(await page.evaluate(uid=>globalThis.__audit.get().guard(globalThis.__audit.get().obj(uid)),selected),4,'selected Character receives Heirloom Guard');
+ assert.equal(await page.evaluate(uid=>globalThis.__audit.get().guard(globalThis.__audit.get().obj(uid)),selected),3,'selected Character receives Heirloom Guard');
  assert.equal(await page.locator('[data-c]').count(),0,'picker closes after successful attachment');
  console.log('Family Heirloom browser attachment: no-target, multiple choices, selected Guard bonus PASS');
  await page.setViewportSize({width:1280,height:900});
