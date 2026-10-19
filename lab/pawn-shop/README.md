@@ -31,6 +31,14 @@ Card copies: **24 Characters / 12 Actions / 4 Items**. This deliberately repetit
 
 This is not yet user-approved as a final design. Its purpose is to let the player **spend** Deals and test whether Leader bonuses and Family Heirloom scale *down*, not just up. Without a Deal spender, the proposed Leader's economy had no meaningful cash-out decision. The earlier one-line damage-only draft was replaced **only for this prototype**.
 
+## Pawn Shop v0.1 Stash rule — Rotated on entry (19 October 2026)
+
+**This lab intentionally differs from canonical Mordecai 0.4.** When Shady Pawn Shop Owner Stashes a card from hand, it enters face-down **Rotated** (not usable to pay Costs or Close a Deal until the next Ready step). During the next Turn's Ready step, it Readies as normal. **Antique Holder's additional Stash** also enters Rotated. At 4 Deals, both allowed Stashes enter Rotated.
+
+Normal Unhinged canon in `RULES.md` still says Stash enters Ready. The exception is implemented only in `lab/pawn-shop/pawn-shop.js`, not in `web/`.
+
+Playtest watchpoint: Slower Turn 1–3 development could make the Leader's three-Ready-Stash Deal activation or Cost 3 Characters too slow. Compare how the deck feels before considering canon promotion.
+
 ## Leader behavior in this lab
 
 **Shady Pawn Shop Owner (Momentum)**: Once on your own Turn, press **Close a Deal** to Rotate 3 Ready Stash and gain 1 Deal; maximum 4.
