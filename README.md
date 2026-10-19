@@ -20,7 +20,7 @@ The Scheme, Board Width, and old Composure folders remain development history un
 
 [Play Pawn Shop in the main game](https://jobeck17.github.io/unhinged/web/?v=pawnshop-main-01) · [Build a Momentum deck](https://jobeck17.github.io/unhinged/builder/?v=pawnshop-main-01)
 
-Pawn Shop earns **Deals** from its Leader or Grandma, gains extra Draw/Hothead at 2 Deals, and gains 2 Stashes/Power/Sucker Punch at 4 Deals. It can spend Deals on No Refunds. **Its Stash enters Rotated**, so its economics differ from all other Leaders' Ready-on-entry normal Stash. Antique Holder's extra Stash follows the Leader-specific rule. Character and Item cards remain accessible to normal Momentum decks under normal Style construction rules, including Customer traits.
+Pawn Shop earns **Deals** from its Leader or Grandma, gains extra Draw/Hothead at 2 Deals, and gains 2 Stashes/Power/Sucker Punch at 4 Deals. It can spend Deals on No Refunds. **New Stash enters Rotated at 0–1 Deals, but enters Ready immediately at 2 or more Deals.** Antique Holder's extra Stash follows that Deal-based threshold; other Leaders still Stash Ready as normal. Character and Item cards remain accessible to normal Momentum decks under normal Style construction rules, including Customer traits.
 
 The former Rock Star cards remain in the Momentum pool as standalone cards. Rock Star's prior deck/Leader are retained in Git history, not current. The Pawn Shop draft's stats, copy counts, and Leader Breaking Point are pending further audit; production implementation and tests are not evidence of balance. The separate `lab/pawn-shop/` directory remains an archived first-prototype snapshot rather than a second canonical source.
 
