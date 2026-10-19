@@ -3,8 +3,8 @@ const STYLES=['Reckless','Momentum','Misdirection','Salvage','Stonewall','Expend
 const TYPES=['Character','Action','Item'];
 const RULEBREAKERS=new Set(['Crazy Cat Lady','Mad Scientist']);
 const state={pool:null,decks:null,leader:'Florida Man',secondary:'',name:'New Deck',cards:{},search:'',type:'All',cost:'All',sort:'cost',mobile:'cards'};
-const SAVE='unhinged-builder-mordecai-04-pawnshop';
-const OLD_SAVE='unhinged-builder-mordecai-04';
+const SAVE='unhinged-builder-mordecai-04';
+const OLD_SAVE='unhinged-builder-carl-1';
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function slug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-')}
 function total(){return Object.values(state.cards).reduce((a,b)=>a+b,0)}
