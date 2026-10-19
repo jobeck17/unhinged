@@ -41,7 +41,7 @@ console.log('Rock Star builder cleanup: 30 old Momentum IDs blocked; Pawn Shop, 
 // Card families are browsing metadata, not new Styles or legality rules.
 const pawnCards=pool.cards.filter(c=>c.family==='Pawn Shop');
 const catCards=pool.cards.filter(c=>c.family==='Cat Lady');
-assert.equal(pawnCards.length,11,'all eleven Pawn Shop cards are explicitly tagged');
+assert.equal(pawnCards.length,12,'all twelve Pawn Shop cards are explicitly tagged');
 assert.equal(catCards.length,18,'all Cat Lady cards are explicitly tagged');
 assert([...pawnCards,...catCards].every(c=>c.style==='Momentum'),'both groups retain Momentum Style');
 assert.match(app,/function familyGroups\(\)/,'family filter groups are generated from legal cards');
@@ -53,10 +53,12 @@ assert.match(app,/style-readout/,'primary Style is read-only rather than a fake 
 assert.match(app,/id=\"special-construction\"/,'restricted Leaders explain the unavailable secondary Style');
 assert.match(app,/None · Mono /,'standard Leaders can choose a secondary Style');
 assert.doesNotMatch(app,/Rulebreaker pool/,'old ambiguous Cat Lady label removed');
-console.log('Momentum groups: Pawn Shop (11), Cat Lady (18); style/legalities unchanged');
+console.log('Momentum groups: Pawn Shop (12), Cat Lady (18); style/legalities unchanged');
 
 const pawn=decks.decks.find(d=>d.leader==='Shady Pawn Shop Owner');
-assert.equal(pawn.cards.P191,2,'new two-Deal Action has two starter copies');
+assert.equal(pawn.cards.P191,2,'two-Deal Action has two starter copies');
+assert.equal(pawn.cards.P192,2,'Scalper has two starter copies');
+assert.equal(pawn.cards.P185,2,'two Dress Guy copies replaced');
 assert.equal(pawn.cards.P186,2,'two plain Hothead copies were replaced');
 assert.equal(pool.cards.find(c=>c.id==='P191').family,'Pawn Shop');
 const cat=decks.decks.find(d=>d.leader==='Crazy Cat Lady');
