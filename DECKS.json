@@ -1,8 +1,8 @@
 {
   "version": "0.4-mordecai-eight",
   "card_pool": "0.4-mordecai",
-  "date": "2026-10-06",
-  "status": "Mordecai 0.4 production baseline · eight decks · content/balance audit pending",
+  "date": "2026-10-19",
+  "status": "Mordecai 0.4 production baseline · eight decks · Pawn Shop replaces Rock Star · balance audit ongoing",
   "rules": "RULES.md",
   "decks": [
     {
@@ -99,44 +99,41 @@
       "breaking_point": "You Ain’t Seen Nothing Yet! Roll a D6: 1 — Rotate a chosen Ready friendly Character; 2–5 — Ready a chosen friendly Rotated Character; 6 — Ready all your Characters."
     },
     {
-      "name": "Comeback Tour",
-      "leader": "Washed-Up Rock Star",
+      "name": "Everything Must Go — Pawn Shop First Test",
+      "leader": "Shady Pawn Shop Owner",
       "styles": [
         "Momentum"
       ],
       "packages": [
-        "Chain / Acceleration",
-        "Low Hand"
+        "Deals / thresholds",
+        "Customer discounts",
+        "Rotated Stash on entry (Leader rule)",
+        "Pawn Shop item attachments"
       ],
       "cards": {
-        "P032": 4,
-        "P033": 4,
-        "P037": 1,
-        "P038": 2,
-        "P043": 4,
-        "P047": 2,
-        "P123": 4,
-        "P048": 2,
-        "P049": 3,
-        "P050": 2,
-        "P052": 2,
-        "P053": 3,
-        "P054": 2,
-        "P055": 1,
-        "P059": 2,
-        "P060": 2
+        "P181": 4,
+        "P182": 4,
+        "P183": 4,
+        "P184": 4,
+        "P185": 4,
+        "P186": 4,
+        "P187": 4,
+        "P188": 4,
+        "P189": 4,
+        "P190": 4
       },
       "mulligan_priority": [
-        "A cheap Character",
-        "A Low Hand payoff",
-        "Reply All, Reset the Vibes, or another refill bridge"
+        "A low-cost Character",
+        "Grandma With a Million-Dollar Doorstop or another Deal engine",
+        "Cards that can become Stash"
       ],
       "watchpoints": [
-        "Can the deck intentionally reach zero cards without making obviously bad plays?",
-        "Does Comeback Tour refill often enough to sustain Momentum without causing routine deck-out?",
-        "Do acceleration cards help create explosive turns rather than simply emptying the hand?"
+        "Can a Rotated-on-entry Stash economy reach 3 Ready Stash fast enough to close a Deal?",
+        "Does Grandma grant Deals too quickly?",
+        "Are Customer discounts and No Refunds interactive?",
+        "How often do Characters Cause Trouble compared with merely gaining Power?"
       ],
-      "status_note": "Landon Rock Star lab promoted to Mordecai as a TESTING translation. Bad Publicity Is Still Publicity: whenever this Leader loses Composure, Draw that many cards. The 40-card Comeback Tour list is unchanged; balance evidence is pending under Mordecai.",
+      "status_note": "CURRENT eight-deck slot replacing Washed-Up Rock Star at designer request. First playable 40-card Pawn Shop draft: 4 each of ten designs. Stats/copy counts remain provisional. Specific Leader Breaking Point pending design.",
       "composure": 20
     },
     {
