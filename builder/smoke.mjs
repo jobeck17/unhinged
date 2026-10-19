@@ -47,7 +47,11 @@ assert([...pawnCards,...catCards].every(c=>c.style==='Momentum'),'both groups re
 assert.match(app,/function familyGroups\(\)/,'family filter groups are generated from legal cards');
 assert.match(app,/id="family"/,'family chooser shown in library');
 assert.match(app,/state\.family!=='All'/,'family chooser limits visible cards without changing construction');
-assert.match(app,/Momentum · Cat Lady cards/,'Cat Lady displayed as Momentum rather than Rulebreaker pool');
+assert.match(app,/Momentum · Special Cat Lady deckbuilding/,'Cat Lady visibly retains Momentum Style');
+assert.match(app,/Primary Style/,'every Leader has a distinct primary Style display');
+assert.match(app,/style-readout/,'primary Style is read-only rather than a fake dropdown');
+assert.match(app,/id=\"special-construction\"/,'restricted Leaders explain the unavailable secondary Style');
+assert.match(app,/None · Mono /,'standard Leaders can choose a secondary Style');
 assert.doesNotMatch(app,/Rulebreaker pool/,'old ambiguous Cat Lady label removed');
 console.log('Momentum groups: Pawn Shop (10), Cat Lady (18); style/legalities unchanged');
 
