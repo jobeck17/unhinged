@@ -7,13 +7,13 @@ import '../../web/reckless.js?v=meatshield-01';
 import '../../web/stonewall.js?v=meatshield-01';
 import '../../web/magician.js?v=cancel-payment-01';
 import {applyLandonLab} from '../../web/landon-lab.js?v=meatshield-01';
-import {installPawnShop} from './pawn-shop.js';
+import {installPawnShop} from './pawn-shop.js?v=ps-stash-02';
 installPawnShop(Game,LEADERS);
 const root=document.querySelector('#app');
 const leaderExpanded=new Set(matchMedia('(min-width:701px)').matches?[0,1]:[]);
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='PAWN SHOP LAB: Close 1 Deal per Turn by Rotating 3 Ready Stash, maximum 4 Deals. At 2+ Deals, Draw 2 and Characters have Hothead; at 4 Deals, also Stash twice and gain +1 Power and Sucker Punch. Black Friday Employee must remain Rotated during the Ready step to discount Customers. No Refunds spends a Deal to Dismiss an opposing Character costing 4 or less. This is an unbalanced experiment. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Guard / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.';
+const rules='PAWN SHOP LAB: Newly Stashed cards enter Rotated and Ready at the start of your next Turn. Close 1 Deal per Turn by Rotating 3 Ready Stash, maximum 4 Deals. At 2+ Deals, Draw 2 and Characters have Hothead; at 4 Deals, also Stash twice and gain +1 Power and Sucker Punch. Black Friday Employee must remain Rotated during the Ready step to discount Customers. No Refunds spends a Deal to Dismiss an opposing Character costing 4 or less. This is an unbalanced experiment. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Guard / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.';
 try{
  [pool,decks]=await Promise.all([fetch('../../CARDS.json?v=pawn-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../../DECKS.json?v=pawn-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
@@ -36,7 +36,7 @@ function setup(){
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
 function pile(label,count,sub='',kind='back'){
- const visual=kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
+ const visual=kind==='stash-rotated'?'<span class="mini-card card-back stash-rotated" aria-label="Stash includes Rotated cards"></span>':kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
  return '<div class="zone-pile"><span class="zone-label">'+esc(label)+'</span>'+visual+'<b>'+count+'</b>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</div>';
 }
 function zoneBar(p){
@@ -44,7 +44,7 @@ function zoneBar(p){
  return '<div class="zonebar '+(opp?'opponent-zones':'own-zones')+'">'+
    (opp?pile('Hand',s.hand.length,'hidden'):'')+
    pile('Deck',s.deck.length,'cards')+
-   pile('Stash',s.stash.length,s.fuel+' Ready')+(opp?'':'<button id="inspect-stash">Inspect your Stash</button>')+
+   pile('Stash',s.stash.length,s.fuel+' Ready · '+(s.stash.length-s.fuel)+' Rotated',s.stash.length>s.fuel?'stash-rotated':'back')+(opp?'':'<button id="inspect-stash">Inspect your Stash</button>')+
    pile('Discard',s.discard.length,top,'discard')+
  '</div>';
 }
