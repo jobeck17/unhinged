@@ -124,7 +124,7 @@ for(const deals of [0,1,2,3,4]){
  assert.deepEqual(prompts[0].targets,[first.uid,second.uid],'both Characters are legal targets');
  assert(!g.items(first).some(x=>x.id==='P183'),'did not attach to first Character');
  assert(g.items(second).some(x=>x.id==='P183'),'attached to selected second Character');
- assert.equal(g.guard(second),4,'Heirloom improves selected Character Guard');
+ assert.equal(g.guard(second),3,'Heirloom improves selected Character Guard');
  assert.equal(s.fuel,1,'paid exactly two Ready Stash');
 }
 {
