@@ -1,7 +1,7 @@
 // Isolated Pawn Shop Stash regression tests; never touch canonical data.
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {Game,LEADERS} from '../../web/engine.js';
+import {Game,LEADERS} from '../../web/engine.js?v=mordecai-04-meatshield-01';
 import '../../web/cat-lady.js';
 import '../../web/reckless.js';
 import '../../web/stonewall.js';
