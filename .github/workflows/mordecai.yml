@@ -43,6 +43,7 @@ jobs:
           node --check lab/pawn-shop/app.js
           node --check lab/pawn-shop/pawn-shop.js
           node --check lab/pawn-shop/card-face.js
+          node lab/pawn-shop/stash.test.mjs
           node -e "const fs=require('node:fs'); const cards=JSON.parse(fs.readFileSync('lab/pawn-shop/cards.json','utf8')).cards; const deck=JSON.parse(fs.readFileSync('lab/pawn-shop/deck.json','utf8')); if(Object.values(deck.cards).reduce((sum,n)=>sum+n,0)!==40)process.exit(1); if(Object.keys(deck.cards).some(id=>!cards.find(c=>c.id===id)))process.exit(1)"
       - run: node --check poll/app.js
       - run: node --check poll/questions.js
