@@ -133,6 +133,9 @@ try{
  // Retired Rock Star-era Momentum package is absent from the current builder,
  // even when chosen as a second Style or loaded from an older saved deck.
  await page.selectOption('#leader','Shady Pawn Shop Owner');
+ assert.equal((await page.locator('.style-readout').innerText()).trim(),'Momentum','Pawn Shop also shows Momentum as primary Style');
+ assert.match(await page.locator('#secondary option').first().innerText(),/None · Mono Momentum/);
+ assert(await page.locator('#secondary').isEnabled(),'Pawn Shop can select a secondary Style');
  assert.match(await page.locator('#grid').innerText(),/Antique Holder|Family Heirloom/);
  assert.doesNotMatch(await page.locator('#grid').innerText(),/Wedding DJ|Reunion Tour Drummer|One-Hit Wonder|Portable Bluetooth Speaker/);
  await page.selectOption('#secondary','Misdirection');
@@ -160,16 +163,18 @@ try{
 
  // Cat Lady is a Momentum Leader, even though her deck construction is special.
  await page.selectOption('#leader','Crazy Cat Lady');
- assert.match(await page.locator('#secondary').innerText(),/Momentum · Cat Lady cards/);
- assert.match(await page.locator('.construction-note').innerText(),/Momentum · Cat Lady cards/);
+ assert.equal((await page.locator('.style-readout').innerText()).trim(),'Momentum','Cat Lady primary Style is Momentum');
+ assert.match(await page.locator('#special-construction').innerText(),/Cat-only construction · no secondary Style/);
+ assert.match(await page.locator('.construction-note').innerText(),/Momentum · Special Cat Lady deckbuilding/);
  assert.match(await page.locator('.construction-note').innerText(),/up to 10 Stray Cats/);
- assert(await page.locator('#secondary').isDisabled(),'Cat Lady construction rules remain enforced');
+ assert.equal(await page.locator('#secondary').count(),0,'Cat Lady has a clearly labeled restriction, not a disabled dropdown');
  assert.match(await page.locator('#resultcount').innerText(),/^18 legal cards$/);
  assert.equal(await page.locator('[data-add="P181"]').count(),0,'Cat Lady cannot add Pawn Shop card');
  assert.match(await page.locator('#family option').allTextContents().then(x=>x.join(' ')),/Momentum · Cat Lady/);
 
  // Standard two-Style builds may combine both Momentum families.
  await page.selectOption('#leader','Florida Man');
+ assert.equal((await page.locator('.style-readout').innerText()).trim(),'Reckless');
  await page.selectOption('#secondary','Momentum');
  assert.match(await page.locator('#grid').innerText(),/Stray Cat/);
  assert.match(await page.locator('#grid').innerText(),/Antique Holder/);
