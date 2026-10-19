@@ -16,13 +16,17 @@ The Scheme, Board Width, and old Composure folders remain development history un
 
 ## Pawn Shop promoted to current game — 19 October 2026
 
-**Shady Pawn Shop Owner (Momentum) replaces Washed-Up Rock Star / Comeback Tour** in the canonical eight-deck lineup. The main browser playtest and deck builder use the new **Everything Must Go** 40-card first-test deck, with **four copies of each of ten cards P181–P190** (24 Characters, 12 Actions, 4 Items).
+**Shady Pawn Shop Owner (Momentum) replaces Washed-Up Rock Star / Comeback Tour** in the canonical eight-deck lineup. The main browser playtest and deck builder use the new **Everything Must Go** 40-card first-test deck, with **11 unique cards P181–P191** (two copies of The Deal of a Lifetime replacing two copies of Guy Who Got a Bad Deal; 22 Characters, 14 Actions, 4 Items).
 
 [Play Pawn Shop in the main game](https://jobeck17.github.io/unhinged/web/?v=pawnshop-main-01) · [Build a Momentum deck](https://jobeck17.github.io/unhinged/builder/?v=pawnshop-main-01)
 
 Pawn Shop earns **Deals** from its Leader or Grandma, gains extra Draw/Hothead at 2 Deals, and gains 2 Stashes/Power/Sucker Punch at 4 Deals. It can spend Deals on No Refunds. **New Stash enters Rotated at 0–1 Deals, but enters Ready immediately at 2 or more Deals.** Antique Holder's extra Stash follows that Deal-based threshold; other Leaders still Stash Ready as normal. Character and Item cards remain accessible to normal Momentum decks under normal Style construction rules, including Customer traits.
 
 The **30 former Rock Star-era Momentum cards (P031–P038, P040–P060, P123) are excluded from the main deck builder**, including secondary-Style selection and older saved decks. Their historical records remain in `CARDS.json` and Git history; no gameplay cards or current starter decks were deleted. The unrelated Misdirection P039 and the new Pawn Shop P181–P190 remain visible. Rock Star's former deck/Leader remain in Git history, not current. The Pawn Shop draft's stats, copy counts, and Leader Breaking Point are pending further audit; production implementation and tests are not evidence of balance. The separate `lab/pawn-shop/` directory remains an archived first-prototype snapshot rather than a second canonical source.
+
+**New Pawn Shop cash-out Action (19 October 2026):** **The Deal of a Lifetime (P191)** costs 2 Ready Stash and spends 2 Deals to Ready all your Characters for another Attack, but they cannot Cause Trouble that Turn. Card text is deliberately limited to the Characters currently in play. The two-copy test is unbalanced/unproven until human playtesting; it preserves the existing 40-card deck size by cutting two copies of Guy Who Got a Bad Deal.
+
+**First Pawn Shop content milestone:** 12 unique Characters, 6 unique Actions, 2 unique Items (20 designs). Current progress **6 Characters / 4 Actions / 1 Item = 11/20**; need **6 Characters / 2 Actions / 1 Item** more. The broader 38-card vision remains later, not the first milestone. Review card roles and playtest before raising copy counts.
 
 **Pawn Shop playtest usability (19 October 2026):** Card Costs automatically Rotate the earliest available Ready ordinary Stash slots, preserving temporary Stash until needed. You no longer have to choose Stash for every Pawn Shop card. Other Leaders retain the manual picker for their Stash-specific interactions. The regular payment costs, Deal thresholds, and Rotate mechanics remain unchanged.
 
