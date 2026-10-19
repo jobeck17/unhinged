@@ -102,6 +102,41 @@ for(const deals of [0,1,2,3,4]){
  assert.equal(s.fuel,1);
 }
 
+// Family Heirloom must use the normal attachment picker, not enter unattached
+// or allow a play without an eligible friendly Character.
+{
+ const g=game(),s=g.players[0];
+ readyStash(g,0,3);s.hand=['P183'];
+ assert.equal(g.canPlay(0),false,'Heirloom cannot be played without a Character');
+ const first=g.enter(0,'P181'),second=g.enter(0,'P185');
+ assert.equal(g.canPlay(0),true,'Heirloom becomes playable with a Character');
+ let prompts=[];
+ const originalPick=g.pick;
+ g.pick=async function(title,p,targets,...args){
+  if(title==='Attach to your Character'){
+   prompts.push({p,targets:targets.map(t=>t.uid)});
+   return second.uid;
+  }
+  return originalPick.call(this,title,p,targets,...args);
+ };
+ await g.play(0);
+ assert.equal(prompts.length,1,'single normal attachment prompt');
+ assert.deepEqual(prompts[0].targets,[first.uid,second.uid],'both Characters are legal targets');
+ assert(!g.items(first).some(x=>x.id==='P183'),'did not attach to first Character');
+ assert(g.items(second).some(x=>x.id==='P183'),'attached to selected second Character');
+ assert.equal(g.guard(second),4,'Heirloom improves selected Character Guard');
+ assert.equal(s.fuel,1,'paid exactly two Ready Stash');
+}
+{
+ const g=game(),s=g.players[0],x=g.enter(0,'P181');
+ readyStash(g,0,3);s.hand=['P183'];
+ g.pick=async (title)=>title==='Attach to your Character'?null:undefined;
+ const before=s.fuel;
+ await g.play(0);
+ assert.equal(s.fuel,before,'canceling attachment does not pay');
+ assert.deepEqual(s.hand,['P183'],'canceling attachment retains card in hand');
+ assert.equal(g.items(x).length,0,'no unattached item remains');
+}
 // All Deal effects and attached bonuses are dynamic, including spending to lose a threshold.
 {
  const g=game(),s=g.players[0],x=g.enter(0,'P181');x.born=0;
