@@ -2,3 +2,6 @@
 .pawn-controls strong{font-size:1.13rem;letter-spacing:.05em}.pawn-controls small{display:block;color:#e1c8a4;margin-top:4px}
 .pawn-controls button{padding:10px 16px;border-radius:10px;background:#efb958;color:#302010;font-weight:800}
 .pawn-controls button:disabled{opacity:.42;cursor:not-allowed}
+/* Pawn Shop's experimental freshly Stashed card is sideways and not Ready. */
+.zone-pile .stash-rotated{transform:rotate(90deg) scale(.82);transform-origin:center center;top:2px;}
+.zone-pile small{max-width:130px}
