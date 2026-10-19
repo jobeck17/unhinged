@@ -24,6 +24,8 @@ Pawn Shop earns **Deals** from its Leader or Grandma, gains extra Draw/Hothead a
 
 The former Rock Star cards remain in the Momentum pool as standalone cards. Rock Star's prior deck/Leader are retained in Git history, not current. The Pawn Shop draft's stats, copy counts, and Leader Breaking Point are pending further audit; production implementation and tests are not evidence of balance. The separate `lab/pawn-shop/` directory remains an archived first-prototype snapshot rather than a second canonical source.
 
+**Pawn Shop playtest usability (19 October 2026):** Card Costs automatically Rotate the earliest available Ready ordinary Stash slots, preserving temporary Stash until needed. You no longer have to choose Stash for every Pawn Shop card. Other Leaders retain the manual picker for their Stash-specific interactions. The regular payment costs, Deal thresholds, and Rotate mechanics remain unchanged.
+
 ## Reckless coverage playtest — 7 October 2026
 
 [Play the current deck](https://jobeck17.github.io/unhinged/web/). Select Florida Man. The 40-card list contains all 32 locked Reckless cards once, plus one extra copy each of Feral Chihuahua, Vape Kid, Boogie Boarder, Unsupervised Toddler, Amateur Storm Chaser, Spring Break Frat Bro, Victory Lap, and Did You See That?!. This is a broad verification deck rather than a tuned competitive list. The 33rd Style slot is reserved. Safety Goggles (formerly Life Jacket) and Fireworks Incident are banked for the next set; Dirty Needle remains pending.
