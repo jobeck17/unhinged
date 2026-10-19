@@ -37,7 +37,7 @@
       "style": "Momentum",
       "traits": [],
       "keywords": [],
-      "text": "Attach to one of your Characters. It gets +1 Guard at 0–1 Deals, +2 Guard at 2–3 Deals, or +3 Guard at 4 Deals. If attached to Antique Holder, it also has Retaliate.",
+      "text": "Attach to one of your Characters. The attached Character gets +1 Guard at 0–1 Deals, +2 Guard at 2–3 Deals, or +3 Guard at 4 Deals. If attached to Antique Holder, that Character also has Retaliate.",
       "flavor": "",
       "status": "lab-prototype"
     },
