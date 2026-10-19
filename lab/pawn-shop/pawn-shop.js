@@ -81,7 +81,7 @@ export function installPawnShop(Game,LEADERS){
   if(x&&isPS(this,x.owner)&&this.card(x)?.type==='Character'){
    if(word==='Hothead'&&deals(this,x.owner)>=2)return true;
    if(word==='Sucker Punch'&&deals(this,x.owner)>=4)return true;
-   if(word==='Retaliate'&&x.id===ID.antique&&this.items(x).some(y=>y.id===ID.heirloom))return true;
+   if(word==='Retaliate'&&x.id===ID.antique&&(x.pawnRetaliateAtHit||this.items(x).some(y=>y.id===ID.heirloom)))return true;
   }
   return keyword.call(this,x,word);
  };
@@ -169,6 +169,14 @@ export function installPawnShop(Game,LEADERS){
   }
   if(x.id===ID.clerk)return;
   return enterEffect.call(this,x,previous);
+ };
+ // Retaliate is retained for the duration of a combat even if the Character is Defeated.
+ const attack=Game.prototype.attack;
+ Game.prototype.attack=async function(uid){
+  const defenders=this.chars(1-this.turn).filter(x=>x.id===ID.antique&&this.items(x).some(i=>i.id===ID.heirloom));
+  defenders.forEach(x=>{x.pawnRetaliateAtHit=true});
+  try{return await attack.call(this,uid)}
+  finally{defenders.forEach(x=>{delete x.pawnRetaliateAtHit})}
  };
  const actionEffect=Game.prototype.actionEffect;
  Game.prototype.actionEffect=async function(p,id,target,second,previous){
