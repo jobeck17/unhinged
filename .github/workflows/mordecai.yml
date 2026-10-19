@@ -23,6 +23,7 @@ jobs:
       - run: |
           node --check web/app.js
           node --check web/magician.js
+          node --check web/pawn-shop.js
           node --check web/cat-lady.js
           node --check web/rockstar.js
       - run: |
@@ -54,6 +55,7 @@ jobs:
           grep -q "from './ai.js" web/app.js
           test -f web/engine.js
           test -f web/ai.js
+      - run: node web/pawn-shop.test.mjs
       - run: node web/smoke.mjs
       - run: node web/reckless.test.mjs
       - run: node web/stonewall.test.mjs
