@@ -1,3 +1,9 @@
+## CURRENT Pawn Shop addition — Pawn Shop Scalper (19 October 2026)
+
+Promoted at designer request. P192 Pawn Shop Scalper: Momentum/Pawn Shop Customer Character, Cost 4, 3 Power / 4 Health / 1 Trouble. Resell Value: On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less, whether Ready or Rotated. Then Draw 1 card. Flavor: "I'm reselling this for double." It can also enter without a Deal. Two copies replace two P185 Guy Selling His Wife's Dress copies in the 40-card starter deck.
+
+First content milestone: 12 Characters, 6 Actions, 2 Items = 20 designs. Current 7 Characters / 4 Actions / 1 Item = 12/20 (60%). Remaining 5 Characters, 2 Actions, 1 Item. Current Characters: Antique Holder; Grandma With a Million-Dollar Doorstop; Guy Selling His Wife's Dress; Guy Who Got a Bad Deal; Junkyard Visionary; Black Friday Employee; Pawn Shop Scalper. Actions: Moron's Gold; One Man's Trash; No Refunds; The Deal of a Lifetime. Item: Family Heirloom. The 38-card goal is later. Show this roster and progress after future additions.
+
 ## CURRENT Pawn Shop addition — The Deal of a Lifetime (19 October 2026)
 
 **PROMOTED to canonical first-test** at designer request. **P191 The Deal of a Lifetime** is a Momentum / Pawn Shop Action, Cost 2: **“Spend 2 Deals: Ready all Characters you control. Those Characters can't Cause Trouble this Turn.”** Flavor: **“It's too good to be true.”** The effect enables another Attack, not more direct Trouble, and the lock persists through further Readies until the owner's next Turn. Grandma's last-Deal protection still applies to two-Deal spending.
