@@ -109,11 +109,16 @@ export function installPawnShop(Game,LEADERS){
  Game.prototype.trouble=function(x){
   return trouble.call(this,x)+(x?.id===ID.dress&&deals(this,x.owner)>=2?1:0);
  };
+ // Cost checks for other Styles must be pure: don't even add an empty
+ // nextCharDiscount property while inspecting or cancelling a non-Customer.
  const playCost=Game.prototype.playCost;
  Game.prototype.playCost=function(p,id){
-  const s=this.players[p],prev=s.nextCharDiscount||0;
-  if(!this._pawnApplyingDiscount)s.nextCharDiscount=prev+clerkDiscount(this,p,id);
-  try{return playCost.call(this,p,id)}finally{s.nextCharDiscount=prev;}
+  const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
+  if(!add)return playCost.call(this,p,id);
+  const s=this.players[p],had=Object.prototype.hasOwnProperty.call(s,'nextCharDiscount'),prev=s.nextCharDiscount;
+  s.nextCharDiscount=(prev||0)+add;
+  try{return playCost.call(this,p,id)}
+  finally{if(had)s.nextCharDiscount=prev;else delete s.nextCharDiscount;}
  };
  const canPlay=Game.prototype.canPlay;
  Game.prototype.canPlay=function(index,p=this.turn){
@@ -121,19 +126,25 @@ export function installPawnShop(Game,LEADERS){
   if(id===ID.heirloom&&!this.chars(p).length)return false;
   if(id===ID.trash&&!this.players[p].discard.length)return false;
   if(id===ID.refund&&(!this.canSpendPawnDeal(p)||!this.chars(1-p).some(x=>this.card(x).cost<=4)))return false;
-  const s=this.players[p],prev=s.nextCharDiscount||0,flag=this._pawnApplyingDiscount;
-  if(!flag){s.nextCharDiscount=prev+clerkDiscount(this,p,id);this._pawnApplyingDiscount=true;}
-  try{return canPlay.call(this,index,p)}finally{s.nextCharDiscount=prev;this._pawnApplyingDiscount=flag;}
+  const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
+  if(!add)return canPlay.call(this,index,p);
+  const s=this.players[p],had=Object.prototype.hasOwnProperty.call(s,'nextCharDiscount'),prev=s.nextCharDiscount,flag=this._pawnApplyingDiscount;
+  s.nextCharDiscount=(prev||0)+add;this._pawnApplyingDiscount=true;
+  try{return canPlay.call(this,index,p)}
+  finally{if(had)s.nextCharDiscount=prev;else delete s.nextCharDiscount;this._pawnApplyingDiscount=flag;}
  };
  const play=Game.prototype.play;
  Game.prototype.play=async function(index){
-  const p=this.turn,s=this.players[p],id=s.hand[index],prev=s.nextCharDiscount||0,flag=this._pawnApplyingDiscount;
-  s.nextCharDiscount=prev+clerkDiscount(this,p,id);this._pawnApplyingDiscount=true;
+  const p=this.turn,s=this.players[p],id=s.hand[index],add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
+  if(!add)return play.call(this,index);
+  const had=Object.prototype.hasOwnProperty.call(s,'nextCharDiscount'),prev=s.nextCharDiscount,flag=this._pawnApplyingDiscount;
+  s.nextCharDiscount=(prev||0)+add;this._pawnApplyingDiscount=true;
   try{return await play.call(this,index)}
-  finally {
-   // Do not resurrect a normal "next Character" discount consumed by a successful play.
+  finally{
    const consumed=s.nextCharDiscount===0&&this.card(id)?.type==='Character';
-   s.nextCharDiscount=consumed?0:prev;
+   if(consumed)s.nextCharDiscount=0;
+   else if(had)s.nextCharDiscount=prev;
+   else delete s.nextCharDiscount;
    this._pawnApplyingDiscount=flag;
   }
  };
