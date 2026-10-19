@@ -1,3 +1,5 @@
+> **HISTORICAL LAB ARCHIVE (19 October 2026):** The designers promoted Pawn Shop into the canonical game, replacing Washed-Up Rock Star. Current cards are `P181–P190` in root `CARDS.json`; the current 40-card deck lives in root `DECKS.json`; the current Leader rules and browser code live in root `RULES.md` and `web/pawn-shop.js`. This `LAB-PS` folder preserves the original prototype and is **not the current playable deck**. Use [the main playtest](https://jobeck17.github.io/unhinged/web/) and [the main deck builder](https://jobeck17.github.io/unhinged/builder/).
+ 
 # Pawn Shop — first playable lab (v0.1)
 
 **State: PROTOTYPE / HUMAN PLAYTEST.** This is experimental Unhinged, **not canon**. It does not change root `RULES.md`, `CARDS.json`, `DECKS.json`, `sim/`, `web/` or `builder/`.
