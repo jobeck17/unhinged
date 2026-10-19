@@ -104,4 +104,20 @@ function readyStash(g,p,n){const s=g.players[p];s.stash=Array(n).fill('P181');s.
  assert(s.hand.includes('P184'),"One Man's Trash returns a discarded card");
 }
 
+// Staff's Customer discount also works in a normal two-Style hybrid, not only under Pawn Shop.
+{
+ const g=game();g.turn=1;
+ const staff=g.enter(1,'P189');staff.ready=false;
+ g.startTurn();
+ assert.equal(g.players[1].clearancePending?.length,1);
+ assert(g.decideClearance(staff.uid,true));
+ assert.equal(staff.ready,false);
+ readyStash(g,1,1);g.players[1].hand=['P185'];
+ assert.equal(g.playCost(1,'P185'),1);
+ const next=g.enter(1,'P189');next.ready=false;
+ g.startTurn();
+ assert(g.decideClearance(next.uid,false),'Other Leaders can Ready their Employee');
+ assert.equal(next.ready,true);
+}
+
 console.log('Canonical Pawn Shop: Stash timing, 4 Deals, Antique Holder, Deal thresholds/spending, Customer discount, No Refunds, discard retrieval PASS');
