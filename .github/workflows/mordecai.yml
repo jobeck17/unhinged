@@ -38,6 +38,12 @@ jobs:
           node --check lab/gambling-dad/app.js
           node lab/gambling-dad/rework.test.mjs
           node lab/gambling-dad/test.mjs
+      - name: Verify Pawn Shop lab modules and data
+        run: |
+          node --check lab/pawn-shop/app.js
+          node --check lab/pawn-shop/pawn-shop.js
+          node --check lab/pawn-shop/card-face.js
+          node -e "const fs=require('node:fs'); const cards=JSON.parse(fs.readFileSync('lab/pawn-shop/cards.json','utf8')).cards; const deck=JSON.parse(fs.readFileSync('lab/pawn-shop/deck.json','utf8')); if(Object.values(deck.cards).reduce((sum,n)=>sum+n,0)!==40)process.exit(1); if(Object.keys(deck.cards).some(id=>!cards.find(c=>c.id===id)))process.exit(1)"
       - run: node --check poll/app.js
       - run: node --check poll/questions.js
       - run: node poll/test.mjs
@@ -82,6 +88,7 @@ jobs:
           cp lab/leader-rulebreakers/crazy-cat-lady/CARDS.json lab/leader-rulebreakers/crazy-cat-lady/DECK.json _site/lab/leader-rulebreakers/crazy-cat-lady/
           cp lab/leader-rulebreakers/mad-scientist/CARDS.json lab/leader-rulebreakers/mad-scientist/DECK.json lab/leader-rulebreakers/mad-scientist/TOKENS.json _site/lab/leader-rulebreakers/mad-scientist/
           cp -R lab/gambling-dad _site/lab/
+          cp -R lab/pawn-shop _site/lab/
           cp -R lab/playtest _site/lab/
           mkdir -p _site/lab/salvage-audit _site/brainstorm/salvage-audit
           cp lab/salvage-audit/index.html lab/salvage-audit/app.js lab/salvage-audit/salvage.mjs lab/salvage-audit/pilot.mjs lab/salvage-audit/data.mjs _site/lab/salvage-audit/
@@ -91,6 +98,11 @@ jobs:
           cp lab/board-width/index.html lab/board-width/style.css lab/board-width/app.mjs lab/board-width/engine.mjs lab/board-width/ai.mjs lab/board-width/selection.mjs lab/board-width/CARDS.json lab/board-width/DECKS.json _site/lab/board-width/
           mkdir -p _site/lab/schemes
           cp lab/schemes/index.html lab/schemes/style.css lab/schemes/app.mjs lab/schemes/engine.mjs lab/schemes/ai.mjs lab/schemes/CARDS.json lab/schemes/DECKS.json _site/lab/schemes/
+          test -f _site/lab/pawn-shop/index.html
+          test -f _site/lab/pawn-shop/app.js
+          test -f _site/lab/pawn-shop/pawn-shop.js
+          test -f _site/lab/pawn-shop/cards.json
+          test -f _site/lab/pawn-shop/deck.json
           test -f _site/lab/gambling-dad/index.html
           test -f _site/lab/gambling-dad/app.js
           test -f _site/lab/gambling-dad/poker.mjs
