@@ -268,7 +268,7 @@ This triggers for each qualifying Defeat, with no once-per-Turn limit. A Defeat 
 
 **Customer / Staff:** Traits on Characters, not additional Styles. Black Friday Employee may remain Rotated during the controller's Ready step, discounting other Customers by 1 for each Employee kept Rotated that way. The controller chooses whether to Ready or keep it Rotated.
 
-**Current production note:** Shady Pawn Shop Owner replaces Washed-Up Rock Star in the eight-deck roster. The first 40-card list uses four copies each of ten new Momentum cards (P181–P190). These counts and balance remain provisional. The Leader's unique Breaking Point effect is **not yet designed**; the universal protected threshold at 10 and Last Straw rules still apply.
+**Current production note:** Shady Pawn Shop Owner replaces Washed-Up Rock Star in the eight-deck roster. The current 40-card first-test list uses P181–P191: four copies of P181–P185 and P187–P190, with two copies of P186 and two of P191. **The Deal of a Lifetime (P191), Cost 2 Action:** Spend 2 Deals to Ready all Characters you control. Those Characters cannot Cause Trouble this Turn (including after any later Ready), but may Attack again. This is a current test card, not proof of balance. The Trouble restriction ends at the beginning of their controller's next Turn. Grandma With a Million-Dollar Doorstop still prevents spending the final Deal, including as part of a two-Deal payment. These counts and balance remain provisional. The Leader's unique Breaking Point effect is **not yet designed**; the universal protected threshold at 10 and Last Straw rules still apply.
 
 ## 18. Game end
 
