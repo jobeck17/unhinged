@@ -14,7 +14,9 @@ const doc=JSON.parse(readFileSync(new URL('../DECKS.json',import.meta.url),'utf8
 const pawn=doc.decks.find(d=>d.leader==='Shady Pawn Shop Owner');
 const florida=doc.decks.find(d=>d.leader==='Florida Man');
 assert(pawn&&florida);
-assert.equal(Object.keys(pawn.cards).length,10);
+assert.equal(Object.keys(pawn.cards).length,11);
+assert.equal(pawn.cards.P191,2);
+assert.equal(pawn.cards.P186,2);
 assert.equal(Object.values(pawn.cards).reduce((n,x)=>n+x,0),40);
 const prompt=async req=>req.multi?req.options.slice(0,req.min||0).map(o=>o.value):req.options?.find(o=>o.value!==null)?.value??null;
 function game(){let g=new Game(pool,{decks:[pawn,florida]},prompt,()=>{}, {firstPlayer:0});g.begin();return g}
@@ -136,6 +138,49 @@ for(const deals of [0,1,2,3,4]){
  readyStash(g,0,1);s.hand=['P188'];s.discard=['P184'];
  assert(g.canPlay(0,0));await g.play(0);
  assert(s.hand.includes('P184'),"One Man's Trash returns a discarded card");
+}
+
+// The Deal of a Lifetime costs 2 Ready Stash AND exactly 2 Deals.
+// It Readies the team for new Attacks, not additional Trouble, even after later Readies.
+{
+ const g=game(),s=g.players[0];
+ const a=g.enter(0,'P185'),b=g.enter(0,'P186');
+ g.round=2;a.born=1;b.born=1;a.ready=false;b.ready=false;
+ s.deals=4;readyStash(g,0,3);s.hand=['P191'];
+ assert(g.canPlay(0),'4 Deals and Ready Stash allow the Action');
+ await g.play(0);
+ assert.equal(s.deals,2,'spends 2 Deals');
+ assert.equal(s.fuel,1,'Cost 2 rotates 2 Ready Stash');
+ assert(a.ready&&b.ready,'readies all Characters');
+ assert(g.canAttack(a),'readied Character can Attack again');
+ assert(!g.canCauseTrouble(a),'readied Character cannot Cause Trouble');
+ a.ready=false;a.ready=true;
+ assert(!g.canCauseTrouble(a),'extra Ready cannot lift the Trouble restriction');
+ assert(s.discard.includes('P191'),'the Action enters discard');
+ g.startTurn();
+ assert(g.canCauseTrouble(a),'restriction clears next owner Turn');
+}
+// Grandma's last Deal stays protected, including for a 2-Deal spend.
+{
+ const g=game(),s=g.players[0],grandma=g.enter(0,'P184');
+ const c=g.enter(0,'P185');c.ready=false;
+ readyStash(g,0,2);s.hand=['P191'];s.deals=2;
+ assert(!g.canPlay(0),'cannot spend 2 and leave Grandma with 0');
+ assert.equal(s.deals,2);
+ s.deals=3;assert(g.canPlay(0));
+ await g.play(0);
+ assert.equal(s.deals,1,'Grandma holds the last Deal');
+ assert(c.ready);
+}
+// A legal Momentum hybrid can also spend Deals; 0–1 Deals cannot pay the cost.
+{
+ const g=game(),s=g.players[1];g.turn=1;readyStash(g,1,2);
+ s.hand=['P191'];s.deals=1;
+ assert(!g.canPlay(0,1));
+ s.deals=2;
+ assert(g.canPlay(0,1),'hybrid can use the Action');
+ await g.play(0);
+ assert.equal(s.deals,0);
 }
 
 // Paying Pawn Shop card Costs uses Ready Stash automatically.
