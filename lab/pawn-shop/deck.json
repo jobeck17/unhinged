@@ -1,0 +1,26 @@
+{
+  "name": "Everything Must Go · First Test",
+  "leader": "Shady Pawn Shop Owner",
+  "styles": [
+    "Momentum"
+  ],
+  "cards": {
+    "LAB-PS-001": 4,
+    "LAB-PS-002": 4,
+    "LAB-PS-003": 4,
+    "LAB-PS-004": 4,
+    "LAB-PS-005": 4,
+    "LAB-PS-006": 4,
+    "LAB-PS-007": 4,
+    "LAB-PS-008": 4,
+    "LAB-PS-009": 4,
+    "LAB-PS-010": 4
+  },
+  "composure": 20,
+  "packages": [
+    "Deal thresholds",
+    "Customer discounts",
+    "Pawn shop item attachments"
+  ],
+  "status_note": "LAB-only 40-card first-pass test. Four copies of each of ten unique cards; not balanced, not canonical."
+}
