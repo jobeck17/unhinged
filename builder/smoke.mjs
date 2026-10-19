@@ -37,6 +37,20 @@ assert.match(app,/RETIRED_ROCKSTAR_IDS\.has\(c\.id\)/,'builder legality filters 
 assert.match(app,/!isLegal\(c\)/,'saved and imported deck lists drop retired cards');
 console.log('Rock Star builder cleanup: 30 old Momentum IDs blocked; Pawn Shop, Cats and Misdirection unaffected');
 
+
+// Card families are browsing metadata, not new Styles or legality rules.
+const pawnCards=pool.cards.filter(c=>c.family==='Pawn Shop');
+const catCards=pool.cards.filter(c=>c.family==='Cat Lady');
+assert.equal(pawnCards.length,10,'all ten Pawn Shop cards are explicitly tagged');
+assert.equal(catCards.length,18,'all Cat Lady cards are explicitly tagged');
+assert([...pawnCards,...catCards].every(c=>c.style==='Momentum'),'both groups retain Momentum Style');
+assert.match(app,/function familyGroups\(\)/,'family filter groups are generated from legal cards');
+assert.match(app,/id=\\"family\\"/,'family chooser shown in library');
+assert.match(app,/state\.family!=='All'/,'family chooser limits visible cards without changing construction');
+assert.match(app,/Momentum · Cat Lady cards/,'Cat Lady displayed as Momentum rather than Rulebreaker pool');
+assert.doesNotMatch(app,/Rulebreaker pool/,'old ambiguous Cat Lady label removed');
+console.log('Momentum groups: Pawn Shop (10), Cat Lady (18); style/legalities unchanged');
+
 const cat=decks.decks.find(d=>d.leader==='Crazy Cat Lady');
 assert(cat.deckbuilding_exception?.includes('10 copies of Stray Cat'));
 assert.equal(cat.cards['LAB-CAT-001'],6);
