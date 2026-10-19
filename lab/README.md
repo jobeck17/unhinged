@@ -29,7 +29,7 @@ Lab experiments may read or test against the canonical game, but they must not s
 - `LEADER_PASSIVES.md` — alternate Leader passives organized by Leader for isolated testing.
 - `leader-rulebreakers/` — Leader packages that break construction, setup, resource, or other base expectations.
 
-- `pawn-shop/` — first isolated Shady Pawn Shop Owner / Momentum playable prototype: 10 experimental designs, 40-card test deck, Deal thresholds, Customer discounts and attaching Items. [Play the lab](https://jobeck17.github.io/unhinged/lab/pawn-shop/).
+- `pawn-shop/` — historical **PROMOTED** prototype (current game is in root `CARDS.json`, `DECKS.json`, `RULES.md`, and `web/`): 10 experimental designs, 40-card test deck, Deal thresholds, Customer discounts and attaching Items. [Play the lab](https://jobeck17.github.io/unhinged/lab/pawn-shop/).
 
 ## Lab principles
 
