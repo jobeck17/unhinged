@@ -3852,7 +3852,8 @@
       "status": "lab-prototype",
       "purpose": "Cheap swarm body that sticks around a little better so Cat Lady can establish a colony without adding more damage output.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-002",
@@ -3872,7 +3873,8 @@
       "status": "lab-prototype",
       "purpose": "One-cost aggressive Cat that helps Cat Lady establish the colony quickly while remaining fragile.",
       "style": "Momentum",
-      "trouble": 3
+      "trouble": 3,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-003",
@@ -3890,7 +3892,8 @@
       "status": "lab-prototype",
       "purpose": "Defensive colony protector: low Power, high Health, and its protection ability make it a durable shield instead of another efficient attacker.",
       "style": "Momentum",
-      "trouble": 1
+      "trouble": 1,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-004",
@@ -3910,7 +3913,8 @@
       "status": "lab-prototype",
       "purpose": "Lets the Cat player preserve a body at the cost of temporarily dropping board count.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-005",
@@ -3930,7 +3934,8 @@
       "status": "lab-prototype",
       "purpose": "Gives the swarm a way to attack opposing Ready Characters instead of only racing the Leader.",
       "style": "Momentum",
-      "trouble": 1
+      "trouble": 1,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-006",
@@ -3948,7 +3953,8 @@
       "status": "lab-prototype",
       "purpose": "A ridiculous 2/1 that visibly refuses to die to the first two Attacks. Opponents can still use Return, Dismiss, non-Attack Defeat effects, or other removal normally.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-007",
@@ -3966,7 +3972,8 @@
       "status": "lab-prototype",
       "purpose": "Rewards reaching the colony threshold without directly adding more Stash.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-008",
@@ -3984,7 +3991,8 @@
       "status": "lab-prototype",
       "purpose": "Visible five-Cat payoff that turns a wide colony into finishing pressure.",
       "style": "Momentum",
-      "trouble": 1
+      "trouble": 1,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-009",
@@ -4002,7 +4010,8 @@
       "status": "lab-prototype",
       "purpose": "Plain high-cost payoff for the extra-Stash engine. Tests whether the Leader's economy is enough reward by itself.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-010",
@@ -4016,7 +4025,8 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Light Cat selection without generic Draw.",
-      "style": "Momentum"
+      "style": "Momentum",
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-013",
@@ -4034,7 +4044,8 @@
       "status": "lab-prototype",
       "purpose": "Fragile scaling threat. Rewards establishing Snowball early and protecting it with Cats such as Tuxedo Cat; returning it to hand naturally resets its accumulated Power.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-014",
@@ -4051,7 +4062,8 @@
       "status": "lab-prototype",
       "purpose": "Cheap Cat-count body and visible blocking trap. Its global friendly-fire explosion can punish opposing boards but can also devastate the Cat Lady's own low-Health colony.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-015",
@@ -4065,7 +4077,8 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Wide-board recovery tool. Rewards maintaining a colony and helps the Cat player recover from Trojan Cat friendly fire without directly adding more bodies.",
-      "style": "Momentum"
+      "style": "Momentum",
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-016",
@@ -4083,7 +4096,8 @@
       "status": "lab-prototype",
       "purpose": "Defensive Cat that punishes attackers twice: surviving damage applies a one-turn Ready lock and a permanent -1 Health scar. Repeated Hairballs can keep lowering the same Character's Health.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-017",
@@ -4097,7 +4111,8 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Stores dismissed or defeated Cats as a hidden resource, including Cats that die while blocking for the Leader, and rewards building a graveyard-like stockpile without releasing the whole pile for free.",
-      "style": "Momentum"
+      "style": "Momentum",
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-018",
@@ -4111,7 +4126,8 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Turns the Shoebox stockpile into unpredictable recovery. The Cat returns normally rather than with Hothead or reduced Health.",
-      "style": "Momentum"
+      "style": "Momentum",
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-019",
@@ -4125,7 +4141,8 @@
       "guard": null,
       "status": "lab-prototype",
       "purpose": "Cat Lady's emergency reset: wipes both boards and refills both players, trading away the colony and Shoebox setup for a full restart.",
-      "style": "Momentum"
+      "style": "Momentum",
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-CAT-020",
@@ -4144,7 +4161,8 @@
       "status": "lab-prototype",
       "purpose": "Deliberately weak four-cost body that converts permanent economy or buried Cats into permanent Power. Both modes Rotate Mittens III, forcing a choice between feeding it and attacking.",
       "style": "Momentum",
-      "trouble": 2
+      "trouble": 2,
+      "family": "Cat Lady"
     },
     {
       "id": "LAB-SCI-001",
@@ -4644,7 +4662,8 @@
       "guard": 5,
       "trouble": 1,
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     },
     {
       "id": "P182",
@@ -4658,7 +4677,8 @@
       "flavor": "",
       "status": "testing",
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     },
     {
       "id": "P183",
@@ -4672,7 +4692,8 @@
       "flavor": "",
       "status": "testing",
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "advanced"
+      "complexity": "advanced",
+      "family": "Pawn Shop"
     },
     {
       "id": "P184",
@@ -4689,7 +4710,8 @@
       "guard": 2,
       "trouble": 2,
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     },
     {
       "id": "P185",
@@ -4708,7 +4730,8 @@
       "guard": 2,
       "trouble": 1,
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     },
     {
       "id": "P186",
@@ -4729,7 +4752,8 @@
       "guard": 2,
       "trouble": 1,
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     },
     {
       "id": "P187",
@@ -4748,7 +4772,8 @@
       "guard": 3,
       "trouble": 3,
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     },
     {
       "id": "P188",
@@ -4762,7 +4787,8 @@
       "flavor": "“Is another man's trash.”",
       "status": "testing",
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     },
     {
       "id": "P189",
@@ -4781,7 +4807,8 @@
       "guard": 3,
       "trouble": 3,
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "advanced"
+      "complexity": "advanced",
+      "family": "Pawn Shop"
     },
     {
       "id": "P190",
@@ -4795,7 +4822,8 @@
       "flavor": "“We appreciate your understanding.”",
       "status": "testing",
       "digital_status": "implemented-pawn-shop-2026-10-19",
-      "complexity": "basic"
+      "complexity": "basic",
+      "family": "Pawn Shop"
     }
   ],
   "misdirection_audit": {
