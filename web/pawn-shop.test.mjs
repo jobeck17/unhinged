@@ -138,6 +138,53 @@ for(const deals of [0,1,2,3,4]){
  assert(s.hand.includes('P184'),"One Man's Trash returns a discarded card");
 }
 
+// Paying Pawn Shop card Costs uses Ready Stash automatically.
+// Normal opposing Leaders still get a choice when several Ready Stash slots exist.
+{
+ const notices=[],choice=async req=>{
+  if(req.title?.startsWith('Pay cost:'))notices.push(req.title);
+  return req.multi?req.options.slice(0,req.min||0).map(x=>x.value):req.options?.find(x=>x.value!==null)?.value??null;
+ };
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();
+ const s=g.players[0];
+ s.hand=['P186'];readyStash(g,0,5);
+ assert(g.canPlay(0));
+ await g.play(0);
+ assert(g.chars(0).some(x=>x.id==='P186'),'Pawn Shop Character entered play');
+ assert.equal(s.fuel,2,'Cost 3 rotated exactly three Ready Stash');
+ assert.deepEqual(g.stashStates(0),[false,false,false,true,true]);
+ assert.deepEqual(notices,[],'Pawn Shop does not open repeated Stash payment picker');
+ // A 0-cost play never prompts or spends Stash.
+ s.hand=['P185'];s.nextCharDiscount=2;
+ const fuel=s.fuel;await g.play(0);
+ assert.equal(s.fuel,fuel);
+ assert.deepEqual(notices,[]);
+ g.turn=1;
+ const enemy=g.players[1];
+ enemy.hand=['P002'];readyStash(g,1,3);
+ assert(g.canPlay(0,1));
+ await g.play(0);
+ assert.equal(notices.length,1,'Other Leaders retain manual payment selection');
+}
+// Auto-payment prioritizes ordinary slots when a temporary Stash is present.
+{
+ const choice=async req=>{
+  if(req.title?.startsWith('Pay cost:'))throw Error('Unexpected Pawn Shop Stash picker');
+  return req.multi?req.options.slice(0,req.min||0).map(x=>x.value):req.options?.find(x=>x.value!==null)?.value??null;
+ };
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();const s=g.players[0];
+ readyStash(g,0,3);
+ s.stash=['P181','P182','P189'];
+ s.tempStashCard='P189';
+ s.hand=['P184'];
+ await g.play(0);
+ assert.equal(s.fuel,1);
+ assert(s.stash.includes('P189'),'Temporary Stash should not be spent before normal Stash');
+ assert.deepEqual(g.stashStates(0),[false,false,true]);
+}
+
 // Staff's Customer discount also works in a normal two-Style hybrid, not only under Pawn Shop.
 {
  const g=game();g.turn=1;
@@ -154,4 +201,4 @@ for(const deals of [0,1,2,3,4]){
  assert.equal(next.ready,true);
 }
 
-console.log('Canonical Pawn Shop: 0–1 Rotated Stash, 2+ Ready Stash, 4-Deal double Stash, threshold transitions, Antique Holder, Deal spending, Customer discounts and Actions PASS');
+console.log('Canonical Pawn Shop: 0–1 Rotated Stash, 2+ Ready Stash, 4-Deal double Stash, threshold transitions, Antique Holder, automatic Stash cost payment, Deal spending, Customer discounts and Actions PASS');
