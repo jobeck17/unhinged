@@ -186,18 +186,9 @@ export function installPawnShop(Game,LEADERS){
    this._pawnApplyingDiscount=flag;
   }
  };
- const enter=Game.prototype.enter;
- Game.prototype.enter=function(p,id,attach=null,...rest){
-  return enter.call(this,p,id,id===ID.heirloom&&this._pawnAttachment!=null?this._pawnAttachment:attach,...rest);
- };
  const playCard=Game.prototype.playCard;
  Game.prototype.playCard=async function(p,id,source='hand',cost=0,options={}){
   let picked=null;
-  if(id===ID.heirloom){
-   if(!this.chars(p).length)return false;
-   picked=await this.pick('Attach Family Heirloom to your Character',p,this.chars(p));
-   if(picked==null)return false;
-  }
   if(id===ID.lifetime&&!this.canSpendPawnDeals(p,2))return false;
   if(id===ID.refund){
    const legal=this.chars(1-p).filter(x=>this.card(x).cost<=4);
@@ -206,10 +197,7 @@ export function installPawnShop(Game,LEADERS){
    if(picked==null)return false;
    options={...options,recklessTarget:picked};
   }
-  const old=this._pawnAttachment;
-  if(id===ID.heirloom)this._pawnAttachment=picked;
-  try{return await playCard.call(this,p,id,source,cost,options)}
-  finally{this._pawnAttachment=old;}
+  return playCard.call(this,p,id,source,cost,options);
  };
  const enterEffect=Game.prototype.enterEffect;
  Game.prototype.enterEffect=async function(x,previous){
