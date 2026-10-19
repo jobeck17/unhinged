@@ -1,11 +1,11 @@
 import {cardFace} from './card-face.js?v=face-02';
-import {Game,LEADERS} from './engine.js?v=mordecai-04-meatshield-01';
+import {Game,LEADERS} from './engine.js?v=heirloom-attach-01';
 import {aiAction,aiChoice} from './ai.js?v=meatshield-01';
 import './cat-lady.js?v=meatshield-01';
 import './reckless.js?v=meatshield-01';
 import './stonewall.js?v=meatshield-01';
 import './magician.js?v=cancel-payment-01';
-import {installPawnShop} from './pawn-shop.js?v=pawn-scalper-01';
+import {installPawnShop} from './pawn-shop.js?v=heirloom-attach-01';
 installPawnShop(Game,LEADERS);
 import {applyLandonLab} from './landon-lab.js?v=meatshield-01';
 const root=document.querySelector('#app');
