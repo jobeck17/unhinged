@@ -145,6 +145,7 @@ for(const deals of [0,1,2,3,4]){
 {
  const g=game(),s=g.players[0];
  const a=g.enter(0,'P185'),b=g.enter(0,'P186');
+ const foe=g.enter(1,'P001');foe.ready=false; // A legal attack target is needed by the engine.
  g.round=2;a.born=1;b.born=1;a.ready=false;b.ready=false;
  s.deals=4;readyStash(g,0,3);s.hand=['P191'];
  assert(g.canPlay(0),'4 Deals and Ready Stash allow the Action');
