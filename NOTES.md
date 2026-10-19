@@ -2,7 +2,7 @@
 
 **PROMOTED TO CANONICAL ROOT** by explicit designer request. The earlier Pawn Shop BANKED entries below are historical design notes and no longer determine what is current. The canonical source is `RULES.md`, `CARDS.json` (P181–P190), and `DECKS.json` (Everything Must Go, 40 cards). Shady Pawn Shop Owner replaces Washed-Up Rock Star / Comeback Tour as the Momentum Leader in the eight-deck roster. The browser playtest and builder use the production files. Under this Leader, new Stash enters Rotated at 0–1 Deals, but Ready at 2+ Deals (including Antique Holder's bonus Stash), per the updated 19 October 2026 main-game rule.
 
-**Status:** Current *playable first draft*; individual copy counts, numbers, No Refunds, and Leader Breaking Point still need human review. The archived `lab/pawn-shop/` remains separate history, not a parallel source of truth. Old Rock Star root cards remain generally usable Momentum cards; the retired Rock Star Leader/deck are available in Git history.
+**Status:** Current *playable first draft*; individual copy counts, numbers, No Refunds, and Leader Breaking Point still need human review. The archived `lab/pawn-shop/` remains separate history, not a parallel source of truth. For the active deck builder, all 30 original Rock Star-era Momentum cards (P031–P038, P040–P060, P123) are excluded from its legal card list and imported/saved deck lists, without deleting historical root card records. The old Leader/deck remain in Git history; new Pawn Shop cards P181–P190 remain buildable.
 
 ## One Man's Trash — BANKED Pawn Shop Action idea, 18 October 2026
 
