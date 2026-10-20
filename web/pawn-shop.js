@@ -179,7 +179,7 @@ export function installPawnShop(Game,LEADERS){
   try{return await play.call(this,index)}
   finally{
    const consumed=s.nextCharDiscount===0&&this.card(id)?.type==='Character';
-   if(consumed)s.pawnHaggleCharDiscount=0;
+   if(consumed&&id!==ID.haggler)s.pawnHaggleCharDiscount=0;
    if(consumed)s.nextCharDiscount=0;
    else if(had)s.nextCharDiscount=prev;
    else delete s.nextCharDiscount;
