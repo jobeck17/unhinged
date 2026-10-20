@@ -4859,6 +4859,26 @@
       "status": "testing",
       "digital_status": "implemented-pawn-shop-2026-10-19",
       "complexity": "advanced"
+    },
+    {
+      "id": "P193",
+      "name": "Haggler",
+      "type": "Character",
+      "cost": 2,
+      "style": "Momentum",
+      "family": "Pawn Shop",
+      "traits": [
+        "Customer"
+      ],
+      "keywords": [],
+      "power": 1,
+      "guard": 2,
+      "trouble": 2,
+      "text": "Talk Them Down: When this enters play, choose one: The next Character you play this Turn costs 2 less; or the next Deal you spend this Turn costs 1 less Deal.",
+      "flavor": "“I'll give you 20 for it.”",
+      "status": "testing",
+      "digital_status": "implemented-pawn-shop-2026-10-20",
+      "complexity": "advanced"
     }
   ],
   "misdirection_audit": {
