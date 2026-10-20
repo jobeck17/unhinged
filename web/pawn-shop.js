@@ -54,7 +54,7 @@ export function installPawnShop(Game,LEADERS){
   const rotated=this.chars(p).filter(x=>x.id===ID.clerk&&!x.ready).map(x=>x.uid);
   // The Action's Trouble lock expires at the beginning of the owner's next Turn.
   for(const x of this.chars(p))delete x.pawnLifetimeNoTrouble;
-  s.pawnStashCount=0;s.closedDealThisTurn=false;s.clearancePending=[];s.pawnHaggleDealDiscount=0;
+  s.pawnStashCount=0;s.closedDealThisTurn=false;s.clearancePending=[];s.pawnHaggleDealDiscount=0;s.pawnHaggleCharDiscount=0;
   const outcome=start.call(this);
   for(const uid of rotated){
    const x=this.obj(uid);
@@ -149,7 +149,7 @@ export function installPawnShop(Game,LEADERS){
  };
  const playCost=Game.prototype.playCost;
  Game.prototype.playCost=function(p,id){
-  const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
+  const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id)+(this.card(id)?.type==='Character'?(this.players[p]?.pawnHaggleCharDiscount||0):0);
   if(!add)return playCost.call(this,p,id);
   const s=this.players[p],had=Object.prototype.hasOwnProperty.call(s,'nextCharDiscount'),prev=s.nextCharDiscount;
   s.nextCharDiscount=(prev||0)+add;
@@ -163,7 +163,7 @@ export function installPawnShop(Game,LEADERS){
   if(id===ID.trash&&!this.players[p].discard.length)return false;
   if(id===ID.refund&&(!this.canSpendPawnDeal(p)||!this.chars(1-p).some(x=>this.card(x).cost<=4)))return false;
   if(id===ID.lifetime&&!this.canSpendPawnDeals(p,2))return false;
-  const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
+  const add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id)+(this.card(id)?.type==='Character'?(this.players[p]?.pawnHaggleCharDiscount||0):0);
   if(!add)return canPlay.call(this,index,p);
   const s=this.players[p],had=Object.prototype.hasOwnProperty.call(s,'nextCharDiscount'),prev=s.nextCharDiscount,flag=this._pawnApplyingDiscount;
   s.nextCharDiscount=(prev||0)+add;this._pawnApplyingDiscount=true;
@@ -172,13 +172,14 @@ export function installPawnShop(Game,LEADERS){
  };
  const play=Game.prototype.play;
  Game.prototype.play=async function(index){
-  const p=this.turn,s=this.players[p],id=s.hand[index],add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id);
+  const p=this.turn,s=this.players[p],id=s.hand[index],add=this._pawnApplyingDiscount?0:clerkDiscount(this,p,id)+(this.card(id)?.type==='Character'?(s.pawnHaggleCharDiscount||0):0);
   if(!add)return play.call(this,index);
   const had=Object.prototype.hasOwnProperty.call(s,'nextCharDiscount'),prev=s.nextCharDiscount,flag=this._pawnApplyingDiscount;
   s.nextCharDiscount=(prev||0)+add;this._pawnApplyingDiscount=true;
   try{return await play.call(this,index)}
   finally{
    const consumed=s.nextCharDiscount===0&&this.card(id)?.type==='Character';
+   if(consumed)s.pawnHaggleCharDiscount=0;
    if(consumed)s.nextCharDiscount=0;
    else if(had)s.nextCharDiscount=prev;
    else delete s.nextCharDiscount;
@@ -207,7 +208,7 @@ export function installPawnShop(Game,LEADERS){
     {label:'Next Deal payment this Turn costs 1 fewer Deal',value:'deal'}
    ]);
    if(pick==='character'){
-    s.nextCharDiscount=(s.nextCharDiscount||0)+2;
+    s.pawnHaggleCharDiscount=2;
     this.say('Haggler: Next Character costs 2 less this Turn');
    }else if(pick==='deal'){
     s.pawnHaggleDealDiscount=1;
