@@ -1,3 +1,9 @@
+## CURRENT Pawn Shop addition — Haggler (20 October 2026)
+
+**Promoted at designer request.** P193 Haggler, Momentum / Pawn Shop Customer Character: **Cost 2, 1 Power / 2 Guard (Health) / 2 Trouble**. **Talk Them Down:** On entering play choose the next Character you play this Turn costs 2 less Stash, or the next Deal payment you make this Turn costs one fewer Deal. A one-Deal spend becomes free and still counts as spending for its effect; a two-Deal payment becomes one. Each coupon applies once and expires at the start of the owner's next Turn. Grandma's protection remains based on the actual Deals spent. Flavor: **“I'll give you 20 for it.”** The 40-card baseline adds 2 Haggler and reduces P187 Junkyard Visionary from 4 to 2 copies. Balance provisional: cheap 2-Trouble support body and free Deal effects.
+
+**First content milestone** 12 unique Characters / 6 Actions / 2 Items = 20 designs. Current: **8 Characters + 4 Actions + 1 Item = 13/20 (65%)**; remaining 4 Characters, 2 Actions, 1 Item. Current Characters: Antique Holder; Grandma With a Million-Dollar Doorstop; Guy Selling His Wife's Dress; Guy Who Got a Bad Deal; Junkyard Visionary; Black Friday Employee; Pawn Shop Scalper; Haggler. Actions: Moron's Gold; One Man's Trash; No Refunds; The Deal of a Lifetime. Item: Family Heirloom. Eventual 38-card goal separate. Maintain complete roster and next suggestions after new additions.
+
 ## CURRENT Pawn Shop addition — Pawn Shop Scalper (19 October 2026)
 
 Promoted at designer request. P192 Pawn Shop Scalper: Momentum/Pawn Shop Customer Character, Cost 4, 3 Power / 4 Health / 1 Trouble. Resell Value: On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less, whether Ready or Rotated. Then Draw 1 card. Flavor: "I'm reselling this for double." It can also enter without a Deal. Two copies replace two P185 Guy Selling His Wife's Dress copies in the 40-card starter deck.
