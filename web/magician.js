@@ -76,7 +76,7 @@ async function arrange(g,p,n,toHand){
 }
 Game.prototype.exchangeStash=async function(p,max){
  const s=this.players[p];this.stashStates(p);if(!s.stash.length||!s.hand.length)return;
- const options=s.stash.map((id,i)=>({label:`${this.card(id).name} · ${s.stashReady[i]?'Ready':'Rotated'} · Stash ${i+1}`,value:i}));
+ const options=s.stash.map((id,i)=>({label:`${this.card(id).name} · ${s.stashReady[i]?'Ready':'Used'} · Stash ${i+1}`,value:i}));
  let slots;if(max===1){const i=await this.choose(p,'Exchange: choose a Stash card',options);if(i==null)return;slots=[i]}
  else slots=await this.ask({title:'Quick-Change Artist: choose up to 2 Stash cards to exchange',player:p,multi:true,max:Math.min(max,s.stash.length,s.hand.length),options});
  if(!Array.isArray(slots)||!slots.length||new Set(slots).size!==slots.length||slots.length>max||slots.some(i=>!options.some(o=>o.value===i)))return;
@@ -120,7 +120,7 @@ const passive=Game.prototype.leaderPassive;
 Game.prototype.leaderPassive=async function(p,event,context={}){
  const s=this.players[p];if(this.name(p)!=='Birthday Party Magician'||!['returnedCharacter','dismissedCharacter'].includes(event))return passive.call(this,p,event,context);
  if(this.turn!==p||s.leaderPassiveUsed)return 0;s.leaderPassiveUsed=true;
- const states=this.stashStates(p),opts=states.flatMap((ready,i)=>ready?[]:[{label:`${this.card(s.stash[i]).name} · Stash ${i+1} · Rotated`,value:i}]);
+ const states=this.stashStates(p),opts=states.flatMap((ready,i)=>ready?[]:[{label:`${this.card(s.stash[i]).name} · Stash ${i+1} · Used`,value:i}]);
  const i=await this.choose(p,'The Show Must Go On: Ready 1 Stash',opts);
  if(i!=null){states[i]=true;s.fuel++;this.say('The Show Must Go On: Ready 1 Stash')}return 1;
 };

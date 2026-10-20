@@ -96,7 +96,7 @@
         "LAB-FLM-007"
       ],
       "passive": "Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure.",
-      "breaking_point": "You Ain’t Seen Nothing Yet! Roll a D6: 1 — Rotate a chosen Ready friendly Character; 2–5 — Ready a chosen friendly Rotated Character; 6 — Ready all your Characters."
+      "breaking_point": "You Ain’t Seen Nothing Yet! Roll a D6: 1 — Expose one of your Ready Characters; 2–5 — Ready one of your Exposed Characters; 6 — Ready all your Characters."
     },
     {
       "name": "Everything Must Go — Pawn Shop First Test",
@@ -141,7 +141,7 @@
       ],
       "status_note": "CURRENT Pawn Shop 40-card test: two copies of P192 Pawn Shop Scalper replace two P185 Guy Selling His Wife's Dress; two P191 remain. First design milestone 12/20 unique cards. All balance provisional.",
       "composure": 20,
-      "passive": "I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, new Stash enters Rotated. At 2+ Deals, new Stash enters Ready; Draw 2 instead of 1 during your Draw step, and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power and Sucker Punch.",
+      "passive": "I Take the Risk, You Keep the Money: Once on your turn, Use 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, new Stash enters Used. At 2+ Deals, new Stash enters Ready; Draw 2 instead of 1 during your Draw step, and your Characters have Hothead. At 4 Deals, also Stash twice per turn; your Characters get +1 Power and Sucker Punch.",
       "breaking_point": "Pending design (the universal Breaking Point at 10 Composure still occurs)."
     },
     {
@@ -235,8 +235,8 @@
         "LAB-MAG-005",
         "LAB-MAG-009"
       ],
-      "passive": "The Show Must Go On: Once during your turn, when a character you control is returned to your hand or Dismissed, Ready 1 Stash.",
-      "breaking_point": "For My Next Trick…: You may return a character you control to your hand. Then you may play a character costing 3 or less from your hand without paying its cost."
+      "passive": "The Show Must Go On: Once during your turn, when one of your Characters is Returned to your hand or Dismissed, Ready 1 Stash.",
+      "breaking_point": "For My Next Trick…: You may Return one of your Characters to your hand. Then you may play a Character costing 3 or less from your hand without paying its cost."
     },
     {
       "name": "Curbside Empire",

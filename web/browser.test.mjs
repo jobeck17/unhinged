@@ -118,13 +118,13 @@ try{
   await page.locator('[data-zone="hand"][data-index="0"]').click();await page.click('#play');
   await page.waitForSelector('#done');const title=await page.locator('.sheet h2').innerText(),cost=Number(title.match(/exactly (\d+)/)[1]);
   for(let i=0;i<cost;i++)await page.locator('[data-c]').nth(i).click();await page.click('#done');
-  await page.getByRole('heading',{name:/enter Rotated for Meat Shield/}).waitFor();
+  await page.getByRole('heading',{name:/enter Exposed for Meat Shield/}).waitFor();
   assert.equal(await page.getByRole('button',{name:'Enter Ready',exact:true}).count(),1);
-  assert.equal(await page.getByRole('button',{name:'Enter Rotated',exact:true}).count(),1);
-  await page.getByRole('button',{name:rotated?'Enter Rotated':'Enter Ready',exact:true}).click();await page.waitForSelector('#end');
+  assert.equal(await page.getByRole('button',{name:'Enter Exposed',exact:true}).count(),1);
+  await page.getByRole('button',{name:rotated?'Enter Exposed':'Enter Ready',exact:true}).click();await page.waitForSelector('#end');
   const ready=await page.evaluate(id=>globalThis.__audit.get().players[0].board.find(x=>x.id===id).ready,id);assert.equal(ready,!rotated);
  }
- console.log('Meat Shield browser verification passed: Ready and Rotated entry choices for Crossing Guard, HOA Vice President and Gated Community Security');
+ console.log('Meat Shield browser verification passed: Ready and Exposed entry choices for Crossing Guard, HOA Vice President and Gated Community Security');
  // Pawn Shop Heirloom attaches through the actual human picker, including
  // when more than one Character is eligible. No Character = no Play button.
  await page.evaluate(()=>globalThis.__audit.fixture({leader:'Shady Pawn Shop Owner',hand:['P183']}));

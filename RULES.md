@@ -1,338 +1,238 @@
-# Unhinged Rules — Mordecai 0.4
+# Unhinged Rules Reference — Mordecai 0.4
 
-**Working production rulebook • 6 October 2026**
+**Learning to play? Start with [How to Play](HOW_TO_PLAY.md).** This document is for looking things up when a strange situation comes up at the table. Where card data still has older wording, this reference wins.
 
-Mordecai 0.4 promotes the tested Composure 2.0 core into production and replaces Carl 0.3 as the canonical rules generation. The core-rules design gate is closed for this playtest. Card, deck, Leader, simulator, browser, and terminology audits follow this promotion. Where current card data still contains legacy wording, **this rulebook wins**.
+## Golden rules
 
-## 1. Core game
+1. **The card beats the rulebook.** Printed card text may add to, change, or override a base rule.
+2. **Finish what you're doing, then check Composure.** Resolve the current effect completely. Then resolve any Breaking Point it crossed, then any Last Straw.
+3. **If two things happen at once, the player whose turn it is picks the order.** This applies to triggers, Breaking Points and Last Straws alike.
 
-Each Leader begins with **20 Composure**. Characters have **Power / Health / Trouble**.
+Traits (Animal, Kid, HOA…) mean nothing on their own unless a card refers to them. Keywords mean only what this reference or the card says.
 
-The core Character decision is:
+## 1. Cards and zones
 
-**Attack a Character / Cause Trouble / Stay Ready.**
+Each player has a Deck, Hand, Discard, Play Area and Stash, plus one **Leader** and one **Last Straw** outside the 40-card deck.
 
-Power governs Character combat. Health governs Character durability. Trouble pressures the opposing Leader.
-
-Base rules apply to every player. Printed card text may add to, change, or override a base rule. Traits have no inherent rules meaning unless referenced. Keywords mean only what the rules or card text define.
-
-## 2. Objects and zones
-
-Each player has a Deck, Hand, Discard, Play Area, and Stash, plus one **Leader** and one **Last Straw** outside the 40-card deck.
-
-- **Leader:** visible outside the deck and play area; provides deck identity, a passive, a printed Breaking Point ability, and Composure.
-- **Last Straw:** begins face-down under its Leader and is not part of the deck.
-- **Character:** has Power, Health, and Trouble.
+- **Leader:** stays face up outside the deck. Provides deck identity, a passive ability, a printed Breaking Point ability, and the Composure track. Leaders can't be Attacked and have no Health.
+- **Last Straw:** face down under the Leader until it's revealed. Not part of the deck. Chosen during deckbuilding from the shared Last Straw pool.
+- **Character:** has Power, Health and Trouble.
 - **Action:** resolves once, then goes to its owner's discard.
-- **Item:** enters play and remains until moved; may be standalone or attached.
-- **Stash:** resource row used to pay Costs.
+- **Item:** enters play and stays until something moves it. May be standalone or attached to a Character.
+- **Stash:** your resource row.
 
-Only Characters and Items are normally **in play**. There is no base limit on Characters in play, Items in play, Stash size, hand size, or Items attached to one Character.
+Only Characters and Items are **in play**. There's no limit on Characters, Items, Stash size, hand size, or Items attached to one Character.
 
-## 3. Vocabulary and movement
+## 2. Ready, Exposed and Used
 
 | Term | Meaning |
 | --- | --- |
 | **Ready** | Upright and available. |
-| **Rotate** | Turn a Ready card 90 degrees sideways. |
-| **Rotated** | Sideways. |
-| **Play** | Play a card from a zone where a rule/effect permits it. |
-| **Activate** | Voluntarily use an activated ability and pay its cost. |
-| **Power** | A Character’s combat damage stat. |
-| **Attack** | The action of attacking another Character. |
-| **Health** | A Character's durability. |
-| **Trouble** | A Character's Leader-pressure stat. |
-| **Composure** | A Leader's victory-pressure track. |
-| **Breaking Point** | Protected one-time Leader threshold at 10 or less Composure. |
-| **Last Straw** | Hidden outside-deck card revealed at 0, and the endangered state that normally follows. |
-| **Unhinged** | The game-losing Leader state. |
+| **Expose** | Turn a Ready Character sideways. |
+| **Exposed** | A sideways Character. Opposing Characters can Attack it. |
+| **Use** | Turn a Ready Item or Stash card sideways, usually to pay a cost. |
+| **Used** | A sideways Item or Stash card. |
+
+A card **Readies** only when it actually goes from sideways to upright. A card that enters play Ready, or is told to Ready while already Ready, doesn't trigger "when this Readies" abilities.
+
+## 3. Moving cards
 
 - **Draw:** top of deck to hand.
 - **Discard:** hand to owner's discard.
-- **Return:** another zone to owner's hand.
+- **Return:** from another zone to owner's hand.
 - **Defeat:** Character from play to owner's discard.
-- **Sacrifice:** Defeat one of your own Characters as a cost/effect; also a Defeat. Terminology remains subject to the 0.4 card audit.
-- **Dismiss:** card from play to owner's discard without Defeating it.
-- **Put:** neutral movement to the stated destination; not automatically Draw, Discard, Return, Defeat, Sacrifice, or Dismiss.
+- **Sacrifice:** Defeat one of your own Characters. It still counts as a Defeat.
+- **Dismiss:** card from play to owner's discard *without* Defeating it.
+- **Put:** move a card to the stated place. It doesn't count as any of the verbs above unless the card says so.
 
-There is no free voluntary self-Dismiss action. **Ownership never changes.** Cards sent to a discard pile always go to their owner's discard.
+Cards always go to their **owner's** discard. Ownership never changes. You can't Dismiss your own cards for free; something has to tell you to.
 
-## 4. Setup and War
+## 4. Setup
 
-1. Bring a 40-card deck, one Leader, and one Last Straw.
-2. A standard deck may use the Leader's Style plus up to one additional Style. Mono-Style is legal.
-3. Standard maximum is four copies of a card unless explicit deck-construction text overrides it. Current rulebreakers may create exceptions, such as Crazy Cat Lady allowing up to 10 Stray Cats.
-4. Put the chosen Last Straw face-down under the Leader.
-5. Set each Leader to **20 Composure**.
-6. Shuffle and perform War to determine first player.
-7. Draw seven cards.
-8. Mulligan any number from 0–7: draw replacements, then shuffle replaced cards into the deck.
-9. The second player receives **no setup temporary Stash**.
+1. Bring a 40-card deck, one Leader and one Last Straw.
+2. A deck may use the Leader's Style plus up to one other Style. Mono-Style is legal.
+3. Up to four copies of any card, unless a card or Leader says otherwise (for example, Crazy Cat Lady allows up to 10 Stray Cats).
+4. Put your Last Straw face down under your Leader. Set your Leader to **20 Composure**.
+5. Shuffle and play **War**: each player reveals their top card; higher printed Cost goes first. Repeat ties. Shuffle the revealed cards back in.
+6. Draw seven. Mulligan once: set aside any number, draw that many, then shuffle the set-aside cards into your deck.
 
-**War:** each player reveals the top card and compares printed Cost. Higher wins. Repeat ties. Return revealed cards and shuffle. War may resolve a genuinely simultaneous game-ending tie when no more specific rule does.
+The War winner takes the first turn of every Round. A **Round** is one turn from each player.
 
-## 5. Rounds and Turns
+## 5. Turns
 
-A Round is one full Turn from each player. The War winner takes the first Turn of every Round unless an effect changes this.
+**Start of turn:**
+1. Ready your Characters, Items and Stash.
+2. Draw a card. (The first player skips this on their first turn.)
 
-Start of Turn:
-1. Ready eligible Characters, Items, and Stash.
-2. Draw one card.
-3. Begin the main Turn.
+**Then, in any order and as often as your cards allow:** Stash a card, play cards, use abilities, Attack, and Cause Trouble. There's no once-per-turn limit on Attacking or Causing Trouble beyond each Character needing to be Ready. If an effect Readies a Character, that effect says what it can't do afterward.
 
-The first player skips the Draw step of their first Turn. The second player Draws normally.
-
-During your Turn, you may Play cards, Stash when eligible, Activate abilities, Attack, and Cause Trouble in any legal order as often as Ready cards/resources and text permit.
-
-There is **no universal once-per-Turn Attack-or-Cause-Trouble cap**. Readiness is literal. If an effect Readies a Character, that effect is responsible for any restriction such as “It cannot Cause Trouble this Turn.”
-
-“This Turn” expires at end of that Turn. “This Round” expires after the second Turn and end-of-Round effects.
+"This turn" ends at the end of the current turn. "This Round" ends after the second player's turn.
 
 ## 6. Stash
 
-There is no automatic resource progression. Once per Round during your Turn, you may put one card from hand face-down into Stash. This is not a separate action.
+Once per turn, you may put a card from your hand face down into your Stash. It enters Ready.
 
-Normal Stash enters Ready, pays 1 toward a Cost when Rotated, has no printed identity/stats/text while there, and cannot leave unless a rule/effect moves it. Its owner may inspect its identity at any time; opponents may not inspect it unless an effect permits looking. When paying a Cost, choose which Ready Stash cards to Rotate. An exchange preserves each replaced slot’s Ready or Rotated state. Stash count and Ready/Rotated state are public.
+To pay a Cost, Use that many Ready Stash cards; each pays 1. Costs can be reduced to 0.
 
-Effects may create face-up temporary Stash or otherwise break these rules. Unless text says otherwise, face-up temporary Stash is discarded when spent. Costs may be reduced to 0.
+Face-down Stash has no name, stats or text while there. You may look at your own Stash any time; your opponent can't unless an effect allows it. How many Stash cards you have, and which are Used, is public. When an effect swaps a Stash card for another, the new card takes the old one's Ready or Used state.
 
-## 7. Playing, attachments, and control
+Some effects create **face-up temporary Stash**. Unless the card says otherwise, it's discarded when spent.
 
-Actions may be played only during your own main Turn, resolve once, and go to discard. **Responses are retired game-wide:** there are no Response cards or voluntary Response windows during another player's Turn or during resolution of an Attack/effect. Automatic triggered abilities still resolve normally. Former Response cards are marked pending redesign and excluded from playtests until they receive a legal effect.
+## 7. Playing cards
 
-Characters and Items enter Ready unless text says otherwise.
+- **Actions** can be played only during your own turn.
+- There are **no responses**: nobody plays cards during another player's turn. Abilities that trigger automatically still happen.
+- **Characters and Items** enter play Ready unless the card says otherwise.
+- **New Characters** can't Attack (unless they have Hothead), Cause Trouble, or use their own sideways abilities until your next turn. Items can use their abilities right away.
+- **Attaching Items** attach to one of your Characters unless the card says it can go on an opposing one. When a Character leaves play, its attached Items go to their owners' discards. This isn't a Dismiss.
 
-A Character that enters play normally cannot Attack until its controller's next Turn unless it has Hothead, cannot Cause Trouble because it did not begin the Turn under that controller's control, and cannot use one of its own Rotate abilities until that controller's next Turn unless text says otherwise. Items may normally use their own abilities the Turn they enter.
-
-By default, an attaching Item attaches only to a Character you control. Explicit text may attach to an opposing Character. Any number of Items may attach to a Character unless text limits it.
-
-When a Character leaves play, attached Items go to their owners' discards unless text says otherwise. This is cleanup, **not Dismiss**.
-
-If a Character changes control, attached Items stay attached. Effects they grant to, modify on, or trigger from that Character continue with the Character under its new controller. Item ownership and independent Ready/Rotated state do not change. Controlling the Character does not grant control of a separate activated Item ability unless text says so.
-
-Changing control does not Ready/Rotate, heal, remove attachments, or reset state. If a control effect gives no duration, it lasts until end of the current Turn unless text says otherwise. When temporary control ends, the Character returns to its previous controller in its **current state**.
+**Borrowed Characters.** If you take control of an opposing Character, it keeps its damage, attachments and Ready/Exposed state. Unless the card gives a duration, you keep it until the end of the current turn, then it goes back as it is. Its attached Items stay attached, but you don't control their separate abilities.
 
 ## 8. Attack
 
-**Leaders cannot be Attacked.** Attacks are Character-versus-Character.
+1. Choose one of your Ready Characters that can Attack, and an opposing **Exposed** Character.
+2. Expose your attacker.
+3. It deals damage equal to its Power to the target.
 
-Choose an eligible Ready attacker and eligible opposing Character, then Rotate the attacker. By default only opposing **Rotated Characters** may be Attacked. Ready Characters are protected from ordinary Attacks; Sucker Punch and explicit text may override this.
+There's no blocking and no automatic counterattack. Ready Characters are safe from ordinary Attacks unless the attacker has **Sucker Punch** or a card says otherwise. Being Ready protects only from Attacks, not from Actions, Items, abilities or damage effects.
 
-Ready protects from ordinary Attacks **only**. Ready Characters may still be targeted/affected by Actions, Items, abilities, damage, placed damage, Rotate effects, Return, Dismiss, Defeat, attachments, and other effects unless text says otherwise.
-
-The attacker deals damage equal to its Power. There is **no blocking step and no universal retaliation**. If the target leaves before combat damage, the Attack ends and the attacker remains Rotated.
-
-**Retaliate:** When this Character is Attacked, it deals its Power as damage to the attacking Character after the Attack damage resolves, even if it was Defeated by that Attack. Capture its Power before damage resolves. If it leaves play before Attack damage is dealt (for example by Return), it does not Retaliate.
+If the target leaves play before damage, the Attack ends and your attacker stays Exposed.
 
 ## 9. Damage and Health
 
-Damage persists until healed/removed or the Character leaves play. A Character is Defeated immediately when accumulated damage equals or exceeds current Health.
+Damage stays on a Character until it's healed or the Character leaves play. A Character is **Defeated** as soon as its damage equals or exceeds its Health. Health can't go below 0; a Character at 0 Health is Defeated.
 
-All damage uses the same durability system regardless of source. If Health is reduced so existing damage equals/exceeds it, Defeat immediately. **Effective Health cannot be below 0. A Character at 0 Health is Defeated.**
-
-**Deal damage** creates a damage-dealt event. **Put damage** adds damage without dealing it, so it does not trigger “dealt/took damage” effects unless text says otherwise. Both contribute to the same Defeat check and neither cares whether the Character is Ready.
-
-Healing removes Character damage. Leaders recover Composure instead.
+All damage is the same, whatever caused it. Healing removes damage from Characters. Leaders don't take damage or heal; they lose and recover Composure.
 
 ## 10. Cause Trouble
 
-Cause Trouble is **not combat and cannot be Blocked**.
+Choose one of your Ready Characters that:
+- began this turn under your control, and
+- has at least 1 Trouble.
 
-To Cause Trouble, choose a Ready Character you control that began the Turn under your control and has at least 1 effective Trouble. Rotate it. The opposing Leader loses Composure equal to its effective Trouble.
+Expose it. The opposing Leader loses Composure equal to its Trouble. Cause Trouble isn't combat and can't be blocked. The Character is now Exposed and can be Attacked.
 
-Afterward that Character is Rotated and exposed to ordinary Attacks.
+Trouble can be raised, lowered or set by effects, but never below 0. A Character with 0 Trouble can't Cause Trouble.
 
-Trouble is fully modifiable. Effects may increase, reduce, or set it. **Effective Trouble cannot be below 0. A 0-Trouble Character cannot Cause Trouble.** If raised to 1+, it becomes eligible normally.
-
-Cause Trouble through Characters is the primary victory-pressure engine. Direct Composure loss from other effects is valid spice/synergy/payoff/reach, but should normally carry meaningful condition, inefficiency, risk, setup, or deckbuilding cost.
+Causing Trouble is the main way to win. Effects that make a Leader lose Composure directly are fine, but should usually come with a condition, risk or setup cost.
 
 ## 11. Breaking Point
 
-The first time a Leader moves from above 10 Composure to **10 or less**, its Breaking Point triggers.
+The first time a Leader goes from above 10 Composure to **10 or less**, its printed Breaking Point fires. It doesn't matter whether the Composure was lost, set, or moved some other way.
 
-Breaking Point is universal at 10, triggers only once, uses the unique ability printed on that Leader, and cares about actual Composure movement rather than whether an effect says “lose,” “set,” or something else.
-
-Breaking Point is a **protected Leader event**. Normal effects cannot cancel, prevent, or interrupt it.
-
-**Threshold crossings are latched.** Record the crossing when it occurs, finish the current effect, then resolve the threshold. Recovery above 10 during that same effect does not erase the trigger.
-
-A Leader may later recover above 10 up to 20, but Breaking Point never retriggers. Persistent BP text may explicitly check current Composure and toggle without retriggering.
-
-If both Leaders cross BP in one effect, finish the effect, then use actual trigger order. Genuine ties resolve non-active player first.
+- It fires **once per game**, even if the Leader later recovers above 10.
+- Nothing can stop or cancel it.
+- If an effect crosses 10 and then recovers above it, Breaking Point still fires after the effect.
+- An ability that checks "while at 10 or less" can switch on and off as Composure changes, without firing Breaking Point again.
 
 ## 12. Last Straw
 
-Reaching 0 Composure does **not** normally lose if the Leader still has an unused Last Straw.
+When a Leader first reaches **0 Composure**:
 
-The chosen Last Straw begins **face-down under the Leader** and remains hidden through Breaking Point. When that Leader first reaches 0:
+1. Finish the current effect, and resolve any Breaking Point it crossed.
+2. Reveal the Last Straw, turn it sideways beside the Leader as a marker, and resolve it.
+3. The current turn ends normally (end-of-turn effects still happen). Nobody gets an extra turn.
 
-1. Finish the current effect.
-2. Resolve any Breaking Point crossed by that effect before Last Straw.
-3. Reveal the Last Straw.
-4. Rotate it 90 degrees and leave it face-up beside the Leader as a spent marker.
-5. Resolve it.
-6. Force the current Turn into its normal end-of-Turn sequence, including scheduled effects/cleanup.
-7. Pass normally. Last Straw never grants an extra Turn.
+Nothing can stop a revealed Last Straw. Effects can interact with a Last Straw card only if they say "Last Straw."
 
-Once triggered, Last Straw is a protected Leader event and normal effects cannot cancel/prevent/interrupt its resolution. Ordinary effects cannot interact with a Last Straw unless they explicitly refer to **Last Straw**.
+**While your Leader is at Last Straw:**
+- your Characters have **Hothead** and may Attack opposing **Ready** Characters;
+- the **next** opposing Character that successfully Causes Trouble makes your Leader **Unhinged**, and you lose.
 
-If a Leader reaches 0 and its Last Straw was removed before it triggered, that Leader immediately becomes **Unhinged** and loses.
+That final Cause Trouble isn't ordinary Composure loss, so preventing Composure loss doesn't stop it. Only an effect that stops Cause Trouble, or says it prevents Unhinged, can. A 0-Trouble Character can't deliver it. Composure lost any other way can't finish you.
 
-### Last Straw state
+**Recovering from Last Straw.** If a Last Straw sets your Composure above 0, you're no longer at Last Straw and lose its combat benefits. Your Last Straw is still spent: if you reach 0 again, you're immediately Unhinged.
 
-Normally the Leader remains at **0 Composure** after its Last Straw resolves.
+If a Leader reaches 0 after its Last Straw was removed without triggering, that Leader is immediately Unhinged.
 
-While your Leader is at Last Straw:
-- your Characters have **Hothead**;
-- your Characters may Attack opposing Ready Characters;
-- the next opposing Character that successfully **Causes Trouble** makes your Leader **Unhinged** and you lose.
+> **Paper-test variant — Last Straw Guard (TESTING, not production).** While your Leader is at Last Straw, opposing Characters can't Cause Trouble while you have a Ready Character, and your Ready Characters can be Attacked.
 
-The final Cause Trouble is not ordinary Composure loss. Preventing/reducing Composure loss does not stop it; an effect must prevent/cancel Cause Trouble or explicitly prevent Unhinged.
+## 13. Recovering Composure
 
-A 0-Trouble Character cannot Cause Trouble, including for the final hit.
+Before Last Straw, a Leader may recover Composure up to 20. Recovery should be rare and costly.
 
-### Recovery override and spent Last Straw
+## 14. Running out of cards
 
-A Last Straw may explicitly set/recover its Leader above 0. If so, that Leader is not at Last Straw and loses the universal Last Straw combat benefits unless text says otherwise. The Last Straw remains spent. If that Leader later reaches 0 again, it immediately becomes Unhinged and loses.
+There's no loss for running out of cards. If you would Draw from an empty deck before your Last Straw has triggered, your Leader goes to 0 and your Last Straw triggers (this doesn't fire Breaking Point). If your Last Straw already triggered, the failed Draw does nothing. Don't reshuffle your discard.
 
-Removing a spent Last Straw after it triggered does not retroactively defeat a Leader that remains in normal Last Straw state.
+## 15. Triggers
 
-### Multiple thresholds
+Triggered abilities happen automatically, and only while their card is in play unless they say otherwise. Once triggered, an ability finishes even if its card leaves play, unless it needs that card.
 
-After a single effect, resolve **all crossed Breaking Points before any Last Straws**. Within a threshold layer use actual order; genuine ties resolve non-active player first.
+A card that leaves play and comes back is a new card: no old damage, bonuses or use history.
 
-## 13. Composure recovery
+"If you do" means the optional instruction right before it actually happened.
 
-Before Last Straw, a Leader may recover Composure up to **20**. Recovery is valid but should be rare and carry meaningful cost, condition, or tempo sacrifice.
+## 16. Keywords
 
-Leaders do not have Health, take Character damage, or heal. Their survival track is Composure.
-
-## 14. Deck exhaustion
-
-There is **no deck-out loss**.
-
-If a player would Draw from an empty deck and their Last Straw has not triggered, the failed Draw triggers Last Straw directly: set that Leader to 0 and resolve Last Straw normally. This special trigger does **not** retroactively trigger Breaking Point.
-
-If that Last Straw has already triggered, a failed Draw simply does nothing. Do not reshuffle the discard.
-
-## 15. Triggers and timing
-
-Triggered abilities happen automatically. Unless text says otherwise, abilities function only while their source is in play.
-
-One player's simultaneous triggers are ordered by that player. Genuine simultaneous ordinary triggers from both players resolve active player's triggers first, then non-active player's, unless a protected threshold rule above gives a different order.
-
-A triggered/Activated ability resolves independently of its source remaining in play unless it requires the source. A card that leaves and re-enters is a new instance with no old damage, temporary bonuses, or use history. “If you do” requires the immediately preceding optional instruction to have happened.
-
-## 16. Current keywords
-
-**Absorb X:** Damage dealt to this Character is reduced by X, to a minimum of 0. Apply this to each damage event; it is not consumed. If multiple sources grant Absorb, use only the highest value. Absorb does not remove existing damage and does not reduce **Put damage**, Health reduction, or Composure loss. If damage is reduced to 0, no damage is dealt and damage-dealt/taken triggers do not fire. Losing Absorb does not add previously prevented damage.
-
-**Hothead:** This Character may Attack on the Turn it enters play. Attack permission only; it does not allow early Cause Trouble.
-
-**Retaliate:** When Attacked, deal this Character’s Power to the attacker after Attack damage, even if this Character was Defeated by that Attack.
+**Hothead:** This Character may Attack the turn it's played. It still can't Cause Trouble early.
 
 **Sucker Punch:** This Character may Attack Ready opposing Characters.
 
+**Hits Back:** When this Character is Attacked, after the Attack damage, it deals damage equal to its Power to the attacker, even if it was Defeated. Use its Power from before the damage. If it left play before the damage (for example, it was Returned), it doesn't Hit Back.
+
+**Thick Skin X:** Each time damage is dealt to this Character, reduce it by X (minimum 0). If it has Thick Skin from several sources, use only the highest. Reduced-to-0 damage counts as no damage. Thick Skin doesn't remove existing damage, lower Health, or reduce Composure loss.
+
+**Meat Shield:** While this Character is Exposed, opposing Characters that can Attack it must choose an Exposed Meat Shield before Attacking any other Character. A Ready Meat Shield doesn't protect anyone. When you play a Meat Shield, you may have it enter Ready or Exposed (this doesn't let it act early). Meat Shield doesn't affect Cause Trouble, Actions, Items or abilities.
+
 **Explosive:** When this Character is Defeated, deal 1 damage to each opposing Character.
 
-**Stubborn:** The first time each Round this Character would be Returned or Dismissed, it remains in play instead.
+**Stubborn:** The first time each Round this Character would be Returned or Dismissed, it stays in play instead.
 
-**Jerry-Rig:** If this Item would go to your discard, you may put it face-up and Rotated into your Stash instead. When used to pay a Cost, discard it.
+**Jerry-Rig:** If this Item would go to your discard, you may put it face up and Used into your Stash instead. When you spend it, discard it.
 
-Legacy keywords/text depending on Carl blocking, universal retaliation, Leader Health, Power/Guard, or Responses are pending the Mordecai card audit and are not base rules merely because stale text remains.
+A few cards in Styles that haven't been cleaned up yet use keywords not defined here (such as Defiant, Slowpoke or Chicken), or text that assumes blocking, Leader Health or responses. Those aren't base rules; they're waiting on their Style's cleanup.
 
-## 17. Leader model
+## 17. Game end
 
-A Leader stays visible outside the deck, begins at 20 Composure, has one automatic passive and one unique printed Breaking Point, does not Attack or have Health, and uses one hidden shared-pool Last Straw chosen during deckbuilding.
+You lose when your Leader becomes **Unhinged**.
 
-Breaking Point belongs to Leader identity. Last Straw is currently a universal shared pool unless text restricts it.
+The normal route: **20 Composure → Breaking Point at 10 → Last Straw at 0 → one more successful Cause Trouble → Unhinged.**
 
-The Mordecai content audit must assign/finalize each Leader's Breaking Point and production Last Straw pool before balance results are authoritative.
+Finish resolving whatever is happening before the game ends. If both players would lose at genuinely the same moment, play War to decide. There are no draws.
 
-### Florida Man — current passive
+## 18. Leaders
 
-**Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure.**
+Each Leader starts at 20 Composure, has one passive and one printed Breaking Point, and uses one hidden Last Straw from the shared pool.
 
-This triggers for each qualifying Defeat, with no once-per-Turn limit. A Defeat caused by an Action, Item, or other non-Attack effect does not qualify. This replaces Florida Man’s historical Adrenaline and damaged-Character Hothead/Sucker Punch/Ready passives. It is ordinary Composure loss and cannot substitute for the final successful Cause Trouble at Last Straw. His Breaking Point is “You Ain’t Seen Nothing Yet!” as specified below. His Attack-only passive is implemented in the production Reckless browser package; other Styles still require their own parity audit.
+**Florida Man (Reckless).** *Passive:* Whenever one of your Characters Defeats an opposing Character with an Attack, the opposing Leader loses 1 Composure. (Every time; not from Actions, Items or other effects. It can't deliver the final Cause Trouble.) *Breaking Point — You Ain't Seen Nothing Yet!:* Roll a d6 both players can see. 1: Expose one of your Ready Characters. 2–5: Ready one of your Exposed Characters. 6: Ready all your Characters. If there's no eligible Character, nothing happens. Readying doesn't grant Hothead or early Trouble.
 
-### Shady Pawn Shop Owner — Momentum (current first-test Leader)
+**HOA President (Stonewall).** *Passive — Failure to Respond:* Beginning in Round 8, your Characters get +1 Trouble. *Breaking Point — Final Warning:* When an opposing Character Causes Trouble that crosses your Leader to 10 or less, you may Dismiss that Character after its Trouble resolves. The Composure loss still happens. If your Breaking Point fires any other way, nothing is Dismissed.
 
-**I Take the Risk, You Keep the Money:** Once during your Turn, Rotate **3 Ready Stash** to gain **1 Deal**, up to a maximum of **4 Deals**. When this Leader has **0–1 Deals**, new Stash enters **Rotated** and becomes Ready at the next Ready step. At **2 or more Deals**, new Stash enters **Ready** immediately. This also applies to additional Stash from effects such as Antique Holder. Only the state of **newly added** Stash depends on your current Deal total; existing Stash does not change when Deals rise or fall. This is a specific Leader rule; other Leaders still use normal Ready-on-entry Stash.
+**Birthday Party Magician (Misdirection).** *Passive — The Show Must Go On:* Once during your turn, the first time one of your Characters returns from play to your hand or is Dismissed, Ready one of your Used Stash. (Defeat, Sacrifice and discarding from hand don't count. The first qualifying event spends this even if no Stash is Used.) *Breaking Point — For My Next Trick…:* You may return one of your Characters to your hand. Then you may play a Character costing 3 or less from your hand for free.
 
-- At **0–1 Deals**, take a normal Draw step and you may Stash once per Turn.
-- At **2–3 Deals**, newly Stashed cards enter Ready, Draw **2** instead of 1 during your Draw step, and your Characters gain **Hothead**.
-- At **4 Deals**, keep the Ready-on-entry Stash, 2-card Draw, and Hothead; you may Stash **twice** during your Turn, and your Characters get **+1 Power** and **Sucker Punch**.
-- The number of Deals can rise or fall. As soon as it crosses a threshold, continuous benefits change accordingly. The first player still skips their first Draw step.
+**Shady Pawn Shop Owner (Momentum).** Replaces Washed-Up Rock Star in the current eight-deck roster. *Passive — I Take the Risk, You Keep the Money:* Once during your turn, Use 3 Ready Stash to gain 1 Deal (max 4).
+- **0–1 Deals:** new Stash enters Used and Readies at your next Ready step. Draw and Stash normally.
+- **2–3 Deals:** new Stash enters Ready, you Draw 2 instead of 1 during your Draw step, and your Characters have Hothead.
+- **4 Deals:** all of the above, plus you may Stash twice per turn, and your Characters get +1 Power and Sucker Punch.
 
-**Pawn Shop Scalper (P192):** Cost 4 Momentum Customer Character (3 Power / 4 Health / 1 Trouble). On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less, Ready or Rotated, then Draw 1 card. Without a Deal or a legal target, it still enters play. Grandma's final Deal protection applies.
+Only newly added Stash cares about your Deal total; Stash already in place doesn't change. This includes extra Stash from effects such as Antique Holder. Benefits switch on and off as soon as your Deals cross a threshold. The first player still skips their first Draw. *Breaking Point:* not yet designed.
 
-**Deals:** A Leader's Deal total starts at **0**. Deal tokens are public, are not Stash, and may be gained by effects such as Grandma With a Million-Dollar Doorstop. Deals are capped at **4**. Paying "Spend 1 Deal" reduces the total by one; if Grandma With a Million-Dollar Doorstop is in play, you cannot spend your last Deal. Cards referencing Deals also work in other legal Momentum decks; only the Shady Pawn Shop Owner gets the Leader-specific threshold buffs.
+**Deals.** Each Leader starts with 0 Deals, max 4. Deals are public tokens, not Stash, and some cards gain them (such as Grandma With a Million-Dollar Doorstop). "Spend 1 Deal" lowers your total by 1. While Grandma With a Million-Dollar Doorstop is in play, you can't spend your last Deal, including as part of a larger payment. Deal cards work in any legal Momentum deck; only the Shady Pawn Shop Owner gets the threshold benefits.
 
-**Customer / Staff:** Traits on Characters, not additional Styles. Black Friday Employee may remain Rotated during the controller's Ready step, discounting other Customers by 1 for each Employee kept Rotated that way. The controller chooses whether to Ready or keep it Rotated.
+**Customer / Staff** are Character traits, not Styles. **Black Friday Employee** may stay Exposed during your Ready step; each Employee kept Exposed this way makes your other Customers cost 1 less. **Pawn Shop Scalper** still enters play if you can't or don't spend a Deal. **The Deal of a Lifetime**'s "can't Cause Trouble" lasts until the start of your next turn, even if those Characters Ready again.
 
-**Current production note:** Shady Pawn Shop Owner replaces Washed-Up Rock Star in the eight-deck roster. The current 40-card first-test list uses P181–P191: four copies of P181–P185 and P187–P190, with two copies of P186 and two of P191. **The Deal of a Lifetime (P191), Cost 2 Action:** Spend 2 Deals to Ready all Characters you control. Those Characters cannot Cause Trouble this Turn (including after any later Ready), but may Attack again. This is a current test card, not proof of balance. The Trouble restriction ends at the beginning of their controller's next Turn. Grandma With a Million-Dollar Doorstop still prevents spending the final Deal, including as part of a two-Deal payment. These counts and balance remain provisional. The Leader's unique Breaking Point effect is **not yet designed**; the universal protected threshold at 10 and Last Straw rules still apply.
+The other Leaders' Breaking Points are still being designed. Paper-test alternatives for Florida Man and the Magician are recorded in NOTES.md.
 
-## 18. Game end
+## 19. Card rulings
 
-A player loses when their Leader becomes **Unhinged**.
+### Stonewall
 
-Normal route:
+- **Ready-step skips (HOA Enforcement Committee, Not in My Neighborhood):** the Character doesn't Ready during its controller's next Ready step. Card effects can still Ready it. A Character that's already Ready stays Ready.
+- **Lawn Chair and Take a Breather** Ready one of your Exposed Characters; it can't Attack or Cause Trouble for the rest of the turn, even if it hadn't acted yet. They don't remove new-arrival restrictions.
+- **Grandma** heals another of your Characters for up to 2 every time she actually Readies, with no once-per-turn limit. **Old Dog** heals itself for 1 only when it Readies during your Ready step.
+- **Helicopter Mom** protects your other Characters only while she's Ready. **Patio Umbrella** protects its wearer only while it's Exposed. **Dig In** covers your Characters, including ones played later, until the start of your next turn.
+- **File a Complaint** lasts until the start of your next turn. **Concerned Citizen**'s bonuses last through your next turn. **Wait Them Out** can be played only before you've Attacked that turn, and stops further Attacks; you can still Cause Trouble.
+- **HOA Lawyer:** each Lawyer adds 1 to the Cost of an opposing Action that targets any of your Characters or Items. Lawyers stack; each counts once per Action, not per target. Actions without targets (like Category 5) aren't taxed. Free Actions still pay the tax.
+- **Peace and Quiet:** if your Leader isn't at Last Straw, recover up to 3 Composure (max 20). If you are and your opponent isn't, they lose 3 Composure instead. If you both are, Draw a card.
+- **Community Founder**'s +1 Trouble to your other Characters is on while your Leader is at 10 or less (including Last Straw) and switches off if you recover above 10. Founders stack with each other and with Failure to Respond.
+- **Security Camera** shows the opposing hand only to its controller.
 
-**20 Composure → Breaking Point at 10 → Last Straw at 0 → one later successful opposing Cause Trouble → Unhinged.**
+### Misdirection
 
-Do not end in the middle of resolving an Action, ability, protected threshold, combat sequence, or mandatory resulting triggers unless a rule explicitly makes Unhinged immediate. A genuinely simultaneous game-ending state with no more specific resolution uses War. There is no draw.
-
-## 19. Production direction
-
-The seven core Styles are Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler.
-Crazy Cat Lady and Shady Pawn Shop Owner are classified as Momentum. Mad Scientist is classified as Gambler.
-
-Mordecai 0.4 promotes the eight-deck Composure/STANK environment as current baseline data: the current six regular Style slots including Shady Pawn Shop Owner (Momentum) in place of Washed-Up Rock Star, plus Crazy Cat Lady (Momentum) and Mad Scientist (Gambler). Their exact construction, cards, Leaders, abilities, and balance are **production content under immediate audit**, not frozen balance claims.
-
-Design order remains:
-
-**irresistible idea → preserve the outrageous part → add meaningful counterplay → tune numbers**
-
-The core is feature-complete for this playtest. Next work is consistency, terminology, cards/decks/abilities, Leader Breaking Points, Last Straws, engine/browser/builder parity, and human playtesting.
-
-
-## Stonewall audit and threshold content — 8 October 2026
-
-This section supersedes legacy card behavior for the audited Stonewall pool. The 33 locked cards and 40-card coverage deck are in CARDS.json and DECKS.json. The prior conversational count of 32 omitted Bicycle Cop, which was added when Committee moved to Cost 4. Preserve every lock; choose a card to table later if the target remains 32 plus an open 33rd slot. All costs/stats are provisional until cross-style testing.
-
-**Meat Shield** replaces Bodyguard on audited cards. While a Character with Meat Shield is Rotated, opposing Characters that can legally Attack it must choose one of the defender’s legally attackable Rotated Meat Shields before Attacking another Character. Ready Meat Shields do not protect or redirect, even when Sucker Punch makes them attackable. Multiple eligible Meat Shields offer a choice. Meat Shield does not restrict Cause Trouble, Actions, Items, or abilities. When you play any Character with Meat Shield, you may choose to have it enter Ready or Rotated. This choice is part of the keyword and also applies when the Character is played for free. Entering Rotated does not grant early Attack or Cause Trouble permission.
-
-**Absorb X** uses the highest granted value, never adds multiple grants together. “Have Absorb 1” does not mean “Absorb +1.” This applies equally to innate Absorb, Helicopter Mom, Patio Umbrella, and Dig In. Mom protects other friendly Characters only while she is Ready; Umbrella protects its wearer only while Rotated. Dig In applies to your Characters (including those played later) until the start of your next Turn. None reduces Composure loss.
-
-**Ready timing:** A Character Readies only when it changes from Rotated to Ready. Entering Ready or applying Ready to an already Ready Character does not trigger Ready abilities. Grandma heals another chosen friendly Character for up to 2 on any actual Ready transition, including effects; no once-per-Turn limit. Old Dog heals itself for 1 only on an actual transition during its controller’s Ready step. Lawn Chair and Take a Breather Ready a chosen friendly Rotated Character and prohibit that Character from Attacking or Causing Trouble for the rest of the current Turn. Those restrictions apply even if it did not act earlier. Lawn Chair spends 1 Ready Stash and Rotates the Item; Stash payment does not discard a normal Stash card. These effects do not erase entry restrictions.
-
-**Skip next Ready step:** Committee and Not in My Neighborhood prevent automatic Readying during the chosen Character’s controller’s next Ready step. Consume the restriction on that step, then allow later steps normally. This does not prevent a card effect from Readying the Character earlier or during that Turn. A Character already Ready when the skipped step arrives remains Ready; the restriction does not Rotate it.
-
-**Durations:** File a Complaint’s −2 Power expires at the start of its caster’s next Turn. Concerned Citizen’s bonuses from opposing Actions/Items remain through its controller’s next Turn and expire at the end of that Turn. Dig In lasts until the start of its caster’s next Turn. Wait Them Out is playable only before any friendly Attack that Turn and prevents all further friendly Attacks that Turn; Cause Trouble remains permitted.
-
-**HOA Lawyer:** Each active copy adds 1 to the final Cost of an opposing Action that targets one or more of that Lawyer’s controller’s Characters or Items. Multiple copies stack. Apply the tax once per Lawyer per Action, not once per target. Friendly-target-only Actions and untargeted effects such as Category 5 do not pay this tax. Targets and affordability are validated before Stash or cards are spent. Targeted Actions played for free still pay the tax.
-
-**HOA President:** Failure to Respond remains unchanged: beginning in Round 8, your Characters get +1 Trouble.
-
-**Breaking Point — Final Warning:** When an opposing Character Causes Trouble that crosses your Leader from above 10 to 10 or below, you may Dismiss that Character after its Trouble resolves. The Composure loss remains. Dismiss is not Defeat, but leave-play/Dismiss abilities still trigger. Non-Trouble Composure loss triggers/spends Breaking Point without a Dismiss. This is a one-time threshold ability.
-
-**Florida Man Breaking Point — You Ain’t Seen Nothing Yet!:** Roll a visible D6. 1: Rotate a chosen Ready friendly Character. 2–5: Ready a chosen friendly Rotated Character. 6: Ready all your Characters. If there is no eligible Character, resolve the roll without a target effect. Readying does not grant Hothead or early Trouble. Roll, outcome, and history are visible to both players.
-
-Resolve queued Breaking Point abilities after the current effect and before any crossed Last Straw. Crossing both thresholds with one Cause Trouble still allows Final Warning, then reveals Last Straw and ends the current Turn. A later legal Cause Trouble remains necessary for the final win. Empty-deck Last Straw does not retroactively trigger Breaking Point.
-
-**Peace and Quiet:** Restore up to 3 Composure, capped at the Leader’s starting 20, only if your Leader is not at Last Straw. If yours is at Last Straw and the opponent is not, the opponent loses 3 Composure instead. If both are at Last Straw, Draw a card instead. These are exclusive branches. Recovery never resets an already-triggered Breaking Point or Last Straw. Ordinary Composure loss cannot replace the final Cause Trouble.
-
-**Community Founder:** Its other-friendly-Character +1 Trouble aura is active while its controller is currently at 10 or less Composure or Last Straw. Recovery above 10 turns the aura off without resetting the spent Breaking Point. It stacks with Round 8’s passive; multiple Founders also stack. It does not boost itself.
-
-Security Camera shows the full opposing hand only to its controller. The AI does not use that hand outside the reveal choice. Florida Man, HOA President and Birthday Party Magician now have implemented Breaking Points. Remaining Leader Breaking Point abilities and the shared selectable Last Straw effect pool remain pending their own content audits. Simulators are not asserted to have browser parity.
-
-
-## Misdirection implementation checkpoint — 8 October 2026
-
-Birthday Party Magician’s **The Show Must Go On** Readies one chosen Rotated Stash after the first friendly Character actually returns from play to your hand or is Dismissed during your turn. Return and Dismiss share one use; the first event spends that use even if no Stash is Rotated. Defeat, Sacrifice and discarding from hand do not qualify. **For My Next Trick…** optionally returns a friendly Character, then independently offers a free Character costing 3 or less from hand when Breaking Point first triggers.
-
-**Trap Door** (LAB-MAG-009) optionally captures only the just-Dismissed friendly Character costing 5 or less from your discard while the Item is in play and empty. One actual card can be stored under only one copy. Defeat, Sacrifice, hand discard and return to hand do not qualify. Rotate the Item and spend 1 Stash to play its stored Character for free, triggering entrance abilities. Leaving play discards the stored card to its owner. Owner inspection is allowed; opponents see the stored count, and face-down storage does not erase a previously public card identity. Only **Heckler** gains immediate Trouble permission from being played under an Item; ordinary free deployment does not grant it.
-
-**The Mentalist** plays the revealed opposing-deck Character with separate owner/controller tracking. Entrance effects belong to its controller; it may Attack immediately but cannot Cause Trouble that turn. At the end of the current turn, return that same surviving instance to its owner's hand even if The Mentalist has left. A borrowed card that already left play is not retrieved or resurrected. **Poof!** follows the chosen instance until its next successful Cause Trouble in the current turn, then returns it; unused permission expires at turn end.
-
-The Headliner gets its own once-per-turn +2 Trouble only after seeing another friendly Character actually return to your hand while it is in play. Stagehand triggers on every qualifying return. Volunteer and Party Mom's Power bonuses expire at the end of the current turn. Dove deals normal damage, including Absorb; it never permanently reduces Health.
+- **Trap Door:** while it's empty and in play, you may put one of your Characters costing 5 or less that was just Dismissed face down under it. One card per Trap Door. Use it and spend 1 Stash to play the stored Character for free; its "when played" abilities happen. If Trap Door leaves play, the stored card goes to its owner's discard. You may look at it; your opponent sees only that something is stored.
+- **Heckler** is the only Character that can Cause Trouble the turn it's played from under an Item.
+- **The Mentalist** plays the revealed opposing Character under your control. It may Attack immediately but can't Cause Trouble that turn. At end of turn it returns to its owner's hand if it's still in play.
+- **Poof!** returns the chosen Character after it next successfully Causes Trouble this turn. Unused, it expires at end of turn.
+- **The Headliner** gets +2 Trouble this turn the first time each turn another of your Characters returns from play to your hand. **Stagehand** triggers every time.
+- **Volunteer From the Audience** and **Party Mom**'s Power bonuses last until end of turn. **Dove**'s damage is normal damage (Thick Skin applies).
