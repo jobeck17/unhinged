@@ -8,7 +8,7 @@ Mordecai is the current production build. The pre-1.0 lineage is **0.1 Mongo →
 
 **Mordecai 0.4 is canonical.** Composure 2.0 has graduated from the lab. Root `RULES.md`, `CARDS.json`, and `DECKS.json` are authoritative.
 
-The production baseline now contains **247 card records and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
+The production baseline now contains **248 card records and eight decks across seven core Styles**: Reckless, Momentum, Misdirection, Salvage, Stonewall, Expendable, and Gambler. Crazy Cat Lady is Momentum; Mad Scientist is Gambler. Their content is under immediate consistency and balance audit.
 
 The 32-card Reckless audit is implemented and regression-tested in the production browser playtest. Its 40-card coverage deck includes all 32 cards, visible dice rolls, and Florida Man’s current Attack-defeat passive. Stonewall now also has its audited cards and 40-card coverage deck implemented. Misdirection now also has its locked 32-card pool, 40-card coverage deck and Magician Leader effects implemented. Remaining Styles and simulator still require their own Mordecai parity audits; old balance results are not evidence for this new deck.
 
@@ -16,19 +16,21 @@ The Scheme, Board Width, and old Composure folders remain development history un
 
 ## Pawn Shop promoted to current game — 19 October 2026
 
-**Shady Pawn Shop Owner (Momentum) replaces Washed-Up Rock Star / Comeback Tour** in the canonical eight-deck lineup. The main browser playtest and deck builder use the new **Everything Must Go** 40-card first-test deck, with **12 unique cards P181–P192** (two Scalpers replace two Guy Selling His Wife's Dress copies; 24 Characters, 14 Actions, 4 Items).
+**Shady Pawn Shop Owner (Momentum) replaces Washed-Up Rock Star / Comeback Tour** in the canonical eight-deck lineup. The main browser playtest and deck builder use the new **Everything Must Go** 40-card first-test deck, with **13 unique cards P181–P193** (two Hagglers replace two Junkyard Visionary copies; 26 Characters, 14 Actions, 4 Items).
 
 [Play Pawn Shop in the main game](https://jobeck17.github.io/unhinged/web/?v=pawnshop-main-01) · [Build a Momentum deck](https://jobeck17.github.io/unhinged/builder/?v=pawnshop-main-01)
 
 Pawn Shop earns **Deals** from its Leader or Grandma, gains extra Draw/Hothead at 2 Deals, and gains 2 Stashes/Power/Sucker Punch at 4 Deals. It can spend Deals on No Refunds. **New Stash enters Rotated at 0–1 Deals, but enters Ready immediately at 2 or more Deals.** Antique Holder's extra Stash follows that Deal-based threshold; other Leaders still Stash Ready as normal. Character and Item cards remain accessible to normal Momentum decks under normal Style construction rules, including Customer traits.
 
-The **30 former Rock Star-era Momentum cards (P031–P038, P040–P060, P123) are excluded from the main deck builder**, including secondary-Style selection and older saved decks. Their historical records remain in `CARDS.json` and Git history; no gameplay cards or current starter decks were deleted. The unrelated Misdirection P039 and the new Pawn Shop P181–P192 remain visible. Rock Star's former deck/Leader remain in Git history, not current. The Pawn Shop draft's stats, copy counts, and Leader Breaking Point are pending further audit; production implementation and tests are not evidence of balance. The separate `lab/pawn-shop/` directory remains an archived first-prototype snapshot rather than a second canonical source.
+The **30 former Rock Star-era Momentum cards (P031–P038, P040–P060, P123) are excluded from the main deck builder**, including secondary-Style selection and older saved decks. Their historical records remain in `CARDS.json` and Git history; no gameplay cards or current starter decks were deleted. The unrelated Misdirection P039 and the new Pawn Shop P181–P193 remain visible. Rock Star's former deck/Leader remain in Git history, not current. The Pawn Shop draft's stats, copy counts, and Leader Breaking Point are pending further audit; production implementation and tests are not evidence of balance. The separate `lab/pawn-shop/` directory remains an archived first-prototype snapshot rather than a second canonical source.
+
+**Haggler (P193, 20 October 2026):** A Cost 2 Momentum Customer with 1 Power / 2 Guard / 2 Trouble. **Talk Them Down** on entry chooses either the next Character this Turn costs 2 less Stash, or the next Deal payment this Turn costs 1 fewer Deal, even reducing a one-Deal spend to zero. One use only; expires next Turn. Flavor: *“I'll give you 20 for it.”* Two starter copies replace two Junkyard Visionary copies; balance pending.
 
 **New four-Cost Customer:** Pawn Shop Scalper (P192) is a 3 Power / 4 Health / 1 Trouble Character. On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less (Ready or Rotated) and Draw 1. Flavor: *I'm reselling this for double.* Two starter copies replace two Guy Selling His Wife's Dress copies. Experimental balance.
 
 **New Pawn Shop cash-out Action (19 October 2026):** **The Deal of a Lifetime (P191)** costs 2 Ready Stash and spends 2 Deals to Ready all your Characters for another Attack, but they cannot Cause Trouble that Turn. Card text is deliberately limited to the Characters currently in play. The two-copy test is unbalanced/unproven until human playtesting; it preserves the existing 40-card deck size by cutting two copies of Guy Who Got a Bad Deal.
 
-**First Pawn Shop content milestone:** 12 unique Characters, 6 unique Actions, 2 unique Items (20 designs). Current progress **7 Characters / 4 Actions / 1 Item = 12/20**; need **5 Characters / 2 Actions / 1 Item** more. The broader 38-card vision remains later, not the first milestone. Review card roles and playtest before raising copy counts.
+**First Pawn Shop content milestone:** 12 unique Characters, 6 unique Actions, 2 unique Items (20 designs). Current progress **8 Characters / 4 Actions / 1 Item = 13/20**; need **4 Characters / 2 Actions / 1 Item** more. The broader 38-card vision remains later, not the first milestone. Review card roles and playtest before raising copy counts.
 
 **Pawn Shop playtest usability (19 October 2026):** Card Costs automatically Rotate the earliest available Ready ordinary Stash slots, preserving temporary Stash until needed. You no longer have to choose Stash for every Pawn Shop card. Other Leaders retain the manual picker for their Stash-specific interactions. The regular payment costs, Deal thresholds, and Rotate mechanics remain unchanged.
 
