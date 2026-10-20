@@ -171,7 +171,7 @@ try{
  console.log('Rock Star-era cards hidden from Pawn Shop builder, hybrid search and previous saved decks');
  // Card families refine the library without altering the deck, Styles, or legality.
  await page.selectOption('#family','Pawn Shop');
- assert.match(await page.locator('#resultcount').innerText(),/^12 legal cards$/);
+ assert.match(await page.locator('#resultcount').innerText(),/^13 legal cards$/);
  assert.match(await page.locator('#grid').innerText(),/Antique Holder/);
  assert.doesNotMatch(await page.locator('#grid').innerText(),/Stray Cat/);
  assert.match(await page.locator('[data-add="P181"] .cardfamily').innerText(),/Pawn Shop cards/);
@@ -202,10 +202,11 @@ try{
  await page.selectOption('#family','Cat Lady');
  assert.match(await page.locator('#resultcount').innerText(),/^18 legal cards$/);
  await page.selectOption('#family','Pawn Shop');
- assert.match(await page.locator('#resultcount').innerText(),/^12 legal cards$/);
+ assert.match(await page.locator('#resultcount').innerText(),/^13 legal cards$/);
  assert.match(await page.locator('#grid').innerText(),/The Deal of a Lifetime/);
  assert.match(await page.locator('#grid').innerText(),/Pawn Shop Scalper/);
- console.log('Momentum family filter: Pawn Shop (12), Cat Lady (18), hybrid decks; Cat Lady Style shown correctly');
+ assert.match(await page.locator('#grid').innerText(),/Haggler/);
+ console.log('Momentum family filter: Pawn Shop (13), Cat Lady (18), hybrid decks; Cat Lady Style shown correctly');
  assert.deepEqual(errors,[],'no browser exceptions or error dialogs');
  console.log('Browser verification passed: all 10 Action UIs, exact Stash payment, Trap Door release/Heckler, builder 32-card pool/40-card deck and saved migrations');
 }catch(error){await page.screenshot({path:'/tmp/misdirection-browser-failure.png',fullPage:true});console.error(await page.locator('body').innerText());throw error}finally{await browser.close()}
