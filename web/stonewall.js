@@ -5,7 +5,7 @@ export const STONEWALL_IDS=new Set(['P072','P083',...Array.from({length:30},(_,i
 const actions=new Set(['P083','P139','P140','P141','P143','P144','P145','P146','LAB-HOA-004']);
 const live=c=>c&&!['banked','retired','pending-redesign'].includes(c.status);
 LEADERS['HOA President'].breaking='Final Warning: When an opposing Character Causes Trouble that triggers your Breaking Point, you may Dismiss that Character after its Trouble resolves.';
-LEADERS['Florida Man'].breaking='You Ain’t Seen Nothing Yet! Roll a D6: 1 — Rotate a chosen Ready friendly Character; 2–5 — Ready a chosen friendly Rotated Character; 6 — Ready all your Characters.';
+LEADERS['Florida Man'].breaking='You Ain’t Seen Nothing Yet! Roll a D6: 1 — Expose one of your Ready Characters; 2–5 — Ready one of your Exposed Characters; 6 — Ready all your Characters.';
 const active=(g,x)=>!!x&&!x.cloaked&&!!g.obj(x.uid);
 Game.prototype.atBreakingPoint=function(p){const s=this.players[p];return s.lastStraw||s.hp<=this.breakingPoint};
 Game.prototype.queueEffect=function(fn){(this.effectQueue||=[]).push(fn)};
@@ -51,9 +51,9 @@ Game.prototype.resolveBreakingPoint=async function(p,source){
   }else this.say('Final Warning: Breaking Point was not caused by an opposing Character’s Trouble');
  }
  if(this.name(p)==='Florida Man'){
-  const r=this.rollDie('You Ain’t Seen Nothing Yet! — Breaking Point',p,{1:'Rotate a chosen Ready friendly Character',2:'Ready a chosen friendly Rotated Character',3:'Ready a chosen friendly Rotated Character',4:'Ready a chosen friendly Rotated Character',5:'Ready a chosen friendly Rotated Character',6:'Ready all your Characters'});
+  const r=this.rollDie('You Ain’t Seen Nothing Yet! — Breaking Point',p,{1:'Expose one of your Ready Characters',2:'Ready one of your Exposed Characters',3:'Ready one of your Exposed Characters',4:'Ready one of your Exposed Characters',5:'Ready one of your Exposed Characters',6:'Ready all your Characters'});
   if(r===6){for(const x of [...this.chars(p)])await this.readyCharacter(x)}
-  else {const targets=this.chars(p).filter(x=>!x.cloaked&&(r===1?x.ready:!x.ready));const uid=await this.pick(`Breaking Point roll ${r}: ${r===1?'Rotate':'Ready'} your Character`,p,targets);const x=this.obj(uid);if(x){if(r===1)x.ready=false;else await this.readyCharacter(x)}}
+  else {const targets=this.chars(p).filter(x=>!x.cloaked&&(r===1?x.ready:!x.ready));const uid=await this.pick(`Breaking Point roll ${r}: ${r===1?'Expose':'Ready'} your Character`,p,targets);const x=this.obj(uid);if(x){if(r===1)x.ready=false;else await this.readyCharacter(x)}}
  }
 };
 const targets=Game.prototype.attackTargets;
@@ -108,7 +108,7 @@ Game.prototype.enterEffect=async function(x,previous){
  if(x.id==='P134')this.draw(p);
  if(x.id==='P122'||x.id==='LAB-HOA-002'){
   const list=this.chars(1-p).filter(y=>x.id==='P122'||this.card(y).cost<=2);
-  const uid=await this.pick(`${this.card(x).name}: Rotate opposing Character${x.id==='LAB-HOA-002'?' costing 2 or less':''}`,p,list,true);const y=this.obj(uid);if(y){y.ready=false;if(x.id==='P122')y.skipReady=true;this.say(`${this.card(y).name} Rotates${y.skipReady?' and skips its next Ready step':''}`)}
+  const uid=await this.pick(`${this.card(x).name}: Expose opposing Character${x.id==='LAB-HOA-002'?' costing 2 or less':''}`,p,list,true);const y=this.obj(uid);if(y){y.ready=false;if(x.id==='P122')y.skipReady=true;this.say(`${this.card(y).name} is Exposed${y.skipReady?' and skips its next Ready step':''}`)}
  }
  if(x.id==='P127'){
   const uid=await this.pick('PTA President: heal another friendly Character',p,this.chars(p).filter(y=>y.uid!==x.uid&&y.damage>0),true),y=this.obj(uid);if(y){const before=y.damage;this.heal(y,2);if(y.damage<before)this.draw(p)}
@@ -125,7 +125,7 @@ Game.prototype.actionEffect=async function(p,id,target,second,previous){
  case 'P141':await this.remove(x,'hand');break;
  case 'P143':await this.dismiss(x);break;
  case 'P144':if(!s.lastStraw){s.hp=Math.min(this.decks[p].composure??20,s.hp+3);this.say('Peace and Quiet restores 3 Composure')}else if(!this.players[1-p].lastStraw)this.hurtLeader(1-p,3);else{this.draw(p);this.say('Both at Last Straw: Draw a card, I guess')}break;
- case 'P145':s.digIn=true;if(this.chars(1-p).length>this.chars(p).length)this.draw(p);this.say('Dig In grants Absorb 1 until your next Turn');break;
+ case 'P145':s.digIn=true;if(this.chars(1-p).length>this.chars(p).length)this.draw(p);this.say('Dig In grants Thick Skin 1 until your next turn');break;
  case 'P146':this.draw(p,2);s.stoneNoAttack=true;this.say('Wait Them Out: Draw 2; no Attacks this Turn');break;
  case 'LAB-HOA-004':await this.readyCharacter(x);x.noAttack=true;x.noTrouble=true;break;
  default:return action.call(this,p,id,target,second,previous);
@@ -135,8 +135,8 @@ const use=Game.prototype.canUse;
 Game.prototype.canUse=function(x){if(!x)return false;if(STONEWALL_IDS.has(x.id)){if(x.owner!==this.turn||this.winner!==null||this.pendingLastStraw!=null||x.cloaked||!x.ready)return false;if(x.id==='P147')return true;if(x.id==='P148')return this.availableFuel(x.owner)>=1&&this.chars(x.owner).some(y=>!y.ready);return false}return use.call(this,x)};
 const activate=Game.prototype.activate;
 Game.prototype.activate=async function(uid,mode){const x=this.obj(uid);if(!x||!this.canUse(x))return;
- if(x.id==='P147'){x.ready=false;this.say('Security Camera Rotates: look at opposing hand');const hand=this.players[1-x.owner].hand;await this.choose(x.owner,'Security Camera: opposing hand',hand.length?hand.map((id,i)=>({label:`${this.card(id).name} · Cost ${this.card(id).cost}`,value:i})):[{label:'Their hand is empty',value:null}]);await this.advance();return}
- if(x.id==='P148'){const target=await this.pick('Lawn Chair: Ready friendly Rotated Character',x.owner,this.chars(x.owner).filter(y=>!y.ready));const y=this.obj(target);if(!y)return;if(!await this.preparePayment(x.owner,1)||!this.payCost(x.owner,1))return;x.ready=false;await this.readyCharacter(y);y.noAttack=true;y.noTrouble=true;await this.advance();return}
+ if(x.id==='P147'){x.ready=false;this.say('Security Camera used: look at opposing hand');const hand=this.players[1-x.owner].hand;await this.choose(x.owner,'Security Camera: opposing hand',hand.length?hand.map((id,i)=>({label:`${this.card(id).name} · Cost ${this.card(id).cost}`,value:i})):[{label:'Their hand is empty',value:null}]);await this.advance();return}
+ if(x.id==='P148'){const target=await this.pick('Lawn Chair: Ready one of your Exposed Characters',x.owner,this.chars(x.owner).filter(y=>!y.ready));const y=this.obj(target);if(!y)return;if(!await this.preparePayment(x.owner,1)||!this.payCost(x.owner,1))return;x.ready=false;await this.readyCharacter(y);y.noAttack=true;y.noTrouble=true;await this.advance();return}
  return activate.call(this,uid,mode);
 };
 const resolve=Game.prototype.resolveTrouble;

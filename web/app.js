@@ -12,7 +12,7 @@ const root=document.querySelector('#app');
 const leaderExpanded=new Set(matchMedia('(min-width:701px)').matches?[0,1]:[]);
 let pool,decks,game,human=0,phase='setup',busy=false,modal=null,selected=new Set();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const rules='The Deal of a Lifetime (Cost 2) spends 2 Deals to Ready all friendly Characters. Those Characters may Attack again but cannot Cause Trouble this Turn. Shady Pawn Shop Owner automatically rotates Ready Stash when paying card Costs, without asking you to select specific Stash cards. New Stash enters Rotated at 0–1 Deals, but Ready at 2+ Deals (including Antique Holder’s extra Stash); close one Deal per Turn by Rotating 3 Ready Stash (max 4 Deals). At 2 or more Deals, Draw 2 per normal Draw step and Characters have Hothead. At 4 Deals, Stash twice per Turn, your Characters have +1 Power and Sucker Punch. Black Friday Employee can stay Rotated during your Ready step to discount Customers. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Rotated Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Retaliate is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.';
+const rules='The Deal of a Lifetime (Cost 2) spends 2 Deals to Ready all friendly Characters. Those Characters may Attack again but cannot Cause Trouble this Turn. Shady Pawn Shop Owner automatically rotates Ready Stash when paying card Costs, without asking you to select specific Stash cards. New Stash enters Used at 0–1 Deals, but Ready at 2+ Deals (including Antique Holder’s extra Stash); close one Deal per Turn by Using 3 Ready Stash (max 4 Deals). At 2 or more Deals, Draw 2 per normal Draw step and Characters have Hothead. At 4 Deals, Stash twice per Turn, your Characters have +1 Power and Sucker Punch. Black Friday Employee can stay Exposed during your Ready step to discount Customers. Mordecai 0.4: Leaders begin at 20 Composure. Characters use Power / Health / Trouble. Attack opposing Exposed Characters, Cause Trouble to pressure the opposing Leader, or stay Ready for protection. Cause Trouble is not combat and cannot be Blocked. There is no Character cap and no universal retaliation. Hits Back is keyword-only. Breaking Point triggers at 10. Last Straw triggers at 0; while at Last Straw your Characters have Hothead and may Attack Ready Characters. One later legal Cause Trouble makes that Leader Unhinged. Florida Man and HOA President have implemented Breaking Point abilities. Magician’s Breaking Point is also implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.';
 try{
  [pool,decks]=await Promise.all([fetch('../CARDS.json?v=pawn-scalper-01').then(r=>{if(!r.ok)throw Error('Card data unavailable');return r.json()}),fetch('../DECKS.json?v=pawn-scalper-01').then(r=>{if(!r.ok)throw Error('Deck data unavailable');return r.json()})]);
  if(pool.version!==decks.card_pool)throw Error('Production card/deck versions do not match');
@@ -27,7 +27,7 @@ function setup(){
  root.querySelector('#start').onclick=()=>start(+root.querySelector('#you').value,+root.querySelector('#them').value);
 }
 function pile(label,count,sub='',kind='back'){
- const visual=kind==='stash-rotated'?'<span class="mini-card card-back stash-rotated" aria-label="Some Stash Rotated"></span>':kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
+ const visual=kind==='stash-rotated'?'<span class="mini-card card-back stash-rotated" aria-label="Some Stash Used"></span>':kind==='back'?'<span class="mini-card card-back"></span>':'<span class="mini-card discard-face">↩</span>';
  return '<div class="zone-pile"><span class="zone-label">'+esc(label)+'</span>'+visual+'<b>'+count+'</b>'+(sub?'<small>'+esc(sub)+'</small>':'')+'</div>';
 }
 function zoneBar(p){
@@ -35,7 +35,7 @@ function zoneBar(p){
  return '<div class="zonebar '+(opp?'opponent-zones':'own-zones')+'">'+
    (opp?pile('Hand',s.hand.length,'hidden'):'')+
    pile('Deck',s.deck.length,'cards')+
-   pile('Stash',s.stash.length,s.fuel+' Ready · '+(s.stash.length-s.fuel)+' Rotated',s.stash.length>s.fuel?'stash-rotated':'back')+(opp?'':'<button id="inspect-stash">Inspect your Stash</button>')+
+   pile('Stash',s.stash.length,s.fuel+' Ready · '+(s.stash.length-s.fuel)+' Used',s.stash.length>s.fuel?'stash-rotated':'back')+(opp?'':'<button id="inspect-stash">Inspect your Stash</button>')+
    pile('Discard',s.discard.length,top,'discard')+
  '</div>';
 }
@@ -50,14 +50,14 @@ function render(){
  const pending=game.turn===human&&!busy&&game.players[human].clearancePending?.length;
  if(pending){
   const uid=game.players[human].clearancePending[0];
-  root.innerHTML='<section class="setup"><span class="eyebrow">BLACK FRIDAY EMPLOYEE · READY STEP</span><h1>Keep the sale running?</h1><p class="intro">This Employee was Rotated. Keep it Rotated to discount Customers, or Ready it to take Character actions.</p><div class="settings"><button class="primary" id="keep-clearance">Keep Rotated · Discount Customers</button><button id="end-clearance">Ready this Employee</button></div></section>';
+  root.innerHTML='<section class="setup"><span class="eyebrow">BLACK FRIDAY EMPLOYEE · READY STEP</span><h1>Keep the sale running?</h1><p class="intro">This Employee was Exposed. Keep it Exposed to discount Customers, or Ready it to take Character actions.</p><div class="settings"><button class="primary" id="keep-clearance">Keep Exposed · Discount Customers</button><button id="end-clearance">Ready this Employee</button></div></section>';
   root.querySelector('#keep-clearance').onclick=()=>{game.decideClearance(uid,true);render()};
   root.querySelector('#end-clearance').onclick=()=>{game.decideClearance(uid,false);render()};
   return;
  }
  const active=game.turn===human&&!busy&&game.winner===null;
  const pawnControls=game.name(human)==='Shady Pawn Shop Owner'
- ?'<section class="pawn-controls"><div><strong>DEALS '+(game.players[human].deals||0)+' / 4</strong><small>Close a Deal: Rotate 3 Ready Stash · once per Turn</small></div><button id="close-deal" '+(!active||!game.canCloseDeal(human)?'disabled':'')+'>Close a Deal</button></section>'
+ ?'<section class="pawn-controls"><div><strong>DEALS '+(game.players[human].deals||0)+' / 4</strong><small>Close a Deal: Use 3 Ready Stash · once per Turn</small></div><button id="close-deal" '+(!active||!game.canCloseDeal(human)?'disabled':'')+'>Close a Deal</button></section>'
  :'';
  const instruction=game.winner!==null?game.decks[game.winner].leader+' wins':busy?(game.turn===human?'Resolving your action…':'Opponent is thinking…'):active?'Fight, Cause Trouble, build, or End Turn.':'Opponent is thinking…';
  root.innerHTML='<header><div><b class="brand">UNHINGED.</b><span class="eyebrow">MORDECAI 0.4 · ROUND '+game.round+'</span></div><button id="new">New match</button></header>'+
@@ -77,7 +77,7 @@ function row(p){
 }
 function cardHTML(x,zone,p,index,chosen=false){
  const c=game.card(x),b=zone==='board',char=c.type==='Character',rot=b&&!x.ready,selected=zone==='hand'&&chosen;
- const status=b?[x.stored?'1 Character stored face-down':'',game.absorb?.(x)?'Absorb '+game.absorb(x):'',x.skipReady?'Skips next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '):'';
+ const status=b?[x.stored?'1 Character stored face-down':'',game.absorb?.(x)?'Thick Skin '+game.absorb(x):'',x.skipReady?'Skips next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '):'';
  const foot=selected?'✓ REPLACE':b?(rot?'ROTATED':char&&x.born>=game.round&&!(x.enteredTurn<(game.turnSerial||0))?'NEW THIS TURN':x.damage?x.damage+' DAMAGE':'READY'):'TAP FOR ACTIONS';
  const liveStats=b&&char?'<span class="card-live-stats">Power '+game.power(x)+' · Health left '+Math.max(0,game.guard(x)-x.damage)+' · Trouble '+game.trouble(x)+'</span>':'';
  const next=b&&x.nextAttackPower?'Next Attack: +'+x.nextAttackPower+' Power'+(x.rampTrouble?' + Trouble':''):'';
@@ -85,7 +85,7 @@ function cardHTML(x,zone,p,index,chosen=false){
 }
 function inspectStash(){
  const s=game.players[human],states=game.stashStates(human);
- modal={kind:'detail',html:'<div class="overlay"><article class="sheet"><h2>Your Stash</h2><p class="muted">Only you can inspect these faces. Each slot keeps its Ready or Rotated state when exchanged.</p>'+s.stash.map((id,i)=>'<p><b>Stash '+(i+1)+' · '+(states[i]?'Ready':'Rotated')+'</b><br>'+esc(game.card(id).name)+'</p>').join('')+'<button id="close">Close</button></article></div>'};showModal(modal);document.querySelector('#close').onclick=close;
+ modal={kind:'detail',html:'<div class="overlay"><article class="sheet"><h2>Your Stash</h2><p class="muted">Only you can inspect these faces. Each slot keeps its Ready or Used state when exchanged.</p>'+s.stash.map((id,i)=>'<p><b>Stash '+(i+1)+' · '+(states[i]?'Ready':'Used')+'</b><br>'+esc(game.card(id).name)+'</p>').join('')+'<button id="close">Close</button></article></div>'};showModal(modal);document.querySelector('#close').onclick=close;
 }
 function wireCards(){root.querySelectorAll('[data-leader]').forEach(el=>el.ontoggle=()=>{const p=+el.dataset.leader;el.open?leaderExpanded.add(p):leaderExpanded.delete(p)});document.querySelector('#inspect-stash')?.addEventListener('click',inspectStash);root.querySelectorAll('.card').forEach(b=>b.onclick=()=>{if(phase==='mulligan'){const i=+b.dataset.index;selected.has(i)?selected.delete(i):selected.add(i);render();return}if(+b.dataset.p!==human&&b.dataset.zone==='board')return detail({uid:+b.dataset.uid});if(b.dataset.zone==='hand')detail({id:game.players[human].hand[+b.dataset.index],handIndex:+b.dataset.index});else detail({uid:+b.dataset.uid})})}
 function detail(ref){
@@ -93,9 +93,9 @@ function detail(ref){
  const me=game.turn===human&&!busy&&game.winner===null,own=x?.owner===human;
  const play=ref.handIndex!==undefined&&me&&game.canPlay(ref.handIndex,human),stash=ref.handIndex!==undefined&&me&&game.canStash(ref.handIndex,human),attack=x&&own&&c.type==='Character'&&me&&game.canAttack(x),trouble=x&&own&&c.type==='Character'&&me&&game.canCauseTrouble(x),act=x&&own&&me&&game.canUse(x);
  let buttons='<button id="close">Close</button>'+(stash?'<button id="stash">Stash</button>':'')+(play?'<button id="play" class="primary">Play</button>':'')+(attack?'<button id="attack" class="primary">Attack Character</button>':'')+(trouble?'<button id="trouble" class="trouble-button">Cause Trouble · '+game.trouble(x)+'</button>':'')+(act?'<button id="activate" class="primary">Activate Ability</button>':'');
- let stats='<span>Cost '+c.cost+'</span>'+(ref.handIndex!==undefined&&game.playCost(human,c.id)!==c.cost?'<span>Pay '+game.playCost(human,c.id)+' Stash</span>':'')+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':'Rotated')+'</span>':'');
- const attackNote=x&&own&&c.type==='Character'&&me&&!attack&&game.attackTargets(x).length===0?'<p class="muted">No legal Attack target. Ready opponents are protected unless you have Sucker Punch; Rotated Meat Shields must be attacked first.</p>':'';
- const liveStatus=x?'<p class="muted">'+esc([game.absorb(x)?'Absorb '+game.absorb(x):'',x.skipReady?'Skips its next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '))+'</p>':'';
+ let stats='<span>Cost '+c.cost+'</span>'+(ref.handIndex!==undefined&&game.playCost(human,c.id)!==c.cost?'<span>Pay '+game.playCost(human,c.id)+' Stash</span>':'')+(c.type==='Character'?'<span>Power '+(x?game.power(x):c.power)+'</span><span>Health '+(x?game.guard(x):c.guard)+'</span><span>Trouble '+(x?game.trouble(x):c.trouble)+'</span>':'')+(x?'<span>'+(x.ready?'Ready':(c.type==='Character'?'Exposed':'Used'))+'</span>':'');
+ const attackNote=x&&own&&c.type==='Character'&&me&&!attack&&game.attackTargets(x).length===0?'<p class="muted">No legal Attack target. Ready opponents are protected unless you have Sucker Punch; Exposed Meat Shields must be Attacked first.</p>':'';
+ const liveStatus=x?'<p class="muted">'+esc([game.absorb(x)?'Thick Skin '+game.absorb(x):'',x.skipReady?'Skips its next Ready step':'',x.noAttack?'Cannot Attack this Turn':'',x.noTrouble?'Cannot Cause Trouble this Turn':''].filter(Boolean).join(' · '))+'</p>':'';
  modal={kind:'detail',html:'<div class="overlay"><article class="sheet"><div class="physical-detail">'+cardFace(c)+'</div><div class="stats">'+stats+'</div>'+((x?.stored)?'<p class="muted">Stored face-down: '+(own?esc(game.card(x.stored.id).name):'1 Character')+'</p>':'')+liveStatus+attackNote+'<div class="buttons">'+buttons+'</div></article></div>'};showModal(modal);
  document.querySelector('#close')?.addEventListener('click',close);document.querySelector('#stash')?.addEventListener('click',()=>{const i=ref.handIndex;close();humanAction(async()=>game.stash(i))});document.querySelector('#play')?.addEventListener('click',()=>{close();humanAction(()=>game.play(ref.handIndex))});document.querySelector('#attack')?.addEventListener('click',()=>{close();humanAction(()=>game.attack(x.uid))});document.querySelector('#trouble')?.addEventListener('click',()=>{close();humanAction(()=>game.causeTrouble(x.uid))});document.querySelector('#activate')?.addEventListener('click',()=>{close();humanAction(()=>game.activate(x.uid))});
 }

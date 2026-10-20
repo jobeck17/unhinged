@@ -5,7 +5,7 @@ const ID={antique:'P181',gold:'P182',heirloom:'P183',grandma:'P184',
 export function installPawnShop(Game,LEADERS){
  LEADERS[PS]={
   style:'Momentum',
-  passive:'I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, newly Stashed cards enter Rotated; at 2 or more Deals, they enter Ready. At 2 or more Deals, Draw 2 instead of 1 in your Draw step and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power and Sucker Punch.'
+  passive:'I Take the Risk, You Keep the Money: Once on your turn, Use 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, newly Stashed cards enter Used; at 2 or more Deals, they enter Ready. At 2 or more Deals, Draw 2 instead of 1 in your Draw step and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power and Sucker Punch.'
  };
  const isPS=(g,p)=>g.name(p)===PS;
  const deals=(g,p)=>g.players[p]?.deals||0;
@@ -73,7 +73,7 @@ export function installPawnShop(Game,LEADERS){
   if(!s.clearancePending?.includes(uid)||!x)return false;
   s.clearancePending=s.clearancePending.filter(n=>n!==uid);
   if(!keep){x.ready=true;x.clearanceActive=false;this.say('Black Friday Employee ends the sale and Readies');}
-  else this.say('Black Friday Employee stays Rotated for Customer discounts');
+  else this.say('Black Friday Employee stays Exposed for Customer discounts');
   this.update?.();return true;
  };
  // In the Pawn Shop playtest, paying a card's printed Cost should not
@@ -118,7 +118,7 @@ export function installPawnShop(Game,LEADERS){
   if(ready)s.fuel++;
   s.stashedThisTurn=true;
   s.pawnStashCount=(s.pawnStashCount||0)+1;
-  this.say(`${this.name(p)} Stashes a card ${ready?'Ready':'Rotated'} · ${s.stash.length} total`);
+  this.say(`${this.name(p)} Stashes a card ${ready?'Ready':'Used'} · ${s.stash.length} total`);
   return true;
  };
  const keyword=Game.prototype.keyword;
@@ -245,7 +245,7 @@ export function installPawnShop(Game,LEADERS){
     const ready=!isPS(this,p)||deals(this,p)>=2;
     states.push(ready);s.stashReady=states;
     if(ready)s.fuel++;
-    this.say('Antique Holder Stashes an additional card '+(ready?'Ready':'Rotated'));
+    this.say('Antique Holder Stashes an additional card '+(ready?'Ready':'Used'));
    }
    return;
   }

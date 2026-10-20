@@ -1,3 +1,15 @@
+## Rules readability cleanup — 20 October 2026
+
+Joseph approved a wording and readability pass, rebuilt on top of the 19 October Pawn Shop work. It doesn't change balance, costs or stats.
+
+- **New:** HOW_TO_PLAY.md, a two-page learn-to-play guide in the game's voice. RULES.md is now a Rules Reference for edge cases; the Shady Pawn Shop Owner, Deals and Pawn Shop rulings are carried into its Leaders section.
+- **Terms:** a sideways Character is **Exposed** (verb: Expose). A sideways Item or Stash card is **Used** (verb: Use). Absorb is now **Thick Skin**; Retaliate is now **Hits Back**. Keyword IDs in CARDS.json `keywords` arrays keep their old internal names so engine code is unchanged; printed text uses the new names. Family Heirloom's "+Guard" now reads "+Health", matching the rules.
+- **Small rule simplifications:** (1) whenever things happen at once, the active player picks the order; (2) Put damage is folded into ordinary damage (no card uses it); (3) Stash is described as once per turn, which is equivalent. War and Dismiss are kept.
+- **Card templating, all Styles:** "When played," for entrance abilities; "your Characters" / "one of your Characters" instead of "friendly" or "you control"; "an opposing Character" instead of "a chosen opposing Character"; card types and game verbs capitalized; lowercase "turn".
+- **Flavor pass:** 21 cards in Reckless, Stonewall, Misdirection and Salvage gained one short joke line after their rules text, in the style of Peace and Quiet. The joke always comes after the rules, never inside them, one line max.
+- The Last Straw Guard variant in HOW_TO_PLAY.md stays labeled as the 14 October paper-test variant; the 16 October Last Straw runway proposal in PLAYTEST_QUESTIONS.md is unchanged and still open.
+- Browser and Pawn Shop labels updated to match.
+
 ## CURRENT Pawn Shop addition — Pawn Shop Scalper (19 October 2026)
 
 Promoted at designer request. P192 Pawn Shop Scalper: Momentum/Pawn Shop Customer Character, Cost 4, 3 Power / 4 Health / 1 Trouble. Resell Value: On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less, whether Ready or Rotated. Then Draw 1 card. Flavor: "I'm reselling this for double." It can also enter without a Deal. Two copies replace two P185 Guy Selling His Wife's Dress copies in the 40-card starter deck.

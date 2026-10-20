@@ -72,5 +72,5 @@ assert(!doc.decks.some(d=>d.leader==='Washed-Up Rock Star'),'Rock Star Leader re
 assert.equal(Object.values(pd.cards).reduce((a,b)=>a+b,0),40);
 assert.equal(Object.keys(pd.cards).length,12);
 assert.equal(pd.cards['P181'],4);assert.equal(pd.cards['P190'],4);assert.equal(pd.cards['P186'],2);assert.equal(pd.cards['P191'],2);assert.equal(pd.cards['P185'],2);assert.equal(pd.cards['P192'],2);
-assert.match(LEADERS['Shady Pawn Shop Owner'].passive,/Rotate 3 Ready Stash/);
+assert.match(LEADERS['Shady Pawn Shop Owner'].passive,/Use 3 Ready Stash/);
 console.log('Crazy Cat Lady and Pawn Shop production deck smoke passed');
