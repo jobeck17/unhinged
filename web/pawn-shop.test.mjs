@@ -14,7 +14,9 @@ const doc=JSON.parse(readFileSync(new URL('../DECKS.json',import.meta.url),'utf8
 const pawn=doc.decks.find(d=>d.leader==='Shady Pawn Shop Owner');
 const florida=doc.decks.find(d=>d.leader==='Florida Man');
 assert(pawn&&florida);
-assert.equal(Object.keys(pawn.cards).length,12);
+assert.equal(Object.keys(pawn.cards).length,13);
+assert.equal(pawn.cards.P193,2);
+assert.equal(pawn.cards.P187,2);
 assert.equal(pawn.cards.P192,2);
 assert.equal(pawn.cards.P185,2);
 assert.equal(pawn.cards.P191,2);
@@ -266,6 +268,72 @@ for(const deals of [0,1,2,3,4]){
  const card=g.enter(0,'P192');await g.enterEffect(card,[]);
  assert(g.obj(victim.uid),'Scalper cannot Dismiss a costly opponent');
  assert.equal(s.deals,2);
+}
+
+// Haggler's Character coupon works for the NEXT Character only, stacks with
+// Black Friday Employee and cannot carry into another Turn.
+{
+ const choice=async req=>req.title?.includes('Haggler')?'character':prompt(req);
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();const s=g.players[0];
+ readyStash(g,0,8);s.hand=['P193','P192','P185'];
+ assert(g.canPlay(0));await g.play(0);
+ assert.equal(s.fuel,6,'Haggler costs 2 Stash');
+ assert.equal(g.playCost(0,'P192'),2,'next 4-Cost Character costs 2');
+ await g.play(0);
+ assert.equal(s.fuel,4,'Scalper charged 2 Stash');
+ assert.equal(g.playCost(0,'P185'),2,'coupon consumed once');
+ await g.play(0);
+ assert.equal(s.fuel,2,'third Character is normal price');
+}
+{
+ const choice=async req=>req.title?.includes('Haggler')?'character':prompt(req);
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();const s=g.players[0];readyStash(g,0,4);
+ s.hand=['P193'];await g.play(0);
+ assert.equal(s.pawnHaggleCharDiscount,2);
+ g.turn=0;g.startTurn();
+ assert.equal(s.pawnHaggleCharDiscount,0,'unused Character coupon expires');
+}
+// A Deal discount can make a one-Deal ability FREE, or a two-Deal Action
+// cost one Deal. It is consumed only by a successful payment.
+{
+ const choice=async req=>req.title?.includes('Haggler')?'deal':prompt(req);
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();const s=g.players[0];s.deals=1;readyStash(g,0,8);
+ const foe=g.enter(1,'P001');s.hand=['P193','P192'];
+ await g.play(0);
+ assert.equal(s.pawnHaggleDealDiscount,1,'coupon ready');
+ assert(g.canSpendPawnDeal(0),'one Deal cost can be paid for zero');
+ await g.play(0);
+ assert(!g.obj(foe.uid),'Scalper Dismisses without consuming the one Deal');
+ assert.equal(s.deals,1);
+ assert.equal(s.pawnHaggleDealDiscount,0,'coupon used once');
+ assert(!g.canSpendPawnDeals(0,2),'two-Deal play no longer discounted');
+}
+{
+ const choice=async req=>req.title?.includes('Haggler')?'deal':prompt(req);
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();const s=g.players[0];s.deals=1;readyStash(g,0,8);
+ const friend=g.enter(0,'P185');friend.ready=false;
+ s.hand=['P193','P191'];await g.play(0);
+ assert(g.canPlay(0),'two-Deal Action costs one Deal with coupon');
+ await g.play(0);
+ assert.equal(s.deals,0,'two-Deal action spends one actual Deal');
+ assert.equal(s.pawnHaggleDealDiscount,0,'two-Deal payment consumes coupon');
+ assert(friend.ready,'Action still Readies team');
+}
+{
+ const choice=async req=>req.title?.includes('Haggler')?'deal':prompt(req);
+ const g=new Game(pool,{decks:[pawn,florida]},choice,()=>{}, {firstPlayer:0});
+ g.begin();const s=g.players[0];s.deals=1;readyStash(g,0,3);
+ const grandma=g.enter(0,'P184');s.hand=['P193'];
+ await g.play(0);
+ assert(g.canSpendPawnDeal(0),'Grandma allows free Deal spend');
+ assert(!g.canSpendPawnDeals(0,2),'Grandma still protects last actual Deal');
+ g.turn=0;g.startTurn();
+ assert.equal(s.pawnHaggleDealDiscount,0,'unused Deal discount expires');
+ assert.equal(s.deals,1);
 }
 
 // Paying Pawn Shop card Costs uses Ready Stash automatically.
