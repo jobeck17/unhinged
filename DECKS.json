@@ -110,7 +110,8 @@
         "Deal-dependent Stash readiness (0–1 Rotated, 2+ Ready)",
         "Pawn Shop item attachments",
         "Deal cash-out: Spend 2 Deals to Ready all Characters for Attacks, not Trouble",
-        "Resell Value: optional Deal-spending Character with opposing Character selection"
+        "Resell Value: optional Deal-spending Character with opposing Character selection",
+        "Talk Them Down: choose 2 Stash discount for next Character or 1 Deal discount on next spend"
       ],
       "cards": {
         "P181": 4,
@@ -119,12 +120,13 @@
         "P184": 4,
         "P185": 2,
         "P186": 2,
-        "P187": 4,
+        "P187": 2,
         "P188": 4,
         "P189": 4,
         "P190": 4,
         "P191": 2,
-        "P192": 2
+        "P192": 2,
+        "P193": 2
       },
       "mulligan_priority": [
         "A low-cost Character",
@@ -137,9 +139,10 @@
         "Are Customer discounts and No Refunds interactive?",
         "How often do Characters Cause Trouble compared with merely gaining Power?",
         "Does The Deal of a Lifetime make a second wave of Attacks too decisive without enabling additional Trouble?",
-        "Does Pawn Shop Scalper's optional Dismiss and card Draw justify a four-cost Customer, especially with Grandma?"
+        "Does Pawn Shop Scalper's optional Dismiss and card Draw justify a four-cost Customer, especially with Grandma?",
+        "Does Haggler's 2-Trouble body plus a free one-Deal ability or 2-Cost discount cause runaway opening tempo?"
       ],
-      "status_note": "CURRENT Pawn Shop 40-card test: two copies of P192 Pawn Shop Scalper replace two P185 Guy Selling His Wife's Dress; two P191 remain. First design milestone 12/20 unique cards. All balance provisional.",
+      "status_note": "CURRENT 40-card Pawn Shop first-test: two P193 Haggler replace two Junkyard Visionary copies; 13 unique Pawn Shop designs and 40 deck cards. First milestone 13/20. Numbers testing.",
       "composure": 20,
       "passive": "I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, new Stash enters Rotated. At 2+ Deals, new Stash enters Ready; Draw 2 instead of 1 during your Draw step, and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power and Sucker Punch.",
       "breaking_point": "Pending design (the universal Breaking Point at 10 Composure still occurs)."
