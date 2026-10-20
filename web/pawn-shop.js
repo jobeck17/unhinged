@@ -1,7 +1,7 @@
 // Shady Pawn Shop Owner production card/Leader package. Canonical Momentum 40-card first-test build.
 const PS='Shady Pawn Shop Owner';
 const ID={antique:'P181',gold:'P182',heirloom:'P183',grandma:'P184',
- dress:'P185',bad:'P186',junk:'P187',trash:'P188',clerk:'P189',refund:'P190',lifetime:'P191',scalper:'P192'};
+ dress:'P185',bad:'P186',junk:'P187',trash:'P188',clerk:'P189',refund:'P190',lifetime:'P191',scalper:'P192',haggler:'P193'};
 export function installPawnShop(Game,LEADERS){
  LEADERS[PS]={
   style:'Momentum',
@@ -10,6 +10,7 @@ export function installPawnShop(Game,LEADERS){
  const isPS=(g,p)=>g.name(p)===PS;
  const deals=(g,p)=>g.players[p]?.deals||0;
  const clamping=(n)=>Math.min(4,Math.max(0,n));
+ const dealCost=(g,p,n)=>Math.max(0,n-(g.players[p]?.pawnHaggleDealDiscount?1:0));
  const grandmaPresent=(g,p)=>g.chars(p).some(x=>x.id===ID.grandma);
  const clerkDiscount=(g,p,id)=>{
   const c=g.card(id);
@@ -29,23 +30,21 @@ export function installPawnShop(Game,LEADERS){
   await this.advance();return true;
  };
  Game.prototype.canSpendPawnDeals=function(p,n){
-  return Number.isInteger(n)&&n>0&&deals(this,p)>=n&&(!grandmaPresent(this,p)||deals(this,p)-n>=1);
+  const amount=dealCost(this,p,n);
+  return Number.isInteger(n)&&n>0&&deals(this,p)>=amount&&(!grandmaPresent(this,p)||deals(this,p)-amount>=1);
  };
  Game.prototype.canSpendPawnDeal=function(p){
   return this.canSpendPawnDeals(p,1);
  };
- Game.prototype.spendPawnDeal=async function(p){
-  if(!this.canSpendPawnDeal(p))return false;
-  this.players[p].deals=clamping(deals(this,p)-1);
-  this.say('Spends a Deal · '+deals(this,p)+'/4 remaining');
-  // A changing Guard bonus can defeat a damaged Character immediately.
-  for(const x of [...this.chars(p)])await this.checkDefeat(x);
-  return true;
- };
+ Game.prototype.spendPawnDeal=async function(p){return this.spendPawnDeals(p,1);};
  Game.prototype.spendPawnDeals=async function(p,n){
   if(!this.canSpendPawnDeals(p,n))return false;
-  this.players[p].deals=clamping(deals(this,p)-n);
-  this.say('Spends '+n+' Deals · '+deals(this,p)+'/4 remaining');
+  const amount=dealCost(this,p,n),discount=n-amount;
+  // Haggler's one-use coupon applies to the next successful Deal payment,
+  // including zero-Deal payments; never grant an extra use.
+  if(discount)this.players[p].pawnHaggleDealDiscount=0;
+  this.players[p].deals=clamping(deals(this,p)-amount);
+  this.say('Spends '+amount+' Deal'+(amount===1?'':'s')+' · '+deals(this,p)+'/4 remaining'+(discount?' (Haggler saved 1)':''));
   for(const x of [...this.chars(p)])await this.checkDefeat(x);
   return true;
  };
@@ -55,7 +54,7 @@ export function installPawnShop(Game,LEADERS){
   const rotated=this.chars(p).filter(x=>x.id===ID.clerk&&!x.ready).map(x=>x.uid);
   // The Action's Trouble lock expires at the beginning of the owner's next Turn.
   for(const x of this.chars(p))delete x.pawnLifetimeNoTrouble;
-  s.pawnStashCount=0;s.closedDealThisTurn=false;s.clearancePending=[];
+  s.pawnStashCount=0;s.closedDealThisTurn=false;s.clearancePending=[];s.pawnHaggleDealDiscount=0;
   const outcome=start.call(this);
   for(const uid of rotated){
    const x=this.obj(uid);
@@ -201,6 +200,21 @@ export function installPawnShop(Game,LEADERS){
  };
  const enterEffect=Game.prototype.enterEffect;
  Game.prototype.enterEffect=async function(x,previous){
+  if(x.id===ID.haggler){
+   const p=x.owner,s=this.players[p];
+   const pick=await this.choose(p,'Haggler — Talk Them Down',[
+    {label:'Next Character this Turn costs 2 less Stash',value:'character'},
+    {label:'Next Deal payment this Turn costs 1 fewer Deal',value:'deal'}
+   ]);
+   if(pick==='character'){
+    s.nextCharDiscount=(s.nextCharDiscount||0)+2;
+    this.say('Haggler: Next Character costs 2 less this Turn');
+   }else if(pick==='deal'){
+    s.pawnHaggleDealDiscount=1;
+    this.say('Haggler: Next Deal payment costs 1 fewer Deal this Turn');
+   }
+   return;
+  }
   if(x.id===ID.scalper){
    const p=x.owner;
    const legal=this.chars(1-p).filter(y=>this.card(y).cost<=3);
