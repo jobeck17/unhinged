@@ -111,7 +111,8 @@
         "Pawn Shop item attachments",
         "Deal cash-out: Spend 2 Deals to Ready all Characters for Attacks, not Trouble",
         "Resell Value: optional Deal-spending Character with opposing Character selection",
-        "Talk Them Down: choose 2 Stash discount for next Character or 1 Deal discount on next spend"
+        "Talk Them Down: choose 2 Stash discount for next Character or 1 Deal discount on next spend",
+        "Haggler: next Character costs 2 less or next Deal spending is reduced by 1"
       ],
       "cards": {
         "P181": 4,
@@ -140,9 +141,10 @@
         "How often do Characters Cause Trouble compared with merely gaining Power?",
         "Does The Deal of a Lifetime make a second wave of Attacks too decisive without enabling additional Trouble?",
         "Does Pawn Shop Scalper's optional Dismiss and card Draw justify a four-cost Customer, especially with Grandma?",
-        "Does Haggler's 2-Trouble body plus a free one-Deal ability or 2-Cost discount cause runaway opening tempo?"
+        "Does Haggler's 2-Trouble body plus a free one-Deal ability or 2-Cost discount cause runaway opening tempo?",
+        "Does Haggler enabling a free one-Deal spend or stacking with Black Friday Employee produce excessive tempo?"
       ],
-      "status_note": "CURRENT 40-card Pawn Shop first-test: two P193 Haggler replace two Junkyard Visionary copies; 13 unique Pawn Shop designs and 40 deck cards. First milestone 13/20. Numbers testing.",
+      "status_note": "CURRENT 40-card Pawn Shop first-test: 2 Haggler copies replace 2 Junkyard Visionary copies. 13 unique designs / 20 first milestone; balance provisional.",
       "composure": 20,
       "passive": "I Take the Risk, You Keep the Money: Once on your Turn, Rotate 3 Ready Stash to gain 1 Deal (max 4). At 0–1 Deals, new Stash enters Rotated. At 2+ Deals, new Stash enters Ready; Draw 2 instead of 1 during your Draw step, and your Characters have Hothead. At 4 Deals, also Stash twice per Turn; your Characters get +1 Power and Sucker Punch.",
       "breaking_point": "Pending design (the universal Breaking Point at 10 Composure still occurs)."
