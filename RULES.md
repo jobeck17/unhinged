@@ -264,8 +264,6 @@ This triggers for each qualifying Defeat, with no once-per-Turn limit. A Defeat 
 - At **4 Deals**, keep the Ready-on-entry Stash, 2-card Draw, and Hothead; you may Stash **twice** during your Turn, and your Characters get **+1 Power** and **Sucker Punch**.
 - The number of Deals can rise or fall. As soon as it crosses a threshold, continuous benefits change accordingly. The first player still skips their first Draw step.
 
-**Haggler (P193):** A 2-Cost Customer Character (1 Power / 2 Guard / 2 Trouble). Talk Them Down: When it enters play, choose one — the next Character you play this Turn costs 2 less Stash, or the next Deal payment you make this Turn costs 1 fewer Deal. A 1-Deal payment may therefore cost 0 Deals; the associated card effect still resolves. A 2-Deal payment costs 1. Discounts are one-use and expire when that player's next Turn begins; Grandma still protects actual remaining Deals.
-
 **Haggler (P193):** Cost 2 Momentum Customer Character, 1 Power / 2 Guard / 2 Trouble. When it enters play, choose one: the next Character you play this Turn costs 2 less Stash, or the next time you spend Deals this Turn you spend 1 fewer Deal (minimum 0). Either discount expires unused at the start of your next Turn. A free one-Deal payment still counts as spending for resolving the effect; Grandma's protection applies to the number of Deals actually removed.
 
 **Pawn Shop Scalper (P192):** Cost 4 Momentum Customer Character (3 Power / 4 Health / 1 Trouble). On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less, Ready or Rotated, then Draw 1 card. Without a Deal or a legal target, it still enters play. Grandma's final Deal protection applies.
