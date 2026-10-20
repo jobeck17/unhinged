@@ -26,6 +26,8 @@ The **30 former Rock Star-era Momentum cards (P031–P038, P040–P060, P123) ar
 
 **Haggler (P193, 20 October 2026):** A Cost 2 Momentum Customer with 1 Power / 2 Guard / 2 Trouble. **Talk Them Down** on entry chooses either the next Character this Turn costs 2 less Stash, or the next Deal payment this Turn costs 1 fewer Deal, even reducing a one-Deal spend to zero. One use only; expires next Turn. Flavor: *“I'll give you 20 for it.”* Two starter copies replace two Junkyard Visionary copies; balance pending.
 
+**Haggler (P193, 20 October 2026):** New 2-Cost Customer, 1 Power / 2 Guard / 2 Trouble. On entry choose to reduce the next Character's Stash Cost by 2 or reduce the next Deal spend by 1 (to minimum zero). Two copies replace two Junkyard Visionary copies in the 40-card test deck. First unique-design milestone is 13/20 (65%); human balance testing pending.
+
 **New four-Cost Customer:** Pawn Shop Scalper (P192) is a 3 Power / 4 Health / 1 Trouble Character. On entry, optionally spend 1 Deal to Dismiss an opposing Character costing 3 or less (Ready or Rotated) and Draw 1. Flavor: *I'm reselling this for double.* Two starter copies replace two Guy Selling His Wife's Dress copies. Experimental balance.
 
 **New Pawn Shop cash-out Action (19 October 2026):** **The Deal of a Lifetime (P191)** costs 2 Ready Stash and spends 2 Deals to Ready all your Characters for another Attack, but they cannot Cause Trouble that Turn. Card text is deliberately limited to the Characters currently in play. The two-copy test is unbalanced/unproven until human playtesting; it preserves the existing 40-card deck size by cutting two copies of Guy Who Got a Bad Deal.
