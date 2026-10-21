@@ -1,3 +1,22 @@
+## GRUDGE RULES — TESTING (21 October 2026)
+
+**Status: TESTING — proposed alternate ruleset, not promoted to the production rules.** The twelve rules below and optional dials are the designer's submitted test baseline. Wanted-tier effects and individual Last Straw effects are not specified here. This entry does not change `RULES.md`, card/deck data, simulation, web playtest, or builder.
+
+1. No Composure, Trouble or normal Stashing. Characters have only Power and Health.
+2. Starting Stuff: you begin with the top 2 cards of your deck as permanent face-down Stash.
+3. Turn: Ready everything, Draw 1 (the first player skips it on turn 1), then play cards and attack.
+4. Attacking: Expose a Ready Character to attack either the opposing Leader or an Exposed opposing Character.
+5. Blocking: when the Leader is attacked, the defender may block with any Ready Character. The two fight, both dealing damage. The blocker stays Ready and can block any number of times per turn.
+6. Ambush: attacking an Exposed Character is one-sided, unless it has Hits Back.
+7. Grudges: each unblocked hit on a Leader gives that Leader 1 Grudge. The top card of their own deck goes face up into their Stash, as a permanent resource and a Wanted star.
+8. Trophies: when your Character Defeats an opposing one, in any fight, that card goes into your Stash. It's one-shot: when you spend it, it goes back to its owner's discard.
+9. Wanted stars: each Leader has 5 stacking tiers that add both power and instability.
+10. Last Straw: at 5 Grudges, reveal and resolve your hidden Last Straw.
+11. Unhinged: if you'd gain a Grudge after your Last Straw is revealed, you lose.
+12. Timing: if two things happen at once, the active player picks the order.
+
+**Dials to try if something feels off:** start with 3 Stash, Last Straw at 4 Grudges, permanent Trophies, or 2 blocks per Character per turn.
+
 ## CURRENT Pawn Shop addition — Haggler (20 October 2026)
 
 Approved for the canonical first-test. **P193 Haggler**, Momentum / Pawn Shop Customer Character, Cost 2, **1 Power / 2 Guard / 2 Trouble**. **Talk Them Down:** On entry, choose whether the next Character played this Turn costs 2 less Stash, or the next payment of Deals this Turn costs 1 fewer Deal (minimum zero); either discount expires unused at the beginning of that player's next Turn. The second choice may make a one-Deal ability cost zero and a two-Deal ability cost one; Grandma still protects against spending the final *actual* Deal. Flavor **“I'll give you 20 for it.”**
