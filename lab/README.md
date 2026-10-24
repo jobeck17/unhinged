@@ -20,6 +20,8 @@ Lab experiments may read or test against the canonical game, but they must not s
 
 ## Lab index
 
+- `accusations/` — standalone Scenario-control prototype: first to 5 Verdict by prosecuting your own ridiculous Scenarios across three shared benches, HOA President vs Florida Man starter decks, browser playtest with bot / pass-and-play / spectate. [Play the lab](https://jobeck17.github.io/unhinged/lab/accusations/).
+
 - `board-width/` — parallel isolated five-Character/no-blocking experiment with Rotated-only targets, Ready engines, free triggers, minimal stacking, and direct board targeting UI.
 
 - `schemes/` — active next-core prototype: simultaneous damage, exposed workers, eight Leader Schemes, 71 supported cards, shared browser/simulation engine, and paired comparison results.

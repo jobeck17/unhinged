@@ -1,0 +1,33 @@
+{
+  "status": "PROTOTYPE",
+  "source": "lab/accusations/RULES.md §12 starter decklists",
+  "decks": [
+    {
+      "name": "HOA President — Stonewall",
+      "leader": "LAB-ACC-L1",
+      "style": "Stonewall",
+      "main": {
+        "LAB-ACC-S01": 4, "LAB-ACC-S02": 4, "LAB-ACC-S03": 4, "LAB-ACC-S04": 3,
+        "LAB-ACC-S05": 4, "LAB-ACC-S06": 2, "LAB-ACC-S07": 4, "LAB-ACC-S08": 3,
+        "LAB-ACC-S09": 3, "LAB-ACC-S10": 3, "LAB-ACC-S11": 2, "LAB-ACC-S12": 4
+      },
+      "scenarios": {
+        "LAB-ACC-SC1": 3, "LAB-ACC-SC2": 2, "LAB-ACC-SC3": 2, "LAB-ACC-SC4": 2, "LAB-ACC-SC5": 1
+      }
+    },
+    {
+      "name": "Florida Man — Reckless",
+      "leader": "LAB-ACC-L2",
+      "style": "Reckless",
+      "main": {
+        "LAB-ACC-R01": 4, "LAB-ACC-R02": 4, "LAB-ACC-R03": 4, "LAB-ACC-R04": 4,
+        "LAB-ACC-R05": 3, "LAB-ACC-R06": 3, "LAB-ACC-R07": 2, "LAB-ACC-R08": 4,
+        "LAB-ACC-R09": 3, "LAB-ACC-R10": 2, "LAB-ACC-R11": 3, "LAB-ACC-R12": 2,
+        "LAB-ACC-R13": 2
+      },
+      "scenarios": {
+        "LAB-ACC-RC1": 3, "LAB-ACC-RC2": 2, "LAB-ACC-RC3": 2, "LAB-ACC-RC4": 2, "LAB-ACC-RC5": 1
+      }
+    }
+  ]
+}
