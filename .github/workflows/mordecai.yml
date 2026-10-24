@@ -97,6 +97,8 @@ jobs:
           cp lab/salvage-audit/index.html lab/salvage-audit/app.js lab/salvage-audit/salvage.mjs lab/salvage-audit/pilot.mjs lab/salvage-audit/data.mjs _site/lab/salvage-audit/
           cp brainstorm/salvage-audit/STARTING_DRAFT.json _site/brainstorm/salvage-audit/
           cp -R lab/composure _site/lab/
+          cp -R lab/accusations _site/lab/
+          test -f _site/lab/accusations/index.html
           mkdir -p _site/lab/board-width
           cp lab/board-width/index.html lab/board-width/style.css lab/board-width/app.mjs lab/board-width/engine.mjs lab/board-width/ai.mjs lab/board-width/selection.mjs lab/board-width/CARDS.json lab/board-width/DECKS.json _site/lab/board-width/
           mkdir -p _site/lab/schemes
