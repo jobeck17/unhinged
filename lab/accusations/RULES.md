@@ -15,7 +15,7 @@ Each player needs one Leader, a **40-card Main Deck** (Characters, Actions, Item
 - **Action:** cost and one-time effect; resolve then discard.
 - **Scenario:** cost, printed special rule and possibly alternate resolution condition. A Scenario is owned and prosecuted by its controller; opponents contest it. Every successful Scenario scores exactly **1 Verdict**, then is dismissed.
 - **Ready:** upright, available. **Rotate:** turn sideways to exhaust. **Ready** again at start of your turn.
-- **Commit:** move one of your Characters from your Home area to a Scenario, without changing its Ready state. A Character is at only one place at once. **Withdraw:** move your Character from a Scenario back Home.
+- **Commit:** move one of your Characters from your Home area to a Scenario, without changing its Ready state. A Character is at only one place at once. **Withdraw:** move your Character from a Scenario back Home. **Transfer:** move your Character directly from one Scenario to another as its voluntary move for the turn.
 - **Supporting:** your Characters at your Scenario. **Contesting:** opposing Characters at your Scenario. Characters at another Scenario cannot fight here.
 - **Defeat:** put a Character in its owner's Main discard. **Dismiss:** move a Scenario to its owner's Scenario discard, or an Item to its owner's Main discard. **Return:** move to owner's hand. **Draw:** take the top card of the named deck.
 - **Damage:** persists on Characters until healed or they leave play. Damage equal to or greater than Health defeats immediately.
@@ -38,7 +38,7 @@ For this first prototype, use either of the two complete starter lists in sectio
 **Main:** In any order, you may:
 - Once per turn put one Main card from hand face-down into Stash, Ready.
 - Play cards by rotating Ready Stash equal to cost; costs cannot be negative. Rotated Stash becomes Ready on your next turn. Unspent Stash remains available.
-- Commit or Withdraw each of your Characters at most **once per turn**. Characters may commit the turn they enter, but cannot attack or use their own Rotate abilities until your next turn unless Hothead.
+- Move each of your Characters at most **once per turn**: Home to Scenario, Scenario to another Scenario, or Scenario back Home. Characters may move the turn they enter, but cannot attack or use their own Rotate abilities until your next turn unless Hothead. Moving does not Rotate or Ready a Character. Effects that move Characters do not use this voluntary movement allowance.
 - Attack with each eligible Ready Character, rotating it to attack. A readied Character may attack again if otherwise eligible.
 - Play at most **one Scenario per turn**, into an empty shared slot, if you have fewer than **two** active Scenarios. You must already control at least one Character, and immediately commit at least one of your Characters to the new Scenario (even a newly played Character). If you cannot, you cannot play it.
 - Voluntarily **abandon** one of your active Scenarios once per turn, dismissing it without reward. This still triggers replacement draw (section 8), but never grants the defender a reward.
