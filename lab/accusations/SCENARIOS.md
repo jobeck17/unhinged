@@ -32,15 +32,14 @@ Scenarios are sorted by **Leader**, then by **ascending cost**. Each Scenario sc
 
 - There are three shared Scenario slots; each player may control at most two active Scenarios.
 - Each player has a separate 10-card Scenario Deck and opens with two Scenario cards (the written rules permit a mulligan, although the initial browser implementation does not).
-- Under the **current implemented rules**, a Scenario is played by paying its Stash cost, and the owner immediately commits at least one Character to support it.
+- **Current filing rule:** Rotate one or more Ready Characters at Home to contribute their printed Character costs toward a Scenario. You may supplement the cost with Ready Stash (1 each), but at least one Character must file. Those Characters immediately commit to the new Scenario and remain Rotated. Newly played Characters can file immediately.
+- **Current movement rule:** A Ready Character at Home may Rotate to commit to an existing Scenario. Characters cannot voluntarily withdraw or transfer between Scenarios. At the end of a Scenario, they return Home unchanged. Combat can target Ready or Rotated opponents at the same Scenario.
 - At the start of its owner's next turn, a Scenario with supporters and no contesters normally succeeds; if it has no supporters, it fails. Printed conditions can modify these checks.
 - When a Scenario leaves play, its owner draws a replacement Scenario; successful prosecution scores 1 Verdict; first to 5 wins.
 
-## Design discussion — TESTING, not yet implemented
+## Open balance questions — TESTING
 
-Recent playtesting found that early turns feel slow because both a Character and Scenario require Stash, and high-cost opening Scenarios can be unplayable. The proposed alternative is to **file Scenarios by rotating Ready Characters**, using printed Character costs as contributions, potentially supplemented by rotated Stash. At least one Character would have to participate, and contributing Characters would commit to that Scenario. Filing on the turn a Character enters, while still restricting immediate attacks, is also under discussion.
-
-**These are design proposals, not rules changes.** No payment model, Scenario cost curve, or card effects are changed by this catalog. When a version is approved, update RULES.md, the live playtest, and this catalog together.
+The mixed Character-and-Stash filing mechanic and rotation-to-commit movement are now active lab rules. Still to evaluate: opening Scenario cost distribution, ease of defending turn-one Scenarios, and whether Character contributions should ever be capped. Scenario values and starter deck quantities have not yet been rebalanced.
 
 ## Visual direction
 
