@@ -51,7 +51,7 @@ Players may play Actions and activate abilities only on their own turns. There a
 Every facedown Stash card produces 1 resource when rotated; its identity and other text are inactive. Stash cards cannot be used as Characters or drawn back unless an effect explicitly says so. There is no hand limit. Main Deck draw from an empty Main Deck fails harmlessly. Scenario Deck draw from an empty Scenario Deck fails; see section 9 for recycling.
 
 ## 7. Position and combat
-Characters enter **Home**, Ready, with no damage. They may rotate to file or commit on their entry turn, but cannot attack or use other Rotate abilities until the next turn unless a card expressly overrides this. Each Character is either at Home or at one Scenario. Home Characters cannot attack or be attacked by ordinary attacks. A Character may attack only an opposing Character **at the same Scenario**, regardless of whether the target is **Ready or Rotated**. Rotate the attacker and deal damage equal to its Power to its target. **There is no automatic retaliation, no blocking, and no leader attacks.** Ready and Rotated opposing Characters at the same Scenario are both legal attack targets. The target deals no damage back unless card text says otherwise. Damage persists. A Character may attack only if it began this turn under your control, except Hothead. Committing normally rotates it; other card-effect movement does not inherently Ready or heal it.
+Characters enter **Home**, Ready, with no damage. They may rotate to file or commit on their entry turn, but cannot attack or use other Rotate abilities until the next turn unless a card expressly overrides this. Each Character is either at Home or at one Scenario. Home Characters cannot attack or be attacked by ordinary attacks. A Character may attack only an opposing Character **at the same Scenario**, regardless of whether the target is **Ready or Rotated**. Rotate the attacker. **Both Characters deal combat damage equal to their Power to one another simultaneously**, regardless of whether the defender is Ready or Rotated. Apply damage reduction separately to each, then defeat any Characters whose accumulated damage meets their Health; both may be defeated in the same attack. Defending does not Rotate a Character. **There is no blocking or leader attacks.** Damage persists. A Character may attack only if it began this turn under your control, except Hothead. Committing normally rotates it; other card-effect movement does not inherently Ready or heal it.
 
 At most **three Characters per player per Scenario** may be committed. If an effect would move a fourth, that move fails. Attachments follow their Character when it moves; when that Character leaves play, attached Items go to their owners' Main discards. An Item without Attach stays in its owner's Home area and functions globally unless its text specifies a location.
 
@@ -79,7 +79,6 @@ If you must draw a Scenario and your Scenario Deck is empty, shuffle your Scenar
 
 **Hothead:** May attack on the turn it enters.
 **Absorb 1:** Reduce each instance of damage dealt to this Character by 1, minimum 0.
-**Retaliate:** When attacked, this Character deals its Power as damage to the attacker after the attacker's damage, even if defeated.
 **Sucker Punch:** Once per turn this Character may attack an opposing Character at a different Scenario; it remains at its current location. It cannot attack Home Characters.
 **Ready:** Turn a Rotated card upright.
 **Heal N:** Remove up to N damage from a Character.
@@ -90,7 +89,7 @@ Each entry is **Name | Cost | Power/Health if Character | text**. A dash means n
 ### Stonewall Main cards
 - **Old Guy** | Character 1 | 1/3 | Absorb 1 while defending an opposing Scenario.
 - **Helicopter Parent** | Character 2 | 2/3 | When committed to defend, give another friendly Character at that Scenario +1 Health until end of turn.
-- **Marine** | Character 3 | 3/4 | Retaliate.
+- **Marine** | Character 3 | 3/4 | When defending against an attack, deals +1 combat damage.
 - **Grandma** | Character 3 | 1/5 | At start of your turn, heal 1 damage from a friendly Character at her Scenario.
 - **Neighborhood Watch** | Character 2 | 2/2 | When entering, you may commit it to an opposing Scenario.
 - **Board Member** | Character 4 | 3/5 | While supporting your Scenario, opponents cannot move your other supporting Characters with Actions.
