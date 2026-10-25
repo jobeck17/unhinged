@@ -4,6 +4,8 @@
 
 **Standalone rules:** [RULES.md](RULES.md)
 
+**Leader-by-leader Scenario catalog:** [SCENARIOS.md](SCENARIOS.md)
+
 **Implementation:** [index.html](index.html) contains the standalone browser interface, card definitions, and local game state. It does not import production cards, decks, rules, or game logic.
 
 ## What this build is
