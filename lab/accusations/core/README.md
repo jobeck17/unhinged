@@ -26,6 +26,10 @@ Both comparison modes use the *same* engine, board, starting conditions, bot, an
 
 In **both** modes, no supporting Characters means the Scenario fails; a Scenario cannot resolve immediately on filing; finished Scenarios return all Characters Home. Scenario winners each earn **1 Verdict**.
 
+### Anti-deadlock safeguards (TESTING)
+
+An unresolved Scenario closes **without awarding a Verdict** after **3 contested owner-turn checks**. This returns its Characters Home so full boards can break up. If the match reaches the end of **round 18** without either player earning five Verdicts, the game ends in a **draw**, not an arbitrary win. The safeguards apply identically to Modes A and B so the core win-condition comparison remains meaningful. They are not proposed as permanent rules for the full Accusations game.
+
 ## How to compare fairly
 
 1. Play several games in Mode A using the same play style, noting what happened at each Scenario.
