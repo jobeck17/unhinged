@@ -48,7 +48,7 @@ function slotView(i){
   const center=document.createElement("div");center.className="scenario";
   const points=score(g,i);
   const modeLine=g.mode==="elimination"?"Win at next owner turn if nobody contests":"Win at next owner turn if support Power > contest Power";
-  center.innerHTML="<div class='top'>⚖ GENERIC SCENARIO · COST 1</div><strong>"+sideName(sc.owner)+" FILED THIS</strong><p>"+modeLine+"</p><div class='small'>Influence: "+points.support+" supporting / "+points.contest+" contesting · "+at(g,sc.owner,i).length+" supporters / "+at(g,1-sc.owner,i).length+" contesters</div>";
+  center.innerHTML="<div class='top'>⚖ GENERIC SCENARIO · COST 1</div><strong>"+sideName(sc.owner)+" FILED THIS</strong><p>"+modeLine+"</p><div class='small'>Unresolved checks: "+(sc.checks||0)+"/3 (then closes without a point)</div><div class='small'>Influence: "+points.support+" supporting / "+points.contest+" contesting · "+at(g,sc.owner,i).length+" supporters / "+at(g,1-sc.owner,i).length+" contesters</div>";
   slot.append(center);
   const lower=document.createElement("div");lower.className="side own";
   lower.innerHTML="<div class='side-name'>YOUR CHARACTERS</div>";
@@ -67,7 +67,7 @@ function render(){
   el("mode-info").innerHTML="<b>Playing: "+(m?"A · Elimination":"B · Influence Majority")+"</b> — "+(m?"A Scenario succeeds when its filer has a supporting Character and zero contesters at the beginning of their next turn.":"A Scenario succeeds when its filer has at least one supporter and more total Power than the contesters at the beginning of their next turn. Ties continue.")+" Choose another mode and press New comparison game to switch.";
   const me=player(g,0),bot=player(g,1);
   el("score").innerHTML="<span class='pill'>YOU "+me.verdict+"/"+WIN_TARGET+" Verdict</span><span class='pill'>BOT "+bot.verdict+"/"+WIN_TARGET+" Verdict</span><span class='pill'>Your Stash "+available(g,0)+"/"+me.stash+" Ready</span><span class='pill'>Bot Stash "+available(g,1)+"/"+bot.stash+" Ready</span><span class='pill'>Round "+g.round+"</span>";
-  if(g.winner!==null){el("hint").innerHTML="<b class='"+(g.winner===0?"good":"warning")+"'>"+(g.winner===0?"You win!":"Bot wins!")+"</b> First to "+WIN_TARGET+" Verdicts. Start a new comparison game to retry."}
+  if(g.winner!==null){el("hint").innerHTML="<b class='"+(g.winner===0?"good":"warning")+"'>"+(g.winner==="draw"?"Draw! Round limit reached; no Verdicts awarded.":g.winner===0?"You win!":"Bot wins!")+"</b> Start a new comparison game to retry."}
   else if(selected?.kind==="commit")el("hint").textContent="Choose a Scenario to join using its Commit button. Your Character will rotate and stay there until the Scenario ends.";
   else if(selected?.kind==="attack")el("hint").textContent="Choose a highlighted opposing Character at the same Scenario. Combat damage is simultaneous; both may be defeated.";
   else el("hint").textContent="1. Recruit Characters using automatic Stash. 2. File a generic Scenario using a Ready Home Character, or Join an existing Scenario. 3. Next turn, attack opposing Characters or keep control of your arguments.";
