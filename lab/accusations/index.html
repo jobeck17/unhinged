@@ -168,12 +168,14 @@ function botAct(){
  try{
  const me=side(1);
  if(!me.stashed&&me.hand.length){
- const fodder=me.hand.filter(c=>c.type!=='Character').sort((a,b)=>b.cost-a.cost)[0]||me.hand[me.hand.length-1];
+ // Keep a cheap recruit and useful Scenario-filing resources whenever possible.
+ const cheapest=me.hand.filter(c=>c.type==='Character').sort((a,b)=>a.cost-b.cost)[0];
+ const fodder=me.hand.filter(c=>c.id!==cheapest?.id).sort((a,b)=>b.cost-a.cost)[0]||me.hand[me.hand.length-1];
  if(fodder)stash(fodder.id);
  }
  for(let n=0;n<3;n++){
  const ready=me.stash.filter(c=>!c.rot).length;
- const choice=me.hand.filter(c=>c.type==='Character'&&c.cost<=ready).sort((a,b)=>b.cost-a.cost)[0];
+ const choice=me.hand.filter(c=>c.type==='Character'&&c.cost<=ready).sort((a,b)=>a.cost-b.cost)[0];
  if(!choice)break;
  play(choice);
  }
@@ -212,13 +214,21 @@ function botAct(){
  finally{playingBot=false;filing=null;selected=null}
 }
 end=function(){
- if(playingBot)return;
+ if(playingBot||g.winner!==null)return;
  if(g.active===0){
- previousEnd();
- if(g.active===1&&g.winner===null){botAct();previousEnd()}
- }else{botAct();previousEnd()}
+   if(filing){alert('Finish or cancel filing your Scenario first.');return}
+   previousEnd();
+ }
+ if(g.active===1&&g.winner===null){
+   botAct();
+   if(g.winner===null)previousEnd();
+ }
 };
 newGame=function(){previousNew();note('Playing versus the bot');render()};
+// The original button captured the old end function before this wrapper existed.
+// Bind the live bot-aware handler so ONE click plays the bot turn and returns control.
+document.getElementById('end').onclick=()=>end();
+document.getElementById('end').textContent='End turn → Bot plays';
 render();
 })();
 </script><script>
