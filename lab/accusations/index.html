@@ -113,7 +113,7 @@ function cleanup(i){for(let p=0;p<2;p++)for(let c of at(p,i))c.loc=-1;g.slots[i]
 function dismiss(i,kind){let s=g.slots[i];if(!s)return;let p=s.owner,op=other(p);if(kind==='success'){side(p).verdict++;note(label(p)+' wins '+s.card.name+'! +1 Verdict');let n=s.card.name;if(n==='Your Grass Is 0.3 Inches Too Tall!'||n==="There's a Gator in My Pool!")draw(p);if(n==='Unauthorized Lawn Flamingo!'){let item=side(op).items[0]||all(op).flatMap(c=>c.items)[0];if(item)removeItem(op,item)}if(n==="That's Definitely Not Street Legal!"){let st=side(p).stash.find(x=>x.rot);if(st)st.rot=false}if(n==='The Neighbors Called the Cops Again!'){let c=all(op).find(x=>x.loc>=0&&x.loc!==i);if(c)c.loc=-1}if(n==='I Can Explain the Fireworks!'){let c=all(op).find(x=>x.loc>=0&&x.loc!==i);if(c)damage(op,c,2)}}else{note(s.card.name+' '+(kind==='abandon'?'abandoned':'defeated'));if(kind==='failure'&&at(op,i).length){draw(op);note(label(op)+' earns defensive draw')}}side(p).sdiscard.push(s.card);cleanup(i);draw(p,true);if(side(p).verdict>=5){g.winner=p;note(label(p)+' wins the match!')}}
 function removeItem(p,item){side(p).items=side(p).items.filter(x=>x.id!==item.id);for(let c of all(p))c.items=c.items.filter(x=>x.id!==item.id);side(p).discard.push(item);note(item.name+' dismissed')}
 function check(){for(let i=0;i<3;i++){let s=g.slots[i];if(!s||s.owner!==g.active)continue;let p=s.owner,n=s.card.name,us=at(p,i),them=at(other(p),i);if(!us.length){dismiss(i,'failure');continue}let win=them.length===0;if(n==='Your Christmas Lights Are Still Up in March!')win=them.length<2;if(n==="That's Not Up to Code!")win=win&&us.some(c=>c.items.length);if(n==='I Can Explain the Fireworks!')win=win&&us.length>=2;if(win){dismiss(i,'success');if(g.winner!==null)break}}}
-function start(){let p=g.active,pl=side(p);for(let c of pl.chars){c.rot=false;c.moved=false;c.attackBan=false;if(c.bonusUntil<g.turn){c.bonusP=0;c.bonusH=0;c.watch=false}}for(let i of [...pl.items,...pl.stash])i.rot=false;pl.stashed=false;pl.playedScenario=false;pl.abandoned=false;pl.defended=false;pl.defeated=false;if(!(g.turn===1&&p===0))draw(p);check();for(let c of [...pl.chars])if(c.name==='Grandma'&&c.loc>=0){let t=at(p,c.loc).find(x=>x.damage>0);if(t)t.damage=Math.max(0,t.damage-1)}}
+function start(){let p=g.active,pl=side(p);for(let c of pl.chars){c.rot=false;c.moved=false;c.attackBan=false;if(c.bonusUntil<g.turn){c.bonusP=0;c.bonusH=0;c.watch=false}}for(let i of [...pl.items,...pl.stash])i.rot=false;pl.stashed=false;pl.playedScenario=false;pl.abandoned=false;pl.defended=false;pl.defeated=false;for(let drawIndex=0;drawIndex<(g.turn===1&&p===0?1:2);drawIndex++)draw(p);check();for(let c of [...pl.chars])if(c.name==='Grandma'&&c.loc>=0){let t=at(p,c.loc).find(x=>x.damage>0);if(t)t.damage=Math.max(0,t.damage-1)}}
 function end(){if(g.winner!==null)return;if(filing){alert('Finish or cancel filing your Scenario first.');return}selected=null;g.active=other(g.active);g.turn++;if(g.active===0){g.round++;if(!g.changed)g.stale++;else g.stale=0;g.changed=false;if(g.stale>=3){for(let p=0;p<2;p++){let i=g.slots.findIndex(x=>x&&x.owner===p);if(i>=0)dismiss(i,'abandon')}g.stale=0}}start();note('Turn passes to '+label(g.active));render()}
 function save(){undo=clone(g)}
 function choose(kind,id){selected={kind,id};render()}
@@ -284,6 +284,9 @@ render();
   swap('sh','sd',scenarioSelected);
   note('You mulligan '+mainSelected.size+' Main and '+scenarioSelected.size+' Scenarios');
   botMulligan();
+  // First player receives one Main draw on turn 1, after the opening mulligan.
+  draw(0);
+  note('First player draws 1 Main card on turn 1 (2 on later turns)');
   mulliganOpen=false;mainSelected.clear();scenarioSelected.clear();
   document.getElementById('mulligan-overlay')?.remove();
   render();
