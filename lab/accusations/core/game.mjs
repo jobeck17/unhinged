@@ -16,9 +16,10 @@ export const MAX_UNRESOLVED_CHECKS = 3; // Anti-stall TESTING safeguard
 export const MAX_ROUNDS = 18; // A match may end in a draw, never free Verdicts
 const assert=(condition,message)=>{if(!condition)throw new Error(message)};
 const opponent=p=>1-p;
-export function makeGame(mode="elimination"){
+export function makeGame(mode="elimination",firstPlayer=0){
   assert(["elimination","majority"].includes(mode),"Invalid mode");
-  const g={mode,players:[0,1].map(()=>({stash:0,spent:0,chars:[],verdict:0,played:false})),slots:Array(MAX_SLOTS).fill(null),active:0,turn:1,round:1,nextId:1,winner:null,draw:false,events:[]};
+  assert(firstPlayer===0||firstPlayer===1,"Invalid first player");
+  const g={mode,players:[0,1].map(()=>({stash:0,spent:0,chars:[],verdict:0,played:false})),slots:Array(MAX_SLOTS).fill(null),active:firstPlayer,firstPlayer,turn:1,round:1,nextId:1,winner:null,draw:false,events:[]};
   beginTurn(g,true);
   return g;
 }
@@ -124,7 +125,7 @@ export function endTurn(g){
   if(g.winner!==null)return;
   g.active=opponent(g.active);
   g.turn++;
-  if(g.active===0){
+  if(g.active===g.firstPlayer){
     g.round++;
     if(g.round>MAX_ROUNDS){g.winner="draw";g.draw=true;log(g,"Match reaches round limit · Draw (no free Verdicts)");return}
   }
