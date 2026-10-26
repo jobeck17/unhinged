@@ -18,6 +18,10 @@ Both comparison modes use the *same* engine, board, starting conditions, bot, an
 - Maximum three Characters per player per Scenario. When a Scenario ends, its Characters return Home without changing rotation or damage. First to **5 Verdicts** wins.
 - The bot uses a simple policy to recruit, contest, attack, and file. It is an opponent for usability tests, **not a balance authority**.
 
+## Test first-player advantage
+
+Choose **Go First** or **Go Second (Bot first)** in the Core Lab and click **New comparison game**. If you go second, the bot takes the opening turn automatically, then control passes to you with one Ready Stash and the opportunity to recruit, file, or contest. The round counter advances after both players have taken a turn, regardless of who started. This changes only turn order; both players otherwise use the same rules and resources.
+
 ## Toggle the Scenario win check
 
 **A — Elimination (control):** At the start of its filing player's turn, a Scenario with at least one supporter and no opposing contesters succeeds for 1 Verdict.
