@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {makeGame,player,available,recruit,file,commit,attack,score,endTurn,botTurn,at} from "./game.mjs";
+import {makeGame,player,available,recruit,file,commit,attack,score,endTurn,botTurn,at,MAX_UNRESOLVED_CHECKS,MAX_ROUNDS} from "./game.mjs";
 function test(label,fn){fn();console.log("PASS",label)}
 test("automatic Stash growth and opening recruit",()=>{
   const g=makeGame();assert.equal(available(g,0),1);
@@ -63,4 +63,28 @@ test("full solo game can advance for many turns without failing state constraint
       assert.ok(g.slots.filter(s=>s?.owner===1).length<=2);
     }
   }
+});
+
+test("a deadlocked Scenario expires without awarding a free Verdict",()=>{
+  const g=makeGame("elimination");
+  const a=recruit(g,0,"neighbor");file(g,0,a.id);
+  endTurn(g);
+  const b=recruit(g,1,"neighbor");commit(g,1,b.id,0);
+  for(let i=0;i<MAX_UNRESOLVED_CHECKS;i++){
+    endTurn(g);
+    if(i<MAX_UNRESOLVED_CHECKS-1){assert.notEqual(g.slots[0],null);endTurn(g)}
+  }
+  assert.equal(g.slots[0],null);
+  assert.equal(player(g,0).verdict,0);
+  assert.equal(player(g,1).verdict,0);
+  assert.equal(a.loc,-1);
+  assert.equal(b.loc,-1);
+});
+test("a completely passive match ends as a declared draw instead of looping forever",()=>{
+  const g=makeGame("elimination");
+  for(let i=0;i<2*MAX_ROUNDS+3&&g.winner===null;i++)endTurn(g);
+  assert.equal(g.winner,"draw");
+  assert.equal(g.draw,true);
+  assert.equal(player(g,0).verdict,0);
+  assert.equal(player(g,1).verdict,0);
 });
