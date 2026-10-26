@@ -64,7 +64,7 @@ function slotView(i){
 }
 function render(){
   const m=g.mode==="elimination";
-  el("mode-info").innerHTML="<b>Playing: "+(m?"A · Elimination":"B · Influence Majority")+"</b> — "+(m?"A Scenario succeeds when its filer has a supporting Character and zero contesters at the beginning of their next turn.":"A Scenario succeeds when its filer has at least one supporter and more total Power than the contesters at the beginning of their next turn. Ties continue.")+" Choose another mode and press New comparison game to switch.";
+  el("mode-info").innerHTML="<b>Turn order: "+(g.firstPlayer===0?"You first":"Bot first")+" · Playing: "+(m?"A · Elimination":"B · Influence Majority")+"</b> — "+(m?"A Scenario succeeds when its filer has a supporting Character and zero contesters at the beginning of their next turn.":"A Scenario succeeds when its filer has at least one supporter and more total Power than the contesters at the beginning of their next turn. Ties continue.")+" Choose another mode and press New comparison game to switch.";
   const me=player(g,0),bot=player(g,1);
   el("score").innerHTML="<span class='pill'>YOU "+me.verdict+"/"+WIN_TARGET+" Verdict</span><span class='pill'>BOT "+bot.verdict+"/"+WIN_TARGET+" Verdict</span><span class='pill'>Your Stash "+available(g,0)+"/"+me.stash+" Ready</span><span class='pill'>Bot Stash "+available(g,1)+"/"+bot.stash+" Ready</span><span class='pill'>Round "+g.round+"</span>";
   if(g.winner!==null){el("hint").innerHTML="<b class='"+(g.winner===0?"good":"warning")+"'>"+(g.winner==="draw"?"Draw! Round limit reached; no Verdicts awarded.":g.winner===0?"You win!":"Bot wins!")+"</b> Start a new comparison game to retry."}
@@ -85,7 +85,11 @@ function render(){
   }));
   el("log").innerHTML=g.events.map(x=>"<div>"+x+"</div>").join("");
 }
-el("restart").addEventListener("click",()=>{g=makeGame(el("mode").value);selected=null;notice="";render()});
+el("restart").addEventListener("click",()=>{
+  g=makeGame(el("mode").value,Number(el("seat").value));selected=null;notice="";
+  if(g.active===1){botTurn(g);if(g.winner===null)endTurn(g)}
+  render();
+});
 el("cancel").addEventListener("click",()=>{selected=null;notice="";render()});
 el("end").addEventListener("click",()=>{
   doAction(()=>{
