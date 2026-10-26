@@ -30,10 +30,10 @@ For this first prototype, use either of the two complete starter lists in sectio
 1. Reveal Leaders. Shuffle Main and Scenario Decks separately.
 2. Each player draws **5 Main cards and 2 Scenario cards**. Each player may once put any number of those cards on the bottom of their respective decks and draw the same number from those decks, then shuffle each deck.
 3. Randomly choose first player. Both begin at 0 Verdict and 0 Stash. No Characters or Items begin in play.
-4. The first player skips the Main Deck draw on their first turn only. Neither player draws a Scenario automatically at turn start.
+4. **TESTING draw economy:** The first player draws **1 Main card** on their first turn (after mulligan); on every other turn, players draw **2 Main cards**. Neither player draws a Scenario automatically at turn start. This is a provisional pacing change and may return to 1 Main draw after card-effect testing.
 
 ## 5. Turn structure
-**Start:** (1) Ready all your Characters, Items, and Stash; (2) draw 1 Main card unless first-player first turn; (3) resolve start-of-turn Scenario checks, in an order chosen by active player (see section 8); (4) resolve other start-of-turn effects.
+**Start:** (1) Ready all your Characters, Items, and Stash; (2) draw **2 Main cards** (only **1** on the first player's first turn); (3) resolve start-of-turn Scenario checks, in an order chosen by active player (see section 8); (4) resolve other start-of-turn effects.
 
 **Main:** In any order, you may:
 - Once per turn put one Main card from hand face-down into Stash, Ready.
