@@ -9,10 +9,10 @@
 **Implementation:** [index.html](index.html) contains the standalone browser interface, card definitions, and local game state. It does not import production cards, decks, rules, or game logic.
 
 ## What this build is
-A first-pass local two-player hot-seat prototype for evaluating whether temporary contested Scenarios create interesting decisions. Choose a leader for each seat, press New game, play cards from the active player's hand, and End turn to switch seats. To file a Scenario, select it in your hand, choose one or more Ready Characters at Home and optionally add Ready Stash, then confirm the filing. To commit to an existing Scenario, select a Ready Character at Home and then select the Scenario. Commitment rotates that Character. Characters cannot voluntarily leave or transfer between Scenarios. To attack, click Attack on an eligible Character and then Select on an opposing Character at the same Scenario. Use the event log for resolution. Combat is simultaneous: the attacker and defender each deal Power damage to the other, even if the defender is Rotated; the Marine deals +1 damage when defending.
+A first-pass solo browser prototype against a rule-based bot for evaluating whether temporary contested Scenarios create interesting decisions. Choose your leader and the bot's leader, press New game, and End turn to let the bot take its turn. To file a Scenario, select it in your hand, choose one or more Ready Characters at Home and optionally add Ready Stash, then confirm the filing. To commit to an existing Scenario, select a Ready Character at Home and then select the Scenario. Commitment rotates that Character. A Rotated Character is displayed sideways on the board. Characters cannot voluntarily leave or transfer between Scenarios. To attack, click Attack on an eligible Character and then Select on an opposing Character at the same Scenario. Use the event log for resolution. Combat is simultaneous: the attacker and defender each deal Power damage to the other, even if the defender is Rotated; the Marine deals +1 damage when defending.
 
 ## Known limitations / not yet a rules-complete digital referee
-- Hands and decks counts are visible on the shared screen; no hidden-information privacy or network play.
+- The computer bot follows basic Stash, deployment, contest, combat, and filing heuristics; it does not plan long-term or evaluate every card ability. No network play.
 - Opening mulligan is not implemented.
 - Some optional effects automatically pick the first eligible target or reinforcement instead of asking.
 - Filing uses Character printed costs plus optional Stash. Action target selection is basic; not all nuanced ability interactions are exhaustively validated.
@@ -20,7 +20,7 @@ A first-pass local two-player hot-seat prototype for evaluating whether temporar
 - The three-round stalemate release is approximate.
 - Undo is one-step and may not reverse all intermediate changes in a multi-step interaction.
 - Debug draws deliberately bypass ordinary draw rules.
-- No automated opponent, matchmaking, saved game, or deck builder.
+- No matchmaking, saved game, or deck builder. The bot is heuristic, not a full adversarial AI.
 
 **Rules adjudication:** RULES.md governs whenever the prototype and interface disagree. Do not treat this browser build as verified rules parity or balanced.
 
