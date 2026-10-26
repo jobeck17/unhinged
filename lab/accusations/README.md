@@ -22,6 +22,8 @@ A first-pass solo browser prototype against a rule-based bot for evaluating whet
 - Debug draws deliberately bypass ordinary draw rules.
 - No matchmaking, saved game, or deck builder. The bot is heuristic, not a full adversarial AI.
 
+**Bot turn control:** One press of **End turn → Bot plays** completes the bot's turn and returns control to the player. The bot uses a basic heuristic, not full strategic AI.
+
 **Rules adjudication:** RULES.md governs whenever the prototype and interface disagree. Do not treat this browser build as verified rules parity or balanced.
 
 ## Playtest observations to capture
