@@ -17,7 +17,18 @@
 .scenario-in-play{width:100%;aspect-ratio:1.7/1}
 .slot .scenario-card{margin:4px 0 12px}
 @media(max-width:750px){.scenario-in-play{min-height:155px}.hand .scenario-card{grid-column:span 2}}
-</style><style>.rotated-card{transform:rotate(90deg) scale(.74);transform-origin:center;margin:28px 20px!important;outline:2px solid #c69b56;position:relative}.rotated-card::after{content:"↷ ROTATED";position:absolute;bottom:2px;right:2px;color:#ffe3ae;background:#514029;padding:2px 4px;border-radius:4px;font-size:10px}#filing-controls{border:2px solid #e7be69;background:#30291f}#filing-controls button.active{background:#c49a4b;color:#17130c;outline:2px solid #ffe6aa}#filing-controls .pill{background:#57482b;color:#ffedc5}</style></head><body>
+</style><style>.rotated-card{transform:rotate(90deg) scale(.74);transform-origin:center;margin:28px 20px!important;outline:2px solid #c69b56;position:relative}.rotated-card::after{content:"↷ ROTATED";position:absolute;bottom:2px;right:2px;color:#ffe3ae;background:#514029;padding:2px 4px;border-radius:4px;font-size:10px}#filing-controls{border:2px solid #e7be69;background:#30291f}#filing-controls button.active{background:#c49a4b;color:#17130c;outline:2px solid #ffe6aa}#filing-controls .pill{background:#57482b;color:#ffedc5}</style><style>
+#mulligan-overlay{position:fixed;inset:0;z-index:999;background:#090d15e9;display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:12px}
+#mulligan-panel{width:min(900px,100%);max-height:94vh;overflow:auto;border:2px solid #e1b967;border-radius:14px;background:#1d2938;padding:18px;box-shadow:0 8px 40px #000c}
+#mulligan-panel h2{color:#ffe2a0}
+.mulligan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px}
+.mulligan-choice{border:2px solid #61758f;border-radius:10px;padding:12px;background:#2b3b50;color:white;text-align:left;min-height:108px;cursor:pointer}
+.mulligan-choice.sc{background:#463921;border-color:#bd9953}
+.mulligan-choice.chosen{border:3px solid #ff9c70;background:#5a3534}
+.mulligan-choice b{display:block;margin-bottom:6px}
+.mulligan-choice small{display:block;color:#c6d3df}
+.mulligan-help{background:#344558;padding:9px;border-radius:7px;color:#ecf3fa}
+</style></head><body>
 <header><div><h1>⚖️ UNHINGED: ACCUSATIONS</h1><span class="muted">Isolated lab • solo bot playtest • first to 5 Verdicts</span></div><div class="row"><select id="p0"><option value="hoa">You: HOA President</option><option value="fl">You: Florida Man</option></select><select id="p1"><option value="fl">Bot: Florida Man</option><option value="hoa">Bot: HOA President</option></select><button id="new">New game</button><a href="./RULES.md" style="color:#a8d6ff">Rules</a><a href="./SCENARIOS.md" style="color:#f2ce82">Scenario catalog</a></div></header>
 <main class="layout"><div class="panel" id="status"></div><div class="row"><button id="end">End turn → Bot plays</button><button id="cancel">Cancel selection</button><button id="undo">Undo last move</button><span id="hint" class="muted"></span></div><div class="panel"><h2>Three contested scenarios</h2><div class="slots" id="slots"></div></div><div class="cols"><section class="panel" id="board0"></section><section class="panel" id="board1"></section></div><section class="panel"><h2>Active player's hand</h2><div id="hand" class="hand"></div></section><div class="cols"><section class="panel"><h2>Event log</h2><div id="log" class="log"></div></section><section class="panel"><h2>Playtest controls</h2><p class="small">Hot-seat: both players share this screen. Choose a card, character, target, or scenario when prompted. No production data is loaded. All card definitions live in this file.</p><div class="row"><button id="draw">Draw main card (debug)</button><button id="scenarioDraw">Draw scenario (debug)</button></div><details><summary>Rules and implementation notes</summary><p class="small">Start-turn scenario checks, rotating Stash, combat, defensive rewards, 3-slot cap, and two separate decks are automated. Manual target choices use selection prompts. This is an open-hand local prototype, not hidden-information multiplayer. A few optional effects choose the first legal target or are simplified; the event log flags those decisions. Use RULES.md for authoritative adjudication.</p></details></section></div></main>
 <script>
@@ -209,5 +220,66 @@ end=function(){
 };
 newGame=function(){previousNew();note('Playing versus the bot');render()};
 render();
+})();
+</script><script>
+(function(){
+ let mulliganOpen=true,mainSelected=new Set(),scenarioSelected=new Set();
+ const earlierRender=render,earlierNewGame=newGame;
+ function botMulligan(){
+  const bot=side(1);
+  const mainChoices=bot.hand.filter(c=>c.type!=='Character'||c.cost>2);
+  const scenarioChoices=bot.sh.filter(c=>c.cost>=3);
+  function swap(key,pile,ids){
+   let hand=bot[key],deck=bot[pile],toSwap=hand.filter(c=>ids.has(c.id));
+   bot[key]=hand.filter(c=>!ids.has(c.id));
+   // Replacements are drawn BEFORE returned cards are shuffled in.
+   let replacements=deck.splice(0,toSwap.length);
+   bot[key].push(...replacements);
+   deck.push(...toSwap);
+   shuffle(deck);
+  }
+  swap('hand','deck',new Set(mainChoices.map(c=>c.id)));
+  swap('sh','sd',new Set(scenarioChoices.map(c=>c.id)));
+  note('Bot mulligans '+mainChoices.length+' Main and '+scenarioChoices.length+' Scenario cards');
+ }
+ function finishMulligan(){
+  if(!mulliganOpen)return;
+  const p=side(0);
+  function swap(key,pile,selected){
+   const original=p[key],returned=original.filter(c=>selected.has(c.id));
+   p[key]=original.filter(c=>!selected.has(c.id));
+   p[key].push(...p[pile].splice(0,returned.length));
+   p[pile].push(...returned);
+   shuffle(p[pile]);
+  }
+  swap('hand','deck',mainSelected);
+  swap('sh','sd',scenarioSelected);
+  note('You mulligan '+mainSelected.size+' Main and '+scenarioSelected.size+' Scenarios');
+  botMulligan();
+  mulliganOpen=false;mainSelected.clear();scenarioSelected.clear();
+  document.getElementById('mulligan-overlay')?.remove();
+  render();
+ }
+ function toggleMulligan(id,sc){
+  const set=sc?scenarioSelected:mainSelected;
+  if(set.has(id))set.delete(id);else set.add(id);
+  showMulligan();
+ }
+ function showMulligan(){
+  let overlay=document.getElementById('mulligan-overlay');
+  if(!mulliganOpen){overlay?.remove();return}
+  if(!overlay){overlay=document.createElement('div');overlay.id='mulligan-overlay';document.body.appendChild(overlay)}
+  const p=side(0);
+  const renderCards=(cards,sc)=>cards.map(c=>'<button class="mulligan-choice '+(sc?'sc ':'')+((sc?scenarioSelected:mainSelected).has(c.id)?'chosen':'')+'" onclick="toggleMulligan('+c.id+','+sc+')"><b>'+c.name+'</b><small>'+c.type+' · Cost '+c.cost+'</small><small>'+((sc?scenarioSelected:mainSelected).has(c.id)?'↻ REPLACE':'✓ KEEP')+'</small></button>').join('');
+  overlay.innerHTML='<section id="mulligan-panel"><h2>Opening Mulligan</h2><p class="mulligan-help">Tap any cards you want to <b>replace</b>. Main cards and Scenarios can be swapped independently. You get one mulligan before your first turn. Replacements are drawn before the returned cards go to the bottom and the decks are shuffled.</p><h3>Main hand · Choose any to replace ('+mainSelected.size+' selected)</h3><div class="mulligan-grid">'+renderCards(p.hand,false)+'</div><h3>Scenario hand · Choose any to replace ('+scenarioSelected.size+' selected)</h3><div class="mulligan-grid">'+renderCards(p.sh,true)+'</div><div class="row" style="margin-top:15px"><button onclick="finishMulligan()">Start Game · Replace '+(mainSelected.size+scenarioSelected.size)+' card(s)</button><button onclick="mainSelected.clear();scenarioSelected.clear();showMulligan()">Keep All</button></div></section>';
+ }
+ render=function(){earlierRender();showMulligan()};
+ newGame=function(){earlierNewGame();mulliganOpen=true;mainSelected.clear();scenarioSelected.clear();showMulligan()};
+ // Inline click handlers resolve these on the global scope.
+ window.toggleMulligan=toggleMulligan;
+ window.finishMulligan=finishMulligan;
+ window.showMulligan=showMulligan;
+ window.keepAllMulligan=function(){mainSelected.clear();scenarioSelected.clear();finishMulligan()};
+ showMulligan();
 })();
 </script></body></html>
