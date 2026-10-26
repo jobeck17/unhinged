@@ -12,11 +12,13 @@ export const STASH_CAP = 5;
 export const MAX_CHARACTERS = 3;
 export const MAX_SCENARIOS = 2;
 export const MAX_SLOTS = 3;
+export const MAX_UNRESOLVED_CHECKS = 3; // Anti-stall TESTING safeguard
+export const MAX_ROUNDS = 18; // A match may end in a draw, never free Verdicts
 const assert=(condition,message)=>{if(!condition)throw new Error(message)};
 const opponent=p=>1-p;
 export function makeGame(mode="elimination"){
   assert(["elimination","majority"].includes(mode),"Invalid mode");
-  const g={mode,players:[0,1].map(()=>({stash:0,spent:0,chars:[],verdict:0,played:false})),slots:Array(MAX_SLOTS).fill(null),active:0,turn:1,round:1,nextId:1,winner:null,events:[]};
+  const g={mode,players:[0,1].map(()=>({stash:0,spent:0,chars:[],verdict:0,played:false})),slots:Array(MAX_SLOTS).fill(null),active:0,turn:1,round:1,nextId:1,winner:null,draw:false,events:[]};
   beginTurn(g,true);
   return g;
 }
@@ -55,7 +57,7 @@ export function file(g,p,id){
   assert(slot!==-1,"All Scenario slots are filled");
   const c=character(g,p,id);
   assert(c&&c.loc===-1&&!c.rot,"Filing requires one Ready Character at Home");
-  g.slots[slot]={owner:p,age:g.turn};player(g,p).played=true;
+  g.slots[slot]={owner:p,age:g.turn,checks:0};player(g,p).played=true;
   c.loc=slot;c.rot=true;
   log(g,(p?"Bot":"You")+" file a generic 1-cost Scenario with "+c.name);
   return slot;
@@ -84,6 +86,8 @@ function finish(g,i,result){
   if(result==="success"){
     player(g,s.owner).verdict++;
     log(g,(s.owner?"Bot":"You")+" win Scenario "+(i+1)+" · Verdict +1");
+  }else if(result==="timeout"){
+    log(g,"Scenario "+(i+1)+" reaches the unresolved dispute limit and closes without a Verdict");
   }else{
     log(g,"Scenario "+(i+1)+" fails without a supporter");
   }
@@ -102,7 +106,9 @@ export function checkScenarios(g){
     const supporters=at(g,s.owner,i),contesters=at(g,opponent(s.owner),i);
     if(supporters.length===0){finish(g,i,"failure");continue}
     const wins=g.mode==="elimination"?contesters.length===0:score(g,i).support>score(g,i).contest;
-    if(wins)finish(g,i,"success");
+    if(wins){finish(g,i,"success");continue}
+    s.checks=(s.checks||0)+1;
+    if(s.checks>=MAX_UNRESOLVED_CHECKS)finish(g,i,"timeout");
   }
 }
 export function beginTurn(g,first=false){
@@ -118,7 +124,10 @@ export function endTurn(g){
   if(g.winner!==null)return;
   g.active=opponent(g.active);
   g.turn++;
-  if(g.active===0)g.round++;
+  if(g.active===0){
+    g.round++;
+    if(g.round>MAX_ROUNDS){g.winner="draw";g.draw=true;log(g,"Match reaches round limit · Draw (no free Verdicts)");return}
+  }
   beginTurn(g);
 }
 export function botTurn(g){
