@@ -88,3 +88,32 @@ test("a completely passive match ends as a declared draw instead of looping fore
   assert.equal(player(g,0).verdict,0);
   assert.equal(player(g,1).verdict,0);
 });
+
+test("human goes second after bot opens, with equal opening resources",()=>{
+  const g=makeGame("elimination",1);
+  assert.equal(g.active,1);
+  assert.equal(g.firstPlayer,1);
+  assert.equal(g.round,1);
+  assert.equal(available(g,1),1);
+  botTurn(g);
+  assert.ok(player(g,1).chars.length>0);
+  assert.ok(g.slots.some(s=>s?.owner===1));
+  endTurn(g);
+  assert.equal(g.active,0);
+  assert.equal(g.round,1);
+  assert.equal(available(g,0),1);
+  const firstHuman=recruit(g,0,"neighbor");
+  assert.equal(firstHuman.entered,g.turn);
+  endTurn(g);
+  assert.equal(g.active,1);
+  assert.equal(g.round,2);
+});
+test("switching starting seat does not affect Scenario resolution timing",()=>{
+  const g=makeGame("elimination",1);
+  const c=recruit(g,1,"neighbor");
+  file(g,1,c.id);
+  endTurn(g);
+  assert.equal(player(g,1).verdict,0);
+  endTurn(g);
+  assert.equal(player(g,1).verdict,1);
+});
