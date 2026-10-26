@@ -4,6 +4,8 @@
 
 **Standalone rules:** [RULES.md](RULES.md)
 
+**Isolated Core Lab:** [Play the Character-only experiment](core/) · [Compare elimination vs Influence Majority](core/README.md). It runs separately and does not alter the full game.
+
 **Leader-by-leader Scenario catalog:** [SCENARIOS.md](SCENARIOS.md)
 
 **Implementation:** [index.html](index.html) contains the standalone browser interface, card definitions, and local game state. It does not import production cards, decks, rules, or game logic.
