@@ -6,6 +6,8 @@
 
 - [Master Color Palette v1.0](COLOR_PALETTE.md) — 60 named color swatches and exact HEX values, Style assignments, illustration guidance, production rules, and next steps.
 
+- [Procreate Starter Kit v1.0](Unhinged_Procreate_Starter_Kit.zip) — downloadable ZIP with the 60-color ASE palette, setup recommendations, CSV and SVG swatch sheet. Does not include a native Procreate brush preset; proposed/testing.
+
 ## Visual goals
 
 - A shared visual language for card illustrations, card frames, box art, packaging, and digital UI.
