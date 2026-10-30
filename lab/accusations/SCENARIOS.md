@@ -9,7 +9,7 @@ Scenarios are sorted by **Leader**, then by **ascending cost**. Each Scenario sc
 | Cost | Scenario | Starter copies | Current effect |
 |---:|---|---:|---|
 | 1 | **Your Grass Is 0.3 Inches Too Tall!** | 2 | Supporting Characters get -1 Power (minimum 0). On success, draw 1 Main card. |
-| 2 | **Your Christmas Lights Are Still Up in March!** | 3 | Requires **at least two** contesting Characters to prevent the owner's claim attack. One contester is not enough; default failure still applies. |
+| 2 | **Your Christmas Lights Are Still Up in March!** | 3 | **No special ability** in the current TESTING baseline. Like every Scenario, it can only be claimed when the opponent has **zero** Characters there. |
 | 2 | **You Parked on the Wrong Side of the Street!** | 1 | When an opponent commits a Character here, that Character Rotates. |
 | 3 | **Unauthorized Lawn Flamingo!** | 2 | Supporting Characters get +1 Health. On success, opponent dismisses an Item they control, if able. |
 | 4 | **That's Not Up to Code!** | 2 | Attached Items on supporting Characters cannot be dismissed by opposing Actions. A claim attack requires a supporter with an attached Item and **no** contesters. Default failure still applies. |
@@ -34,12 +34,12 @@ Scenarios are sorted by **Leader**, then by **ascending cost**. Each Scenario sc
 - Each player has a separate 10-card Scenario Deck and opens with two Scenario cards (the written rules permit a mulligan, although the initial browser implementation does not).
 - **Current filing rule:** Rotate one or more Ready Characters at Home to contribute their printed Character costs toward a Scenario. You may supplement the cost with Ready Stash (1 each), but at least one Character must file. Those Characters immediately commit to the new Scenario and remain Rotated. Newly played Characters can file immediately.
 - **Current movement rule (TESTING):** A Ready Character at Home may commit to an existing Scenario **without Rotating**, and established Characters can then attack that turn. New Characters may be played directly to an existing Scenario; they enter Ready but cannot normally attack on entry turn. Characters cannot voluntarily withdraw or transfer between Scenarios. At the end of a Scenario, survivors return Home retaining rotation, damage and attachments. Combat can target Ready or Rotated opponents at the same Scenario.
-- At the start of its owner's turn, a Scenario with **no supporters fails**. Otherwise, it stays until its owner deliberately **attacks it with a Ready supporting Character** while it has no effective contesters and the opponent has received a response turn. Special Scenario text may alter the claim requirements. An undefended Scenario never awards a free Verdict.
+- At the start of its owner's turn, a Scenario with **no supporters fails**. Otherwise, it stays until its owner deliberately **attacks it with a Ready supporting Character**, after the opponent has had a response turn and **only when zero opposing Characters remain**. Scenario text may add requirements; no current card bypasses defenders. An undefended Scenario never awards a free Verdict.
 - When a Scenario leaves play, its owner draws a replacement Scenario; successful prosecution scores 1 Verdict; first to 5 wins.
 
 ## Open balance questions — TESTING
 
-The mixed Character-and-Stash filing mechanic, **Rotate-to-file**, **Ready-preserving ordinary commitment**, and **active Scenario-claim attack** are current LAB TESTING rules. The defender's separate finishing attack and the timing of dismissal after the last supporting Character is defeated remain OPEN. Still evaluate first-player advantage, opening Scenario cost distribution, ease of defending, whether Character contributions should be capped, and whether the special-Scenario effects remain fun with active claims. Scenario values and starter deck quantities have not yet been rebalanced.
+The mixed Character-and-Stash filing mechanic, **Rotate-to-file**, **Ready-preserving ordinary commitment**, and **active Scenario-claim attack into a strictly empty opposing side** are current LAB TESTING rules. **BANKED, not active:** permitting a claim through one contester might be revisited on a higher-cost Scenario (**more than Cost 2**) after baseline testing; no exact cost or card text has been approved. The defender's separate finishing attack and the timing of dismissal after the last supporting Character is defeated remain OPEN. Still evaluate first-player advantage, opening Scenario cost distribution, ease of defending, whether Character contributions should be capped, and whether the special-Scenario effects remain fun with active claims. Scenario values and starter deck quantities have not yet been rebalanced.
 
 ## Visual direction
 
