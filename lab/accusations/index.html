@@ -115,7 +115,7 @@ function removeItem(p,item){side(p).items=side(p).items.filter(x=>x.id!==item.id
 // Winning always requires an explicit attack by an eligible supporting Character.
 function eligibleAttack(c){return !!(c&&!c.rot&&!c.attackBan&&c.loc>=0&&(c.turn!==g.turn||c.name==='Spring Break Frat Bro'||c.watch))}
 function canClaim(c){
- if(!eligibleAttack(c))return false;
+ if(g.winner!==null||!eligibleAttack(c))return false;
  const i=c.loc,sc=g.slots[i];if(!sc||sc.owner!==g.active)return false;
  if(g.turn<=(sc.filedTurn??0)+1)return false; // opponent must get a complete response turn
  const us=at(g.active,i),them=at(other(g.active),i),n=sc.card.name;
@@ -182,7 +182,7 @@ function cardHtml(c,p,hand=false){
  let stats=c.type==='Character'?'<b>'+pow(c,p)+' ⚔ / '+hp(c,p)+' ♥</b> '+(c.damage?'<span class="damage-label"> '+c.damage+' DAMAGE / '+hp(c,p)+' HP</span>':'<span class="muted"> 0 damage</span>')+(c.rot?' ↷':''):'';
  let ops='';
  if(hand){
-   ops='<button onclick="clickCard('+c.id+','+p+')">'+(c.type==='Scenario'?'File accusation':'Play Home')+' · '+c.cost+'</button>';
+   ops='<button onclick="clickCard('+c.id+','+p+')">'+(c.type==='Scenario'?'File accusation':c.type==='Character'?'Play Home':'Play')+' · '+c.cost+'</button>';
    if(c.type==='Character'&&g.slots.some(Boolean))ops+='<button onclick="deployToScenario('+c.id+')">→ Scenario</button>';
    if(c.type!=='Scenario'&&!side(p).stashed)ops+='<button onclick="stash('+c.id+')">Stash</button>';
  }else if(c.type==='Character'){
@@ -262,12 +262,14 @@ function botAct(){
  if(defender){commit(defender,i);note('Bot contests '+sc.card.name+' with '+defender.name)}
  }
  for(const c of [...me.chars])if(canClaim(c))claimScenario(c.id);
+ if(g.winner!==null)return;
  for(const c of [...me.chars]){
  if(c.rot||c.loc<0||c.attackBan||(c.turn===g.turn&&c.name!=='Spring Break Frat Bro'&&!c.watch))continue;
  const enemy=at(0,c.loc).sort((a,b)=>(hp(a,0)-a.damage)-(hp(b,0)-b.damage))[0];
  if(enemy){selected={kind:'attack',id:c.id};clickCard(enemy.id,0)}
  }
  for(const c of [...me.chars])if(canClaim(c))claimScenario(c.id);
+ if(g.winner!==null)return;
  selected=null;
  if(!me.playedScenario&&g.slots.some(s=>!s)&&g.slots.filter(s=>s?.owner===1).length<2){
  const chars=readyFilers(1),stashReady=me.stash.filter(s=>!s.rot).length;
