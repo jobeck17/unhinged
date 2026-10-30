@@ -76,7 +76,7 @@ hoa:[
 ['Watch This!',3,0,0,'Friendly Character at Scenario gets Hothead +2 Power and takes 2 after its next attack this turn.']
 ]};
 const S={hoa:[
-['Your Christmas Lights Are Still Up in March!',2,'Requires two opposing contesters to block a claim attack.'],
+['Your Christmas Lights Are Still Up in March!',2,'No special ability; claim only when the opposing side is empty.'],
 ['Your Grass Is 0.3 Inches Too Tall!',1,'Supporters -1 Power; on success draw 1.'],
 ['Unauthorized Lawn Flamingo!',3,'Supporters +1 Health; on success dismiss an opposing Item.'],
 ["That's Not Up to Code!",4,'To claim: a supporter must have an attached Item and no contesters; attached Items protected from opposing Actions.'],
@@ -119,8 +119,7 @@ function canClaim(c){
  const i=c.loc,sc=g.slots[i];if(!sc||sc.owner!==g.active)return false;
  if(g.turn<=(sc.filedTurn??0)+1)return false; // opponent must get a complete response turn
  const us=at(g.active,i),them=at(other(g.active),i),n=sc.card.name;
- const maxContesters=n==='Your Christmas Lights Are Still Up in March!'?1:0;
- if(them.length>maxContesters)return false;
+ if(them.length!==0)return false; // universal TESTING rule: never claim through opposing Characters
  if(n==="That's Not Up to Code!"&&!us.some(x=>x.items.length))return false;
  if(n==='I Can Explain the Fireworks!'&&us.length<2)return false;
  return true;
