@@ -4,7 +4,11 @@
 
 **Status:** TESTING. This is an intentionally stripped-down *separate* experiment, not a revision of the current Accusations game.
 
-The full [Accusations Lab](../) and its [canonical rules](../RULES.md), [Scenario catalog](../SCENARIOS.md), existing Character text, Actions, Items, Leaders, deck lists, and economic systems are **unchanged**. The full lab is the reference for the richer playable game. This Core Lab is not a competing source of truth.
+The full [Accusations Lab](../) and its [rules document](../RULES.md), [Scenario catalog](../SCENARIOS.md), existing Character text, Actions, Items, Leaders, deck lists, and economic systems remain separate. The richer Accusations rules now contain an **agreed TESTING movement/readiness checkpoint in section 16**; this Core Lab engine still runs the **earlier Rotate-to-commit baseline** for comparison. Neither browser playtest has implemented the new entry/commitment defaults or a direct-Scenario-attack mode. This Core Lab is not a competing source of truth.
+
+## Agreed changes not yet implemented here
+
+The October 30 Accusations [rules checkpoint](../RULES.md#16-movementreadiness-design-checkpoint--agreed-testing-defaults-30-october-2026) records that **filing Rotates**, **ordinary commitment does not Rotate**, **established Ready Characters may commit and attack on the same turn**, and **new Characters may enter directly at an existing Scenario but cannot normally attack or use other Rotate abilities on their entry turn**. Ready and Rotated Characters remain attackable; survivors return Home with their state and damage intact on resolution. **These are paper-rule TESTING defaults, not behavior of the currently playable Core Lab**. The direct Scenario attack/defense finishing mechanic is OPEN, not agreed or implemented.
 
 ## What this isolates
 
