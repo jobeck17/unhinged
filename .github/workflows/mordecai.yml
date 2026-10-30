@@ -51,6 +51,10 @@ jobs:
           node --check lab/accusations/core/game.mjs
           node --check lab/accusations/core/app.js
           node lab/accusations/core/test.mjs
+      - name: Verify full Accusations active Scenario attacks
+        run: |
+          node --check lab/accusations/active-attack.test.mjs
+          node lab/accusations/active-attack.test.mjs
       - run: node --check poll/app.js
       - run: node --check poll/questions.js
       - run: node poll/test.mjs
