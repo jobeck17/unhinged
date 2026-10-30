@@ -4,6 +4,8 @@
 
 **Standalone rules:** [RULES.md](RULES.md)
 
+**30 October movement/readiness checkpoint (TESTING):** Agreed rules are recorded in [RULES.md, section 16](RULES.md#16-movementreadiness-design-checkpoint--agreed-testing-defaults-30-october-2026). **The browser playtest has not yet been updated to match**: it still Rotates Characters on ordinary commitment and requires entry via Home. Filing rotation and normal Ready/Rotated combat already work. Active attacks into Scenarios remain an open design question, not a live mechanic.
+
 **Isolated Core Lab:** [Play the Character-only experiment](core/) · [Compare elimination vs Influence Majority](core/README.md). It runs separately and does not alter the full game.
 
 **Leader-by-leader Scenario catalog:** [SCENARIOS.md](SCENARIOS.md)
@@ -30,7 +32,7 @@ The playtest currently draws **2 Main cards at the start of each turn**, except 
 
 **Bot turn control:** One press of **End turn → Bot plays** completes the bot's turn and returns control to the player. The bot uses a basic heuristic, not full strategic AI.
 
-**Rules adjudication:** RULES.md governs whenever the prototype and interface disagree. Do not treat this browser build as verified rules parity or balanced.
+**Rules adjudication:** RULES.md records the latest agreed TESTING movement/entry rules, but its section 16 is **ahead of the browser implementation**. The browser still plays the earlier Rotate-to-commit baseline. Do not treat the browser as verified parity for the new rules or as balanced.
 
 ## Playtest observations to capture
 Record turns per match, Scenarios attempted/succeeded/failed, how often a defender gets a card, whether the board stalls, and whether first player or early Stash decisions dominate. Report any discrepancy between browser behavior and RULES.md.
