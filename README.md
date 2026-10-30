@@ -46,6 +46,10 @@ The **30 former Rock Star-era Momentum cards (P031–P038, P040–P060, P123) ar
 
 Every die result is shown in a persistent result panel, history, and event log. Checks: `node web/reckless.test.mjs`, `node web/smoke.mjs`, `node builder/smoke.mjs`, and `node poll/test.mjs`. The Reckless tests cover every card, every die face, reroll/expiry behavior, combat-only rewards, attachments, Absorb, Last Straw interactions, and full-deck card conservation. These verify implementation, not balance. Florida Man and HOA President have their locked Breaking Point effects implemented. Other unique Breaking Points and selectable Last Straw effects remain pending.
 
+## Visual identity and art direction
+
+[Visual Identity & Art Direction](visual/README.md) houses the proposed [60-color Master Palette v1.0](visual/COLOR_PALETTE.md), Style colors, artist guidelines, and future art/packaging references. **Status: proposed, not locked.** This is separate from gameplay rules and card data.
+
 ## Card face design demo
 
 [Review Character, Item and Action faces](https://jobeck17.github.io/unhinged/web/cards.html). The art-free proposed physical layout is shared with playtest cards and inspection. Printed stats remain on the face; live match state appears separately. The demo also supports printing at 2.5 × 3.5 inches. Layout is testing, not a final print specification.
