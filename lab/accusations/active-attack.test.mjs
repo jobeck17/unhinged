@@ -22,7 +22,7 @@ function fixture(name="Your Grass Is 0.3 Inches Too Tall!"){
  const run=boot();
  const id=run(`(()=>{
   g.active=0;g.turn=3;g.players[0].chars=[];g.players[1].chars=[];g.slots=[null,null,null];
-  const sc=make(${JSON.stringify(name)},"hoa",true);
+  const sc=make(${JSON.stringify(name)},${JSON.stringify(name==="I Can Explain the Fireworks!"?"fl":"hoa")},true);
   g.slots[0]={card:sc,owner:0,filedTurn:1};
   const c=make("Old Guy","hoa");c.loc=0;c.turn=1;c.rot=false;c.damage=1;
   side(0).chars.push(c);return c.id;
