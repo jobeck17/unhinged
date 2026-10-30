@@ -89,6 +89,20 @@ Mordecai locks the new core architecture, not final card balance. The next produ
 
 Older builds and labs remain design history. Git history is the archive.
 
+## Standing decision-to-GitHub policy
+
+**Agreed decisions belong in GitHub, not only in chat.** This is a project-wide working rule for Unhinged, including the production game, isolated labs, cards, simulations, playtests, visual direction, and tooling.
+
+- **Trigger:** When the designer and assistant clearly converge on a specific choice, treat it as approved to **record and commit to `jobeck17/unhinged` on `main` during the same working turn**. No separate "save this," "lock it," or "commit it" instruction is needed. Agreement can be expressed naturally; an explicit confirmation or a proposal that one party makes and the other clearly endorses qualifies.
+- **Where to record:** Update the **existing relevant source of truth**, not a competing decision log. Use root `RULES.md`, `CARDS.json`, `DECKS.json`, etc. only for production decisions; use a lab's existing rules/README/data for lab-only decisions; use `NOTES.md` for project-wide design notes and banked ideas. Keep documentation and implementation consistent across affected files.
+- **Correct status:** A mutual agreement to **test** a mechanic is a committed **TESTING** decision, *not* approval to promote it to production. Explicitly mark **CURRENT**, **TESTING**, **BANKED**, or **RETIRED**, as appropriate. A decision to preserve an idea for later belongs under BANKED, not active rules.
+- **Implementation vs. documentation:** When we agree to **implement** a change, update the relevant code/data/rules, validate it, and commit the result. When we agree only on a **design direction**, record the decision and its scope, and clearly say that playtest code is not yet updated. Never suggest documentation alone makes a feature playable.
+- **What does not qualify:** Questions, brainstorms, one-sided suggestions awaiting a response, tentative explorations, and unresolved tradeoffs do **not** become settled rules automatically. Preserve genuinely important open questions as **OPEN/TESTING** in the appropriate existing document when useful; don't silently choose an answer.
+- **Working discipline:** Read the latest `main` files first; make focused updates against their current state; run appropriate validation, including deployment checks for web-facing changes; then report the commit and what changed. If access, tests, or deployment prevent completion, disclose the blocker rather than claiming the decision was saved.
+- **Scope safety:** An agreement about an isolated lab stays in that lab unless the designer explicitly approves promotion. Do not change production rules, cards, or the live playtest just because a prototype idea was approved for testing.
+
+A Git commit records the decision; **commits are not automatic version bumps** (see build-version policy below). Related decisions from the same discussion may be bundled into one coherent commit instead of generating unnecessary commits.
+
 ## Build naming and versioning
 
 Unhinged uses milestone versions during pre-1.0 development.
