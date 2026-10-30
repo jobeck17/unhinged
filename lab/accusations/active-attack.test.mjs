@@ -58,15 +58,21 @@ test("newly entered or Rotated Characters cannot claim",()=>{
  assert.equal(run(`claimScenario(${id})`),false);
  assert.equal(run("side(0).verdict"),0);
 });
-test("a normal defender blocks a claim while a Christmas Lights exception needs two",()=>{
+test("every Scenario, including Cost-2 Christmas Lights, requires zero opposing Characters",()=>{
  const {run,id}=fixture();
  run('(()=>{const d=make("Gator Wrangler","fl");d.loc=0;side(1).chars.push(d)})()');
  assert.equal(run(`canClaim(all(0).find(c=>c.id===${id}))`),false);
  const christmas=fixture("Your Christmas Lights Are Still Up in March!");
- christmas.run('(()=>{const d=make("Gator Wrangler","fl");d.loc=0;side(1).chars.push(d)})()');
  assert.equal(christmas.run(`canClaim(all(0).find(c=>c.id===${christmas.id}))`),true);
- christmas.run('(()=>{const d=make("Gator Wrangler","fl");d.loc=0;side(1).chars.push(d)})()');
+ christmas.run('(()=>{const d=make("Gator Wrangler","fl");d.loc=0;d.rot=true;side(1).chars.push(d)})()');
  assert.equal(christmas.run(`canClaim(all(0).find(c=>c.id===${christmas.id}))`),false);
+ assert.equal(christmas.run(`claimScenario(${christmas.id})`),false);
+ assert.equal(christmas.run("side(0).verdict"),0);
+ assert.equal(christmas.run("g.slots[0]!==null"),true);
+ christmas.run("side(1).chars=[]");
+ assert.equal(christmas.run(`canClaim(all(0).find(c=>c.id===${christmas.id}))`),true);
+ assert.equal(christmas.run(`claimScenario(${christmas.id})`),true);
+ assert.equal(christmas.run("side(0).verdict"),1);
 });
 test("special claim conditions still apply",()=>{
  const code=fixture("That's Not Up to Code!");
