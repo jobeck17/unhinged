@@ -163,7 +163,7 @@ HOA has Helicopter Parent (printed cost 2) Ready at Home. HOA **Rotates** Helico
 - Resolve one card or triggered ability completely before the next. If simultaneous triggers are controlled by one player, that player orders them; if by both, active player resolves theirs first.
 - If an effect says “may,” its controller chooses. If it needs a target and none exists, the effect does nothing.
 - A failed Scenario draw does not lose the game. A failed Main draw does not lose the game.
-- No player can score from a Scenario owned by their opponent. Only the owner can Rotated-attack its effectively undefended Scenario for a Verdict after the response turn. Successful defense rewards Main card draw, not points.
+- No player can score from a Scenario owned by their opponent. Only the owner can **Rotate a Ready supporting Character to attack** its effectively undefended Scenario for a Verdict after the response turn. Successful defense rewards Main card draw, not points.
 - A player with 5 Verdict wins immediately. If both would reach 5 simultaneously, active player wins.
 - Each player may inspect their own facedown Stash. Opponents can see only its count and rotation.
 - There is no restriction on Items or Characters at Home except attachment requirements; the three-Character limit applies only at each Scenario.
@@ -172,7 +172,7 @@ HOA has Helicopter Parent (printed cost 2) Ready at Home. HOA **Rotates** Helico
 Record number of rounds, Scenarios played/succeeded/failed/abandoned, defensive reward draws, Stash counts, and whether either player was unable to contest a Scenario. Track newly played vs. established Character commitments; how often an established defender can **move and attack**; filing opportunity cost; time spent with Characters committed; and whether direct deployment reduces tabletop friction. The opening numbers are prototypes and not balance claims.
 
 ## 16. Movement/readiness design checkpoint — AGREED TESTING defaults (30 October 2026)
-These changes apply to the **proposed Accusations rules baseline**, not to production Unhinged. They supersede the older **Rotate-to-commit** rule in the above text. **The full Accusations web playtest and the isolated Core Lab may differ from these TESTING rules until implementation is verified.**
+These changes apply to the **proposed Accusations rules baseline**, not to production Unhinged. They supersede the older **Rotate-to-commit** rule in the above text. **The full Accusations browser lab implements the primary movement and active-claim rules; the isolated Core Lab intentionally keeps the older A/B comparison mechanics.**
 
 **Agreed for the next rules test:**
 1. Card text supersedes default rules where it specifically changes them.
@@ -182,12 +182,13 @@ These changes apply to the **proposed Accusations rules baseline**, not to produ
 5. Newly played Characters enter **Ready** and may commit, support, contest, or file (including filing by Rotating). Normally they **cannot attack or activate other Rotate abilities** until a later turn.
 6. **Ready and Rotated defenders are both targetable** by ordinary Character attacks at the same Scenario; both sides deal simultaneous combat damage as in section 7.
 7. When a Scenario leaves play, surviving committed Characters **return Home, not to discard**, keeping Ready/Rotated state, damage and attachments. Their previous commitment lasted for the life of that Scenario.
-8. **The opposing player must get a turn to respond** before a newly filed Scenario can award a Verdict (already present in the automatic-resolution rules).
+8. **The opposing player must get a turn to respond** before a newly filed Scenario can award a Verdict.
+9. **Winning requires an attack:** The filing player must **Rotate a Ready supporting Character to attack its effectively undefended Scenario**; automatic start-of-turn victories are removed. Section 8 defines the claim timing and printed-card exceptions.
 
 **OPEN — not agreed and not silently promoted to rules:**
 - Whether the filing Character should remain Rotated **until its Scenario ends** rather than Ready on the normal turn cycle.
-- **DECIDED (TESTING):** The filing player must **Rotate a Ready supporter to attack its effectively undefended Scenario** and earn its Verdict; automatic start-of-turn victories are removed. The defender's **separate finishing attack versus automatically failing an unsupported Scenario** remains OPEN. Who, if anyone, should score on defense also remains open.
+- Whether a defender must **make a separate finishing attack** to dismiss an unsupported Scenario, rather than waiting for its automatic failure check. Who, if anyone, should score on defense remains OPEN.
 - How active-attack resolution and stalemate release should ultimately interact remains open for playtest feedback. **Section 8 is now the active-attack TESTING rule**, not the previous automatic-success baseline. Core Lab A/B remain historical comparison modes.
 - Possible future protection/targeting keywords and card adjustments, including the newly redundant Neighborhood Watch movement effect; no such redesign is locked.
 
-**Implementation checkpoint:** The rules now require an active attack to claim a Scenario. Browser implementation and card-text parity must be independently verified; Core Lab Modes A/B retain their old automatic-resolution baselines for comparison. Production Unhinged is unchanged.
+**Implementation checkpoint:** The rules now require an active attack to claim a Scenario. The full Accusations browser lab implements the primary claim, readiness and commitment loop, with focused regression tests; detailed card-text parity and balance still need human verification. Core Lab Modes A/B retain their old automatic-resolution baselines for comparison. Production Unhinged is unchanged.
