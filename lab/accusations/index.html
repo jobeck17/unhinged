@@ -43,7 +43,7 @@
 .scenario-center .scenario-card{width:100%;margin:0 0 7px}
 @media(max-width:750px){.scenario-side-cards .card{flex-basis:42%;max-width:100%}}
 </style><style>.attack-target{cursor:crosshair!important;outline:3px solid #eeaa63!important;box-shadow:0 0 0 4px #d67f4660!important}.attack-target:hover{background:#644433!important}.attack-target button{background:#ae663d;font-weight:800}.damage-label{color:#ffc0a1;font-weight:700}</style></head><body>
-<header><div><h1>⚖️ UNHINGED: ACCUSATIONS</h1><span class="muted">Isolated lab • solo bot playtest • first to 5 Verdicts</span></div><div class="row"><select id="p0"><option value="hoa">You: HOA President</option><option value="fl">You: Florida Man</option></select><select id="p1"><option value="fl">Bot: Florida Man</option><option value="hoa">Bot: HOA President</option></select><button id="new">New game</button><a href="./RULES.md" style="color:#a8d6ff">Rules</a><a href="./SCENARIOS.md" style="color:#f2ce82">Scenario catalog</a></div></header>
+<header><div><h1>⚖️ UNHINGED: ACCUSATIONS</h1><span class="muted">Isolated lab • solo bot playtest • first to 5 Verdicts</span></div><div class="row"><select id="p0"><option value="hoa">You: HOA President</option><option value="fl">You: Florida Man</option></select><select id="p1"><option value="fl">Bot: Florida Man</option><option value="hoa">Bot: HOA President</option></select><select id="first"><option value="random">First player: Random</option><option value="you">First player: You</option><option value="bot">First player: Bot</option></select><button id="new">New game</button><a href="./RULES.md" style="color:#a8d6ff">Rules</a><a href="./SCENARIOS.md" style="color:#f2ce82">Scenario catalog</a></div></header>
 <main class="layout"><div class="panel" id="status"></div><div class="row"><button id="end">End turn → Bot plays</button><button id="cancel">Cancel selection</button><button id="undo">Undo last move</button><span id="hint" class="muted"></span></div><div class="panel"><h2>Three contested scenarios</h2><div class="slots" id="slots"></div></div><div class="cols"><section class="panel" id="board0"></section><section class="panel" id="board1"></section></div><section class="panel"><h2>Active player's hand</h2><div id="hand" class="hand"></div></section><div class="cols"><section class="panel"><h2>Event log</h2><div id="log" class="log"></div></section><section class="panel"><h2>Playtest controls</h2><p class="small">Hot-seat: both players share this screen. Choose a card, character, target, or scenario when prompted. No production data is loaded. All card definitions live in this file.</p><div class="row"><button id="draw">Draw main card (debug)</button><button id="scenarioDraw">Draw scenario (debug)</button></div><details><summary>Rules and implementation notes</summary><p class="small">Start-turn scenario checks, rotating Stash, combat, defensive rewards, 3-slot cap, and two separate decks are automated. Manual target choices use selection prompts. This is an open-hand local prototype, not hidden-information multiplayer. A few optional effects choose the first legal target or are simplified; the event log flags those decisions. Use RULES.md for authoritative adjudication.</p></details></section></div></main>
 <script>
 const M={
@@ -98,7 +98,7 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 const all=(p)=>g.players[p].chars;
 const side=p=>g.players[p],other=p=>1-p;
 function make(name,style,scenario=false){let row=(scenario?S:M)[style].find(x=>x[0]===name);return {id:serial++,name,cost:row[1],type:scenario?'Scenario':itemNames.has(name)?'Item':actionNames.has(name)?'Action':'Character',power:scenario?0:row[2],health:scenario?0:row[3],text:row[scenario?2:4],style,rot:false,damage:0,loc:-1,items:[],moved:false,turn:g?.turn??0,bonusP:0,bonusH:0,bonusUntil:0,watch:false,attackBan:false}}
-function newGame(){serial=1;g={players:[],active:0,turn:1,round:1,slots:[null,null,null],log:[],winner:null,stale:0,changed:false};for(let p=0;p<2;p++){let style=$(p?'p1':'p0').value;let deck=shuffle(M[style].flatMap((x,i)=>Array.from({length:MAIN[style][i]},()=>make(x[0],style))));let sd=shuffle(S[style].flatMap((x,i)=>Array.from({length:SC[style][i]},()=>make(x[0],style,true))));g.players.push({style,deck,sd,hand:deck.splice(0,5),sh:sd.splice(0,2),discard:[],sdiscard:[],chars:[],items:[],stash:[],verdict:0,stashed:false,playedScenario:false,abandoned:false,defended:false,defeated:false})}selected=null;filing=null;undo=null;note('New game: HOA vs Florida Man. Player 1 begins.');render()}
+function newGame(){serial=1;let firstChoice=$('first')?.value,first=firstChoice==='bot'?1:firstChoice==='random'?(Math.random()<0.5?0:1):0;g={players:[],first,active:first,turn:1,round:1,slots:[null,null,null],log:[],winner:null,stale:0,changed:false};for(let p=0;p<2;p++){let style=$(p?'p1':'p0').value;let deck=shuffle(M[style].flatMap((x,i)=>Array.from({length:MAIN[style][i]},()=>make(x[0],style))));let sd=shuffle(S[style].flatMap((x,i)=>Array.from({length:SC[style][i]},()=>make(x[0],style,true))));g.players.push({style,deck,sd,hand:deck.splice(0,5),sh:sd.splice(0,2),discard:[],sdiscard:[],chars:[],items:[],stash:[],verdict:0,stashed:false,playedScenario:false,abandoned:false,defended:false,defeated:false})}selected=null;filing=null;undo=null;note('New game: '+label(0)+' (you) vs '+label(1)+' (bot). '+(first===0?'You go':'Bot goes')+' first.');render()}
 function note(s){g.log.unshift('T'+g.turn+' • '+s);g.log=g.log.slice(0,90)}
 function draw(p,sc=false){let pl=side(p),pile=sc?'sd':'deck',hand=sc?'sh':'hand',disc=sc?'sdiscard':'discard';if(sc&&!pl[pile].length&&pl[disc].length){pl[pile]=shuffle(pl[disc].splice(0));note('Scenario discard recycled for '+label(p))}if(pl[pile].length){pl[hand].push(pl[pile].shift());return true}return false}
 function label(p){return side(p).style==='hoa'?'HOA President':'Florida Man'}
@@ -120,6 +120,7 @@ function canClaim(c){
  if(g.turn<=(sc.filedTurn??0)+1)return false; // opponent must get a complete response turn
  const us=at(g.active,i),them=at(other(g.active),i),n=sc.card.name;
  if(them.length!==0)return false; // universal TESTING rule: never claim through opposing Characters
+ if(g.rules?.claimFromStart&&c.startLoc!==i)return false; // OPEN variant, off by default: claimer must start the turn at this Scenario
  if(n==="That's Not Up to Code!"&&!us.some(x=>x.items.length))return false;
  if(n==='I Can Explain the Fireworks!'&&us.length<2)return false;
  return true;
@@ -132,8 +133,8 @@ function claimScenario(id){
  dismiss(i,'success');selected=null;render();return true;
 }
 function check(){for(let i=0;i<3;i++){let sc=g.slots[i];if(sc&&sc.owner===g.active&&at(sc.owner,i).length===0)dismiss(i,'failure')}}
-function start(){let p=g.active,pl=side(p);for(let c of pl.chars){c.rot=false;c.moved=false;c.attackBan=false;if(c.bonusUntil<g.turn){c.bonusP=0;c.bonusH=0;c.watch=false}}for(let i of [...pl.items,...pl.stash])i.rot=false;pl.stashed=false;pl.playedScenario=false;pl.abandoned=false;pl.defended=false;pl.defeated=false;for(let drawIndex=0;drawIndex<(g.turn===1&&p===0?1:2);drawIndex++)draw(p);check();for(let c of [...pl.chars])if(c.name==='Grandma'&&c.loc>=0){let t=at(p,c.loc).find(x=>x.damage>0);if(t)t.damage=Math.max(0,t.damage-1)}}
-function end(){if(g.winner!==null)return;if(filing){alert('Finish or cancel filing your Scenario first.');return}selected=null;g.active=other(g.active);g.turn++;if(g.active===0){g.round++;if(!g.changed)g.stale++;else g.stale=0;g.changed=false;if(g.stale>=3){for(let p=0;p<2;p++){let i=g.slots.findIndex(x=>x&&x.owner===p);if(i>=0)dismiss(i,'abandon')}g.stale=0}}start();note('Turn passes to '+label(g.active));render()}
+function start(){let p=g.active,pl=side(p);for(let c of pl.chars){c.rot=false;c.moved=false;c.attackBan=false;if(c.bonusUntil<g.turn){c.bonusP=0;c.bonusH=0;c.watch=false}}for(let i of [...pl.items,...pl.stash])i.rot=false;pl.stashed=false;pl.playedScenario=false;pl.abandoned=false;pl.defended=false;pl.defeated=false;pl.reinforced=false;for(let c of pl.chars)c.startLoc=c.loc;for(let drawIndex=0;drawIndex<(g.turn===1?1:2);drawIndex++)draw(p);check();for(let c of [...pl.chars])if(c.name==='Grandma'&&c.loc>=0){let t=at(p,c.loc).find(x=>x.damage>0);if(t)t.damage=Math.max(0,t.damage-1)}}
+function end(){if(g.winner!==null)return;if(filing){alert('Finish or cancel filing your Scenario first.');return}selected=null;g.active=other(g.active);g.turn++;if(g.active===(g.first??0)){g.round++;if(!g.changed)g.stale++;else g.stale=0;g.changed=false;if(g.stale>=3){for(let p=0;p<2;p++){let i=-1;g.slots.forEach((x,k)=>{if(x&&x.owner===p&&(i<0||x.filedTurn<g.slots[i].filedTurn))i=k});if(i>=0)dismiss(i,'abandon')}g.stale=0}}start();note('Turn passes to '+label(g.active));render()}
 function save(){undo=clone(g)}
 function choose(kind,id){selected={kind,id};render()}
 function commit(c,i){let p=g.active,pl=side(p),s=g.slots[i];if(!s||c.loc!==-1||c.rot||at(p,i).length>=3)return;let was=c.loc;c.loc=i;c.moved=true;/* normal commitment preserves Ready */if(s.owner!==p){if(!pl.defended&&pl.style==='hoa'){c.bonusH++;c.bonusUntil=g.turn+2;pl.defended=true}if(s.card.name==='You Parked on the Wrong Side of the Street!'||s.card.name==='The Neighbors Called the Cops Again!')c.rot=true;if(c.name==='Helicopter Parent'){let f=at(p,i).find(x=>x.id!==c.id);if(f){f.bonusH++;f.bonusUntil=g.turn}}}else if(c.name==='Amateur Storm Chaser'){c.bonusP++;c.bonusUntil=g.turn}note(c.name+' moved from '+(was<0?'Home':'Scenario '+(was+1))+' to Scenario '+(i+1))}
@@ -149,7 +150,7 @@ function play(card,slot=null){let p=g.active,pl=side(p);if(slot!==null&&(card.ty
 function deployToScenario(id){if(g.winner!==null)return;let c=side(g.active).hand.find(x=>x.id===id&&x.type==='Character');if(c){selected={kind:'deploy',id};render()}}
 function action(card,target,p){let pl=side(p),n=card.name;if(!pay(card.cost))return false;pl.hand=pl.hand.filter(x=>x.id!==card.id);pl.discard.push(card);note(n+' played');if(n==='Violation Notice')damage(other(p),target,2);if(n==='Objection!'){let c=target;pl.chars=pl.chars.filter(x=>x.id!==c.id);pl.hand.push({...c,damage:0,loc:-1,rot:false,items:[]});pl.discard.push(...c.items);draw(p)}if(n==='Emergency Meeting'){for(let c of at(p,target.loc).slice(0,2)){c.rot=false;c.attackBan=true}}if(n==='Hold My Beer'){target.bonusP+=2;target.bonusUntil=g.turn;damage(p,target,1)}if(n==='Walk It Off'){target.damage=Math.max(0,target.damage-2);draw(p)}if(n==='Bolt Cutters')removeItem(target.p,target.item);if(n==='Did You See That?!'){draw(p);draw(p)}if(n==='Watch This!'){target.bonusP+=2;target.bonusUntil=g.turn;target.watch=true}return true}
 function candidates(card){let p=g.active,n=card.name,own=all(p),opp=all(other(p));if(n==='Violation Notice')return opp.filter(c=>c.loc>=0&&at(p,c.loc).length);if(n==='Objection!'||n==='Emergency Meeting'||n==='Hold My Beer'||n==='Watch This!')return own.filter(c=>c.loc>=0);if(n==='Walk It Off')return own;if(n==='Bolt Cutters')return opp.concat(own).filter(c=>c.loc>=0&&at(p,c.loc).length&&c.items.length).flatMap(c=>c.items.map(item=>({id:item.id,name:item.name,p:own.includes(c)?p:other(p),item})));if(n==='Did You See That?!')return [{id:0,name:'Draw 2'}];return []}
-function clickCard(id,p){if(g.winner!==null)return;let pl=side(g.active),card=pl.hand.find(x=>x.id===id)||pl.sh.find(x=>x.id===id);if(card){if(p!==g.active)return;play(card);return}let c=all(p).find(x=>x.id===id);if(!c)return;if(selected?.kind==='item'){if(p!==g.active)return;let item=pl.hand.find(x=>x.id===selected.id);if(!item)return;if(!pay(item.cost))return;save();pl.hand=pl.hand.filter(x=>x.id!==item.id);c.items.push(item);note(item.name+' attached to '+c.name);selected=null;render();return}if(selected?.kind==='action'){let a=pl.hand.find(x=>x.id===selected.id),targets=candidates(a),t=targets.find(x=>x.id===id);if(!t)return;save();action(a,t,g.active);selected=null;render();return}if(selected?.kind==='attack'){let attacker=all(g.active).find(x=>x.id===selected.id);if(!attacker||p===g.active||attacker.loc<0||c.loc!==attacker.loc||attacker.rot||attacker.attackBan)return;save();attacker.rot=true;let attackerOwner=g.active,location=attacker.loc,attackPower=pow(attacker,attackerOwner),defensePower=pow(c,p)+(c.name==='Marine'?1:0);let dealtToDefender=Math.max(0,attackPower-absorb(c,p)),dealtToAttacker=Math.max(0,defensePower-absorb(attacker,attackerOwner));c.damage+=dealtToDefender;attacker.damage+=dealtToAttacker;note(attacker.name+' attacks '+c.name+': '+dealtToDefender+' damage to defender, '+dealtToAttacker+' back to attacker');let defenderDefeated=c.damage>=hp(c,p),attackerDefeated=attacker.damage>=hp(attacker,attackerOwner);if(defenderDefeated)defeat(p,c);if(attackerDefeated)defeat(attackerOwner,attacker);if(attacker.watch&&!attackerDefeated){attacker.watch=false;damage(attackerOwner,attacker,2)}if(defenderDefeated){side(attackerOwner).defeated=true;if(side(attackerOwner).style==='fl'){let home=all(attackerOwner).find(x=>x.loc===-1);if(home&&at(attackerOwner,location).length<3){home.loc=location;note('Florida Man reinforces with '+home.name)}}}selected=null;render();return}if(p===g.active){if(filing&&c.loc===-1){toggleFiler(id);return}if(c.loc===-1&&!c.rot)choose('character',id)}}
+function clickCard(id,p){if(g.winner!==null)return;let pl=side(g.active),card=pl.hand.find(x=>x.id===id)||pl.sh.find(x=>x.id===id);if(card){if(p!==g.active)return;play(card);return}let c=all(p).find(x=>x.id===id);if(!c)return;if(selected?.kind==='item'){if(p!==g.active)return;let item=pl.hand.find(x=>x.id===selected.id);if(!item)return;if(!pay(item.cost))return;save();pl.hand=pl.hand.filter(x=>x.id!==item.id);c.items.push(item);note(item.name+' attached to '+c.name);selected=null;render();return}if(selected?.kind==='action'){let a=pl.hand.find(x=>x.id===selected.id),targets=candidates(a),t=targets.find(x=>x.id===id);if(!t)return;save();action(a,t,g.active);selected=null;render();return}if(selected?.kind==='attack'){let attacker=all(g.active).find(x=>x.id===selected.id);if(!attacker||p===g.active||attacker.loc<0||c.loc!==attacker.loc||attacker.rot||attacker.attackBan)return;save();attacker.rot=true;let attackerOwner=g.active,location=attacker.loc,attackPower=pow(attacker,attackerOwner),defensePower=pow(c,p)+(c.name==='Marine'?1:0);let dealtToDefender=Math.max(0,attackPower-absorb(c,p)),dealtToAttacker=Math.max(0,defensePower-absorb(attacker,attackerOwner));c.damage+=dealtToDefender;attacker.damage+=dealtToAttacker;note(attacker.name+' attacks '+c.name+': '+dealtToDefender+' damage to defender, '+dealtToAttacker+' back to attacker');let defenderDefeated=c.damage>=hp(c,p),attackerDefeated=attacker.damage>=hp(attacker,attackerOwner);if(defenderDefeated)defeat(p,c);if(attackerDefeated)defeat(attackerOwner,attacker);if(attacker.watch&&!attackerDefeated){attacker.watch=false;damage(attackerOwner,attacker,2)}if(defenderDefeated){side(attackerOwner).defeated=true;if(side(attackerOwner).style==='fl'&&!side(attackerOwner).reinforced){let home=all(attackerOwner).find(x=>x.loc===-1);if(home&&at(attackerOwner,location).length<3){side(attackerOwner).reinforced=true;home.loc=location;note('Florida Man reinforces with '+home.name)}}}selected=null;render();return}if(p===g.active){if(filing&&c.loc===-1){toggleFiler(id);return}if(c.loc===-1&&!c.rot)choose('character',id)}}
 function clickSlot(i){
  let p=g.active;
  if(selected?.kind==='attack'){
@@ -193,12 +194,12 @@ function cardHtml(c,p,hand=false){
  }
  return '<div class="card '+(c.type==='Scenario'?'scenario scenario-card':c.type==='Character'?'char':c.type==='Item'?'item':'')+(c.rot?' rotated-card':'')+(targetable?' attack-target':'')+sel+'"'+(targetable?' onclick="event.stopPropagation();clickCard('+c.id+','+p+')"':'')+'><div class="row"><b>'+c.name+'</b><span class="pill">'+c.cost+'</span></div><div>'+stats+'</div><div class="muted">'+c.text+'</div>'+(c.items?.length?'<div class="small">Items: '+c.items.map(x=>x.name).join(', ')+'</div>':'')+'<div>'+ops+'</div></div>';
 }
-function render(){let p=g.active,pl=side(p);$('status').innerHTML='<div class="row"><strong>Round '+g.round+' · Turn '+g.turn+'</strong><span class="pill">Playing: '+label(p)+'</span><span class="pill">HOA '+side(0).verdict+' / 5</span><span class="pill">Florida '+side(1).verdict+' / 5</span>'+(g.winner!==null?'<strong class="good">🏆 '+label(g.winner)+' wins!</strong>':'')+'</div><div class="small">Stash: '+pl.stash.length+' permanent · '+pl.stash.filter(x=>!x.rot).length+' ready · Main '+pl.deck.length+' · Scenarios '+pl.sd.length+' · Scenario hand '+pl.sh.length+'</div>';$('slots').innerHTML=g.slots.map((sc,i)=>'<div class="slot" onclick="clickSlot('+i+')"><h3>Scenario '+(i+1)+'</h3>'+(sc?
+function render(){let p=g.active,pl=side(p);$('status').innerHTML='<div class="row"><strong>Round '+g.round+' · Turn '+g.turn+'</strong><span class="pill">Playing: '+label(p)+'</span><span class="pill">You ('+label(0)+') '+side(0).verdict+' / 5</span><span class="pill">Bot ('+label(1)+') '+side(1).verdict+' / 5</span>'+(g.winner!==null?'<strong class="good">🏆 '+label(g.winner)+' wins!</strong>':'')+'</div><div class="small">Stash: '+pl.stash.length+' permanent · '+pl.stash.filter(x=>!x.rot).length+' ready · Main '+pl.deck.length+' · Scenarios '+pl.sd.length+' · Scenario hand '+pl.sh.length+'</div>';$('slots').innerHTML=g.slots.map((sc,i)=>'<div class="slot" onclick="clickSlot('+i+')"><h3>Scenario '+(i+1)+'</h3>'+(sc?
 '<div class="scenario-side opponent-side"><div class="side-label">OPPONENT · '+label(other(p))+'</div><div class="scenario-side-cards">'+(at(other(p),i).map(c=>cardHtml(c,other(p))).join('')||'<span class="muted">No opposing Characters</span>')+'</div></div>'+
 '<div class="scenario-center"><div class="card scenario scenario-card scenario-in-play"><div class="scenario-top"><span class="scenario-type">⚖ SCENARIO</span><span class="scenario-owner">'+label(sc.owner)+'</span><span class="scenario-cost">'+sc.card.cost+'</span></div><div class="scenario-title">'+sc.card.name+'</div><div class="scenario-effect">'+sc.card.text+'</div></div><div class="small">Supporting '+at(sc.owner,i).length+' · Contesting '+at(other(sc.owner),i).length+'</div><div class="small">Claim by attacking this Scenario with a Ready supporter after the opponent responds.</div>'+(sc.owner===p?'<button onclick="event.stopPropagation();abandon('+i+')">Abandon</button>':'')+'</div>'+
 '<div class="scenario-side player-side"><div class="side-label">YOUR CHARACTERS · '+label(p)+'</div><div class="scenario-side-cards">'+(at(p,i).map(c=>cardHtml(c,p)).join('')||'<span class="muted">No Characters committed</span>')+'</div></div>'
 :'<div class="muted">Empty · File a gold Scenario card from your hand</div>')+'</div>').join('');for(let k=0;k<2;k++){let x=side(k);$('board'+k).innerHTML='<h2>'+label(k)+' '+(k===p?'●':'')+'</h2><div class="row"><span class="pill">'+x.verdict+' Verdict</span><span class="pill">'+x.stash.filter(t=>!t.rot).length+'/'+x.stash.length+' Stash</span><span class="pill">'+x.hand.length+' Main hand</span><span class="pill">'+x.sh.length+' Scenario hand</span></div><h3>Home Characters</h3>'+all(k).filter(c=>c.loc<0).map(c=>cardHtml(c,k)).join('')+'<h3>Other Items</h3>'+x.items.map(c=>cardHtml(c,k)).join('')+'<div class="muted">Main deck '+x.deck.length+' · Main discard '+x.discard.length+' · Scenario discard '+x.sdiscard.length+'</div>'}$('hand').innerHTML=[...pl.hand,...pl.sh].map(c=>cardHtml(c,p,true)).join('');$('log').innerHTML=g.log.map(x=>'<div>'+x+'</div>').join('');$('hint').textContent=selected?({scenario:'Choose an empty Scenario slot',character:'Choose a Scenario to commit this Character',item:'Choose a friendly Character for attachment',attack:'Choose an opposing Character, or tap your undefended Scenario to claim it',deploy:'Choose an existing Scenario for direct deployment',action:'Choose a legal target for the Action'}[selected.kind]||'Choose target') :'Play Characters to Home or directly to an existing Scenario. Filing Rotates; ordinary commitment does not. Claim an undefended Scenario with an attack.';$('end').disabled=g.winner!==null}
-$('new').onclick=newGame;$('end').onclick=end;$('cancel').onclick=()=>{selected=null;filing=null;render()};$('undo').onclick=()=>{if(undo){g=undo;undo=null;selected=null;filing=null;render()}};$('draw').onclick=()=>{draw(g.active);render()};$('scenarioDraw').onclick=()=>{draw(g.active,true);render()};
+$('new').onclick=()=>newGame();$('end').onclick=end;$('cancel').onclick=()=>{selected=null;filing=null;render()};$('undo').onclick=()=>{if(undo){g=undo;undo=null;selected=null;filing=null;render()}};$('draw').onclick=()=>{draw(g.active);render()};$('scenarioDraw').onclick=()=>{draw(g.active,true);render()};
 newGame();
 </script><script>
 (function(){
@@ -237,61 +238,183 @@ render();
 (function(){
 let playingBot=false;
 const previousEnd=end,previousNew=newGame;
-function botAct(){
- if(g.active!==1||g.winner!==null)return;
+// Seat-agnostic heuristic bot for the active-claim TESTING rules. Not a balance authority.
+// Turn plan: stash -> clear & claim own Scenarios -> wipe opposing supporters -> value trades
+// -> size defense to next-turn threat -> file -> spend leftovers -> final claim sweep.
+function smartBot(p){
+ if(g.active!==p||g.winner!==null)return;
  playingBot=true;
  try{
- const me=side(1);
- if(!me.stashed&&me.hand.length){
- // Keep a cheap recruit and useful Scenario-filing resources whenever possible.
- const cheapest=me.hand.filter(c=>c.type==='Character').sort((a,b)=>a.cost-b.cost)[0];
- const fodder=me.hand.filter(c=>c.id!==cheapest?.id).sort((a,b)=>b.cost-a.cost)[0]||me.hand[me.hand.length-1];
- if(fodder)stash(fodder.id);
+ const o=other(p),me=side(p);
+ const readyStash=()=>me.stash.filter(x=>!x.rot).length;
+ const alive=c=>all(p).includes(c)||all(o).includes(c);
+ const established=c=>c.turn!==g.turn||c.name==='Spring Break Frat Bro'||c.watch;
+ const homeAttacker=c=>c.loc===-1&&!c.rot&&!c.attackBan&&established(c);
+ const left=(c,q)=>hp(c,q)-c.damage;
+ function withLoc(c,i,fn){const old=c.loc;c.loc=i;try{return fn()}finally{c.loc=old}}
+ // Predict one attack by my Character a (moved to slot i if needed) into opposing d.
+ function preview(a,d,i,dmgA,dmgD){return withLoc(a,i,()=>{
+  const toD=Math.max(0,pow(a,p)-absorb(d,o));
+  const toA=Math.max(0,pow(d,o)+(d.name==='Marine'?1:0)-absorb(a,p))+(a.watch?2:0);
+  return {toD,toA,killD:dmgD+toD>=hp(d,o),killA:dmgA+toA>=hp(a,p)};
+ })}
+ function doAttack(a,d){if(!alive(a)||!alive(d)||!eligibleAttack(a)||a.loc!==d.loc)return;selected={kind:'attack',id:a.id};clickCard(d.id,o);selected=null}
+ function notice(card,d){if(!me.hand.includes(card)||!alive(d)||readyStash()<1||!at(p,d.loc).length)return;action(card,d,p)}
+ // Plan to defeat every opposing Character at slot i using Characters already there plus
+ // established Ready Characters at Home (commitment does not Rotate) and Violation Notices.
+ // If needClaimer, one eligible Character must remain unused afterwards to make the claim.
+ function planClear(i,needClaimer){
+  const room=3-at(p,i).length,dmg=new Map();
+  for(const c of [...all(p),...all(o)])dmg.set(c.id,c.damage);
+  // Opposing Characters committing to these Scenarios enter Rotated, so Home reinforcements cannot attack there.
+  const entersRotated=g.slots[i].owner!==p&&['You Parked on the Wrong Side of the Street!','The Neighbors Called the Cops Again!'].includes(g.slots[i].card.name);
+  const pool=[...at(p,i).filter(eligibleAttack),...(entersRotated?[]:all(p).filter(homeAttacker))];
+  const used=new Set(),dead=new Set(),joined=new Set(at(p,i).map(c=>c.id)),steps=[];
+  let commits=0,stashLeft=readyStash();
+  const notices=me.hand.filter(c=>c.name==='Violation Notice');
+  const canUse=a=>!used.has(a.id)&&!dead.has(a.id)&&(joined.has(a.id)||commits<room);
+  const defenders=at(o,i).slice().sort((x,y)=>left(x,o)-left(y,o));
+  for(const d of defenders){
+   for(let guard=0;guard<8&&!dead.has(d.id);guard++){
+    let best=null;
+    for(const a of pool){if(!canUse(a))continue;
+     const r=preview(a,d,i,dmg.get(a.id),dmg.get(d.id));if(r.toD<=0)continue;
+     const score=(r.killD?100:0)-(r.killA?30:0)-a.cost*3+r.toD;
+     if(!best||score>best.score)best={a,r,score}}
+    const noticeDmg=Math.max(0,2-absorb(d,o)),noticeKills=notices.length&&stashLeft>=1&&dmg.get(d.id)+noticeDmg>=hp(d,o);
+    if(noticeKills&&!(best&&best.r.killD&&!best.r.killA)){steps.push({kind:'notice',card:notices.shift(),d});stashLeft--;dead.add(d.id);break}
+    if(best){const {a,r}=best;steps.push({kind:'attack',a,d});used.add(a.id);
+     if(!joined.has(a.id)){joined.add(a.id);commits++}
+     dmg.set(a.id,dmg.get(a.id)+r.toA);dmg.set(d.id,dmg.get(d.id)+r.toD);
+     if(r.killA)dead.add(a.id);if(r.killD)dead.add(d.id);continue}
+    if(notices.length&&stashLeft>=1&&noticeDmg>0){steps.push({kind:'notice',card:notices.shift(),d});stashLeft--;dmg.set(d.id,dmg.get(d.id)+noticeDmg);if(dmg.get(d.id)>=hp(d,o))dead.add(d.id);continue}
+    return null;
+   }
+   if(!dead.has(d.id))return null;
+  }
+  if(!needClaimer)return {steps};
+  const sc=g.slots[i],n=sc.card.name;
+  const claimer=pool.find(a=>canUse(a)&&(!g.rules?.claimFromStart||a.startLoc===i));
+  if(!claimer)return null;
+  if(!joined.has(claimer.id)){joined.add(claimer.id);commits++}
+  const survivors=[...joined].filter(id=>!dead.has(id)).map(id=>all(p).find(c=>c.id===id)).filter(Boolean);
+  const extras=[];
+  if(n==='I Can Explain the Fireworks!'){
+   for(const c of readyFilers(p)){if(survivors.length+extras.length>=2||commits>=room)break;if(!joined.has(c.id)){extras.push(c);commits++}}
+   if(survivors.length+extras.length<2)return null;
+  }
+  if(n==="That's Not Up to Code!"&&!survivors.concat(extras).some(c=>c.items.length))return null;
+  return {steps,claimer,extras};
  }
- for(let n=0;n<3;n++){
- const ready=me.stash.filter(c=>!c.rot).length;
- const choice=me.hand.filter(c=>c.type==='Character'&&c.cost<=ready).sort((a,b)=>a.cost-b.cost)[0];
- if(!choice)break;
- play(choice);
+ function runSteps(i,steps){for(const s of steps){
+  if(s.kind==='attack'){if(!alive(s.d)||s.d.loc!==i||!alive(s.a))continue;if(s.a.loc===-1){if(at(p,i).length>=3)continue;commit(s.a,i)}doAttack(s.a,s.d)}
+  else notice(s.card,s.d);
+  if(g.winner!==null)return}}
+ function tryClaim(i){
+  const sc=g.slots[i];if(!sc||sc.owner!==p)return;
+  const plan=planClear(i,true);if(!plan)return;
+  runSteps(i,plan.steps);
+  for(const c of plan.extras)if(c.loc===-1&&at(p,i).length<3)commit(c,i);
+  const c=plan.claimer;if(alive(c)&&c.loc===-1&&at(p,i).length<3)commit(c,i);
+  const claimer=at(p,i).find(canClaim);if(claimer)claimScenario(claimer.id);
  }
- for(let i=0;i<3;i++){
- const sc=g.slots[i];
- if(!sc||sc.owner!==0||at(1,i).length)continue;
- const defender=readyFilers(1).sort((a,b)=>a.cost-b.cost)[0];
- if(defender){commit(defender,i);note('Bot contests '+sc.card.name+' with '+defender.name)}
+ const claimSweep=()=>{for(let i=0;i<3&&g.winner===null;i++){const c=at(p,i).find(canClaim);if(c)claimScenario(c.id)}};
+
+ // 1. Stash the least useful Main card (one per turn).
+ if(!me.stashed&&me.hand.length&&(me.stash.length<7||me.hand.length>6)){
+  const oppItems=all(o).some(c=>c.items.length);
+  const util=c=>{const n=c.name;
+   if(n==='Emergency Meeting')return 0; // cannot attack or claim after readying: near-dead under active claim
+   if(n==='Objection!')return 1;
+   if(n==='Neighborhood Petition')return me.sh.length>=2?2:12;
+   if(n==='Bolt Cutters')return oppItems?8:2;
+   if(n==='Did You See That?!')return 4;
+   if(n==='Watch This!')return 5;
+   if(n==='Walk It Off')return 6;
+   if(c.type==='Item')return 7;
+   if(n==='Hold My Beer')return 8;
+   if(n==='Violation Notice')return 11;
+   return 14+c.cost-(c.cost>me.stash.length+2?6:0)};
+  const fodder=me.hand.slice().sort((a,b)=>util(a)-util(b))[0];
+  if(fodder)stash(fodder.id);
  }
- for(const c of [...me.chars])if(canClaim(c))claimScenario(c.id);
+ // 2. Clear and claim own Scenarios, easiest first.
+ const mine=[0,1,2].filter(i=>g.slots[i]?.owner===p).sort((a,b)=>at(o,a).length-at(o,b).length);
+ for(const i of mine){if(g.winner!==null)return;tryClaim(i)}
  if(g.winner!==null)return;
- for(const c of [...me.chars]){
- if(c.rot||c.loc<0||c.attackBan||(c.turn===g.turn&&c.name!=='Spring Break Frat Bro'&&!c.watch))continue;
- const enemy=at(0,c.loc).sort((a,b)=>(hp(a,0)-a.damage)-(hp(b,0)-b.damage))[0];
- if(enemy){selected={kind:'attack',id:c.id};clickCard(enemy.id,0)}
+ // 3. Wipe every supporter at an opposing Scenario: it then fails at their turn start.
+ for(let j=0;j<3;j++){const sc=g.slots[j];if(!sc||sc.owner!==o||!at(o,j).length)continue;
+  const plan=planClear(j,false);if(plan)runSteps(j,plan.steps)}
+ // 4. Value trades with Characters already at Scenarios.
+ for(const a of all(p).slice()){
+  if(!alive(a)||a.loc<0||!eligibleAttack(a))continue;
+  const sc=g.slots[a.loc];if(!sc)continue;
+  // Keep a potential claimer fresh at my own Scenario.
+  if(sc.owner===p&&at(o,a.loc).length===0)continue;
+  const targets=at(o,a.loc).map(d=>({d,r:preview(a,d,a.loc,a.damage,d.damage)}))
+   .filter(x=>x.r.killD&&(!x.r.killA||x.d.cost+x.d.items.length>=a.cost+a.items.length));
+  targets.sort((x,y)=>(x.r.killA-y.r.killA)||(y.d.cost-x.d.cost));
+  if(targets[0])doAttack(a,targets[0].d);
  }
- for(const c of [...me.chars])if(canClaim(c))claimScenario(c.id);
- if(g.winner!==null)return;
- selected=null;
- if(!me.playedScenario&&g.slots.some(s=>!s)&&g.slots.filter(s=>s?.owner===1).length<2){
- const chars=readyFilers(1),stashReady=me.stash.filter(s=>!s.rot).length;
- const candidates=[];
- for(const sc of me.sh){
- for(let mask=1;mask<(1<<chars.length);mask++){
- const group=chars.filter((c,i)=>mask&(1<<i));
- if(group.length>3)continue;
- const value=group.reduce((sum,c)=>sum+c.cost,0);
- const need=Math.max(0,sc.cost-value);
- if(need<=stashReady)candidates.push({sc,group,need,score:need*3+group.length*2+Math.max(0,value-sc.cost)});
- }}
- candidates.sort((a,b)=>a.score-b.score);
- if(candidates.length){
- const x=candidates[0];
- beginFiling(x.sc);
- if(filing){filing.chars=x.group.map(c=>c.id);filing.stash=x.need;confirmFiling()}
+ claimSweep();if(g.winner!==null)return;
+ // 5. Defend opposing Scenarios against next turn's possible attackers.
+ const oppHome=all(o).filter(c=>c.loc===-1);
+ const threat=j=>{const here=at(o,j),cands=here.concat(oppHome.slice(0,Math.max(0,3-here.length)));
+  return {n:cands.length,maxP:Math.max(0,...cands.map(c=>pow(c,o)+1))}}; // +1 margin for pumps
+ const attacksNeeded=(j,maxP)=>at(p,j).reduce((s,c)=>{const per=Math.max(0,maxP-absorb(c,p));return s+(per<=0?9:Math.ceil(left(c,p)/per))},0);
+ const oppSlots=[0,1,2].filter(j=>g.slots[j]?.owner===o&&at(o,j).length).sort((a,b)=>threat(b).n-threat(a).n);
+ for(const j of oppSlots){
+  for(let k=0;k<3;k++){
+   const t=threat(j);if(at(p,j).length>=3||attacksNeeded(j,t.maxP)>=t.n)break;
+   const home=readyFilers(p).sort((a,b)=>left(b,p)-left(a,p))[0];
+   if(home){commit(home,j);continue}
+   const buy=me.hand.filter(c=>c.type==='Character'&&c.cost<=readyStash()).sort((a,b)=>(b.health-a.health)||(a.cost-b.cost))[0];
+   if(buy){play(buy,j);continue}
+   break;
+  }
  }
+ // 6. File a new Scenario with the cheapest Character/Stash combination.
+ if(!me.playedScenario&&g.slots.some(s=>!s)&&g.slots.filter(s=>s?.owner===p).length<2){
+  const chars=readyFilers(p).slice(0,6),stashReady=readyStash(),options=[];
+  for(const sc of me.sh)for(let mask=1;mask<(1<<chars.length);mask++){
+   const group=chars.filter((c,i)=>mask&(1<<i));if(group.length>3)continue;
+   const val=group.reduce((s,c)=>s+c.cost,0),need=Math.max(0,sc.cost-val);if(need>stashReady)continue;
+   let score=need*3+group.length*2+Math.max(0,val-sc.cost)-sc.cost;
+   if(sc.name==='I Can Explain the Fireworks!'&&group.length<2)score+=6;
+   if(sc.name==="That's Not Up to Code!"&&!group.some(c=>c.items.length))score+=8;
+   options.push({sc,group,need,score})}
+  options.sort((a,b)=>a.score-b.score);
+  const x=options[0];
+  if(x){beginFiling(x.sc);if(filing){filing.chars=x.group.map(c=>c.id);filing.stash=x.need;confirmFiling()}}
  }
+ // 7. Spend leftovers: draw engines, heals, Items, then reserve Characters at Home.
+ const tryAction=(name,target)=>{const card=me.hand.find(c=>c.name===name);if(card&&readyStash()>=card.cost&&target)action(card,target,p)};
+ if(me.defeated)tryAction('Did You See That?!',{id:0});
+ if(me.sh.length===0){const card=me.hand.find(c=>c.name==='Neighborhood Petition');if(card&&readyStash()>=card.cost)play(card)}
+ const hurt=all(p).filter(c=>c.damage>=2&&c.loc>=0).sort((a,b)=>b.damage-a.damage)[0];
+ tryAction('Walk It Off',hurt);
+ const cut=all(o).filter(c=>c.loc>=0&&c.items.length&&at(p,c.loc).length)[0];
+ if(cut)tryAction('Bolt Cutters',{p:o,item:cut.items[0]});
+ for(let k=0;k<3;k++){
+  const item=me.hand.filter(c=>c.type==='Item'&&c.cost<=readyStash())[0];if(!item||!all(p).length)break;
+  const code=all(p).find(c=>c.loc>=0&&g.slots[c.loc]?.owner===p&&g.slots[c.loc].card.name==="That's Not Up to Code!"&&!c.items.length);
+  const atSc=all(p).filter(c=>c.loc>=0).sort((a,b)=>b.cost-a.cost);
+  const host=code||(item.name==='Clipboard'?atSc.find(c=>g.slots[c.loc]?.owner===o):item.name==='Photographic Evidence'?atSc.find(c=>g.slots[c.loc]?.owner===p):atSc[0])||atSc[0]||all(p)[0];
+  selected={kind:'item',id:item.id};clickCard(host.id,p);selected=null;
+ }
+ for(let k=0;k<4;k++){
+  const buy=me.hand.filter(c=>c.type==='Character'&&c.cost<=readyStash()).sort((a,b)=>(b.cost-a.cost)||((b.power+b.health)-(a.power+a.health)))[0];
+  if(!buy)break;play(buy);
+ }
+ claimSweep();
  note('Bot completes its turn');
- }catch(err){note('Bot error: '+err.message)}
+ }catch(err){note('Bot error: '+err.message);if(globalThis.SIM_STRICT)throw err}
  finally{playingBot=false;filing=null;selected=null}
 }
+function botAct(){smartBot(1)}
+window.smartBot=smartBot;
+window.passTurn=()=>previousEnd();
+window.botOpens=function(){if(g.active!==1||g.winner!==null)return;botAct();if(g.winner===null)previousEnd();render()};
 end=function(){
  if(playingBot||g.winner!==null)return;
  if(g.active===0){
@@ -314,8 +437,8 @@ render();
 (function(){
  let mulliganOpen=true,mainSelected=new Set(),scenarioSelected=new Set();
  const earlierRender=render,earlierNewGame=newGame;
- function botMulligan(){
-  const bot=side(1);
+ function botMulligan(seat=1){
+  const bot=side(seat);
   const mainChoices=bot.hand.filter(c=>c.type!=='Character'||c.cost>2);
   const scenarioChoices=bot.sh.filter(c=>c.cost>=3);
   function swap(key,pile,ids){
@@ -346,10 +469,11 @@ render();
   note('You mulligan '+mainSelected.size+' Main and '+scenarioSelected.size+' Scenarios');
   botMulligan();
   // First player receives one Main draw on turn 1, after the opening mulligan.
-  draw(0);
+  draw(g.first??0);
   note('First player draws 1 Main card on turn 1 (2 on later turns)');
   mulliganOpen=false;mainSelected.clear();scenarioSelected.clear();
   document.getElementById('mulligan-overlay')?.remove();
+  if((g.first??0)===1&&typeof botOpens==='function')botOpens();
   render();
  }
  function toggleMulligan(id,sc){
@@ -369,6 +493,7 @@ render();
  newGame=function(){earlierNewGame();mulliganOpen=true;mainSelected.clear();scenarioSelected.clear();showMulligan()};
  // Inline click handlers resolve these on the global scope.
  window.toggleMulligan=toggleMulligan;
+ window.botMulligan=botMulligan;
  window.finishMulligan=finishMulligan;
  window.showMulligan=showMulligan;
  window.keepAllMulligan=function(){mainSelected.clear();scenarioSelected.clear();finishMulligan()};

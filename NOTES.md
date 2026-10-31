@@ -1,3 +1,9 @@
+## Accusations Lab — smarter bot, simulator and fixes — TESTING (31 October 2026)
+
+**Status: TESTING tooling and bug fixes only. No rules or card changes.** The Accusations browser lab gets a seat-agnostic bot built for the active-claim rule, a headless bot-vs-bot simulator (`lab/accusations/sim.mjs`), and regression tests (`lab/accusations/bot.test.mjs`). Fixes: First player is now selectable (Random/You/Bot) instead of always the human; the **New game** button now runs the mulligan and turn-1 draw (previously it skipped both after the first game); Florida Man's Reckless reinforce is limited to once per turn as written; the stalemate release abandons the **oldest** Scenario; status shows each seat's own Leader.
+
+First simulator read (400 smart-vs-smart games, bot play only, not balance): Scenarios now land (about 5.4 claims per game, roughly 1 in 3 filings), but the first Verdict arrives around round 11–12 and games average about 23 rounds. Whoever scores first wins about 74% of the time, and the loser averages 0.6 Verdicts. The first player wins only about 35% of decided games. The OPEN "claimer must start the turn at the Scenario" variant barely changed bot results. The smart bot beat the original bot 400–0.
+
 ## GRUDGE RULES — TESTING (21 October 2026)
 
 **Status: TESTING — proposed alternate ruleset, not promoted to the production rules.** The twelve rules below and optional dials are the designer's submitted test baseline. Wanted-tier effects and individual Last Straw effects are not specified here. This entry does not change `RULES.md`, card/deck data, simulation, web playtest, or builder.

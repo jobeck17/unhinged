@@ -15,6 +15,18 @@
 ## What this build is
 A first-pass solo browser prototype against a rule-based bot for evaluating whether temporary contested Scenarios create interesting decisions. Choose your leader and the bot's leader, press New game, choose cards to mulligan (or Keep All), and End turn to let the bot take its turn. To file a Scenario, select it in your hand, choose one or more Ready Characters at Home and optionally add Ready Stash, then confirm filing. **Filing Rotates** those Characters. To join an existing Scenario, select a Ready Character at Home and then tap its Scenario; **ordinary commitment does not Rotate**. Alternatively, use **→ Scenario** beside a Character in hand, then tap an existing Scenario to deploy directly there. Newly played Characters remain Ready but cannot normally attack that turn. Characters cannot voluntarily leave or transfer between Scenarios. To attack a Character, tap **⚔ Attack** and choose an opposing Character at the same Scenario; both deal simultaneous damage, even if the defender was Rotated. To win your Scenario, tap **⚖ Claim +1** on an eligible Ready supporting Character when the Scenario is effectively undefended and your opponent has had their response turn. This Rotates the Character and awards 1 Verdict; it is **never automatic at turn start**. The Marine still deals +1 damage on defense. A defender clearing all prosecutors causes failure at the next prosecuting player's start-of-turn check (the separate finishing attack remains OPEN).
 
+## Choosing who goes first
+
+Use the **First player** selector (Random, You, Bot), then press **New game**. On page load the opening mulligan covers the header, so finish or skip that mulligan first. Whoever goes first draws 1 Main card on turn 1; the bot plays its opening turn automatically when it goes first.
+
+## Bot and simulator (31 October 2026, TESTING tool)
+
+The bot is a **seat-agnostic heuristic** written for the active-claim rule. Each turn it: stashes its least useful card; tries to **clear and claim** its own Scenarios (it simulates each fight, walks in established Ready Characters from Home since commitment no longer Rotates, and uses Violation Notice to finish defenders); defeats **every supporter** at an opposing Scenario when it can, so that Scenario fails at its owner's next turn start; takes favorable trades; commits or deploys enough defenders to survive the opponent's possible attackers next turn; files a new Scenario; then spends leftovers on draw effects, Items and reserve Characters. It does not use Hold My Beer, Watch This!, Emergency Meeting or Objection! deliberately, and it cannot foresee Gator-pool reinforcements. **It is not a balance authority.**
+
+`node lab/accusations/sim.mjs [games=200] [seed=1]` runs bot-vs-bot games through the real `index.html` code and reports seat, first-player and Leader win rates, game length, Scenario outcomes, when the first Verdict lands and how often the first scorer wins. It includes the original bot as a benchmark, and an **OPEN variant** (`g.rules.claimFromStart`, off by default and not a rule) in which the claiming Character must have started the turn at that Scenario.
+
+`node lab/accusations/bot.test.mjs` checks the bot and the 31 October fixes.
+
 ## Active-claim testing checks
 
 Run `node lab/accusations/active-attack.test.mjs` to verify that empty Scenarios do not grant automatic Verdicts, that a Ready supporter can actively claim only after an opponent's response turn, and that special Scenario requirements, direct deployment, commitment readiness and survivor cleanup behave as expected.
@@ -24,17 +36,17 @@ Run `node lab/accusations/active-attack.test.mjs` to verify that empty Scenarios
 The playtest currently draws **2 Main cards at the start of each turn**, except the first player draws **1 Main card on turn 1**, immediately after the opening mulligan. This is a **TESTING** change, not a permanent balance decision. Scenario replacement draws are unchanged.
 
 ## Known limitations / not yet a rules-complete digital referee
-- The computer bot follows basic Stash, deployment, contest, combat, and filing heuristics; it does not plan long-term or evaluate every card ability. No network play.
+- The computer bot plans one turn at a time (see above); it does not plan long-term or evaluate every card ability. No network play.
 - Opening mulligan is implemented: once, before the game starts, select any Main and/or Scenario cards to replace. The bot also chooses opening replacements.
 - Some optional effects automatically pick the first eligible target or reinforcement instead of asking.
 - Filing uses Character printed costs plus optional Stash. Action target selection is basic; not all nuanced ability interactions are exhaustively validated.
-- Scenario start checks resolve in slot order, not a manually chosen order.
-- The three-round stalemate release is approximate.
+- Start-of-turn Scenario checks are failure-only and resolve in slot order, not a manually chosen order.
+- The three-round stalemate release abandons each player's oldest Scenario; the round counter follows whoever went first.
 - Undo is one-step and may not reverse all intermediate changes in a multi-step interaction.
 - Debug draws deliberately bypass ordinary draw rules.
 - No matchmaking, saved game, or deck builder. The bot is heuristic, not a full adversarial AI.
 
-**Bot turn control:** One press of **End turn → Bot plays** completes the bot's turn and returns control to the player. The bot uses a basic heuristic, not full strategic AI.
+**Bot turn control:** One press of **End turn → Bot plays** completes the bot's turn and returns control to the player. The bot uses a one-turn heuristic, not full strategic AI.
 
 **Rules adjudication:** [RULES.md](RULES.md) is the authority. The browser implements the main TESTING movement and active-claim loop; card interactions beyond the focused regression cases are not a guarantee of full rules parity or balance. Core Lab Modes A/B remain unchanged historical comparisons.
 
