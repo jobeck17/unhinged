@@ -4,6 +4,8 @@
 
 **Standalone rules:** [RULES.md](RULES.md)
 
+**New keyword direction (TESTING; rules only):** **File X** means a Character contributes **X total filing value** when Rotated to file, normally around **its printed cost +2** (e.g., Cost 2 → File 4). No current card has File X yet, and the browser filing engine has **not** been changed to support it. See [the lab keyword rules](RULES.md#10-leaders-and-keywords).
+
 **30 October active-attack and movement checkpoint (TESTING):** [RULES.md, sections 7–8](RULES.md) now require **attacking an effectively undefended Scenario to claim 1 Verdict**, rather than automatic start-of-turn success. The **full Accusations browser lab** implements this claim attack, including one opposing response turn, **filing Rotates**, **ordinary commitment does not Rotate**, and direct deployment to an existing Scenario. **Every current Scenario requires zero opposing Characters for a claim**, including the Cost-2 Christmas Lights Scenario; its earlier one-defender bypass is removed and banked for possible higher-cost redesign. The defender's separate finishing attack is **still OPEN**. This is an isolated lab rule, not production Unhinged.
 
 **Isolated Core Lab:** [Play the Character-only experiment](core/) · [Compare elimination vs Influence Majority](core/README.md). It runs separately and does not alter the full game.
