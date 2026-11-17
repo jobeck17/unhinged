@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#101724">
+<title>Small Game, Big Discoveries — Prototype Lab</title>
+<style>
+:root{color-scheme:dark;--bg:#101724;--panel:#192437;--panel2:#233149;--line:#3b506d;--ink:#f5ebd4;--muted:#abbace;--gold:#f9c76e;--sea:#82dcc7;--rose:#ff8a9b;--blue:#87baff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 30% -20%,#2a355b 0%,transparent 60%),var(--bg);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink)}
+button{font:inherit;touch-action:manipulation;cursor:pointer;-webkit-tap-highlight-color:transparent}button:disabled{opacity:.45;cursor:default}
+.shell{max-width:940px;margin:auto;padding:20px 14px 60px}.eyebrow{font:700 11px/1.4 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.16em;color:var(--sea)}
+h1{font-weight:900;font-size:clamp(27px,5vw,42px);letter-spacing:-.04em;margin:4px 0 5px;line-height:1.1}.subtitle{color:var(--muted);font-size:14px;max-width:670px;line-height:1.5;margin:7px 0 19px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:18px}.tab{border:2px solid var(--line);background:#1a2537;color:var(--muted);padding:12px 6px;border-radius:9px;font-weight:900;letter-spacing:.02em;font-size:clamp(13px,3vw,17px)}.tab.active{background:#364b64;color:#fff3d4;border-color:var(--gold);box-shadow:0 4px 0 #0d1421}.tab span{display:block;font-weight:500;font-size:10px;color:var(--muted);margin-top:3px}
+.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);gap:14px;align-items:start}.panel{background:linear-gradient(160deg,#233148,#182335 70%);border:2px solid #3e5069;border-radius:12px;padding:15px;box-shadow:0 9px 0 rgba(0,0,0,.17)}.gamehead{display:flex;justify-content:space-between;align-items:start;gap:8px}.gamehead h2{margin:3px 0 5px;font-size:26px;letter-spacing:-.03em}.pill{background:#293b4e;border:1px solid #587088;border-radius:6px;color:var(--sea);font-size:11px;font-weight:800;padding:5px 8px;white-space:nowrap}.pitch{font-size:13px;color:var(--muted);line-height:1.45;margin:4px 0 15px}.status{border:1px solid #60738d;border-radius:7px;background:#0e1b2c;color:#f8e0a9;padding:10px 12px;font-size:13px;font-weight:700;line-height:1.4;min-height:52px;display:flex;align-items:center;margin:12px 0}
+.board{width:min(100%,420px);margin:8px auto 12px;display:grid;gap:3px;touch-action:manipulation;user-select:none}.cell{aspect-ratio:1/1;padding:0;min-width:0;border:2px solid rgba(255,255,255,.08);border-radius:4px;background:#304a53;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;font-size:clamp(16px,4.5vw,32px);font-weight:900;line-height:1;overflow:hidden}.cell.alt{background:#3d5a5c}.cell.wall{background:repeating-linear-gradient(45deg,#1d2838 0,#1d2838 6px,#25334a 6px,#25334a 12px);border-color:#293b53}.cell.highlight{outline:3px solid var(--gold);outline-offset:-3px}.cell.legal:after{content:"";width:22%;aspect-ratio:1;background:#ffe09e99;border:2px solid #fff2;border-radius:50%;position:absolute}.cell.watch{box-shadow:inset 0 0 0 4px #f7915466}.cell.path{box-shadow:inset 0 0 0 4px #7bedcb88}.cell.hint{background:#685c4d}.cell.hit{box-shadow:inset 0 0 0 4px #ffe299}.cell:focus-visible{outline:3px solid white;outline-offset:-3px}.token{display:inline-grid;place-items:center;width:59%;aspect-ratio:1;border:3px solid #0f2030;box-shadow:3px 3px 0 #172030;position:relative;border-radius:5px;font-size:clamp(16px,3.7vw,27px);text-shadow:0 1px #141414;z-index:1}.token.me{background:#52a1d8;color:#ffffff}.token.bot{background:#d86370;color:#fff7e0}.token.thief{background:#71b7a7}.token.guard{background:#e36e75}.token.pulse{background:#ffcf79;color:#27354a;width:39%;border-radius:50%;box-shadow:0 0 15px #f9c76e}.crown{font-size:clamp(15px,3.3vw,25px);color:var(--gold);text-shadow:1px 2px #4d291a}.cargo{position:absolute;top:-9px;right:-9px;color:#ffe49a;font-size:14px;text-shadow:0 1px #000}.tile-mark{position:absolute;bottom:2px;right:2px;color:#ffe8ba;font-size:clamp(11px,2vw,15px);z-index:0}.exit{color:#ffe5a8;font-size:clamp(14px,3vw,25px)}.vision{position:absolute;inset:0;background:#d9556f33;pointer-events:none}.loot{font-size:clamp(16px,3vw,26px)}.piece{font-size:clamp(16px,3.3vw,27px);color:#c5f1e6;text-shadow:2px 2px #18242d}.piece.amp{color:#f5c770}.piece.fork{color:#ff94ac}.piece.selected{outline:2px solid var(--gold)}
+.controls,.palette{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}.btn{padding:11px 13px;border:2px solid #64809a;border-bottom-width:4px;background:#304a64;border-radius:7px;color:#f5ecd7;font-weight:800;font-size:13px}.btn:active{transform:translateY(2px);border-bottom-width:2px}.btn.primary{background:#5f855e;border-color:#96bc76;color:#fff4cf}.btn.warn{background:#744e59;border-color:#af7382}.btn.active{background:#8c6c40;border-color:#ffd17a}.btn.small{padding:8px 10px;font-size:12px}
+.meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:12px;margin:9px 2px;flex-wrap:wrap}.meta strong{color:var(--ink)}.sectiontitle{font-weight:900;font-size:13px;color:#f4e5c4;text-transform:uppercase;letter-spacing:.09em;margin:3px 0 9px}.how{margin:0;padding-left:20px;font-size:13px;color:var(--muted);line-height:1.65}.how strong{color:var(--ink)}.rule{height:1px;background:#42536a;margin:16px 0}.shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.badgecard{min-height:91px;border:2px solid #52637b;border-radius:8px;background:#142132;padding:10px 5px;text-align:center}.badgecard.locked{filter:saturate(.4);opacity:.62}.badgeicon{font-size:24px;line-height:1.2}.badgename{font-size:11px;font-weight:900;margin-top:7px}.badgedesc{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.25}.note{font-size:12px;color:var(--muted);line-height:1.55}.callout{border-left:3px solid var(--gold);padding:9px 10px;background:#2e3642;color:#f4e8cb;font-size:12px;line-height:1.5;margin-top:10px}.warning{color:#ffd487;font-size:12px}.foot{margin-top:18px;color:#859aae;font-size:12px;text-align:center}.smallgrid .cell{font-size:22px}.machinemeta{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.machinebox{padding:8px;background:#0f2030;border:1px solid #475d77;border-radius:7px;text-align:center}.machinebox b{display:block;font-size:19px;color:#f5db9a}.machinebox span{display:block;font-size:10px;color:#9dafc3}
+@media(max-width:690px){.layout{grid-template-columns:1fr}.shell{padding:16px 9px 44px}.panel{padding:12px}.board{max-width:390px}.cell{border-width:1px}.side{order:2}.btn{padding:12px 14px}.status{min-height:44px}}
+@media(prefers-reduced-motion:no-preference){.cell{transition:background-color .08s}}
+</style>
+</head>
+<body>
+<main class="shell">
+<div class="eyebrow">Interactive concept test · v0.1</div>
+<h1>Small game. Big discoveries.</h1>
+<p class="subtitle">Three deliberately rough, playable mobile-first experiments. No accounts, no servers, no finished art. Play each one a few times and notice which mechanic makes you want another round.</p>
+<nav class="tabs" aria-label="Choose prototype">
+<button class="tab active" data-tab="shove">SHOVE<span>Outthink a bot</span></button>
+<button class="tab" data-tab="lockbox">LOCKBOX<span>Steal or defend</span></button>
+<button class="tab" data-tab="loop">LOOP<span>Build a chain</span></button>
+</nav>
+<section class="layout">
+<div id="game" class="panel" aria-live="polite"></div>
+<aside class="panel side" id="notes"></aside>
+</section>
+<p class="foot">Prototype rules and art are placeholders. Collection unlocks are saved locally in this browser when permitted.</p>
+</main>
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const escapeHtml=s=>String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let active='shove';
+const rewards={
+ shove:[['firstcrown','🏆','Crown Runner','Win a match'],['teamwork','🤝','Teamwork','Push your own piece'],['intercept','⚡','Interceptor','Push a crown carrier']],
+ lockbox:[['firstescape','💎','Clean Getaway','Escape with the loot'],['silent','👣','Ghost','Escape without smoke'],['caught','🔦','Inside Job','Catch the bot as security']],
+ loop:[['inventor','🔧','Inventor','Score at least 8'],['triple','🌟','Triple Spark','Collect three stars in one run'],['overclock','⚙️','Overclock','Split an amplified pulse']]
+};
+let earned={};try{earned=JSON.parse(localStorage.getItem('microgame-lab-discoveries-v01')||'{}')||{}}catch(e){}
+let newReward='';
+function unlock(id){if(!earned[id]){earned[id]=true;newReward=id;try{localStorage.setItem('microgame-lab-discoveries-v01',JSON.stringify(earned))}catch(e){}}}
+function rewardShelf(mode){return '<div class="sectiontitle">Discovery shelf · '+rewards[mode].filter(r=>earned[r[0]]).length+'/3</div><div class="shelf">'+rewards[mode].map(([id,icon,title,desc])=>'<div class="badgecard '+(!earned[id]?'locked':'')+'"><div class="badgeicon">'+(earned[id]?icon:'❔')+'</div><div class="badgename">'+(earned[id]?title:'Unknown')+'</div><div class="badgedesc">'+(earned[id]?desc:'Discover how to earn it')+'</div></div>').join('')+'</div>'}
+function announcement(){if(!newReward)return '';const r=Object.values(rewards).flat().find(e=>e[0]===newReward);newReward='';return r?'<div class="callout">✨ <b>New discovery!</b> '+escapeHtml(r[2])+' — '+escapeHtml(r[3])+'.</div>':''}
+function makeBoard(n,cells,extra=''){return '<div class="board '+extra+'" style="grid-template-columns:repeat('+n+',minmax(0,1fr))" role="grid">'+cells.join('')+'</div>'}
+function btn(action,label,css='',disabled=false){return '<button class="btn '+css+'" data-action="'+action+'" '+(disabled?'disabled':'')+'>'+label+'</button>'}
+function banner(title,pitch,tag){return '<div class="gamehead"><div><div class="eyebrow">'+tag+'</div><h2>'+title+'</h2></div><div class="pill">SOLO-PLAYABLE</div></div><p class="pitch">'+pitch+'</p>'}
+function render(){document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===active);b.setAttribute('aria-pressed',b.dataset.tab===active)}); if(active==='shove')renderShove();if(active==='lockbox')renderLockbox();if(active==='loop')renderLoop();}
+// ============================= SHOVE =============================
+const SIZ=5;let shove;
+function initShove(){shove={pieces:[{id:'a1',team:'you',x:1,y:4,carry:false},{id:'a2',team:'you',x:3,y:4,carry:false},{id:'b1',team:'bot',x:1,y:0,carry:false},{id:'b2',team:'bot',x:3,y:0,carry:false}],crown:{x:2,y:2},selected:null,turn:'you',moves:0,done:'',message:'Tap a blue piece, then a highlighted square. Bring the crown home.',busy:false};}
+const within5=(x,y)=>x>=0&&y>=0&&x<5&&y<5;
+function occupant(s,x,y){return s.pieces.find(p=>p.x===x&&p.y===y)}
+function optionsShove(s,team){let out=[];for(const p of s.pieces.filter(p=>p.team===team)){for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const x=p.x+dx,y=p.y+dy;if(!within5(x,y))continue;const other=occupant(s,x,y);if(other){if(!within5(x+dx,y+dy)||occupant(s,x+dx,y+dy))continue;}out.push({id:p.id,dx,dy,x,y,push:other?.id||null});}}return out;}
+function applyShove(s,move){const next={...s,pieces:s.pieces.map(p=>({...p})),crown:s.crown?{...s.crown}:null,moves:s.moves+1,selected:null,done:'',busy:false};const p=next.pieces.find(p=>p.id===move.id),o=move.push?next.pieces.find(q=>q.id===move.push):null;
+ if(o){o.x+=move.dx;o.y+=move.dy;}p.x=move.x;p.y=move.y;
+ if(next.crown){const picked=next.pieces.find(q=>q.x===next.crown.x&&q.y===next.crown.y);if(picked){picked.carry=true;next.crown=null;}}
+ const fin=next.pieces.find(q=>q.carry&&q.y===(q.team==='you'?4:0));if(fin)next.done=fin.team;
+ if(!next.done&&next.moves>=60)next.done='draw';
+ next.turn=s.turn==='you'?'bot':'you';return next;
+}
+function evalShove(s){if(s.done==='bot')return 10000;if(s.done==='you')return -10000;if(s.done==='draw')return 0;
+ function value(team){const my=s.pieces.filter(p=>p.team===team),opp=s.pieces.filter(p=>p.team!==team),car=my.find(p=>p.carry),other=opp.find(p=>p.carry);if(car){let dist=Math.abs((team==='bot'?0:4)-car.y);let threat=opp.some(q=>Math.abs(q.x-car.x)+Math.abs(q.y-car.y)===1)?-25:0;return 260+(4-dist)*55+threat;}if(other)return my.reduce((sum,p)=>sum+(50-11*(Math.abs(p.x-other.x)+Math.abs(p.y-other.y))),0);return my.reduce((sum,p)=>sum+(60-12*(Math.abs(p.x-s.crown.x)+Math.abs(p.y-s.crown.y))),0);}
+ return value('bot')-value('you');}
+function searchShove(s,depth,team,alpha,beta){if(depth===0||s.done)return evalShove(s);const moves=optionsShove(s,team);if(!moves.length)return evalShove(s);if(team==='bot'){let best=-Infinity;for(const m of moves){const v=searchShove(applyShove(s,m),depth-1,'you',alpha,beta);best=Math.max(best,v);alpha=Math.max(alpha,best);if(alpha>=beta)break;}return best;}let best=Infinity;for(const m of moves){const v=searchShove(applyShove(s,m),depth-1,'bot',alpha,beta);best=Math.min(best,v);beta=Math.min(beta,best);if(alpha>=beta)break;}return best;}
+function botShove(){if(shove.done||shove.turn!=='bot')return;const moves=optionsShove(shove,'bot');if(!moves.length){shove.done='draw';render();return;}let best=-Infinity,choices=[];for(const m of moves){const val=searchShove(applyShove(shove,m),2,'you',-Infinity,Infinity)+Math.random()*3;if(val>best+.001){best=val;choices=[m]}else if(Math.abs(val-best)<.001)choices.push(m);}const m=choices[0];shove=applyShove(shove,m);shove.message=m.push?'Bot shoved a piece. Your move.':'Bot moved. Your move.';shove.busy=false;if(shove.done==='you')unlock('firstcrown');render();}
+function shoveClick(x,y){if(shove.turn!=='you'||shove.done||shove.busy)return;const p=occupant(shove,x,y);if(p&&p.team==='you'){shove.selected=p.id;shove.message='Choose an adjacent highlighted square.';render();return;}const move=optionsShove(shove,'you').find(m=>m.id===shove.selected&&m.x===x&&m.y===y);if(!move){shove.message='Choose one of your pieces, then a highlighted destination.';render();return;}if(move.push){const t=shove.pieces.find(p=>p.id===move.push);if(t.team==='you')unlock('teamwork');if(t.carry)unlock('intercept');}
+ shove=applyShove(shove,move);shove.message=shove.done==='you'?'Crown delivered! You win.':'Bot is thinking…';if(shove.done==='you')unlock('firstcrown');else if(!shove.done)shove.busy=true;render();if(shove.busy)setTimeout(botShove,250);
+}
+function renderShove(){const legal=shove.selected?optionsShove(shove,'you').filter(m=>m.id===shove.selected):[];const cells=[];for(let y=0;y<5;y++)for(let x=0;x<5;x++){const p=occupant(shove,x,y),c=shove.crown&&shove.crown.x===x&&shove.crown.y===y;let content='';if(p)content='<span class="token '+(p.team==='you'?'me':'bot')+'">'+(p.team==='you'?'◆':'▲')+(p.carry?'<span class="cargo">♛</span>':'')+'</span>';else if(c)content='<span class="crown">♛</span>';cells.push('<button class="cell '+((x+y)%2?'alt ':'')+(shove.selected&&p?.id===shove.selected?'highlight ':'')+(legal.some(m=>m.x===x&&m.y===y)?'legal ':'')+'" data-cell="'+x+','+y+'" aria-label="row '+(y+1)+' column '+(x+1)+'">'+content+'</button>');}
+ const result=shove.done?(shove.done==='you'?'🏆 YOU WIN! Crown delivered.':shove.done==='bot'?'💥 Bot wins. Try another approach.':'Draw — reset for a new match.'):(shove.turn==='you'?shove.message:'Bot is planning its move…');
+ $('game').innerHTML=banner('SHOVE','Two pieces each. Push pieces out of your way, steal the crown, and carry it back to your home edge.','TACTICAL DUEL')+makeBoard(5,cells)+ '<div class="meta"><span><strong>BLUE</strong> = you · home: bottom row</span><span><strong>RED</strong> = bot · home: top row</span></div><div class="status" role="status">'+result+'</div><div class="controls">'+btn('reset-shove','↻ New match','primary')+'</div>'+announcement();
+ $('notes').innerHTML='<div class="sectiontitle">How to play</div><ol class="how"><li>Tap a <strong>blue piece</strong>, then a highlighted neighboring cell.</li><li>If the cell is occupied, you <strong>push</strong> that piece one square, but only if the space behind it is empty.</li><li>Pick up the <strong>gold crown</strong> and carry it back to any square on your bottom row.</li><li>The bot follows the same rules. You can push your <strong>own pieces</strong>, too.</li></ol><div class="rule"></div>'+rewardShelf('shove')+'<div class="callout">What we are testing: Does this create interesting decisions even without collectibles or fancy visuals?</div>';
+}
+// ============================= LOCKBOX =============================
+const heistMap=['#######','#.....#','#.#.#.#','#.....#','#.#.#.#','#.....#','###E###'];
+let lockbox;
+function walkable(x,y){return x>=0&&x<7&&y>=0&&y<7&&heistMap[y][x]!=='#';}
+function resetLockbox(mode='thief'){lockbox={mode,player:mode==='thief'?{x:3,y:5}:{x:2,y:3},thief:{x:3,y:5},guards:[{x:1,y:3,dir:1},{x:5,y:1,dir:-1}],face:{dx:0,dy:1},loot:false,smokes:1,cloak:0,smokeUsed:false,turns:0,done:'',message:mode==='thief'?'Get the gem and return to the exit. Watch patrol arrows.':'Catch the green thief before it escapes with the gem.'};}
+function guardSees(g,p,dx,dy){if(g.x===p.x&&g.y===p.y)return true;const nx=g.x+dx,ny=g.y+dy;return nx===p.x&&ny===p.y&&walkable(nx,ny);}
+function caughtByPatrol(){return lockbox.guards.some(g=>guardSees(g,lockbox.player,g.dir,0));}
+function botPatrol(){for(const g of lockbox.guards){let nx=g.x+g.dir;if(nx<1||nx>5){g.dir*=-1;nx=g.x+g.dir;}g.x=nx;}}
+function moveThief(dx,dy){if(lockbox.done)return;const x=lockbox.player.x+dx,y=lockbox.player.y+dy;if(!walkable(x,y))return;
+ lockbox.player={x,y};lockbox.turns++;
+ if(x===3&&y===1)lockbox.loot=true;
+ if(lockbox.loot&&x===3&&y===6){lockbox.done='win';unlock('firstescape');if(!lockbox.smokeUsed)unlock('silent');lockbox.message='You got away with the gem!';render();return;}
+ botPatrol();const hidden=lockbox.cloak>0;if(lockbox.cloak>0)lockbox.cloak--;
+ if(!hidden&&caughtByPatrol()){lockbox.done='lose';lockbox.message='A guard spotted you! Try timing the patrol.';}else if(lockbox.turns>=28){lockbox.done='lose';lockbox.message='Security lockdown! You took too many turns.';}else lockbox.message=lockbox.loot?'Gem secured. Return to the bottom exit.':'Make it to the gem at the top. Guards see one square ahead.';
+ render();}
+function heistDistance(from,to,avoid=[]){const q=[{...from,d:0}],seen=new Set([from.x+','+from.y]);while(q.length){const a=q.shift();if(a.x===to.x&&a.y===to.y)return a.d;for(const [dx,dy] of [[0,1],[0,-1],[1,0],[-1,0]]){const x=a.x+dx,y=a.y+dy,key=x+','+y;if(walkable(x,y)&&!seen.has(key)&&!avoid.some(v=>v.x===x&&v.y===y)){seen.add(key);q.push({x,y,d:a.d+1});}}}return 99;}
+function securitySees(){return guardSees(lockbox.player,lockbox.thief,lockbox.face.dx,lockbox.face.dy);}
+function moveSecurity(dx,dy){if(lockbox.done)return;const x=lockbox.player.x+dx,y=lockbox.player.y+dy;if(!walkable(x,y))return;lockbox.player={x,y};if(dx||dy)lockbox.face={dx,dy};lockbox.turns++;
+ if(securitySees()){lockbox.done='win';unlock('caught');lockbox.message='Thief caught! Security wins.';render();return;}
+ const target=lockbox.loot?{x:3,y:6}:{x:3,y:1};const dirs=[[0,1],[0,-1],[1,0],[-1,0],[0,0]];
+ const options=dirs.map(([mx,my])=>({x:lockbox.thief.x+mx,y:lockbox.thief.y+my})).filter(p=>walkable(p.x,p.y));
+ options.sort((a,b)=>{const score=p=>{const danger=guardSees(lockbox.player,p,lockbox.face.dx,lockbox.face.dy)?90:0;return heistDistance(p,target,[lockbox.player])+danger+(p.x===lockbox.thief.x&&p.y===lockbox.thief.y?2:0);};return score(a)-score(b);});
+ lockbox.thief={...options[0]};if(lockbox.thief.x===3&&lockbox.thief.y===1)lockbox.loot=true;
+ if(securitySees()){lockbox.done='win';unlock('caught');lockbox.message='Thief caught! Security wins.';}else if(lockbox.loot&&lockbox.thief.x===3&&lockbox.thief.y===6){lockbox.done='lose';lockbox.message='The thief escaped with the gem.';}else if(lockbox.turns>=20){lockbox.done='win';unlock('caught');lockbox.message='Lockdown! The thief ran out of time.';}else lockbox.message='The thief moved. Reposition to intercept.';
+ render();}
+function lockboxClick(x,y){if(lockbox.done)return;const p=lockbox.player,dx=x-p.x,dy=y-p.y;if(Math.abs(dx)+Math.abs(dy)!==1){lockbox.message='Move one square orthogonally, or tap Wait.';render();return;}
+ if(lockbox.mode==='thief')moveThief(dx,dy);else moveSecurity(dx,dy);}
+function lockboxWait(){if(lockbox.mode==='thief')moveThief(0,0);else moveSecurity(0,0);}
+function renderLockbox(){const isThief=lockbox.mode==='thief',cells=[];for(let y=0;y<7;y++)for(let x=0;x<7;x++){
+ const wall=!walkable(x,y),isExit=x===3&&y===6,isLoot=x===3&&y===1&&!lockbox.loot;
+ const player=lockbox.player.x===x&&lockbox.player.y===y;
+ const guards=isThief?lockbox.guards.filter(g=>g.x===x&&g.y===y):[];
+ const botThief=!isThief&&lockbox.thief.x===x&&lockbox.thief.y===y;
+ const watch=isThief&&lockbox.guards.some(g=>g.x+g.dir===x&&g.y===y&&walkable(x,y));
+ const watchedSecurity=!isThief&&lockbox.player.x+lockbox.face.dx===x&&lockbox.player.y+lockbox.face.dy===y;
+ let content=wall?'':(isExit?'<span class="tile-mark">EXIT</span>':'')+(isLoot?'<span class="loot">◆</span>':'');
+ if(isExit&&!player&&!botThief)content='<span class="exit">⇩</span>';
+ if(guards.length)content='<span class="token guard">'+(guards[0].dir>0?'▶':'◀')+'</span>';
+ if(botThief)content='<span class="token thief">◆'+(lockbox.loot?'<span class="cargo">✦</span>':'')+'</span>';
+ if(player)content=isThief?'<span class="token thief">◆'+(lockbox.loot?'<span class="cargo">✦</span>':'')+'</span>':'<span class="token guard">▣</span>';
+ const adj=Math.abs(x-lockbox.player.x)+Math.abs(y-lockbox.player.y)===1&&walkable(x,y);
+ cells.push('<button class="cell '+(wall?'wall ':'')+((x+y)%2?'alt ':'')+(watch||watchedSecurity?'watch ':'')+(adj?'legal ':'')+'" data-cell="'+x+','+y+'" aria-label="row '+(y+1)+' column '+(x+1)+'">'+content+'</button>');}
+ $('game').innerHTML=banner('LOCKBOX','One tiny building, two very different sides. Steal the gem—or hunt the thief.','ASYMMETRIC HEIST')+'<div class="controls">'+btn('role-thief','Play thief',isThief?'active small':'small')+btn('role-security','Play security',!isThief?'active small':'small')+'</div>'+makeBoard(7,cells,'smallgrid')+'<div class="meta"><span><strong>TURN '+lockbox.turns+'</strong> / '+(isThief?'28':'20')+'</span><span>'+(isThief?'SMOKE: '+lockbox.smokes+' · '+(lockbox.cloak?'CLOAKED':'VISIBLE'):'THIEF HAS GEM: '+(lockbox.loot?'YES':'NO'))+'</span></div><div class="status" role="status">'+(lockbox.done?(lockbox.done==='win'?'🏆 ':'💥 '):'')+lockbox.message+'</div><div class="controls">'+btn('lock-wait','Wait 1 turn','',!!lockbox.done)+(isThief?btn('lock-smoke','Smoke · '+lockbox.smokes,'warn',!!lockbox.done||!lockbox.smokes):'')+btn('reset-lock','↻ Restart','primary')+'</div>'+announcement();
+ $('notes').innerHTML='<div class="sectiontitle">'+(isThief?'The thief':'The security guard')+'</div><ol class="how">'+(isThief?'<li>Tap an adjacent tile to move (green marker).</li><li>Steal the gem at the <strong>top center</strong>, then return to the <strong>bottom exit</strong>.</li><li>Red patrols move <strong>after your turn</strong>. They see their own square and the <strong>one directly ahead</strong>.</li><li><strong>Wait</strong> to time their movements. <strong>Smoke</strong> gives two hidden moves.':'<li>You control the <strong>red security guard</strong>. Tap adjacent tiles to move.</li><li>The <strong>green bot thief</strong> tries to steal the gem and escape.</li><li>You catch the thief by occupying its square or facing it from one square away.</li><li>Cut off the route or contain the thief until lockdown.</li>')+'</ol><div class="rule"></div>'+rewardShelf('lockbox')+'<div class="callout">What we are testing: Does the alternate role genuinely change the game, or just add work?</div>';
+}
+// ============================= LOOP =============================
+const loopStars=[[3,2],[5,3],[1,1],[5,5],[3,5]],loopRock=[[3,3]];
+const arrows=['↑','→','↓','←'],vecs=[[0,-1],[1,0],[0,1],[-1,0]],toolCounts={turn:4,fork:1,amp:1};
+let loop,loopTimer=null;
+function resetLoop(){if(loopTimer)clearInterval(loopTimer);loopTimer=null;loop={pieces:{},tool:'turn',beams:[],trail:new Set(),taken:new Set(),points:0,steps:0,running:false,done:false,success:false,secret:false,splitAmp:false,message:'Place arrow tiles to route the spark around the rock. Collect stars and reach EXIT.'};}
+function usedTool(k){return Object.values(loop.pieces).filter(p=>p.kind===k).length;}
+function isFixed(x,y){return(x===0&&y===3)||(x===6&&y===3)||loopRock.some(q=>q[0]===x&&q[1]===y)||loopStars.some(q=>q[0]===x&&q[1]===y);}
+function loopClick(x,y){if(loop.running)return;if(isFixed(x,y))return;const key=x+','+y;const cur=loop.pieces[key];if(loop.tool==='erase'){delete loop.pieces[key];}else if(cur&&cur.kind===loop.tool){cur.dir=(cur.dir+1)%4;}else if(usedTool(loop.tool)-(cur&&cur.kind===loop.tool?1:0)<toolCounts[loop.tool]){loop.pieces[key]={kind:loop.tool,dir:1};}else{loop.message='No more '+loop.tool+' parts available. Erase one or choose another tool.';render();return;}
+ loop.done=false;loop.trail=new Set();loop.taken=new Set();loop.points=0;loop.steps=0;loop.message='Machine edited. Run it and see what happens.';render();}
+function pulseStep(){const next=[];for(const b of loop.beams){const p={...b,x:b.x+vecs[b.dir][0],y:b.y+vecs[b.dir][1],seen:new Set(b.seen)};const key=p.x+','+p.y+'|'+p.dir;
+ if(p.x<0||p.y<0||p.x>6||p.y>6||loopRock.some(r=>r[0]===p.x&&r[1]===p.y)||p.seen.has(key))continue;
+ p.seen.add(key);loop.trail.add(p.x+','+p.y);
+ const gem=loopStars.some(g=>g[0]===p.x&&g[1]===p.y);if(gem&&!loop.taken.has(p.x+','+p.y)){loop.taken.add(p.x+','+p.y);loop.points+=2*p.mult;}
+ if(p.x===6&&p.y===3){loop.points+=4*p.mult;loop.success=true;continue;}
+ const part=loop.pieces[p.x+','+p.y];if(part){if(part.kind==='turn')p.dir=part.dir;else if(part.kind==='amp'){p.mult=Math.min(4,p.mult*2);p.amplified=true;}else if(part.kind==='fork'){const diverge={...p,dir:(p.dir+3)%4,seen:new Set(p.seen)};next.push(diverge);if(p.amplified)loop.splitAmp=true;}}
+ next.push(p);
+ }
+ loop.beams=next;loop.steps++;
+ if(loop.steps>=45||!loop.beams.length){clearInterval(loopTimer);loopTimer=null;loop.running=false;loop.done=true;if(loop.points>=8)unlock('inventor');if(loop.taken.size>=3)unlock('triple');if(loop.splitAmp)unlock('overclock');loop.message=(loop.success?'Exit reached! ':'No pulse reached the exit. ')+(loop.points>=8?'Challenge cleared! ':'Try a different arrangement.')+' Score: '+loop.points+'.';}
+ render();}
+function startLoop(){if(loopTimer)clearInterval(loopTimer);loopTimer=null;loop.running=true;loop.done=false;loop.beams=[{x:0,y:3,dir:1,mult:1,amplified:false,seen:new Set(['0,3|1'])}];loop.taken=new Set();loop.trail=new Set(['0,3']);loop.points=0;loop.steps=0;loop.success=false;loop.splitAmp=false;loop.message='Sparks are moving…';render();loopTimer=setInterval(pulseStep,180);}
+function renderLoop(){const cells=[];for(let y=0;y<7;y++)for(let x=0;x<7;x++){const key=x+','+y,source=x===0&&y===3,exit=x===6&&y===3,rock=loopRock.some(q=>q[0]===x&&q[1]===y),star=loopStars.some(q=>q[0]===x&&q[1]===y),p=loop.pieces[key],pulses=loop.beams.filter(b=>b.x===x&&b.y===y);
+ let content=source?'⚡':exit?'<span class="exit">⛶</span>':rock?'▦':star?(loop.taken.has(key)?'◇':'✦'):p?'<span class="piece '+p.kind+'">'+(p.kind==='turn'?arrows[p.dir]:p.kind==='amp'?'×2':'⑂')+'</span>':'';
+ if(pulses.length)content+='<span class="token pulse" style="position:absolute">●</span>';
+ cells.push('<button class="cell '+(rock?'wall ':'')+((x+y)%2?'alt ':'')+(loop.trail.has(key)?'path ':'')+(star?'hint ':'')+'" data-cell="'+x+','+y+'" aria-label="row '+(y+1)+' column '+(x+1)+'">'+content+'</button>');}
+ $('game').innerHTML=banner('LOOP','Build a tiny machine. Redirect sparks, split them, and multiply their value to reach a target score.','CHAIN REACTION PUZZLE')+'<div class="machinemeta"><div class="machinebox"><b>'+loop.points+'</b><span>SCORE / TARGET 8</span></div><div class="machinebox"><b>'+loop.taken.size+'</b><span>STARS HIT</span></div><div class="machinebox"><b>'+loop.steps+'</b><span>TICKS</span></div></div>'+makeBoard(7,cells,'smallgrid')+'<div class="palette">'+btn('tool-turn','Arrow '+(toolCounts.turn-usedTool('turn')),(loop.tool==='turn'?'active ':'')+'small',loop.running)+btn('tool-fork','Fork '+(toolCounts.fork-usedTool('fork')),(loop.tool==='fork'?'active ':'')+'small',loop.running)+btn('tool-amp','×2 '+(toolCounts.amp-usedTool('amp')),(loop.tool==='amp'?'active ':'')+'small',loop.running)+btn('tool-erase','Erase',(loop.tool==='erase'?'active ':'')+'small',loop.running)+'</div><div class="status" role="status">'+loop.message+'</div><div class="controls">'+btn('run-loop','▶ Run machine','primary',loop.running)+btn('clear-loop','↻ Clear board','',loop.running)+'</div>'+announcement();
+ $('notes').innerHTML='<div class="sectiontitle">How to play</div><ol class="how"><li>A spark starts at <strong>⚡</strong> on the left and heads right.</li><li>Choose a gadget, then tap an empty square to place it. <strong>Tap an arrow again to rotate it.</strong></li><li>Use up to four <strong>arrows</strong> to change direction; a <strong>fork</strong> splits a spark; <strong>×2</strong> doubles future star and exit points for that spark.</li><li>Stars are worth <strong>2 points</strong> each (once per run); reaching the exit is worth <strong>4 points</strong>. Earn <strong>8 points</strong> to win.</li><li><strong>Run machine</strong> to watch what happens. Rearrange gadgets and try again.</li></ol><div class="rule"></div>'+rewardShelf('loop')+'<div class="callout">What we are testing: Does building and observing a surprising chain reaction make you want to optimize it?</div>';
+}
+// ============================= EVENTS =============================
+document.addEventListener('click',e=>{const tab=e.target.closest('[data-tab]');if(tab){active=tab.dataset.tab;render();return;}const cell=e.target.closest('[data-cell]');if(cell){const [x,y]=cell.dataset.cell.split(',').map(Number);if(active==='shove')shoveClick(x,y);if(active==='lockbox')lockboxClick(x,y);if(active==='loop')loopClick(x,y);return;}
+ const b=e.target.closest('[data-action]');if(!b||b.disabled)return;const a=b.dataset.action;
+ if(a==='reset-shove'){initShove();render();}
+ if(a==='role-thief'){resetLockbox('thief');render();}
+ if(a==='role-security'){resetLockbox('security');render();}
+ if(a==='reset-lock'){resetLockbox(lockbox.mode);render();}
+ if(a==='lock-wait'){lockboxWait();}
+ if(a==='lock-smoke'&&lockbox.smokes){lockbox.smokes=0;lockbox.cloak=2;lockbox.smokeUsed=true;lockbox.message='Smoke deployed. You are hidden for two moves.';render();}
+ if(a.startsWith('tool-')){loop.tool=a.slice(5);render();}
+ if(a==='run-loop')startLoop();
+ if(a==='clear-loop'){resetLoop();render();}
+});
+initShove();resetLockbox();resetLoop();render();
+window.__labTest={getState:()=>({active,shove,lockbox,loop,earned}),selectTab:id=>{active=id;render()},resetShove:initShove,resetLockbox,resetLoop,optionsShove,applyShove,shoveClick,moveThief,moveSecurity,startLoop,pulseStep};
+})();
+</script>
+</body></html>
